@@ -12,14 +12,19 @@ config_version=5
 
 config/name="Rice and Shine!"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://1nyvjuq32uht"
 
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
+SceneLoader="*uid://jauffil1d42j"
+Sfx="*uid://du6gjwu6i72mh"
+GlobalVars="*uid://bvleif2aserxa"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
