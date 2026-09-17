@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://claxi28dx05cb"]
+
+[ext_resource type="Script" uid="uid://jbjdy4aax6mr" path="res://Scripts/test_scene.gd" id="1_3dogw"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/recipe_book.tscn" id="2_r5l72"]
+
+[node name="TestScene" type="Node2D" unique_id=695332166]
+script = ExtResource("1_3dogw")
+
+[node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("2_r5l72")]
+offset_left = 10.0
+offset_top = 464.0
+offset_right = 193.0
+offset_bottom = 701.0
