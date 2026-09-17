@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
+
+[ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://scenes/node_2d.gd" id="1_6e84v"]
+[ext_resource type="Texture2D" uid="uid://bqqxe0wkrwfdr" path="res://sprites/logo rice and shine.png" id="2_4dvvg"]
+
+[node name="Minigame Selection" type="Node2D" unique_id=380012965]
+script = ExtResource("1_6e84v")
+
+[node name="Selection" type="Control" parent="." unique_id=1185375392]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Rice" type="Button" parent="Selection" unique_id=223962918]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 238.0
+offset_right = 438.0
+offset_bottom = 452.0
+
+[node name="Minigame 2" type="Button" parent="Selection" unique_id=1014540125]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 238.0
+offset_right = 810.0
+offset_bottom = 452.0
+
+[node name="Minigame 3" type="Button" parent="Selection" unique_id=1620176494]
+layout_mode = 0
+offset_left = 833.0
+offset_top = 238.0
+offset_right = 1180.0
+offset_bottom = 452.0
+
+[node name="Minigame 4" type="Button" parent="Selection" unique_id=1465234360]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 478.0
+offset_right = 438.0
+offset_bottom = 692.0
+
+[node name="Minigame 5" type="Button" parent="Selection" unique_id=633912784]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 478.0
+offset_right = 810.0
+offset_bottom = 692.0
+
+[node name="Minigame 6" type="Button" parent="Selection" unique_id=122577164]
+layout_mode = 0
+offset_left = 833.0
+offset_top = 478.0
+offset_right = 1180.0
+offset_bottom = 692.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510853050]
+position = Vector2(634, 117.00001)
+scale = Vector2(0.19780816, 0.19780816)
+texture = ExtResource("2_4dvvg")
+
+[connection signal="pressed" from="Selection/Rice" to="." method="_on_minigame_1_pressed"]
+[connection signal="pressed" from="Selection/Minigame 2" to="." method="_on_minigame_2_pressed"]
+[connection signal="pressed" from="Selection/Minigame 3" to="." method="_on_minigame_3_pressed"]
+[connection signal="pressed" from="Selection/Minigame 4" to="." method="_on_minigame_4_pressed"]
+[connection signal="pressed" from="Selection/Minigame 5" to="." method="_on_minigame_5_pressed"]
+[connection signal="pressed" from="Selection/Minigame 6" to="." method="_on_minigame_6_pressed"]
