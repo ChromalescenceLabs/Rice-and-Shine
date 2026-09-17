@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/CookingBGTopDown.jpg" id="3_km12d"]
 [ext_resource type="Texture2D" uid="uid://c0hf8v4dnsvvq" path="res://Assets/Kanin/RiceBowlEmpty.png" id="4_t3ihu"]
 [ext_resource type="Texture2D" uid="uid://dkervmqyks1km" path="res://Assets/Kanin/RiceBowlFull.png" id="5_ienqq"]
+[ext_resource type="Script" uid="uid://d0xrlngscr44n" path="res://Scripts/CookingMinigames/Kanin/rice_bowl.gd" id="6_27br6"]
 [ext_resource type="Texture2D" uid="uid://bhomepx0g7hyd" path="res://Assets/Kanin/RiceBowlHalf.png" id="6_tikee"]
 [ext_resource type="Texture2D" uid="uid://dgfb1ox42rcxe" path="res://Assets/Kanin/RiceBowlThird.png" id="7_o1cgv"]
 [ext_resource type="Texture2D" uid="uid://cq0j108sk2ota" path="res://Assets/Kanin/RiceContClosed.png" id="8_4pyhc"]
@@ -15,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://cetcq4pl8nunu" path="res://Assets/Kanin/RiceCookerwBubbles.png" id="13_8qhpp"]
 [ext_resource type="Texture2D" uid="uid://dj8ngma7xp07l" path="res://Assets/Kanin/RiceCookerwRice.png" id="14_sbke8"]
 [ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/recipe_book.tscn" id="15_h7to0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idtpb"]
+size = Vector2(460, 312)
 
 [node name="RiceOrKanin" type="Node2D" unique_id=1022847824]
 script = ExtResource("1_bu3c5")
@@ -31,28 +35,6 @@ scale = Vector2(0.90000004, 0.9000001)
 texture = ExtResource("3_km12d")
 
 [node name="RiceCups" type="Node2D" parent="." unique_id=1168144650]
-
-[node name="RiceBowlEmpty" type="TextureButton" parent="RiceCups" unique_id=189653761]
-offset_left = 34.0
-offset_top = -19.0
-offset_right = 634.0
-offset_bottom = 581.0
-texture_normal = ExtResource("4_t3ihu")
-
-[node name="RiceBowlFull" type="TextureRect" parent="RiceCups/RiceBowlEmpty" unique_id=1896473564]
-visible = false
-layout_mode = 0
-texture = ExtResource("5_ienqq")
-
-[node name="RiceBowlHalf" type="TextureRect" parent="RiceCups/RiceBowlEmpty" unique_id=1486703694]
-visible = false
-layout_mode = 0
-texture = ExtResource("6_tikee")
-
-[node name="RiceBowlThird" type="TextureRect" parent="RiceCups/RiceBowlEmpty" unique_id=2029439253]
-visible = false
-layout_mode = 0
-texture = ExtResource("7_o1cgv")
 
 [node name="RiceCont" type="Node2D" parent="RiceCups" unique_id=1486711832]
 position = Vector2(0, -7.6293945e-06)
@@ -76,6 +58,44 @@ scale = Vector2(0.79, 0.79)
 mouse_filter = 2
 mouse_default_cursor_shape = 7
 texture = ExtResource("9_7nwvv")
+
+[node name="RiceBowl" type="Area2D" parent="RiceCups" unique_id=2010459731]
+script = ExtResource("6_27br6")
+
+[node name="RiceBowlEmpty" type="TextureRect" parent="RiceCups/RiceBowl" unique_id=1990090424]
+offset_left = 34.0
+offset_top = -19.0
+offset_right = 634.0
+offset_bottom = 581.0
+texture = ExtResource("4_t3ihu")
+
+[node name="RiceBowlFull" type="TextureRect" parent="RiceCups/RiceBowl" unique_id=1896473564]
+visible = false
+offset_left = 34.0
+offset_top = -19.0
+offset_right = 634.0
+offset_bottom = 581.0
+texture = ExtResource("5_ienqq")
+
+[node name="RiceBowlHalf" type="TextureRect" parent="RiceCups/RiceBowl" unique_id=1486703694]
+visible = false
+offset_left = 34.0
+offset_top = -19.0
+offset_right = 634.0
+offset_bottom = 581.0
+texture = ExtResource("6_tikee")
+
+[node name="RiceBowlThird" type="TextureRect" parent="RiceCups/RiceBowl" unique_id=2029439253]
+visible = false
+offset_left = 34.0
+offset_top = -19.0
+offset_right = 634.0
+offset_bottom = 581.0
+texture = ExtResource("7_o1cgv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RiceCups/RiceBowl" unique_id=1848627145]
+position = Vector2(332, 368)
+shape = SubResource("RectangleShape2D_idtpb")
 
 [node name="Water" type="Node2D" parent="." unique_id=935142887]
 visible = false

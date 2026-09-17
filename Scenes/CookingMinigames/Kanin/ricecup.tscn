@@ -4,7 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://qp0qm7a7nguf" path="res://Assets/Kanin/RiceCupEmpty.png" id="2_s3m45"]
 [ext_resource type="Texture2D" uid="uid://da52rompavt1h" path="res://Assets/Kanin/RiceCupFilled.png" id="3_ol0q2"]
 
-[node name="RiceCup" type="Node2D" unique_id=714372729]
+[sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
+radius = 68.46897
+
+[node name="RiceCup" type="Area2D" unique_id=1436781976]
 script = ExtResource("1_i114e")
 
 [node name="RiceCupEmpty" type="Sprite2D" parent="." unique_id=550700707]
@@ -16,3 +19,10 @@ texture = ExtResource("2_s3m45")
 position = Vector2(-1, 0)
 scale = Vector2(0.87, 0.87)
 texture = ExtResource("3_ol0q2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1681279988]
+position = Vector2(-6, 1)
+shape = SubResource("CircleShape2D_08i74")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
