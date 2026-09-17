@@ -4,10 +4,12 @@ extends Control
 @onready var opened: Control = $Opened
 @onready var instructions: RichTextLabel = $Opened/Instructions
 @onready var ins_anim_in: AnimationPlayer = $Opened/InsAnimIn
+@onready var intro_anim: AnimationPlayer = $IntroAnim
 
 func _ready() -> void:
 	closed.visible = true
 	ins_anim_in.play("fade")
+	intro_anim.play("Intro")
 	
 	GlobalVars.instructions_changed.connect(_on_instructions_changed)
 

@@ -4,6 +4,42 @@
 [ext_resource type="Texture2D" uid="uid://decvmrjgt6vxc" path="res://Assets/RecBookClosed.png" id="2_po80a"]
 [ext_resource type="Texture2D" uid="uid://b04ykbm6g3xci" path="res://Assets/RecBookOpen.png" id="3_4wqci"]
 
+[sub_resource type="Animation" id="Animation_4wqci"]
+resource_name = "Intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pv1l3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y5tnk"]
+_data = {
+&"Intro": SubResource("Animation_4wqci"),
+&"RESET": SubResource("Animation_pv1l3")
+}
+
 [sub_resource type="Animation" id="Animation_lbn4d"]
 length = 0.001
 tracks/0/type = "value"
@@ -66,11 +102,16 @@ _data = {
 }
 
 [node name="RecipeBook" type="Control" unique_id=1851881949]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 183.0
 offset_bottom = 237.0
 script = ExtResource("1_lbn4d")
+
+[node name="IntroAnim" type="AnimationPlayer" parent="." unique_id=1889189364]
+libraries/ = SubResource("AnimationLibrary_y5tnk")
+speed_scale = 2.215
 
 [node name="Closed" type="TextureRect" parent="." unique_id=1644683325]
 layout_mode = 0
