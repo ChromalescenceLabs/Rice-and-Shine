@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
 
-[ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://scenes/node_2d.gd" id="1_6e84v"]
-[ext_resource type="Texture2D" uid="uid://bqqxe0wkrwfdr" path="res://sprites/logo rice and shine.png" id="2_4dvvg"]
+[ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/minigame_select.gd" id="1_o6kqx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nywky"]
+load_path = "res://.godot/imported/logo rice and shine.png-ec398bc4d2f7a3610a619a3c786feaf4.ctex"
 
 [node name="Minigame Selection" type="Node2D" unique_id=380012965]
-script = ExtResource("1_6e84v")
+script = ExtResource("1_o6kqx")
 
 [node name="Selection" type="Control" parent="." unique_id=1185375392]
 layout_mode = 3
@@ -57,7 +59,7 @@ offset_bottom = 692.0
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510853050]
 position = Vector2(634, 117.00001)
 scale = Vector2(0.19780816, 0.19780816)
-texture = ExtResource("2_4dvvg")
+texture = SubResource("CompressedTexture2D_nywky")
 
 [connection signal="pressed" from="Selection/Rice" to="." method="_on_minigame_1_pressed"]
 [connection signal="pressed" from="Selection/Minigame 2" to="." method="_on_minigame_2_pressed"]
