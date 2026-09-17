@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
 
 [ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/minigame_select.gd" id="1_o6kqx"]
+[ext_resource type="Texture2D" uid="uid://ce8n8x7yimu1j" path="res://Assets/RICE.png" id="2_nywky"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nywky"]
 load_path = "res://.godot/imported/logo rice and shine.png-ec398bc4d2f7a3610a619a3c786feaf4.ctex"
@@ -14,12 +15,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Rice" type="Button" parent="Selection" unique_id=223962918]
+[node name="Rice" type="TextureButton" parent="Selection" unique_id=1511388286]
 layout_mode = 0
 offset_left = 91.0
 offset_top = 238.0
-offset_right = 438.0
-offset_bottom = 452.0
+offset_right = 731.0
+offset_bottom = 597.0
+scale = Vector2(0.544, 0.596)
+texture_normal = ExtResource("2_nywky")
 
 [node name="Minigame 2" type="Button" parent="Selection" unique_id=1014540125]
 layout_mode = 0
