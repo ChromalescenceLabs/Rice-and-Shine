@@ -1,6 +1,8 @@
 extends Area2D
 class_name RiceBowl
 
+signal riceCupDone
+
 var riceAmt : int = 0:
 	set(value):
 		riceAmt = value
@@ -22,4 +24,6 @@ var riceAmt : int = 0:
 					i.visible = false
 				else:
 					i.visible = true
+					
+			riceCupDone.emit()
 			

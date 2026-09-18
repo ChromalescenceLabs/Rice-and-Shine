@@ -50,10 +50,14 @@ text = "GREAT"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="SuccessParticles" type="GPUParticles2D" parent="." unique_id=1564826323]
-amount = 14
+emitting = false
+amount = 24
 texture = SubResource("GradientTexture2D_j0s8l")
-lifetime = 1.7
-speed_scale = 2.3
+lifetime = 0.6
+one_shot = true
 process_material = SubResource("ParticleProcessMaterial_idtpb")
+
+[connection signal="finished" from="SuccessParticles" to="." method="_on_success_particles_finished"]
