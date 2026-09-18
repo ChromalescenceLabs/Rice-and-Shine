@@ -136,3 +136,4 @@ scale = Vector2(0.795, 0.795)
 [connection signal="pressed" from="RiceCups/RiceCont/RiceContClosed" to="." method="_on_rice_cont_closed_pressed"]
 [connection signal="mouse_entered" from="RiceCups/RiceCont/RiceContOpened" to="." method="_on_rice_cont_opened_mouse_entered"]
 [connection signal="mouse_exited" from="RiceCups/RiceCont/RiceContOpened" to="." method="_on_rice_cont_opened_mouse_exited"]
+[connection signal="riceCupDone" from="RiceCups/RiceBowl" to="." method="_on_rice_bowl_rice_cup_done"]

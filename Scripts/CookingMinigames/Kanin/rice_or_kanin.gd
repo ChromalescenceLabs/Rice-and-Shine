@@ -3,6 +3,8 @@ extends Node2D
 @onready var rice_cont_closed: TextureButton = $RiceCups/RiceCont/RiceContClosed
 @onready var rice_cont_opened: TextureRect = $RiceCups/RiceCont/RiceContOpened
 
+const SUCCIND = preload("uid://beppy36ki8xum")
+
 const RICE_CUP = preload("uid://cpvm4q1ywd7h5")
 var rice_cup_pos : Vector2
 var riceContMonitoring : bool = false
@@ -28,3 +30,8 @@ func _on_rice_cont_opened_mouse_entered() -> void:
 func _on_rice_cont_opened_mouse_exited() -> void:
 	set_process_input(false)
 	riceContMonitoring = false
+	
+func _on_rice_bowl_rice_cup_done() -> void:
+	var success = SUCCIND.instantiate()
+	success.global_position = get_viewport().size / 2
+	add_child(success)
