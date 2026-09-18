@@ -35,6 +35,7 @@ scale = Vector2(0.90000004, 0.9000001)
 texture = ExtResource("3_km12d")
 
 [node name="RiceCups" type="Node2D" parent="." unique_id=1168144650]
+visible = false
 
 [node name="RiceCont" type="Node2D" parent="RiceCups" unique_id=1486711832]
 position = Vector2(0, -7.6293945e-06)
@@ -98,7 +99,6 @@ position = Vector2(332, 368)
 shape = SubResource("RectangleShape2D_idtpb")
 
 [node name="Water" type="Node2D" parent="." unique_id=935142887]
-visible = false
 
 [node name="Faucet" type="Sprite2D" parent="Water" unique_id=327294265]
 position = Vector2(637, 243)
