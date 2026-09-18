@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
 
 [ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/minigame_select.gd" id="1_o6kqx"]
+[ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/rice.png" id="2_8ljou"]
+[ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/pancake.png" id="3_gt6vn"]
+[ext_resource type="Texture2D" uid="uid://flr15pt8c72a" path="res://Assets/placeholder.png" id="4_len8d"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nywky"]
 load_path = "res://.godot/imported/logo rice and shine.png-ec398bc4d2f7a3610a619a3c786feaf4.ctex"
@@ -14,50 +17,62 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Rice" type="Button" parent="Selection" unique_id=223962918]
+[node name="Rice" type="TextureButton" parent="Selection" unique_id=1511388286]
 layout_mode = 0
-offset_left = 91.0
-offset_top = 238.0
-offset_right = 438.0
-offset_bottom = 452.0
+offset_left = 50.0
+offset_top = 240.0
+offset_right = 688.0
+offset_bottom = 599.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("2_8ljou")
 
-[node name="Minigame 2" type="Button" parent="Selection" unique_id=1014540125]
+[node name="Minigame 2" type="TextureButton" parent="Selection" unique_id=435824771]
 layout_mode = 0
-offset_left = 463.0
-offset_top = 238.0
-offset_right = 810.0
-offset_bottom = 452.0
+offset_left = 450.0
+offset_top = 240.0
+offset_right = 1088.0
+offset_bottom = 599.0008
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("3_gt6vn")
 
-[node name="Minigame 3" type="Button" parent="Selection" unique_id=1620176494]
+[node name="Minigame 3" type="TextureButton" parent="Selection" unique_id=1438000863]
 layout_mode = 0
-offset_left = 833.0
-offset_top = 238.0
-offset_right = 1180.0
-offset_bottom = 452.0
+offset_left = 850.0
+offset_top = 240.0
+offset_right = 1488.0
+offset_bottom = 599.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("4_len8d")
 
-[node name="Minigame 4" type="Button" parent="Selection" unique_id=1465234360]
+[node name="Minigame 4" type="TextureButton" parent="Selection" unique_id=1236986991]
 layout_mode = 0
-offset_left = 91.0
-offset_top = 478.0
-offset_right = 438.0
-offset_bottom = 692.0
+offset_left = 50.0
+offset_top = 475.0
+offset_right = 688.0
+offset_bottom = 834.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("4_len8d")
 
-[node name="Minigame 5" type="Button" parent="Selection" unique_id=633912784]
+[node name="Minigame 5" type="TextureButton" parent="Selection" unique_id=1682458591]
 layout_mode = 0
-offset_left = 463.0
-offset_top = 478.0
-offset_right = 810.0
-offset_bottom = 692.0
+offset_left = 450.0
+offset_top = 475.0
+offset_right = 797.0
+offset_bottom = 689.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("4_len8d")
 
-[node name="Minigame 6" type="Button" parent="Selection" unique_id=122577164]
+[node name="Minigame 6" type="TextureButton" parent="Selection" unique_id=446821078]
 layout_mode = 0
-offset_left = 833.0
-offset_top = 478.0
-offset_right = 1180.0
-offset_bottom = 692.0
+offset_left = 850.0
+offset_top = 475.0
+offset_right = 1488.0
+offset_bottom = 834.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("4_len8d")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510853050]
-position = Vector2(634, 117.00001)
+position = Vector2(640, 117)
 scale = Vector2(0.19780816, 0.19780816)
 texture = SubResource("CompressedTexture2D_nywky")
 
