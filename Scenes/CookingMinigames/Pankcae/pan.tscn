@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bk6jk1qqteoq8" path="res://Assets/Pankcae/PancakeS3.png" id="6_14el7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
-radius = 167.00299
+radius = 109.786156
 
 [node name="Pan" type="Area2D" unique_id=1718511203]
 script = ExtResource("1_kysbn")
@@ -35,3 +35,7 @@ texture = ExtResource("6_14el7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1418504124]
 position = Vector2(105, -1)
 shape = SubResource("CircleShape2D_1vivr")
+
+[node name="Timer" type="Timer" parent="." unique_id=808492958]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

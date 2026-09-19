@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bsqiy3ob0yoo" path="res://Assets/Pankcae/BatterS5.png" id="6_d0wqq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
-radius = 167.0479
+radius = 61.204575
 
 [node name="BowlBatter" type="Area2D" unique_id=1520276035]
 script = ExtResource("1_vulee")

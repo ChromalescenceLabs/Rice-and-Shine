@@ -18,6 +18,7 @@ texture = ExtResource("1_ftsvu")
 [node name="BatterStuff" type="Node2D" parent="." unique_id=326722561]
 
 [node name="BatterCup" parent="BatterStuff" unique_id=478683369 instance=ExtResource("2_rm7bj")]
+z_index = 1
 position = Vector2(876, 117)
 scale = Vector2(0.5, 0.5)
 
@@ -31,5 +32,6 @@ rotation = -0.8709193
 scale = Vector2(1.5, 1.5)
 
 [node name="Oil" parent="." unique_id=1503278428 instance=ExtResource("5_1f2tk")]
+z_index = 1
 position = Vector2(1173, 121)
 scale = Vector2(0.6, 0.6)
