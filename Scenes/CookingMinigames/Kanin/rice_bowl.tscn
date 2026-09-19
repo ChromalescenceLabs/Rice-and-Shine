@@ -3,9 +3,13 @@
 [ext_resource type="Script" uid="uid://cwkn8xqbl8gfu" path="res://Scripts/CookingMinigames/Kanin/rice_bowl_item.gd" id="1_8w060"]
 [ext_resource type="Script" uid="uid://cml38j0uu00f2" path="res://Scripts/CookingMinigames/Kanin/rice_bowl_fill_area.gd" id="1_e6a4i"]
 [ext_resource type="Texture2D" uid="uid://dkervmqyks1km" path="res://Assets/Kanin/RiceBowlFull.png" id="1_qb8ax"]
+[ext_resource type="Script" uid="uid://j6q5rk7qfms4" path="res://Scripts/CookingMinigames/Kanin/rice_cook_input.gd" id="4_jus3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jus3d"]
 size = Vector2(308, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vljv"]
+size = Vector2(328, 228)
 
 [node name="RiceBowl" type="Node2D" unique_id=1504106188]
 z_index = 1
@@ -28,6 +32,13 @@ offset_left = -175.0
 offset_top = -54.0
 offset_right = 166.0
 offset_bottom = 180.0
+
+[node name="RiceCookInput" type="Area2D" parent="." unique_id=1252570514]
+script = ExtResource("4_jus3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RiceCookInput" unique_id=895715773]
+position = Vector2(-8, 72)
+shape = SubResource("RectangleShape2D_3vljv")
 
 [connection signal="mouse_entered" from="PickableArea" to="." method="_on_pickable_area_mouse_entered"]
 [connection signal="mouse_exited" from="PickableArea" to="." method="_on_pickable_area_mouse_exited"]

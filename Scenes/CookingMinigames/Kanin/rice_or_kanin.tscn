@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://c0i0f0pjpd6sx" path="res://Scripts/CookingMinigames/Kanin/water.gd" id="13_km12d"]
 [ext_resource type="Texture2D" uid="uid://dj8ngma7xp07l" path="res://Assets/Kanin/RiceCookerwRice.png" id="14_sbke8"]
 [ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/recipe_book.tscn" id="15_h7to0"]
+[ext_resource type="Script" uid="uid://l5ogrgq5k2u5" path="res://Scripts/CookingMinigames/Kanin/rice_cooker.gd" id="15_ienqq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idtpb"]
 size = Vector2(460, 312)
@@ -45,6 +46,12 @@ hue_variation_max = -2.2351742e-08
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08i74"]
 size = Vector2(32, 110)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
+radius = 239.41791
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vljv"]
+bg_color = Color(0.6175402, 0.9197356, 0.6136982, 1)
 
 [node name="RiceOrKanin" type="Node2D" unique_id=1022847824]
 script = ExtResource("1_bu3c5")
@@ -178,13 +185,13 @@ offset_bottom = 670.0
 [node name="ProgressBarChangeTime" type="Timer" parent="Water/WaterProgressBar" unique_id=562624450]
 wait_time = 0.05
 
-[node name="RiceCooker" type="Node2D" parent="." unique_id=835867329]
+[node name="RiceCooker" type="Node2D" parent="." unique_id=835867329 node_paths=PackedStringArray("ricebowl")]
+script = ExtResource("15_ienqq")
+ricebowl = NodePath("../Water/RiceBowl")
 metadata/_edit_lock_ = true
-visible = false
 
 [node name="RiceCooker" type="Sprite2D" parent="RiceCooker" unique_id=719095520]
-visible = false
-position = Vector2(361.5, 343.5)
+position = Vector2(613, 333.00003)
 scale = Vector2(0.815, 0.815)
 texture = ExtResource("12_1dyx4")
 
@@ -196,6 +203,23 @@ texture = ExtResource("13_8qhpp")
 visible = false
 texture = ExtResource("14_sbke8")
 
+[node name="RiceCookerCol" type="Area2D" parent="RiceCooker/RiceCooker" unique_id=1160338774]
+visible = false
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RiceCooker/RiceCooker/RiceCookerCol" unique_id=1606139458]
+visible = false
+position = Vector2(-3.8146973e-05, 4.9079757)
+shape = SubResource("CircleShape2D_08i74")
+
+[node name="RiceCookingProgress" type="ProgressBar" parent="RiceCooker" unique_id=1526586100]
+offset_left = 422.0
+offset_top = 100.0
+offset_right = 810.0
+offset_bottom = 127.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_3vljv")
+show_percentage = false
+
 [node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("15_h7to0")]
 offset_left = 9.0
 offset_top = 528.0
@@ -203,6 +227,8 @@ offset_right = 192.0
 offset_bottom = 765.0
 scale = Vector2(0.795, 0.795)
 
+[connection signal="RiceCookerSection" from="." to="." method="_on_rice_cooker_section"]
+[connection signal="RiceCookerSection" from="." to="RiceCooker" method="_on_rice_or_kanin_rice_cooker_section"]
 [connection signal="waterSection" from="." to="." method="_on_water_section"]
 [connection signal="waterSection" from="." to="Water/Water" method="_on_rice_or_kanin_water_section"]
 [connection signal="pressed" from="RiceCups/RiceCont/RiceContClosed" to="." method="_on_rice_cont_closed_pressed"]
@@ -216,3 +242,6 @@ scale = Vector2(0.795, 0.795)
 [connection signal="area_entered" from="Water/Water/WaterDetect" to="Water/Water" method="_on_water_detect_area_entered"]
 [connection signal="area_exited" from="Water/Water/WaterDetect" to="Water/Water" method="_on_water_detect_area_exited"]
 [connection signal="timeout" from="Water/WaterProgressBar/ProgressBarChangeTime" to="Water/Water" method="_on_progress_bar_change_time_timeout"]
+[connection signal="RiceCookerDone" from="RiceCooker" to="." method="_on_rice_cooker_rice_cooker_done"]
+[connection signal="area_entered" from="RiceCooker/RiceCooker/RiceCookerCol" to="RiceCooker" method="_on_rice_cooker_col_area_entered"]
+[connection signal="area_exited" from="RiceCooker/RiceCooker/RiceCookerCol" to="RiceCooker" method="_on_rice_cooker_col_area_exited"]
