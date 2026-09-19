@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://2756jtyts0ga"]
+
+[ext_resource type="Script" uid="uid://fist8wkto6cn" path="res://Scripts/CookingMinigames/Pamcake/bowl.gd" id="1_vulee"]
+[ext_resource type="Texture2D" uid="uid://bk1egyqyre667" path="res://Assets/Pankcae/BatterS1.png" id="2_4gon2"]
+[ext_resource type="Texture2D" uid="uid://cp6t4ty53u3db" path="res://Assets/Pankcae/BatterS2.png" id="3_35naq"]
+[ext_resource type="Texture2D" uid="uid://8i5xj2sgux1u" path="res://Assets/Pankcae/BatterS3.png" id="4_php7g"]
+[ext_resource type="Texture2D" uid="uid://bn2txwiqsvesj" path="res://Assets/Pankcae/BatterS4.png" id="5_jsoaa"]
+[ext_resource type="Texture2D" uid="uid://bsqiy3ob0yoo" path="res://Assets/Pankcae/BatterS5.png" id="6_d0wqq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 167.0479
+
+[node name="BowlBatter" type="Area2D" unique_id=1520276035]
+script = ExtResource("1_vulee")
+
+[node name="BowlBatterStage1" type="Sprite2D" parent="." unique_id=1922863621]
+texture = ExtResource("2_4gon2")
+
+[node name="BowlBatterStage2" type="Sprite2D" parent="." unique_id=900399322]
+visible = false
+texture = ExtResource("3_35naq")
+
+[node name="BowlBatterStage3" type="Sprite2D" parent="." unique_id=731264191]
+visible = false
+texture = ExtResource("4_php7g")
+
+[node name="BowlBatterStage4" type="Sprite2D" parent="." unique_id=1398766915]
+visible = false
+texture = ExtResource("5_jsoaa")
+
+[node name="BowlBatterStage5" type="Sprite2D" parent="." unique_id=1800604009]
+visible = false
+texture = ExtResource("6_d0wqq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=920305103]
+position = Vector2(7, 1)
+shape = SubResource("CircleShape2D_1vivr")

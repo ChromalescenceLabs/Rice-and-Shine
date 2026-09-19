@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://d4iqxrauw1jdo"]
+
+[ext_resource type="Script" uid="uid://blfb2fntarvhr" path="res://Scripts/CookingMinigames/Pamcake/pan.gd" id="1_kysbn"]
+[ext_resource type="Texture2D" uid="uid://iqxaxa0bo02s" path="res://Assets/Non-specific/Pan.png" id="2_fou5r"]
+[ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Pankcae/PanOil.png" id="3_8alnw"]
+[ext_resource type="Texture2D" uid="uid://dpesqyakkyses" path="res://Assets/Pankcae/PancakeS1.png" id="4_f001r"]
+[ext_resource type="Texture2D" uid="uid://c1u1cp4kewa4t" path="res://Assets/Pankcae/PancakeS2.png" id="5_q2x4l"]
+[ext_resource type="Texture2D" uid="uid://bk6jk1qqteoq8" path="res://Assets/Pankcae/PancakeS3.png" id="6_14el7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 167.00299
+
+[node name="Pan" type="Area2D" unique_id=1718511203]
+script = ExtResource("1_kysbn")
+
+[node name="Pan" type="Sprite2D" parent="." unique_id=816629609]
+texture = ExtResource("2_fou5r")
+
+[node name="PanOil" type="Sprite2D" parent="." unique_id=944080455]
+visible = false
+texture = ExtResource("3_8alnw")
+
+[node name="PanBatterStage1" type="Sprite2D" parent="." unique_id=722659245]
+visible = false
+texture = ExtResource("4_f001r")
+
+[node name="PanBatterStage2" type="Sprite2D" parent="." unique_id=1988782864]
+visible = false
+texture = ExtResource("5_q2x4l")
+
+[node name="PanBatterStage3" type="Sprite2D" parent="." unique_id=1647942163]
+visible = false
+texture = ExtResource("6_14el7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1418504124]
+position = Vector2(105, -1)
+shape = SubResource("CircleShape2D_1vivr")

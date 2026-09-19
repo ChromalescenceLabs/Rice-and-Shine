@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6d3l6vcsh50c"
-path="res://.godot/imported/pan.png-4e0f37836c0b7c2a93b7453ae203e5be.ctex"
+uid="uid://cp6t4ty53u3db"
+path="res://.godot/imported/BatterS2.png-2a17bbd34ed1c1b89da5744735f7fa0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pankcae/pan.png"
-dest_files=["res://.godot/imported/pan.png-4e0f37836c0b7c2a93b7453ae203e5be.ctex"]
+source_file="res://Assets/Pankcae/BatterS2.png"
+dest_files=["res://.godot/imported/BatterS2.png-2a17bbd34ed1c1b89da5744735f7fa0a.ctex"]
 
 [params]
 

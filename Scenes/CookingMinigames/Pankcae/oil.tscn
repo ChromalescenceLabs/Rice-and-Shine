@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dyhiafkx186ho"]
+
+[ext_resource type="Script" uid="uid://b5638egsg1cir" path="res://Scripts/CookingMinigames/Pamcake/oil.gd" id="1_tg4h3"]
+[ext_resource type="Texture2D" uid="uid://dlhiny7jepn6v" path="res://Assets/Pankcae/Oil.png" id="2_wywbs"]
+[ext_resource type="Texture2D" uid="uid://cqua4qbkc5ucb" path="res://Assets/Pankcae/Oil_Open.png" id="3_u45oe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(278, 295)
+
+[node name="Oil" type="Area2D" unique_id=1503278428]
+script = ExtResource("1_tg4h3")
+
+[node name="OilClosed" type="Sprite2D" parent="." unique_id=1943141515]
+texture = ExtResource("2_wywbs")
+
+[node name="OilOpened" type="Sprite2D" parent="." unique_id=1078451148]
+texture = ExtResource("3_u45oe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=441207404]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_1vivr")
