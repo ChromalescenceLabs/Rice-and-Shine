@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dbhoiq6ipsn5g"]
+
+[ext_resource type="Script" uid="uid://cwkn8xqbl8gfu" path="res://Scripts/CookingMinigames/Kanin/rice_bowl_item.gd" id="1_8w060"]
+[ext_resource type="Script" uid="uid://cml38j0uu00f2" path="res://Scripts/CookingMinigames/Kanin/rice_bowl_fill_area.gd" id="1_e6a4i"]
+[ext_resource type="Texture2D" uid="uid://dkervmqyks1km" path="res://Assets/Kanin/RiceBowlFull.png" id="1_qb8ax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jus3d"]
+size = Vector2(308, 80)
+
+[node name="RiceBowl" type="Node2D" unique_id=1504106188]
+z_index = 1
+script = ExtResource("1_8w060")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2007661030]
+scale = Vector2(0.7733333, 0.7733333)
+texture = ExtResource("1_qb8ax")
+
+[node name="RiceBowlFillArea" type="Area2D" parent="." unique_id=1818557488]
+script = ExtResource("1_e6a4i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RiceBowlFillArea" unique_id=1586883194]
+position = Vector2(-7, 0)
+shape = SubResource("RectangleShape2D_jus3d")
+
+[node name="PickableArea" type="ColorRect" parent="." unique_id=833656701]
+modulate = Color(1, 1, 1, 0)
+offset_left = -175.0
+offset_top = -54.0
+offset_right = 166.0
+offset_bottom = 180.0
+
+[connection signal="mouse_entered" from="PickableArea" to="." method="_on_pickable_area_mouse_entered"]
+[connection signal="mouse_exited" from="PickableArea" to="." method="_on_pickable_area_mouse_exited"]
