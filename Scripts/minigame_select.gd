@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_minigame_1_pressed() -> void:
-	pass # Replace with function body.
+	SceneLoader.load_scene("uid://sukerfnpt5d5", 1.5)
 
 
 func _on_minigame_2_pressed() -> void:
