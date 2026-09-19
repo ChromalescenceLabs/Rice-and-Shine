@@ -180,7 +180,6 @@ wait_time = 0.05
 
 [node name="RiceCooker" type="Node2D" parent="." unique_id=835867329]
 metadata/_edit_lock_ = true
-visible = false
 
 [node name="RiceCooker" type="Sprite2D" parent="RiceCooker" unique_id=719095520]
 visible = false
