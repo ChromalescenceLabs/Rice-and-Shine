@@ -22,15 +22,23 @@ script = ExtResource("1_opfnp")
 tween_intensity = 1.2
 tween_duration = 0.3
 
-[node name="BACKGROUND" type="Sprite2D" parent="." unique_id=417947079]
-position = Vector2(189, -255)
+[node name="Node2D" type="Node2D" parent="." unique_id=2019943700]
+texture_filter = 1
+position = Vector2(642, 87)
+scale = Vector2(1.1, 1.1)
+
+[node name="BACKGROUND" type="Sprite2D" parent="Node2D" unique_id=417947079]
+texture_filter = 1
+position = Vector2(1, 0)
 texture = ExtResource("1_28flt")
 script = ExtResource("3_yhxw7")
 
-[node name="LOGO" type="Sprite2D" parent="." unique_id=1486802928]
-position = Vector2(157, -146)
-scale = Vector2(0.22503203, 0.23590584)
+[node name="LOGO" type="Sprite2D" parent="Node2D" unique_id=1486802928]
+texture_filter = 1
+position = Vector2(-632.7272, -326.36362)
+scale = Vector2(0.19496661, 0.20438762)
 texture = ExtResource("3_cp0ys")
+centered = false
 
 [node name="START" type="Button" parent="." unique_id=1996352847]
 layout_mode = 1

@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://rpttvokvgsb6" path="res://Scenes/options_menu_buttons.gd" id="1_l1wg4"]
 [ext_resource type="Texture2D" uid="uid://cntmbleckj1kl" path="res://main menu bg.png" id="1_plplt"]
 [ext_resource type="Script" uid="uid://dpplwsodknegj" path="res://options_back.gd" id="2_uj0ok"]
+[ext_resource type="Script" uid="uid://b52ieug3kg06n" path="res://Scenes/background.gd" id="3_inh3s"]
+[ext_resource type="Script" uid="uid://bwq47e1pxxheg" path="res://Scenes/fullscreen_toggle.gd" id="5_m6e8v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qj2yo"]
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [node name="Control" type="Control" unique_id=1099961032]
 layout_mode = 3
@@ -23,18 +31,19 @@ tween_duration = 0.3
 [node name="BACKGROUND" type="Sprite2D" parent="." unique_id=1792146214]
 texture = ExtResource("1_plplt")
 centered = false
+script = ExtResource("3_inh3s")
 
 [node name="BACK" type="Button" parent="." unique_id=914300871]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.079
-anchor_top = 0.053000003
-anchor_right = 0.079
-anchor_bottom = 0.053000003
-offset_left = -77.12
-offset_top = -18.160004
-offset_right = 77.88
-offset_bottom = 17.839996
+anchor_left = 0.21900001
+anchor_top = 0.067
+anchor_right = 0.21900001
+anchor_bottom = 0.067
+offset_left = -77.32001
+offset_top = -18.240002
+offset_right = 77.67999
+offset_bottom = 17.759998
 text = "BACK
 "
 alignment = 0
@@ -43,14 +52,15 @@ script = ExtResource("2_uj0ok")
 [node name="Panel" type="Panel" parent="." unique_id=1986643102]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.528
-anchor_right = 0.5
-anchor_bottom = 0.528
-offset_left = -615.0
-offset_top = -311.16
-offset_right = 616.0
-offset_bottom = 311.84
+anchor_left = 0.504
+anchor_top = 0.5
+anchor_right = 0.504
+anchor_bottom = 0.5
+offset_left = -443.12
+offset_top = -268.0
+offset_right = 441.88
+offset_bottom = 278.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qj2yo")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=1402558731]
 layout_mode = 1
@@ -66,4 +76,20 @@ offset_bottom = 45.122986
 theme_override_font_sizes/normal_font_size = 50
 text = "WORK IN PROGRESS!!!!"
 
+[node name="FULLSCREEN" type="CheckButton" parent="Panel" unique_id=798558142]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.90300006
+anchor_right = 0.508
+anchor_bottom = 0.90300006
+offset_left = -99.58002
+offset_top = -36.038025
+offset_right = 100.41998
+offset_bottom = 35.961975
+theme_override_font_sizes/font_size = 25
+text = "FULLSCREEN"
+script = ExtResource("5_m6e8v")
+
 [connection signal="pressed" from="BACK" to="BACK" method="_on_pressed"]
+[connection signal="toggled" from="Panel/FULLSCREEN" to="Panel/FULLSCREEN" method="_on_toggled"]
