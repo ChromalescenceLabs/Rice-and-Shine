@@ -5,6 +5,9 @@
 [ext_resource type="Script" uid="uid://dpplwsodknegj" path="res://options_back.gd" id="2_uj0ok"]
 [ext_resource type="Script" uid="uid://b52ieug3kg06n" path="res://Scenes/background.gd" id="3_inh3s"]
 [ext_resource type="Script" uid="uid://bwq47e1pxxheg" path="res://Scenes/fullscreen_toggle.gd" id="5_m6e8v"]
+[ext_resource type="Script" uid="uid://bqwecovhu2erk" path="res://Scenes/master_slide.gd" id="5_tqe32"]
+[ext_resource type="Script" uid="uid://doyfntuq0qq02" path="res://Scenes/sfx_slide.gd" id="6_qfavn"]
+[ext_resource type="Script" uid="uid://bryxqbd4qi64b" path="res://Scenes/music_slide.gd" id="7_syw6n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qj2yo"]
 corner_radius_top_left = 25
@@ -12,8 +15,27 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syw6n"]
+bg_color = Color(0.36970517, 0.7913994, 0.8210312, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_838ek"]
+bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbndg"]
+bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6r4q"]
+bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyb61"]
+bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_064ll"]
+bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
+
 [node name="Control" type="Control" unique_id=1099961032]
 layout_mode = 3
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -62,19 +84,129 @@ offset_right = 289.68
 offset_bottom = 271.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qj2yo")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=1402558731]
+[node name="MASTERSLIDE" type="HSlider" parent="Panel" unique_id=496657446]
+layout_mode = 1
+offset_left = 137.0
+offset_top = 154.0
+offset_right = 560.0
+offset_bottom = 170.0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_syw6n")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_838ek")
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_tqe32")
+
+[node name="SFXSLIDE" type="HSlider" parent="Panel" unique_id=1029029510]
+layout_mode = 1
+offset_left = 137.0
+offset_top = 214.0
+offset_right = 560.0
+offset_bottom = 230.0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_wbndg")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_a6r4q")
+max_value = 1.0
+step = 0.001
+script = ExtResource("6_qfavn")
+
+[node name="MUSICSLIDE" type="HSlider" parent="Panel" unique_id=1923276218]
+layout_mode = 1
+offset_left = 137.0
+offset_top = 285.0
+offset_right = 560.0
+offset_bottom = 301.0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_uyb61")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_064ll")
+max_value = 1.0
+step = 0.001
+script = ExtResource("7_syw6n")
+
+[node name="MASTERLABEL" type="RichTextLabel" parent="Panel" unique_id=1402558731]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11100001
+anchor_top = 0.30800003
+anchor_right = 0.11100001
+anchor_bottom = 0.30800003
+offset_left = -56.269005
+offset_top = -28.168015
+offset_right = 72.730995
+offset_bottom = 16.831985
+theme_override_font_sizes/normal_font_size = 30
+text = "MASTER"
+
+[node name="SFXLABEL" type="RichTextLabel" parent="Panel" unique_id=1928801646]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.409
+anchor_right = 0.125
+anchor_bottom = 0.409
+offset_left = -64.375
+offset_top = -22.31401
+offset_right = 64.625
+offset_bottom = 22.68599
+theme_override_font_sizes/normal_font_size = 30
+text = "SFX
+"
+
+[node name="MUSICLABEL" type="RichTextLabel" parent="Panel" unique_id=92514645]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.532
+anchor_right = 0.125
+anchor_bottom = 0.532
+offset_left = -64.375
+offset_top = -22.472015
+offset_right = 64.625
+offset_bottom = 22.527985
+theme_override_font_sizes/normal_font_size = 30
+text = "MUSIC
+"
+
+[node name="OPTIONSLABEL" type="RichTextLabel" parent="Panel" unique_id=1848529921]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51000005
+anchor_top = 0.066
+anchor_right = 0.51000005
+anchor_bottom = 0.066
+offset_left = -117.29004
+offset_top = -36.036
+offset_right = 117.70996
+offset_bottom = 35.964
+theme_override_font_sizes/normal_font_size = 50
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="AUDIO LABEL" type="RichTextLabel" parent="Panel" unique_id=1028122288]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.23300001
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -235.5
-offset_top = -48.0
-offset_right = 228.16943
-offset_bottom = 48.0
-theme_override_font_sizes/normal_font_size = 30
-text = "VOLUME SLIDERS TBA WHEN THERES AUDIO"
+anchor_bottom = 0.23300001
+offset_left = -111.5
+offset_top = -36.218002
+offset_right = 123.5
+offset_bottom = 35.781998
+theme_override_font_sizes/normal_font_size = 40
+text = "AUDIO"
+horizontal_alignment = 1
+
+[node name="AUDIO LABEL2" type="RichTextLabel" parent="Panel" unique_id=2109702475]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.23300001
+anchor_right = 0.5
+anchor_bottom = 0.23300001
+offset_left = -175.5
+offset_top = 199.782
+offset_right = 180.5
+offset_bottom = 271.78198
+theme_override_font_sizes/normal_font_size = 40
+text = "MISCELLANEOUS"
 horizontal_alignment = 1
 
 [node name="FULLSCREEN" type="CheckButton" parent="Panel" unique_id=798558142]
@@ -84,14 +216,17 @@ anchor_left = 0.508
 anchor_top = 0.90300006
 anchor_right = 0.508
 anchor_bottom = 0.90300006
-offset_left = -99.58002
-offset_top = -36.038025
-offset_right = 100.41998
-offset_bottom = 35.961975
-theme_override_font_sizes/font_size = 25
+offset_left = -286.13202
+offset_top = -98.038025
+offset_right = 273.86798
+offset_bottom = -26.038025
+theme_override_font_sizes/font_size = 30
 button_pressed = true
 text = "FULLSCREEN"
 script = ExtResource("5_m6e8v")
 
 [connection signal="pressed" from="BACK" to="BACK" method="_on_pressed"]
+[connection signal="value_changed" from="Panel/MASTERSLIDE" to="Panel/MASTERSLIDE" method="_on_value_changed"]
+[connection signal="value_changed" from="Panel/SFXSLIDE" to="Panel/SFXSLIDE" method="_on_value_changed"]
+[connection signal="value_changed" from="Panel/MUSICSLIDE" to="Panel/MUSICSLIDE" method="_on_value_changed"]
 [connection signal="toggled" from="Panel/FULLSCREEN" to="Panel/FULLSCREEN" method="_on_toggled"]
