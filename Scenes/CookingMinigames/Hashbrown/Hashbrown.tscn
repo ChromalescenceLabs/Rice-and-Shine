@@ -105,3 +105,8 @@ offset_right = 552.0
 offset_bottom = 485.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="body_entered" from="grater" to="gratedFull" method="_on_grater_body_entered"]
+[connection signal="body_exited" from="grater" to="gratedFull" method="_on_grater_body_exited"]
+
+[editable path="gratedFull"]

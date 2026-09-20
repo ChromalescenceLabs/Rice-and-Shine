@@ -12,11 +12,11 @@ var origPos=self.global_position
 var picked=false
 var pickUp=false
 var canGrate=false 
-var apple =1
-var subset = get_subset_by_index(apple)
+var amtChange =0
 
 func _ready() -> void:
 	print('hi')
+	get_subset_by_index(amtChange)
 	
 	for start in range(0, self.get_children().size(), 2):
 		var subset = self.get_children().slice(start,start+ 4)
@@ -24,28 +24,31 @@ func _ready() -> void:
 		for child in subset:
 			print("  ", child.name)
 
-func get_subset_by_index(apple: int):
+func get_subset_by_index(amt:int):
 	var step = 2
 	var window_size = 4
 
-	var start = apple * 2
+	var start = amt * 2
 
 	if start >= self.get_children().size():
-		print("No subset for apple = ", apple)
+		print(self.get_children().size(), "No subset for ", amt)
 		return 
 	
-	var subset = self.get_children().slice(start, window_size)
-	print("Subset %d (apple=%d):" % [apple + 1, apple])
+	var subset = self.get_children().slice(start, start+2)
 	for child in subset:
 		print("  ", child.name)
+		child.visible= false
+	subset = self.get_children().slice(start+2, start+4)
+	for child in subset:
+		print("  ", child.name)
+		child.visible= true
 	return subset
-
 
 func _process(delta: float) -> void:
 	if picked:
-		self.global_position = get_global_mouse_position()
+		self.global_position = lerp(self.global_position, get_global_mouse_position(), 0.2)
 	else:
-		self.global_position = origPos
+		self.global_position = lerp(self.global_position, origPos, 0.05)
 
 func _on_mouse_entered() -> void:
 	pickUp=true
@@ -62,12 +65,12 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_released("Click"):
 		picked=false
 
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.name == "grater":
+func _on_grater_body_entered(body: Node2D) -> void:
+	if body == self:
 		canGrate=true
 		print("guys how do i do this")
 
-func _on_body_exited(body: Node2D) -> void:
-	if body.name == "grater":
+
+func _on_grater_body_exited(body: Node2D) -> void:
+	if body == self:
 		canGrate=false
