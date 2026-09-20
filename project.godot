@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Rice and Shine!"
-run/main_scene="uid://b5ufcgv0qaktk"
+run/main_scene="uid://g2mj87nvmarh"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://1nyvjuq32uht"
 

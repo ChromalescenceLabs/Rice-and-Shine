@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://s0mln76j7dwp"]
+[gd_scene format=3 uid="uid://bdh5when2v5yg"]
 
-[ext_resource type="Script" uid="uid://blcl17lf45v72" path="res://Scenes/MODE_SELECT.gd" id="1_rel82"]
-[ext_resource type="Shader" uid="uid://dnpid1e7n0mv6" path="res://scroll.gdshader" id="2_taxq6"]
-[ext_resource type="Texture2D" uid="uid://cmtnmdl8sduyr" path="res://Assets/cloud repeat.png" id="3_6vmvb"]
-[ext_resource type="Script" uid="uid://cggstslnb0xry" path="res://Scenes/freeplaybtn.gd" id="4_rbqki"]
+[ext_resource type="Script" uid="uid://blcl17lf45v72" path="res://Scripts/StartMenu/ModeSelect/MODE_SELECT.gd" id="1_lw58t"]
+[ext_resource type="Shader" uid="uid://dnpid1e7n0mv6" path="res://Scripts/StartMenu/ModeSelect/scroll.gdshader" id="2_s5pyw"]
+[ext_resource type="Texture2D" uid="uid://cmtnmdl8sduyr" path="res://Assets/cloud repeat.png" id="3_xfwpw"]
+[ext_resource type="Script" uid="uid://cggstslnb0xry" path="res://Scripts/StartMenu/ModeSelect/freeplaybtn.gd" id="4_lw58t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qj2yo"]
-shader = ExtResource("2_taxq6")
+shader = ExtResource("2_s5pyw")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qj2yo"]
 bg_color = Color(0.92019373, 0.9566967, 0.9979668, 0.5647059)
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rel82")
+script = ExtResource("1_lw58t")
 tween_intensity = 1.2
 tween_duration = 0.3
 
@@ -47,7 +47,7 @@ offset_left = -1.0
 offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_6vmvb")
+texture = ExtResource("3_xfwpw")
 expand_mode = 2
 stretch_mode = 1
 
@@ -150,6 +150,6 @@ offset_right = 215.43994
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 50
 text = "FREEPLAY"
-script = ExtResource("4_rbqki")
+script = ExtResource("4_lw58t")
 
 [connection signal="pressed" from="FREEPLAY" to="FREEPLAY" method="_on_pressed"]

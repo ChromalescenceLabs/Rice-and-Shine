@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://bdh5when2v5yg"]
+[gd_scene format=3 uid="uid://s0mln76j7dwp"]
 
-[ext_resource type="Script" uid="uid://blcl17lf45v72" path="res://Scenes/MODE_SELECT.gd" id="1_34oxg"]
-[ext_resource type="Shader" uid="uid://dnpid1e7n0mv6" path="res://scroll.gdshader" id="1_maca3"]
-[ext_resource type="Texture2D" uid="uid://cmtnmdl8sduyr" path="res://Assets/cloud repeat.png" id="2_gw2pj"]
-[ext_resource type="Script" uid="uid://cggstslnb0xry" path="res://Scenes/freeplaybtn.gd" id="3_34oxg"]
+[ext_resource type="Script" uid="uid://blcl17lf45v72" path="res://Scripts/StartMenu/ModeSelect/MODE_SELECT.gd" id="1_x2cs5"]
+[ext_resource type="Shader" uid="uid://dnpid1e7n0mv6" path="res://Scripts/StartMenu/ModeSelect/scroll.gdshader" id="2_2r5q8"]
+[ext_resource type="Texture2D" uid="uid://cmtnmdl8sduyr" path="res://Assets/cloud repeat.png" id="3_jj4mc"]
+[ext_resource type="Script" uid="uid://cggstslnb0xry" path="res://Scripts/StartMenu/ModeSelect/freeplaybtn.gd" id="4_x2cs5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qj2yo"]
-shader = ExtResource("1_maca3")
+shader = ExtResource("2_2r5q8")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qj2yo"]
 bg_color = Color(0.92019373, 0.9566967, 0.9979668, 0.5647059)
@@ -16,14 +16,14 @@ corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
 corner_detail = 20
 
-[node name="MODE SELECT" type="Control" unique_id=983373993]
+[node name="MODE SELECT2" type="Control" unique_id=983373993]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_34oxg")
+script = ExtResource("1_x2cs5")
 tween_intensity = 1.2
 tween_duration = 0.3
 
@@ -47,7 +47,7 @@ offset_left = -1.0
 offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_gw2pj")
+texture = ExtResource("3_jj4mc")
 expand_mode = 2
 stretch_mode = 1
 
@@ -150,6 +150,6 @@ offset_right = 215.43994
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 50
 text = "FREEPLAY"
-script = ExtResource("3_34oxg")
+script = ExtResource("4_x2cs5")
 
 [connection signal="pressed" from="FREEPLAY" to="FREEPLAY" method="_on_pressed"]

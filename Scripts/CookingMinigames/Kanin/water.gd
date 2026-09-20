@@ -28,7 +28,7 @@ func _on_close_pressed() -> void:
 	await get_tree().create_timer(1.0).timeout
 	water_detect.monitoring = false
 	
-	if water_progress_bar.value < 75 and water_progress_bar.value > 60:
+	if water_progress_bar.value >= 100:
 		WaterCompleted.emit()
 
 func _on_open_pressed() -> void:

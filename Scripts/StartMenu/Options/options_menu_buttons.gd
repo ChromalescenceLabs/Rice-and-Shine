@@ -3,14 +3,11 @@ extends Control
 @export var tween_intensity: float
 @export var tween_duration : float
 
-@onready var start: Button = $START
-@onready var options: Button = $OPTIONS
-@onready var quit: Button = $QUIT
+@onready var back: Button = $BACK
 
-func _process(delta: float) -> void:
-	btn_hovered(start)
-	btn_hovered(options)
-	btn_hovered(quit)
+
+func _process(_delta: float) -> void:
+	btn_hovered(back)
 
 func start_tween(object: Object, property: String, final_val: Variant, duration: float):
 	var tween = create_tween()

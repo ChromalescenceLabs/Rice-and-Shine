@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://g2mj87nvmarh"]
 
-[ext_resource type="Texture2D" uid="uid://bmdh8xfhqe17j" path="res://Assets/main menu/main menu bg.png" id="1_28flt"]
-[ext_resource type="Script" uid="uid://b5676b7wq5ykb" path="res://Scenes/main_menu_buttons.gd" id="1_opfnp"]
-[ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="3_cp0ys"]
-[ext_resource type="Script" uid="uid://b52ieug3kg06n" path="res://Scenes/background.gd" id="3_yhxw7"]
-[ext_resource type="Script" uid="uid://c66jgritmb8y5" path="res://Scenes/start.gd" id="4_yhxw7"]
-[ext_resource type="Script" uid="uid://dqqfae7yevku2" path="res://Scenes/options.gd" id="5_trj04"]
-[ext_resource type="Script" uid="uid://djjbw3c46ht45" path="res://Scenes/quit.gd" id="6_16hvj"]
+[ext_resource type="Script" uid="uid://b5676b7wq5ykb" path="res://Scripts/StartMenu/MainMenu/main_menu_buttons.gd" id="1_2k7c8"]
+[ext_resource type="Texture2D" uid="uid://bmdh8xfhqe17j" path="res://Assets/main menu/main menu bg.png" id="2_e5w6c"]
+[ext_resource type="Script" uid="uid://b52ieug3kg06n" path="res://Scripts/StartMenu/MainMenu/background.gd" id="3_2k7c8"]
+[ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="4_euxup"]
+[ext_resource type="Script" uid="uid://djjbw3c46ht45" path="res://Scripts/StartMenu/MainMenu/quit.gd" id="5_2k7c8"]
+[ext_resource type="Script" uid="uid://c66jgritmb8y5" path="res://Scripts/StartMenu/MainMenu/start.gd" id="6_2k7c8"]
+[ext_resource type="Script" uid="uid://dqqfae7yevku2" path="res://Scripts/StartMenu/Options/options.gd" id="7_2k7c8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf7jh"]
 bg_color = Color(0.19607843, 0.5803922, 0.85882354, 1)
@@ -52,7 +52,7 @@ offset_left = -176.08002
 offset_top = -141.72003
 offset_right = 176.91998
 offset_bottom = 142.27997
-script = ExtResource("1_opfnp")
+script = ExtResource("1_2k7c8")
 tween_intensity = 1.2
 tween_duration = 0.3
 
@@ -64,14 +64,14 @@ scale = Vector2(1.1, 1.1)
 [node name="BACKGROUND" type="Sprite2D" parent="Node2D" unique_id=417947079]
 texture_filter = 1
 position = Vector2(1, 0)
-texture = ExtResource("1_28flt")
-script = ExtResource("3_yhxw7")
+texture = ExtResource("2_e5w6c")
+script = ExtResource("3_2k7c8")
 
 [node name="LOGO" type="Sprite2D" parent="Node2D" unique_id=1486802928]
 texture_filter = 1
 position = Vector2(-632.7272, -326.36362)
 scale = Vector2(0.19496661, 0.20438762)
-texture = ExtResource("3_cp0ys")
+texture = ExtResource("4_euxup")
 centered = false
 
 [node name="QUIT" type="Button" parent="." unique_id=586502751]
@@ -89,7 +89,7 @@ theme_override_constants/outline_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_rf7jh")
 text = " QUIT"
 alignment = 0
-script = ExtResource("6_16hvj")
+script = ExtResource("5_2k7c8")
 
 [node name="START" type="Button" parent="." unique_id=1996352847]
 layout_mode = 1
@@ -106,7 +106,7 @@ theme_override_constants/outline_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_syw6n")
 text = " START"
 alignment = 0
-script = ExtResource("4_yhxw7")
+script = ExtResource("6_2k7c8")
 
 [node name="OPTIONS" type="Button" parent="." unique_id=1140753139]
 layout_mode = 1
@@ -124,7 +124,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1ndqe")
 text = " OPTIONS
 "
 alignment = 0
-script = ExtResource("5_trj04")
+script = ExtResource("7_2k7c8")
 
 [connection signal="pressed" from="QUIT" to="QUIT" method="_on_pressed"]
 [connection signal="pressed" from="START" to="START" method="_on_pressed"]

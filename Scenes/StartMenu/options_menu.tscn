@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bqihwymm5632x"]
 
-[ext_resource type="Script" uid="uid://rpttvokvgsb6" path="res://Scenes/options_menu_buttons.gd" id="1_l1wg4"]
-[ext_resource type="Texture2D" uid="uid://bmdh8xfhqe17j" path="res://Assets/main menu/main menu bg.png" id="2_syw6n"]
-[ext_resource type="Script" uid="uid://dpplwsodknegj" path="res://options_back.gd" id="2_uj0ok"]
-[ext_resource type="Script" uid="uid://b52ieug3kg06n" path="res://Scenes/background.gd" id="3_inh3s"]
-[ext_resource type="Script" uid="uid://bwq47e1pxxheg" path="res://Scenes/fullscreen_toggle.gd" id="5_m6e8v"]
-[ext_resource type="Script" uid="uid://bqwecovhu2erk" path="res://Scenes/master_slide.gd" id="5_tqe32"]
-[ext_resource type="Script" uid="uid://doyfntuq0qq02" path="res://Scenes/sfx_slide.gd" id="6_qfavn"]
-[ext_resource type="Script" uid="uid://bryxqbd4qi64b" path="res://Scenes/music_slide.gd" id="7_syw6n"]
+[ext_resource type="Script" uid="uid://rpttvokvgsb6" path="res://Scripts/StartMenu/Options/options_menu_buttons.gd" id="1_ajfsh"]
+[ext_resource type="Texture2D" uid="uid://bmdh8xfhqe17j" path="res://Assets/main menu/main menu bg.png" id="2_nkrjw"]
+[ext_resource type="Script" uid="uid://b52ieug3kg06n" path="res://Scripts/StartMenu/MainMenu/background.gd" id="3_ajfsh"]
+[ext_resource type="Script" uid="uid://dpplwsodknegj" path="res://Scripts/StartMenu/Options/options_back.gd" id="4_o2mhj"]
+[ext_resource type="Script" uid="uid://bqwecovhu2erk" path="res://Scripts/StartMenu/MainMenu/master_slide.gd" id="5_ajfsh"]
+[ext_resource type="Script" uid="uid://doyfntuq0qq02" path="res://Scripts/StartMenu/Options/sfx_slide.gd" id="6_ajfsh"]
+[ext_resource type="Script" uid="uid://bryxqbd4qi64b" path="res://Scripts/StartMenu/Options/music_slide.gd" id="7_rneub"]
+[ext_resource type="Script" uid="uid://bwq47e1pxxheg" path="res://Scripts/StartMenu/Options/fullscreen_toggle.gd" id="8_ajfsh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qj2yo"]
 corner_radius_top_left = 25
@@ -46,7 +46,7 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_l1wg4")
+script = ExtResource("1_ajfsh")
 tween_intensity = 1.2
 tween_duration = 0.3
 
@@ -58,9 +58,9 @@ scale = Vector2(1.1, 1.1)
 [node name="BACKGROUND" type="Sprite2D" parent="Node2D" unique_id=629897920]
 texture_filter = 1
 position = Vector2(1, 0)
-texture = ExtResource("2_syw6n")
+texture = ExtResource("2_nkrjw")
 offset = Vector2(0, 250)
-script = ExtResource("3_inh3s")
+script = ExtResource("3_ajfsh")
 
 [node name="BACK" type="Button" parent="." unique_id=914300871]
 layout_mode = 1
@@ -76,7 +76,7 @@ offset_bottom = 17.96
 text = "BACK
 "
 alignment = 0
-script = ExtResource("2_uj0ok")
+script = ExtResource("4_o2mhj")
 
 [node name="Panel" type="Panel" parent="." unique_id=1986643102]
 layout_mode = 1
@@ -107,7 +107,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_838ek")
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("5_tqe32")
+script = ExtResource("5_ajfsh")
 
 [node name="SFXSLIDE" type="HSlider" parent="Panel" unique_id=1029029510]
 layout_mode = 1
@@ -120,7 +120,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_a6r4q")
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("6_qfavn")
+script = ExtResource("6_ajfsh")
 
 [node name="MUSICSLIDE" type="HSlider" parent="Panel" unique_id=1923276218]
 layout_mode = 1
@@ -138,7 +138,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_064ll")
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("7_syw6n")
+script = ExtResource("7_rneub")
 
 [node name="MASTERLABEL" type="RichTextLabel" parent="Panel" unique_id=1402558731]
 layout_mode = 1
@@ -243,7 +243,7 @@ offset_bottom = 36.205994
 theme_override_font_sizes/font_size = 30
 button_pressed = true
 text = "FULLSCREEN"
-script = ExtResource("5_m6e8v")
+script = ExtResource("8_ajfsh")
 
 [connection signal="pressed" from="BACK" to="BACK" method="_on_pressed"]
 [connection signal="value_changed" from="Panel/MASTERSLIDE" to="Panel/MASTERSLIDE" method="_on_value_changed"]

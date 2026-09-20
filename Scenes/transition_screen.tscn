@@ -1,6 +1,28 @@
 [gd_scene format=3 uid="uid://ba84sc5nqs56w"]
 
-[ext_resource type="Script" uid="uid://bnyk4i26sphb0" path="res://transition_screen.gd" id="1_c4g4b"]
+[sub_resource type="GDScript" id="GDScript_6cd7l"]
+script/source = "extends CanvasLayer
+
+signal on_trans_fin
+@onready var color_rect = $ColorRect
+@onready var anim_player = $AnimationPlayer
+
+func _ready():
+	color_rect.visible = false
+	anim_player.animation_finished.connect(_on_anim_fin)
+
+func _on_anim_fin(anim_name):
+	if anim_name ==\"fade_in\":
+		on_trans_fin.emit()
+		anim_player.play (\"fade_out\")
+	elif anim_name == \"fade out\":
+		color_rect.visible = false
+
+func transition():
+	color_rect.visible = true
+	anim_player.play(\"fade_in\")
+	
+"
 
 [sub_resource type="Animation" id="Animation_wqgbf"]
 length = 0.001
@@ -57,7 +79,7 @@ _data = {
 }
 
 [node name="Transition_Screen" type="CanvasLayer" unique_id=468167248]
-script = ExtResource("1_c4g4b")
+script = SubResource("GDScript_6cd7l")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1267093847]
 modulate = Color(1, 1, 1, 0)
