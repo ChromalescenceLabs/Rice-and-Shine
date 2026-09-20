@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://2756jtyts0ga" path="res://Scenes/CookingMinigames/Pankcae/bowl.tscn" id="3_y2edm"]
 [ext_resource type="PackedScene" uid="uid://d4iqxrauw1jdo" path="res://Scenes/CookingMinigames/Pankcae/pan.tscn" id="4_wxx5u"]
 [ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/CookingMinigames/Pankcae/oil.tscn" id="5_1f2tk"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/recipe_book.tscn" id="7_y2edm"]
 
 [node name="PancakeCooking" type="Node2D" unique_id=930183867]
 script = ExtResource("1_rm7bj")
@@ -35,3 +36,10 @@ scale = Vector2(1.5, 1.5)
 z_index = 1
 position = Vector2(1173, 121)
 scale = Vector2(0.6, 0.6)
+
+[node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("7_y2edm")]
+offset_left = 9.0
+offset_top = 528.0
+offset_right = 192.0
+offset_bottom = 765.0
+scale = Vector2(0.795, 0.795)

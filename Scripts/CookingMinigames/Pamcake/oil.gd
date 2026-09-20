@@ -22,14 +22,16 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		oil_closed.visible = true
 		oil_open.visible = false
 		
-#add return to original position code next
+# Return to original position
+		
 
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is PancakePan:
-		if not dragging:
-			return
-			
-		if dragging:
-			area.has_oil = true
-			area.oiled()
+		if area.has_oil == false:
+			if not dragging:
+				return
+				
+			if dragging:
+				area.has_oil = true
+				area.oiled()
