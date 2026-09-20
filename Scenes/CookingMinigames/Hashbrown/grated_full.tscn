@@ -90,8 +90,6 @@ rotation = -3.1415925
 scale = Vector2(4.570992, -2.4331942)
 shape = SubResource("RectangleShape2D_mq4fq")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

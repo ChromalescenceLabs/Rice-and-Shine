@@ -11,9 +11,35 @@ extends Area2D
 var origPos=self.global_position
 var picked=false
 var pickUp=false
-var canGrate=false
-var window_size = 4 
-var children = get_children()
+var canGrate=false 
+var apple =1
+var subset = get_subset_by_index(apple)
+
+func _ready() -> void:
+	print('hi')
+	
+	for start in range(0, self.get_children().size(), 2):
+		var subset = self.get_children().slice(start,start+ 4)
+		print("Subset from index %d:" % start)
+		for child in subset:
+			print("  ", child.name)
+
+func get_subset_by_index(apple: int):
+	var step = 2
+	var window_size = 4
+
+	var start = apple * 2
+
+	if start >= self.get_children().size():
+		print("No subset for apple = ", apple)
+		return 
+	
+	var subset = self.get_children().slice(start, window_size)
+	print("Subset %d (apple=%d):" % [apple + 1, apple])
+	for child in subset:
+		print("  ", child.name)
+	return subset
+
 
 func _process(delta: float) -> void:
 	if picked:
@@ -21,19 +47,12 @@ func _process(delta: float) -> void:
 	else:
 		self.global_position = origPos
 
-func _on_area_entered(area: Area2D) -> void:
-	if area.name == "grater":
-		canGrate=true
-
-func _on_area_exited(area: Area2D) -> void:
-	if area.name == "grater":
-		canGrate=false
-
 func _on_mouse_entered() -> void:
 	pickUp=true
 
 func _on_mouse_exited() -> void:
 	pickUp=false
+
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("Click"):
@@ -42,10 +61,13 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	
 	if event.is_action_released("Click"):
 		picked=false
-		if canGrate:
-			for start in range(0, children.size() - window_size + 1, 2):
-				var subset = children.slice(start, window_size)
-				print("Subset from index %d:" % start)
-				for child in subset:
-					print("  ", child.name)
-		
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "grater":
+		canGrate=true
+		print("guys how do i do this")
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.name == "grater":
+		canGrate=false
