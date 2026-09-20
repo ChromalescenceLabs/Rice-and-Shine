@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://j42ywdsfuawg"]
+
+[ext_resource type="Script" uid="uid://bvalouachcu1j" path="res://Scripts/CookingMinigames/Hashbrown/Hashbrown.gd" id="1_04vlw"]
+[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/CookingBG.jpg" id="1_jjcf2"]
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/CookingBGTopDown.jpg" id="2_y804u"]
+[ext_resource type="Texture2D" uid="uid://dtjk3rm14kam8" path="res://Assets/Hashbrown/Potato.png" id="3_riowl"]
+[ext_resource type="Texture2D" uid="uid://brijabd5metjd" path="res://Assets/Hashbrown/Peeled Potatoes.png" id="4_04vlw"]
+[ext_resource type="Texture2D" uid="uid://cggpwgg256553" path="res://Assets/Hashbrown/Peeler.png" id="5_wa5re"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tj6en"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2mse2"]
+height = 87.5466
+
+[node name="Hashbrowns" type="Node2D" unique_id=1704651639]
+script = ExtResource("1_04vlw")
+
+[node name="CookingBg" type="Sprite2D" parent="." unique_id=367473960]
+position = Vector2(642, 363)
+scale = Vector2(1.2890625, 1.046875)
+texture = ExtResource("1_jjcf2")
+
+[node name="CookingBgTopDown" type="Sprite2D" parent="." unique_id=965929414]
+visible = false
+position = Vector2(635, 559)
+scale = Vector2(0.90000004, 0.9000001)
+texture = ExtResource("2_y804u")
+
+[node name="Potato" type="TextureRect" parent="." unique_id=2124695233]
+offset_left = 83.0
+offset_top = 107.99999
+offset_right = 318.0
+offset_bottom = 529.0
+scale = Vector2(0.9945959, 1.0006952)
+texture = ExtResource("3_riowl")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1856136159]
+clip_children = 1
+position = Vector2(83, 107.99999)
+scale = Vector2(1.3364567, 1.0095584)
+width = 50.0
+
+[node name="AreaPPotato" type="Area2D" parent="Line2D" unique_id=644080344]
+scale = Vector2(1.0110067, 0.99122065)
+
+[node name="PPotato" type="TextureRect" parent="Line2D/AreaPPotato" unique_id=1767300622]
+offset_left = -11.101521
+offset_top = -4.9965134
+offset_right = 229.89848
+offset_bottom = 412.00348
+scale = Vector2(1.053951, 1.0243657)
+texture = ExtResource("4_04vlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Line2D/AreaPPotato" unique_id=1750923480]
+position = Vector2(116.935974, 212.85207)
+scale = Vector2(10.313771, 19.35259)
+shape = SubResource("CircleShape2D_tj6en")
+
+[node name="Peeler" type="Area2D" parent="." unique_id=2070195057]
+position = Vector2(959, 299)
+scale = Vector2(1, 1.0000001)
+
+[node name="PeeledParticles" type="CPUParticles2D" parent="Peeler" unique_id=867490272]
+visible = false
+position = Vector2(-3.000001, 20.000004)
+scale = Vector2(2.179908, -6.5258307)
+amount = 50
+lifetime = 0.58
+scale_amount_min = 26.0
+scale_amount_max = 28.1
+color = Color(0.7271028, 0.47418147, 0.30289465, 1)
+
+[node name="Peeler" type="TextureRect" parent="Peeler" unique_id=1106527114]
+offset_left = -64.99999
+offset_top = -26.999996
+offset_right = 302.0
+offset_bottom = 482.0
+scale = Vector2(0.34120473, 0.38544473)
+texture = ExtResource("5_wa5re")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peeler" unique_id=608045779]
+position = Vector2(-1, 76.999985)
+scale = Vector2(6.284462, 2.3301876)
+shape = SubResource("CapsuleShape2D_2mse2")
+
+[connection signal="mouse_entered" from="Line2D/AreaPPotato" to="." method="_on_area_p_potato_mouse_entered"]
+[connection signal="mouse_entered" from="Peeler" to="." method="_on_peeler_mouse_entered"]
+[connection signal="mouse_exited" from="Peeler" to="." method="_on_peeler_mouse_exited"]
