@@ -112,6 +112,7 @@ texture = ExtResource("11_2g4ky")
 [node name="RiceCooker" type="Node2D" parent="." unique_id=835867329]
 
 [node name="RiceCooker" type="Sprite2D" parent="RiceCooker" unique_id=719095520]
+visible = false
 position = Vector2(361.5, 343.5)
 scale = Vector2(0.815, 0.815)
 texture = ExtResource("12_1dyx4")

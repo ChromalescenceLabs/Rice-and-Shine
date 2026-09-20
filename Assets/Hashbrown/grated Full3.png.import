@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8smlkheqvws7"
-path="res://.godot/imported/Potato - Copy.png-dd40470af4b51a2f045fb198c758b7d5.ctex"
+uid="uid://bnwga6r3o73s0"
+path="res://.godot/imported/grated Full3.png-97e29718849a377a2ba07d14ebd4bc3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hashbrown/Potato - Copy.png"
-dest_files=["res://.godot/imported/Potato - Copy.png-dd40470af4b51a2f045fb198c758b7d5.ctex"]
+source_file="res://Assets/Hashbrown/grated Full3.png"
+dest_files=["res://.godot/imported/grated Full3.png-97e29718849a377a2ba07d14ebd4bc3b.ctex"]
 
 [params]
 
