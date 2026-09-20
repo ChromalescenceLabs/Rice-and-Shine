@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c71mkx0ylpomy"]
+
+[ext_resource type="AudioStream" uid="uid://cg2afnioyoiq1" path="res://Assets/Audio/Music/temptestmusic.mp3" id="1_760hw"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1103486592]
+stream = ExtResource("1_760hw")
+autoplay = true
+parameters/looping = true

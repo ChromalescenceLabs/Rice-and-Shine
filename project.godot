@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Rice and Shine!"
-run/main_scene="uid://b5ufcgv0qaktk"
+run/main_scene="uid://g2mj87nvmarh"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://1nyvjuq32uht"
+
+[audio]
+
+buses/default_bus_layout="uid://druwhh5lr82gs"
 
 [autoload]
 
@@ -21,11 +25,13 @@ GlobalVars="*uid://bvleif2aserxa"
 DialogueManager="*uid://c3rodes2l3gxb"
 SceneLoader="*uid://jauffil1d42j"
 Sfx="*uid://du6gjwu6i72mh"
+MusicManager="*uid://c71mkx0ylpomy"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

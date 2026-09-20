@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bf86igy00f6sq"]
+
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/CookingBGTopDown.jpg" id="1_ftsvu"]
+[ext_resource type="Script" uid="uid://85f1vv0w5g6l" path="res://Scripts/CookingMinigames/Pamcake/pancake_cooking.gd" id="1_rm7bj"]
+[ext_resource type="PackedScene" uid="uid://d3o3pud744tt1" path="res://Scenes/CookingMinigames/Pankcae/batter_cup.tscn" id="2_rm7bj"]
+[ext_resource type="PackedScene" uid="uid://2756jtyts0ga" path="res://Scenes/CookingMinigames/Pankcae/bowl.tscn" id="3_y2edm"]
+[ext_resource type="PackedScene" uid="uid://d4iqxrauw1jdo" path="res://Scenes/CookingMinigames/Pankcae/pan.tscn" id="4_wxx5u"]
+[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/CookingMinigames/Pankcae/oil.tscn" id="5_1f2tk"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/recipe_book.tscn" id="7_y2edm"]
+
+[node name="PancakeCooking" type="Node2D" unique_id=930183867]
+script = ExtResource("1_rm7bj")
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1215600098]
+position = Vector2(518.99994, 595.99994)
+scale = Vector2(0.946875, 0.946875)
+texture = ExtResource("1_ftsvu")
+
+[node name="BatterStuff" type="Node2D" parent="." unique_id=326722561]
+
+[node name="BatterCup" parent="BatterStuff" unique_id=478683369 instance=ExtResource("2_rm7bj")]
+z_index = 1
+position = Vector2(876, 117)
+scale = Vector2(0.5, 0.5)
+
+[node name="BowlBatter" parent="BatterStuff" unique_id=1520276035 instance=ExtResource("3_y2edm")]
+position = Vector2(1003.0001, 467)
+scale = Vector2(1.45, 1.45)
+
+[node name="Pan" parent="." unique_id=1718511203 instance=ExtResource("4_wxx5u")]
+position = Vector2(281.00003, 393)
+rotation = -0.8709193
+scale = Vector2(1.5, 1.5)
+
+[node name="Oil" parent="." unique_id=1503278428 instance=ExtResource("5_1f2tk")]
+z_index = 1
+position = Vector2(1173, 121)
+scale = Vector2(0.6, 0.6)
+
+[node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("7_y2edm")]
+offset_left = 9.0
+offset_top = 528.0
+offset_right = 192.0
+offset_bottom = 765.0
+scale = Vector2(0.795, 0.795)

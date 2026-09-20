@@ -31,6 +31,7 @@ radial_accel_max = -2.2351742e-06
 scale_min = 0.5
 
 [node name="SuccessIndicator" type="Node2D" unique_id=1325133051]
+z_index = 100
 script = ExtResource("1_5jcpt")
 
 [node name="Text" type="RichTextLabel" parent="." unique_id=1460330754]
