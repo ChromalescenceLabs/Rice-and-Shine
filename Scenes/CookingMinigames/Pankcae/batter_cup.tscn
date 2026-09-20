@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d3o3pud744tt1"]
+
+[ext_resource type="Script" uid="uid://ecdkj4xylf2s" path="res://Scripts/CookingMinigames/Pamcake/batter_cup.gd" id="1_054rf"]
+[ext_resource type="Texture2D" uid="uid://t4exdm258u4q" path="res://Assets/Non-specific/MeasureCup.png" id="2_sw1tm"]
+[ext_resource type="Texture2D" uid="uid://bgcclf03rmoal" path="res://Assets/Pankcae/MeasureCup_F.png" id="3_a07k5"]
+[ext_resource type="Texture2D" uid="uid://b4yv7rl6oekf1" path="res://Assets/Pankcae/MeasureCup_E.png" id="4_y667x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 150.11995
+
+[node name="BatterCup" type="Area2D" unique_id=478683369]
+script = ExtResource("1_054rf")
+
+[node name="MCup" type="Sprite2D" parent="." unique_id=1531919612]
+texture = ExtResource("2_sw1tm")
+
+[node name="MCupFilled" type="Sprite2D" parent="." unique_id=1551626011]
+visible = false
+texture = ExtResource("3_a07k5")
+
+[node name="MCupEmptied" type="Sprite2D" parent="." unique_id=1296309432]
+visible = false
+texture = ExtResource("4_y667x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1308496682]
+position = Vector2(113, 0)
+shape = SubResource("CircleShape2D_1vivr")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

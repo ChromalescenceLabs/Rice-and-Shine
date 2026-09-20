@@ -134,6 +134,7 @@ position = Vector2(332, 368)
 shape = SubResource("RectangleShape2D_idtpb")
 
 [node name="Water" type="Node2D" parent="." unique_id=935142887]
+visible = false
 
 [node name="RiceBowl" parent="Water" unique_id=1504106188 instance=ExtResource("11_t3ihu")]
 position = Vector2(1037, 300)
