@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://g2mj87nvmarh"]
+
+[ext_resource type="Texture2D" uid="uid://bmdh8xfhqe17j" path="res://Assets/main menu/main menu bg.png" id="1_28flt"]
+[ext_resource type="Script" uid="uid://b5676b7wq5ykb" path="res://Scenes/main_menu_buttons.gd" id="1_opfnp"]
+[ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="3_cp0ys"]
+[ext_resource type="Script" uid="uid://b52ieug3kg06n" path="res://Scenes/background.gd" id="3_yhxw7"]
+[ext_resource type="Script" uid="uid://c66jgritmb8y5" path="res://Scenes/start.gd" id="4_yhxw7"]
+[ext_resource type="Script" uid="uid://dqqfae7yevku2" path="res://Scenes/options.gd" id="5_trj04"]
+[ext_resource type="Script" uid="uid://djjbw3c46ht45" path="res://Scenes/quit.gd" id="6_16hvj"]
+[ext_resource type="AudioStream" uid="uid://bo173np64o0d0" path="res://Assets/clicksfx.mp3" id="6_yhxw7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syw6n"]
+bg_color = Color(0.1969659, 0.58062536, 0.85766184, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.19607843, 0.38431373, 0.7882353, 1)
+corner_detail = 1
+shadow_color = Color(0, 0, 0.61960787, 0.3019608)
+shadow_size = 2
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf7jh"]
+bg_color = Color(0.19607843, 0.5803922, 0.85882354, 1)
+border_width_left = 5
+border_width_top = 5
+border_color = Color(0.19607843, 0.38431373, 0.7882353, 1)
+corner_detail = 1
+shadow_color = Color(0, 0, 0.61960787, 0.3019608)
+shadow_size = 2
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ndqe"]
+bg_color = Color(0.19607843, 0.5803922, 0.85882354, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.19607843, 0.38431373, 0.7882353, 1)
+corner_detail = 1
+shadow_color = Color(0, 0, 0.61960787, 0.3019608)
+shadow_size = 2
+shadow_offset = Vector2(5, 5)
+
+[node name="Buttons" type="Control" unique_id=60872865]
+layout_mode = 3
+anchor_left = 0.136
+anchor_top = 0.57600003
+anchor_right = 0.136
+anchor_bottom = 0.57600003
+offset_left = -176.08002
+offset_top = -141.72003
+offset_right = 176.91998
+offset_bottom = 142.27997
+script = ExtResource("1_opfnp")
+tween_intensity = 1.2
+tween_duration = 0.3
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2019943700]
+texture_filter = 1
+position = Vector2(642, 87)
+scale = Vector2(1.1, 1.1)
+
+[node name="BACKGROUND" type="Sprite2D" parent="Node2D" unique_id=417947079]
+texture_filter = 1
+position = Vector2(1, 0)
+texture = ExtResource("1_28flt")
+script = ExtResource("3_yhxw7")
+
+[node name="LOGO" type="Sprite2D" parent="Node2D" unique_id=1486802928]
+texture_filter = 1
+position = Vector2(-632.7272, -326.36362)
+scale = Vector2(0.19496661, 0.20438762)
+texture = ExtResource("3_cp0ys")
+centered = false
+
+[node name="START" type="Button" parent="." unique_id=1996352847]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45000002
+anchor_top = 0.085
+anchor_right = 0.45000002
+anchor_bottom = 0.085
+offset_left = -119.850006
+offset_top = -29.14
+offset_right = 120.149994
+offset_bottom = 28.86
+theme_override_constants/outline_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_syw6n")
+text = " START"
+alignment = 0
+script = ExtResource("4_yhxw7")
+
+[node name="click" type="AudioStreamPlayer2D" parent="START" unique_id=592423390]
+position = Vector2(-39, 5)
+stream = ExtResource("6_yhxw7")
+
+[node name="QUIT" type="Button" parent="START" unique_id=586502751]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45200002
+anchor_top = 0.625
+anchor_right = 0.45200002
+anchor_bottom = 0.625
+offset_left = -107.48
+offset_top = 116.75
+offset_right = 131.51999
+offset_bottom = 175.75
+theme_override_constants/outline_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_rf7jh")
+text = " QUIT"
+alignment = 0
+script = ExtResource("6_16hvj")
+
+[node name="OPTIONS" type="Button" parent="." unique_id=1140753139]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.455
+anchor_top = 0.35200003
+anchor_right = 0.455
+anchor_bottom = 0.35200003
+offset_left = -119.615005
+offset_top = -29.967995
+offset_right = 119.384995
+offset_bottom = 30.120018
+theme_override_constants/outline_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ndqe")
+text = " OPTIONS
+"
+alignment = 0
+script = ExtResource("5_trj04")
+
+[connection signal="pressed" from="START" to="START" method="_on_pressed"]
+[connection signal="pressed" from="START/QUIT" to="START/QUIT" method="_on_pressed"]
+[connection signal="pressed" from="OPTIONS" to="OPTIONS" method="_on_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b52yutm30jb28"
-path="res://.godot/imported/RICE.png-489a7519d34402a633c7b72143e4548f.ctex"
+uid="uid://cmtnmdl8sduyr"
+path="res://.godot/imported/cloud repeat.png-91920b6274fa7509029245b03fa373cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/RICE.png"
-dest_files=["res://.godot/imported/RICE.png-489a7519d34402a633c7b72143e4548f.ctex"]
+source_file="res://Assets/cloud repeat.png"
+dest_files=["res://.godot/imported/cloud repeat.png-91920b6274fa7509029245b03fa373cd.ctex"]
 
 [params]
 
