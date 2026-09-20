@@ -8,13 +8,14 @@ extends Area2D
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var grated_full_col_3: CollisionShape2D = $"grated FullCol3"
 
-var origPos=self.global_position
+var origPos
 var picked=false
 var pickUp=false
 var canGrate=false 
 var amtChange =0
 
 func _ready() -> void:
+	origPos = self.global_position
 	print('hi')
 	get_subset_by_index(amtChange)
 	
