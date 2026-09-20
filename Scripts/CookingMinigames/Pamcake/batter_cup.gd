@@ -45,9 +45,17 @@ func _on_area_entered(area: Area2D) -> void:
 			
 			
 	if area is PancakePan:
-		if not dragging:
+		if area.has_oil == false:
 			return
 			
-		if cup_state == CupState.FILLED:
-			cup_state = CupState.EMPTY
-			batter_cup_state()
+		elif area.has_oil == true:
+			if area.pancState > 0:
+				return
+				
+			if not dragging:
+				return
+				
+			if cup_state == CupState.FILLED:
+				cup_state = CupState.EMPTY
+				batter_cup_state()
+				area.pancState += 1

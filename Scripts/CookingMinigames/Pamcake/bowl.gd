@@ -8,7 +8,7 @@ var batterLevel : int = 5:
 		batterLevel = value
 		if batterLevel == 5:
 			for i in self.get_children():
-				if not i.name == "BowlBatterStage1":
+				if not i.name == "BowlBatterStage1":	
 					i.visible = false
 				else:
 					i.visible = true

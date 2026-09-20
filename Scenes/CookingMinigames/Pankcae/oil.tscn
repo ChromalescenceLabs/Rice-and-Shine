@@ -14,8 +14,12 @@ script = ExtResource("1_tg4h3")
 texture = ExtResource("2_wywbs")
 
 [node name="OilOpened" type="Sprite2D" parent="." unique_id=1078451148]
+visible = false
 texture = ExtResource("3_u45oe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=441207404]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_1vivr")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
