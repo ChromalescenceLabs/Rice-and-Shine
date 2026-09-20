@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://s0mln76j7dwp"]
+
+[ext_resource type="Script" uid="uid://blcl17lf45v72" path="res://Scenes/MODE_SELECT.gd" id="1_rel82"]
+[ext_resource type="Shader" uid="uid://dnpid1e7n0mv6" path="res://scroll.gdshader" id="2_taxq6"]
+[ext_resource type="Texture2D" uid="uid://cmtnmdl8sduyr" path="res://Assets/cloud repeat.png" id="3_6vmvb"]
+[ext_resource type="Script" uid="uid://cggstslnb0xry" path="res://Scenes/freeplaybtn.gd" id="4_rbqki"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qj2yo"]
+shader = ExtResource("2_taxq6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qj2yo"]
+bg_color = Color(0.92019373, 0.9566967, 0.9979668, 0.5647059)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+corner_detail = 20
+
+[node name="MODE SELECT" type="Control" unique_id=983373993]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rel82")
+tween_intensity = 1.2
+tween_duration = 0.3
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=692868492]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.36063635, 0.65043664, 0.85006356, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1227021150]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_qj2yo")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_6vmvb")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=439381398]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 130.0
+offset_right = 1209.0
+offset_bottom = 606.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qj2yo")
+
+[node name="MODE SELECT" type="RichTextLabel" parent="Panel" unique_id=1447347630]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49
+anchor_top = 0.312
+anchor_right = 0.49
+anchor_bottom = 0.312
+offset_left = -171.56
+offset_top = -92.51201
+offset_right = 179.44
+offset_bottom = -15.512009
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "MODE SELECT"
+horizontal_alignment = 1
+
+[node name="TO BE ADDED!" type="RichTextLabel" parent="Panel" unique_id=614314715]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24200001
+anchor_top = 0.814
+anchor_right = 0.24200001
+anchor_bottom = 0.814
+offset_left = -84.84802
+offset_top = -17.46402
+offset_right = 84.15198
+offset_bottom = 17.53598
+theme_override_colors/default_color = Color(0.91540116, 0.28382894, 0.30399072, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "To Be Added!"
+horizontal_alignment = 1
+
+[node name="MANAGE" type="RichTextLabel" parent="Panel" unique_id=650034488]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24700001
+anchor_top = 0.726
+anchor_right = 0.24700001
+anchor_bottom = 0.726
+offset_left = -228.56802
+offset_top = -17.57602
+offset_right = 229.43198
+offset_bottom = 17.42398
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "Manage your grandma's carinderia!"
+horizontal_alignment = 1
+
+[node name="COOK FOOD" type="RichTextLabel" parent="Panel" unique_id=351870618]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75600004
+anchor_top = 0.73600006
+anchor_right = 0.75600004
+anchor_bottom = 0.73600006
+offset_left = -214.86407
+offset_top = -17.33603
+offset_right = 215.13593
+offset_bottom = 17.66397
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "Cook food to your heart's desires!!"
+horizontal_alignment = 1
+
+[node name="STORY" type="Button" parent="." unique_id=1648377681]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.273
+anchor_top = 0.503
+anchor_right = 0.273
+anchor_bottom = 0.503
+offset_left = -215.44
+offset_top = -74.16
+offset_right = 215.56
+offset_bottom = 74.84
+theme_override_font_sizes/font_size = 50
+text = "STORY"
+
+[node name="FREEPLAY" type="Button" parent="." unique_id=1004736702]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.72700006
+anchor_top = 0.5
+anchor_right = 0.72700006
+anchor_bottom = 0.5
+offset_left = -215.56006
+offset_top = -74.0
+offset_right = 215.43994
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 50
+text = "FREEPLAY"
+script = ExtResource("4_rbqki")
+
+[connection signal="pressed" from="FREEPLAY" to="FREEPLAY" method="_on_pressed"]

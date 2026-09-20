@@ -7,16 +7,7 @@
 [ext_resource type="Script" uid="uid://c66jgritmb8y5" path="res://Scenes/start.gd" id="4_yhxw7"]
 [ext_resource type="Script" uid="uid://dqqfae7yevku2" path="res://Scenes/options.gd" id="5_trj04"]
 [ext_resource type="Script" uid="uid://djjbw3c46ht45" path="res://Scenes/quit.gd" id="6_16hvj"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf7jh"]
-bg_color = Color(0.19607843, 0.5803922, 0.85882354, 1)
-border_width_left = 5
-border_width_top = 5
-border_color = Color(0.19607843, 0.38431373, 0.7882353, 1)
-corner_detail = 1
-shadow_color = Color(0, 0, 0.61960787, 0.3019608)
-shadow_size = 2
-shadow_offset = Vector2(5, 5)
+[ext_resource type="AudioStream" uid="uid://bo173np64o0d0" path="res://Assets/clicksfx.mp3" id="6_yhxw7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syw6n"]
 bg_color = Color(0.1969659, 0.58062536, 0.85766184, 1)
@@ -24,6 +15,16 @@ border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
+border_color = Color(0.19607843, 0.38431373, 0.7882353, 1)
+corner_detail = 1
+shadow_color = Color(0, 0, 0.61960787, 0.3019608)
+shadow_size = 2
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf7jh"]
+bg_color = Color(0.19607843, 0.5803922, 0.85882354, 1)
+border_width_left = 5
+border_width_top = 5
 border_color = Color(0.19607843, 0.38431373, 0.7882353, 1)
 corner_detail = 1
 shadow_color = Color(0, 0, 0.61960787, 0.3019608)
@@ -74,23 +75,6 @@ scale = Vector2(0.19496661, 0.20438762)
 texture = ExtResource("3_cp0ys")
 centered = false
 
-[node name="QUIT" type="Button" parent="." unique_id=586502751]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.45200002
-anchor_top = 0.625
-anchor_right = 0.45200002
-anchor_bottom = 0.625
-offset_left = -119.556015
-offset_top = -29.5
-offset_right = 119.443954
-offset_bottom = 29.5
-theme_override_constants/outline_size = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_rf7jh")
-text = " QUIT"
-alignment = 0
-script = ExtResource("6_16hvj")
-
 [node name="START" type="Button" parent="." unique_id=1996352847]
 layout_mode = 1
 anchors_preset = -1
@@ -107,6 +91,27 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_syw6n")
 text = " START"
 alignment = 0
 script = ExtResource("4_yhxw7")
+
+[node name="click" type="AudioStreamPlayer2D" parent="START" unique_id=592423390]
+position = Vector2(-39, 5)
+stream = ExtResource("6_yhxw7")
+
+[node name="QUIT" type="Button" parent="START" unique_id=586502751]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45200002
+anchor_top = 0.625
+anchor_right = 0.45200002
+anchor_bottom = 0.625
+offset_left = -107.48
+offset_top = 116.75
+offset_right = 131.51999
+offset_bottom = 175.75
+theme_override_constants/outline_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_rf7jh")
+text = " QUIT"
+alignment = 0
+script = ExtResource("6_16hvj")
 
 [node name="OPTIONS" type="Button" parent="." unique_id=1140753139]
 layout_mode = 1
@@ -126,6 +131,6 @@ text = " OPTIONS
 alignment = 0
 script = ExtResource("5_trj04")
 
-[connection signal="pressed" from="QUIT" to="QUIT" method="_on_pressed"]
 [connection signal="pressed" from="START" to="START" method="_on_pressed"]
+[connection signal="pressed" from="START/QUIT" to="START/QUIT" method="_on_pressed"]
 [connection signal="pressed" from="OPTIONS" to="OPTIONS" method="_on_pressed"]

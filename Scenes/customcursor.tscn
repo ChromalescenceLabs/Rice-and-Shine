@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c56r2qj3ipuuo"]
+
+[ext_resource type="Texture2D" uid="uid://2ceaiwbikgt2" path="res://Assets/tempcursor.png" id="1_njttu"]
+[ext_resource type="Script" uid="uid://cp0wlg57jgn3" path="res://customcursor.gd" id="2_uuicp"]
+
+[node name="Node2D" type="Node2D" unique_id=1433089987]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1615346306]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_njttu")
+script = ExtResource("2_uuicp")

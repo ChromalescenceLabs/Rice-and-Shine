@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ba84sc5nqs56w"]
+
+[ext_resource type="Script" uid="uid://bnyk4i26sphb0" path="res://transition_screen.gd" id="1_c4g4b"]
+
+[sub_resource type="Animation" id="Animation_wqgbf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_milo2"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.7058824)]
+}
+
+[sub_resource type="Animation" id="Animation_2gg8n"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.43333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.7058824), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w4cxw"]
+_data = {
+&"RESET": SubResource("Animation_wqgbf"),
+&"fade_in": SubResource("Animation_milo2"),
+&"fade_out": SubResource("Animation_2gg8n")
+}
+
+[node name="Transition_Screen" type="CanvasLayer" unique_id=468167248]
+script = ExtResource("1_c4g4b")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1267093847]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06373828, 7.9692494e-05, 0.17233407, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=585216490]
+root_node = NodePath("../ColorRect")
+libraries/ = SubResource("AnimationLibrary_w4cxw")
