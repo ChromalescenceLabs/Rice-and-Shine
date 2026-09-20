@@ -12,8 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_options_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenes/minigame_select.tscn")

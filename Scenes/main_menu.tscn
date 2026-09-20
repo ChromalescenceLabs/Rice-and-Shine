@@ -1,78 +1,83 @@
 [gd_scene format=3 uid="uid://g2mj87nvmarh"]
 
 [ext_resource type="Texture2D" uid="uid://bmdh8xfhqe17j" path="res://Assets/main menu/main menu bg.png" id="1_28flt"]
-[ext_resource type="Script" uid="uid://b5opg80teqslv" path="res://Scenes/main_menu.gd" id="1_opfnp"]
+[ext_resource type="Script" uid="uid://b5676b7wq5ykb" path="res://Scenes/main_menu_buttons.gd" id="1_opfnp"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="3_cp0ys"]
+[ext_resource type="Script" uid="uid://b52ieug3kg06n" path="res://Scenes/background.gd" id="3_yhxw7"]
+[ext_resource type="Script" uid="uid://c66jgritmb8y5" path="res://Scenes/start.gd" id="4_yhxw7"]
 [ext_resource type="Script" uid="uid://dqqfae7yevku2" path="res://Scenes/options.gd" id="5_trj04"]
 [ext_resource type="Script" uid="uid://djjbw3c46ht45" path="res://Scenes/quit.gd" id="6_16hvj"]
 
-[node name="Main menu" type="Node2D" unique_id=1946810795]
+[node name="Buttons" type="Control" unique_id=60872865]
+layout_mode = 3
+anchor_left = 0.136
+anchor_top = 0.57600003
+anchor_right = 0.136
+anchor_bottom = 0.57600003
+offset_left = -176.08002
+offset_top = -141.72003
+offset_right = 176.91998
+offset_bottom = 142.27997
 script = ExtResource("1_opfnp")
+tween_intensity = 1.2
+tween_duration = 0.3
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1254845882]
+[node name="BACKGROUND" type="Sprite2D" parent="." unique_id=417947079]
+position = Vector2(189, -255)
 texture = ExtResource("1_28flt")
-centered = false
+script = ExtResource("3_yhxw7")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1663085360]
-position = Vector2(176, 133)
+[node name="LOGO" type="Sprite2D" parent="." unique_id=1486802928]
+position = Vector2(157, -146)
 scale = Vector2(0.22503203, 0.23590584)
 texture = ExtResource("3_cp0ys")
 
-[node name="Buttons" type="Control" parent="." unique_id=1241615776]
-layout_mode = 3
-anchor_left = 0.13900001
-anchor_top = 0.572
-anchor_right = 0.13900001
-anchor_bottom = 0.572
-offset_left = -2.0
-offset_top = 273.0
-offset_right = 351.0
-offset_bottom = 557.0
-
-[node name="START" type="Button" parent="Buttons" unique_id=1385854999]
+[node name="START" type="Button" parent="." unique_id=1996352847]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.411
-anchor_top = 0.113000005
-anchor_right = 0.411
-anchor_bottom = 0.113000005
-offset_left = -120.08301
-offset_top = -29.092003
-offset_right = 119.91699
-offset_bottom = 28.907997
+anchor_left = 0.45000002
+anchor_top = 0.085
+anchor_right = 0.45000002
+anchor_bottom = 0.085
+offset_left = -119.850006
+offset_top = -29.14
+offset_right = 120.149994
+offset_bottom = 28.86
 text = "START"
 alignment = 0
+script = ExtResource("4_yhxw7")
 
-[node name="OPTIONS" type="Button" parent="Buttons" unique_id=1399301370]
+[node name="OPTIONS" type="Button" parent="." unique_id=1140753139]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.41500002
+anchor_left = 0.455
 anchor_top = 0.35200003
-anchor_right = 0.41500002
+anchor_right = 0.455
 anchor_bottom = 0.35200003
-offset_left = -119.49501
+offset_left = -119.615005
 offset_top = -29.967995
-offset_right = 119.50499
+offset_right = 119.384995
 offset_bottom = 30.120018
 text = "OPTIONS
 "
 alignment = 0
 script = ExtResource("5_trj04")
 
-[node name="QUIT" type="Button" parent="Buttons" unique_id=1280621550]
+[node name="QUIT" type="Button" parent="." unique_id=586502751]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.418
-anchor_top = 0.60700005
-anchor_right = 0.418
-anchor_bottom = 0.60700005
-offset_left = -119.554
-offset_top = -29.388
-offset_right = 119.446
-offset_bottom = 29.612
+anchor_left = 0.45200002
+anchor_top = 0.625
+anchor_right = 0.45200002
+anchor_bottom = 0.625
+offset_left = -119.556015
+offset_top = -29.499985
+offset_right = 119.443985
+offset_bottom = 29.500015
 text = "QUIT"
 alignment = 0
 script = ExtResource("6_16hvj")
 
-[connection signal="pressed" from="Buttons/OPTIONS" to="Buttons/OPTIONS" method="_on_pressed"]
-[connection signal="pressed" from="Buttons/QUIT" to="Buttons/QUIT" method="_on_pressed"]
+[connection signal="pressed" from="START" to="START" method="_on_pressed"]
+[connection signal="pressed" from="OPTIONS" to="OPTIONS" method="_on_pressed"]
+[connection signal="pressed" from="QUIT" to="QUIT" method="_on_pressed"]

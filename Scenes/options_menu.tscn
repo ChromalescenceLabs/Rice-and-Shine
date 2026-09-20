@@ -1,33 +1,69 @@
 [gd_scene format=3 uid="uid://bqihwymm5632x"]
 
+[ext_resource type="Script" uid="uid://rpttvokvgsb6" path="res://Scenes/options_menu_buttons.gd" id="1_l1wg4"]
 [ext_resource type="Texture2D" uid="uid://cntmbleckj1kl" path="res://main menu bg.png" id="1_plplt"]
 [ext_resource type="Script" uid="uid://dpplwsodknegj" path="res://options_back.gd" id="2_uj0ok"]
 
 [node name="Control" type="Control" unique_id=1099961032]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l1wg4")
+tween_intensity = 1.2
+tween_duration = 0.3
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1792146214]
+[node name="BACKGROUND" type="Sprite2D" parent="." unique_id=1792146214]
 texture = ExtResource("1_plplt")
 centered = false
 
-[node name="Button" type="Button" parent="." unique_id=914300871]
+[node name="BACK" type="Button" parent="." unique_id=914300871]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.125
-anchor_top = 0.915
-anchor_right = 0.125
-anchor_bottom = 0.915
-offset_left = -143.0
-offset_top = -36.799988
-offset_right = 142.0
-offset_bottom = 36.200012
+anchor_left = 0.079
+anchor_top = 0.053000003
+anchor_right = 0.079
+anchor_bottom = 0.053000003
+offset_left = -77.12
+offset_top = -18.160004
+offset_right = 77.88
+offset_bottom = 17.839996
 text = "BACK
 "
+alignment = 0
 script = ExtResource("2_uj0ok")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="Panel" type="Panel" parent="." unique_id=1986643102]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.528
+anchor_right = 0.5
+anchor_bottom = 0.528
+offset_left = -615.0
+offset_top = -311.16
+offset_right = 616.0
+offset_bottom = 311.84
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=1402558731]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51500005
+anchor_top = 0.499
+anchor_right = 0.51500005
+anchor_bottom = 0.499
+offset_left = -271.96503
+offset_top = -44.877014
+offset_right = 273.03497
+offset_bottom = 45.122986
+theme_override_font_sizes/normal_font_size = 50
+text = "WORK IN PROGRESS!!!!"
+
+[connection signal="pressed" from="BACK" to="BACK" method="_on_pressed"]
