@@ -16,23 +16,25 @@ position = Vector2(518.99994, 595.99994)
 scale = Vector2(0.946875, 0.946875)
 texture = ExtResource("1_ftsvu")
 
-[node name="BatterStuff" type="Node2D" parent="." unique_id=326722561]
+[node name="PancakeScene" type="Node2D" parent="." unique_id=1910334361]
 
-[node name="BatterCup" parent="BatterStuff" unique_id=478683369 instance=ExtResource("2_rm7bj")]
+[node name="BatterStuff" type="Node2D" parent="PancakeScene" unique_id=326722561]
+
+[node name="BatterCup" parent="PancakeScene/BatterStuff" unique_id=478683369 instance=ExtResource("2_rm7bj")]
 z_index = 1
 position = Vector2(876, 117)
 scale = Vector2(0.5, 0.5)
 
-[node name="BowlBatter" parent="BatterStuff" unique_id=1520276035 instance=ExtResource("3_y2edm")]
+[node name="BowlBatter" parent="PancakeScene/BatterStuff" unique_id=1520276035 instance=ExtResource("3_y2edm")]
 position = Vector2(1003.0001, 467)
 scale = Vector2(1.45, 1.45)
 
-[node name="Pan" parent="." unique_id=1718511203 instance=ExtResource("4_wxx5u")]
+[node name="Pan" parent="PancakeScene" unique_id=1718511203 instance=ExtResource("4_wxx5u")]
 position = Vector2(281.00003, 393)
 rotation = -0.8709193
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.4999999, 1.4999999)
 
-[node name="Oil" parent="." unique_id=1503278428 instance=ExtResource("5_1f2tk")]
+[node name="Oil" parent="PancakeScene" unique_id=1503278428 instance=ExtResource("5_1f2tk")]
 z_index = 1
 position = Vector2(1173, 121)
 scale = Vector2(0.6, 0.6)

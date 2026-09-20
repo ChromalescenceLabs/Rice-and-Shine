@@ -1,6 +1,8 @@
 extends Area2D
 class_name PancakePan
 
+@onready var pancake_scene: Node2D = $".."
+
 @onready var pan_empty: Sprite2D = $Pan
 @onready var pan_oiled: Sprite2D = $PanOil
 @onready var pan_batter_s1: Sprite2D = $PanBatterStage1
@@ -18,7 +20,7 @@ func oiled() -> void:
 		
 
 func cookTimer():
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	pancState += 1
 		
 var pancState : int = 0:
@@ -60,4 +62,9 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				
 			if pancCooked == 5:
 				pancState = 0
-				print("Success")
+				GlobalVars.successind(get_parent())
+				await GlobalVars.successIndEnd
+				
+				GlobalVars.item_exit(pancake_scene)
+				
+				SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
