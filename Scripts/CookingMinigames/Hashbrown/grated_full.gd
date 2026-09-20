@@ -8,6 +8,7 @@ extends Area2D
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var grated_full_col_3: CollisionShape2D = $"grated FullCol3"
 
+var origPos=self.global_position
 var picked=false
 var pickUp=false
 var canGrate=false
@@ -16,7 +17,9 @@ var children = get_children()
 
 func _process(delta: float) -> void:
 	if picked:
-		self.position = get_global_mouse_position()
+		self.global_position = get_global_mouse_position()
+	else:
+		self.global_position = origPos
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "grater":
@@ -32,19 +35,17 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	pickUp=false
 
-
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("Click"):
 		if pickUp:
-			pickUp=true
+			picked=true
 	
 	if event.is_action_released("Click"):
+		picked=false
 		if canGrate:
-
 			for start in range(0, children.size() - window_size + 1, 2):
 				var subset = children.slice(start, window_size)
 				print("Subset from index %d:" % start)
 				for child in subset:
 					print("  ", child.name)
-			
-#if released click and if canGrate then add and free queue
+		
