@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dtjk3rm14kam8" path="res://Assets/Hashbrown/Potato.png" id="3_riowl"]
 [ext_resource type="Texture2D" uid="uid://brijabd5metjd" path="res://Assets/Hashbrown/Peeled Potatoes.png" id="4_04vlw"]
 [ext_resource type="Texture2D" uid="uid://cggpwgg256553" path="res://Assets/Hashbrown/Peeler.png" id="5_wa5re"]
+[ext_resource type="Script" uid="uid://exehv4t2j8u1" path="res://Scripts/CookingMinigames/Hashbrown/line_2d.gd" id="5_x26o5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tj6en"]
 
@@ -31,7 +32,7 @@ offset_left = 83.0
 offset_top = 107.99999
 offset_right = 318.0
 offset_bottom = 529.0
-scale = Vector2(0.9945959, 1.0006952)
+scale = Vector2(1.3471776, 0.9944094)
 texture = ExtResource("3_riowl")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1856136159]
@@ -39,6 +40,10 @@ clip_children = 1
 position = Vector2(83, 107.99999)
 scale = Vector2(1.3364567, 1.0095584)
 width = 50.0
+script = ExtResource("5_x26o5")
+
+[node name="AreaLine" type="Area2D" parent="Line2D" unique_id=21643825]
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="AreaPPotato" type="Area2D" parent="Line2D" unique_id=644080344]
 scale = Vector2(1.0110067, 0.99122065)
@@ -52,6 +57,7 @@ scale = Vector2(1.053951, 1.0243657)
 texture = ExtResource("4_04vlw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Line2D/AreaPPotato" unique_id=1750923480]
+visible = false
 position = Vector2(116.935974, 212.85207)
 scale = Vector2(10.313771, 19.35259)
 shape = SubResource("CircleShape2D_tj6en")

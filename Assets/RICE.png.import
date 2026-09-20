@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b52yutm30jb28"
-path="res://.godot/imported/rice.png-784ebd3c833413e5cc671cd5d0cbfbc8.ctex"
+path="res://.godot/imported/RICE.png-489a7519d34402a633c7b72143e4548f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/rice.png"
-dest_files=["res://.godot/imported/rice.png-784ebd3c833413e5cc671cd5d0cbfbc8.ctex"]
+source_file="res://Assets/RICE.png"
+dest_files=["res://.godot/imported/RICE.png-489a7519d34402a633c7b72143e4548f.ctex"]
 
 [params]
 

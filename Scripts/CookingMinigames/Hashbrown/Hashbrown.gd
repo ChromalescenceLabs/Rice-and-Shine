@@ -29,5 +29,5 @@ func _on_peeler_mouse_exited() -> void:
 	isPeeler = false
 
 func _on_area_p_potato_mouse_entered() -> void:
-	p_potato.visible=true
-	p_particles.visible=true
+	if isPeeler:
+		p_potato.visible=true
