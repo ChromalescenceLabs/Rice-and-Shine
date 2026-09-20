@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://ces2w4ohtk4vx"]
+
+[ext_resource type="Texture2D" uid="uid://brijabd5metjd" path="res://Assets/Hashbrown/Peeled Potatoes.png" id="1_6r2sp"]
+[ext_resource type="Script" uid="uid://b7b0cttgxhrg0" path="res://Scripts/CookingMinigames/Hashbrown/grated_full.gd" id="1_b8qgo"]
+[ext_resource type="Texture2D" uid="uid://dkrjq8apo47e4" path="res://Assets/Hashbrown/grated Full1.png" id="2_tdmhb"]
+[ext_resource type="Texture2D" uid="uid://dx5d12bm2bo7p" path="res://Assets/Hashbrown/grated Full2.png" id="3_1l776"]
+[ext_resource type="Texture2D" uid="uid://bnwga6r3o73s0" path="res://Assets/Hashbrown/grated Full3.png" id="4_4s54m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq4fq"]
+size = Vector2(43.179832, 44.395836)
+
+[node name="gratedFull" type="Area2D" unique_id=1619096956]
+position = Vector2(21, 79)
+script = ExtResource("1_b8qgo")
+
+[node name="Peeled" type="TextureRect" parent="." unique_id=1523132430]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = -208.5
+offset_right = 120.5
+offset_bottom = 208.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6r2sp")
+
+[node name="PeeledCol" type="CollisionShape2D" parent="." unique_id=1590579546]
+scale = Vector2(4.701268, 9.032378)
+shape = SubResource("RectangleShape2D_mq4fq")
+
+[node name="grated Full" type="TextureRect" parent="." unique_id=2131733308]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -141.0
+offset_right = 150.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tdmhb")
+
+[node name="grated FullCol" type="CollisionShape2D" parent="." unique_id=66831655]
+visible = false
+position = Vector2(1, 36)
+rotation = 3.1415927
+scale = Vector2(4.670107, -7.4304404)
+shape = SubResource("RectangleShape2D_mq4fq")
+
+[node name="grated Full2" type="TextureRect" parent="." unique_id=963383764]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -47.0
+offset_right = 126.0
+offset_bottom = 253.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_1l776")
+
+[node name="grated FullCol2" type="CollisionShape2D" parent="." unique_id=1021562471]
+visible = false
+position = Vector2(0, 96)
+rotation = -3.1415925
+scale = Vector2(4.8065305, -4.7506356)
+shape = SubResource("RectangleShape2D_mq4fq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=157185513]
+visible = false
+offset_left = -127.0
+offset_top = 42.0
+offset_right = 120.0
+offset_bottom = 219.0
+texture = ExtResource("4_4s54m")
+
+[node name="grated FullCol3" type="CollisionShape2D" parent="." unique_id=1539126652]
+visible = false
+position = Vector2(1, 145.00002)
+rotation = -3.1415925
+scale = Vector2(4.570992, -2.4331942)
+shape = SubResource("RectangleShape2D_mq4fq")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
