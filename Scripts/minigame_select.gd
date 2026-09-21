@@ -9,7 +9,7 @@ func _on_minigame_2_pressed() -> void:
 
 
 func _on_minigame_3_pressed() -> void:
-	SceneLoader.load_scene("uid://b8yqa13xod3tx", 1.5)
+	SceneLoader.load_scene("uid://j42ywdsfuawg", 1.5)
 
 
 func _on_minigame_4_pressed() -> void:

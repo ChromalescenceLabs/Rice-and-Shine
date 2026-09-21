@@ -16,36 +16,39 @@ var amtChange =0
 
 func _ready() -> void:
 	origPos = self.global_position
-	print('hi')
-	get_subset_by_index(amtChange)
 	
-	for start in range(0, self.get_children().size(), 2):
-		var subset = self.get_children().slice(start,start+ 4)
-		print("Subset from index %d:" % start)
-		for child in subset:
-			print("  ", child.name)
-
-func get_subset_by_index(amt:int):
-	var step = 2
-	var window_size = 4
-
-	var start = amt * 2
-
-	if start >= self.get_children().size():
-		print(self.get_children().size(), "No subset for ", amt)
-		return 
 	
-	var subset = self.get_children().slice(start, start+2)
-	for child in subset:
-		print("  ", child.name)
-		child.visible= false
-	subset = self.get_children().slice(start+2, start+4)
-	for child in subset:
-		print("  ", child.name)
-		child.visible= true
-	return subset
+	
+	#print('hi')
+	#get_subset_by_index(amtChange)
+	#
+	#for start in range(0, self.get_children().size(), 2):
+		#var subset = self.get_children().slice(start,start+ 4)
+		#print("Subset from index %d:" % start)
+		#for child in subset:
+			#print("  ", child.name)
+#
+#func get_subset_by_index(amt:int):
+	#var step = 2
+	#var window_size = 4
+#
+	#var start = amt * 2
+#
+	#if start >= self.get_children().size():
+		#print(self.get_children().size(), "No subset for ", amt)
+		#return 
+	#
+	#var subset = self.get_children().slice(start, start+2)
+	#for child in subset:
+		#print("  ", child.name)
+		#child.visible= false
+	#subset = self.get_children().slice(start+2, start+4)
+	#for child in subset:
+		#print("  ", child.name)
+		#child.visible= true
+	#return subset
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if picked:
 		self.global_position = lerp(self.global_position, get_global_mouse_position(), 0.2)
 	else:
@@ -58,7 +61,7 @@ func _on_mouse_exited() -> void:
 	pickUp=false
 
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("Click"):
 		if pickUp:
 			picked=true

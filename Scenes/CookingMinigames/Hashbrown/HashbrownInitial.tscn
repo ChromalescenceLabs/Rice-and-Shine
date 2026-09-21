@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://bvalouachcu1j" path="res://Scripts/CookingMinigames/Hashbrown/Hashbrown.gd" id="1_tan3t"]
 [ext_resource type="Texture2D" uid="uid://dtjk3rm14kam8" path="res://Assets/Hashbrown/Potato.png" id="4_2vbmc"]
 [ext_resource type="Script" uid="uid://exehv4t2j8u1" path="res://Scripts/CookingMinigames/Hashbrown/line_2d.gd" id="5_pxv5y"]
+[ext_resource type="Script" uid="uid://cpjp1s5h2ursw" path="res://Scenes/CookingMinigames/Hashbrown/peeler.gd" id="5_tan3t"]
 [ext_resource type="Texture2D" uid="uid://brijabd5metjd" path="res://Assets/Hashbrown/Peeled Potatoes.png" id="6_24fpq"]
 [ext_resource type="Texture2D" uid="uid://cggpwgg256553" path="res://Assets/Hashbrown/Peeler.png" id="7_gf6eo"]
+[ext_resource type="Script" uid="uid://d0bing65rgjq3" path="res://Scripts/CookingMinigames/Hashbrown/hashcheckareas.gd" id="7_n6pmv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_08i74"]
 radius = 91.28618
@@ -15,7 +17,28 @@ height = 350.64844
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2mse2"]
 height = 87.5466
 
-[node name="Hashbrowns" type="Node2D" unique_id=1704651639]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08i74"]
+size = Vector2(62, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1n4x"]
+size = Vector2(25, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vbmc"]
+size = Vector2(41, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxv5y"]
+size = Vector2(33, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24fpq"]
+size = Vector2(49, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf6eo"]
+size = Vector2(61, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kds4b"]
+size = Vector2(47, 39)
+
+[node name="HashbrownPeel" type="Node2D" unique_id=1704651639]
 script = ExtResource("1_tan3t")
 
 [node name="Potato" type="TextureRect" parent="." unique_id=2124695233]
@@ -61,6 +84,7 @@ shape = SubResource("CircleShape2D_tj6en")
 [node name="Peeler" type="Area2D" parent="." unique_id=2070195057]
 position = Vector2(959, 299)
 scale = Vector2(1, 1.0000001)
+script = ExtResource("5_tan3t")
 
 [node name="PeeledParticles" type="CPUParticles2D" parent="Peeler" unique_id=867490272]
 visible = false
@@ -85,6 +109,249 @@ position = Vector2(-1, 76.999985)
 scale = Vector2(6.284462, 2.3301876)
 shape = SubResource("CapsuleShape2D_2mse2")
 
+[node name="CheckingAreas" type="Node2D" parent="." unique_id=908283941]
+
+[node name="Area2D" type="Area2D" parent="CheckingAreas" unique_id=947413098 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D" unique_id=1519921880]
+position = Vector2(306, 146)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D2" type="Area2D" parent="CheckingAreas" unique_id=1173111901 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D2" unique_id=751629741]
+position = Vector2(246, 147)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D3" type="Area2D" parent="CheckingAreas" unique_id=385184323 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D3" unique_id=1412672824]
+position = Vector2(184, 145)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D4" type="Area2D" parent="CheckingAreas" unique_id=867995017 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D4" unique_id=959889673]
+position = Vector2(151.25, 196)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D5" type="Area2D" parent="CheckingAreas" unique_id=1276820364 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D5" unique_id=771944315]
+position = Vector2(215, 196)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D6" type="Area2D" parent="CheckingAreas" unique_id=166546976 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D6" unique_id=468002038]
+position = Vector2(272, 197)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D7" type="Area2D" parent="CheckingAreas" unique_id=693871715 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D7" unique_id=1791955331]
+position = Vector2(336, 197)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D8" type="Area2D" parent="CheckingAreas" unique_id=2078659394 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D8" unique_id=4073703]
+position = Vector2(138, 246)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D9" type="Area2D" parent="CheckingAreas" unique_id=2124968579 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D9" unique_id=825422758]
+position = Vector2(201, 246)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D10" type="Area2D" parent="CheckingAreas" unique_id=49195426 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D10" unique_id=1044947267]
+position = Vector2(264, 247)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D11" type="Area2D" parent="CheckingAreas" unique_id=1358704586 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D11" unique_id=1520004674]
+position = Vector2(327, 248)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D12" type="Area2D" parent="CheckingAreas" unique_id=1712668379 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D12" unique_id=963389795]
+position = Vector2(371.5, 247)
+shape = SubResource("RectangleShape2D_k1n4x")
+
+[node name="Area2D13" type="Area2D" parent="CheckingAreas" unique_id=2059238127 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D13" unique_id=1322600649]
+position = Vector2(119.5, 297)
+shape = SubResource("RectangleShape2D_2vbmc")
+
+[node name="Area2D14" type="Area2D" parent="CheckingAreas" unique_id=2001639259 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D14" unique_id=248827960]
+position = Vector2(170, 296)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D15" type="Area2D" parent="CheckingAreas" unique_id=210767435 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D15" unique_id=1634052229]
+position = Vector2(231, 296)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D16" type="Area2D" parent="CheckingAreas" unique_id=1782348913 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D16" unique_id=113098135]
+position = Vector2(293, 296)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D17" type="Area2D" parent="CheckingAreas" unique_id=1413840643 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D17" unique_id=389501318]
+position = Vector2(355, 297)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D18" type="Area2D" parent="CheckingAreas" unique_id=769099990 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D18" unique_id=15414142]
+position = Vector2(131, 347)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D19" type="Area2D" parent="CheckingAreas" unique_id=1708146933 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D19" unique_id=205114687]
+position = Vector2(193, 346)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D20" type="Area2D" parent="CheckingAreas" unique_id=1098626159 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D20" unique_id=1348568472]
+position = Vector2(256, 347)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D21" type="Area2D" parent="CheckingAreas" unique_id=1706181223 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D21" unique_id=419875516]
+position = Vector2(318, 347)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D22" type="Area2D" parent="CheckingAreas" unique_id=661805239 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D22" unique_id=1453024511]
+position = Vector2(365.5, 347)
+shape = SubResource("RectangleShape2D_pxv5y")
+
+[node name="Area2D34" type="Area2D" parent="CheckingAreas" unique_id=1522546070 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D34" unique_id=1841664500]
+position = Vector2(365, 396)
+shape = SubResource("RectangleShape2D_pxv5y")
+
+[node name="Area2D23" type="Area2D" parent="CheckingAreas" unique_id=1692530948 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D23" unique_id=1923084281]
+position = Vector2(137, 397)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D24" type="Area2D" parent="CheckingAreas" unique_id=1290315424 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D24" unique_id=1182907010]
+position = Vector2(198, 395)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D25" type="Area2D" parent="CheckingAreas" unique_id=863594306 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D25" unique_id=1279989955]
+position = Vector2(260, 398)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D26" type="Area2D" parent="CheckingAreas" unique_id=766152470 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D26" unique_id=1880451230]
+position = Vector2(322, 397)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D27" type="Area2D" parent="CheckingAreas" unique_id=201728038 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D27" unique_id=1804436849]
+position = Vector2(158, 446)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D28" type="Area2D" parent="CheckingAreas" unique_id=1306502269 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D28" unique_id=111289505]
+position = Vector2(220, 446)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D29" type="Area2D" parent="CheckingAreas" unique_id=442747713 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D29" unique_id=1533008936]
+position = Vector2(281, 447)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D30" type="Area2D" parent="CheckingAreas" unique_id=1698991400 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D30" unique_id=2025609039]
+position = Vector2(335.5, 446)
+shape = SubResource("RectangleShape2D_24fpq")
+
+[node name="Area2D31" type="Area2D" parent="CheckingAreas" unique_id=306433432 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D31" unique_id=1335747101]
+position = Vector2(188.5, 491.5)
+shape = SubResource("RectangleShape2D_gf6eo")
+
+[node name="Area2D32" type="Area2D" parent="CheckingAreas" unique_id=1477535487 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D32" unique_id=1005789137]
+position = Vector2(251, 497)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="Area2D33" type="Area2D" parent="CheckingAreas" unique_id=273386202 groups=["AreaCheck"]]
+script = ExtResource("7_n6pmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckingAreas/Area2D33" unique_id=1154099944]
+position = Vector2(306.5, 489.5)
+shape = SubResource("RectangleShape2D_kds4b")
+
 [connection signal="mouse_entered" from="Line2D/AreaPPotato" to="." method="_on_area_p_potato_mouse_entered"]
+[connection signal="area_entered" from="Peeler" to="Peeler" method="_on_area_entered"]
+[connection signal="area_exited" from="Peeler" to="Peeler" method="_on_area_exited"]
+[connection signal="input_event" from="Peeler" to="." method="_on_peeler_input_event"]
 [connection signal="mouse_entered" from="Peeler" to="." method="_on_peeler_mouse_entered"]
 [connection signal="mouse_exited" from="Peeler" to="." method="_on_peeler_mouse_exited"]
