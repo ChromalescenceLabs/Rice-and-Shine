@@ -26,7 +26,7 @@ scale = Vector2(0.90000004, 0.9000001)
 texture = ExtResource("2_y804u")
 
 [node name="grater" type="Area2D" parent="." unique_id=177305472]
-position = Vector2(91, 141)
+position = Vector2(91, 196)
 
 [node name="grater" type="TextureRect" parent="grater" unique_id=655281286]
 offset_right = 300.0
@@ -39,7 +39,7 @@ scale = Vector2(13.070598, 19.099464)
 shape = SubResource("RectangleShape2D_ittll")
 
 [node name="gratedFull" parent="." unique_id=1619096956 instance=ExtResource("5_1gtf3")]
-position = Vector2(996, 121)
+position = Vector2(914, 406)
 
 [node name="Grated" type="Control" parent="." unique_id=938886420]
 layout_mode = 3

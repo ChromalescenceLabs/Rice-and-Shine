@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://j6q5rk7qfms4" path="res://Scripts/CookingMinigames/Kanin/rice_cook_input.gd" id="4_jus3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jus3d"]
-size = Vector2(308, 80)
+size = Vector2(308, 227)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vljv"]
 size = Vector2(328, 228)
@@ -23,7 +23,7 @@ texture = ExtResource("1_qb8ax")
 script = ExtResource("1_e6a4i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RiceBowlFillArea" unique_id=1586883194]
-position = Vector2(-7, 0)
+position = Vector2(-7, 73.5)
 shape = SubResource("RectangleShape2D_jus3d")
 
 [node name="PickableArea" type="ColorRect" parent="." unique_id=833656701]

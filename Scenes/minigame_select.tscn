@@ -3,12 +3,19 @@
 [ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/minigame_select.gd" id="1_o6kqx"]
 [ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/RICE.png" id="2_8ljou"]
 [ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/pancake.png" id="3_gt6vn"]
+[ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/hasbrown.png" id="4_gt6vn"]
 [ext_resource type="Texture2D" uid="uid://flr15pt8c72a" path="res://Assets/placeholder.png" id="4_len8d"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nywky"]
+[ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="6_len8d"]
 
 [node name="Minigame Selection" type="Node2D" unique_id=380012965]
 script = ExtResource("1_o6kqx")
+
+[node name="BG" type="ColorRect" parent="." unique_id=916736482]
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(1, 0.5372549, 0.21176471, 1)
 
 [node name="Selection" type="Control" parent="." unique_id=1185375392]
 layout_mode = 3
@@ -41,7 +48,7 @@ offset_top = 240.0
 offset_right = 1488.0
 offset_bottom = 599.0
 scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("4_len8d")
+texture_normal = ExtResource("4_gt6vn")
 
 [node name="Minigame 4" type="TextureButton" parent="Selection" unique_id=1236986991]
 layout_mode = 0
@@ -73,7 +80,7 @@ texture_normal = ExtResource("4_len8d")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510853050]
 position = Vector2(640, 117)
 scale = Vector2(0.19780816, 0.19780816)
-texture = SubResource("CompressedTexture2D_nywky")
+texture = ExtResource("6_len8d")
 
 [connection signal="pressed" from="Selection/Rice" to="." method="_on_minigame_1_pressed"]
 [connection signal="pressed" from="Selection/Minigame 2" to="." method="_on_minigame_2_pressed"]

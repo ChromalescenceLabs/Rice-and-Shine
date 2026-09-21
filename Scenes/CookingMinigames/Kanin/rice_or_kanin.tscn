@@ -40,6 +40,8 @@ curve = SubResource("Curve_km12d")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_08i74"]
 particle_flag_disable_z = true
 gravity = Vector3(0, 98, 0)
+scale_min = 0.7
+scale_max = 0.7
 scale_curve = SubResource("CurveTexture_idtpb")
 hue_variation_min = -0.06000002
 hue_variation_max = -2.2351742e-08
@@ -134,14 +136,13 @@ position = Vector2(332, 368)
 shape = SubResource("RectangleShape2D_idtpb")
 
 [node name="Water" type="Node2D" parent="." unique_id=935142887]
-visible = false
 
 [node name="RiceBowl" parent="Water" unique_id=1504106188 instance=ExtResource("11_t3ihu")]
 position = Vector2(1037, 300)
 
 [node name="Faucet" type="Sprite2D" parent="Water" unique_id=327294265]
-position = Vector2(637, 243)
-scale = Vector2(0.63, 0.63)
+position = Vector2(631, 338)
+scale = Vector2(1.0055556, 1.0055555)
 texture = ExtResource("10_lbrr1")
 
 [node name="FaucetButton" type="Sprite2D" parent="Water" unique_id=1801152036]
@@ -164,17 +165,19 @@ offset_bottom = 263.49213
 mouse_default_cursor_shape = 2
 
 [node name="Water" type="GPUParticles2D" parent="Water" unique_id=2026971331]
-position = Vector2(643, 231)
+position = Vector2(625, 346)
+scale = Vector2(0.695, 0.695)
 texture = SubResource("GradientTexture2D_08i74")
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_08i74")
 script = ExtResource("13_km12d")
 
 [node name="WaterDetect" type="Area2D" parent="Water/Water" unique_id=1723123421]
+position = Vector2(-47.482018, 58.99281)
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water/Water/WaterDetect" unique_id=464032414]
-position = Vector2(0, 164)
+position = Vector2(47.481995, 162.58997)
 shape = SubResource("RectangleShape2D_08i74")
 
 [node name="WaterProgressBar" type="ProgressBar" parent="Water" unique_id=592523546]
