@@ -3,7 +3,33 @@ A culmination of journals for the ThirdSpace team that worked on this project.
 
 ## WEEK 1: SEPTEMBER 13-20
 ### 1. ALLIUMC
+Things I've did:
+1. draw temporary assets
+2. did the peeler
+- peeled the the potatoes
+- win condition
+3. did the the grater
+- pick up the potato 
+- grater
+ - enter area of grater (did not finish)
+  - basically each time u grate u hide the first 2 children then make visible the next 2
+ - win condition after the grated potatoes done cycling through all its children (did not finish)
 
+**My thoughts on the matter:**
+I didn't have much time to code for the game since school was taking up too much of my time and I was also struggling since I haven't coded in godot fot a hot while. I forgot how to do most of the stuff so I played around with the scenes for a bit. I didn't have enough time to search around since I was cramming for the hours so most of my stuff remains unfinished. 
+
+**The Things I had Trouble with:**
+1. the win condition for the peeler
+- So this is the feature that had taken most of my time. I try to do various stuff like:
+ - try to check if the whole unpeeled image is inside the collision of the peeled images
+ - try to make a collision shape out of the line2d polyline and check if all the points in the line2d polyline is inside the collision shape of the peeled images
+2. my laptop keeps lagging out whenever I'm testing
+3. I keep frequently switching tasks
+- I had a hard time focusing on a single task since it was getting late into the night
+
+**Additional Notes**
+
+Most of my commit messages have its vital information in their descriptions. I also briefly worked on certain assets.
 
 ### 2. CLIF
 Progress:
@@ -25,6 +51,7 @@ I spent all of my time coding:
   - This included the dragging mechanic, where I used lerp for the first time (surprisingly)
   - A bit of initial code for the progress bars when it comes to filling up the bowl with water and the time it takes for the rice to cook.
 - Other than the rice, I also managed to implement the initial pop up when you complete an action successfully (which I implemented across everyone's minigames). Both this and the water in the rice minigame got me learning about particles, which I find interesting and might improve within the next following weeks.
+- Also mainly managed the repository and the initial Itch page, which will be updated in the following weeks.
 
 - Overall, I'd say I'm happy with the progress I got. I'll be sure to improve the initial codes I've written within the next following weeks.
 
