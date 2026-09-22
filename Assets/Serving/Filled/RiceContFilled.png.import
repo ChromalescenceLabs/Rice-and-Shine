@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgya7yialyiv4"
-path="res://.godot/imported/TBAContH.png-1c7910aed10a5edf6535f75c1601343c.ctex"
+uid="uid://doy8fthnvd5lo"
+path="res://.godot/imported/RiceContFilled.png-80fb833f49afbf9d5639b3d5ec0493a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Serving/TBAContH.png"
-dest_files=["res://.godot/imported/TBAContH.png-1c7910aed10a5edf6535f75c1601343c.ctex"]
+source_file="res://Assets/Serving/Filled/RiceContFilled.png"
+dest_files=["res://.godot/imported/RiceContFilled.png-80fb833f49afbf9d5639b3d5ec0493a8.ctex"]
 
 [params]
 

@@ -1,16 +1,25 @@
 [gd_scene format=3 uid="uid://cvg4i1rwk4hbd"]
 
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="1_ed4vm"]
-[ext_resource type="Texture2D" uid="uid://chv7ovq6nnca3" path="res://Assets/Serving/RiceCont.png" id="1_gd0cl"]
+[ext_resource type="Texture2D" uid="uid://chv7ovq6nnca3" path="res://Assets/Serving/Empty/RiceCont.png" id="1_gd0cl"]
 [ext_resource type="Script" uid="uid://cst44s67ajtrq" path="res://Scripts/Freeplay/CustomerServing/customer_serving_sandbox.gd" id="1_wgjyl"]
-[ext_resource type="Texture2D" uid="uid://dlns6abi2siiy" path="res://Assets/Serving/PancakeCont.png" id="2_junut"]
+[ext_resource type="Texture2D" uid="uid://dlns6abi2siiy" path="res://Assets/Serving/Empty/PancakeCont.png" id="2_junut"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="2_pwox5"]
-[ext_resource type="Texture2D" uid="uid://cuqrumfstfqqu" path="res://Assets/Serving/HashbrownCont.png" id="3_ed4vm"]
-[ext_resource type="Texture2D" uid="uid://bfxatlh6arx51" path="res://Assets/Serving/RiceContH.png" id="4_3ollt"]
-[ext_resource type="Texture2D" uid="uid://dko8vg62oll8w" path="res://Assets/Serving/TBACont.png" id="4_pwox5"]
-[ext_resource type="Texture2D" uid="uid://7hk0brvbupc2" path="res://Assets/Serving/PancakeContH.png" id="6_i53e2"]
-[ext_resource type="Texture2D" uid="uid://4msdq3gandfm" path="res://Assets/Serving/HashbrownContH.png" id="7_i53e2"]
-[ext_resource type="Texture2D" uid="uid://bgya7yialyiv4" path="res://Assets/Serving/TBAContH.png" id="9_wgjyl"]
+[ext_resource type="Texture2D" uid="uid://cuqrumfstfqqu" path="res://Assets/Serving/Empty/HashbrownCont.png" id="3_ed4vm"]
+[ext_resource type="Texture2D" uid="uid://bfxatlh6arx51" path="res://Assets/Serving/Empty/RiceContH.png" id="4_3ollt"]
+[ext_resource type="Texture2D" uid="uid://dko8vg62oll8w" path="res://Assets/Serving/Empty/TBACont.png" id="4_pwox5"]
+[ext_resource type="Texture2D" uid="uid://7hk0brvbupc2" path="res://Assets/Serving/Empty/PancakeContH.png" id="6_i53e2"]
+[ext_resource type="Texture2D" uid="uid://4msdq3gandfm" path="res://Assets/Serving/Empty/HashbrownContH.png" id="7_i53e2"]
+[ext_resource type="Texture2D" uid="uid://bgya7yialyiv4" path="res://Assets/Serving/Empty/TBAContH.png" id="9_wgjyl"]
+
+[sub_resource type="Gradient" id="Gradient_wgjyl"]
+offsets = PackedFloat32Array(0, 0.6204819, 0.9939759)
+colors = PackedColorArray(0.28708315, 0.14834896, 0.0949044, 1, 0.6441346, 0.2909285, 0.056175753, 1, 0.71782947, 0.37462825, 0.19089448, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_08i74"]
+gradient = SubResource("Gradient_wgjyl")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_khlfu"]
 script = ExtResource("2_pwox5")
@@ -26,6 +35,20 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
+
+[node name="FoodContBG" type="TextureRect" parent="Control" unique_id=134774901]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -260.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_08i74")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=667592894]
 layout_mode = 1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4msdq3gandfm"
-path="res://.godot/imported/HashbrownContH.png-64c3c3445a85847a8cfe1af38c292374.ctex"
+uid="uid://cevrrowe651af"
+path="res://.godot/imported/PancakeContFilledH.png-3820296ed741faa2ccfcdb3830577c96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Serving/HashbrownContH.png"
-dest_files=["res://.godot/imported/HashbrownContH.png-64c3c3445a85847a8cfe1af38c292374.ctex"]
+source_file="res://Assets/Serving/Filled/PancakeContFilledH.png"
+dest_files=["res://.godot/imported/PancakeContFilledH.png-3820296ed741faa2ccfcdb3830577c96.ctex"]
 
 [params]
 

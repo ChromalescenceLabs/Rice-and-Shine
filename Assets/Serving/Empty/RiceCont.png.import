@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7hk0brvbupc2"
-path="res://.godot/imported/PancakeContH.png-5d24ef90af9848c88f12159102486891.ctex"
+uid="uid://chv7ovq6nnca3"
+path="res://.godot/imported/RiceCont.png-ed72c8d43f6c32d29c65fef3ee3daf0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Serving/PancakeContH.png"
-dest_files=["res://.godot/imported/PancakeContH.png-5d24ef90af9848c88f12159102486891.ctex"]
+source_file="res://Assets/Serving/Empty/RiceCont.png"
+dest_files=["res://.godot/imported/RiceCont.png-ed72c8d43f6c32d29c65fef3ee3daf0a.ctex"]
 
 [params]
 
