@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cp6b2av42pmrw"]
 
-[ext_resource type="Script" uid="uid://33ygglvspse" path="res://Scripts/recipe_book.gd" id="1_lbn4d"]
+[ext_resource type="Script" uid="uid://33ygglvspse" path="res://Scripts/CookingMinigames/recipe_book.gd" id="1_lbn4d"]
 [ext_resource type="Texture2D" uid="uid://decvmrjgt6vxc" path="res://Assets/RecBookClosed.png" id="2_po80a"]
 [ext_resource type="Texture2D" uid="uid://b04ykbm6g3xci" path="res://Assets/RecBookOpen.png" id="3_4wqci"]
 

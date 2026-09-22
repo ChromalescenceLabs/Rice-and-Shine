@@ -23,7 +23,6 @@ func successind(tree):
 	
 func item_enter(item) -> void:
 	create_tween().tween_property(item, "position", Vector2(0,0), 2).set_trans(Tween.TRANS_ELASTIC)
-	
 func item_exit(item) -> void:
 	var vw = get_viewport().size.x
 	create_tween().tween_property(item, "position", Vector2(vw * -1, 0), 2).set_trans(Tween.TRANS_ELASTIC)

@@ -1,3 +1,105 @@
 [gd_scene format=3 uid="uid://cvg4i1rwk4hbd"]
 
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="1_ed4vm"]
+[ext_resource type="Texture2D" uid="uid://chv7ovq6nnca3" path="res://Assets/Serving/RiceCont.png" id="1_gd0cl"]
+[ext_resource type="Script" uid="uid://cst44s67ajtrq" path="res://Scripts/Freeplay/CustomerServing/customer_serving_sandbox.gd" id="1_wgjyl"]
+[ext_resource type="Texture2D" uid="uid://dlns6abi2siiy" path="res://Assets/Serving/PancakeCont.png" id="2_junut"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="2_pwox5"]
+[ext_resource type="Texture2D" uid="uid://cuqrumfstfqqu" path="res://Assets/Serving/HashbrownCont.png" id="3_ed4vm"]
+[ext_resource type="Texture2D" uid="uid://bfxatlh6arx51" path="res://Assets/Serving/RiceContH.png" id="4_3ollt"]
+[ext_resource type="Texture2D" uid="uid://dko8vg62oll8w" path="res://Assets/Serving/TBACont.png" id="4_pwox5"]
+[ext_resource type="Texture2D" uid="uid://7hk0brvbupc2" path="res://Assets/Serving/PancakeContH.png" id="6_i53e2"]
+[ext_resource type="Texture2D" uid="uid://4msdq3gandfm" path="res://Assets/Serving/HashbrownContH.png" id="7_i53e2"]
+[ext_resource type="Texture2D" uid="uid://bgya7yialyiv4" path="res://Assets/Serving/TBAContH.png" id="9_wgjyl"]
+
+[sub_resource type="Resource" id="Resource_khlfu"]
+script = ExtResource("2_pwox5")
+
+[sub_resource type="Resource" id="Resource_3ollt"]
+script = ExtResource("2_pwox5")
+
 [node name="CustomerServingSandbox" type="Node2D" unique_id=1724706127]
+script = ExtResource("1_wgjyl")
+
+[node name="Control" type="Control" parent="." unique_id=2072875163]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=667592894]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -639.0
+offset_top = -260.0
+offset_right = 639.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+scroll_horizontal_by_default = true
+script = ExtResource("1_ed4vm")
+wheel_scroll_damper = SubResource("Resource_khlfu")
+dragging_scroll_damper = SubResource("Resource_3ollt")
+allow_vertical_scroll = false
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="FoodConts" type="HBoxContainer" parent="Control/ScrollContainer" unique_id=298712071]
+layout_mode = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="RiceCont" type="TextureButton" parent="Control/ScrollContainer/FoodConts" unique_id=839576300]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_gd0cl")
+texture_hover = ExtResource("4_3ollt")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="PancakeCont" type="TextureButton" parent="Control/ScrollContainer/FoodConts" unique_id=1260264982]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_junut")
+texture_hover = ExtResource("6_i53e2")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HashbrownCont" type="TextureButton" parent="Control/ScrollContainer/FoodConts" unique_id=2137797740]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_ed4vm")
+texture_hover = ExtResource("7_i53e2")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TbaCont" type="TextureButton" parent="Control/ScrollContainer/FoodConts" unique_id=381818134]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_pwox5")
+texture_hover = ExtResource("9_wgjyl")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TbaCont2" type="TextureButton" parent="Control/ScrollContainer/FoodConts" unique_id=907113144]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_pwox5")
+texture_hover = ExtResource("9_wgjyl")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TbaCont3" type="TextureButton" parent="Control/ScrollContainer/FoodConts" unique_id=820204728]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_pwox5")
+texture_hover = ExtResource("9_wgjyl")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[connection signal="pressed" from="Control/ScrollContainer/FoodConts/RiceCont" to="." method="_on_rice_cont_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/FoodConts/PancakeCont" to="." method="_on_pancake_cont_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="." method="_on_hashbrown_cont_pressed"]
