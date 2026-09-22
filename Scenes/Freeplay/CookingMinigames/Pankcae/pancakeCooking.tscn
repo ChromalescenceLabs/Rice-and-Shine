@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/CookingBGTopDown.jpg" id="1_ftsvu"]
 [ext_resource type="Script" uid="uid://85f1vv0w5g6l" path="res://Scripts/CookingMinigames/Pamcake/pancake_cooking.gd" id="1_rm7bj"]
-[ext_resource type="PackedScene" uid="uid://d3o3pud744tt1" path="res://Scenes/CookingMinigames/Pankcae/batter_cup.tscn" id="2_rm7bj"]
-[ext_resource type="PackedScene" uid="uid://2756jtyts0ga" path="res://Scenes/CookingMinigames/Pankcae/bowl.tscn" id="3_y2edm"]
-[ext_resource type="PackedScene" uid="uid://d4iqxrauw1jdo" path="res://Scenes/CookingMinigames/Pankcae/pan.tscn" id="4_wxx5u"]
-[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/CookingMinigames/Pankcae/oil.tscn" id="5_1f2tk"]
-[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/recipe_book.tscn" id="7_y2edm"]
+[ext_resource type="PackedScene" uid="uid://d3o3pud744tt1" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/batter_cup.tscn" id="2_rm7bj"]
+[ext_resource type="PackedScene" uid="uid://2756jtyts0ga" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/bowl.tscn" id="3_y2edm"]
+[ext_resource type="PackedScene" uid="uid://d4iqxrauw1jdo" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/pan.tscn" id="4_wxx5u"]
+[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/oil.tscn" id="5_1f2tk"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/recipe_book.tscn" id="7_y2edm"]
 
 [node name="PancakeCooking" type="Node2D" unique_id=930183867]
 script = ExtResource("1_rm7bj")

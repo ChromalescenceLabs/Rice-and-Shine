@@ -77,6 +77,15 @@ offset_bottom = 834.0
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("4_len8d")
 
+[node name="ServeCustomers" type="Button" parent="Selection" unique_id=1987029645]
+layout_mode = 0
+offset_left = 837.0
+offset_top = 78.0
+offset_right = 1236.0
+offset_bottom = 166.0
+theme_override_font_sizes/font_size = 30
+text = "Serve Customers Sandbox"
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510853050]
 position = Vector2(640, 117)
 scale = Vector2(0.19780816, 0.19780816)
@@ -88,3 +97,4 @@ texture = ExtResource("6_len8d")
 [connection signal="pressed" from="Selection/Minigame 4" to="." method="_on_minigame_4_pressed"]
 [connection signal="pressed" from="Selection/Minigame 5" to="." method="_on_minigame_5_pressed"]
 [connection signal="pressed" from="Selection/Minigame 6" to="." method="_on_minigame_6_pressed"]
+[connection signal="pressed" from="Selection/ServeCustomers" to="." method="_on_serve_customers_pressed"]
