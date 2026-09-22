@@ -4,9 +4,9 @@ extends Node2D
 @onready var pcake_cont: TextureButton = $Control/ScrollContainer/FoodConts/PancakeCont
 @onready var hbrown_cont: TextureButton = $Control/ScrollContainer/FoodConts/HashbrownCont
 
-var rice_state = "EMPTY" if GlobalVars.rice_value <= 0 else "FILLED"
-var pcake_state = "EMPTY" if GlobalVars.pcake_value <= 0 else "FILLED"
-var hbrown_state = "EMPTY" if GlobalVars.hbrown_value <= 0 else "FILLED"
+var rice_state = GlobalVars.rice_cont_state
+var pcake_state = GlobalVars.pcake_cont_state
+var hbrown_state = GlobalVars.hbrown_cont_state
 
 var textureDict = {
 	"rice_cont" = load("uid://chv7ovq6nnca3"),
@@ -29,6 +29,9 @@ func _on_pancake_cont_pressed(): check_value_forbtn(pcake_state, "uid://bf86igy0
 func _on_hashbrown_cont_pressed(): check_value_forbtn(hbrown_state, "uid://j42ywdsfuawg")
 
 func _ready() -> void:
+	rice_state = GlobalVars.rice_cont_state
+	pcake_state = GlobalVars.pcake_cont_state
+	hbrown_state = GlobalVars.hbrown_cont_state
 	GlobalVars.is_customer_serving = true
 	GlobalVars.foodValueChanged.connect(_on_food_val_changed)
 
@@ -53,9 +56,9 @@ func check_value_forbtn(cont_state, scene: String):
 		"FILLED":
 			pass # Add dragging effect for serving customers
 
-func _on_food_val_changed(var_name : String, new_value : int, current_state):
+func _on_food_val_changed(var_name : String, new_value : int, current_state: String):
 	match var_name:
-		"rice_value": rice_state = str(current_state.name)
-		"pcake_value": pcake_state = str(current_state.name)
-		"hbrown_value": hbrown_state = str(current_state.name)
+		"rice_value": rice_state = current_state
+		"pcake_value": pcake_state = current_state
+		"hbrown_value": hbrown_state = current_state
 		
