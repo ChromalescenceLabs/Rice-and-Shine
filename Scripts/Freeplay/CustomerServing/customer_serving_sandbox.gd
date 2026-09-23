@@ -32,6 +32,9 @@ func _ready() -> void:
 	rice_state = GlobalVars.rice_cont_state
 	pcake_state = GlobalVars.pcake_cont_state
 	hbrown_state = GlobalVars.hbrown_cont_state
+	change_texture(rice_state, rice_cont, textureDict.get("rice_cont"), textureDict.get("rice_conth"), textureDict.get("ricef_cont"), textureDict.get("ricef_conth"))
+	change_texture(pcake_state, pcake_cont, textureDict.get("pcake_cont"), textureDict.get("pcake_conth"), textureDict.get("pcakef_cont"), textureDict.get("pcakef_conth"))
+	change_texture(hbrown_state, hbrown_cont, textureDict.get("hbrown_cont"), textureDict.get("hbrown_conth"), textureDict.get("hbrownf_cont"), textureDict.get("hbrownf_conth"))
 	GlobalVars.is_customer_serving = true
 	GlobalVars.foodValueChanged.connect(_on_food_val_changed)
 

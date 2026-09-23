@@ -37,27 +37,27 @@ func item_exit(item) -> void:
 # Customer Serving Vars
 signal foodValueChanged(var_name : String, new_value : int, current_state)
 
-var rice_cont_state : String = "EMPTY"
-var pcake_cont_state : String = "EMPTY"
-var hbrown_cont_state : String = "EMPTY"
-
-var rice_value : int = 0:
+var rice_value : int = 5:
 	set(value):
 		var current_state = food_val_changed(value, rice_value)
 		rice_cont_state = current_state
 		foodValueChanged.emit("rice_value", rice_value, current_state)
 
-var pcake_value : int = 0:
+var pcake_value : int = 5:
 	set(value):
 		var current_state = food_val_changed(value, pcake_value)
 		pcake_cont_state = current_state
 		foodValueChanged.emit("pcake_value", pcake_value, current_state)
 
-var hbrown_value : int = 0:
+var hbrown_value : int = 5:
 	set(value):
 		var current_state = food_val_changed(value, hbrown_value)
 		hbrown_cont_state = current_state
 		foodValueChanged.emit("hbrown_value", hbrown_value, current_state)
+
+var rice_cont_state : String = "EMPTY" if rice_value <= 0 else "FILLED"
+var pcake_cont_state : String = "EMPTY" if pcake_value <= 0 else "FILLED"
+var hbrown_cont_state : String = "EMPTY" if hbrown_value <= 0 else "FILLED"
 
 func food_val_changed(value, food_value):
 	if food_value != value:
