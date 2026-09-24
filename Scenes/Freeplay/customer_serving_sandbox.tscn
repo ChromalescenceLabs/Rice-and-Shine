@@ -68,6 +68,7 @@ scroll_horizontal_by_default = true
 script = ExtResource("1_ed4vm")
 wheel_scroll_damper = SubResource("Resource_khlfu")
 dragging_scroll_damper = SubResource("Resource_3ollt")
+drag_with_mouse = false
 allow_vertical_scroll = false
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
@@ -123,6 +124,7 @@ texture_normal = ExtResource("4_pwox5")
 texture_hover = ExtResource("9_wgjyl")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[connection signal="pressed" from="Control/ScrollContainer/FoodConts/RiceCont" to="." method="_on_rice_cont_pressed"]
-[connection signal="pressed" from="Control/ScrollContainer/FoodConts/PancakeCont" to="." method="_on_pancake_cont_pressed"]
+[connection signal="button_down" from="Control/ScrollContainer/FoodConts/RiceCont" to="." method="_on_rice_cont_button_down"]
+[connection signal="button_down" from="Control/ScrollContainer/FoodConts/PancakeCont" to="." method="_on_pancake_cont_button_down"]
+[connection signal="button_down" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="." method="_on_hashbrown_cont_button_down"]
 [connection signal="pressed" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="." method="_on_hashbrown_cont_pressed"]
