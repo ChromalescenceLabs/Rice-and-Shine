@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://7hk0brvbupc2" path="res://Assets/Serving/Empty/PancakeContH.png" id="6_i53e2"]
 [ext_resource type="Texture2D" uid="uid://4msdq3gandfm" path="res://Assets/Serving/Empty/HashbrownContH.png" id="7_i53e2"]
 [ext_resource type="Texture2D" uid="uid://bgya7yialyiv4" path="res://Assets/Serving/Empty/TBAContH.png" id="9_wgjyl"]
+[ext_resource type="PackedScene" uid="uid://curuxisd3l6in" path="res://Scenes/Freeplay/CustomerServing/serve_bowl.tscn" id="12_bphlm"]
 
 [sub_resource type="Gradient" id="Gradient_wgjyl"]
 offsets = PackedFloat32Array(0, 0.6204819, 0.9939759)
@@ -123,6 +124,9 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_pwox5")
 texture_hover = ExtResource("9_wgjyl")
 metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ServeBowl" parent="." unique_id=2094721552 instance=ExtResource("12_bphlm")]
+position = Vector2(109, 433)
 
 [connection signal="button_down" from="Control/ScrollContainer/FoodConts/RiceCont" to="." method="_on_rice_cont_button_down"]
 [connection signal="button_down" from="Control/ScrollContainer/FoodConts/PancakeCont" to="." method="_on_pancake_cont_button_down"]

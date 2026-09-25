@@ -54,13 +54,14 @@ func change_texture(cont_state, cont, e_text, e_texth, f_text, f_texth):
 			cont.texture_normal = f_text
 			cont.texture_hover = f_texth
 
-func check_value_forbtn(cont_state, scene: String):
+func check_value_forbtn(cont_state, scene: String, foodStr : String):
 	match cont_state:
 		"EMPTY":
 			SceneLoader.load_scene(scene, 1)
 		"FILLED":
 			var food = FOOD_PICKUP.instantiate()
 			food.global_position = get_global_mouse_position()
+			food.texture = foodStr
 			add_child(food)
 
 func _on_food_val_changed(var_name : String, _new_value : int, current_state: String):
@@ -68,9 +69,7 @@ func _on_food_val_changed(var_name : String, _new_value : int, current_state: St
 		"rice_value": rice_state = current_state
 		"pcake_value": pcake_state = current_state
 		"hbrown_value": hbrown_state = current_state
-		
 
-
-func _on_rice_cont_button_down() -> void: check_value_forbtn(rice_state, "uid://sukerfnpt5d5")
-func _on_pancake_cont_button_down() -> void: check_value_forbtn(pcake_state, "uid://bf86igy00f6sq")
-func _on_hashbrown_cont_button_down() -> void: check_value_forbtn(hbrown_state, "uid://j42ywdsfuawg")
+func _on_rice_cont_button_down() -> void: check_value_forbtn(rice_state, "uid://sukerfnpt5d5", "rice")
+func _on_pancake_cont_button_down() -> void: check_value_forbtn(pcake_state, "uid://bf86igy00f6sq", "pancake")
+func _on_hashbrown_cont_button_down() -> void: check_value_forbtn(hbrown_state, "uid://j42ywdsfuawg", "hashbrown")

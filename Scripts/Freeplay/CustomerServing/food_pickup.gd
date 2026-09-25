@@ -1,10 +1,19 @@
 extends Area2D
+class_name FoodPickup
+
 @onready var food_img: Sprite2D = $FoodImg
 
 var texture : String
 
+var textureDict : Dictionary = {
+	"rice" : load("uid://b8pycewahokgt"),
+	"pancake" : load("uid://b8pycewahokgt"),
+	"hashbrown" : load("uid://b8pycewahokgt")
+}
+
 func _ready() -> void:
 	food_img.visible = true
+	food_img.texture = textureDict.get(texture)
 
 func _process(_delta: float) -> void:
 		food_img.visible = true

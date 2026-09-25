@@ -32,7 +32,8 @@ func item_exit(item) -> void:
 	var vw = get_viewport().size.x
 	create_tween().tween_property(item, "position", Vector2(vw * -1, 0), 2).set_trans(Tween.TRANS_ELASTIC)
 
-
+func _physics_process(delta: float) -> void:
+	print(rice_value)
 
 # Customer Serving Vars
 signal foodValueChanged(var_name : String, new_value : int, current_state)
