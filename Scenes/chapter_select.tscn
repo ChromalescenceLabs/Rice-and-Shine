@@ -2,9 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/placeholderbg.png" id="1_6cx0f"]
 [ext_resource type="Script" uid="uid://ca7pfgqjar5in" path="res://Scenes/chapter_select.gd" id="1_p5g1d"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qj2yo"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[ext_resource type="Script" uid="uid://dubupjub55y55" path="res://Scenes/ch_1btn.gd" id="3_p5g1d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3x3f"]
 bg_color = Color(0.36282945, 0.36282948, 0.36282933, 1)
@@ -24,97 +22,101 @@ offset_bottom = 99.0
 script = ExtResource("1_p5g1d")
 tween_intensity = 1.2
 tween_duration = 0.3
-spacing = null
-wraparound_enabled = null
-wraparound_radius = null
-wraparound_height = null
-opacity_strength = null
-scale_length = null
-scale_min = null
-smoothing_speed = null
-selected_index = null
-follow_button_focus = null
 
 [node name="placeholderbg" type="Sprite2D" parent="." unique_id=54279452]
 position = Vector2(585, 281)
 texture = ExtResource("1_6cx0f")
 
-[node name="TITLE" type="RichTextLabel" parent="." unique_id=731515725]
-layout_mode = 0
-offset_left = 712.0
-offset_top = 109.0
-offset_right = 1157.0
-offset_bottom = 184.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 50
-text = "CHAPTER SELECT"
-scroll_active = false
-shortcut_keys_enabled = false
-horizontal_alignment = 1
-
-[node name="BTNS" type="Panel" parent="." unique_id=1699962127]
-layout_mode = 0
-offset_left = -8.0
-offset_top = -26.0
-offset_right = 723.0
-offset_bottom = 582.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_qj2yo")
-
-[node name="CH3BTN" type="Button" parent="BTNS" unique_id=357620045]
-layout_mode = 0
-offset_left = 344.0
-offset_top = 58.0
-offset_right = 692.0
-offset_bottom = 542.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_r3x3f")
-text = "CHAPTER THREE"
-
-[node name="CH2BTN" type="Button" parent="BTNS" unique_id=1216913541]
-layout_mode = 0
-offset_left = 155.0
-offset_top = 37.0
-offset_right = 525.0
-offset_bottom = 569.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_svtct")
-text = "CHAPTER TWO"
-
-[node name="CH1BTN" type="Button" parent="BTNS" unique_id=1700294055]
-layout_mode = 0
-offset_left = -6.0
-offset_top = 11.0
-offset_right = 350.0
-offset_bottom = 596.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_4bgfd")
-text = "CHAPTER ONE"
-
-[node name="Label" type="Label" parent="BTNS" unique_id=1530538562]
-layout_mode = 0
-offset_left = 837.0
-offset_top = 236.0
-offset_right = 1042.0
-offset_bottom = 278.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "LOREM IPSUM"
-
-[node name="TEXT" type="Panel" parent="." unique_id=38716541]
+[node name="CH1TEXT" type="Panel" parent="." unique_id=38716541]
 layout_mode = 0
 offset_left = 726.0
 offset_top = 300.0
 offset_right = 1152.0
 offset_bottom = 528.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TEXT" unique_id=1812914113]
+[node name="RichTextLabel" type="RichTextLabel" parent="CH1TEXT" unique_id=1812914113]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 3.0
 offset_right = 426.0
 offset_bottom = 231.0
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+text = "CHAPTER 1
+"
 
-[connection signal="mouse_entered" from="BTNS/CH3BTN" to="." method="_on_ch_3btn_mouse_entered"]
-[connection signal="mouse_exited" from="BTNS/CH3BTN" to="." method="_on_ch_3btn_mouse_exited"]
-[connection signal="mouse_entered" from="BTNS/CH2BTN" to="." method="_on_ch_2btn_mouse_entered"]
-[connection signal="mouse_exited" from="BTNS/CH2BTN" to="." method="_on_ch_2btn_mouse_exited"]
-[connection signal="mouse_entered" from="BTNS/CH1BTN" to="." method="_on_ch_1btn_mouse_entered"]
-[connection signal="mouse_exited" from="BTNS/CH1BTN" to="." method="_on_ch_1btn_mouse_exited"]
+[node name="CH2TEXT" type="Panel" parent="." unique_id=616283810]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 528.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CH2TEXT" unique_id=1327327676]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 426.0
+offset_bottom = 231.0
+text = "CHAPTER 2"
+
+[node name="CH3TEXT" type="Panel" parent="." unique_id=1319668940]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 528.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CH3TEXT" unique_id=297932821]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 426.0
+offset_bottom = 231.0
+text = "CHAPTER 3"
+
+[node name="CH3BTN" type="Button" parent="." unique_id=357620045]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 422.0
+offset_right = 599.0
+offset_bottom = 541.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r3x3f")
+text = "CHAPTER THREE"
+
+[node name="CH2BTN" type="Button" parent="." unique_id=1216913541]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 219.0
+offset_right = 596.0
+offset_bottom = 356.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_svtct")
+text = "CHAPTER TWO"
+
+[node name="CH1BTN" type="Button" parent="." unique_id=1700294055]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 34.0
+offset_right = 595.0
+offset_bottom = 164.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4bgfd")
+text = "CHAPTER ONE"
+script = ExtResource("3_p5g1d")
+
+[node name="Label" type="Label" parent="." unique_id=1530538562]
+layout_mode = 0
+offset_left = 739.0
+offset_top = 226.0
+offset_right = 1143.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "CHAPTER SELECT"
+
+[connection signal="mouse_entered" from="CH3BTN" to="." method="_on_ch_3btn_mouse_entered"]
+[connection signal="mouse_exited" from="CH3BTN" to="." method="_on_ch_3btn_mouse_exited"]
+[connection signal="mouse_entered" from="CH2BTN" to="." method="_on_ch_2btn_mouse_entered"]
+[connection signal="mouse_exited" from="CH2BTN" to="." method="_on_ch_2btn_mouse_exited"]
+[connection signal="mouse_entered" from="CH1BTN" to="." method="_on_ch_1btn_mouse_entered"]
+[connection signal="mouse_entered" from="CH1BTN" to="CH1BTN" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CH1BTN" to="." method="_on_ch_1btn_mouse_exited"]
+[connection signal="mouse_exited" from="CH1BTN" to="CH1BTN" method="_on_mouse_exited"]
+[connection signal="pressed" from="CH1BTN" to="CH1BTN" method="_on_pressed"]
