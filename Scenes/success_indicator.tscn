@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://beppy36ki8xum"]
 
 [ext_resource type="Script" uid="uid://dwsxsdb1ajvjy" path="res://Scripts/success_indicator.gd" id="1_5jcpt"]
+[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/CookingBG.jpg" id="2_64y87"]
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="2_va8p0"]
 
 [sub_resource type="Gradient" id="Gradient_5jcpt"]
 offsets = PackedFloat32Array(1)
@@ -30,9 +32,100 @@ radial_accel_min = -21.460001
 radial_accel_max = -2.2351742e-06
 scale_min = 0.5
 
+[sub_resource type="Animation" id="Animation_64y87"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Text:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Text:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.8531924, 1.8531924)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Text:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-544.99994, -114.00001)]
+}
+
+[sub_resource type="Animation" id="Animation_q3lis"]
+resource_name = "in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Text:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.50000006, 1.5157168),
+"update": 0,
+"values": [-0.13559496, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Text:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1.8025008, 1.4142135),
+"update": 0,
+"values": [Vector2(1.8531924, 1.8531924), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Text:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2.0705297, 2.219139),
+"update": 0,
+"values": [Vector2(-571, -113.99999), Vector2(-315, -95)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_30270"]
+_data = {
+&"RESET": SubResource("Animation_64y87"),
+&"in": SubResource("Animation_q3lis")
+}
+
 [node name="SuccessIndicator" type="Node2D" unique_id=1325133051]
 z_index = 100
 script = ExtResource("1_5jcpt")
+
+[node name="CookingBg" type="Sprite2D" parent="." unique_id=503486633]
+visible = false
+position = Vector2(7, 1)
+scale = Vector2(1.2890625, 1.046875)
+texture = ExtResource("2_64y87")
 
 [node name="Text" type="RichTextLabel" parent="." unique_id=1460330754]
 anchors_preset = 8
@@ -40,12 +133,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -289.0
-offset_top = -104.0
-offset_right = 289.0
-offset_bottom = 104.0
+offset_left = -544.99994
+offset_top = -114.00001
+offset_right = 33.00006
+offset_bottom = 93.99999
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.8531924, 1.8531924)
+theme_override_colors/default_color = Color(0.9356426, 0.9124135, 0.88352305, 1)
+theme_override_colors/font_outline_color = Color(0.6914107, 0.2849654, 0.23425165, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.69803923)
+theme_override_constants/shadow_offset_x = 15
+theme_override_constants/shadow_offset_y = 16
+theme_override_constants/outline_size = 38
+theme_override_fonts/normal_font = ExtResource("2_va8p0")
 theme_override_font_sizes/normal_font_size = 152
 text = "GREAT"
 fit_content = true
@@ -54,11 +155,22 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SuccessParticles" type="GPUParticles2D" parent="." unique_id=1564826323]
+z_index = -1
+position = Vector2(-3, 22)
 emitting = false
 amount = 24
 texture = SubResource("GradientTexture2D_j0s8l")
 lifetime = 0.6
 one_shot = true
+speed_scale = 1.25
+randomness = 0.24
 process_material = SubResource("ParticleProcessMaterial_idtpb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1887347601]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1340621902]
+root_node = NodePath("../SuccessParticles")
+libraries/ = SubResource("AnimationLibrary_30270")
+autoplay = &"in"
 
 [connection signal="finished" from="SuccessParticles" to="." method="_on_success_particles_finished"]
