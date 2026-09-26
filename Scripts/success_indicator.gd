@@ -11,9 +11,11 @@ func _ready() -> void:
 	#await tw.finished
 	await get_tree().create_timer(.5).timeout
 	success_particles.emitting = true
-
-func _on_success_particles_finished() -> void:
-	#var tw = create_tween().tween_property(self, "scale", Vector2(0,0), 0.6).set_trans(Tween.TRANS_ELASTIC)
-	#await tw.finished
-	
+	await get_tree().create_timer(.5).timeout
+	success_particles.one_shot = true
+	await get_tree().create_timer(.5).timeout
+	var tw = create_tween().tween_property(self, "scale", Vector2(0,0), 0.6).set_trans(Tween.TRANS_ELASTIC)
+	await tw.finished
 	self.queue_free()
+
+	
