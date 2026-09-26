@@ -24,16 +24,6 @@ offset_bottom = 99.0
 script = ExtResource("1_p5g1d")
 tween_intensity = 1.2
 tween_duration = 0.3
-spacing = null
-wraparound_enabled = null
-wraparound_radius = null
-wraparound_height = null
-opacity_strength = null
-scale_length = null
-scale_min = null
-smoothing_speed = null
-selected_index = null
-follow_button_focus = null
 
 [node name="placeholderbg" type="Sprite2D" parent="." unique_id=54279452]
 position = Vector2(585, 281)
