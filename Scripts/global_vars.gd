@@ -2,6 +2,7 @@ extends Node
 
 signal successIndEnd
 signal instructions_changed
+signal enterDone
 
 var current_db : float = -25
 const SUCCIND = preload("uid://beppy36ki8xum")
@@ -22,7 +23,12 @@ func successind(tree):
 	successIndEnd.emit()
 	
 func item_enter(item) -> void:
-	create_tween().tween_property(item, "position", Vector2(0,0), 2).set_trans(Tween.TRANS_ELASTIC)
+	var t=create_tween().tween_property(item, "position", Vector2(0,0), 2).set_trans(Tween.TRANS_ELASTIC)
+	await t.finished
+	print("yo")
+	enterDone.emit()
+	
+	
 	
 func item_exit(item) -> void:
 	var vw = get_viewport().size.x

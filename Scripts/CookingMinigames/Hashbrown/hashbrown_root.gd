@@ -1,6 +1,7 @@
 extends Node2D
 @onready var hashbrown_peel: Node2D = $Hashbrowns
 @onready var grating_hashbrowns: Node2D = $GratingHashbrowns
+@onready var peeler = $Hashbrowns/Peeler
 
 func _on_grated_full_mouse_entered() -> void:
 	pass # Replace with function body.
