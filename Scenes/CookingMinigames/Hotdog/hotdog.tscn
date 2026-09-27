@@ -8,9 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Non-specific/PanOil.png" id="4_ifmqp"]
 [ext_resource type="Texture2D" uid="uid://cfjgsnkmmit3k" path="res://Assets/Non-specific/Plate.png" id="6_ni26i"]
 [ext_resource type="PackedScene" uid="uid://cv4xskrudeikq" path="res://Scenes/CookingMinigames/Hotdog/hotdog_indiv.tscn" id="7_x6sm1"]
+[ext_resource type="PackedScene" uid="uid://dplwtlc2jhxoo" path="res://Scenes/CookingMinigames/Hotdog/slice_hotdog.tscn" id="9_bgbgk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pocx5"]
 radius = 95.50916
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5h11f"]
 
 [node name="Hotdog" type="Node2D" unique_id=95363824]
 script = ExtResource("1_x6sm1")
@@ -22,7 +25,6 @@ texture = ExtResource("1_ugtlu")
 metadata/_edit_lock_ = true
 
 [node name="Frying" type="Node2D" parent="." unique_id=1557546142]
-visible = false
 
 [node name="HdogPan" type="Area2D" parent="Frying" unique_id=819248779]
 position = Vector2(309, 320)
@@ -64,4 +66,19 @@ position = Vector2(774, 421)
 
 [node name="Slicing" type="Node2D" parent="." unique_id=1958585601]
 
+[node name="Plate" type="Sprite2D" parent="Slicing" unique_id=32173830]
+position = Vector2(308.00012, 357.00003)
+scale = Vector2(1.2980502, 1.2980502)
+texture = ExtResource("6_ni26i")
+
+[node name="ChoppingBoard" type="Sprite2D" parent="Slicing" unique_id=214937250]
+position = Vector2(953.00006, 375)
+scale = Vector2(433.74997, 586.25)
+texture = SubResource("PlaceholderTexture2D_5h11f")
+
+[node name="SliceHotdog" parent="Slicing" unique_id=2106238654 instance=ExtResource("9_bgbgk")]
+position = Vector2(935, 384)
+scale = Vector2(0.99999994, 0.99999994)
+
 [connection signal="frying_finished" from="." to="." method="_on_frying_finished"]
+[connection signal="slicing_finished" from="." to="." method="_on_slicing_finished"]
