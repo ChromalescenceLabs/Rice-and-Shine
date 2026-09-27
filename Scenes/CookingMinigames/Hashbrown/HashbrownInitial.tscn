@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bvalouachcu1j" path="res://Scripts/CookingMinigames/Hashbrown/Hashbrown.gd" id="1_tan3t"]
 [ext_resource type="Texture2D" uid="uid://dtjk3rm14kam8" path="res://Assets/Hashbrown/Potato.png" id="4_2vbmc"]
-[ext_resource type="Script" uid="uid://exehv4t2j8u1" path="res://Scripts/CookingMinigames/Hashbrown/line_2d.gd" id="5_pxv5y"]
-[ext_resource type="Script" uid="uid://cpjp1s5h2ursw" path="res://Scenes/CookingMinigames/Hashbrown/peeler.gd" id="5_tan3t"]
+[ext_resource type="Script" path="res://Scripts/CookingMinigames/Hashbrown/line_2d.gd" id="5_pxv5y"]
+[ext_resource type="Script" path="res://Scripts/CookingMinigames/Hashbrown/peeler.gd" id="5_tan3t"]
 [ext_resource type="Texture2D" uid="uid://brijabd5metjd" path="res://Assets/Hashbrown/Peeled Potatoes.png" id="6_24fpq"]
 [ext_resource type="Texture2D" uid="uid://cggpwgg256553" path="res://Assets/Hashbrown/Peeler.png" id="7_gf6eo"]
 [ext_resource type="Script" uid="uid://d0bing65rgjq3" path="res://Scripts/CookingMinigames/Hashbrown/hashcheckareas.gd" id="7_n6pmv"]

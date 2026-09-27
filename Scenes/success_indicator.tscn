@@ -41,7 +41,7 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("../Text:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
@@ -53,7 +53,7 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("../Text:rotation")
-tracks/1/interp = 1
+tracks/1/interp = 4
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
@@ -65,7 +65,7 @@ tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("../Text:scale")
-tracks/2/interp = 1
+tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
@@ -84,22 +84,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_30270"]
-resource_name = "fade"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Text:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.08901531, 0.3),
-"transitions": PackedFloat32Array(4.756827, 0.9330329),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_q3lis"]
@@ -156,7 +140,6 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_30270"]
 _data = {
 &"RESET": SubResource("Animation_64y87"),
-&"fade": SubResource("Animation_30270"),
 &"in": SubResource("Animation_q3lis")
 }
 
@@ -172,8 +155,10 @@ texture = ExtResource("2_64y87")
 
 [node name="Text" type="RichTextLabel" parent="." unique_id=1460330754]
 modulate = Color(0, 0, 0, 1)
-offset_right = 501.0
-offset_bottom = 187.0
+offset_left = -268.0
+offset_top = -84.0
+offset_right = 233.0
+offset_bottom = 103.0
 scale = Vector2(1e-05, 1e-05)
 theme_override_colors/default_color = Color(0.9356426, 0.9124135, 0.88352305, 1)
 theme_override_colors/font_outline_color = Color(0.6914107, 0.2849654, 0.23425165, 1)
@@ -197,8 +182,6 @@ lifetime = 0.6
 speed_scale = 1.25
 randomness = 0.24
 process_material = SubResource("ParticleProcessMaterial_idtpb")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1887347601]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1340621902]
 deterministic = true

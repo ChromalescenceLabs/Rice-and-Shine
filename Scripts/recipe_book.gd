@@ -3,6 +3,7 @@ extends Control
 @onready var open: TextureRect = $Opened/Open
 @onready var opened: Control = $Opened
 @onready var instructions: RichTextLabel = $Opened/Instructions
+@onready var instructions_2: RichTextLabel = $Opened/Instructions2
 @onready var ins_anim_in: AnimationPlayer = $Opened/InsAnimIn
 @onready var intro_anim: AnimationPlayer = $IntroAnim
 
@@ -21,7 +22,14 @@ func _on_open_mouse_exited() -> void:
 	closed.visible = true
 	opened.visible = false
 
-func _on_instructions_changed(value):
+func _on_instructions_changed(item):
 	ins_anim_in.play_backwards("fade")
-	instructions.text = value
+	print(item.name)
+	if item.name.to_lower()=="ricecups":
+		instructions.text = "insert ur shit here"
+		instructions_2.text = "augh"
+
+	elif item.name.to_lower() == "water":
+		instructions.text = "Ingredients: water"
+		instructions_2.text = "you"
 	ins_anim_in.play("fade")
