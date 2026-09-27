@@ -35,6 +35,7 @@ texture = ExtResource("3_f7vh4")
 
 [node name="PanOil" type="Sprite2D" parent="Frying/HdogPan" unique_id=1889596687]
 visible = false
+position = Vector2(-106.513, 1.738)
 texture = ExtResource("4_ifmqp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frying/HdogPan" unique_id=1160576310]
@@ -59,3 +60,5 @@ position = Vector2(859, 417)
 
 [node name="Hotdog3" parent="Frying/Hotdogs" unique_id=1481284774 instance=ExtResource("7_x6sm1")]
 position = Vector2(774, 421)
+
+[connection signal="frying_finished" from="." to="." method="_on_frying_finished"]

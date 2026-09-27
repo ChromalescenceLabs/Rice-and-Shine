@@ -12,6 +12,11 @@ func _ready() -> void:
 	pass
 	
 func oiled() -> void:
-	if has_oil == true:
-		pan_oiled.visible = true
-		pan_empty.visible = false
+	has_oil = true
+	pan_oiled.visible = true
+	pan_empty.visible = false
+
+func unoil() -> void:
+	has_oil = false
+	pan_empty.visible = true
+	pan_oiled.visible = false

@@ -25,13 +25,16 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Click"):
 		dragging = true
 	elif event.is_action_released("Click"):
-		pan = get_tree().current_scene.hdog_pan
 		dragging = false
-		if in_pan and pan.has_hdog == false:
+		pan = get_tree().current_scene.hdog_pan
+		if in_pan and pan.has_hdog == false and pan.has_oil == true:
 			pan.has_hdog = true
 			self.position = pan.position
+			self.monitoring = false
+			self.monitorable = false
 			cooked.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			cook()
+			pan.unoil()
 		else:
 			self.position = og_pos
 
@@ -47,4 +50,16 @@ func _on_area_exited(area: Area2D) -> void:
 		in_pan = false
 
 func cook() -> void:
-	create_tween().tween_property(cooked, "modulate:a", 1, 5)
+	var tw = create_tween().tween_property(cooked, "modulate:a", 1, 1)
+	await tw.finished
+	
+	GlobalVars.successind(get_tree().current_scene)
+	await GlobalVars.successIndEnd
+	
+	GlobalVars.item_exit(self)
+	get_tree().current_scene.frying_hotdog_no -= 1
+	if get_tree().current_scene.frying_hotdog_no <= 0: get_tree().current_scene.frying_finished.emit()
+	pan.has_hdog = false
+	
+	await GlobalVars.itemExited
+	self.queue_free()
