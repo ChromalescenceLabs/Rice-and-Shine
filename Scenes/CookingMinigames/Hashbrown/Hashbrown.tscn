@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bcyqjrke55gi" path="res://Assets/Hashbrown/grated1.png" id="7_o12im"]
 [ext_resource type="Texture2D" uid="uid://dq8oklhvamkn0" path="res://Assets/Hashbrown/grated2.png" id="8_penps"]
 [ext_resource type="Texture2D" uid="uid://bc6e5imjyoy6d" path="res://Assets/Hashbrown/grated3.png" id="9_8bsfq"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/recipe_book.tscn" id="10_penps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
 
@@ -27,9 +28,6 @@ scale = Vector2(0.90000004, 0.9000001)
 texture = ExtResource("2_y804u")
 
 [node name="Hashbrowns" parent="." unique_id=2091728095 instance=ExtResource("4_o12im")]
-
-[node name="Line2D" parent="Hashbrowns" index="1" unique_id=1856136159]
-script = null
 
 [node name="GratingHashbrowns" type="Node2D" parent="." unique_id=1471228203]
 process_mode = 4
@@ -118,6 +116,12 @@ offset_right = 552.0
 offset_bottom = 485.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("10_penps")]
+offset_left = 393.75006
+offset_top = 167.50003
+offset_right = 576.75006
+offset_bottom = 404.50003
 
 [connection signal="peeled" from="Hashbrowns" to="." method="_on_hashbrowns_peeled"]
 [connection signal="body_entered" from="Hashbrowns/Line2D/CheckingAreas/Area2D" to="Hashbrowns/Line2D/CheckingAreas/Area2D" method="_on_body_entered"]

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bvalouachcu1j" path="res://Scripts/CookingMinigames/Hashbrown/Hashbrown.gd" id="1_tan3t"]
 [ext_resource type="Texture2D" uid="uid://dtjk3rm14kam8" path="res://Assets/Hashbrown/Potato.png" id="4_2vbmc"]
-[ext_resource type="Script" path="res://Scripts/CookingMinigames/Hashbrown/line_2d.gd" id="5_pxv5y"]
 [ext_resource type="Script" path="res://Scripts/CookingMinigames/Hashbrown/peeler.gd" id="5_tan3t"]
 [ext_resource type="Texture2D" uid="uid://brijabd5metjd" path="res://Assets/Hashbrown/Peeled Potatoes.png" id="6_24fpq"]
 [ext_resource type="Texture2D" uid="uid://cggpwgg256553" path="res://Assets/Hashbrown/Peeler.png" id="7_gf6eo"]
@@ -50,7 +49,6 @@ clip_children = 1
 position = Vector2(83, 107.99999)
 scale = Vector2(1.3364567, 1.0095584)
 width = 50.0
-script = ExtResource("5_pxv5y")
 
 [node name="AreaPPotato" type="Area2D" parent="Line2D" unique_id=644080344]
 scale = Vector2(1.0110067, 0.99122065)

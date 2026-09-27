@@ -9,22 +9,23 @@ extends Control
 
 func _ready() -> void:
 	closed.visible = true
+	opened.visible = false
 	ins_anim_in.play("fade")
 	intro_anim.play("Intro")
 	
 	GlobalVars.instructions_changed.connect(_on_instructions_changed)
 
 func _on_closed_mouse_entered() -> void:
+	ins_anim_in.play("fade")
 	opened.visible = true
 	closed.visible = false
 
-func _on_open_mouse_exited() -> void:
+func _on_opened_mouse_exited() -> void:
 	closed.visible = true
 	opened.visible = false
 
 func _on_instructions_changed(item):
 	ins_anim_in.play_backwards("fade")
-	print(item.name)
 	if item.name.to_lower()=="ricecups":
 		instructions.text = "insert ur shit here"
 		instructions_2.text = "augh"
