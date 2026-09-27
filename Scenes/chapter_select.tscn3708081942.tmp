@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://f5bkmxvr0cpx"]
+
+[ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/placeholderbg.png" id="1_6cx0f"]
+[ext_resource type="Script" uid="uid://b2e6vvexgwvcl" path="res://Scenes/ch1btn.gd" id="3_2c4oi"]
+
+[node name="Control" type="Control" unique_id=685714052]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 57.0
+offset_top = 59.0
+offset_right = 97.0
+offset_bottom = 99.0
+
+[node name="placeholderbg" type="Sprite2D" parent="." unique_id=54279452]
+position = Vector2(581, 293)
+texture = ExtResource("1_6cx0f")
+
+[node name="TITLE" type="RichTextLabel" parent="." unique_id=731515725]
+layout_mode = 0
+offset_left = 434.0
+offset_top = -50.0
+offset_right = 752.0
+offset_bottom = -10.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "CHAPTER SELECT"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+
+[node name="CH3BTN" type="Button" parent="." unique_id=357620045]
+layout_mode = 0
+offset_left = -31.0
+offset_top = 206.0
+offset_right = 1163.0
+offset_bottom = 237.0
+text = "CHAPTER THREE"
+
+[node name="CH2BTN" type="Button" parent="." unique_id=1216913541]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 135.0
+offset_right = 1164.0
+offset_bottom = 166.0
+text = "CHAPTER TWO"
+
+[node name="CH1BTN" type="Button" parent="." unique_id=1700294055]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 71.0
+offset_right = 1168.0
+offset_bottom = 102.0
+text = "CHAPTER ONE"
+script = ExtResource("3_2c4oi")

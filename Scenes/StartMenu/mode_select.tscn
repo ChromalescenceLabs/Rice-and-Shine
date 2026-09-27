@@ -1,12 +1,13 @@
-[gd_scene format=3 uid="uid://s0mln76j7dwp"]
+[gd_scene format=3 uid="uid://dniwio1arxhol"]
 
-[ext_resource type="Script" uid="uid://blcl17lf45v72" path="res://Scripts/StartMenu/ModeSelect/MODE_SELECT.gd" id="1_x2cs5"]
-[ext_resource type="Shader" uid="uid://dnpid1e7n0mv6" path="res://Scripts/StartMenu/ModeSelect/scroll.gdshader" id="2_2r5q8"]
-[ext_resource type="Texture2D" uid="uid://cmtnmdl8sduyr" path="res://Assets/cloud repeat.png" id="3_jj4mc"]
-[ext_resource type="Script" uid="uid://cggstslnb0xry" path="res://Scripts/StartMenu/ModeSelect/freeplaybtn.gd" id="4_x2cs5"]
+[ext_resource type="Script" uid="uid://blcl17lf45v72" path="res://Scripts/StartMenu/ModeSelect/MODE_SELECT.gd" id="1_rel82"]
+[ext_resource type="Shader" uid="uid://bduai5ut0xq2l" path="res://scroll.gdshader" id="2_taxq6"]
+[ext_resource type="Texture2D" uid="uid://cmtnmdl8sduyr" path="res://Assets/cloud repeat.png" id="3_6vmvb"]
+[ext_resource type="Script" uid="uid://bd6tjs6ki8luq" path="res://Scripts/storybtn.gd" id="4_6vmvb"]
+[ext_resource type="Script" uid="uid://cggstslnb0xry" path="res://Scripts/StartMenu/ModeSelect/freeplaybtn.gd" id="4_taxq6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qj2yo"]
-shader = ExtResource("2_2r5q8")
+shader = ExtResource("2_taxq6")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qj2yo"]
 bg_color = Color(0.92019373, 0.9566967, 0.9979668, 0.5647059)
@@ -16,14 +17,14 @@ corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
 corner_detail = 20
 
-[node name="MODE SELECT2" type="Control" unique_id=983373993]
+[node name="MODE SELECT" type="Control" unique_id=983373993]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_x2cs5")
+script = ExtResource("1_rel82")
 tween_intensity = 1.2
 tween_duration = 0.3
 
@@ -47,7 +48,7 @@ offset_left = -1.0
 offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_jj4mc")
+texture = ExtResource("3_6vmvb")
 expand_mode = 2
 stretch_mode = 1
 
@@ -73,22 +74,6 @@ offset_bottom = -15.512009
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "MODE SELECT"
-horizontal_alignment = 1
-
-[node name="TO BE ADDED!" type="RichTextLabel" parent="Panel" unique_id=614314715]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.24200001
-anchor_top = 0.814
-anchor_right = 0.24200001
-anchor_bottom = 0.814
-offset_left = -84.84802
-offset_top = -17.46402
-offset_right = 84.15198
-offset_bottom = 17.53598
-theme_override_colors/default_color = Color(0.91540116, 0.28382894, 0.30399072, 1)
-theme_override_font_sizes/normal_font_size = 25
-text = "To Be Added!"
 horizontal_alignment = 1
 
 [node name="MANAGE" type="RichTextLabel" parent="Panel" unique_id=650034488]
@@ -136,6 +121,7 @@ offset_right = 215.56
 offset_bottom = 74.84
 theme_override_font_sizes/font_size = 50
 text = "STORY"
+script = ExtResource("4_6vmvb")
 
 [node name="FREEPLAY" type="Button" parent="." unique_id=1004736702]
 layout_mode = 1
@@ -150,6 +136,7 @@ offset_right = 215.43994
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 50
 text = "FREEPLAY"
-script = ExtResource("4_x2cs5")
+script = ExtResource("4_taxq6")
 
+[connection signal="pressed" from="STORY" to="STORY" method="_on_pressed"]
 [connection signal="pressed" from="FREEPLAY" to="FREEPLAY" method="_on_pressed"]

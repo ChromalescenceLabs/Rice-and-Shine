@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blfb2fntarvhr" path="res://Scripts/CookingMinigames/Pamcake/pan.gd" id="1_kysbn"]
 [ext_resource type="Texture2D" uid="uid://iqxaxa0bo02s" path="res://Assets/Non-specific/Pan.png" id="2_fou5r"]
-[ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Pankcae/PanOil.png" id="3_8alnw"]
+[ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Non-specific/PanOil.png" id="3_8alnw"]
 [ext_resource type="Texture2D" uid="uid://dpesqyakkyses" path="res://Assets/Pankcae/PancakeS1.png" id="4_f001r"]
 [ext_resource type="Texture2D" uid="uid://c1u1cp4kewa4t" path="res://Assets/Pankcae/PancakeS2.png" id="5_q2x4l"]
 [ext_resource type="Texture2D" uid="uid://bk6jk1qqteoq8" path="res://Assets/Pankcae/PancakeS3.png" id="6_14el7"]

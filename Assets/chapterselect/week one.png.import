@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbtnrv1kgyd7g"
-path="res://.godot/imported/PanOil.png-a38451c07c22417f80864c2e5bd577cb.ctex"
+uid="uid://b5s3gdbnh5kai"
+path="res://.godot/imported/week one.png-9b472e7e43759b5222bb8f4c389f34b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pankcae/PanOil.png"
-dest_files=["res://.godot/imported/PanOil.png-a38451c07c22417f80864c2e5bd577cb.ctex"]
+source_file="res://Assets/chapterselect/week one.png"
+dest_files=["res://.godot/imported/week one.png-9b472e7e43759b5222bb8f4c389f34b7.ctex"]
 
 [params]
 

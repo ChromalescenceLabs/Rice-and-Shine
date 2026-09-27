@@ -1,5 +1,4 @@
 extends Node2D
-
 signal peeled
 
 @onready var line_2d: Line2D = $Line2D
@@ -15,12 +14,15 @@ var pickUp:bool = false
 func _ready() -> void:
 	peeler_ogpos = peeler.global_position
 	p_potato.visible=false
+	GlobalVars.enterDone.connect(_on_enterDone)
+
 	
 func _process(_delta: float) -> void:
 	if peeling:
 		peeler.global_position = lerp(peeler.global_position, get_global_mouse_position(), 0.2)
 	else:
 		peeler.global_position = lerp(peeler.global_position, peeler_ogpos, 0.05)
+	
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and peeling:
@@ -43,3 +45,7 @@ func _on_peeler_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 	
 	if event.is_action_released("Click"):
 		peeling=false
+
+func _on_enterDone():
+	peeler.areas_checked=0
+	peeler.canCheck=true
