@@ -46,6 +46,8 @@ texture = ExtResource("5_yxxu2")
 position = Vector2(6, 1)
 shape = SubResource("CapsuleShape2D_5h11f")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Cooked" to="." method="_on_cooked_mouse_entered"]
