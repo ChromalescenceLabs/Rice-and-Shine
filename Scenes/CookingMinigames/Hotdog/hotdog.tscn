@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bgi803ffeyeae"]
+
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/CookingBGTopDown.jpg" id="1_ugtlu"]
+[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/CookingMinigames/Pankcae/oil.tscn" id="2_6vnog"]
+
+[node name="Hotdog" type="Node2D" unique_id=95363824]
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1585728881]
+position = Vector2(518.99994, 595.99994)
+scale = Vector2(0.946875, 0.946875)
+texture = ExtResource("1_ugtlu")
+
+[node name="Oil" parent="." unique_id=1503278428 instance=ExtResource("2_6vnog")]
+position = Vector2(1067, 197)

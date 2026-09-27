@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlhiny7jepn6v"
-path="res://.godot/imported/Oil.png-2eeec6a5979c75e598c6c9fc9cea9821.ctex"
+uid="uid://cbi44cv0gptjt"
+path="res://.godot/imported/MallowChopped.png-89ee66efa2a23af159ef9343c36f6057.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pankcae/Oil.png"
-dest_files=["res://.godot/imported/Oil.png-2eeec6a5979c75e598c6c9fc9cea9821.ctex"]
+source_file="res://Assets/Hotdog/MallowChopped.png"
+dest_files=["res://.godot/imported/MallowChopped.png-89ee66efa2a23af159ef9343c36f6057.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqua4qbkc5ucb"
-path="res://.godot/imported/Oil_Open.png-e0af954c51fb173b4566d87da204046e.ctex"
+uid="uid://dg8ve64io40ke"
+path="res://.godot/imported/HotdogChopped.png-8c4caa475ecb6daefa292ffe2a7f4bf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pankcae/Oil_Open.png"
-dest_files=["res://.godot/imported/Oil_Open.png-e0af954c51fb173b4566d87da204046e.ctex"]
+source_file="res://Assets/Hotdog/HotdogChopped.png"
+dest_files=["res://.godot/imported/HotdogChopped.png-8c4caa475ecb6daefa292ffe2a7f4bf6.ctex"]
 
 [params]
 

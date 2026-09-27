@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://f5bkmxvr0cpx"]
 
 [ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/placeholderbg.png" id="1_6cx0f"]
-[ext_resource type="Script" uid="uid://ca7pfgqjar5in" path="res://Scenes/chapter_select.gd" id="1_p5g1d"]
-[ext_resource type="Script" uid="uid://dubupjub55y55" path="res://Scenes/ch_1btn.gd" id="3_p5g1d"]
+[ext_resource type="Script" uid="uid://ca7pfgqjar5in" path="res://Scripts/chapter_select.gd" id="1_p5g1d"]
+[ext_resource type="Script" uid="uid://dubupjub55y55" path="res://Scripts/ch_1btn.gd" id="3_p5g1d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3x3f"]
 bg_color = Color(0.36282945, 0.36282948, 0.36282933, 1)

@@ -7,9 +7,10 @@ enum CupState {READY, FILLED, EMPTY}
 
 var cup_state: CupState = CupState.READY
 var dragging: bool = false
+var og_pos: Vector2
 
 func _ready() -> void:
-	batter_cup_state()
+	og_pos = position
 
 func _process(_delta: float) -> void:
 		if dragging: self.global_position = lerp(self.global_position, get_global_mouse_position(), 0.2)
@@ -17,11 +18,9 @@ func _process(_delta: float) -> void:
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("Click"):
 		dragging = true
-		
 	if event.is_action_released("Click"):
 		dragging = false
-		
-#add return to original position code next
+		self.global_position = og_pos
 
 
 
