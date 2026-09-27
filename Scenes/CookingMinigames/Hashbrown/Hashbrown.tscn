@@ -48,6 +48,18 @@ shape = SubResource("RectangleShape2D_ittll")
 [node name="gratedFull" parent="GratingHashbrowns" unique_id=1619096956 instance=ExtResource("5_1gtf3")]
 position = Vector2(914, 406)
 
+[node name="PeeledCol" parent="GratingHashbrowns/gratedFull" index="1" unique_id=1590579546]
+disabled = true
+
+[node name="grated FullCol" parent="GratingHashbrowns/gratedFull" index="3" unique_id=66831655]
+disabled = true
+
+[node name="grated FullCol2" parent="GratingHashbrowns/gratedFull" index="5" unique_id=1021562471]
+disabled = true
+
+[node name="grated FullCol3" parent="GratingHashbrowns/gratedFull" index="7" unique_id=1539126652]
+disabled = true
+
 [node name="Grated" type="Control" parent="GratingHashbrowns" unique_id=938886420]
 layout_mode = 3
 anchors_preset = 0
@@ -117,16 +129,21 @@ offset_bottom = 485.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="GrateTimer" type="Timer" parent="GratingHashbrowns" unique_id=595100906]
+wait_time = 5.0
+one_shot = true
+
 [node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("10_penps")]
-offset_left = 393.75006
-offset_top = 167.50003
-offset_right = 576.75006
-offset_bottom = 404.50003
+offset_left = 13.0
+offset_top = 478.0
+offset_right = 196.0
+offset_bottom = 715.0
 
 [connection signal="peeled" from="Hashbrowns" to="." method="_on_hashbrowns_peeled"]
 [connection signal="body_entered" from="Hashbrowns/Line2D/CheckingAreas/Area2D" to="Hashbrowns/Line2D/CheckingAreas/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="GratingHashbrowns/grater" to="GratingHashbrowns/gratedFull" method="_on_grater_body_entered"]
 [connection signal="body_exited" from="GratingHashbrowns/grater" to="GratingHashbrowns/gratedFull" method="_on_grater_body_exited"]
+[connection signal="timeout" from="GratingHashbrowns/GrateTimer" to="GratingHashbrowns/gratedFull" method="_on_grate_timer_timeout"]
 
 [editable path="Hashbrowns"]
 [editable path="GratingHashbrowns/gratedFull"]

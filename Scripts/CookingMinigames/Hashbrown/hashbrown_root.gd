@@ -1,15 +1,17 @@
 extends Node2D
 @onready var hashbrown_peel: Node2D = $Hashbrowns
-@onready var grating_hashbrowns: Node2D = $GratingHashbrowns
 @onready var peeler = $Hashbrowns/Peeler
 
-func _on_grated_full_mouse_entered() -> void:
-	pass # Replace with function body.
+# GRATING
+@onready var grating_hashbrowns: Node2D = $GratingHashbrowns
+@onready var grated_full: Area2D = $GratingHashbrowns/gratedFull
 
 func _ready() -> void:
 	hashbrown_peel.position.x += get_viewport().get_visible_rect().size.x
 	grating_hashbrowns.position.x += get_viewport().get_visible_rect().size.x
 	GlobalVars.item_enter(hashbrown_peel)
+	#GlobalVars.item_enter(grating_hashbrowns)
+	
 
 
 func _on_hashbrowns_peeled() -> void:
