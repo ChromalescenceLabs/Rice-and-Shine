@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dse2mctmqkges"]
+
+[ext_resource type="Script" uid="uid://cc5hxp20x45np" path="res://Scripts/CookingMinigames/Hotdog/stick.gd" id="1_dhj2i"]
+[ext_resource type="Texture2D" uid="uid://dqonpj3xbdl0e" path="res://Assets/Hotdog/Stick.png" id="2_5i1ug"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bx8n8"]
+height = 488.0
+
+[node name="Stick" type="Area2D" unique_id=128106032]
+scale = Vector2(1.24, 1.24)
+script = ExtResource("1_dhj2i")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1770809370]
+texture = ExtResource("2_5i1ug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1040615360]
+shape = SubResource("CapsuleShape2D_bx8n8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

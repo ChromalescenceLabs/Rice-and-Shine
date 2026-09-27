@@ -35,9 +35,7 @@ rotation = -0.8709193
 scale = Vector2(1.4999999, 1.4999999)
 
 [node name="Oil" parent="PancakeScene" unique_id=1503278428 instance=ExtResource("5_1f2tk")]
-z_index = 1
-position = Vector2(1173, 121)
-scale = Vector2(0.6, 0.6)
+position = Vector2(1171, 116)
 
 [node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("7_y2edm")]
 offset_left = 9.0

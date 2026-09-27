@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbtnrv1kgyd7g"
-path="res://.godot/imported/PanOil.png-a38451c07c22417f80864c2e5bd577cb.ctex"
+uid="uid://dg8ve64io40ke"
+path="res://.godot/imported/HotdogChopped.png-8c4caa475ecb6daefa292ffe2a7f4bf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pankcae/PanOil.png"
-dest_files=["res://.godot/imported/PanOil.png-a38451c07c22417f80864c2e5bd577cb.ctex"]
+source_file="res://Assets/Hotdog/HotdogChopped.png"
+dest_files=["res://.godot/imported/HotdogChopped.png-8c4caa475ecb6daefa292ffe2a7f4bf6.ctex"]
 
 [params]
 
