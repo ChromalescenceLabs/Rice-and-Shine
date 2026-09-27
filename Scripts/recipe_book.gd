@@ -34,6 +34,10 @@ func _on_instructions_changed(item):
 		instructions.text = "Ingredients: water"
 		instructions_2.text = "you"
 		
+	# PANCAKE SECTION
+	elif item.name.to_lower() == "pancakescene":
+		instructions.text = "Pour oil in the an and add in the batter."
+		instructions_2.text = "Repeat this thrice and you'll be able to form simple pancakes!"
 	
 	# HOTDOG SECTION
 	
