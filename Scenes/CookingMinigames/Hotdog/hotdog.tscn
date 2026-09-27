@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cfjgsnkmmit3k" path="res://Assets/Non-specific/Plate.png" id="6_ni26i"]
 [ext_resource type="PackedScene" uid="uid://cv4xskrudeikq" path="res://Scenes/CookingMinigames/Hotdog/hotdog_indiv.tscn" id="7_x6sm1"]
 [ext_resource type="PackedScene" uid="uid://dplwtlc2jhxoo" path="res://Scenes/CookingMinigames/Hotdog/slice_hotdog.tscn" id="9_bgbgk"]
+[ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Non-specific/Bowl.png" id="10_3chny"]
+[ext_resource type="PackedScene" uid="uid://dj3rvq375j1te" path="res://Scenes/CookingMinigames/Hotdog/choppable_hotdog.tscn" id="11_2hcv6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pocx5"]
 radius = 95.50916
@@ -25,6 +27,7 @@ texture = ExtResource("1_ugtlu")
 metadata/_edit_lock_ = true
 
 [node name="Frying" type="Node2D" parent="." unique_id=1557546142]
+visible = false
 
 [node name="HdogPan" type="Area2D" parent="Frying" unique_id=819248779]
 position = Vector2(309, 320)
@@ -65,6 +68,7 @@ position = Vector2(859, 417)
 position = Vector2(774, 421)
 
 [node name="Slicing" type="Node2D" parent="." unique_id=1958585601]
+visible = false
 
 [node name="Plate" type="Sprite2D" parent="Slicing" unique_id=32173830]
 position = Vector2(308.00012, 357.00003)
@@ -80,5 +84,25 @@ texture = SubResource("PlaceholderTexture2D_5h11f")
 position = Vector2(935, 384)
 scale = Vector2(0.99999994, 0.99999994)
 
+[node name="Chopping" type="Node2D" parent="." unique_id=1964342270]
+
+[node name="ChoppingBoard" type="Sprite2D" parent="Chopping" unique_id=678030918]
+position = Vector2(666.87494, 362.125)
+scale = Vector2(433.74997, 586.25)
+texture = SubResource("PlaceholderTexture2D_5h11f")
+
+[node name="Bowl" type="Sprite2D" parent="Chopping" unique_id=967790403]
+visible = false
+position = Vector2(936.99994, 366.99997)
+scale = Vector2(1.5933149, 1.593315)
+texture = ExtResource("10_3chny")
+
+[node name="ChoppableHotdog" parent="Chopping" unique_id=2017030951 instance=ExtResource("11_2hcv6")]
+position = Vector2(652.87494, 357.12497)
+
+[node name="Stick" type="Node2D" parent="." unique_id=1221182371]
+
+[connection signal="chopping_finished" from="." to="." method="_on_chopping_finished"]
 [connection signal="frying_finished" from="." to="." method="_on_frying_finished"]
 [connection signal="slicing_finished" from="." to="." method="_on_slicing_finished"]
+[connection signal="tree_exited" from="Chopping/ChoppableHotdog" to="." method="_on_choppable_hotdog_tree_exited"]
