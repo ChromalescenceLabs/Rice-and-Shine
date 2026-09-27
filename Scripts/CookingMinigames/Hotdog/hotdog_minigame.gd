@@ -46,16 +46,47 @@ var chopped_hdog: int = 0:
 				chopping_finished.emit()
 
 # STICK
+signal stick_finished
+signal change_stick
 @onready var stick: Node2D = $Stick
+@onready var other_stick_nodes: Node2D = $OtherStickNodes
+@export var stickw_comp_1: Node2D
+@export var stickw_comp_2: Node2D
+@export var stickw_comp_3: Node2D
+@onready var mallows_bag: TextureRect = $Stick/MallowsBag
+@onready var hotdog_bowl: TextureRect = $Stick/HotdogBowl
+var sticks: int = 0:
+	set(value):
+		if not value == sticks:
+			sticks = value
+			if not sticks >= 3:
+				change_stick.emit()
+				match sticks:
+					1: stick_exit(stickw_comp_1, stickw_comp_2)
+					2: stick_exit(stickw_comp_2, stickw_comp_3)
+					3: GlobalVars.item_exit(stickw_comp_3)
+				mallows_bag.mouse_filter = Control.MOUSE_FILTER_PASS
+				hotdog_bowl.mouse_filter = Control.MOUSE_FILTER_PASS
+			else:
+				stick_finished.emit()
+
+func stick_exit(sticknode, nextnode):
+	GlobalVars.item_exit(sticknode)
+	nextnode.reparent(stick, true)
+	create_tween().tween_property(nextnode, "position", Vector2(0, 0), 1.5).set_trans(Tween.TRANS_ELASTIC)
+	await GlobalVars.itemExited
+	sticknode.queue_free()
+	
 
 
 func _ready() -> void:
 	frying.position.x += get_viewport().get_visible_rect().size.x
 	slicing.position.x += get_viewport().get_visible_rect().size.x
 	chopping.position.x += get_viewport().get_visible_rect().size.x
+	stick.position.x += get_viewport().get_visible_rect().size.x
+	other_stick_nodes.position.x += get_viewport().get_visible_rect().size.x
 	
 	GlobalVars.item_enter(slicing)
-
 
 func _on_frying_finished() -> void:
 	GlobalVars.item_exit(frying)
@@ -68,3 +99,7 @@ func _on_slicing_finished() -> void:
 func _on_chopping_finished() -> void:
 	GlobalVars.item_exit(chopping)
 	GlobalVars.item_enter(stick)
+
+
+func _on_stick_finished() -> void:
+	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
