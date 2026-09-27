@@ -6,7 +6,7 @@ var contentDict : Dictionary = {}
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is FoodPickup:
-		var food = area.texture
+		var food = str(area.texture)
 		food_entered = true
 		
 		await area.tree_exited
@@ -22,7 +22,7 @@ func _on_area_exited(area: Area2D) -> void:
 	if area is FoodPickup and not area.is_queued_for_deletion():
 		food_entered = false
 
-func check_type(food):
+func check_type(food : String):
 	match food:
 		"rice":
 			GlobalVars.rice_value -= 1
