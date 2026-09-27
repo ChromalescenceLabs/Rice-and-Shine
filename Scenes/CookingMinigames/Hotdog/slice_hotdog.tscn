@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dplwtlc2jhxoo"]
+
+[ext_resource type="Texture2D" uid="uid://c57kg12rlasjx" path="res://Assets/Hotdog/HotdogRaw3.png" id="1_dy6cj"]
+[ext_resource type="Script" uid="uid://2dyeuyhqmfms" path="res://Scripts/CookingMinigames/Hotdog/slice_hotdog.gd" id="1_uqdda"]
+[ext_resource type="Texture2D" uid="uid://4ob5exyjq7ya" path="res://Assets/Hotdog/HotdogRaw1.png" id="2_ljgtu"]
+[ext_resource type="Texture2D" uid="uid://pusasorbm3u3" path="res://Assets/Hotdog/HotdogRaw2.png" id="3_p0frt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljgtu"]
+radius = 44.0
+height = 454.0
+
+[node name="SliceHotdog" type="Area2D" unique_id=2106238654]
+script = ExtResource("1_uqdda")
+
+[node name="RawUncut" type="Sprite2D" parent="." unique_id=2068751297]
+texture = ExtResource("1_dy6cj")
+
+[node name="Raw1" type="Sprite2D" parent="." unique_id=266833085]
+texture = ExtResource("2_ljgtu")
+
+[node name="Raw2" type="Sprite2D" parent="." unique_id=511497435]
+visible = false
+texture = ExtResource("3_p0frt")
+
+[node name="Raw3" type="Sprite2D" parent="." unique_id=2098363189]
+texture = ExtResource("1_dy6cj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=636808071]
+position = Vector2(6, 1)
+shape = SubResource("CapsuleShape2D_ljgtu")

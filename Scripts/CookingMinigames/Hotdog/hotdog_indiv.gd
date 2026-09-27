@@ -1,9 +1,6 @@
 extends Area2D
 class_name Hotdog
 
-@onready var raw_unchopped: Sprite2D = $RawUnchopped
-@onready var raw_1: Sprite2D = $Raw1
-@onready var raw_2: Sprite2D = $Raw2
 @onready var raw_3: Sprite2D = $Raw3
 @onready var cooked: TextureRect = $Cooked
 

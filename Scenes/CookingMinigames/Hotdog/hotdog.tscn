@@ -22,6 +22,7 @@ texture = ExtResource("1_ugtlu")
 metadata/_edit_lock_ = true
 
 [node name="Frying" type="Node2D" parent="." unique_id=1557546142]
+visible = false
 
 [node name="HdogPan" type="Area2D" parent="Frying" unique_id=819248779]
 position = Vector2(309, 320)
@@ -60,5 +61,7 @@ position = Vector2(859, 417)
 
 [node name="Hotdog3" parent="Frying/Hotdogs" unique_id=1481284774 instance=ExtResource("7_x6sm1")]
 position = Vector2(774, 421)
+
+[node name="Slicing" type="Node2D" parent="." unique_id=1958585601]
 
 [connection signal="frying_finished" from="." to="." method="_on_frying_finished"]

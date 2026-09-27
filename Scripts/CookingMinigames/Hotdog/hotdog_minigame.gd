@@ -1,6 +1,12 @@
 extends Node2D
 
+# SLICING
+@warning_ignore("unused_signal")
+signal slicing_finished
+
+
 # FRYING
+@warning_ignore("unused_signal")
 signal frying_finished
 @onready var frying: Node2D = $Frying
 @onready var hdog_pan: HdogPan = $Frying/HdogPan
