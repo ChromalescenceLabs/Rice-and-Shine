@@ -73,3 +73,7 @@ func _on_food_val_changed(var_name : String, _new_value : int, current_state: St
 func _on_rice_cont_button_down() -> void: check_value_forbtn(rice_state, "uid://sukerfnpt5d5", "rice")
 func _on_pancake_cont_button_down() -> void: check_value_forbtn(pcake_state, "uid://bf86igy00f6sq", "pancake")
 func _on_hashbrown_cont_button_down() -> void: check_value_forbtn(hbrown_state, "uid://j42ywdsfuawg", "hashbrown")
+
+@onready var rice_counter: RichTextLabel = $Control/Counters/RiceCounter
+@onready var pcake_counter: RichTextLabel = $Control/Counters/PcakeCounter
+@onready var hbrown_counter: RichTextLabel = $Control/Counters/HbrownCounter

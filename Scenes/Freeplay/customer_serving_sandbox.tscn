@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://4msdq3gandfm" path="res://Assets/Serving/Empty/HashbrownContH.png" id="7_i53e2"]
 [ext_resource type="Texture2D" uid="uid://bgya7yialyiv4" path="res://Assets/Serving/Empty/TBAContH.png" id="9_wgjyl"]
 [ext_resource type="PackedScene" uid="uid://curuxisd3l6in" path="res://Scenes/Freeplay/CustomerServing/serve_bowl.tscn" id="12_bphlm"]
+[ext_resource type="Script" uid="uid://cxthuam3ves36" path="res://Scripts/Freeplay/CustomerServing/counters.gd" id="12_vol7o"]
 
 [sub_resource type="Gradient" id="Gradient_wgjyl"]
 offsets = PackedFloat32Array(0, 0.6204819, 0.9939759)
@@ -27,6 +28,9 @@ script = ExtResource("2_pwox5")
 
 [sub_resource type="Resource" id="Resource_3ollt"]
 script = ExtResource("2_pwox5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vol7o"]
+bg_color = Color(0.6, 0.6, 0.6, 0.6784314)
 
 [node name="CustomerServingSandbox" type="Node2D" unique_id=1724706127]
 script = ExtResource("1_wgjyl")
@@ -125,10 +129,85 @@ texture_normal = ExtResource("4_pwox5")
 texture_hover = ExtResource("9_wgjyl")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
+[node name="Counters" type="Control" parent="Control" unique_id=940841773 node_paths=PackedStringArray("rice_counter", "pcake_counter", "hbrown_counter")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_vol7o")
+rice_counter = NodePath("RiceCounter")
+pcake_counter = NodePath("PcakeCounter")
+hbrown_counter = NodePath("HbrownCounter")
+
+[node name="RiceCounter" type="RichTextLabel" parent="Control/Counters" unique_id=268955624 groups=["FoodContLabels"]]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 105.0
+offset_top = 448.0
+offset_right = 175.0
+offset_bottom = 488.0
+grow_horizontal = 2
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_font_sizes/normal_font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_vol7o")
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="PcakeCounter" type="RichTextLabel" parent="Control/Counters" unique_id=956064383 groups=["FoodContLabels"]]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 430.0
+offset_top = 448.0
+offset_right = 500.0
+offset_bottom = 488.0
+grow_horizontal = 2
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_font_sizes/normal_font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_vol7o")
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HbrownCounter" type="RichTextLabel" parent="Control/Counters" unique_id=450006028 groups=["FoodContLabels"]]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 754.0
+offset_top = 449.0
+offset_right = 824.0
+offset_bottom = 489.0
+grow_horizontal = 2
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_font_sizes/normal_font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_vol7o")
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
 [node name="ServeBowl" parent="." unique_id=2094721552 instance=ExtResource("12_bphlm")]
-position = Vector2(109, 433)
+position = Vector2(82, 434)
 
 [connection signal="button_down" from="Control/ScrollContainer/FoodConts/RiceCont" to="." method="_on_rice_cont_button_down"]
+[connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/RiceCont" to="Control/Counters" method="_on_rice_cont_mouse_entered"]
+[connection signal="mouse_exited" from="Control/ScrollContainer/FoodConts/RiceCont" to="Control/Counters" method="_on_rice_cont_mouse_exited"]
 [connection signal="button_down" from="Control/ScrollContainer/FoodConts/PancakeCont" to="." method="_on_pancake_cont_button_down"]
+[connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/PancakeCont" to="Control/Counters" method="_on_pancake_cont_mouse_entered"]
+[connection signal="mouse_exited" from="Control/ScrollContainer/FoodConts/PancakeCont" to="Control/Counters" method="_on_pancake_cont_mouse_exited"]
 [connection signal="button_down" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="." method="_on_hashbrown_cont_button_down"]
+[connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="Control/Counters" method="_on_hashbrown_cont_mouse_entered"]
+[connection signal="mouse_exited" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="Control/Counters" method="_on_hashbrown_cont_mouse_exited"]
 [connection signal="pressed" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="." method="_on_hashbrown_cont_pressed"]
