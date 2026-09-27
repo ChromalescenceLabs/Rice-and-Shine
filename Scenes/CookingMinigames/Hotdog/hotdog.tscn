@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Non-specific/Bowl.png" id="10_3chny"]
 [ext_resource type="PackedScene" uid="uid://dj3rvq375j1te" path="res://Scenes/CookingMinigames/Hotdog/choppable_hotdog.tscn" id="11_2hcv6"]
 [ext_resource type="Texture2D" uid="uid://bgd51mllr8jfw" path="res://Assets/Hotdog/HdogBowl.png" id="12_aer06"]
+[ext_resource type="Script" uid="uid://cc5hxp20x45np" path="res://Scripts/CookingMinigames/Hotdog/stick.gd" id="12_kyla7"]
 [ext_resource type="Script" uid="uid://yqxqwmtgx0bj" path="res://Scripts/CookingMinigames/Hotdog/mallows_bag.gd" id="12_x6ma3"]
 [ext_resource type="Texture2D" uid="uid://dqonpj3xbdl0e" path="res://Assets/Hotdog/Stick.png" id="12_xrpk2"]
 [ext_resource type="Script" uid="uid://dw7utpit2pcbm" path="res://Scripts/CookingMinigames/Hotdog/hotdog_bowl.gd" id="14_kyla7"]
@@ -120,6 +121,7 @@ position = Vector2(652.87494, 357.12497)
 [node name="Stick" type="Area2D" parent="Stick" unique_id=1279611727]
 position = Vector2(234.00005, 365)
 scale = Vector2(1.24, 1.24)
+script = ExtResource("12_kyla7")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Stick/Stick" unique_id=39554228]
@@ -148,6 +150,8 @@ script = ExtResource("14_kyla7")
 [connection signal="frying_finished" from="." to="." method="_on_frying_finished"]
 [connection signal="slicing_finished" from="." to="." method="_on_slicing_finished"]
 [connection signal="tree_exited" from="Chopping/ChoppableHotdog" to="." method="_on_choppable_hotdog_tree_exited"]
+[connection signal="area_entered" from="Stick/Stick" to="Stick/Stick" method="_on_area_entered"]
+[connection signal="area_exited" from="Stick/Stick" to="Stick/Stick" method="_on_area_exited"]
 [connection signal="mouse_entered" from="Stick/MallowsBag" to="Stick/MallowsBag" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Stick/MallowsBag" to="Stick/MallowsBag" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Stick/HotdogBowl" to="Stick/HotdogBowl" method="_on_mouse_entered"]
