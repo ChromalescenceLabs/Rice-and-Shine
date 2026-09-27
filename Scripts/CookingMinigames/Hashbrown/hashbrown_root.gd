@@ -11,6 +11,7 @@ func _ready() -> void:
 	grating_hashbrowns.position.x += get_viewport().get_visible_rect().size.x
 	GlobalVars.item_enter(hashbrown_peel)
 
+
 func _on_hashbrowns_peeled() -> void:
 	GlobalVars.successind(self)
 	await GlobalVars.successIndEnd

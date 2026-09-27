@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://j42ywdsfuawg"]
 
 [ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/CookingBG.jpg" id="1_jjcf2"]
-[ext_resource type="Script" uid="uid://cd2fnwmwy18gs" path="res://Scripts/CookingMinigames/Hashbrown/hashbrown_root.gd" id="1_o12im"]
+[ext_resource type="Script" path="res://Scripts/CookingMinigames/Hashbrown/hashbrown_root.gd" id="1_o12im"]
 [ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/CookingBGTopDown.jpg" id="2_y804u"]
 [ext_resource type="Texture2D" uid="uid://c32mg1ke0dp8" path="res://Assets/Hashbrown/grater.png" id="4_0c4c0"]
 [ext_resource type="PackedScene" uid="uid://b8yqa13xod3tx" path="res://Scenes/CookingMinigames/Hashbrown/HashbrownInitial.tscn" id="4_o12im"]
@@ -116,6 +116,7 @@ offset_bottom = 485.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[connection signal="peeled" from="Hashbrowns" to="." method="_on_hashbrowns_peeled"]
 [connection signal="body_entered" from="Hashbrowns/Line2D/CheckingAreas/Area2D" to="Hashbrowns/Line2D/CheckingAreas/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="GratingHashbrowns/grater" to="GratingHashbrowns/gratedFull" method="_on_grater_body_entered"]
 [connection signal="body_exited" from="GratingHashbrowns/grater" to="GratingHashbrowns/gratedFull" method="_on_grater_body_exited"]
