@@ -40,43 +40,54 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Text:rotation")
-tracks/0/interp = 1
+tracks/0/path = NodePath("../Text:position")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Text:scale")
-tracks/1/interp = 1
+tracks/1/path = NodePath("../Text:rotation")
+tracks/1/interp = 4
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1.8531924, 1.8531924)]
+"values": [0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Text:position")
-tracks/2/interp = 1
+tracks/2/path = NodePath("../Text:scale")
+tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-544.99994, -114.00001)]
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Text:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_q3lis"]
 resource_name = "in"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -84,10 +95,10 @@ tracks/0/path = NodePath("../Text:rotation")
 tracks/0/interp = 4
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.50000006, 1),
 "update": 0,
-"values": [-0.13559496, 0.0]
+"values": [6.1475906, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -96,7 +107,7 @@ tracks/1/path = NodePath("../Text:scale")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(4.2870994, 1),
 "update": 0,
 "values": [Vector2(1.8531924, 1.8531924), Vector2(1, 1)]
@@ -108,10 +119,22 @@ tracks/2/path = NodePath("../Text:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(5.0982404, 1),
 "update": 0,
-"values": [Vector2(-571, -113.99999), Vector2(-315, -95)]
+"values": [Vector2(-482.99997, -123), Vector2(-268, -84)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Text:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_30270"]
@@ -131,18 +154,12 @@ scale = Vector2(1.2890625, 1.046875)
 texture = ExtResource("2_64y87")
 
 [node name="Text" type="RichTextLabel" parent="." unique_id=1460330754]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -315.0
-offset_top = -95.0
-offset_right = 263.0
-offset_bottom = 113.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.8531924, 1.8531924)
+modulate = Color(0, 0, 0, 1)
+offset_left = -268.0
+offset_top = -84.0
+offset_right = 233.0
+offset_bottom = 103.0
+scale = Vector2(1e-05, 1e-05)
 theme_override_colors/default_color = Color(0.9356426, 0.9124135, 0.88352305, 1)
 theme_override_colors/font_outline_color = Color(0.6914107, 0.2849654, 0.23425165, 1)
 theme_override_colors/font_shadow_color = Color(0.2390672, 0.056443207, 0.10721014, 0.4392157)
@@ -155,7 +172,6 @@ text = "GREAT"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="SuccessParticles" type="GPUParticles2D" parent="." unique_id=1564826323]
 z_index = -1
@@ -167,12 +183,9 @@ speed_scale = 1.25
 randomness = 0.24
 process_material = SubResource("ParticleProcessMaterial_idtpb")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1887347601]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1340621902]
 deterministic = true
 root_node = NodePath("../SuccessParticles")
 libraries/ = SubResource("AnimationLibrary_30270")
-autoplay = &"in"
 
 [connection signal="finished" from="SuccessParticles" to="." method="_on_success_particles_finished"]
