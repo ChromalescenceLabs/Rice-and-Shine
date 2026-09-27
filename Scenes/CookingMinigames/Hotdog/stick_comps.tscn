@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://brd3lmuj2umok"]
+
+[ext_resource type="Texture2D" uid="uid://cbi44cv0gptjt" path="res://Assets/Hotdog/MallowChopped.png" id="1_bh60f"]
+[ext_resource type="Script" uid="uid://ww2s6kc2omj3" path="res://Scripts/CookingMinigames/Hotdog/stick_comps.gd" id="1_xj7gq"]
+[ext_resource type="Texture2D" uid="uid://dg8ve64io40ke" path="res://Assets/Hotdog/HotdogChopped.png" id="2_xj7gq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5h11f"]
+radius = 67.00746
+
+[node name="StickComps" type="Area2D" unique_id=913341759]
+script = ExtResource("1_xj7gq")
+
+[node name="Mallows" type="Sprite2D" parent="." unique_id=473868637]
+visible = false
+position = Vector2(7, 0)
+texture = ExtResource("1_bh60f")
+
+[node name="ChoppedHdog" type="Sprite2D" parent="." unique_id=1840469254]
+visible = false
+texture = ExtResource("2_xj7gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=470529872]
+position = Vector2(1, -4)
+shape = SubResource("CircleShape2D_5h11f")

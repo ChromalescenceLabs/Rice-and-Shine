@@ -11,11 +11,25 @@
 [ext_resource type="PackedScene" uid="uid://dplwtlc2jhxoo" path="res://Scenes/CookingMinigames/Hotdog/slice_hotdog.tscn" id="9_bgbgk"]
 [ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Non-specific/Bowl.png" id="10_3chny"]
 [ext_resource type="PackedScene" uid="uid://dj3rvq375j1te" path="res://Scenes/CookingMinigames/Hotdog/choppable_hotdog.tscn" id="11_2hcv6"]
+[ext_resource type="Texture2D" uid="uid://bgd51mllr8jfw" path="res://Assets/Hotdog/HdogBowl.png" id="12_aer06"]
+[ext_resource type="Script" uid="uid://yqxqwmtgx0bj" path="res://Scripts/CookingMinigames/Hotdog/mallows_bag.gd" id="12_x6ma3"]
+[ext_resource type="Texture2D" uid="uid://dqonpj3xbdl0e" path="res://Assets/Hotdog/Stick.png" id="12_xrpk2"]
+[ext_resource type="Script" uid="uid://dw7utpit2pcbm" path="res://Scripts/CookingMinigames/Hotdog/hotdog_bowl.gd" id="14_kyla7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pocx5"]
 radius = 95.50916
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5h11f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bx8n8"]
+height = 488.0
+
+[sub_resource type="Gradient" id="Gradient_qojw4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5h11f"]
+gradient = SubResource("Gradient_qojw4")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
 
 [node name="Hotdog" type="Node2D" unique_id=95363824]
 script = ExtResource("1_x6sm1")
@@ -85,6 +99,7 @@ position = Vector2(935, 384)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Chopping" type="Node2D" parent="." unique_id=1964342270]
+visible = false
 
 [node name="ChoppingBoard" type="Sprite2D" parent="Chopping" unique_id=678030918]
 position = Vector2(666.87494, 362.125)
@@ -102,7 +117,38 @@ position = Vector2(652.87494, 357.12497)
 
 [node name="Stick" type="Node2D" parent="." unique_id=1221182371]
 
+[node name="Stick" type="Area2D" parent="Stick" unique_id=1279611727]
+position = Vector2(234.00005, 365)
+scale = Vector2(1.24, 1.24)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Stick/Stick" unique_id=39554228]
+texture = ExtResource("12_xrpk2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stick/Stick" unique_id=1104251313]
+shape = SubResource("CapsuleShape2D_bx8n8")
+
+[node name="MallowsBag" type="TextureRect" parent="Stick" unique_id=388621045]
+offset_left = 797.0
+offset_top = 45.0
+offset_right = 1237.0
+offset_bottom = 636.0
+texture = SubResource("GradientTexture2D_5h11f")
+script = ExtResource("12_x6ma3")
+
+[node name="HotdogBowl" type="TextureRect" parent="Stick" unique_id=1958160608]
+offset_left = 548.0
+offset_top = 331.0
+offset_right = 1055.0
+offset_bottom = 698.0
+texture = ExtResource("12_aer06")
+script = ExtResource("14_kyla7")
+
 [connection signal="chopping_finished" from="." to="." method="_on_chopping_finished"]
 [connection signal="frying_finished" from="." to="." method="_on_frying_finished"]
 [connection signal="slicing_finished" from="." to="." method="_on_slicing_finished"]
 [connection signal="tree_exited" from="Chopping/ChoppableHotdog" to="." method="_on_choppable_hotdog_tree_exited"]
+[connection signal="mouse_entered" from="Stick/MallowsBag" to="Stick/MallowsBag" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Stick/MallowsBag" to="Stick/MallowsBag" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Stick/HotdogBowl" to="Stick/HotdogBowl" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Stick/HotdogBowl" to="Stick/HotdogBowl" method="_on_mouse_exited"]

@@ -45,6 +45,9 @@ var chopped_hdog: int = 0:
 			else:
 				chopping_finished.emit()
 
+# STICK
+@onready var stick: Node2D = $Stick
+
 
 func _ready() -> void:
 	frying.position.x += get_viewport().get_visible_rect().size.x
@@ -64,3 +67,4 @@ func _on_slicing_finished() -> void:
 
 func _on_chopping_finished() -> void:
 	GlobalVars.item_exit(chopping)
+	GlobalVars.item_enter(stick)
