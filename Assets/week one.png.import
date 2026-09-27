@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy2r0fw4utlrg"
-path="res://.godot/imported/week one.png-7c7bef0bd8ea490f5a2a40f23ec794ff.ctex"
+path="res://.godot/imported/week one.png-397830c164bc525b0629cbeffdc64026.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hashbrown/week one.png"
-dest_files=["res://.godot/imported/week one.png-7c7bef0bd8ea490f5a2a40f23ec794ff.ctex"]
+source_file="res://Assets/week one.png"
+dest_files=["res://.godot/imported/week one.png-397830c164bc525b0629cbeffdc64026.ctex"]
 
 [params]
 

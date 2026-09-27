@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c32mg1ke0dp8" path="res://Assets/Hashbrown/grater.png" id="4_0c4c0"]
 [ext_resource type="PackedScene" uid="uid://b8yqa13xod3tx" path="res://Scenes/CookingMinigames/Hashbrown/HashbrownInitial.tscn" id="4_o12im"]
 [ext_resource type="PackedScene" uid="uid://ces2w4ohtk4vx" path="res://Scenes/CookingMinigames/Hashbrown/grated_full.tscn" id="5_1gtf3"]
+[ext_resource type="Texture2D" uid="uid://brijabd5metjd" path="res://Assets/Hashbrown/Peeled Potatoes.png" id="7_8bsfq"]
 [ext_resource type="Texture2D" uid="uid://bcyqjrke55gi" path="res://Assets/Hashbrown/grated1.png" id="7_o12im"]
 [ext_resource type="Texture2D" uid="uid://dq8oklhvamkn0" path="res://Assets/Hashbrown/grated2.png" id="8_penps"]
 [ext_resource type="Texture2D" uid="uid://bc6e5imjyoy6d" path="res://Assets/Hashbrown/grated3.png" id="9_8bsfq"]
@@ -59,6 +60,21 @@ disabled = true
 
 [node name="grated FullCol3" parent="GratingHashbrowns/gratedFull" index="7" unique_id=1539126652]
 disabled = true
+
+[node name="Detector" type="TextureRect" parent="GratingHashbrowns/gratedFull" unique_id=1020712873]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = -208.5
+offset_right = 120.5
+offset_bottom = 208.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_8bsfq")
 
 [node name="Grated" type="Control" parent="GratingHashbrowns" unique_id=938886420]
 layout_mode = 3

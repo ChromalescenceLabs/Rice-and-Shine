@@ -14,6 +14,7 @@ extends Area2D
 @onready var grated_4: TextureRect = $"../Grated/grated4"
 
 @onready var grate_timer: Timer = $"../GrateTimer"
+@onready var detector: TextureButton = $Detector
 
 var origPos
 var picked=false
@@ -41,8 +42,12 @@ func _process(_delta: float) -> void:
 	if picked: self.global_position = lerp(self.global_position, get_global_mouse_position(), 0.2)
 	else: self.global_position = lerp(self.global_position, origPos, 0.05)
 
-func _on_mouse_entered() -> void: pickUp=true
-func _on_mouse_exited() -> void: pickUp=false
+func _on_mouse_entered() -> void: 
+	pickUp=true 
+	print("can pick up")
+func _on_mouse_exited() -> void: 
+	pickUp=false
+	print("nope")
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
@@ -68,34 +73,35 @@ func _on_grater_body_exited(body: Node2D) -> void:
 func _on_grate_timer_timeout() -> void:
 	iteration += 1
 	
-	match iteration:
-		1: 
-			peeled.visible = false
-			peeled_col.disabled = true
-			
-			grated_full.visible = true
-			grated_full_col.disabled = false
-			
-			grated.visible = true
-			
-		2: 
-			grated_full.visible = false
-			grated_full_col.disabled = true
-			
-			grated_full_2.visible = true
-			grated_full_col_2.visible = false
-			
-			grated_2.visible = true
-		3:
-			grated_full_2.visible = false
-			grated_full_col_2.visible = true
-			
-			texture_rect.visible = true
-			grated_full_col.disabled = false
-			grated_3.visible = true
-	
-	grate_timer.start()
-	grate_timer.paused = true
+	# logic for grating mech heree
+	#match iteration:
+		#1: 
+			#peeled.visible = false
+			#peeled_col.disabled = true
+			#
+			#grated_full.visible = true
+			#grated_full_col.disabled = false
+			#
+			#grated.visible = true
+			#
+		#2: 
+			#grated_full.visible = false
+			#grated_full_col.disabled = true
+			#
+			#grated_full_2.visible = true
+			#grated_full_col_2.visible = false
+			#
+			#grated_2.visible = true
+		#3:
+			#grated_full_2.visible = false
+			#grated_full_col_2.visible = true
+			#
+			#texture_rect.visible = true
+			#grated_full_col.disabled = false
+			#grated_3.visible = true
+	#
+	#grate_timer.start()
+	#grate_timer.paused = true
 
 #print('hi')
 	#get_subset_by_index(amtChange)
@@ -125,3 +131,7 @@ func _on_grate_timer_timeout() -> void:
 		#print("  ", child.name)
 		#child.visible= true
 	#return subset
+
+
+func _on_detector_mouse_entered() -> void:
+	pass # Replace with function body.

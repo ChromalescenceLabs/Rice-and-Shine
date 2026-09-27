@@ -33,4 +33,23 @@ func _on_instructions_changed(item):
 	elif item.name.to_lower() == "water":
 		instructions.text = "Ingredients: water"
 		instructions_2.text = "you"
+		
+	
+	# HOTDOG SECTION
+	
+	elif item.name.to_lower() == "slicing":
+		instructions.text = "STEP 1: Create cuts on the hotdog."
+		instructions_2.text = "This allows the hotdog to be cooked thoroughly."
+		
+	elif item.name.to_lower() == "frying":
+		instructions.text = "STEP 2: Pour oil in the pan and cook the cut hotdogs."
+		instructions_2.text = "Generally, this is already a good meal, but we can do better."
+		
+	elif item.name.to_lower() == "chopping":	
+		instructions.text = "STEP 3: Chop the hotdogs into tinier pieces."
+		instructions_2.text = "This is to be used in pair with marshmallows."
+		
+	elif item.name.to_lower() == "stick":
+		instructions.text = "STEP 4: Place the marshmallows and hotdog pieces onto the stick."
+		instructions_2.text = "And you will have your hotdog and marshmallows on a stick!"
 	ins_anim_in.play("fade")

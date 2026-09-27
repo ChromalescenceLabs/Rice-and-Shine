@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://yqxqwmtgx0bj" path="res://Scripts/CookingMinigames/Hotdog/mallows_bag.gd" id="12_x6ma3"]
 [ext_resource type="Script" uid="uid://dw7utpit2pcbm" path="res://Scripts/CookingMinigames/Hotdog/hotdog_bowl.gd" id="14_kyla7"]
 [ext_resource type="PackedScene" uid="uid://dse2mctmqkges" path="res://Scenes/CookingMinigames/Hotdog/stick.tscn" id="16_kyla7"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/recipe_book.tscn" id="17_p6kmk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pocx5"]
 radius = 95.50916
@@ -162,6 +163,12 @@ script = ExtResource("12_p6kmk")
 position = Vector2(297.99997, 351.99997)
 mallows_bag = NodePath("../../../Stick/MallowsBag")
 hotdog_bowl = NodePath("../../../Stick/HotdogBowl")
+
+[node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("17_p6kmk")]
+offset_left = 17.0
+offset_top = 465.0
+offset_right = 200.0
+offset_bottom = 702.0
 
 [connection signal="chopping_finished" from="." to="." method="_on_chopping_finished"]
 [connection signal="frying_finished" from="." to="." method="_on_frying_finished"]
