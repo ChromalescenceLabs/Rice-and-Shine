@@ -26,11 +26,14 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		self.global_position = og_pos
 
 func _on_area_entered(area: Area2D) -> void:
-	if area is PancakePan:
-		if area.has_oil == false:
-			if not dragging:
-				return
-				
-			if dragging:
-				area.has_oil = true
-				area.oiled()
+	if area is PancakePan or area is HdogPan:
+		oil(area)
+		
+func oil(area):
+	if area.has_oil == false:
+		if not dragging:
+			return
+			
+		if dragging:
+			area.has_oil = true
+			area.oiled()

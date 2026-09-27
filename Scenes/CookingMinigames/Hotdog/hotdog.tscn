@@ -2,6 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/CookingBGTopDown.jpg" id="1_ugtlu"]
 [ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/CookingMinigames/Pankcae/oil.tscn" id="2_6vnog"]
+[ext_resource type="Texture2D" uid="uid://iqxaxa0bo02s" path="res://Assets/Non-specific/Pan.png" id="3_f7vh4"]
+[ext_resource type="Script" uid="uid://bfhpfnmssjllr" path="res://Scripts/CookingMinigames/Hotdog/hdog_pan.gd" id="3_ifmqp"]
+[ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Non-specific/PanOil.png" id="4_ifmqp"]
+[ext_resource type="Texture2D" uid="uid://cfjgsnkmmit3k" path="res://Assets/Non-specific/Plate.png" id="6_ni26i"]
+[ext_resource type="PackedScene" uid="uid://cv4xskrudeikq" path="res://Scenes/CookingMinigames/Hotdog/hotdog_indiv.tscn" id="7_x6sm1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pocx5"]
+radius = 95.50916
 
 [node name="Hotdog" type="Node2D" unique_id=95363824]
 
@@ -9,6 +17,43 @@
 position = Vector2(518.99994, 595.99994)
 scale = Vector2(0.946875, 0.946875)
 texture = ExtResource("1_ugtlu")
+metadata/_edit_lock_ = true
 
-[node name="Oil" parent="." unique_id=1503278428 instance=ExtResource("2_6vnog")]
-position = Vector2(1067, 197)
+[node name="Frying" type="Node2D" parent="." unique_id=1557546142]
+
+[node name="HdogPan" type="Area2D" parent="Frying" unique_id=819248779]
+position = Vector2(292.01, 476.18)
+rotation = -1.5707964
+scale = Vector2(1.5, 1.5)
+script = ExtResource("3_ifmqp")
+
+[node name="Pan" type="Sprite2D" parent="Frying/HdogPan" unique_id=1819557132]
+texture = ExtResource("3_f7vh4")
+
+[node name="PanOil" type="Sprite2D" parent="Frying/HdogPan" unique_id=1889596687]
+visible = false
+texture = ExtResource("4_ifmqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frying/HdogPan" unique_id=1160576310]
+visible = false
+position = Vector2(104.444664, 0.2219996)
+shape = SubResource("CircleShape2D_pocx5")
+
+[node name="Oil" parent="Frying" unique_id=1503278428 instance=ExtResource("2_6vnog")]
+position = Vector2(1139, 146)
+
+[node name="Hotdogs" type="Node2D" parent="Frying" unique_id=862146909]
+
+[node name="Sprite2D" type="Sprite2D" parent="Frying/Hotdogs" unique_id=1573134861]
+position = Vector2(867, 437)
+scale = Vector2(1.2980502, 1.2980502)
+texture = ExtResource("6_ni26i")
+
+[node name="Hotdog" parent="Frying/Hotdogs" unique_id=1653114795 instance=ExtResource("7_x6sm1")]
+position = Vector2(947, 427)
+
+[node name="Hotdog2" parent="Frying/Hotdogs" unique_id=2061938858 instance=ExtResource("7_x6sm1")]
+position = Vector2(859, 417)
+
+[node name="Hotdog3" parent="Frying/Hotdogs" unique_id=1481284774 instance=ExtResource("7_x6sm1")]
+position = Vector2(774, 421)
