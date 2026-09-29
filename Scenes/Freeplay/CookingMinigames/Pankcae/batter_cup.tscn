@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://d3o3pud744tt1"]
 
-[ext_resource type="Script" uid="uid://ecdkj4xylf2s" path="res://Scripts/CookingMinigames/Pamcake/batter_cup.gd" id="1_054rf"]
-[ext_resource type="Texture2D" uid="uid://t4exdm258u4q" path="res://Assets/Non-specific/MeasureCup.png" id="2_sw1tm"]
-[ext_resource type="Texture2D" uid="uid://bgcclf03rmoal" path="res://Assets/Pankcae/MeasureCup_F.png" id="3_a07k5"]
-[ext_resource type="Texture2D" uid="uid://b4yv7rl6oekf1" path="res://Assets/Pankcae/MeasureCup_E.png" id="4_y667x"]
+[ext_resource type="Script" uid="uid://ecdkj4xylf2s" path="res://Scripts/Freeplay/CookingMinigames/Pamcake/batter_cup.gd" id="1_054rf"]
+[ext_resource type="Texture2D" uid="uid://t4exdm258u4q" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/MeasureCup.png" id="2_sw1tm"]
+[ext_resource type="Texture2D" uid="uid://bgcclf03rmoal" path="res://Assets/Freeplay/Cooking_Minigames/Pankcae/MeasureCup_F.png" id="3_a07k5"]
+[ext_resource type="Texture2D" uid="uid://b4yv7rl6oekf1" path="res://Assets/Freeplay/Cooking_Minigames/Pankcae/MeasureCup_E.png" id="4_y667x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
 radius = 150.11995

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://beppy36ki8xum"]
 
 [ext_resource type="Script" uid="uid://dwsxsdb1ajvjy" path="res://Scripts/success_indicator.gd" id="1_5jcpt"]
-[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/CookingBG.jpg" id="2_64y87"]
+[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Freeplay/Cooking_Minigames/CookingBG.jpg" id="2_64y87"]
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="2_va8p0"]
 [ext_resource type="Texture2D" uid="uid://ct36ntdromxo6" path="res://Assets/LoadingBG.png" id="4_q3lis"]
 

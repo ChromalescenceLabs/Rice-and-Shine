@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://j42ywdsfuawg"]
 
-[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/CookingBG.jpg" id="1_jjcf2"]
-[ext_resource type="Script" path="res://Scripts/CookingMinigames/Hashbrown/hashbrown_root.gd" id="1_o12im"]
-[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/CookingBGTopDown.jpg" id="2_y804u"]
-[ext_resource type="Texture2D" uid="uid://c32mg1ke0dp8" path="res://Assets/Hashbrown/grater.png" id="4_0c4c0"]
+[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Freeplay/Cooking_Minigames/CookingBG.jpg" id="1_jjcf2"]
+[ext_resource type="Script" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/hashbrown_root.gd" id="1_o12im"]
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="2_y804u"]
+[ext_resource type="Texture2D" uid="uid://c32mg1ke0dp8" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grater.png" id="4_0c4c0"]
 [ext_resource type="PackedScene" uid="uid://b8yqa13xod3tx" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/HashbrownInitial.tscn" id="4_o12im"]
 [ext_resource type="PackedScene" uid="uid://ces2w4ohtk4vx" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/grated_full.tscn" id="5_1gtf3"]
-[ext_resource type="Texture2D" uid="uid://bcyqjrke55gi" path="res://Assets/Hashbrown/grated1.png" id="7_o12im"]
-[ext_resource type="Texture2D" uid="uid://dq8oklhvamkn0" path="res://Assets/Hashbrown/grated2.png" id="8_penps"]
-[ext_resource type="Texture2D" uid="uid://bc6e5imjyoy6d" path="res://Assets/Hashbrown/grated3.png" id="9_8bsfq"]
-[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/recipe_book.tscn" id="10_penps"]
+[ext_resource type="Texture2D" uid="uid://bcyqjrke55gi" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated1.png" id="7_o12im"]
+[ext_resource type="Texture2D" uid="uid://dq8oklhvamkn0" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated2.png" id="8_penps"]
+[ext_resource type="Texture2D" uid="uid://bc6e5imjyoy6d" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated3.png" id="9_8bsfq"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/recipe_book.tscn" id="10_penps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
 
