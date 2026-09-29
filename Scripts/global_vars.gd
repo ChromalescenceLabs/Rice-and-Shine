@@ -38,7 +38,9 @@ func item_enter(item) -> void:
 	enterDone.emit()
 func item_exit(item) -> void:
 	var vw = get_viewport().size.x
-	create_tween().tween_property(item, "position", Vector2(vw * -1, 0), 2).set_trans(Tween.TRANS_ELASTIC)
+	var tw = create_tween().tween_property(item, "position", Vector2(vw * -1, 0), 2).set_trans(Tween.TRANS_ELASTIC)
+	await tw.finished
+	itemExited.emit()
 
 # Customer Serving Vars
 signal foodValueChanged(var_name : String, new_value : int, current_state)
@@ -97,9 +99,3 @@ var hbrown_cont_state : String = "EMPTY" if hbrown_value <= 0 else "FILLED"
 
 	
 	
-	
-func item_exit(item) -> void:
-	var vw = get_viewport().size.x
-	var tw = create_tween().tween_property(item, "position", Vector2(vw * -1, 0), 2).set_trans(Tween.TRANS_ELASTIC)
-	await tw.finished
-	itemExited.emit()

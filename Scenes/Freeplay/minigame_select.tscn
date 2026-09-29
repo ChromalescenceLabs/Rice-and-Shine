@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
 
 [ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/Freeplay/minigame_select.gd" id="1_w0f2t"]
-[ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/RICE.png" id="2_mwbel"]
-[ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/pancake.png" id="3_i5vow"]
-[ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/hasbrown.png" id="4_spget"]
-[ext_resource type="Texture2D" uid="uid://flr15pt8c72a" path="res://Assets/placeholder.png" id="5_ved7w"]
+[ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Menus/FreeplayMenu/RICE.png" id="2_mwbel"]
+[ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/Menus/FreeplayMenu/pancake.png" id="3_i5vow"]
+[ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/Menus/FreeplayMenu/hasbrown.png" id="4_spget"]
+[ext_resource type="Texture2D" uid="uid://flr15pt8c72a" path="res://Assets/Menus/FreeplayMenu/placeholder.png" id="5_ved7w"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="6_lpqfo"]
 
 [node name="Minigame Selection" type="Node2D" unique_id=380012965]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://curuxisd3l6in"]
 
-[ext_resource type="Texture2D" uid="uid://cokiq4wv1pq6d" path="res://Assets/Serving/ServeBowl.png" id="1_6rml4"]
+[ext_resource type="Texture2D" uid="uid://cokiq4wv1pq6d" path="res://Assets/Freeplay/Serving/ServeBowl.png" id="1_6rml4"]
 [ext_resource type="Script" uid="uid://bggu3b225yqvm" path="res://Scripts/Freeplay/CustomerServing/serve_bowl.gd" id="1_a3eqt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]

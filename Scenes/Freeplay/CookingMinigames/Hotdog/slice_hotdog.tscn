@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dplwtlc2jhxoo"]
+
+[ext_resource type="Texture2D" uid="uid://c57kg12rlasjx" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HotdogRaw3.png" id="1_dy6cj"]
+[ext_resource type="Script" uid="uid://2dyeuyhqmfms" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/slice_hotdog.gd" id="1_uqdda"]
+[ext_resource type="Texture2D" uid="uid://c0iagrtp1o8t6" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HotdogRaw.png" id="2_gu8ka"]
+[ext_resource type="Texture2D" uid="uid://4ob5exyjq7ya" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HotdogRaw1.png" id="2_ljgtu"]
+[ext_resource type="Texture2D" uid="uid://pusasorbm3u3" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HotdogRaw2.png" id="3_p0frt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljgtu"]
+radius = 44.0
+height = 454.0
+
+[node name="SliceHotdog" type="Area2D" unique_id=2106238654 node_paths=PackedStringArray("textures")]
+script = ExtResource("1_uqdda")
+textures = [NodePath("Raw1"), NodePath("Raw2"), NodePath("Raw3")]
+
+[node name="RawUncut" type="Sprite2D" parent="." unique_id=2068751297]
+texture = ExtResource("2_gu8ka")
+
+[node name="Raw1" type="Sprite2D" parent="." unique_id=266833085]
+visible = false
+texture = ExtResource("2_ljgtu")
+
+[node name="Raw2" type="Sprite2D" parent="." unique_id=511497435]
+visible = false
+texture = ExtResource("3_p0frt")
+
+[node name="Raw3" type="Sprite2D" parent="." unique_id=204375495]
+visible = false
+texture = ExtResource("1_dy6cj")
+
+[node name="Detector" type="TextureRect" parent="." unique_id=767256557]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dy6cj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=636808071]
+position = Vector2(6, 1)
+shape = SubResource("CapsuleShape2D_ljgtu")
+
+[connection signal="slice" from="." to="." method="_on_slice"]
+[connection signal="mouse_entered" from="Detector" to="." method="_on_raw_3_mouse_entered"]
+[connection signal="mouse_exited" from="Detector" to="." method="_on_raw_3_mouse_exited"]

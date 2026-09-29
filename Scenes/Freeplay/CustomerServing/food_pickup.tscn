@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bp3wrjfknjyxt"]
 
 [ext_resource type="Script" uid="uid://bjrojluo1stou" path="res://Scripts/Freeplay/CustomerServing/food_pickup.gd" id="1_q8uwb"]
-[ext_resource type="Texture2D" uid="uid://b8pycewahokgt" path="res://Assets/Serving/FoodPickupImgs/rice.png" id="2_0kinq"]
+[ext_resource type="Texture2D" uid="uid://b8pycewahokgt" path="res://Assets/Freeplay/Serving/FoodPickupImgs/rice.png" id="2_0kinq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r28lg"]
 radius = 29.15476
