@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://curuxisd3l6in"]
+
+[ext_resource type="Texture2D" uid="uid://cokiq4wv1pq6d" path="res://Assets/Freeplay/Serving/ServeBowl.png" id="1_6rml4"]
+[ext_resource type="Script" uid="uid://bggu3b225yqvm" path="res://Scripts/Freeplay/CustomerServing/serve_bowl.gd" id="1_a3eqt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
+radius = 48.0
+
+[node name="ServeBowl" type="Area2D" unique_id=2094721552]
+script = ExtResource("1_a3eqt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1687127364]
+texture = ExtResource("1_6rml4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087544455]
+position = Vector2(-3, -5)
+shape = SubResource("CircleShape2D_08i74")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bp3wrjfknjyxt"]
+
+[ext_resource type="Script" uid="uid://bjrojluo1stou" path="res://Scripts/Freeplay/CustomerServing/food_pickup.gd" id="1_q8uwb"]
+[ext_resource type="Texture2D" uid="uid://b8pycewahokgt" path="res://Assets/Freeplay/Serving/FoodPickupImgs/rice.png" id="2_0kinq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r28lg"]
+radius = 29.15476
+
+[node name="FoodPickup" type="Area2D" unique_id=442498868]
+script = ExtResource("1_q8uwb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402546915]
+shape = SubResource("CircleShape2D_r28lg")
+
+[node name="FoodImg" type="Sprite2D" parent="." unique_id=2038221008]
+position = Vector2(1.9073486e-06, 4.7683716e-07)
+scale = Vector2(1.2399998, 1.3527274)
+texture = ExtResource("2_0kinq")

@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dj3rvq375j1te"]
+
+[ext_resource type="Script" uid="uid://ct2elhliicwll" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/choppable_hotdog.gd" id="1_ij4jc"]
+[ext_resource type="Texture2D" uid="uid://b1yhmjv7iscs1" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HotdogCooked.png" id="1_k8yli"]
+[ext_resource type="Texture2D" uid="uid://c57kg12rlasjx" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HotdogRaw3.png" id="2_ij4jc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lsj3f"]
+radius = 44.0
+height = 454.0
+
+[node name="ChoppableHotdog" type="Area2D" unique_id=2017030951 node_paths=PackedStringArray("textures")]
+script = ExtResource("1_ij4jc")
+textures = [NodePath("Unchopped/Texture1"), NodePath("Unchopped/Texture2"), NodePath("Unchopped/Texture3"), NodePath("Unchopped/Texture4"), NodePath("Unchopped/Texture5")]
+
+[node name="Chopped" type="Node2D" parent="." unique_id=1639898833]
+
+[node name="Unchopped" type="Node2D" parent="." unique_id=487062274]
+
+[node name="Texture1" type="Sprite2D" parent="Unchopped" unique_id=2107975988]
+position = Vector2(0, -200)
+texture = ExtResource("1_k8yli")
+region_enabled = true
+region_rect = Rect2(0, 0, 200, 100)
+
+[node name="Texture2" type="Sprite2D" parent="Unchopped" unique_id=1494780250]
+position = Vector2(0, -100)
+texture = ExtResource("1_k8yli")
+region_enabled = true
+region_rect = Rect2(0, 100, 200, 100)
+
+[node name="Texture3" type="Sprite2D" parent="Unchopped" unique_id=102227676]
+texture = ExtResource("1_k8yli")
+region_enabled = true
+region_rect = Rect2(0, 200, 200, 100)
+
+[node name="Texture4" type="Sprite2D" parent="Unchopped" unique_id=1495159816]
+position = Vector2(0, 100)
+texture = ExtResource("1_k8yli")
+region_enabled = true
+region_rect = Rect2(0, 300, 200, 100)
+
+[node name="Texture5" type="Sprite2D" parent="Unchopped" unique_id=1816616011]
+position = Vector2(0, 200)
+texture = ExtResource("1_k8yli")
+region_enabled = true
+region_rect = Rect2(0, 400, 200, 100)
+
+[node name="TextureFull" type="Sprite2D" parent="." unique_id=974434180]
+visible = false
+texture = ExtResource("1_k8yli")
+
+[node name="Detector" type="TextureRect" parent="." unique_id=1549656748]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ij4jc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=712678830]
+position = Vector2(6, 1)
+shape = SubResource("CapsuleShape2D_lsj3f")
+
+[connection signal="slice" from="." to="." method="_on_slice"]
+[connection signal="mouse_entered" from="Detector" to="." method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="Detector" to="." method="_on_detector_mouse_exited"]

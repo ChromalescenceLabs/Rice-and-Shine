@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
+
+[ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/Freeplay/minigame_select.gd" id="1_w0f2t"]
+[ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Menus/FreeplayMenu/RICE.png" id="2_mwbel"]
+[ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/Menus/FreeplayMenu/pancake.png" id="3_i5vow"]
+[ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/Menus/FreeplayMenu/hasbrown.png" id="4_spget"]
+[ext_resource type="Texture2D" uid="uid://flr15pt8c72a" path="res://Assets/Menus/FreeplayMenu/placeholder.png" id="5_ved7w"]
+[ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="6_lpqfo"]
+
+[node name="Minigame Selection" type="Node2D" unique_id=380012965]
+script = ExtResource("1_w0f2t")
+
+[node name="BG" type="ColorRect" parent="." unique_id=916736482]
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(1, 0.5372549, 0.21176471, 1)
+
+[node name="Selection" type="Control" parent="." unique_id=1185375392]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Rice" type="TextureButton" parent="Selection" unique_id=1511388286]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 240.0
+offset_right = 688.0
+offset_bottom = 599.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("2_mwbel")
+
+[node name="Minigame 2" type="TextureButton" parent="Selection" unique_id=435824771]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 240.0
+offset_right = 1088.0
+offset_bottom = 599.0008
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("3_i5vow")
+
+[node name="Hashbrown" type="TextureButton" parent="Selection" unique_id=1438000863]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 240.0
+offset_right = 1488.0
+offset_bottom = 599.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("4_spget")
+
+[node name="Minigame 4" type="TextureButton" parent="Selection" unique_id=1236986991]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 475.0
+offset_right = 688.0
+offset_bottom = 834.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("5_ved7w")
+
+[node name="Minigame 5" type="TextureButton" parent="Selection" unique_id=1682458591]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 475.0
+offset_right = 797.0
+offset_bottom = 689.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("5_ved7w")
+
+[node name="Minigame 6" type="TextureButton" parent="Selection" unique_id=446821078]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 475.0
+offset_right = 1488.0
+offset_bottom = 834.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("5_ved7w")
+
+[node name="ServeCustomers" type="Button" parent="Selection" unique_id=1987029645]
+layout_mode = 0
+offset_left = 837.0
+offset_top = 78.0
+offset_right = 1236.0
+offset_bottom = 166.0
+theme_override_font_sizes/font_size = 30
+text = "Serve Customers Sandbox"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510853050]
+position = Vector2(640, 117)
+scale = Vector2(0.19780816, 0.19780816)
+texture = ExtResource("6_lpqfo")
+
+[connection signal="pressed" from="Selection/Rice" to="." method="_on_minigame_1_pressed"]
+[connection signal="pressed" from="Selection/Minigame 2" to="." method="_on_minigame_2_pressed"]
+[connection signal="pressed" from="Selection/Hashbrown" to="." method="_on_minigame_3_pressed"]
+[connection signal="pressed" from="Selection/Minigame 4" to="." method="_on_minigame_4_pressed"]
+[connection signal="pressed" from="Selection/Minigame 5" to="." method="_on_minigame_5_pressed"]
+[connection signal="pressed" from="Selection/Minigame 6" to="." method="_on_minigame_6_pressed"]
+[connection signal="pressed" from="Selection/ServeCustomers" to="." method="_on_serve_customers_pressed"]

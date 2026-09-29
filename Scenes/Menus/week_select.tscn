@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://benuikw1v40e"]
+
+[ext_resource type="Texture2D" uid="uid://b5s3gdbnh5kai" path="res://Assets/Menus/ChapterSelect/week one.png" id="1_q88pd"]
+[ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/placeholderbg.png" id="1_yue0x"]
+
+[node name="Node2D" type="Node2D" unique_id=812155023]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=267043113]
+modulate = Color(1, 1, 1, 0.48235294)
+position = Vector2(650, 370)
+texture = ExtResource("1_yue0x")
+
+[node name="WeekOne" type="Sprite2D" parent="." unique_id=120636608]
+position = Vector2(356, 348.99997)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("1_q88pd")
