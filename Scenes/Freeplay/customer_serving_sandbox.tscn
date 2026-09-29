@@ -199,7 +199,7 @@ horizontal_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="ServeBowl" parent="." unique_id=2094721552 instance=ExtResource("12_bphlm")]
-position = Vector2(82, 434)
+position = Vector2(81, 431)
 
 [connection signal="button_down" from="Control/ScrollContainer/FoodConts/RiceCont" to="." method="_on_rice_cont_button_down"]
 [connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/RiceCont" to="Control/Counters" method="_on_rice_cont_mouse_entered"]
