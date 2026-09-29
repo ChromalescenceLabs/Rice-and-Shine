@@ -211,3 +211,4 @@ position = Vector2(81, 431)
 [connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="Control/Counters" method="_on_hashbrown_cont_mouse_entered"]
 [connection signal="mouse_exited" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="Control/Counters" method="_on_hashbrown_cont_mouse_exited"]
 [connection signal="pressed" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="." method="_on_hashbrown_cont_pressed"]
+[connection signal="contentsCheck" from="ServeBowl" to="." method="_on_serve_bowl_contents_check"]

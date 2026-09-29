@@ -1,6 +1,7 @@
 extends Node2D
 
 const FOOD_PICKUP = preload("uid://bp3wrjfknjyxt")
+const BOWL_CONTENTS_LABEL = preload("uid://ye58mwdno13d")
 
 @onready var rice_cont: TextureButton = $Control/ScrollContainer/FoodConts/RiceCont
 @onready var pcake_cont: TextureButton = $Control/ScrollContainer/FoodConts/PancakeCont
@@ -87,3 +88,8 @@ func _on_food_val_changed(var_name : String, new_value : int, current_state: Str
 func _on_rice_cont_button_down() -> void: check_value_forbtn(rice_state, "uid://sukerfnpt5d5", "rice")
 func _on_pancake_cont_button_down() -> void: check_value_forbtn(pcake_state, "uid://bf86igy00f6sq", "pancake")
 func _on_hashbrown_cont_button_down() -> void: check_value_forbtn(hbrown_state, "uid://j42ywdsfuawg", "hashbrown")
+
+
+func _on_serve_bowl_contents_check() -> void:
+	var bowl_content = BOWL_CONTENTS_LABEL.instantiate()
+	add_child(bowl_content)
