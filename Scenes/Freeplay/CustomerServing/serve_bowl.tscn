@@ -116,5 +116,6 @@ speed_scale = 3.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="contentsCheck" from="." to="." method="_on_contents_check"]
 [connection signal="mouse_entered" from="Sprite2D" to="." method="_on_sprite_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Sprite2D" to="." method="_on_sprite_2d_mouse_exited"]
