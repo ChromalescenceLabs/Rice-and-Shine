@@ -67,7 +67,7 @@ Then from September 19-20, I began coding for thirdspace.
 - With my remaining time, I decided to polish some parts of the main menu, and options menu before my ten hours were up.
 
 
-## WEEK 1: SEPTEMBER 21-28
+## WEEK 2: SEPTEMBER 21-28
 ### 1. ALLIUMC
 Things I've done:
 1) Polish the success indicator
