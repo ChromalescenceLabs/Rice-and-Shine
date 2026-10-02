@@ -11,14 +11,12 @@ extends Area2D
 var origPos
 var picked=false
 var canGrate=false 
-var startProcess=false
 var amtChange =-1
 var dropped=false
 
 
 func _ready() -> void:
 	origPos = self.global_position
-	GlobalVars.enterDone.connect(_on_enterDone)
 
 func grate(amt:int):
 	var start = amt * 2
@@ -48,17 +46,13 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		picked=false
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.name == "grater" and startProcess:
+	if area.name == "grater":
 		canGrate=true
 
 func _on_area_exited(area: Area2D) -> void:
 	if area.name == "grater":
 		canGrate=false
-		if not picked and startProcess:
+		if not picked:
 			amtChange+=1
 			grate(amtChange)
 			print(amtChange)
-
-func _on_enterDone():
-	startProcess=true
-	print(amtChange)

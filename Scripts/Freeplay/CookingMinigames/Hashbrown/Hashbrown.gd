@@ -10,43 +10,31 @@ signal peeled
 var peeler_ogpos
 
 var peeling: bool = false
-var pickUp:bool = false
 
 func _ready() -> void:
 	peeler_ogpos = peeler.global_position
 	p_potato.visible=false
-	GlobalVars.enterDone.connect(_on_enterDone)
 
-	
 func _process(_delta: float) -> void:
-	if peeling:
-		peeler.global_position = lerp(peeler.global_position, get_global_mouse_position(), 0.2)
-	else:
-		peeler.global_position = lerp(peeler.global_position, peeler_ogpos, 0.05)
-	
+	pass
+	#if peeling:
+		#peeler.global_position = lerp(peeler.global_position, get_global_mouse_position(), 0.2)
+	#else:
+		#peeler.global_position = lerp(peeler.global_position, peeler_ogpos, 0.05)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and peeling:
 		line_2d.add_point(line_2d.to_local(event.position))
 
-func _on_peeler_mouse_entered() -> void:
-	pickUp=true
-
-func _on_peeler_mouse_exited() -> void:
-	pickUp=false
-
 func _on_area_p_potato_mouse_entered() -> void:
 	if peeling:
 		p_potato.visible=true
+		p_particles.emitting=true
 
 func _on_peeler_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("Click"):
-		if pickUp:
-			peeling=true
+		peeling=true
 	
 	if event.is_action_released("Click"):
 		peeling=false
-
-func _on_enterDone():
-	peel.areas_checked=0
-	peel.canCheck=true
+		p_particles.emitting=false

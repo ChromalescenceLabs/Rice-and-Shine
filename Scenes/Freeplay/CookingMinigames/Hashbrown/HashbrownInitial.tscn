@@ -36,7 +36,7 @@ size = Vector2(128, 197.99997)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ullcx"]
 radius = 5.0069137
 
-[node name="HashbrownPeel" type="Node2D" unique_id=1704651639]
+[node name="peel" type="Node2D" unique_id=1704651639]
 script = ExtResource("1_tan3t")
 
 [node name="Potato" type="TextureRect" parent="." unique_id=2124695233]
@@ -321,9 +321,9 @@ position = Vector2(-2, 84)
 shape = SubResource("RectangleShape2D_ittll")
 
 [node name="PeeledParticles" type="CPUParticles2D" parent="Peeler" unique_id=867490272]
-visible = false
 position = Vector2(-3.000001, 20.000004)
 scale = Vector2(2.179908, -6.5258307)
+emitting = false
 amount = 50
 lifetime = 0.58
 scale_amount_min = 26.0
@@ -350,6 +350,4 @@ shape = SubResource("CircleShape2D_ullcx")
 
 [connection signal="mouse_entered" from="Line2D/AreaPPotato" to="." method="_on_area_p_potato_mouse_entered"]
 [connection signal="input_event" from="Peeler" to="." method="_on_peeler_input_event"]
-[connection signal="mouse_entered" from="Peeler" to="." method="_on_peeler_mouse_entered"]
-[connection signal="mouse_exited" from="Peeler" to="." method="_on_peeler_mouse_exited"]
 [connection signal="area_entered" from="Peeler/peel" to="Peeler/peel" method="_on_area_entered"]
