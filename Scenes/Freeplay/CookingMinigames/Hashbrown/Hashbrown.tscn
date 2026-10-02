@@ -28,6 +28,7 @@ scale = Vector2(0.90000004, 0.9000001)
 texture = ExtResource("2_y804u")
 
 [node name="Hashbrowns" parent="." unique_id=2091728095 instance=ExtResource("4_o12im")]
+visible = false
 
 [node name="PPotato" parent="Hashbrowns/Line2D/AreaPPotato" parent_id_path=PackedInt32Array(2091728095, 644080344) index="0" unique_id=1767300622]
 visible = false
@@ -39,7 +40,7 @@ visible = false
 process_mode = 4
 
 [node name="grater" type="Area2D" parent="GratingHashbrowns" unique_id=177305472]
-position = Vector2(91, 196)
+position = Vector2(211, 181)
 
 [node name="grater" type="TextureRect" parent="GratingHashbrowns/grater" unique_id=655281286]
 offset_right = 300.0
@@ -52,7 +53,7 @@ scale = Vector2(13.070598, 19.099464)
 shape = SubResource("RectangleShape2D_ittll")
 
 [node name="gratedFull" parent="GratingHashbrowns" unique_id=1619096956 instance=ExtResource("5_1gtf3")]
-position = Vector2(1003, 323)
+position = Vector2(1022.0001, 379.00003)
 scale = Vector2(1.4585091, 1.0317107)
 
 [node name="Grated" type="Control" parent="GratingHashbrowns" unique_id=938886420]
@@ -134,8 +135,8 @@ scale = Vector2(0.795, 0.795)
 
 [connection signal="peeled" from="Hashbrowns" to="." method="_on_hashbrowns_peeled"]
 [connection signal="body_entered" from="Hashbrowns/Line2D/CheckingAreas/Area2D" to="Hashbrowns/Line2D/CheckingAreas/Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="GratingHashbrowns/grater" to="GratingHashbrowns/gratedFull" method="_on_grater_body_entered"]
-[connection signal="body_exited" from="GratingHashbrowns/grater" to="GratingHashbrowns/gratedFull" method="_on_grater_body_exited"]
+[connection signal="area_entered" from="GratingHashbrowns/gratedFull" to="GratingHashbrowns/gratedFull" method="_on_area_entered"]
+[connection signal="area_exited" from="GratingHashbrowns/gratedFull" to="GratingHashbrowns/gratedFull" method="_on_area_exited"]
 
 [editable path="Hashbrowns"]
 [editable path="GratingHashbrowns/gratedFull"]

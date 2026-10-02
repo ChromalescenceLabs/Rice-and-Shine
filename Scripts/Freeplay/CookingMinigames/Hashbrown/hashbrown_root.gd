@@ -9,7 +9,8 @@ func _on_grated_full_mouse_entered() -> void:
 func _ready() -> void:
 	hashbrown_peel.position.x += get_viewport().get_visible_rect().size.x
 	grating_hashbrowns.position.x += get_viewport().get_visible_rect().size.x
-	GlobalVars.item_enter(hashbrown_peel)
+	GlobalVars.item_enter(grating_hashbrowns)
+	grating_hashbrowns.process_mode = Node.PROCESS_MODE_INHERIT
 
 
 func _on_hashbrowns_peeled() -> void:

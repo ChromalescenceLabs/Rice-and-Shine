@@ -10,41 +10,27 @@ extends Area2D
 
 var origPos
 var picked=false
-var pickUp=false
 var canGrate=false 
-var amtChange =0
+var startProcess=false
+var amtChange =-1
+
 
 func _ready() -> void:
 	origPos = self.global_position
-	
-	
-	
-	print('hi')
-	get_subset_by_index(amtChange)
+	GlobalVars.enterDone.connect(_on_enterDone)
 
-	for start in range(0, self.get_children().size(), 2):
-		var subset = self.get_children().slice(start,start+ 4)
-		print("Subset from index %d:" % start)
-		for child in subset:
-			print("  ", child.name)
-#
-func get_subset_by_index(amt:int):
-	var step = 2
-	var window_size = 4
-#
+func grate(amt:int):
 	var start = amt * 2
-#
-	if start >= self.get_children().size():
-		print(self.get_children().size(), "No subset for ", amt)
-		return 
-	#
+
 	var subset = self.get_children().slice(start, start+2)
 	for child in subset:
-		print("  ", child.name)
+		#First 2 becomes invis
+		print(">", child.name)
 		child.visible= false
 	subset = self.get_children().slice(start+2, start+4)
 	for child in subset:
-		print("  ", child.name)
+		#last 2 becomes vis
+		print(">", child.name)
 		child.visible= true
 	return subset
 
@@ -54,27 +40,28 @@ func _process(_delta: float) -> void:
 	else:
 		self.global_position = lerp(self.global_position, origPos, 0.05)
 
-func _on_mouse_entered() -> void:
-	pickUp=true
-
-func _on_mouse_exited() -> void:
-	pickUp=false
-
-
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("Click"):
-		if pickUp:
-			picked=true
+		picked=true
 	
 	if event.is_action_released("Click"):
+		if canGrate:#?????
+			amtChange+=1
+			grate(amtChange)
+			await get_tree().create_timer(.5).timeout
+			print(amtChange)
 		picked=false
 
-func _on_grater_body_entered(body: Node2D) -> void:
-	if body == self:
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.name == "grater" and startProcess:
 		canGrate=true
 		print("guys how do i do this")
 
-
-func _on_grater_body_exited(body: Node2D) -> void:
-	if body == self:
+func _on_area_exited(area: Area2D) -> void:
+	if area.name == "grater":
 		canGrate=false
+
+func _on_enterDone():
+	startProcess=true
+	print(amtChange)
