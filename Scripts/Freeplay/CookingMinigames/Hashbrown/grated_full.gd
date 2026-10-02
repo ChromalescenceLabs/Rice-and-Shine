@@ -13,6 +13,7 @@ var picked=false
 var canGrate=false 
 var startProcess=false
 var amtChange =-1
+var dropped=false
 
 
 func _ready() -> void:
@@ -32,7 +33,6 @@ func grate(amt:int):
 		#last 2 becomes vis
 		print(">", child.name)
 		child.visible= true
-	return subset
 
 func _process(_delta: float) -> void:
 	if picked:
@@ -45,22 +45,19 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		picked=true
 	
 	if event.is_action_released("Click"):
-		if canGrate:#?????
-			amtChange+=1
-			grate(amtChange)
-			await get_tree().create_timer(.5).timeout
-			print(amtChange)
 		picked=false
-
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "grater" and startProcess:
 		canGrate=true
-		print("guys how do i do this")
 
 func _on_area_exited(area: Area2D) -> void:
 	if area.name == "grater":
 		canGrate=false
+		if not picked and startProcess:
+			amtChange+=1
+			grate(amtChange)
+			print(amtChange)
 
 func _on_enterDone():
 	startProcess=true
