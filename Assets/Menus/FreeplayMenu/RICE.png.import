@@ -3,15 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b52yutm30jb28"
+<<<<<<< Updated upstream:Assets/Menus/FreeplayMenu/RICE.png.import
 path="res://.godot/imported/RICE.png-ea2babbe8f0408bd5e7ade40dd83d60b.ctex"
+=======
+path="res://.godot/imported/rice.png-784ebd3c833413e5cc671cd5d0cbfbc8.ctex"
+>>>>>>> Stashed changes:Assets/RICE.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< Updated upstream:Assets/Menus/FreeplayMenu/RICE.png.import
 source_file="res://Assets/Menus/FreeplayMenu/RICE.png"
 dest_files=["res://.godot/imported/RICE.png-ea2babbe8f0408bd5e7ade40dd83d60b.ctex"]
+=======
+source_file="res://Assets/rice.png"
+dest_files=["res://.godot/imported/rice.png-784ebd3c833413e5cc671cd5d0cbfbc8.ctex"]
+>>>>>>> Stashed changes:Assets/RICE.png.import
 
 [params]
 

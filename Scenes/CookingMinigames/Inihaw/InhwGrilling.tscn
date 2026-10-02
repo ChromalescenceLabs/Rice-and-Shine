@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://3hs8hjyrtkgm"]
+
+[ext_resource type="PackedScene" uid="uid://c6myg8r6fmel1" path="res://Scenes/CookingMinigames/Inihaw/Marination.tscn" id="1_cf04t"]
+[ext_resource type="PackedScene" uid="uid://n4d48hhle071" path="res://Scenes/CookingMinigames/Inihaw/Basting.tscn" id="2_jtmo1"]
+
+[node name="InhwGrilling" type="Node2D" unique_id=1499736798]
+
+[node name="Marination" parent="." unique_id=1642124649 instance=ExtResource("1_cf04t")]
+
+[node name="Basting" parent="." unique_id=242058997 instance=ExtResource("2_jtmo1")]
