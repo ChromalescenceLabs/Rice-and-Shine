@@ -15,5 +15,9 @@ func _on_peel_peeled() -> void:
 	
 	GlobalVars.item_exit(peel)
 	peel.set_process(false)
-	grate.process_mode = Node.PROCESS_MODE_INHERIT
 	GlobalVars.item_enter(grate)
+
+
+func _on_grated_full_grated() -> void:
+	GlobalVars.successind(self)
+	await GlobalVars.successIndEnd

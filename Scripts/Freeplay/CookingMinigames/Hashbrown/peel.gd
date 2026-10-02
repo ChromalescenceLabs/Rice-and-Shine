@@ -1,4 +1,6 @@
 extends Area2D
+@onready var peeled_particles: CPUParticles2D = $"../PeeledParticles"
+
 var areas:int = 34
 var areas_checked:int = 0
 var canCheck=false
@@ -6,6 +8,7 @@ var canCheck=false
 func _process(_delta: float) -> void:
 	if areas_checked == areas:
 		get_parent().get_parent().peeled.emit()
+		peeled_particles.emitting=false
 		set_process(false)
 
 

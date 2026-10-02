@@ -15,7 +15,7 @@ var pickUp:bool = false
 
 func _ready() -> void:
 	p_potato.visible=false
-	GlobalVars.itemEntered.connect(_itemEntered)
+	GlobalVars.itemEntered.connect(itemEntered)
 
 func _process(_delta: float) -> void:
 	if peeling:
@@ -40,7 +40,8 @@ func _on_peeler_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 		peeling=false
 		p_particles.emitting=false
 
-func _itemEntered():
+func itemEntered(item):
+	if item.name=="peel":
 		peel.areas_checked=0
 		peel.canCheck=true
 		peeler_ogpos=peeler.global_position

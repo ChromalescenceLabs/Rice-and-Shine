@@ -1,5 +1,8 @@
 extends Area2D
-@onready var peeled: TextureRect = $Peeled
+
+@onready var gratedp: Control = $"../Grated"
+
+signal grated
 
 var origPos
 var picked=false
@@ -9,11 +12,10 @@ var dropped=false
 var start=false
 
 func _ready() -> void:
-	GlobalVars.itemEntered.connect(_itemEntered)
+	GlobalVars.itemEntered.connect(itemEntered)
 
 func grate(amt:int):
 	var first = amt * 2
-
 	var subset = self.get_children().slice(first, first+2)
 	for child in subset:
 		#First 2 child becomes invis
@@ -24,6 +26,12 @@ func grate(amt:int):
 		#last 2 becomes vis
 		print(">", child.name)
 		child.visible= true
+	
+	gratedp.get_child(amt).visible=true
+	gratedp.get_child(amt-1).visible=false
+	
+	if amtChange==3:
+		grated.emit()
 
 func _process(_delta: float) -> void:
 	if picked:
@@ -50,7 +58,8 @@ func _on_area_exited(area: Area2D) -> void:
 			grate(amtChange)
 			print(amtChange)
 
-func _itemEntered():
-	start=true
-	origPos = global_position
-	print(amtChange)
+func itemEntered(item):
+	if item.name=="grate":
+		start=true
+		origPos = global_position
+		print(amtChange)
