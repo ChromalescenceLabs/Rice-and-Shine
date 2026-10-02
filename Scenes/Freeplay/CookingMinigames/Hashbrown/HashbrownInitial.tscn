@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cxcty5ajgq5hn" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/Hashbrown.gd" id="1_tan3t"]
 [ext_resource type="Texture2D" uid="uid://dtjk3rm14kam8" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/Potato.png" id="4_2vbmc"]
 [ext_resource type="Texture2D" uid="uid://brijabd5metjd" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/Peeled Potatoes.png" id="6_24fpq"]
-[ext_resource type="Script" uid="uid://duuhgtxb0patd" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/peel.gd" id="6_v5n5k"]
+[ext_resource type="Script" uid="uid://duuhgtxb0patd" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/peel.gd" id="6_v5n5k"]
 [ext_resource type="Texture2D" uid="uid://cggpwgg256553" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/Peeler.png" id="7_gf6eo"]
 [ext_resource type="Script" uid="uid://b55e0a6dgmctp" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/hashcheckareas.gd" id="7_n6pmv"]
 

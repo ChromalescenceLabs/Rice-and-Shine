@@ -126,6 +126,7 @@ offset_right = 192.0
 offset_bottom = 765.0
 scale = Vector2(0.795, 0.795)
 
+[connection signal="peeled" from="peel" to="." method="_on_peel_peeled"]
 [connection signal="area_entered" from="grate/gratedFull" to="grate/gratedFull" method="_on_area_entered"]
 [connection signal="area_exited" from="grate/gratedFull" to="grate/gratedFull" method="_on_area_exited"]
 
