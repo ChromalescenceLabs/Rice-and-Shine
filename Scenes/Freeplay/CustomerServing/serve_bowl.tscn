@@ -3,9 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://cokiq4wv1pq6d" path="res://Assets/Freeplay/Serving/ServeBowl.png" id="1_6rml4"]
 [ext_resource type="Script" uid="uid://bggu3b225yqvm" path="res://Scripts/Freeplay/CustomerServing/serve_bowl.gd" id="1_a3eqt"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
-radius = 48.0
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08i74"]
 bg_color = Color(0.014275216, 0.014275219, 0.014275208, 0.65882355)
 corner_radius_top_left = 10
@@ -37,7 +34,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-58.093, -50), Vector2(-58.093, -86)]
+"values": [Vector2(15.747, -10.925), Vector2(15.747, -48.415)]
 }
 
 [sub_resource type="Animation" id="Animation_2g3by"]
@@ -73,34 +70,25 @@ _data = {
 &"RESET": SubResource("Animation_2g3by")
 }
 
-[node name="ServeBowl" type="Area2D" unique_id=2094721552]
+[sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
+radius = 48.0
+
+[node name="ServeBowl" type="TextureRect" unique_id=209391391]
+offset_left = -74.0
+offset_top = -46.0
+offset_right = 76.0
+offset_bottom = 54.0
+texture = ExtResource("1_6rml4")
 script = ExtResource("1_a3eqt")
 
-[node name="Sprite2D" type="TextureRect" parent="." unique_id=1148848107]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -50.0
-offset_right = 75.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_6rml4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087544455]
-position = Vector2(-3, -5)
-shape = SubResource("CircleShape2D_08i74")
-
 [node name="CheckContentsBtn" type="RichTextLabel" parent="." unique_id=1929801082]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -43.0
+offset_left = -118.0
 offset_top = -86.0
-offset_right = 75.13443
+offset_right = 0.13422394
 offset_bottom = -66.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 9
@@ -114,8 +102,14 @@ vertical_alignment = 1
 libraries/ = SubResource("AnimationLibrary_fgyrq")
 speed_scale = 3.0
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[node name="Area2D" type="Area2D" parent="." unique_id=1099617648]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1087544455]
+position = Vector2(74, 45)
+shape = SubResource("CircleShape2D_08i74")
+
 [connection signal="contentsCheck" from="." to="." method="_on_contents_check"]
-[connection signal="mouse_entered" from="Sprite2D" to="." method="_on_sprite_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Sprite2D" to="." method="_on_sprite_2d_mouse_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
