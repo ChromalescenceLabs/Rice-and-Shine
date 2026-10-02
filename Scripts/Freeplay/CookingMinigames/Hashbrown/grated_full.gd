@@ -19,34 +19,34 @@ func _ready() -> void:
 	
 	
 	
-	#print('hi')
-	#get_subset_by_index(amtChange)
+	print('hi')
+	get_subset_by_index(amtChange)
+
+	for start in range(0, self.get_children().size(), 2):
+		var subset = self.get_children().slice(start,start+ 4)
+		print("Subset from index %d:" % start)
+		for child in subset:
+			print("  ", child.name)
+#
+func get_subset_by_index(amt:int):
+	var step = 2
+	var window_size = 4
+#
+	var start = amt * 2
+#
+	if start >= self.get_children().size():
+		print(self.get_children().size(), "No subset for ", amt)
+		return 
 	#
-	#for start in range(0, self.get_children().size(), 2):
-		#var subset = self.get_children().slice(start,start+ 4)
-		#print("Subset from index %d:" % start)
-		#for child in subset:
-			#print("  ", child.name)
-#
-#func get_subset_by_index(amt:int):
-	#var step = 2
-	#var window_size = 4
-#
-	#var start = amt * 2
-#
-	#if start >= self.get_children().size():
-		#print(self.get_children().size(), "No subset for ", amt)
-		#return 
-	#
-	#var subset = self.get_children().slice(start, start+2)
-	#for child in subset:
-		#print("  ", child.name)
-		#child.visible= false
-	#subset = self.get_children().slice(start+2, start+4)
-	#for child in subset:
-		#print("  ", child.name)
-		#child.visible= true
-	#return subset
+	var subset = self.get_children().slice(start, start+2)
+	for child in subset:
+		print("  ", child.name)
+		child.visible= false
+	subset = self.get_children().slice(start+2, start+4)
+	for child in subset:
+		print("  ", child.name)
+		child.visible= true
+	return subset
 
 func _process(_delta: float) -> void:
 	if picked:

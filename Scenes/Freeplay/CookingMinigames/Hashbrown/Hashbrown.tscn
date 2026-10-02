@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://j42ywdsfuawg"]
 
 [ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Freeplay/Cooking_Minigames/CookingBG.jpg" id="1_jjcf2"]
-[ext_resource type="Script" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/hashbrown_root.gd" id="1_o12im"]
+[ext_resource type="Script" uid="uid://q0a4vib1me85" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/hashbrown_root.gd" id="1_o12im"]
 [ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="2_y804u"]
 [ext_resource type="Texture2D" uid="uid://c32mg1ke0dp8" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grater.png" id="4_0c4c0"]
 [ext_resource type="PackedScene" uid="uid://b8yqa13xod3tx" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/HashbrownInitial.tscn" id="4_o12im"]
@@ -29,6 +29,12 @@ texture = ExtResource("2_y804u")
 
 [node name="Hashbrowns" parent="." unique_id=2091728095 instance=ExtResource("4_o12im")]
 
+[node name="PPotato" parent="Hashbrowns/Line2D/AreaPPotato" parent_id_path=PackedInt32Array(2091728095, 644080344) index="0" unique_id=1767300622]
+visible = false
+
+[node name="CheckingAreas" parent="Hashbrowns/Line2D" parent_id_path=PackedInt32Array(2091728095, 1856136159) index="1" unique_id=908283941]
+visible = false
+
 [node name="GratingHashbrowns" type="Node2D" parent="." unique_id=1471228203]
 process_mode = 4
 
@@ -46,9 +52,11 @@ scale = Vector2(13.070598, 19.099464)
 shape = SubResource("RectangleShape2D_ittll")
 
 [node name="gratedFull" parent="GratingHashbrowns" unique_id=1619096956 instance=ExtResource("5_1gtf3")]
-position = Vector2(914, 406)
+position = Vector2(1003, 323)
+scale = Vector2(1.4585091, 1.0317107)
 
 [node name="Grated" type="Control" parent="GratingHashbrowns" unique_id=938886420]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -118,10 +126,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("10_penps")]
-offset_left = 393.75006
-offset_top = 167.50003
-offset_right = 576.75006
-offset_bottom = 404.50003
+offset_left = 9.0
+offset_top = 528.0
+offset_right = 192.0
+offset_bottom = 765.0
+scale = Vector2(0.795, 0.795)
 
 [connection signal="peeled" from="Hashbrowns" to="." method="_on_hashbrowns_peeled"]
 [connection signal="body_entered" from="Hashbrowns/Line2D/CheckingAreas/Area2D" to="Hashbrowns/Line2D/CheckingAreas/Area2D" method="_on_body_entered"]

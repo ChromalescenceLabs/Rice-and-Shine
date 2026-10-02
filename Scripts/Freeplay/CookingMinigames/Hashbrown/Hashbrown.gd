@@ -5,6 +5,7 @@ signal peeled
 @onready var peeler: Area2D = $Peeler
 @onready var p_potato: TextureRect = $Line2D/AreaPPotato/PPotato
 @onready var p_particles: CPUParticles2D = $Peeler/PeeledParticles
+@onready var peel: Area2D = $Peeler/peel
 
 var peeler_ogpos
 
@@ -47,5 +48,5 @@ func _on_peeler_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 		peeling=false
 
 func _on_enterDone():
-	peeler.areas_checked=0
-	peeler.canCheck=true
+	peel.areas_checked=0
+	peel.canCheck=true
