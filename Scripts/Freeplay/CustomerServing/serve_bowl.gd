@@ -12,22 +12,28 @@ var food_entered : bool = false
 var contents_shown : bool = false
 var popped_up : bool = false
 var final_pos 
+var node_ready : bool = false
 
 var contentDict : Dictionary = {}
 
 func _ready() -> void:
+	set_process_input(false)
 	check_contents_btn.modulate.a = 0
+	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("RightClick"):
 		contentsCheck.emit()
 
 func _on_contents_check() -> void:
+	if not node_ready:
+		return
+	
 	contents_shown = true
 	var contentLabel = BOWL_CONTENTS_LABEL.instantiate()
+	contentLabel.content_dict = contentDict
 	contentLabel.global_position = self.global_position
 	contentLabel.global_position.x = self.global_position.x + self.size.x/2
-	contentLabel.content_dict = contentDict
 	get_tree().current_scene.bowl_labels.add_child(contentLabel)
 	
 	await contentLabel.tree_exited
@@ -89,12 +95,12 @@ func initialization():
 		var last_index := bowl_conts.get_child_count() - 1
 		bowl_conts.move_child(dupli, max(0, last_index - 1))
 		
-		bowl_conts.queue_sort()
-		bowl_conts.force_update_transform()
-		dupli.force_update_transform()
-		
 		self.reparent(freed_bowls)
 		self.global_position = Vector2(1280, final_pos.y) + Vector2(self.size.x, 0)
 		
 		self.modulate.a = 1.0
-		create_tween().tween_property(self, "global_position:x", final_pos.x, 0.5).set_trans(Tween.TRANS_CUBIC)
+		var tw = create_tween().tween_property(self, "global_position:x", final_pos.x, 0.5).set_trans(Tween.TRANS_CUBIC)
+		self.mouse_filter = Control.MOUSE_FILTER_PASS
+		
+		await tw.finished
+		node_ready = true

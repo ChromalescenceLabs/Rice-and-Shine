@@ -30,10 +30,9 @@ func _ready() -> void:
 	control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	set_process_input(false)
 	og_pos = self.position.y
-	var tw = create_tween().tween_property(self, "position:y", self.position.y - (contents_bg.size.y/2 + 10), 0.5).set_trans(Tween.TRANS_CUBIC)
+	create_tween().tween_property(self, "position:y", self.position.y - (contents_bg.size.y/2 + 10), 0.5).set_trans(Tween.TRANS_CUBIC)
 	create_tween().tween_property(self, "modulate:a", 1, 0.5).set_trans(Tween.TRANS_CUBIC)
-	
-	await tw.finished
+
 	set_process_input(true)
 	control.mouse_filter = Control.MOUSE_FILTER_PASS
 
