@@ -3,23 +3,24 @@ signal contentsCheck
 
 const BOWL_CONTENTS_LABEL = preload("uid://ye58mwdno13d")
 
+@onready var bowl_conts: HBoxContainer = $".."
 @onready var CheckContentsIndicator: RichTextLabel = $CheckContentsBtn
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var freed_bowls : Control = $"../../FreedBowls"
+@onready var check_contents_btn: RichTextLabel = $CheckContentsBtn
 var food_entered : bool = false
 var contents_shown : bool = false
 var popped_up : bool = false
+var final_pos 
 
 var contentDict : Dictionary = {}
 
 func _ready() -> void:
-	CheckContentsIndicator.modulate.a = 0
-	CheckContentsIndicator.position = Vector2(-58.093, -50)
+	check_contents_btn.modulate.a = 0
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("RightClick"):
 		contentsCheck.emit()
-
-func _on_check_contents_btn_pressed() -> void: contentsCheck.emit()
 
 func _on_contents_check() -> void:
 	contents_shown = true
@@ -73,3 +74,27 @@ func _on_mouse_exited() -> void:
 		if popped_up:
 			animation_player.play_backwards("Popup")
 			popped_up = false
+
+func initialization():
+	if not self.is_in_group("ClonedBowls"):	
+		final_pos = self.global_position
+		
+		var dupli = self.duplicate(11)
+		dupli.set_script(null)
+		dupli.modulate.a = 0
+		dupli.add_to_group("ClonedBowls")
+		
+		bowl_conts.add_child(dupli)
+		
+		var last_index := bowl_conts.get_child_count() - 1
+		bowl_conts.move_child(dupli, max(0, last_index - 1))
+		
+		bowl_conts.queue_sort()
+		bowl_conts.force_update_transform()
+		dupli.force_update_transform()
+		
+		self.reparent(freed_bowls)
+		self.global_position = Vector2(1280, final_pos.y) + Vector2(self.size.x, 0)
+		
+		self.modulate.a = 1.0
+		create_tween().tween_property(self, "global_position:x", final_pos.x, 0.5).set_trans(Tween.TRANS_CUBIC)

@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://7hk0brvbupc2" path="res://Assets/Freeplay/Serving/Empty/PancakeContH.png" id="6_i53e2"]
 [ext_resource type="Texture2D" uid="uid://4msdq3gandfm" path="res://Assets/Freeplay/Serving/Empty/HashbrownContH.png" id="7_i53e2"]
 [ext_resource type="Texture2D" uid="uid://bgya7yialyiv4" path="res://Assets/Freeplay/Serving/Empty/TBAContH.png" id="9_wgjyl"]
-[ext_resource type="PackedScene" uid="uid://curuxisd3l6in" path="res://Scenes/Freeplay/CustomerServing/serve_bowl.tscn" id="12_bphlm"]
 [ext_resource type="Script" uid="uid://cxthuam3ves36" path="res://Scripts/Freeplay/CustomerServing/counters.gd" id="12_vol7o"]
+[ext_resource type="PackedScene" uid="uid://cntangxcnp6xg" path="res://Scenes/Freeplay/CustomerServing/add_bowl_btn.tscn" id="14_kq8l2"]
 
 [sub_resource type="Gradient" id="Gradient_wgjyl"]
 offsets = PackedFloat32Array(0, 0.6204819, 0.9939759)
@@ -198,17 +198,33 @@ fit_content = true
 horizontal_alignment = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1003470384]
+[node name="BowlConts" type="HBoxContainer" parent="Control" unique_id=1003470384]
 layout_mode = 0
+offset_left = 15.0
 offset_top = 385.0
-offset_right = 1280.0
+offset_right = 1265.0
 offset_bottom = 485.0
 size_flags_horizontal = 3
 
-[node name="ServeBowl" parent="Control/HBoxContainer" unique_id=2094721552 instance=ExtResource("12_bphlm")]
+[node name="AddBowl" parent="Control/BowlConts" unique_id=949361015 instance=ExtResource("14_kq8l2")]
+z_index = 50
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-size_flags_horizontal = 0
 size_flags_vertical = 4
+
+[node name="FreedBowls" type="Control" parent="Control" unique_id=260643121]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -625.0
+offset_top = 25.0
+offset_right = -625.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BowlLabels" type="Node2D" parent="." unique_id=328106633]
 
@@ -222,3 +238,4 @@ size_flags_vertical = 4
 [connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="Control/Counters" method="_on_hashbrown_cont_mouse_entered"]
 [connection signal="mouse_exited" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="Control/Counters" method="_on_hashbrown_cont_mouse_exited"]
 [connection signal="pressed" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="." method="_on_hashbrown_cont_pressed"]
+[connection signal="pressed" from="Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
