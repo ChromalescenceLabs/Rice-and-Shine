@@ -50,12 +50,6 @@ _data = {
 &"grate": SubResource("Animation_avunj")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ullcx"]
-size = Vector2(35, 444)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj6en"]
-size = Vector2(331, 33)
-
 [node name="Hashbrowns" type="Node2D" unique_id=1704651639]
 script = ExtResource("1_o12im")
 
@@ -71,42 +65,34 @@ scale = Vector2(0.90000004, 0.9000001)
 texture = ExtResource("2_y804u")
 
 [node name="peel" parent="." unique_id=243397758 instance=ExtResource("4_o12im")]
+visible = false
 
 [node name="grate" type="Node2D" parent="." unique_id=1471228203]
 
 [node name="grater" type="Area2D" parent="grate" unique_id=318729698]
+position = Vector2(211, 181)
 
 [node name="grater" type="TextureRect" parent="grate/grater" unique_id=655281286]
-offset_left = 221.0
-offset_top = 177.0
-offset_right = 521.0
-offset_bottom = 565.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -194.0
+offset_right = 150.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_0c4c0")
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="grate/grater" unique_id=1083296010]
-position = Vector2(368, 383)
 scale = Vector2(13.070598, 19.099464)
 shape = SubResource("RectangleShape2D_ittll")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="grate/grater" unique_id=531748724]
-root_node = NodePath("")
 libraries/ = SubResource("AnimationLibrary_meb1c")
-
-[node name="border" type="Area2D" parent="grate" unique_id=666819282]
-position = Vector2(211, 181)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="grate/border" unique_id=702464923]
-position = Vector2(-47, 212)
-shape = SubResource("RectangleShape2D_ullcx")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="grate/border" unique_id=838804631]
-position = Vector2(347, 212)
-shape = SubResource("RectangleShape2D_ullcx")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="grate/border" unique_id=1260707863]
-position = Vector2(158, 415)
-shape = SubResource("RectangleShape2D_tj6en")
 
 [node name="gratedFull" parent="grate" unique_id=1619096956 instance=ExtResource("5_1gtf3")]
 z_index = 1
@@ -194,6 +180,8 @@ scale = Vector2(0.795, 0.795)
 
 [connection signal="peeled" from="peel" to="." method="_on_peel_peeled"]
 [connection signal="mouse_exited" from="peel/Line2D/AreaPPotato" to="peel" method="_on_area_p_potato_mouse_exited"]
+[connection signal="mouse_entered" from="grate/grater" to="grate/gratedFull" method="_on_grater_mouse_entered"]
+[connection signal="mouse_exited" from="grate/grater" to="grate/gratedFull" method="_on_grater_mouse_exited"]
 [connection signal="area_entered" from="grate/gratedFull" to="grate/gratedFull" method="_on_area_entered"]
 [connection signal="area_exited" from="grate/gratedFull" to="grate/gratedFull" method="_on_area_exited"]
 [connection signal="grated" from="grate/gratedFull" to="." method="_on_grated_full_grated"]
