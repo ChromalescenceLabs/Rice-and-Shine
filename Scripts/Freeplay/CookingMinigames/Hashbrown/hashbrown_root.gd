@@ -6,7 +6,7 @@ func _ready() -> void:
 	peel.position.x += get_viewport().get_visible_rect().size.x
 	grate.position.x += get_viewport().get_visible_rect().size.x
 	
-	GlobalVars.item_enter(grate)
+	GlobalVars.item_enter(peel)
 
 
 func _on_peel_peeled() -> void:

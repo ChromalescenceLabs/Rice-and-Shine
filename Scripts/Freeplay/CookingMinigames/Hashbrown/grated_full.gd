@@ -20,6 +20,7 @@ var imOnGrater=false
 
 func _ready() -> void:
 	GlobalVars.itemEntered.connect(itemEntered)
+	grater.position=Vector2(360, 400)
 
 func grate(amt:int):
 	var first = amt * 2
@@ -34,11 +35,11 @@ func grate(amt:int):
 		print(">", child.name)
 		child.visible= true
 	
-	if amtChange==3:
-		grated.emit()
-	elif amtChange<3:
+	if amt<4:
 		gratedp.get_child(amt).visible=true
 		gratedp.get_child(amt-1).visible=false
+		if amt==3:
+			grated.emit()
 
 func _process(_delta: float) -> void:
 	if picked:
@@ -46,9 +47,9 @@ func _process(_delta: float) -> void:
 	elif start:
 		global_position = lerp(global_position, origPos, 0.05)
 
-	if canGrate and picked and get_global_mouse_position().x<origPosGrater.x+45 and get_global_mouse_position().x>origPosGrater.x-45:
+#gg this is so unoptimized
+	if canGrate and picked and get_global_mouse_position().x<origPosGrater.x+100 and get_global_mouse_position().x>origPosGrater.x-100:
 		grater.position.x = lerp(grater.position.x, get_global_mouse_position().x, 0.2)
-		print("hi")
 	elif start:
 		grater.position = lerp(grater.position, origPosGrater, 0.05)
 
@@ -60,8 +61,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			if not event.pressed:
 				picked = false
 
-#change
-
 func itemEntered(item):
 	if item.name=="grate":
 		start=true
@@ -69,10 +68,8 @@ func itemEntered(item):
 		origPosGrater = Vector2(360, 400)
 		print(amtChange)
 
-
 func _on_grater_mouse_entered() -> void:
 	canGrate=true
-
 
 func _on_grater_mouse_exited() -> void:
 	canGrate=false
@@ -80,6 +77,4 @@ func _on_grater_mouse_exited() -> void:
 	if abs(current_velocity) > 1000 and picked:
 		amtChange+=1
 		grate(amtChange)
-		#animation_player.play("grate")
-		#await animation_player.animation_finished
 		print(amtChange)

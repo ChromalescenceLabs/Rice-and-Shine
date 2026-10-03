@@ -65,7 +65,6 @@ scale = Vector2(0.90000004, 0.9000001)
 texture = ExtResource("2_y804u")
 
 [node name="peel" parent="." unique_id=243397758 instance=ExtResource("4_o12im")]
-visible = false
 
 [node name="grate" type="Node2D" parent="." unique_id=1471228203]
 
@@ -102,10 +101,10 @@ scale = Vector2(1.4585091, 1.0317107)
 [node name="gratedRemains" type="Control" parent="grate" unique_id=938886420]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 83.0
-offset_top = 36.0
-offset_right = 123.0
-offset_bottom = 76.0
+offset_left = 80.0
+offset_top = 38.0
+offset_right = 120.0
+offset_bottom = 78.0
 
 [node name="grated" type="TextureRect" parent="grate/gratedRemains" unique_id=1837898615]
 visible = false
@@ -131,10 +130,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 367.5
-offset_top = 357.5
-offset_right = 696.5
-offset_bottom = 573.5
+offset_left = 391.5
+offset_top = 349.5
+offset_right = 720.5
+offset_bottom = 565.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_penps")
@@ -147,10 +146,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 365.0
-offset_top = 350.0
-offset_right = 699.0
-offset_bottom = 581.0
+offset_left = 392.0
+offset_top = 364.0
+offset_right = 726.0
+offset_bottom = 595.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_8bsfq")
@@ -163,10 +162,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 512.0
-offset_top = 445.5
-offset_right = 552.0
-offset_bottom = 485.5
+offset_left = 376.0
+offset_top = 332.5
+offset_right = 772.0
+offset_bottom = 574.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_ouisr")
@@ -182,8 +181,6 @@ scale = Vector2(0.795, 0.795)
 [connection signal="mouse_exited" from="peel/Line2D/AreaPPotato" to="peel" method="_on_area_p_potato_mouse_exited"]
 [connection signal="mouse_entered" from="grate/grater" to="grate/gratedFull" method="_on_grater_mouse_entered"]
 [connection signal="mouse_exited" from="grate/grater" to="grate/gratedFull" method="_on_grater_mouse_exited"]
-[connection signal="area_entered" from="grate/gratedFull" to="grate/gratedFull" method="_on_area_entered"]
-[connection signal="area_exited" from="grate/gratedFull" to="grate/gratedFull" method="_on_area_exited"]
 [connection signal="grated" from="grate/gratedFull" to="." method="_on_grated_full_grated"]
 
 [editable path="peel"]
