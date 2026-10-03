@@ -1,10 +1,11 @@
 extends Area2D
 
 @onready var gratedp: Control = $"../gratedRemains"
-@onready var grater: Area2D = $"../grater"
+@onready var grater = $"../grater"
 @onready var animation_player: AnimationPlayer = $"../grater/AnimationPlayer"
 
 signal grated
+
 
 var origPos
 var origPosGrater
@@ -14,6 +15,8 @@ var amtChange =-1
 var dropped=false
 var start=false
 var current_velocity
+
+var imOnGrater=false
 
 func _ready() -> void:
 	GlobalVars.itemEntered.connect(itemEntered)
@@ -43,14 +46,9 @@ func _process(_delta: float) -> void:
 	elif start:
 		global_position = lerp(global_position, origPos, 0.05)
 
-	if canGrate:
+	if canGrate and picked and get_global_mouse_position().x<origPosGrater.x+45 and get_global_mouse_position().x>origPosGrater.x-45:
 		grater.position.x = lerp(grater.position.x, get_global_mouse_position().x, 0.2)
-		grater.move_and_slide()
-		#putang ina moooooooooooooooooooooooooooooooooooooooooooo  ???????????????????????????
-	#elif canGrate and grater.position.x==280:
-		#grater.position.x = 280
-	#elif canGrate and grater.position.x==150:
-		#grater.position.x = 280
+		print("hi")
 	elif start:
 		grater.position = lerp(grater.position, origPosGrater, 0.05)
 
@@ -63,25 +61,25 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 				picked = false
 
 #change
-func _on_area_entered(area: Area2D) -> void:
-	if area.name == "grater":
-		canGrate=true
-
-#change when out
-func _on_area_exited(area: Area2D) -> void:
-	if area.name == "grater":
-		canGrate=false
-		current_velocity = Input.get_last_mouse_velocity().x
-		if abs(current_velocity) > 1000 and picked:
-			amtChange+=1
-			grate(amtChange)
-			#animation_player.play("grate")
-			#await animation_player.animation_finished
-			print(amtChange)
 
 func itemEntered(item):
 	if item.name=="grate":
 		start=true
 		origPos = Vector2(1022.0, 379.0)
-		origPosGrater = Vector2(211.0, 181.0)
+		origPosGrater = Vector2(360, 400)
+		print(amtChange)
+
+
+func _on_grater_mouse_entered() -> void:
+	canGrate=true
+
+
+func _on_grater_mouse_exited() -> void:
+	canGrate=false
+	current_velocity = Input.get_last_mouse_velocity().x
+	if abs(current_velocity) > 1000 and picked:
+		amtChange+=1
+		grate(amtChange)
+		#animation_player.play("grate")
+		#await animation_player.animation_finished
 		print(amtChange)
