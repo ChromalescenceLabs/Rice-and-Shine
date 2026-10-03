@@ -7,6 +7,7 @@ extends Area2D
 signal grated
 
 var origPos
+var origPosGrater
 var picked=false
 var canGrate=false 
 var amtChange =-1
@@ -42,6 +43,17 @@ func _process(_delta: float) -> void:
 	elif start:
 		global_position = lerp(global_position, origPos, 0.05)
 
+	if canGrate:
+		grater.position.x = lerp(grater.position.x, get_global_mouse_position().x, 0.2)
+		grater.move_and_slide()
+		#putang ina moooooooooooooooooooooooooooooooooooooooooooo  ???????????????????????????
+	#elif canGrate and grater.position.x==280:
+		#grater.position.x = 280
+	#elif canGrate and grater.position.x==150:
+		#grater.position.x = 280
+	elif start:
+		grater.position = lerp(grater.position, origPosGrater, 0.05)
+
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	#yup thanks jhaz
 	if event is InputEventMouseButton:
@@ -63,12 +75,13 @@ func _on_area_exited(area: Area2D) -> void:
 		if abs(current_velocity) > 1000 and picked:
 			amtChange+=1
 			grate(amtChange)
-			animation_player.play("grate")
-			await animation_player.animation_finished
+			#animation_player.play("grate")
+			#await animation_player.animation_finished
 			print(amtChange)
 
 func itemEntered(item):
 	if item.name=="grate":
 		start=true
 		origPos = Vector2(1022.0, 379.0)
+		origPosGrater = Vector2(211.0, 181.0)
 		print(amtChange)

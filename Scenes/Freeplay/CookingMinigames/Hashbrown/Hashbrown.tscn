@@ -50,6 +50,9 @@ _data = {
 &"grate": SubResource("Animation_avunj")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ullcx"]
+size = Vector2(35, 444)
+
 [node name="Hashbrowns" type="Node2D" unique_id=1704651639]
 script = ExtResource("1_o12im")
 
@@ -83,6 +86,16 @@ shape = SubResource("RectangleShape2D_ittll")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="grate/grater" unique_id=531748724]
 libraries/ = SubResource("AnimationLibrary_meb1c")
+
+[node name="border" type="Area2D" parent="grate/grater" unique_id=666819282]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grate/grater/border" unique_id=702464923]
+position = Vector2(-47, 212)
+shape = SubResource("RectangleShape2D_ullcx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="grate/grater/border" unique_id=838804631]
+position = Vector2(347, 212)
+shape = SubResource("RectangleShape2D_ullcx")
 
 [node name="gratedFull" parent="grate" unique_id=1619096956 instance=ExtResource("5_1gtf3")]
 z_index = 1
