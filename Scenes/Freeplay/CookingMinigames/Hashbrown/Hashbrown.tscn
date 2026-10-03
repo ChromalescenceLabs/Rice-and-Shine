@@ -14,6 +14,42 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
 
+[sub_resource type="Animation" id="Animation_ouisr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(211, 181)]
+}
+
+[sub_resource type="Animation" id="Animation_avunj"]
+resource_name = "grate"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.30999997, 0.45999998),
+"transitions": PackedFloat32Array(2.2973976, 2.4622889, 2.6390157, 1),
+"update": 0,
+"values": [Vector2(211, 181), Vector2(280, 181), Vector2(150, 181), Vector2(211, 181)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_meb1c"]
+_data = {
+&"RESET": SubResource("Animation_ouisr"),
+&"grate": SubResource("Animation_avunj")
+}
+
 [node name="Hashbrowns" type="Node2D" unique_id=1704651639]
 script = ExtResource("1_o12im")
 
@@ -45,17 +81,23 @@ position = Vector2(147, 205.99998)
 scale = Vector2(13.070598, 19.099464)
 shape = SubResource("RectangleShape2D_ittll")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="grate/grater" unique_id=531748724]
+libraries/ = SubResource("AnimationLibrary_meb1c")
+
 [node name="gratedFull" parent="grate" unique_id=1619096956 instance=ExtResource("5_1gtf3")]
+z_index = 1
 position = Vector2(1022.0001, 379.00003)
 scale = Vector2(1.4585091, 1.0317107)
 
-[node name="Grated" type="Control" parent="grate" unique_id=938886420]
+[node name="gratedRemains" type="Control" parent="grate" unique_id=938886420]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 83.0
+offset_top = 36.0
+offset_right = 123.0
+offset_bottom = 76.0
 
-[node name="grated" type="TextureRect" parent="grate/Grated" unique_id=1837898615]
+[node name="grated" type="TextureRect" parent="grate/gratedRemains" unique_id=1837898615]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -71,7 +113,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_o12im")
 
-[node name="grated2" type="TextureRect" parent="grate/Grated" unique_id=126164684]
+[node name="grated2" type="TextureRect" parent="grate/gratedRemains" unique_id=126164684]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -87,7 +129,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_penps")
 
-[node name="grated3" type="TextureRect" parent="grate/Grated" unique_id=2142828715]
+[node name="grated3" type="TextureRect" parent="grate/gratedRemains" unique_id=2142828715]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -103,7 +145,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_8bsfq")
 
-[node name="grated4" type="TextureRect" parent="grate/Grated" unique_id=1084284138]
+[node name="grated4" type="TextureRect" parent="grate/gratedRemains" unique_id=1084284138]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -127,6 +169,7 @@ offset_bottom = 765.0
 scale = Vector2(0.795, 0.795)
 
 [connection signal="peeled" from="peel" to="." method="_on_peel_peeled"]
+[connection signal="mouse_exited" from="peel/Line2D/AreaPPotato" to="peel" method="_on_area_p_potato_mouse_exited"]
 [connection signal="area_entered" from="grate/gratedFull" to="grate/gratedFull" method="_on_area_entered"]
 [connection signal="area_exited" from="grate/gratedFull" to="grate/gratedFull" method="_on_area_exited"]
 [connection signal="grated" from="grate/gratedFull" to="." method="_on_grated_full_grated"]

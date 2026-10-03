@@ -1,6 +1,7 @@
 extends Area2D
 
-@onready var gratedp: Control = $"../Grated"
+@onready var gratedp: Control = $"../gratedRemains"
+@onready var grater: Area2D = $"../grater"
 
 signal grated
 
@@ -10,6 +11,7 @@ var canGrate=false
 var amtChange =-1
 var dropped=false
 var start=false
+var current_velocity
 
 func _ready() -> void:
 	GlobalVars.itemEntered.connect(itemEntered)
@@ -27,11 +29,11 @@ func grate(amt:int):
 		print(">", child.name)
 		child.visible= true
 	
-	gratedp.get_child(amt).visible=true
-	gratedp.get_child(amt-1).visible=false
-	
 	if amtChange==3:
 		grated.emit()
+	elif amtChange<3:
+		gratedp.get_child(amt).visible=true
+		gratedp.get_child(amt-1).visible=false
 
 func _process(_delta: float) -> void:
 	if picked:
@@ -40,20 +42,25 @@ func _process(_delta: float) -> void:
 		global_position = lerp(global_position, origPos, 0.05)
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event.is_action_pressed("Click"):
-		picked=true
-	
-	if event.is_action_released("Click"):
-		picked=false
+	#yup thanks jhaz
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			picked = true
+			if not event.pressed:
+				picked = false
 
+				
+#change
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "grater":
 		canGrate=true
 
+#change when out
 func _on_area_exited(area: Area2D) -> void:
 	if area.name == "grater":
 		canGrate=false
-		if not picked:
+		current_velocity = Input.get_last_mouse_velocity().x
+		if abs(current_velocity) > 1000 and picked:
 			amtChange+=1
 			grate(amtChange)
 			print(amtChange)
@@ -61,5 +68,5 @@ func _on_area_exited(area: Area2D) -> void:
 func itemEntered(item):
 	if item.name=="grate":
 		start=true
-		origPos = global_position
+		origPos = Vector2(1022.0, 379.0)
 		print(amtChange)

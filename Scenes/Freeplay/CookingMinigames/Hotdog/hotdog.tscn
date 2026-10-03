@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bgi803ffeyeae"]
 
 [ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="1_ugtlu"]
-[ext_resource type="Script" uid="uid://degx3wurc41qe" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/hotdog_minigame.gd" id="1_x6sm1"]
+[ext_resource type="Script" uid="uid://dd4uy6m5oqwu2" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/hotdog_minigame.gd" id="1_x6sm1"]
 [ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/oil.tscn" id="2_6vnog"]
 [ext_resource type="Texture2D" uid="uid://iqxaxa0bo02s" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Pan.png" id="3_f7vh4"]
-[ext_resource type="Script" uid="uid://bfhpfnmssjllr" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/hdog_pan.gd" id="3_ifmqp"]
+[ext_resource type="Script" uid="uid://dtfcatx84joak" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/hdog_pan.gd" id="3_ifmqp"]
 [ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/PanOil.png" id="4_ifmqp"]
 [ext_resource type="Texture2D" uid="uid://cfjgsnkmmit3k" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Plate.png" id="6_ni26i"]
 [ext_resource type="PackedScene" uid="uid://cv4xskrudeikq" path="res://Scenes/Freeplay/CookingMinigames/Hotdog/hotdog_indiv.tscn" id="7_x6sm1"]
@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Bowl.png" id="10_3chny"]
 [ext_resource type="PackedScene" uid="uid://dj3rvq375j1te" path="res://Scenes/Freeplay/CookingMinigames/Hotdog/choppable_hotdog.tscn" id="11_2hcv6"]
 [ext_resource type="Texture2D" uid="uid://bgd51mllr8jfw" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HdogBowl.png" id="12_aer06"]
-[ext_resource type="Script" uid="uid://d265inttk5xu5" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/stick_node.gd" id="12_p6kmk"]
-[ext_resource type="Script" uid="uid://yqxqwmtgx0bj" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/mallows_bag.gd" id="12_x6ma3"]
-[ext_resource type="Script" uid="uid://dw7utpit2pcbm" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/hotdog_bowl.gd" id="14_kyla7"]
+[ext_resource type="Script" uid="uid://dng3apa7qci2w" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/stick_node.gd" id="12_p6kmk"]
+[ext_resource type="Script" uid="uid://vmgjpjtmak2a" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/mallows_bag.gd" id="12_x6ma3"]
+[ext_resource type="Script" uid="uid://dx667alnabkqu" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/hotdog_bowl.gd" id="14_kyla7"]
 [ext_resource type="PackedScene" uid="uid://dse2mctmqkges" path="res://Scenes/Freeplay/CookingMinigames/Hotdog/stick.tscn" id="16_kyla7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pocx5"]
@@ -42,6 +42,7 @@ texture = ExtResource("1_ugtlu")
 metadata/_edit_lock_ = true
 
 [node name="Frying" type="Node2D" parent="." unique_id=1557546142]
+visible = false
 
 [node name="HdogPan" type="Area2D" parent="Frying" unique_id=819248779]
 position = Vector2(309, 320)
@@ -98,6 +99,7 @@ position = Vector2(935, 384)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Chopping" type="Node2D" parent="." unique_id=1964342270]
+visible = false
 
 [node name="ChoppingBoard" type="Sprite2D" parent="Chopping" unique_id=678030918]
 position = Vector2(666.87494, 362.125)
@@ -114,6 +116,7 @@ texture = ExtResource("10_3chny")
 position = Vector2(652.87494, 357.12497)
 
 [node name="Stick" type="Node2D" parent="." unique_id=1221182371]
+visible = false
 
 [node name="MallowsBag" type="TextureRect" parent="Stick" unique_id=388621045 node_paths=PackedStringArray("sticknode1", "sticknode2", "sticknode3")]
 offset_left = 797.0
@@ -146,6 +149,7 @@ mallows_bag = NodePath("../../MallowsBag")
 hotdog_bowl = NodePath("../../HotdogBowl")
 
 [node name="OtherStickNodes" type="Node2D" parent="." unique_id=1024380994]
+visible = false
 
 [node name="StickwComp2" type="Node2D" parent="OtherStickNodes" unique_id=358885774]
 script = ExtResource("12_p6kmk")
