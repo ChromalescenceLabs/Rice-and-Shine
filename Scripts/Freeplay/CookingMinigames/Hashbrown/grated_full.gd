@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var gratedp: Control = $"../gratedRemains"
 @onready var grater: Area2D = $"../grater"
+@onready var animation_player: AnimationPlayer = $"../grater/AnimationPlayer"
 
 signal grated
 
@@ -49,7 +50,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			if not event.pressed:
 				picked = false
 
-				
 #change
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "grater":
@@ -63,6 +63,8 @@ func _on_area_exited(area: Area2D) -> void:
 		if abs(current_velocity) > 1000 and picked:
 			amtChange+=1
 			grate(amtChange)
+			animation_player.play("grate")
+			await animation_player.animation_finished
 			print(amtChange)
 
 func itemEntered(item):

@@ -38,8 +38,8 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.30999997, 0.45999998),
-"transitions": PackedFloat32Array(2.2973976, 2.4622889, 2.6390157, 1),
+"times": PackedFloat32Array(0, 0.16, 0.34999996, 0.52000004),
+"transitions": PackedFloat32Array(4.438279, 2.4622889, 2.6390157, 1.6817931),
 "update": 0,
 "values": [Vector2(211, 181), Vector2(280, 181), Vector2(150, 181), Vector2(211, 181)]
 }
