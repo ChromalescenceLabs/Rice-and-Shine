@@ -29,7 +29,7 @@ signal mincing_finished
 # PREPPING
 @onready var prepping: Node2D = $Prepping
 @onready var inihaw_liquids: Node2D = $Prepping/InihawLiquids
-
+@onready var progress_bars: Node2D = $Prepping/BowlFillArea/ProgressBars
 
 func _ready() -> void:
 	chopping.position.x += get_viewport().get_visible_rect().size.x
@@ -41,7 +41,7 @@ func _ready() -> void:
 	create_tween().tween_property(top_down_bg, "modulate:a", 1, 0.3).set_trans(Tween.TRANS_CUBIC)
 
 	GlobalVars.item_enter(prepping)
-	inihaw_liquids.check_liquid("Calamansi")
+	inihaw_liquids.check_liquid("Soy")
 
 func _on_chopping_finished() -> void:
 	GlobalVars.item_enter(mincing)
@@ -50,8 +50,49 @@ func _on_chopping_finished() -> void:
 func _on_choppable_garlic_chopped_garlic_finished() -> void:
 	GlobalVars.item_exit(chopping)
 	GlobalVars.item_exit(mincing)
+	chopping.position.x += get_viewport().get_visible_rect().size.x
 	
 	create_tween().tween_property(top_down_bg, "modulate:a", 1, 0.3).set_trans(Tween.TRANS_CUBIC)
 
 	GlobalVars.item_enter(prepping)
+
+# MIXING LOGIC
+func _on_progress_bars_soy_sauce_done() -> void:
+	GlobalVars.item_exit(inihaw_liquids)
+	await GlobalVars.itemExited
+	inihaw_liquids.visible = false
+	inihaw_liquids.global_position = Vector2(989.0, 384.0)
+	inihaw_liquids.position.x += get_viewport().get_visible_rect().size.x
 	
+	inihaw_liquids.check_liquid("Calamansi")
+	
+	inihaw_liquids.visible = true
+	create_tween().tween_property(inihaw_liquids, "position", Vector2(989.0, 384.0), 2).set_trans(Tween.TRANS_ELASTIC)
+
+func _on_progress_bars_calamansi_done() -> void:
+	GlobalVars.item_exit(inihaw_liquids)
+	await GlobalVars.itemExited
+	inihaw_liquids.visible = false
+	inihaw_liquids.global_position = Vector2(989.0, 384.0)
+	inihaw_liquids.position.x += get_viewport().get_visible_rect().size.x
+	
+	inihaw_liquids.check_liquid("Ketchup")
+	
+	inihaw_liquids.visible = true
+	create_tween().tween_property(inihaw_liquids, "position", Vector2(989.0, 384.0), 2).set_trans(Tween.TRANS_ELASTIC)
+
+func _on_progress_bars_ketchup_done() -> void:
+	GlobalVars.item_exit(inihaw_liquids)
+	await GlobalVars.itemExited
+	inihaw_liquids.visible = false
+	inihaw_liquids.global_position = Vector2(989.0, 384.0)
+	inihaw_liquids.position.x += get_viewport().get_visible_rect().size.x
+	
+	inihaw_liquids.check_liquid("Sprite")
+	
+	inihaw_liquids.visible = true
+	create_tween().tween_property(inihaw_liquids, "position", Vector2(989.0, 384.0), 2).set_trans(Tween.TRANS_ELASTIC)
+
+func _on_progress_bars_sprite_done() -> void:
+	GlobalVars.item_exit(inihaw_liquids)
+	await GlobalVars.itemExited

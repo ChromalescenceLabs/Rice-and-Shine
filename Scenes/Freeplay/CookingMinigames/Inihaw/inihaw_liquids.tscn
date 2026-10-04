@@ -148,12 +148,15 @@ texture = ExtResource("4_wbji5")
 [node name="Soy" type="GPUParticles2D" parent="Particles" unique_id=100910316]
 position = Vector2(1, 232)
 scale = Vector2(0.695, 0.695)
+emitting = false
 texture = SubResource("GradientTexture2D_vtp4t")
 lifetime = 2.0
 speed_scale = 0.4
 process_material = SubResource("ParticleProcessMaterial_oyhtv")
 
 [node name="SoyArea" type="Area2D" parent="Particles/Soy" unique_id=2028117910]
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Particles/Soy/SoyArea" unique_id=601276092]
 position = Vector2(-197.1223, 25.17987)
@@ -163,11 +166,14 @@ shape = SubResource("RectangleShape2D_5h11f")
 modulate = Color(1, 1, 1, 0.827451)
 position = Vector2(-136, 70)
 scale = Vector2(0.695, 0.695)
+emitting = false
 texture = SubResource("GradientTexture2D_wbji5")
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_oyhtv")
 
 [node name="CalamansiArea" type="Area2D" parent="Particles/Calamnsi" unique_id=988611152]
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Particles/Calamnsi/CalamansiArea" unique_id=1583476368]
 position = Vector2(197.1223, 486.33093)
@@ -176,12 +182,15 @@ shape = SubResource("RectangleShape2D_wbji5")
 [node name="Ketchup" type="GPUParticles2D" parent="Particles" unique_id=1470822447]
 position = Vector2(-48, 134)
 scale = Vector2(0.695, 0.695)
+emitting = false
 texture = SubResource("GradientTexture2D_l4t57")
 lifetime = 2.0
 speed_scale = 0.2
 process_material = SubResource("ParticleProcessMaterial_o4lb7")
 
 [node name="KetchupArea" type="Area2D" parent="Particles/Ketchup" unique_id=501339847]
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Particles/Ketchup/KetchupArea" unique_id=1496226055]
 position = Vector2(1.5258789e-05, 238.84892)
@@ -191,11 +200,14 @@ shape = SubResource("RectangleShape2D_5h11f")
 modulate = Color(1, 1, 1, 0.7254902)
 position = Vector2(-135, 74)
 scale = Vector2(0.695, 0.695)
+emitting = false
 texture = SubResource("GradientTexture2D_r02qw")
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_oyhtv")
 
 [node name="SpriteArea" type="Area2D" parent="Particles/Sprite" unique_id=909261943]
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Particles/Sprite/SpriteArea" unique_id=1985253142]
 position = Vector2(-1.4388585, 251.79855)
@@ -209,7 +221,11 @@ shape = SubResource("RectangleShape2D_vtp4t")
 [connection signal="mouse_exited" from="Sprites/Ketchup" to="." method="_on_ketchup_mouse_exited"]
 [connection signal="mouse_entered" from="Sprites/Sprite" to="." method="_on_sprite_mouse_entered"]
 [connection signal="mouse_exited" from="Sprites/Sprite" to="." method="_on_sprite_mouse_exited"]
-[connection signal="finished" from="Particles/Soy" to="Particles/Soy" method="_on_finished"]
-[connection signal="finished" from="Particles/Calamnsi" to="Particles/Calamnsi" method="_on_finished"]
-[connection signal="finished" from="Particles/Ketchup" to="Particles/Ketchup" method="_on_finished"]
-[connection signal="finished" from="Particles/Sprite" to="Particles/Sprite" method="_on_finished"]
+[connection signal="area_entered" from="Particles/Soy/SoyArea" to="." method="_on_soy_area_area_entered"]
+[connection signal="area_exited" from="Particles/Soy/SoyArea" to="." method="_on_soy_area_area_exited"]
+[connection signal="area_entered" from="Particles/Calamnsi/CalamansiArea" to="." method="_on_calamansi_area_area_entered"]
+[connection signal="area_exited" from="Particles/Calamnsi/CalamansiArea" to="." method="_on_calamansi_area_area_exited"]
+[connection signal="area_entered" from="Particles/Ketchup/KetchupArea" to="." method="_on_ketchup_area_area_entered"]
+[connection signal="area_exited" from="Particles/Ketchup/KetchupArea" to="." method="_on_ketchup_area_area_exited"]
+[connection signal="area_entered" from="Particles/Sprite/SpriteArea" to="." method="_on_sprite_area_area_entered"]
+[connection signal="area_exited" from="Particles/Sprite/SpriteArea" to="." method="_on_sprite_area_area_exited"]
