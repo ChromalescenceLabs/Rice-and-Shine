@@ -2,13 +2,12 @@ extends Control
 
 @onready var object_container: HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer
 @onready var scroll_container: ScrollContainer = %ScrollContainer
-@onready var ch_1img: TextureRect = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer/CH1IMG
-@onready var ch_2img: TextureRect = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer/CH2IMG
-@onready var ch_3img: TextureRect = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer/CH3IMG
 
 var targetScroll = 0
 
+
 func _ready() -> void:
+
 	_set_selection()
 	
 func _set_selection():
@@ -50,7 +49,7 @@ func _select_deselect_highlight():
 		
 		if object == selectedNode: 
 			object.modulate = Color(1,1,1)
-		
+
 		else: 
 			object.modulate = Color(0,0,0)
 
