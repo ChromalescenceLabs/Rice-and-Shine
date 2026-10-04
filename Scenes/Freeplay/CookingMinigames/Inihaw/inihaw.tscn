@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cphb8p5iecw0j"]
+
+[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Freeplay/Cooking_Minigames/CookingBG.jpg" id="1_5jnmg"]
+[ext_resource type="Script" uid="uid://d3eqcm8bryq62" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/inihaw.gd" id="1_yfbyh"]
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="2_4ubv0"]
+[ext_resource type="PackedScene" uid="uid://cy1qe3w0ip4cu" path="res://Scenes/Freeplay/CookingMinigames/Inihaw/choppable_pork_belly.tscn" id="3_rcqij"]
+[ext_resource type="PackedScene" uid="uid://b3pmbrftfet5g" path="res://Scenes/Freeplay/CookingMinigames/Inihaw/choppable_garlic.tscn" id="5_f2kep"]
+[ext_resource type="Script" uid="uid://bl4klabjlrd7g" path="res://Scripts/Freeplay/CookingMinigames/Kanin/rice_bowl_fill_area.gd" id="6_qsqwy"]
+[ext_resource type="Texture2D" uid="uid://cokiq4wv1pq6d" path="res://Assets/Freeplay/Serving/ServeBowl.png" id="7_lqdy4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ubv0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5h11f"]
+radius = 144.00348
+
+[node name="Inihaw" type="Node2D" unique_id=299310958]
+script = ExtResource("1_yfbyh")
+
+[node name="FrontBG" type="Sprite2D" parent="." unique_id=739684769]
+texture = ExtResource("1_5jnmg")
+centered = false
+
+[node name="TopDownBG" type="Sprite2D" parent="." unique_id=713733489]
+texture = ExtResource("2_4ubv0")
+centered = false
+
+[node name="Chopping" type="Node2D" parent="." unique_id=1790517080]
+visible = false
+
+[node name="ChoppingBoard" type="Sprite2D" parent="Chopping" unique_id=1559184716]
+position = Vector2(626.00006, 362.00003)
+scale = Vector2(433.74997, 586.25)
+texture = SubResource("PlaceholderTexture2D_4ubv0")
+
+[node name="ChoppablePorkBelly" parent="Chopping" unique_id=2017030951 instance=ExtResource("3_rcqij")]
+position = Vector2(622, 361)
+
+[node name="Mincing" type="Node2D" parent="." unique_id=1750180682]
+visible = false
+
+[node name="ChoppableGarlic" parent="Mincing" unique_id=1855347188 instance=ExtResource("5_f2kep")]
+position = Vector2(627, 335)
+
+[node name="Prepping" type="Node2D" parent="." unique_id=603069927]
+
+[node name="BowlFillArea" type="Area2D" parent="Prepping" unique_id=237820023]
+script = ExtResource("6_qsqwy")
+metadata/_custom_type_script = "uid://bl4klabjlrd7g"
+
+[node name="Sprite2D" type="Sprite2D" parent="Prepping/BowlFillArea" unique_id=1707447185]
+position = Vector2(627, 388)
+scale = Vector2(2.8999999, 2.9)
+texture = ExtResource("7_lqdy4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Prepping/BowlFillArea" unique_id=313121827]
+position = Vector2(622, 367)
+shape = SubResource("CircleShape2D_5h11f")
+
+[connection signal="chopping_finished" from="." to="." method="_on_chopping_finished"]
+[connection signal="chopped_garlic_finished" from="Mincing/ChoppableGarlic" to="." method="_on_choppable_garlic_chopped_garlic_finished"]

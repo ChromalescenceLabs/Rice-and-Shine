@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bdbhmbebxmgl0"]
+
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="1_0iwul"]
+
+[node name="Marinating" type="Node2D" unique_id=780017690]
+
+[node name="TopDownBG" type="Sprite2D" parent="." unique_id=2085829625]
+texture = ExtResource("1_0iwul")
+centered = false

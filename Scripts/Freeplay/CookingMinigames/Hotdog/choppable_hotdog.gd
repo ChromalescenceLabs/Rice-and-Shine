@@ -53,7 +53,7 @@ func _on_slice() -> void:
 		GlobalVars.successind(root)
 		await GlobalVars.successIndEnd
 		
-		root.chopped_hdog += 1
+		root.chopped_pbelly += 1
 		
 		var new_pos = self.position.x - get_viewport().get_visible_rect().size.x
 		var tw = create_tween().tween_property(self, "position:x", new_pos, 1.5).set_trans(Tween.TRANS_ELASTIC)
