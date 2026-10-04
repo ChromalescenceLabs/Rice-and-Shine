@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 		food_img.visible = true
-		self.global_position = lerp(self.global_position, get_global_mouse_position(), 0.2)
+		self.global_position = lerp(self.global_position, get_global_mouse_position(), 0.4)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("Click"):

@@ -35,6 +35,20 @@ bg_color = Color(0.6, 0.6, 0.6, 0.6784314)
 [node name="CustomerServingSandbox" type="Node2D" unique_id=1724706127]
 script = ExtResource("1_wgjyl")
 
+[node name="Customers" type="Control" parent="." unique_id=754894326]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CustomersCont" type="HBoxContainer" parent="Customers" unique_id=736920282]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 135.0
+offset_right = 1265.0
+offset_bottom = 626.0
+size_flags_horizontal = 3
+
 [node name="Control" type="Control" parent="." unique_id=2072875163]
 layout_mode = 3
 anchors_preset = 0
@@ -130,6 +144,7 @@ texture_hover = ExtResource("9_wgjyl")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="Counters" type="Control" parent="Control" unique_id=940841773 node_paths=PackedStringArray("rice_counter", "pcake_counter", "hbrown_counter")]
+z_index = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -238,4 +253,5 @@ grow_vertical = 2
 [connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="Control/Counters" method="_on_hashbrown_cont_mouse_entered"]
 [connection signal="mouse_exited" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="Control/Counters" method="_on_hashbrown_cont_mouse_exited"]
 [connection signal="pressed" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="." method="_on_hashbrown_cont_pressed"]
+[connection signal="child_exiting_tree" from="Control/BowlConts" to="." method="_on_bowl_conts_child_exiting_tree"]
 [connection signal="pressed" from="Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]

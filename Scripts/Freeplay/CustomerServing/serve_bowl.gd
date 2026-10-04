@@ -1,4 +1,5 @@
 extends Control
+class_name Bowl
 signal contentsCheck
 
 const BOWL_CONTENTS_LABEL = preload("uid://ye58mwdno13d")

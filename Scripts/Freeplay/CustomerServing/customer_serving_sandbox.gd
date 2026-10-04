@@ -111,3 +111,12 @@ func _on_add_bowl_pressed() -> void:
 	if bowl_no == 8:
 		add_bowl.disabled = true
 		add_bowl.visible = false
+
+func _on_bowl_conts_child_exiting_tree(node: Node) -> void:
+	if node is Bowl:
+		bowl_no -= 1
+		
+		if bowl_no < 8:
+			add_bowl.disabled = false
+			add_bowl.visible = true
+			
