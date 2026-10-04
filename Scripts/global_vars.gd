@@ -48,7 +48,6 @@ signal foodValueChanged(var_name : String, new_value : int, current_state)
 var rice_value : int = 5:
 	set(value):
 		if not rice_value == value:
-			print(value)
 			rice_value = value
 			
 		var current_state
@@ -60,7 +59,6 @@ var rice_value : int = 5:
 			current_state = "FILLED"
 			
 		foodValueChanged.emit("rice_value", rice_value, current_state)
-		print(current_state)
 
 var pcake_value : int = 5:
 	set(value):

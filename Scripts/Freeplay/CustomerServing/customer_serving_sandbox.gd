@@ -1,6 +1,10 @@
 extends Node2D
 
 const FOOD_PICKUP = preload("uid://bp3wrjfknjyxt")
+const SERVE_BOWL = preload("uid://curuxisd3l6in")
+@onready var bowl_labels: Node2D = $BowlLabels
+@onready var bowl_conts: HBoxContainer = $Control/BowlConts
+@onready var freed_bowls: Control = $Control/FreedBowls
 
 @onready var rice_cont: TextureButton = $Control/ScrollContainer/FoodConts/RiceCont
 @onready var pcake_cont: TextureButton = $Control/ScrollContainer/FoodConts/PancakeCont
@@ -13,6 +17,9 @@ const FOOD_PICKUP = preload("uid://bp3wrjfknjyxt")
 var rice_state = GlobalVars.rice_cont_state
 var pcake_state = GlobalVars.pcake_cont_state
 var hbrown_state = GlobalVars.hbrown_cont_state
+
+@onready var add_bowl: Button = $Control/BowlConts/AddBowl
+var bowl_no : int = 0
 
 var textureDict = {
 	"rice_cont" = load("uid://chv7ovq6nnca3"),
@@ -87,3 +94,34 @@ func _on_food_val_changed(var_name : String, new_value : int, current_state: Str
 func _on_rice_cont_button_down() -> void: check_value_forbtn(rice_state, "uid://sukerfnpt5d5", "rice")
 func _on_pancake_cont_button_down() -> void: check_value_forbtn(pcake_state, "uid://bf86igy00f6sq", "pancake")
 func _on_hashbrown_cont_button_down() -> void: check_value_forbtn(hbrown_state, "uid://j42ywdsfuawg", "hashbrown")
+
+func _on_add_bowl_pressed() -> void:
+	var newBowl = SERVE_BOWL.instantiate()
+	newBowl.modulate.a = 0.0
+	bowl_conts.add_child(newBowl)
+
+	var last_index := bowl_conts.get_child_count() - 1
+	bowl_conts.move_child(newBowl, max(0, last_index - 1))
+
+	await get_tree().process_frame
+
+	newBowl.initialization()
+	
+	bowl_no += 1
+	
+	if bowl_no == 7:
+		add_bowl.disabled = true
+		add_bowl.visible = false
+
+func _on_freed_bowls_child_exiting_tree(node: Node) -> void:
+	if node is Bowl:
+		var pos = node.final_pos
+		bowl_no -= 1
+		
+		for i in bowl_conts.get_children():
+			if i.global_position == pos:
+				i.queue_free()
+		
+		if bowl_no < 7:
+			add_bowl.disabled = false
+			add_bowl.visible = true

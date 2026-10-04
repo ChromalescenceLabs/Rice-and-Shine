@@ -3,18 +3,113 @@
 [ext_resource type="Texture2D" uid="uid://cokiq4wv1pq6d" path="res://Assets/Freeplay/Serving/ServeBowl.png" id="1_6rml4"]
 [ext_resource type="Script" uid="uid://bggu3b225yqvm" path="res://Scripts/Freeplay/CustomerServing/serve_bowl.gd" id="1_a3eqt"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08i74"]
+bg_color = Color(0.014275216, 0.014275219, 0.014275208, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Animation" id="Animation_a3eqt"]
+resource_name = "Popup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CheckContentsBtn:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CheckContentsBtn:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(15.747, -10.925), Vector2(15.747, -48.415)]
+}
+
+[sub_resource type="Animation" id="Animation_2g3by"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CheckContentsBtn:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CheckContentsBtn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-43, -86)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fgyrq"]
+_data = {
+&"Popup": SubResource("Animation_a3eqt"),
+&"RESET": SubResource("Animation_2g3by")
+}
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
 radius = 48.0
 
-[node name="ServeBowl" type="Area2D" unique_id=2094721552]
+[node name="ServeBowl" type="TextureRect" unique_id=209391391]
+offset_left = -74.0
+offset_top = -46.0
+offset_right = 76.0
+offset_bottom = 54.0
+texture = ExtResource("1_6rml4")
 script = ExtResource("1_a3eqt")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1687127364]
-texture = ExtResource("1_6rml4")
+[node name="CheckContentsBtn" type="RichTextLabel" parent="." unique_id=1929801082]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -118.0
+offset_top = -86.0
+offset_right = 0.13421631
+offset_bottom = -66.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_08i74")
+text = "RMB To Check Contents"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087544455]
-position = Vector2(-3, -5)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=44409239]
+libraries/ = SubResource("AnimationLibrary_fgyrq")
+speed_scale = 3.0
+
+[node name="BowlArea" type="Area2D" parent="." unique_id=1099617648]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BowlArea" unique_id=1087544455]
+position = Vector2(74, 45)
 shape = SubResource("CircleShape2D_08i74")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="contentsCheck" from="." to="." method="_on_contents_check"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="BowlArea" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="BowlArea" to="." method="_on_area_2d_area_exited"]

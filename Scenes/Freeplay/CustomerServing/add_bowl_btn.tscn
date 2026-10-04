@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cntangxcnp6xg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kq8l2"]
+bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pqxb"]
+bg_color = Color(0.28118682, 0.2811869, 0.28118676, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8f2h6"]
+bg_color = Color(0.41215244, 0.4121525, 0.41215235, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Button" type="Button" unique_id=949361015]
+offset_left = -25.0
+offset_top = -27.0
+offset_right = 25.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_kq8l2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4pqxb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8f2h6")
+text = "+"
