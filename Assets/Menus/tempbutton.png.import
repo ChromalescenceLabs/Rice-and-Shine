@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhvesnyvb7gqy"
-path="res://.godot/imported/2026_09_25_10d_Kleki.png-ff6a6d95a798323ff1d7bc7981bcd079.ctex"
+uid="uid://f2rltotigf0a"
+path="res://.godot/imported/tempbutton.png-2bb3d90df55a8c73c93bfbfbfa8a47d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menus/2026_09_25_10d_Kleki.png"
-dest_files=["res://.godot/imported/2026_09_25_10d_Kleki.png-ff6a6d95a798323ff1d7bc7981bcd079.ctex"]
+source_file="res://Assets/Menus/tempbutton.png"
+dest_files=["res://.godot/imported/tempbutton.png-2bb3d90df55a8c73c93bfbfbfa8a47d6.ctex"]
 
 [params]
 
