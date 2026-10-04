@@ -4,6 +4,7 @@ const FOOD_PICKUP = preload("uid://bp3wrjfknjyxt")
 const SERVE_BOWL = preload("uid://curuxisd3l6in")
 @onready var bowl_labels: Node2D = $BowlLabels
 @onready var bowl_conts: HBoxContainer = $Control/BowlConts
+@onready var freed_bowls: Control = $Control/FreedBowls
 
 @onready var rice_cont: TextureButton = $Control/ScrollContainer/FoodConts/RiceCont
 @onready var pcake_cont: TextureButton = $Control/ScrollContainer/FoodConts/PancakeCont
@@ -108,15 +109,19 @@ func _on_add_bowl_pressed() -> void:
 	
 	bowl_no += 1
 	
-	if bowl_no == 8:
+	if bowl_no == 7:
 		add_bowl.disabled = true
 		add_bowl.visible = false
 
-func _on_bowl_conts_child_exiting_tree(node: Node) -> void:
+func _on_freed_bowls_child_exiting_tree(node: Node) -> void:
 	if node is Bowl:
+		var pos = node.final_pos
 		bowl_no -= 1
 		
-		if bowl_no < 8:
+		for i in bowl_conts.get_children():
+			if i.global_position == pos:
+				i.queue_free()
+		
+		if bowl_no < 7:
 			add_bowl.disabled = false
 			add_bowl.visible = true
-			

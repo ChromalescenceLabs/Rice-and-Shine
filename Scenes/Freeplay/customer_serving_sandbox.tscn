@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bgya7yialyiv4" path="res://Assets/Freeplay/Serving/Empty/TBAContH.png" id="9_wgjyl"]
 [ext_resource type="Script" uid="uid://cxthuam3ves36" path="res://Scripts/Freeplay/CustomerServing/counters.gd" id="12_vol7o"]
 [ext_resource type="PackedScene" uid="uid://cntangxcnp6xg" path="res://Scenes/Freeplay/CustomerServing/add_bowl_btn.tscn" id="14_kq8l2"]
+[ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="14_o8aqv"]
 
 [sub_resource type="Gradient" id="Gradient_wgjyl"]
 offsets = PackedFloat32Array(0, 0.6204819, 0.9939759)
@@ -243,6 +244,9 @@ grow_vertical = 2
 
 [node name="BowlLabels" type="Node2D" parent="." unique_id=328106633]
 
+[node name="TrashbinTab" parent="." unique_id=18345153 instance=ExtResource("14_o8aqv")]
+position = Vector2(1280, 459)
+
 [connection signal="button_down" from="Control/ScrollContainer/FoodConts/RiceCont" to="." method="_on_rice_cont_button_down"]
 [connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/RiceCont" to="Control/Counters" method="_on_rice_cont_mouse_entered"]
 [connection signal="mouse_exited" from="Control/ScrollContainer/FoodConts/RiceCont" to="Control/Counters" method="_on_rice_cont_mouse_exited"]
@@ -253,5 +257,5 @@ grow_vertical = 2
 [connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="Control/Counters" method="_on_hashbrown_cont_mouse_entered"]
 [connection signal="mouse_exited" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="Control/Counters" method="_on_hashbrown_cont_mouse_exited"]
 [connection signal="pressed" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="." method="_on_hashbrown_cont_pressed"]
-[connection signal="child_exiting_tree" from="Control/BowlConts" to="." method="_on_bowl_conts_child_exiting_tree"]
 [connection signal="pressed" from="Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
+[connection signal="child_exiting_tree" from="Control/FreedBowls" to="." method="_on_freed_bowls_child_exiting_tree"]

@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://cu1sr6c6dt5hx"]
+
+[ext_resource type="Script" uid="uid://dqqads702dacy" path="res://Scripts/Freeplay/CustomerServing/trashbin_tab.gd" id="1_011fy"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_08i74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08i74"]
+size = Vector2(34, 88)
+
+[sub_resource type="Animation" id="Animation_011fy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TrashSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(49, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TempTab:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1vhtg"]
+resource_name = "TrashAnim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TrashSprite:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(63.425, 0), Vector2(-52.615, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(5.375, 1.445)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TempTab:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(26.16, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qmj7c"]
+_data = {
+&"RESET": SubResource("Animation_011fy"),
+&"TrashAnim": SubResource("Animation_1vhtg")
+}
+
+[node name="TrashbinTab" type="Node2D" unique_id=18345153]
+script = ExtResource("1_011fy")
+
+[node name="TrashSprite" type="Sprite2D" parent="." unique_id=1377348266]
+z_index = 1
+position = Vector2(49, 0)
+scale = Vector2(83.01001, 121.97389)
+texture = SubResource("PlaceholderTexture2D_08i74")
+
+[node name="TempTab" type="Node2D" parent="." unique_id=1850409806]
+
+[node name="ColorRect" type="ColorRect" parent="TempTab" unique_id=1937665534]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.895
+offset_top = -35.15589
+offset_right = 15.105
+offset_bottom = 24.844109
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.19, 1.19)
+color = Color(0.27205434, 0.1383389, 0.09993244, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="TempTab" unique_id=1359434830]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.790002
+offset_top = -35.155895
+offset_right = 6.416198
+offset_bottom = -13.941706
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.7853982
+scale = Vector2(1.19, 1.19)
+color = Color(0.27205434, 0.1383389, 0.09993244, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="TempTab" unique_id=630481360]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.790002
+offset_top = 35.84411
+offset_right = 6.416198
+offset_bottom = 57.058296
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.7853982
+scale = Vector2(1.19, 1.19)
+color = Color(0.27205434, 0.1383389, 0.09993244, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TempTab" unique_id=361968421]
+offset_left = 5.0
+offset_top = -27.0
+offset_right = 61.0
+offset_bottom = -4.0
+rotation = 1.5707964
+text = "TRASH"
+fit_content = true
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1425372672]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=688467496]
+position = Vector2(-10, 0)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=445513979]
+libraries/ = SubResource("AnimationLibrary_qmj7c")
+speed_scale = 3.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

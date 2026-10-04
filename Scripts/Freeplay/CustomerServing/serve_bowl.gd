@@ -15,6 +15,7 @@ var popped_up : bool = false
 var final_pos 
 var node_ready : bool = false
 var dragging : bool = false
+var in_trash : bool = false
 
 var contentDict : Dictionary = {}
 
@@ -22,9 +23,6 @@ func _ready() -> void:
 	set_process_input(false)
 	check_contents_btn.modulate.a = 0
 	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
-
-func _physics_process(delta: float) -> void:
-	pass
 
 func _process(_delta: float) -> void:
 	if dragging: self.global_position = lerp(self.global_position, get_global_mouse_position() + Vector2(-50, -32), 0.2)
@@ -36,7 +34,10 @@ func _input(event: InputEvent) -> void:
 		dragging = true
 	if event.is_action_released("Click"):
 		dragging = false
-		self.global_position = final_pos
+		if in_trash:
+			self.queue_free()
+		else:
+			self.global_position = final_pos
 
 func _on_contents_check() -> void:
 	if not node_ready:
@@ -76,10 +77,14 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 				contentDict[texture] = 1
 			else:
 				contentDict[texture] += 1
+	elif area.get_parent() is Trashbin:
+		in_trash = true
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area is FoodPickup and not area.is_queued_for_deletion():
 		food_entered = false
+	elif area.get_parent() is Trashbin:
+		in_trash = false
 
 
 func _on_mouse_entered() -> void:
