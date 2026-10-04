@@ -17,6 +17,9 @@ var rice_state = GlobalVars.rice_cont_state
 var pcake_state = GlobalVars.pcake_cont_state
 var hbrown_state = GlobalVars.hbrown_cont_state
 
+@onready var add_bowl: Button = $Control/BowlConts/AddBowl
+var bowl_no : int = 0
+
 var textureDict = {
 	"rice_cont" = load("uid://chv7ovq6nnca3"),
 	"rice_conth" = load("uid://bfxatlh6arx51"),
@@ -102,3 +105,9 @@ func _on_add_bowl_pressed() -> void:
 	await get_tree().process_frame
 
 	newBowl.initialization()
+	
+	bowl_no += 1
+	
+	if bowl_no == 8:
+		add_bowl.disabled = true
+		add_bowl.visible = false

@@ -200,7 +200,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="BowlConts" type="HBoxContainer" parent="Control" unique_id=1003470384]
 layout_mode = 0
-offset_left = 15.0
+offset_left = 24.0
 offset_top = 385.0
 offset_right = 1265.0
 offset_bottom = 485.0
