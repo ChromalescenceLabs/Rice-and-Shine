@@ -1,10 +1,6 @@
-extends Button
+extends TextureButton
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-func _on_pressed() -> void:
+func _on_pressed() -> void: 
+	await get_tree().create_timer(1.0).timeout
 	SceneLoader.load_scene("uid://f5bkmxvr0cpx", 2)

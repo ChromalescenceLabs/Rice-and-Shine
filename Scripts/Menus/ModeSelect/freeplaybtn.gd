@@ -1,4 +1,5 @@
-extends Button
+extends TextureButton
 
 func _on_pressed() -> void:
+	await get_tree().create_timer(1.0).timeout
 	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 2)
