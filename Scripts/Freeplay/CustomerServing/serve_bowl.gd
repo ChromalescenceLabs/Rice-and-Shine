@@ -13,6 +13,7 @@ var contents_shown : bool = false
 var popped_up : bool = false
 var final_pos 
 var node_ready : bool = false
+var dragging : bool = false
 
 var contentDict : Dictionary = {}
 
@@ -20,10 +21,21 @@ func _ready() -> void:
 	set_process_input(false)
 	check_contents_btn.modulate.a = 0
 	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+func _physics_process(delta: float) -> void:
+	pass
+
+func _process(_delta: float) -> void:
+	if dragging: self.global_position = lerp(self.global_position, get_global_mouse_position() + Vector2(-50, -32), 0.2)
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("RightClick"):
+	if event.is_action_pressed("RightClick") and not dragging:
 		contentsCheck.emit()
+	elif event.is_action_pressed("Click"):
+		dragging = true
+	if event.is_action_released("Click"):
+		dragging = false
+		self.global_position = final_pos
 
 func _on_contents_check() -> void:
 	if not node_ready:
@@ -70,16 +82,17 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 
 func _on_mouse_entered() -> void:
-	if not contents_shown:
+	if not contents_shown and not dragging:
 		set_process_input(true)
 		animation_player.play("Popup")
 		popped_up = true
 
 func _on_mouse_exited() -> void:
+	if not dragging:
 		set_process_input(false)
-		if popped_up:
-			animation_player.play_backwards("Popup")
-			popped_up = false
+	if popped_up:
+		animation_player.play_backwards("Popup")
+		popped_up = false
 
 func initialization():
 	if not self.is_in_group("ClonedBowls"):	
