@@ -65,3 +65,60 @@ Then from September 19-20, I began coding for thirdspace.
 - I then made a mode select screen so that players could choose between playing freeplay mode or story mode, however story mode isn't done yet. Only freeplay is functional for now.
 - I then went back and added audio sliders for the options menu. At first they didn't work but after some tweaking, I got it to be functional. I added a music manager so that music can be continuously play across different scenes, and made a custom cursor which could be used in the future.
 - With my remaining time, I decided to polish some parts of the main menu, and options menu before my ten hours were up.
+
+
+## WEEK 2: SEPTEMBER 21-28
+### 1. ALLIUMC
+Things I've done:
+1) Polish the success indicator
+- changed the animation
+- changed font
+- changed particles
+2) Worked on the win condition for the potato peeling
+- did not fully finish
+- fix the part where the check condition started at 24 and not 0
+3) Polish the recipe book
+- changed the animation
+- coded the part where the instructions changes based on the scene
+- also fixed the part where it gliches out when u hover over the open book texture
+4) Continued the drawing for the title screen
+- did not finish
+
+My thoughts on the matter:
+Honestly, I had fun coding. While I was much slower than what I had hoped for, it was still a good experience. I wish I had more time to code but my schedule doesn't allow much leeway, sadly. For the drawing part, I am actually quite dissatisfied with the result. The colours I chose sucks, I spent too much time trying to perfect the lines when I really don't need to. I think the fact that I was recording made me feel more  stricted than normal. Normally, I am more experimental when it comes to drawing but I didn't do much of that here. Or maybe it's because I haven't drawn digitally in a while. Nevertheless, I'll try to improve on this and let myself be more expressive next time.
+
+Things I had trouble with:
+1) My laptop lagging out when testing
+2) I keep going back and forth with my tasks
+- whenever I commit the changes to github, it's likely that I'd changed the stuff I worked on too unless I was sure that I could finish it.
+3) Dissatisfaction with the drawing
+- Maybe this is really just me being a perfectionist, but as I said on the previous section, I plan to improve or more likely redo the overall aesthetic of the drawing.
+
+### 2. CLIF
+Progress made:
+- Made the hotdog minigame:
+ - Polished all the stages:
+  - Slicing: I used velocity measurements to calculate whether the player was actually swiping their mouse
+  - Frying: simple area mechanics to check whether the pan had oil and already had a hotdog frying in it
+  - Chopping: similar logic to the slicing portion of the hotdog minigame
+  - Stick: I had the hardest time here. I did a lot of code refactoring since so many bugs decided to pop up; but I approached it one by one to fully understand it.
+- Added Allium's recipe book system in certain areas
+- Attempted to fix the hashbrowns minigame (and failing miserably)
+
+### 3. JAZZ
+Hallo! For this week, I decided to start on the customer serving mechanics:
+- I added the scrollable area for the food trays, with the help of a smooth scroll addon that I found on the Godot asset store!
+- I also programmed the drag and drop mechanic for the food containers; which wasn't too hard surprisingly; just had to work my way around signals
+- I made it so that the bowl you drop the food into is able to know and remember what you've added into it (for easier integration with actual customer serving later)
+- I had the hardest time trying to figure out why my global variables weren't updating when using the "set()" command. Turns out when it's reassigned via a separate function it doesn't work, so derp :p
+Aside from programming, I thought I'd help with the art since I had the original concept art for the menu screens of the game.
+
+All in all, I'm pretty happy with the progress I made again this week. Perhaps I'll start working on either more minigames next week or polish more mechanics for the customer serving portion of the game. 
+
+### 4. JEANKAMAGALING
+On 09/26/2026, I worked on coding. I first tried to implement a carousel menu for the chapter selection screen but when I couldn't get it to work after several tries, I changed plans (out of frustration xd). I decided to not do a carousel menu until I felt more confident in my coding (since I am a beginner in godot) and decided to keep it simple for now. I changed the layout of the buttons and added a feature where if you hovered over a button, you could see a description about it (which is to be added). On 09/27/2026, I worked solely on art. I first made character art and then redrew assets for the hashbrown minigame. I then made concepts for the layout of the screen when managing the carinderia, and the upgrade screen.
+**LAPSE RECORDINGS:**
+- https://lapse.hackclub.com/timelapse/todFEnu7coOa
+- https://lapse.hackclub.com/timelapse/kAsmfAfydb3S
+- https://lapse.hackclub.com/timelapse/iJ4D1aWzsH4I
+- https://lapse.hackclub.com/timelapse/8fSgLJqLsnZd

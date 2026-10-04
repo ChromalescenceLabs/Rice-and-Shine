@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://c14a35ingm3yo"]
+[gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
 
 [ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/Freeplay/minigame_select.gd" id="1_tovjb"]
 [ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Menus/FreeplayMenu/RICE.png" id="2_l46wx"]
 [ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/Menus/FreeplayMenu/pancake.png" id="3_btba4"]
 [ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/Menus/FreeplayMenu/hasbrown.png" id="4_h6rov"]
-[ext_resource type="Texture2D" path="res://Assets/Menus/FreeplayMenu/hotdog.png" id="5_kyrjg"]
+[ext_resource type="Texture2D" uid="uid://cvqb826b4xwtl" path="res://Assets/Menus/FreeplayMenu/hotdog.png" id="5_kyrjg"]
 [ext_resource type="Texture2D" uid="uid://flr15pt8c72a" path="res://Assets/Menus/FreeplayMenu/placeholder.png" id="6_gl1wp"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
 
