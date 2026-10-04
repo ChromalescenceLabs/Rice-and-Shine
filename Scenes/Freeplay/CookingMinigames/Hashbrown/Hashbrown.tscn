@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://j42ywdsfuawg"]
 
 [ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Freeplay/Cooking_Minigames/CookingBG.jpg" id="1_jjcf2"]
-[ext_resource type="Script" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/hashbrown_root.gd" id="1_o12im"]
+[ext_resource type="Script" uid="uid://q0a4vib1me85" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/hashbrown_root.gd" id="1_o12im"]
 [ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="2_y804u"]
 [ext_resource type="Texture2D" uid="uid://c32mg1ke0dp8" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grater.png" id="4_0c4c0"]
 [ext_resource type="PackedScene" uid="uid://b8yqa13xod3tx" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/HashbrownInitial.tscn" id="4_o12im"]
@@ -9,9 +9,46 @@
 [ext_resource type="Texture2D" uid="uid://bcyqjrke55gi" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated1.png" id="7_o12im"]
 [ext_resource type="Texture2D" uid="uid://dq8oklhvamkn0" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated2.png" id="8_penps"]
 [ext_resource type="Texture2D" uid="uid://bc6e5imjyoy6d" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated3.png" id="9_8bsfq"]
+[ext_resource type="Texture2D" uid="uid://c2csa4kyjeclm" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated4.png" id="10_ouisr"]
 [ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/recipe_book.tscn" id="10_penps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
+
+[sub_resource type="Animation" id="Animation_ouisr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(211, 181)]
+}
+
+[sub_resource type="Animation" id="Animation_avunj"]
+resource_name = "grate"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.34999996, 0.52000004),
+"transitions": PackedFloat32Array(4.438279, 2.4622889, 2.6390157, 1.6817931),
+"update": 0,
+"values": [Vector2(211, 181), Vector2(280, 181), Vector2(150, 181), Vector2(211, 181)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_meb1c"]
+_data = {
+&"RESET": SubResource("Animation_ouisr"),
+&"grate": SubResource("Animation_avunj")
+}
 
 [node name="Hashbrowns" type="Node2D" unique_id=1704651639]
 script = ExtResource("1_o12im")
@@ -27,34 +64,49 @@ position = Vector2(635, 559)
 scale = Vector2(0.90000004, 0.9000001)
 texture = ExtResource("2_y804u")
 
-[node name="Hashbrowns" parent="." unique_id=2091728095 instance=ExtResource("4_o12im")]
+[node name="peel" parent="." unique_id=243397758 instance=ExtResource("4_o12im")]
 
-[node name="GratingHashbrowns" type="Node2D" parent="." unique_id=1471228203]
-process_mode = 4
+[node name="grate" type="Node2D" parent="." unique_id=1471228203]
 
-[node name="grater" type="Area2D" parent="GratingHashbrowns" unique_id=177305472]
-position = Vector2(91, 196)
+[node name="grater" type="Area2D" parent="grate" unique_id=318729698]
+position = Vector2(211, 181)
 
-[node name="grater" type="TextureRect" parent="GratingHashbrowns/grater" unique_id=655281286]
-offset_right = 300.0
-offset_bottom = 388.0
+[node name="grater" type="TextureRect" parent="grate/grater" unique_id=655281286]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -194.0
+offset_right = 150.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_0c4c0")
+metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GratingHashbrowns/grater" unique_id=1083296010]
-position = Vector2(147, 205.99998)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grate/grater" unique_id=1083296010]
 scale = Vector2(13.070598, 19.099464)
 shape = SubResource("RectangleShape2D_ittll")
 
-[node name="gratedFull" parent="GratingHashbrowns" unique_id=1619096956 instance=ExtResource("5_1gtf3")]
-position = Vector2(914, 406)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="grate/grater" unique_id=531748724]
+libraries/ = SubResource("AnimationLibrary_meb1c")
 
-[node name="Grated" type="Control" parent="GratingHashbrowns" unique_id=938886420]
+[node name="gratedFull" parent="grate" unique_id=1619096956 instance=ExtResource("5_1gtf3")]
+z_index = 1
+position = Vector2(1022.0001, 379.00003)
+scale = Vector2(1.4585091, 1.0317107)
+
+[node name="gratedRemains" type="Control" parent="grate" unique_id=938886420]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 80.0
+offset_top = 38.0
+offset_right = 120.0
+offset_bottom = 78.0
 
-[node name="grated" type="TextureRect" parent="GratingHashbrowns/Grated" unique_id=1837898615]
+[node name="grated" type="TextureRect" parent="grate/gratedRemains" unique_id=1837898615]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -70,7 +122,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_o12im")
 
-[node name="grated2" type="TextureRect" parent="GratingHashbrowns/Grated" unique_id=126164684]
+[node name="grated2" type="TextureRect" parent="grate/gratedRemains" unique_id=126164684]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -78,15 +130,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 367.5
-offset_top = 357.5
-offset_right = 696.5
-offset_bottom = 573.5
+offset_left = 391.5
+offset_top = 349.5
+offset_right = 720.5
+offset_bottom = 565.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_penps")
 
-[node name="grated3" type="TextureRect" parent="GratingHashbrowns/Grated" unique_id=2142828715]
+[node name="grated3" type="TextureRect" parent="grate/gratedRemains" unique_id=2142828715]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -94,15 +146,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 365.0
-offset_top = 350.0
-offset_right = 699.0
-offset_bottom = 581.0
+offset_left = 392.0
+offset_top = 364.0
+offset_right = 726.0
+offset_bottom = 595.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_8bsfq")
 
-[node name="grated4" type="TextureRect" parent="GratingHashbrowns/Grated" unique_id=1084284138]
+[node name="grated4" type="TextureRect" parent="grate/gratedRemains" unique_id=1084284138]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -110,23 +162,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 512.0
-offset_top = 445.5
-offset_right = 552.0
-offset_bottom = 485.5
+offset_left = 376.0
+offset_top = 332.5
+offset_right = 772.0
+offset_bottom = 574.5
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("10_ouisr")
 
 [node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("10_penps")]
-offset_left = 393.75006
-offset_top = 167.50003
-offset_right = 576.75006
-offset_bottom = 404.50003
+offset_left = 9.0
+offset_top = 528.0
+offset_right = 192.0
+offset_bottom = 765.0
+scale = Vector2(0.795, 0.795)
 
-[connection signal="peeled" from="Hashbrowns" to="." method="_on_hashbrowns_peeled"]
-[connection signal="body_entered" from="Hashbrowns/Line2D/CheckingAreas/Area2D" to="Hashbrowns/Line2D/CheckingAreas/Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="GratingHashbrowns/grater" to="GratingHashbrowns/gratedFull" method="_on_grater_body_entered"]
-[connection signal="body_exited" from="GratingHashbrowns/grater" to="GratingHashbrowns/gratedFull" method="_on_grater_body_exited"]
+[connection signal="peeled" from="peel" to="." method="_on_peel_peeled"]
+[connection signal="mouse_exited" from="peel/Line2D/AreaPPotato" to="peel" method="_on_area_p_potato_mouse_exited"]
+[connection signal="mouse_entered" from="grate/grater" to="grate/gratedFull" method="_on_grater_mouse_entered"]
+[connection signal="mouse_exited" from="grate/grater" to="grate/gratedFull" method="_on_grater_mouse_exited"]
+[connection signal="grated" from="grate/gratedFull" to="." method="_on_grated_full_grated"]
 
-[editable path="Hashbrowns"]
-[editable path="GratingHashbrowns/gratedFull"]
+[editable path="peel"]
+[editable path="grate/gratedFull"]

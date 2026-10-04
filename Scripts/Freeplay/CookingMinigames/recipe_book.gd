@@ -13,7 +13,7 @@ func _ready() -> void:
 	ins_anim_in.play("fade")
 	intro_anim.play("Intro")
 	
-	GlobalVars.instructions_changed.connect(_on_instructions_changed)
+	GlobalVars.itemEntered.connect(itemEntered)
 
 func _on_closed_mouse_entered() -> void:
 	ins_anim_in.play("fade")
@@ -24,7 +24,7 @@ func _on_opened_mouse_exited() -> void:
 	closed.visible = true
 	opened.visible = false
 
-func _on_instructions_changed(item):
+func itemEntered(item):
 	ins_anim_in.play_backwards("fade")
 	if item.name.to_lower()=="ricecups":
 		instructions.text = "insert ur shit here"

@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://b8yqa13xod3tx"]
 
-[ext_resource type="Script" uid="uid://bvalouachcu1j" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/Hashbrown.gd" id="1_tan3t"]
+[ext_resource type="Script" uid="uid://cxcty5ajgq5hn" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/Hashbrown.gd" id="1_tan3t"]
 [ext_resource type="Texture2D" uid="uid://dtjk3rm14kam8" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/Potato.png" id="4_2vbmc"]
-[ext_resource type="Script" path="res://Scripts/CookingMinigames/Hashbrown/line_2d.gd" id="5_pxv5y"]
-[ext_resource type="Script" uid="uid://cn36ek72jq7el" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/peeler.gd" id="5_tan3t"]
 [ext_resource type="Texture2D" uid="uid://brijabd5metjd" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/Peeled Potatoes.png" id="6_24fpq"]
+[ext_resource type="Script" uid="uid://duuhgtxb0patd" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/peel.gd" id="6_v5n5k"]
 [ext_resource type="Texture2D" uid="uid://cggpwgg256553" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/Peeler.png" id="7_gf6eo"]
-[ext_resource type="Script" uid="uid://d0bing65rgjq3" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/hashcheckareas.gd" id="7_n6pmv"]
+[ext_resource type="Script" uid="uid://b55e0a6dgmctp" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/hashcheckareas.gd" id="7_n6pmv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tj6en"]
 
@@ -31,10 +30,13 @@ size = Vector2(61, 41)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kds4b"]
 size = Vector2(47, 39)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2mse2"]
-height = 87.5466
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
+size = Vector2(128, 197.99997)
 
-[node name="HashbrownPeel" type="Node2D" unique_id=1704651639]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ullcx"]
+radius = 5.0069137
+
+[node name="peel" type="Node2D" unique_id=1704651639]
 script = ExtResource("1_tan3t")
 
 [node name="Potato" type="TextureRect" parent="." unique_id=2124695233]
@@ -313,12 +315,15 @@ shape = SubResource("RectangleShape2D_kds4b")
 [node name="Peeler" type="Area2D" parent="." unique_id=2070195057]
 position = Vector2(959, 299)
 scale = Vector2(1, 1.0000001)
-script = ExtResource("5_tan3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peeler" unique_id=1243062231]
+position = Vector2(-2, 84)
+shape = SubResource("RectangleShape2D_ittll")
 
 [node name="PeeledParticles" type="CPUParticles2D" parent="Peeler" unique_id=867490272]
-visible = false
 position = Vector2(-3.000001, 20.000004)
 scale = Vector2(2.179908, -6.5258307)
+emitting = false
 amount = 50
 lifetime = 0.58
 scale_amount_min = 26.0
@@ -333,14 +338,16 @@ offset_bottom = 482.0
 scale = Vector2(0.34120473, 0.38544473)
 texture = ExtResource("7_gf6eo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peeler" unique_id=608045779]
-position = Vector2(-1, 76.999985)
-scale = Vector2(6.284462, 2.3301876)
-shape = SubResource("CapsuleShape2D_2mse2")
+[node name="peel" type="Area2D" parent="Peeler" unique_id=958205669]
+position = Vector2(-65, -27)
+scale = Vector2(0.34120473, 0.38544473)
+script = ExtResource("6_v5n5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peeler/peel" unique_id=608045779]
+position = Vector2(187.5708, 90.80414)
+scale = Vector2(12.301554, 12.57795)
+shape = SubResource("CircleShape2D_ullcx")
 
 [connection signal="mouse_entered" from="Line2D/AreaPPotato" to="." method="_on_area_p_potato_mouse_entered"]
-[connection signal="area_entered" from="Peeler" to="Peeler" method="_on_area_entered"]
-[connection signal="area_exited" from="Peeler" to="Peeler" method="_on_area_exited"]
 [connection signal="input_event" from="Peeler" to="." method="_on_peeler_input_event"]
-[connection signal="mouse_entered" from="Peeler" to="." method="_on_peeler_mouse_entered"]
-[connection signal="mouse_exited" from="Peeler" to="." method="_on_peeler_mouse_exited"]
+[connection signal="area_entered" from="Peeler/peel" to="Peeler/peel" method="_on_area_entered"]
