@@ -122,3 +122,46 @@ On 09/26/2026, I worked on coding. I first tried to implement a carousel menu fo
 - https://lapse.hackclub.com/timelapse/kAsmfAfydb3S
 - https://lapse.hackclub.com/timelapse/iJ4D1aWzsH4I
 - https://lapse.hackclub.com/timelapse/8fSgLJqLsnZd
+
+## WEEK 3: SEPTEMBER 28 - OCTOBER 5
+### 1. ALLIUMC
+Things I've done:
+1. fixed all the bugs for the potato minigame so far
+- fixed the peeler counter
+- fixed the grated potato remainings not appearing
+- fixed when draggable items was going first than the others
+2. change the grated part of the potato minigame
+- changed from dragging the potato to the grater into shaking the potato on the grater to grate
+- added an animation whenever u grate
+  - it follows the mouse at a certain range
+3. continuation of drawing the bg of the title screen
+
+My thoughts on the matter:
+so idk how i managed to figure out how to fix all of that in like 2 consecutive days. Even though I was pretty frustrated like 9 out of 10 times, i had a really fun time coding. Wish I could've code more but I want to save it for next week LOL. for the drawing, I am pretty content with the outcome. It's not done yet, but so far it's good for me. 
+Things I had trouble with:
+1. The most prominent trouble I had when I was fixing bugs was the shaking animation
+so at first, when u reach the edge of the range, it starts freaking out.
+- I thought of like doing it with collisions. like the grater being a static body and it will auto stop when it detected the border but i couldn't get it to work
+- then i thought of like when the grater reaches the range of the edges, it just makes the position the coordinate of the edge. but it looked and felt, for the lack of a better term, ugly
+- so for the solution i went for was like instead of making the canGrate= true when the body of the potato enters the area of the grater, i changed it to when the mouse enters the area of the grater and I liked the outcome.
+*I just realized smth when I was typing this, instead of the grater following the mouse, it follows the body of the potato so when it enters the area of the grater it wont freak out. putting this here as a reminder for myself*
+2.  I keep getting distracted LOL
+so there was a time where I was reading a manhwa while coding. then when I got hooked, I stopped coding and read the manhwa instead.. oops
+
+### 2. CLIF
+
+
+### 3. JAZZ
+Hello hello, below is my journal for the week :]
+
+Mainly continued on programming the customer serving mechanics again. Sadly didn't get to the actual customers part with the dialogues yet, but I'll get there eventually, hopefully with all the other systems built in already too. Anyways, I specifically worked on:
+- Added the bowl containers' labels functionality, where you're able to actually see what food you have in the bowl.
+- Added a slide effect for when bowls are added to the scene.
+- Added a counter for the amount of bowls there are, in order to prevent like, 1000 bowls getting spawned
+- Added a bowl drag mechanic (will be using this for serving as well!)
+- Added a bowl trashbin (for throwing bowls if they accidentally have the wrong contents)
+- Fixed a bunch of bugs that I overlooked last week.
+
+I had a smooth time coding this week actually! Surprisingly no mind-numbing problems that I had to face, as all the bugs I had to fix were pretty minimal. NEXT WEEK I SWEAR I'll finally be able to get the actual ordering from the customers done, with randomizations and everything, maybe incorporating Raph's concept art. That's pretty much it for me this week!
+
+### 4. JEANKAMAGALING
