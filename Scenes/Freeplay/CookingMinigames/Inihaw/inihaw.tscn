@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://b3pmbrftfet5g" path="res://Scenes/Freeplay/CookingMinigames/Inihaw/choppable_garlic.tscn" id="5_f2kep"]
 [ext_resource type="Script" uid="uid://bl4klabjlrd7g" path="res://Scripts/Freeplay/CookingMinigames/Kanin/rice_bowl_fill_area.gd" id="6_qsqwy"]
 [ext_resource type="Texture2D" uid="uid://cokiq4wv1pq6d" path="res://Assets/Freeplay/Serving/ServeBowl.png" id="7_lqdy4"]
+[ext_resource type="PackedScene" uid="uid://b5dqg1uou3ovd" path="res://Scenes/Freeplay/CookingMinigames/Inihaw/inihaw_liquids.tscn" id="8_lqdy4"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ubv0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5h11f"]
-radius = 144.00348
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsqwy"]
+radius = 133.95895
 
 [node name="Inihaw" type="Node2D" unique_id=299310958]
 script = ExtResource("1_yfbyh")
@@ -44,17 +45,22 @@ position = Vector2(627, 335)
 [node name="Prepping" type="Node2D" parent="." unique_id=603069927]
 
 [node name="BowlFillArea" type="Area2D" parent="Prepping" unique_id=237820023]
+position = Vector2(618, 399)
 script = ExtResource("6_qsqwy")
 metadata/_custom_type_script = "uid://bl4klabjlrd7g"
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Prepping/BowlFillArea" unique_id=1707447185]
-position = Vector2(627, 388)
-scale = Vector2(2.8999999, 2.9)
+position = Vector2(7, 8)
+scale = Vector2(3.04, 3.04)
 texture = ExtResource("7_lqdy4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Prepping/BowlFillArea" unique_id=313121827]
-position = Vector2(622, 367)
-shape = SubResource("CircleShape2D_5h11f")
+position = Vector2(-6, -8)
+shape = SubResource("CircleShape2D_qsqwy")
+
+[node name="InihawLiquids" parent="Prepping" unique_id=2144688986 instance=ExtResource("8_lqdy4")]
+position = Vector2(989, 384)
 
 [connection signal="chopping_finished" from="." to="." method="_on_chopping_finished"]
 [connection signal="chopped_garlic_finished" from="Mincing/ChoppableGarlic" to="." method="_on_choppable_garlic_chopped_garlic_finished"]

@@ -28,14 +28,19 @@ signal mincing_finished
 
 # PREPPING
 @onready var prepping: Node2D = $Prepping
+@onready var inihaw_liquids: Node2D = $Prepping/InihawLiquids
 
 
 func _ready() -> void:
 	chopping.position.x += get_viewport().get_visible_rect().size.x
 	mincing.position.x += get_viewport().get_visible_rect().size.x
+	prepping.position.x += get_viewport().get_visible_rect().size.x
 	front_bg.modulate.a = 0
 	
-	GlobalVars.item_enter(chopping)
+	#GlobalVars.item_enter(chopping)
+	create_tween().tween_property(top_down_bg, "modulate:a", 1, 0.3).set_trans(Tween.TRANS_CUBIC)
+
+	GlobalVars.item_enter(prepping)
 
 func _on_chopping_finished() -> void:
 	GlobalVars.item_enter(mincing)
@@ -48,3 +53,5 @@ func _on_choppable_garlic_chopped_garlic_finished() -> void:
 	create_tween().tween_property(top_down_bg, "modulate:a", 1, 0.3).set_trans(Tween.TRANS_CUBIC)
 
 	GlobalVars.item_enter(prepping)
+	
+	inihaw_liquids.check_liquid("Soy")

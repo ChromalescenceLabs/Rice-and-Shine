@@ -22,8 +22,6 @@ func _input(event: InputEvent) -> void:
 				mouse_hold = false
 				var current_velocity_x = Input.get_last_mouse_velocity().x
 				var current_velocity_y = Input.get_last_mouse_velocity().y
-				print(current_velocity_x)
-				print(current_velocity_y)
 				
 				if (abs(current_velocity_x) > 1000 or abs(current_velocity_y) > 1000) and passed_through:
 					slice.emit()

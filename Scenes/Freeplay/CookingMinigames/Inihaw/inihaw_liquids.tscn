@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://b5dqg1uou3ovd"]
+
+[ext_resource type="Texture2D" uid="uid://dbpijpal5q8k7" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/SoySauce.png" id="1_3t564"]
+[ext_resource type="Script" uid="uid://ceglph8w3bks0" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/inihaw_liquids.gd" id="1_wbji5"]
+[ext_resource type="Texture2D" uid="uid://qtr2m4xvfh61" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Calamansi.png" id="2_yo38x"]
+[ext_resource type="Texture2D" uid="uid://chg5lfqlhd8ua" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Ketchup.png" id="3_23aw0"]
+[ext_resource type="Texture2D" uid="uid://bncak8lem38ni" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Sprite.png" id="4_wbji5"]
+
+[sub_resource type="Gradient" id="Gradient_27br6"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.06879827, 0.06879828, 0.06879828, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vtp4t"]
+gradient = SubResource("Gradient_27br6")
+
+[sub_resource type="Curve" id="Curve_l4t57"]
+_data = [Vector2(0, 0.8876405), 0.0, 0.0, 0, 0, Vector2(0.3581081, 0.77528095), 0.0, 0.0, 0, 0, Vector2(0.7905406, 0.52808994), -0.35274094, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_idtpb"]
+curve = SubResource("Curve_l4t57")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oyhtv"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+scale_min = 0.7
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_idtpb")
+
+[sub_resource type="Gradient" id="Gradient_23aw0"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.8378878, 0.8499174, 0.24558902, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wbji5"]
+gradient = SubResource("Gradient_23aw0")
+
+[sub_resource type="Gradient" id="Gradient_vtp4t"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.6431373, 0.07058824, 0.07058824, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l4t57"]
+gradient = SubResource("Gradient_vtp4t")
+
+[sub_resource type="Gradient" id="Gradient_oyhtv"]
+colors = PackedColorArray(1, 1, 1, 1, 0.6056738, 1.6605109e-06, 3.85046e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wbji5"]
+gradient = SubResource("Gradient_oyhtv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o4lb7"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+scale_min = 0.7
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_idtpb")
+color = Color(0.7806942, 4.548356e-06, 4.813075e-07, 1)
+color_ramp = SubResource("GradientTexture1D_wbji5")
+
+[sub_resource type="Gradient" id="Gradient_exkbo"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.80049086, 0.80049074, 0.80049074, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r02qw"]
+gradient = SubResource("Gradient_exkbo")
+
+[node name="InihawLiquids" type="Node2D" unique_id=2144688986]
+script = ExtResource("1_wbji5")
+
+[node name="Sprites" type="Node2D" parent="." unique_id=1371445727]
+
+[node name="SoySauce" type="TextureRect" parent="Sprites" unique_id=151452467]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3t564")
+
+[node name="Calamansi" type="TextureRect" parent="Sprites" unique_id=22631184]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_yo38x")
+
+[node name="Ketchup" type="TextureRect" parent="Sprites" unique_id=300476056]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -175.0
+offset_right = 175.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_23aw0")
+
+[node name="Sprite" type="TextureRect" parent="Sprites" unique_id=999855131]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("4_wbji5")
+
+[node name="Particles" type="Node2D" parent="." unique_id=1998569975]
+
+[node name="Soy" type="GPUParticles2D" parent="Particles" unique_id=100910316]
+visible = false
+position = Vector2(1, 232)
+scale = Vector2(0.695, 0.695)
+texture = SubResource("GradientTexture2D_vtp4t")
+lifetime = 2.0
+speed_scale = 0.4
+process_material = SubResource("ParticleProcessMaterial_oyhtv")
+
+[node name="Calamnsi" type="GPUParticles2D" parent="Particles" unique_id=762750719]
+visible = false
+modulate = Color(1, 1, 1, 0.827451)
+position = Vector2(-66, -9)
+scale = Vector2(0.695, 0.695)
+texture = SubResource("GradientTexture2D_wbji5")
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_oyhtv")
+
+[node name="Ketchup" type="GPUParticles2D" parent="Particles" unique_id=1470822447]
+visible = false
+position = Vector2(-13, 67)
+scale = Vector2(0.695, 0.695)
+texture = SubResource("GradientTexture2D_l4t57")
+lifetime = 2.0
+speed_scale = 0.2
+process_material = SubResource("ParticleProcessMaterial_o4lb7")
+
+[node name="Sprite" type="GPUParticles2D" parent="Particles" unique_id=359629681]
+visible = false
+modulate = Color(1, 1, 1, 0.7254902)
+position = Vector2(-58, -12)
+scale = Vector2(0.695, 0.695)
+texture = SubResource("GradientTexture2D_r02qw")
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_oyhtv")
+
+[connection signal="mouse_entered" from="Sprites/SoySauce" to="." method="_on_soy_sauce_mouse_entered"]
+[connection signal="mouse_exited" from="Sprites/SoySauce" to="." method="_on_soy_sauce_mouse_exited"]
+[connection signal="finished" from="Particles/Soy" to="Particles/Soy" method="_on_finished"]
+[connection signal="finished" from="Particles/Calamnsi" to="Particles/Calamnsi" method="_on_finished"]
+[connection signal="finished" from="Particles/Ketchup" to="Particles/Ketchup" method="_on_finished"]
+[connection signal="finished" from="Particles/Sprite" to="Particles/Sprite" method="_on_finished"]
