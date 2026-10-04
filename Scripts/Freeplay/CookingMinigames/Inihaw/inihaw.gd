@@ -41,6 +41,7 @@ func _ready() -> void:
 	create_tween().tween_property(top_down_bg, "modulate:a", 1, 0.3).set_trans(Tween.TRANS_CUBIC)
 
 	GlobalVars.item_enter(prepping)
+	inihaw_liquids.check_liquid("Calamansi")
 
 func _on_chopping_finished() -> void:
 	GlobalVars.item_enter(mincing)
@@ -54,4 +55,3 @@ func _on_choppable_garlic_chopped_garlic_finished() -> void:
 
 	GlobalVars.item_enter(prepping)
 	
-	inihaw_liquids.check_liquid("Soy")

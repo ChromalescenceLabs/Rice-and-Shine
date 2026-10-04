@@ -16,35 +16,48 @@ var pouring : bool = false
 
 func _process(_delta: float) -> void:
 	if dragging: self.global_position = lerp(self.global_position, get_global_mouse_position() + Vector2(-50, -32), 0.2)
-	if pouring: 
-		if Input.is_action_just_pressed("Pour"): 
-			pouring = false
-			match liq_type:
-				"Soy": soy_sauce.rotation = 0
-				"Calamansi": calamansi.rotation = 0
-				"Ketchup": ketchup.rotation = 0
-				"Sprite": sprite.rotation = 0
-			
-			set_process_input(true)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Click"):
 		if draggable: dragging = true
 	elif event.is_action_released("Click"):
 		if dragging: dragging = false
-	elif event.is_action_pressed("Pour"):
+		
+	if event.is_action_pressed("Pour"):
 		if dragging:
-			match liq_type:
-				"Soy": soy_sauce.rotation = -180
-				"Calamansi": calamansi.rotation = -90
-				"Ketchup": ketchup.rotation = -90
-				"Sprite": sprite.rotation = -90
-			
-			set_process_input(false)
-			pouring = true
+			if pouring:
+				pouring = false
+				match liq_type:
+					"Soy": 
+						soy_sauce.rotation = 0
+						soyParticles.emitting = false
+					"Calamansi": 
+						calamansi.rotation = 0
+						calamansiParticles.emitting = false
+					"Ketchup": 
+						ketchup.rotation = 0
+						ketchupParticles.emitting = false
+					"Sprite": 
+						sprite.rotation = 0
+						sprite.emitting = false
+			else:
+				match liq_type:
+					"Soy": 
+						soy_sauce.rotation = 180
+						soyParticles.emitting = true
+					"Calamansi": 
+						calamansi.rotation = -90
+						calamansiParticles.emitting = true
+					"Ketchup": 
+						ketchup.rotation = -90
+						ketchupParticles.emitting = true
+					"Sprite": 
+						sprite.rotation = -90
+						spriteParticles.emitting = true
+					
+				pouring = true
 
 func check_liquid(liquid_type: String):
-	print(liquid_type)
 	liq_type = liquid_type
 	match liquid_type:
 		"Soy":
@@ -58,3 +71,12 @@ func check_liquid(liquid_type: String):
 
 func _on_soy_sauce_mouse_entered() -> void: draggable = true
 func _on_soy_sauce_mouse_exited() -> void: draggable = false
+
+func _on_calamansi_mouse_entered() -> void: draggable = true
+func _on_calamansi_mouse_exited() -> void: draggable = false
+
+func _on_ketchup_mouse_entered() -> void: draggable = true
+func _on_ketchup_mouse_exited() -> void: draggable = false
+
+func _on_sprite_mouse_entered() -> void: draggable = true
+func _on_sprite_mouse_exited() -> void: draggable = false

@@ -27,12 +27,18 @@ scale_min = 0.7
 scale_max = 0.7
 scale_curve = SubResource("CurveTexture_idtpb")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h11f"]
+size = Vector2(34.53238, 82.01437)
+
 [sub_resource type="Gradient" id="Gradient_23aw0"]
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(0.8378878, 0.8499174, 0.24558902, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wbji5"]
 gradient = SubResource("Gradient_23aw0")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbji5"]
+size = Vector2(34.53238, 82.01437)
 
 [sub_resource type="Gradient" id="Gradient_vtp4t"]
 offsets = PackedFloat32Array(1)
@@ -63,6 +69,9 @@ colors = PackedColorArray(0.80049086, 0.80049074, 0.80049074, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r02qw"]
 gradient = SubResource("Gradient_exkbo")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtp4t"]
+size = Vector2(34.53238, 82.01437)
+
 [node name="InihawLiquids" type="Node2D" unique_id=2144688986]
 script = ExtResource("1_wbji5")
 
@@ -81,6 +90,7 @@ offset_right = 100.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("1_3t564")
 
 [node name="Calamansi" type="TextureRect" parent="Sprites" unique_id=22631184]
@@ -136,7 +146,6 @@ texture = ExtResource("4_wbji5")
 [node name="Particles" type="Node2D" parent="." unique_id=1998569975]
 
 [node name="Soy" type="GPUParticles2D" parent="Particles" unique_id=100910316]
-visible = false
 position = Vector2(1, 232)
 scale = Vector2(0.695, 0.695)
 texture = SubResource("GradientTexture2D_vtp4t")
@@ -144,35 +153,62 @@ lifetime = 2.0
 speed_scale = 0.4
 process_material = SubResource("ParticleProcessMaterial_oyhtv")
 
+[node name="SoyArea" type="Area2D" parent="Particles/Soy" unique_id=2028117910]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Particles/Soy/SoyArea" unique_id=601276092]
+position = Vector2(-197.1223, 25.17987)
+shape = SubResource("RectangleShape2D_5h11f")
+
 [node name="Calamnsi" type="GPUParticles2D" parent="Particles" unique_id=762750719]
-visible = false
 modulate = Color(1, 1, 1, 0.827451)
-position = Vector2(-66, -9)
+position = Vector2(-136, 70)
 scale = Vector2(0.695, 0.695)
 texture = SubResource("GradientTexture2D_wbji5")
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_oyhtv")
 
+[node name="CalamansiArea" type="Area2D" parent="Particles/Calamnsi" unique_id=988611152]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Particles/Calamnsi/CalamansiArea" unique_id=1583476368]
+position = Vector2(197.1223, 486.33093)
+shape = SubResource("RectangleShape2D_wbji5")
+
 [node name="Ketchup" type="GPUParticles2D" parent="Particles" unique_id=1470822447]
-visible = false
-position = Vector2(-13, 67)
+position = Vector2(-48, 134)
 scale = Vector2(0.695, 0.695)
 texture = SubResource("GradientTexture2D_l4t57")
 lifetime = 2.0
 speed_scale = 0.2
 process_material = SubResource("ParticleProcessMaterial_o4lb7")
 
+[node name="KetchupArea" type="Area2D" parent="Particles/Ketchup" unique_id=501339847]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Particles/Ketchup/KetchupArea" unique_id=1496226055]
+position = Vector2(1.5258789e-05, 238.84892)
+shape = SubResource("RectangleShape2D_5h11f")
+
 [node name="Sprite" type="GPUParticles2D" parent="Particles" unique_id=359629681]
-visible = false
 modulate = Color(1, 1, 1, 0.7254902)
-position = Vector2(-58, -12)
+position = Vector2(-135, 74)
 scale = Vector2(0.695, 0.695)
 texture = SubResource("GradientTexture2D_r02qw")
 lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_oyhtv")
 
+[node name="SpriteArea" type="Area2D" parent="Particles/Sprite" unique_id=909261943]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Particles/Sprite/SpriteArea" unique_id=1985253142]
+position = Vector2(-1.4388585, 251.79855)
+shape = SubResource("RectangleShape2D_vtp4t")
+
 [connection signal="mouse_entered" from="Sprites/SoySauce" to="." method="_on_soy_sauce_mouse_entered"]
 [connection signal="mouse_exited" from="Sprites/SoySauce" to="." method="_on_soy_sauce_mouse_exited"]
+[connection signal="mouse_entered" from="Sprites/Calamansi" to="." method="_on_calamansi_mouse_entered"]
+[connection signal="mouse_exited" from="Sprites/Calamansi" to="." method="_on_calamansi_mouse_exited"]
+[connection signal="mouse_entered" from="Sprites/Ketchup" to="." method="_on_ketchup_mouse_entered"]
+[connection signal="mouse_exited" from="Sprites/Ketchup" to="." method="_on_ketchup_mouse_exited"]
+[connection signal="mouse_entered" from="Sprites/Sprite" to="." method="_on_sprite_mouse_entered"]
+[connection signal="mouse_exited" from="Sprites/Sprite" to="." method="_on_sprite_mouse_exited"]
 [connection signal="finished" from="Particles/Soy" to="Particles/Soy" method="_on_finished"]
 [connection signal="finished" from="Particles/Calamnsi" to="Particles/Calamnsi" method="_on_finished"]
 [connection signal="finished" from="Particles/Ketchup" to="Particles/Ketchup" method="_on_finished"]
