@@ -121,7 +121,18 @@ func _on_freed_bowls_child_exiting_tree(node: Node) -> void:
 		for i in bowl_conts.get_children():
 			if i.global_position == pos:
 				i.queue_free()
+				break
 		
 		if bowl_no < 7:
 			add_bowl.disabled = false
 			add_bowl.visible = true
+		
+		await node.tree_exited
+		
+		for i in freed_bowls.get_child_count():
+			var current_back_bowl = bowl_conts.get_children()[i]
+			var current_freed_bowl = freed_bowls.get_children()[i]
+			
+			if current_back_bowl is TextureRect:
+				current_freed_bowl.final_pos = current_back_bowl.global_position
+				current_freed_bowl.global_position = current_back_bowl.global_position
