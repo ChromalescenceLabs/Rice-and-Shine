@@ -137,3 +137,5 @@ func _on_shake_end() -> void:
 	
 	GlobalVars.item_exit(shaking)
 	GlobalVars.item_exit(prepping)
+	
+	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1.5)

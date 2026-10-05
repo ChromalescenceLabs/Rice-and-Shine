@@ -17,7 +17,7 @@ func _on_minigame_4_pressed() -> void:
 
 
 func _on_minigame_5_pressed() -> void:
-	pass # Replace with function body.
+	SceneLoader.load_scene("uid://cphb8p5iecw0j", 1.5)
 
 
 func _on_minigame_6_pressed() -> void:
