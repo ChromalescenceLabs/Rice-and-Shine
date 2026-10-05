@@ -1,0 +1,258 @@
+[gd_scene format=3 uid="uid://cphb8p5iecw0j"]
+
+[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Freeplay/Cooking_Minigames/CookingBG.jpg" id="1_5jnmg"]
+[ext_resource type="Script" uid="uid://wtfmhehy50ao" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/inihaw.gd" id="1_yfbyh"]
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="2_4ubv0"]
+[ext_resource type="PackedScene" uid="uid://cy1qe3w0ip4cu" path="res://Scenes/Freeplay/CookingMinigames/Inihaw/choppable_pork_belly.tscn" id="3_rcqij"]
+[ext_resource type="PackedScene" uid="uid://b3pmbrftfet5g" path="res://Scenes/Freeplay/CookingMinigames/Inihaw/choppable_garlic.tscn" id="5_f2kep"]
+[ext_resource type="Script" uid="uid://bl4klabjlrd7g" path="res://Scripts/Freeplay/CookingMinigames/Kanin/rice_bowl_fill_area.gd" id="6_qsqwy"]
+[ext_resource type="Texture2D" uid="uid://cokiq4wv1pq6d" path="res://Assets/Freeplay/Serving/ServeBowl.png" id="7_lqdy4"]
+[ext_resource type="Script" uid="uid://itd2yhebv8g5" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/progress_bars.gd" id="8_ewaq1"]
+[ext_resource type="PackedScene" uid="uid://b5dqg1uou3ovd" path="res://Scenes/Freeplay/CookingMinigames/Inihaw/inihaw_liquids.tscn" id="8_lqdy4"]
+[ext_resource type="Script" uid="uid://p8ja8tqo05ds" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/prep_sugar.gd" id="10_q0lgo"]
+[ext_resource type="Script" uid="uid://bq8ayildkmedc" path="res://Scripts/Freeplay/CustomerServing/shaking.gd" id="11_6bvxl"]
+[ext_resource type="Texture2D" uid="uid://c4rus6mfbs2mx" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/PepperShaker.png" id="11_6yvch"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ubv0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsqwy"]
+radius = 133.95895
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_08i74"]
+
+[sub_resource type="Gradient" id="Gradient_27br6"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.06879827, 0.06879828, 0.06879828, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6bvxl"]
+gradient = SubResource("Gradient_27br6")
+
+[sub_resource type="Curve" id="Curve_v1uch"]
+_data = [Vector2(0, 0.8876405), 0.0, 0.0, 0, 0, Vector2(0.3581081, 0.77528095), 0.0, 0.0, 0, 0, Vector2(0.7905406, 0.52808994), -0.35274094, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_idtpb"]
+curve = SubResource("Curve_v1uch")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cejby"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(-152.225, 1, 1)
+spread = 138.176
+gravity = Vector3(0, 98, 0)
+scale_min = 0.0
+scale_max = 0.25
+scale_curve = SubResource("CurveTexture_idtpb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08i74"]
+size = Vector2(118, 54.5)
+
+[sub_resource type="Animation" id="Animation_v1uch"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PepperShaker:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PepperShaker:offset_transform_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6bvxl"]
+resource_name = "shake"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PepperShaker:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -75.04), Vector2(0, 0), Vector2(0, -75.04), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PepperShaker:offset_transform_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.90095305, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [3.141592653589793, 3.141592653589793, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1uch"]
+_data = {
+&"RESET": SubResource("Animation_v1uch"),
+&"shake": SubResource("Animation_6bvxl")
+}
+
+[node name="Inihaw" type="Node2D" unique_id=299310958]
+script = ExtResource("1_yfbyh")
+
+[node name="FrontBG" type="Sprite2D" parent="." unique_id=739684769]
+texture = ExtResource("1_5jnmg")
+centered = false
+
+[node name="TopDownBG" type="Sprite2D" parent="." unique_id=713733489]
+texture = ExtResource("2_4ubv0")
+centered = false
+
+[node name="Chopping" type="Node2D" parent="." unique_id=1790517080]
+
+[node name="ChoppingBoard" type="Sprite2D" parent="Chopping" unique_id=1559184716]
+position = Vector2(626.00006, 362.00003)
+scale = Vector2(433.74997, 586.25)
+texture = SubResource("PlaceholderTexture2D_4ubv0")
+
+[node name="ChoppablePorkBelly" parent="Chopping" unique_id=2017030951 instance=ExtResource("3_rcqij")]
+position = Vector2(622, 361)
+
+[node name="Mincing" type="Node2D" parent="." unique_id=1750180682]
+
+[node name="ChoppableGarlic" parent="Mincing" unique_id=1855347188 instance=ExtResource("5_f2kep")]
+position = Vector2(627, 335)
+
+[node name="Prepping" type="Node2D" parent="." unique_id=603069927]
+
+[node name="BowlFillArea" type="Area2D" parent="Prepping" unique_id=237820023]
+position = Vector2(618, 399)
+script = ExtResource("6_qsqwy")
+metadata/_custom_type_script = "uid://bl4klabjlrd7g"
+metadata/_edit_group_ = true
+
+[node name="BowlSprite" type="Sprite2D" parent="Prepping/BowlFillArea" unique_id=1707447185]
+position = Vector2(7, 8)
+scale = Vector2(3.04, 3.04)
+texture = ExtResource("7_lqdy4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Prepping/BowlFillArea" unique_id=313121827]
+position = Vector2(-6, -8)
+shape = SubResource("CircleShape2D_qsqwy")
+
+[node name="ProgressBars" type="Node2D" parent="Prepping/BowlFillArea" unique_id=1857649563]
+script = ExtResource("8_ewaq1")
+
+[node name="SoySauceBar" type="ProgressBar" parent="Prepping/BowlFillArea/ProgressBars" unique_id=1286250350]
+offset_left = -185.0
+offset_top = -219.0
+offset_right = 183.0
+offset_bottom = -184.0
+
+[node name="CalamansiBar" type="ProgressBar" parent="Prepping/BowlFillArea/ProgressBars" unique_id=1639230893]
+modulate = Color(1, 1, 1, 0)
+offset_left = -185.0
+offset_top = -219.0
+offset_right = 183.0
+offset_bottom = -184.0
+
+[node name="KetchupBar" type="ProgressBar" parent="Prepping/BowlFillArea/ProgressBars" unique_id=478477413]
+modulate = Color(1, 1, 1, 0)
+offset_left = -185.0
+offset_top = -219.0
+offset_right = 183.0
+offset_bottom = -184.0
+
+[node name="SpriteBar" type="ProgressBar" parent="Prepping/BowlFillArea/ProgressBars" unique_id=1006157222]
+modulate = Color(1, 1, 1, 0)
+offset_left = -185.0
+offset_top = -219.0
+offset_right = 183.0
+offset_bottom = -184.0
+
+[node name="InihawLiquids" parent="Prepping" unique_id=2144688986 instance=ExtResource("8_lqdy4")]
+position = Vector2(989, 384)
+
+[node name="PrepSugar" type="Node2D" parent="." unique_id=1060060858]
+script = ExtResource("10_q0lgo")
+
+[node name="Sugar" type="TextureRect" parent="PrepSugar" unique_id=820827925]
+offset_left = 879.0
+offset_top = 113.0
+offset_right = 1195.0
+offset_bottom = 569.0
+texture = SubResource("PlaceholderTexture2D_08i74")
+
+[node name="Shaking" type="Node2D" parent="." unique_id=751092182]
+script = ExtResource("11_6bvxl")
+
+[node name="PepperShaker" type="TextureRect" parent="Shaking" unique_id=1532828095]
+offset_left = 822.0
+offset_top = 43.0
+offset_right = 1172.0
+offset_bottom = 763.0
+scale = Vector2(0.495, 0.495)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+offset_transform_enabled = true
+texture = ExtResource("11_6yvch")
+
+[node name="Pepper" type="GPUParticles2D" parent="Shaking/PepperShaker" unique_id=519833681]
+position = Vector2(164.89902, 636.7677)
+scale = Vector2(0.695, 0.695)
+emitting = false
+texture = SubResource("GradientTexture2D_6bvxl")
+lifetime = 2.0
+speed_scale = 3.5
+process_material = SubResource("ParticleProcessMaterial_cejby")
+
+[node name="PepperShakeArea" type="Area2D" parent="Shaking" unique_id=1053819400]
+scale = Vector2(0.99999994, 0.99999994)
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shaking/PepperShakeArea" unique_id=2047277264]
+position = Vector2(989, 681)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Shaking" unique_id=1679159468]
+libraries/ = SubResource("AnimationLibrary_v1uch")
+speed_scale = 1.5
+
+[connection signal="chopping_finished" from="." to="." method="_on_chopping_finished"]
+[connection signal="prepSugarDone" from="." to="." method="_on_prep_sugar_done"]
+[connection signal="shake_end" from="." to="." method="_on_shake_end"]
+[connection signal="shake_start" from="." to="Shaking" method="_on_inihaw_shake_start"]
+[connection signal="chopped_garlic_finished" from="Mincing/ChoppableGarlic" to="." method="_on_choppable_garlic_chopped_garlic_finished"]
+[connection signal="calamansi_done" from="Prepping/BowlFillArea/ProgressBars" to="." method="_on_progress_bars_calamansi_done"]
+[connection signal="calamansi_done" from="Prepping/BowlFillArea/ProgressBars" to="Prepping/BowlFillArea/ProgressBars" method="_on_calamansi_done"]
+[connection signal="calamansi_done" from="Prepping/BowlFillArea/ProgressBars" to="Prepping/InihawLiquids" method="_on_progress_bars_calamansi_done"]
+[connection signal="ketchup_done" from="Prepping/BowlFillArea/ProgressBars" to="." method="_on_progress_bars_ketchup_done"]
+[connection signal="ketchup_done" from="Prepping/BowlFillArea/ProgressBars" to="Prepping/BowlFillArea/ProgressBars" method="_on_ketchup_done"]
+[connection signal="ketchup_done" from="Prepping/BowlFillArea/ProgressBars" to="Prepping/InihawLiquids" method="_on_progress_bars_ketchup_done"]
+[connection signal="soy_sauce_done" from="Prepping/BowlFillArea/ProgressBars" to="." method="_on_progress_bars_soy_sauce_done"]
+[connection signal="soy_sauce_done" from="Prepping/BowlFillArea/ProgressBars" to="Prepping/BowlFillArea/ProgressBars" method="_on_soy_sauce_done"]
+[connection signal="soy_sauce_done" from="Prepping/BowlFillArea/ProgressBars" to="Prepping/InihawLiquids" method="_on_progress_bars_soy_sauce_done"]
+[connection signal="sprite_done" from="Prepping/BowlFillArea/ProgressBars" to="." method="_on_progress_bars_sprite_done"]
+[connection signal="sprite_done" from="Prepping/BowlFillArea/ProgressBars" to="Prepping/BowlFillArea/ProgressBars" method="_on_sprite_done"]
+[connection signal="sprite_done" from="Prepping/BowlFillArea/ProgressBars" to="Prepping/InihawLiquids" method="_on_progress_bars_sprite_done"]
+[connection signal="value_changed" from="Prepping/BowlFillArea/ProgressBars/SoySauceBar" to="Prepping/BowlFillArea/ProgressBars" method="_on_soy_sauce_bar_value_changed"]
+[connection signal="value_changed" from="Prepping/BowlFillArea/ProgressBars/CalamansiBar" to="Prepping/BowlFillArea/ProgressBars" method="_on_calamansi_bar_value_changed"]
+[connection signal="value_changed" from="Prepping/BowlFillArea/ProgressBars/KetchupBar" to="Prepping/BowlFillArea/ProgressBars" method="_on_ketchup_bar_value_changed"]
+[connection signal="value_changed" from="Prepping/BowlFillArea/ProgressBars/SpriteBar" to="Prepping/BowlFillArea/ProgressBars" method="_on_sprite_bar_value_changed"]
+[connection signal="mouse_entered" from="PrepSugar/Sugar" to="PrepSugar" method="_on_sugar_mouse_entered"]
+[connection signal="mouse_exited" from="PrepSugar/Sugar" to="PrepSugar" method="_on_sugar_mouse_exited"]
+[connection signal="mouse_entered" from="Shaking/PepperShaker" to="Shaking" method="_on_pepper_shaker_mouse_entered"]
+[connection signal="mouse_exited" from="Shaking/PepperShaker" to="Shaking" method="_on_pepper_shaker_mouse_exited"]
+[connection signal="area_entered" from="Shaking/PepperShakeArea" to="Shaking" method="_on_pepper_shake_area_area_entered"]
+[connection signal="area_exited" from="Shaking/PepperShakeArea" to="Shaking" method="_on_pepper_shake_area_area_exited"]

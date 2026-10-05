@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cwi7ud17itmbg"]
+
+[ext_resource type="Texture2D" uid="uid://b8pycewahokgt" path="res://Assets/Freeplay/Serving/FoodPickupImgs/rice.png" id="1_hwlt5"]
+[ext_resource type="Script" uid="uid://buiggaucsdr0n" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/sugar_piece.gd" id="1_qmldi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
+radius = 21.213203
+
+[node name="SugarPiece" type="Area2D" unique_id=188521368]
+script = ExtResource("1_qmldi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=365883360]
+texture = ExtResource("1_hwlt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=802957095]
+shape = SubResource("CircleShape2D_08i74")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
