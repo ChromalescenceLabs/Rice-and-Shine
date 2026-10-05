@@ -56,5 +56,4 @@ func _on_ketchup_done() -> void:
 	fade_in(sprite_bar)
 
 func _on_sprite_done() -> void:
-	await fade_out(sprite_bar)
-	fade_in(sprite_bar)
+	fade_out(sprite_bar)

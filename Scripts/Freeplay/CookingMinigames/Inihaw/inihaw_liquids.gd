@@ -25,6 +25,11 @@ var in_cal: bool = false
 var in_ketchup: bool = false
 var in_sprite: bool = false
 
+var soy_done: bool = false
+var cal_done: bool = false
+var ketchup_done: bool = false
+var sprite_done: bool = false
+
 func _process(_delta: float) -> void:
 	if dragging: self.global_position = lerp(self.global_position, get_global_mouse_position() + Vector2(-50, -32), 0.2)
 	if in_soy: get_tree().current_scene.progress_bars.soy_sauce_bar.value += 1
@@ -60,13 +65,13 @@ func _input(event: InputEvent) -> void:
 						ketchup_area.monitorable = false
 					"Sprite": 
 						sprite.rotation = 0
-						sprite.emitting = false
+						spriteParticles.emitting = false
 						sprite_area.monitoring = false
 						sprite_area.monitorable = false
 			else:
 				match liq_type:
 					"Soy": 
-						soy_sauce.rotation = 180
+						soy_sauce.rotation = -90
 						soyParticles.emitting = true
 						soy_area.monitoring = true
 						soy_area.monitorable = true
@@ -126,14 +131,32 @@ func _on_sprite_mouse_exited() -> void: draggable = false
 
 
 
-func _on_soy_area_area_entered(area: Area2D) -> void: if area is BowlFillArea: in_soy = true
+func _on_soy_area_area_entered(area: Area2D) -> void: if area is BowlFillArea and not soy_done: in_soy = true
 func _on_soy_area_area_exited(area: Area2D) -> void: if area is BowlFillArea: in_soy = false
 
-func _on_calamansi_area_area_entered(area: Area2D) -> void: if area is BowlFillArea: in_cal = true
+func _on_calamansi_area_area_entered(area: Area2D) -> void: if area is BowlFillArea and not cal_done: in_cal = true
 func _on_calamansi_area_area_exited(area: Area2D) -> void: if area is BowlFillArea: in_cal = false 
 
-func _on_ketchup_area_area_entered(area: Area2D) -> void: if area is BowlFillArea: in_ketchup = true
+func _on_ketchup_area_area_entered(area: Area2D) -> void: if area is BowlFillArea and not ketchup_done: in_ketchup = true
 func _on_ketchup_area_area_exited(area: Area2D) -> void: if area is BowlFillArea: in_ketchup = false
 
-func _on_sprite_area_area_entered(area: Area2D) -> void: if area is BowlFillArea: in_sprite = true
+func _on_sprite_area_area_entered(area: Area2D) -> void: if area is BowlFillArea and not sprite_done: in_sprite = true
 func _on_sprite_area_area_exited(area: Area2D) -> void: if area is BowlFillArea: in_sprite = false
+
+
+
+func _on_progress_bars_soy_sauce_done() -> void:
+	soy_done = true
+	soyParticles.visible = false
+	
+func _on_progress_bars_calamansi_done() -> void: 
+	cal_done = true
+	calamansiParticles.visible = false
+	
+func _on_progress_bars_ketchup_done() -> void: 
+	ketchup_done = true
+	ketchupParticles.visible = false
+	
+func _on_progress_bars_sprite_done() -> void: 
+	sprite_done = true
+	spriteParticles.visible = false

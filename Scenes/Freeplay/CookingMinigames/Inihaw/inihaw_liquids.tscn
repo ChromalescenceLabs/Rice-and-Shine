@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5dqg1uou3ovd"]
 
 [ext_resource type="Texture2D" uid="uid://dbpijpal5q8k7" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/SoySauce.png" id="1_3t564"]
-[ext_resource type="Script" uid="uid://ceglph8w3bks0" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/inihaw_liquids.gd" id="1_wbji5"]
+[ext_resource type="Script" uid="uid://lj607magxct3" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/inihaw_liquids.gd" id="1_wbji5"]
 [ext_resource type="Texture2D" uid="uid://qtr2m4xvfh61" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Calamansi.png" id="2_yo38x"]
 [ext_resource type="Texture2D" uid="uid://chg5lfqlhd8ua" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Ketchup.png" id="3_23aw0"]
 [ext_resource type="Texture2D" uid="uid://bncak8lem38ni" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Sprite.png" id="4_wbji5"]
@@ -146,12 +146,11 @@ texture = ExtResource("4_wbji5")
 [node name="Particles" type="Node2D" parent="." unique_id=1998569975]
 
 [node name="Soy" type="GPUParticles2D" parent="Particles" unique_id=100910316]
-position = Vector2(1, 232)
+position = Vector2(-251, 90)
 scale = Vector2(0.695, 0.695)
 emitting = false
 texture = SubResource("GradientTexture2D_vtp4t")
 lifetime = 2.0
-speed_scale = 0.4
 process_material = SubResource("ParticleProcessMaterial_oyhtv")
 
 [node name="SoyArea" type="Area2D" parent="Particles/Soy" unique_id=2028117910]
@@ -159,7 +158,7 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Particles/Soy/SoyArea" unique_id=601276092]
-position = Vector2(-197.1223, 25.17987)
+position = Vector2(1.438858, 241.72665)
 shape = SubResource("RectangleShape2D_5h11f")
 
 [node name="Calamnsi" type="GPUParticles2D" parent="Particles" unique_id=762750719]
@@ -176,7 +175,7 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Particles/Calamnsi/CalamansiArea" unique_id=1583476368]
-position = Vector2(197.1223, 486.33093)
+position = Vector2(-1.5258789e-05, 257.55396)
 shape = SubResource("RectangleShape2D_wbji5")
 
 [node name="Ketchup" type="GPUParticles2D" parent="Particles" unique_id=1470822447]
@@ -185,7 +184,6 @@ scale = Vector2(0.695, 0.695)
 emitting = false
 texture = SubResource("GradientTexture2D_l4t57")
 lifetime = 2.0
-speed_scale = 0.2
 process_material = SubResource("ParticleProcessMaterial_o4lb7")
 
 [node name="KetchupArea" type="Area2D" parent="Particles/Ketchup" unique_id=501339847]
