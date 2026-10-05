@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://f5bkmxvr0cpx"]
 
-[ext_resource type="Script" uid="uid://hgoektb2ljc" path="res://Scenes/Menus/chapter_carousel_menu.gd" id="1_uj1cm"]
+[ext_resource type="Script" uid="uid://hgoektb2ljc" path="res://Scripts/Menus/ChapterSelect/chapter_carousel_menu.gd" id="1_uj1cm"]
 [ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/placeholderbg.png" id="2_rp5vy"]
 [ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Menus/tempbutton.png" id="3_uj1cm"]
 [ext_resource type="Texture2D" uid="uid://rggpnteoka14" path="res://Assets/Menus/chapterart.png" id="4_uj1cm"]
-[ext_resource type="Script" uid="uid://bkgriptcxt2qn" path="res://Scenes/Menus/confirmbtn.gd" id="5_uj1cm"]
+[ext_resource type="Script" uid="uid://bkgriptcxt2qn" path="res://Scripts/Menus/ChapterSelect/confirmbtn.gd" id="5_uj1cm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4821w"]
 
@@ -228,7 +228,7 @@ offset_bottom = 2.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CHAPTERSELECT" type="RichTextLabel" parent="." unique_id=1746309897]
+[node name="HEADER" type="RichTextLabel" parent="." unique_id=1746309897]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.50200003
@@ -241,6 +241,7 @@ offset_right = 286.43994
 offset_bottom = 40.839996
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
 text = "CHAPTER SELECT"
 horizontal_alignment = 1
 
@@ -257,36 +258,7 @@ offset_right = 281.0
 offset_bottom = 9.23999
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 25
-text = ":O)"
 horizontal_alignment = 1
-
-[node name="LOCKED" type="Label" parent="." unique_id=940081336]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -72.0
-offset_top = 672.0
-offset_right = 73.0
-offset_bottom = 714.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 30
-horizontal_alignment = 1
-
-[node name="Panel" type="Panel" parent="." unique_id=418783338]
-visible = false
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
-grow_horizontal = 0
-grow_vertical = 2
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TextureRect/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TextureRect2/Next" to="." method="_on_next_pressed"]

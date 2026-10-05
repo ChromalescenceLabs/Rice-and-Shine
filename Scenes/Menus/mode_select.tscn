@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://b3yg37jllbb67" path="res://Scripts/Menus/ModeSelect/MODE_SELECT.gd" id="1_rel82"]
 [ext_resource type="Texture2D" uid="uid://dnulc8osr7rqc" path="res://Assets/TEMPMENUBG.png" id="2_xxbn6"]
-[ext_resource type="Script" uid="uid://duv0awwxqsxdb" path="res://Scenes/Menus/storytext.gd" id="3_w8xo7"]
 [ext_resource type="Script" uid="uid://b8h8y1dk1kvm5" path="res://Scripts/Menus/ModeSelect/storybtn.gd" id="4_6vmvb"]
 [ext_resource type="Script" uid="uid://b56iqah5om6xq" path="res://Scripts/Menus/ModeSelect/freeplaybtn.gd" id="4_taxq6"]
 [ext_resource type="Texture2D" uid="uid://coimcmqajakru" path="res://Assets/TEMPCLOSEDWINDOW.png" id="5_bril0"]
-[ext_resource type="Script" uid="uid://bf2iaxrask1cs" path="res://Scenes/Menus/storybtntexture.gd" id="5_kj3s7"]
-[ext_resource type="Script" uid="uid://8itcbbm40jlf" path="res://Scenes/Menus/modebg_anim.gd" id="7_jan6t"]
-[ext_resource type="Script" uid="uid://b8kmlath5bg4t" path="res://Scenes/Menus/freeplaybtntexture.gd" id="7_kj3s7"]
+[ext_resource type="Script" uid="uid://8itcbbm40jlf" path="res://Scripts/Menus/ModeSelect/modebg_anim.gd" id="7_jan6t"]
 [ext_resource type="Animation" uid="uid://c4l8g78egdc2g" path="res://Assets/ANIMATIONS/BG.res" id="7_w8xo7"]
 [ext_resource type="Texture2D" uid="uid://b57au0x8eieye" path="res://Assets/TEMPOPENWINDOW.png" id="8_nec4f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bril0"]
+load_path = "res://.godot/imported/TEMPCLOSEDWINDOW.png-f93d940505afd9cfe64bdb340430f494.ctex"
 
 [sub_resource type="Animation" id="Animation_bril0"]
 resource_name = "FREEPLAY"
@@ -18,134 +18,134 @@ step = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("FREEPLAY/FTEXTURE:scale")
-tracks/0/interp = 1
+tracks/0/path = NodePath("BACKGROUND:position")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+"values": [Vector2(642, 358), Vector2(326, 341)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FREEPLAY/FTEXTURE:position")
-tracks/1/interp = 1
+tracks/1/path = NodePath("BACKGROUND:scale")
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.005, 0.6),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(201, 145), Vector2(78, 130)]
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("BACKGROUND:position")
-tracks/2/interp = 2
+tracks/2/path = NodePath("FREETEXT:visible")
+tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(642, 358), Vector2(326, 341)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("BACKGROUND:scale")
-tracks/3/interp = 2
+tracks/3/path = NodePath("STORYTEXT:visible")
+tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("STORY/STEXTURE:scale")
+tracks/4/path = NodePath("MODESELECT:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("STORY/STEXTURE:position")
+tracks/5/path = NodePath("FREEPLAY:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(217, 156), Vector2(-283, 127)]
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("FREETEXT:visible")
+tracks/6/path = NodePath("FREEPLAY:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0.015000001, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(774, 160), Vector2(641, 112)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("STORYTEXT:visible")
+tracks/7/path = NodePath("FREEPLAY:texture_normal")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [ExtResource("8_nec4f")]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("MODESELECT:visible")
+tracks/8/path = NodePath("STORY:scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("STORY/STEXTURE:texture")
+tracks/9/path = NodePath("STORY:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("5_bril0")]
+"times": PackedFloat32Array(0.015000001, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(71, 162), Vector2(-418.99997, 97)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("FREEPLAY/FTEXTURE:texture")
+tracks/10/path = NodePath("STORY:texture_normal")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("8_nec4f")]
+"values": [ExtResource("5_bril0")]
 }
 
 [sub_resource type="Animation" id="Animation_jan6t"]
@@ -177,122 +177,146 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("STORY/STEXTURE:position")
+tracks/2/path = NodePath("STORYTEXT:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(217, 156)]
+"values": [Vector2(53, 532)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("STORY/STEXTURE:scale")
+tracks/3/path = NodePath("FREETEXT:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"update": 1,
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("FREEPLAY/FTEXTURE:scale")
+tracks/4/path = NodePath("STORYTEXT:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"update": 1,
+"values": [true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("FREEPLAY/FTEXTURE:position")
+tracks/5/path = NodePath("MODESELECT:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(201, 145)]
+"update": 1,
+"values": [true]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("STORYTEXT:position")
+tracks/6/path = NodePath("STORY:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(53, 532)]
+"values": [Vector2(1, 1)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("FREETEXT:visible")
+tracks/7/path = NodePath("STORY:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(71, 162)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("STORYTEXT:visible")
+tracks/8/path = NodePath("FREEPLAY:scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("MODESELECT:visible")
+tracks/9/path = NodePath("FREEPLAY:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(774, 160)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("STORY/STEXTURE:texture")
+tracks/10/path = NodePath("STORY:texture_normal")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_bril0")]
+"values": [SubResource("CompressedTexture2D_bril0")]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("FREEPLAY/FTEXTURE:texture")
+tracks/11/path = NodePath("FREEPLAY:texture_normal")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("8_nec4f")]
+"values": [ExtResource("5_bril0")]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("STORY:pivot_offset")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.02),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(219, 160.5)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("FREEPLAY:pivot_offset")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.02),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(219, 160.5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kj3s7"]
@@ -311,7 +335,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rel82")
 tween_intensity = 1.2
-tween_duration = 0.3
+tween_duration = 0.2
 
 [node name="BACKGROUND" type="Sprite2D" parent="." unique_id=676390045]
 position = Vector2(642, 358)
@@ -320,14 +344,14 @@ texture = ExtResource("2_xxbn6")
 [node name="MODESELECT" type="RichTextLabel" parent="." unique_id=1447347630]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.14500001
-anchor_right = 0.5
-anchor_bottom = 0.14500001
-offset_left = -162.0
-offset_top = -38.40001
-offset_right = 189.00024
-offset_bottom = 38.600067
+anchor_left = 0.49800003
+anchor_top = 0.123
+anchor_right = 0.49800003
+anchor_bottom = 0.123
+offset_left = -175.44006
+offset_top = -38.560005
+offset_right = 175.56018
+offset_bottom = 38.44007
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "MODE SELECT"
@@ -346,9 +370,9 @@ offset_right = 229.41306
 offset_bottom = 31.039978
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "Manage your grandma's carinderia!"
+bbcode_enabled = true
+text = "[wave amp=20.0 freq=5.0 connected=1] Manage your grandma's carinderia! [/wave]"
 horizontal_alignment = 1
-script = ExtResource("3_w8xo7")
 
 [node name="FREETEXT" type="RichTextLabel" parent="." unique_id=351870618]
 layout_mode = 1
@@ -360,67 +384,59 @@ anchor_bottom = 0.76500005
 offset_left = -226.52002
 offset_top = -25.800049
 offset_right = 203.47961
-offset_bottom = 22.199951
+offset_bottom = 52.19995
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "Cook food to your heart's desires!!"
+bbcode_enabled = true
+text = "[wave amp=20.0 freq=5.0 connected=1] Cook food to your heart's desires!! [/wave]"
 horizontal_alignment = 1
-script = ExtResource("3_w8xo7")
 
 [node name="STORY" type="TextureButton" parent="." unique_id=557309226]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.22900002
-anchor_top = 0.5
-anchor_right = 0.22900002
-anchor_bottom = 0.5
-offset_left = -218.12003
-offset_top = -180.0
-offset_right = 219.88028
-offset_bottom = 141.0
+anchor_left = 0.19500001
+anchor_top = 0.395
+anchor_right = 0.19500001
+anchor_bottom = 0.395
+offset_left = -178.6
+offset_top = -122.399994
+offset_right = 259.40015
+offset_bottom = 198.6
+pivot_offset = Vector2(219, 160.5)
+texture_normal = SubResource("CompressedTexture2D_bril0")
+texture_pressed = ExtResource("8_nec4f")
+texture_hover = ExtResource("8_nec4f")
 script = ExtResource("4_6vmvb")
-
-[node name="STEXTURE" type="Sprite2D" parent="STORY" unique_id=381801425]
-position = Vector2(217, 156)
-texture = ExtResource("5_bril0")
-script = ExtResource("5_kj3s7")
 
 [node name="FREEPLAY" type="TextureButton" parent="." unique_id=1309194630]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.78400004
-anchor_top = 0.5
-anchor_right = 0.78400004
-anchor_bottom = 0.5
-offset_left = -211.52002
-offset_top = -171.0
-offset_right = 218.47998
-offset_bottom = 145.0
+anchor_left = 0.694
+anchor_top = 0.41700003
+anchor_right = 0.694
+anchor_bottom = 0.41700003
+offset_left = -114.32001
+offset_top = -140.24002
+offset_right = 323.68024
+offset_bottom = 180.75998
+pivot_offset = Vector2(219, 160.5)
+texture_normal = ExtResource("5_bril0")
+texture_pressed = ExtResource("8_nec4f")
+texture_hover = ExtResource("8_nec4f")
 script = ExtResource("4_taxq6")
-
-[node name="FTEXTURE" type="Sprite2D" parent="FREEPLAY" unique_id=605813390]
-position = Vector2(201, 145)
-texture = ExtResource("8_nec4f")
-script = ExtResource("7_kj3s7")
 
 [node name="MODEANIM" type="AnimationPlayer" parent="." unique_id=623459664]
 libraries/ = SubResource("AnimationLibrary_kj3s7")
 script = ExtResource("7_jan6t")
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="STORY" to="." method="_on_story_mouse_entered"]
 [connection signal="mouse_entered" from="STORY" to="STORYTEXT" method="_on_story_mouse_entered"]
 [connection signal="mouse_entered" from="STORY" to="STORY" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="STORY" to="STORY/STEXTURE" method="_on_story_mouse_entered"]
 [connection signal="mouse_exited" from="STORY" to="." method="_on_story_mouse_exited"]
-[connection signal="mouse_exited" from="STORY" to="STORY/STEXTURE" method="_on_story_mouse_exited"]
 [connection signal="pressed" from="STORY" to="STORY" method="_on_pressed"]
-[connection signal="pressed" from="STORY" to="STORY/STEXTURE" method="_on_story_pressed"]
 [connection signal="pressed" from="STORY" to="MODEANIM" method="_on_story_pressed"]
 [connection signal="mouse_entered" from="FREEPLAY" to="." method="_on_freeplay_mouse_entered"]
-[connection signal="mouse_entered" from="FREEPLAY" to="FREEPLAY/FTEXTURE" method="_on_freeplay_mouse_entered"]
 [connection signal="mouse_exited" from="FREEPLAY" to="." method="_on_freeplay_mouse_exited"]
-[connection signal="mouse_exited" from="FREEPLAY" to="FREEPLAY/FTEXTURE" method="_on_freeplay_mouse_exited"]
 [connection signal="pressed" from="FREEPLAY" to="FREEPLAY" method="_on_pressed"]
-[connection signal="pressed" from="FREEPLAY" to="FREEPLAY/FTEXTURE" method="_on_freeplay_pressed"]
 [connection signal="pressed" from="FREEPLAY" to="MODEANIM" method="_on_freeplay_pressed"]
+[connection signal="current_animation_changed" from="MODEANIM" to="." method="_on_modeanim_current_animation_changed"]

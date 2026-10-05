@@ -1,5 +1,5 @@
 extends RichTextLabel
-
+#ignore this, i did this before i knew about bbcode
 @export var speed: float = 3.0
 @export var direction: Vector2 = Vector2.ZERO
 @export var changeinterval: float = 1.5
