@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://g2mj87nvmarh"]
 
-[ext_resource type="Script" uid="uid://b5676b7wq5ykb" path="res://Scripts/Menus/MainMenu/main_menu_buttons.gd" id="1_2k7c8"]
+[ext_resource type="Script" uid="uid://lnpgiahuyntr" path="res://Scripts/Menus/MainMenu/main_menu_buttons.gd" id="1_2k7c8"]
 [ext_resource type="Texture2D" uid="uid://bmdh8xfhqe17j" path="res://Assets/Menus/MainMenu/main menu bg.png" id="2_e5w6c"]
-[ext_resource type="Script" uid="uid://b52ieug3kg06n" path="res://Scripts/Menus/MainMenu/background.gd" id="3_2k7c8"]
+[ext_resource type="Script" uid="uid://c0o4q05uwc1n" path="res://Scripts/Menus/MainMenu/background.gd" id="3_2k7c8"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="4_euxup"]
-[ext_resource type="Script" uid="uid://djjbw3c46ht45" path="res://Scripts/Menus/MainMenu/quit.gd" id="5_2k7c8"]
-[ext_resource type="Script" uid="uid://c66jgritmb8y5" path="res://Scripts/Menus/MainMenu/start.gd" id="6_2k7c8"]
-[ext_resource type="Script" uid="uid://dqqfae7yevku2" path="res://Scripts/Menus/Options/options.gd" id="7_2k7c8"]
+[ext_resource type="Script" uid="uid://j28786r700op" path="res://Scripts/Menus/MainMenu/quit.gd" id="5_2k7c8"]
+[ext_resource type="Script" uid="uid://clvovqtgykaen" path="res://Scripts/Menus/MainMenu/start.gd" id="6_2k7c8"]
+[ext_resource type="Script" uid="uid://c1eyxkwtk5vr" path="res://Scripts/Menus/Options/options.gd" id="7_2k7c8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf7jh"]
 bg_color = Color(0.19607843, 0.5803922, 0.85882354, 1)

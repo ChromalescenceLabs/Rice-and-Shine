@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://f5bkmxvr0cpx"]
 
-[ext_resource type="Script" uid="uid://hgoektb2ljc" path="res://Scripts/Menus/ChapterSelect/chapter_carousel_menu.gd" id="1_uj1cm"]
+[ext_resource type="Script" uid="uid://hgoektb2ljc" path="res://Scenes/Menus/chapter_carousel_menu.gd" id="1_uj1cm"]
 [ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/placeholderbg.png" id="2_rp5vy"]
 [ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Menus/tempbutton.png" id="3_uj1cm"]
 [ext_resource type="Texture2D" uid="uid://rggpnteoka14" path="res://Assets/Menus/chapterart.png" id="4_uj1cm"]
-[ext_resource type="Script" uid="uid://bkgriptcxt2qn" path="res://Scripts/Menus/ChapterSelect/confirmbtn.gd" id="5_uj1cm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4821w"]
 
@@ -29,40 +28,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6cgi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bgfd"]
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aic0f"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4t1on"]
-bg_color = Color(0.3650881, 0.36508793, 0.3650879, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2cts"]
-bg_color = Color(0.3647059, 0.3647059, 0.3647059, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uj1cm"]
-border_width_bottom = 3
-border_color = Color(0.3953672, 0.39536718, 0.39536715, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg62a"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fmhm"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ot2a"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yam8d"]
-
-[node name="Control" type="Control" unique_id=685714052]
+[node name="Control" type="Control" unique_id=685714052 node_paths=PackedStringArray("TargetNode")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,6 +37,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uj1cm")
+TargetNode = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer/CH1IMG")
 
 [node name="placeholderbg" type="Sprite2D" parent="." unique_id=54279452]
 position = Vector2(638, 361)
@@ -89,7 +57,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_bottom = 30
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1741316874]
 layout_mode = 2
@@ -192,26 +160,14 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_0dvlp")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_yc2ky")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_q6cgi")
 
-[node name="CONFIRMBTN" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1700294055 node_paths=PackedStringArray("CHAP1", "CHAP2", "CHAP3")]
+[node name="CONFIRMBTN" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1700294055]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_4bgfd")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_aic0f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4t1on")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_o2cts")
-theme_override_styles/hover = SubResource("StyleBoxFlat_uj1cm")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_wg62a")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4fmhm")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_6ot2a")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_yam8d")
 text = "CONFIRM
 "
-script = ExtResource("5_uj1cm")
-CHAP1 = NodePath("../HBoxContainer/ScrollContainer/ObjectContainer/CH1IMG")
-CHAP2 = NodePath("../HBoxContainer/ScrollContainer/ObjectContainer/CH2IMG")
-CHAP3 = NodePath("../HBoxContainer/ScrollContainer/ObjectContainer/CH3IMG")
 
 [node name="SelectionMarker" type="Control" parent="." unique_id=1894274957]
 unique_name_in_owner = true
@@ -228,36 +184,33 @@ offset_bottom = 2.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HEADER" type="RichTextLabel" parent="." unique_id=1746309897]
+[node name="CHAPTERSELECT" type="RichTextLabel" parent="." unique_id=1746309897]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.50200003
-anchor_top = 0.053000003
-anchor_right = 0.50200003
-anchor_bottom = 0.053000003
-offset_left = -287.56006
-offset_top = -40.160004
-offset_right = 286.43994
-offset_bottom = 40.839996
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -264.0
+offset_top = 3.0
+offset_right = 310.0
+offset_bottom = 84.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 50
-bbcode_enabled = true
 text = "CHAPTER SELECT"
 horizontal_alignment = 1
 
-[node name="DESCRIPTION" type="RichTextLabel" parent="." unique_id=981405533]
+[node name="LOCKED" type="Label" parent="." unique_id=940081336]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.85800004
 anchor_right = 0.5
-anchor_bottom = 0.85800004
-offset_left = -278.0
-offset_top = -25.76001
-offset_right = 281.0
-offset_bottom = 9.23999
+offset_left = -72.0
+offset_top = 606.0
+offset_right = 73.0
+offset_bottom = 693.0
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/font_size = 30
+text = "LOCKED
+"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TextureRect/Previous" to="." method="_on_previous_pressed"]
