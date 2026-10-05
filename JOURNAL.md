@@ -149,7 +149,17 @@ so at first, when u reach the edge of the range, it starts freaking out.
 so there was a time where I was reading a manhwa while coding. then when I got hooked, I stopped coding and read the manhwa instead.. oops
 
 ### 2. CLIF
+Progress again:
+Did the initial Inihaw Minigame (a little bit incomplete, but the tedious part is done):
+- Just copied over the code from the hotdog chopping minigame to the pork belly chopping minigame
+- Did the garlic mincing minigame (still need to make the sprite update when minced)
+- Played around with some particles for the liquids you'd need to mix in the paste
+- Spent TOO LONG trying to configure the pouring mechanic for the liquids
+- Made the pepper shaker, which has to be updated because its particles areeee eh
+Still need to add in the other components of the inihaw minigame, mainly the basting and stuff like that
 
+Created a few final assets, particularly for the hotdog minigame
+- spent a little under an hour doing some art for the hotdog minigame's assets
 
 ### 3. JAZZ
 Hello hello, below is my journal for the week :]
@@ -165,3 +175,4 @@ Mainly continued on programming the customer serving mechanics again. Sadly didn
 I had a smooth time coding this week actually! Surprisingly no mind-numbing problems that I had to face, as all the bugs I had to fix were pretty minimal. NEXT WEEK I SWEAR I'll finally be able to get the actual ordering from the customers done, with randomizations and everything, maybe incorporating Raph's concept art. That's pretty much it for me this week!
 
 ### 4. JEANKAMAGALING
+On 10/04/2026, i started reworking the mode select menu. I changed the layout, and animations for the buttons. I struggled with the mode select menu, specifically on the animations for the buttons. I made a temporary solution to fix it using sprite 2ds to be able to animate the buttons until i found a better way to fix it. I then  changed the layout of the chapter select menu and added  the carousel menu I had planned for it in the first place. I then added a confirm button which allows you to change the scene to the chapter you want to play and an indicator for when the chapter is inaccessible. I also added a description which would pop up if you hovered over the button. On 10/05/2026, i reworked on the mode select menu. After following the advice of one of my teammates, and experimenting with the code, i was able to fix the button animations for the mode select menu.
