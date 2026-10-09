@@ -17,6 +17,7 @@ const SERVE_BOWL = preload("uid://curuxisd3l6in")
 var rice_state = GlobalVars.rice_cont_state
 var pcake_state = GlobalVars.pcake_cont_state
 var hbrown_state = GlobalVars.hbrown_cont_state
+ 
 
 @onready var add_bowl: Button = $Control/BowlConts/AddBowl
 var bowl_no : int = 0
@@ -42,6 +43,12 @@ func _ready() -> void:
 	change_textures()
 	GlobalVars.is_customer_serving = true
 	GlobalVars.foodValueChanged.connect(_on_food_val_changed)
+	
+	var data = GlobalSaveManager.fetch_persistent_value(GlobalSaveManager.get_scene_path())
+	if not data == null:
+		for i in data.size():
+			var bowl = await add_bowl_func()
+			bowl.contentDict = data[i]
 
 func _process(_delta: float) -> void:
 	change_textures()
@@ -95,23 +102,7 @@ func _on_rice_cont_button_down() -> void: check_value_forbtn(rice_state, "uid://
 func _on_pancake_cont_button_down() -> void: check_value_forbtn(pcake_state, "uid://bf86igy00f6sq", "pancake")
 func _on_hashbrown_cont_button_down() -> void: check_value_forbtn(hbrown_state, "uid://j42ywdsfuawg", "hashbrown")
 
-func _on_add_bowl_pressed() -> void:
-	var newBowl = SERVE_BOWL.instantiate()
-	newBowl.modulate.a = 0.0
-	bowl_conts.add_child(newBowl)
-
-	var last_index := bowl_conts.get_child_count() - 1
-	bowl_conts.move_child(newBowl, max(0, last_index - 1))
-
-	await get_tree().process_frame
-
-	newBowl.initialization()
-	
-	bowl_no += 1
-	
-	if bowl_no == 7:
-		add_bowl.disabled = true
-		add_bowl.visible = false
+func _on_add_bowl_pressed() -> void: add_bowl_func()
 
 func _on_freed_bowls_child_exiting_tree(node: Node) -> void:
 	if node is Bowl:
@@ -136,3 +127,35 @@ func _on_freed_bowls_child_exiting_tree(node: Node) -> void:
 			if current_back_bowl is TextureRect:
 				current_freed_bowl.final_pos = current_back_bowl.global_position
 				current_freed_bowl.global_position = current_back_bowl.global_position
+
+
+func add_bowl_func() -> TextureRect:
+	var newBowl = SERVE_BOWL.instantiate()
+	newBowl.modulate.a = 0.0
+	bowl_conts.add_child(newBowl)
+
+	var last_index := bowl_conts.get_child_count() - 1
+	bowl_conts.move_child(newBowl, max(0, last_index - 1))
+
+	await get_tree().process_frame
+
+	newBowl.initialization()
+	
+	bowl_no += 1
+	
+	if bowl_no == 7:
+		add_bowl.disabled = true
+		add_bowl.visible = false
+	
+	return newBowl
+
+func _on_tree_exiting() -> void:
+	var bowl_data = []
+	for i in freed_bowls.get_children():
+		bowl_data.append(i.contentDict)
+
+	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), bowl_data)
+
+
+func _on_button_pressed() -> void:
+	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)

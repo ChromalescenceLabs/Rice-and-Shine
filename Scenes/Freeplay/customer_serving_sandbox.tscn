@@ -247,6 +247,14 @@ grow_vertical = 2
 [node name="TrashbinTab" parent="." unique_id=18345153 instance=ExtResource("14_o8aqv")]
 position = Vector2(1280, 459)
 
+[node name="Button" type="Button" parent="." unique_id=1943585786]
+offset_left = 1116.0
+offset_top = 17.0
+offset_right = 1255.0
+offset_bottom = 66.0
+text = "Exit"
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="button_down" from="Control/ScrollContainer/FoodConts/RiceCont" to="." method="_on_rice_cont_button_down"]
 [connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/RiceCont" to="Control/Counters" method="_on_rice_cont_mouse_entered"]
 [connection signal="mouse_exited" from="Control/ScrollContainer/FoodConts/RiceCont" to="Control/Counters" method="_on_rice_cont_mouse_exited"]
@@ -259,3 +267,4 @@ position = Vector2(1280, 459)
 [connection signal="pressed" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="." method="_on_hashbrown_cont_pressed"]
 [connection signal="pressed" from="Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
 [connection signal="child_exiting_tree" from="Control/FreedBowls" to="." method="_on_freed_bowls_child_exiting_tree"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
