@@ -44,11 +44,15 @@ func _ready() -> void:
 	GlobalVars.is_customer_serving = true
 	GlobalVars.foodValueChanged.connect(_on_food_val_changed)
 	
-	var data = GlobalSaveManager.fetch_persistent_value(GlobalSaveManager.get_scene_path())
+	#Checks if Scene has saved data
+	var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
 	if not data == null:
-		for i in data.size():
-			var bowl = await add_bowl_func()
-			bowl.contentDict = data[i]
+		# Check if a Node in that scene has data
+		var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "Bowls")
+		if not node_data == null:
+			for i in node_data.size():
+				var bowl = await add_bowl_func()
+				bowl.contentDict = node_data[i]
 
 func _process(_delta: float) -> void:
 	change_textures()
@@ -128,7 +132,6 @@ func _on_freed_bowls_child_exiting_tree(node: Node) -> void:
 				current_freed_bowl.final_pos = current_back_bowl.global_position
 				current_freed_bowl.global_position = current_back_bowl.global_position
 
-
 func add_bowl_func() -> TextureRect:
 	var newBowl = SERVE_BOWL.instantiate()
 	newBowl.modulate.a = 0.0
@@ -150,11 +153,16 @@ func add_bowl_func() -> TextureRect:
 	return newBowl
 
 func _on_tree_exiting() -> void:
+	# Saves the needed bowl data in an array
 	var bowl_data = []
 	for i in freed_bowls.get_children():
 		bowl_data.append(i.contentDict)
+	
+	var dict := {}
+	# Saves the node's name, with the needed data, into the dictionary to be added as persistent value
+	dict["Bowls"] = bowl_data
 
-	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), bowl_data)
+	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), dict)
 
 
 func _on_button_pressed() -> void:

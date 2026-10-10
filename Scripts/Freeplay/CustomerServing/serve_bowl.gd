@@ -115,11 +115,18 @@ func initialization():
 		bowl_conts.move_child(dupli, max(0, last_index - 1))
 		
 		self.reparent(freed_bowls)
-		self.global_position = Vector2(1280, final_pos.y) + Vector2(self.size.x, 0)
 		
-		self.modulate.a = 1.0
-		var tw = create_tween().tween_property(self, "global_position:x", final_pos.x, 0.5).set_trans(Tween.TRANS_CUBIC)
-		self.mouse_filter = Control.MOUSE_FILTER_PASS
+		var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
+		if data == null:
+			self.global_position = Vector2(1280, final_pos.y) + Vector2(self.size.x, 0)
+			
+			self.modulate.a = 1.0
+			var tw = create_tween().tween_property(self, "global_position:x", final_pos.x, 0.5).set_trans(Tween.TRANS_CUBIC)
+			self.mouse_filter = Control.MOUSE_FILTER_PASS
+			
+			await tw.finished
+		else:
+			self.mouse_filter = Control.MOUSE_FILTER_PASS
+			self.modulate.a = 1.0
 		
-		await tw.finished
 		node_ready = true
