@@ -65,13 +65,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			match food:
 				"rice":
 					texture = preload("uid://c46do5q6bcopm")
-					GlobalVars.rice_value -= 1
 				"pancake":
 					texture = preload("uid://bu18d5et72sre")
-					GlobalVars.pcake_value -= 1
 				"hashbrown":
 					texture = preload("uid://be4y7ewpqycrh")
-					GlobalVars.hbrown_value -= 1
 			
 			if not contentDict.has(texture):
 				contentDict[texture] = 1

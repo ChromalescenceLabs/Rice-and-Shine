@@ -1,9 +1,12 @@
 extends Node2D
 
 const SERVE_BOWL = preload("uid://curuxisd3l6in")
+const FOOD_CONT = preload("uid://dwfqsvk1lxqyw")
+
 @onready var bowl_labels: Node2D = $BowlLabels
 @onready var bowl_conts: HBoxContainer = $Control/BowlConts
 @onready var freed_bowls: Control = $Control/FreedBowls
+@onready var food_conts: HBoxContainer = $Control/ScrollContainer/FoodConts
 
 @onready var add_bowl: Button = $Control/BowlConts/AddBowl
 var bowl_no : int = 0
@@ -14,12 +17,20 @@ func _ready() -> void:
 	#Checks if Scene has saved data
 	var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
 	if not data == null:
-		# Check if a Node in that scene has data
+		# Check if a Node in that scene has data for bowls
 		var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "Bowls")
 		if not node_data == null:
 			for i in node_data.size():
 				var bowl = await add_bowl_func()
 				bowl.contentDict = node_data[i]
+				
+		# Check if a Node in that scene has data for FoodConts	
+		node_data = GlobalSaveManager.fetch_node_persistent_value(data, "FoodConts")
+		if not node_data == null:
+			var foodcontchildren = food_conts.get_children()
+				
+			for i in node_data.size():
+				foodcontchildren[i].qty = node_data[i]
 
 func _on_add_bowl_pressed() -> void: add_bowl_func()
 
@@ -68,17 +79,14 @@ func add_bowl_func() -> TextureRect:
 	return newBowl
 
 func _on_tree_exiting() -> void:
-	# Saves the needed bowl data in an array
 	var bowl_data = []
-	for i in freed_bowls.get_children():
-		bowl_data.append(i.contentDict)
+	for i in freed_bowls.get_children(): bowl_data.append(i.contentDict)
 	
-	var dict := {}
-	# Saves the node's name, with the needed data, into the dictionary to be added as persistent value
-	dict["Bowls"] = bowl_data
-
-	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), dict)
-
+	var foodcont_data = []
+	for i in food_conts.get_children(): foodcont_data.append(i.qty)
+	
+	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "Bowls", bowl_data)
+	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "FoodConts", foodcont_data)
 
 func _on_button_pressed() -> void:
 	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)

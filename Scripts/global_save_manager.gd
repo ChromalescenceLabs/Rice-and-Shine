@@ -12,12 +12,19 @@ extends Node
 
 var current_save : Dictionary = {
 	scenes_persistence = {
-		#Scene Name: {Node Name: Data[] }
+		#Scene Name: {
+		# Node Name: Data[],
+		# Node2 Name : Data[]
+		#}
 	}
 }
 
-func add_persistent_value(scene_name : String, data : Dictionary) -> void:
-	current_save.scenes_persistence[scene_name] = data
+func add_persistent_value(scene_name : String, node_name : String, data : Array) -> void:
+	if check_scene_persistent_value(scene_name):
+		current_save.scenes_persistence[scene_name][node_name] = data
+	else:
+		current_save.scenes_persistence[scene_name] = {}
+		current_save.scenes_persistence[scene_name][node_name] = data
 		
 func check_scene_persistent_value(scene_name : String) -> bool:
 	var p = current_save.scenes_persistence as Dictionary

@@ -16,13 +16,14 @@ var qty : int = 5:
 	set(value):
 		if not qty == value:
 			qty = value
-			print(qty)
 			upd_texture()
 			counter.text = str(qty)
 
 func _ready() -> void:
-	counter.text = str(qty)
-	upd_texture()
+	#var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
+	#if data == null:
+		counter.text = str(qty)
+		upd_texture()
 
 func _on_button_down() -> void:
 	match food_type:
@@ -40,9 +41,8 @@ func check_value_forbtn(cont_state, scene: String, foodStr : String):
 			food.texture = foodStr
 			self.add_child(food)
 			
-			await food.tree_exited
+			await food.tree_exiting
 			
-			print(food.food_in_bowl)
 			if food.food_in_bowl == true:
 				qty = qty - 1
 
