@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bc6e5imjyoy6d" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated3.png" id="9_8bsfq"]
 [ext_resource type="Texture2D" uid="uid://c2csa4kyjeclm" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated4.png" id="10_ouisr"]
 [ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/recipe_book.tscn" id="10_penps"]
+[ext_resource type="PackedScene" uid="uid://3nbi6q3ikgh8" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/rinsing.tscn" id="11_avunj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
 
@@ -170,6 +171,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_ouisr")
 
+[node name="rinse" parent="." unique_id=258493805 instance=ExtResource("11_avunj")]
+
 [node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("10_penps")]
 offset_left = 9.0
 offset_top = 528.0
@@ -185,3 +188,4 @@ scale = Vector2(0.795, 0.795)
 
 [editable path="peel"]
 [editable path="grate/gratedFull"]
+[editable path="rinse"]

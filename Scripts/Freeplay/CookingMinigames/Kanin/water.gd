@@ -2,6 +2,7 @@ extends GPUParticles2D
 
 signal WaterCompleted
 
+
 @onready var water_detect: Area2D = $WaterDetect
 @onready var water_progress_bar: ProgressBar = $"../WaterProgressBar"
 @onready var progress_bar_change_time: Timer = $"../WaterProgressBar/ProgressBarChangeTime"
@@ -13,11 +14,11 @@ func _on_finished() -> void:
 	water_detect.monitoring = false
 
 func _on_water_detect_area_entered(area: Area2D) -> void:
-	if area is BowlFillArea:
+	if area.name == "potato":
 		progress_bar_change_time.start()
 
 func _on_water_detect_area_exited(area: Area2D) -> void:
-	if area is BowlFillArea:
+	if area.name == "potato":
 		progress_bar_change_time.stop()
 
 func _on_rice_or_kanin_water_section() -> void:
