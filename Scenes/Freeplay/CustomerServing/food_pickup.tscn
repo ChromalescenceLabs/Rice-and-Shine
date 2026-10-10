@@ -7,6 +7,7 @@
 radius = 29.15476
 
 [node name="FoodPickup" type="Area2D" unique_id=442498868]
+z_index = 10
 script = ExtResource("1_q8uwb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402546915]
@@ -16,3 +17,6 @@ shape = SubResource("CircleShape2D_r28lg")
 position = Vector2(1.9073486e-06, 4.7683716e-07)
 scale = Vector2(1.2399998, 1.3527274)
 texture = ExtResource("2_0kinq")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
