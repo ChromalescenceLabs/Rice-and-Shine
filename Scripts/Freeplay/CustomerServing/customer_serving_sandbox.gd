@@ -1,5 +1,6 @@
 extends Node2D
 
+const CUSTOMER = preload("uid://v1ke2myaadm3")
 const SERVE_BOWL = preload("uid://curuxisd3l6in")
 const FOOD_CONT = preload("uid://dwfqsvk1lxqyw")
 
@@ -7,6 +8,7 @@ const FOOD_CONT = preload("uid://dwfqsvk1lxqyw")
 @onready var bowl_conts: HBoxContainer = $Control/BowlConts
 @onready var freed_bowls: Control = $Control/FreedBowls
 @onready var food_conts: HBoxContainer = $Control/ScrollContainer/FoodConts
+@onready var customers_cont: HBoxContainer = $Control/CustomersCont
 
 @onready var add_bowl: Button = $Control/BowlConts/AddBowl
 var bowl_no : int = 0
@@ -78,6 +80,14 @@ func add_bowl_func() -> TextureRect:
 	
 	return newBowl
 
+func add_customer() -> TextureRect:
+	var newCustomer = CUSTOMER.instantiate()
+	newCustomer.modulate.a = 0.0
+	customers_cont.add_child(newCustomer)
+	newCustomer.initialization()
+	
+	return newCustomer
+
 func _on_tree_exiting() -> void:
 	var bowl_data = []
 	for i in freed_bowls.get_children(): bowl_data.append(i.contentDict)
@@ -90,3 +100,7 @@ func _on_tree_exiting() -> void:
 
 func _on_button_pressed() -> void:
 	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
+
+
+func _on_temp_pressed() -> void:
+	add_customer()

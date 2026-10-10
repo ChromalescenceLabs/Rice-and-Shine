@@ -75,6 +75,7 @@ _data = {
 radius = 48.0
 
 [node name="ServeBowl" type="TextureRect" unique_id=209391391]
+z_index = 2
 offset_left = -74.0
 offset_top = -46.0
 offset_right = 76.0

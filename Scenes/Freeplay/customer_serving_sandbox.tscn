@@ -37,20 +37,6 @@ script = ExtResource("2_pwox5")
 [node name="CustomerServingSandbox" type="Node2D" unique_id=1724706127]
 script = ExtResource("1_wgjyl")
 
-[node name="Customers" type="Control" parent="." unique_id=754894326]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CustomersCont" type="HBoxContainer" parent="Customers" unique_id=736920282]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 135.0
-offset_right = 1265.0
-offset_bottom = 626.0
-size_flags_horizontal = 3
-
 [node name="Control" type="Control" parent="." unique_id=2072875163]
 layout_mode = 3
 anchors_preset = 0
@@ -58,6 +44,7 @@ offset_right = 1280.0
 offset_bottom = 720.0
 
 [node name="FoodContBG" type="TextureRect" parent="Control" unique_id=134774901]
+z_index = 2
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -71,7 +58,35 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("GradientTexture2D_08i74")
 
+[node name="CustomersCont" type="HBoxContainer" parent="Control" unique_id=736920282]
+propagate_maximum_size = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 110.0
+offset_right = 1265.0
+offset_bottom = 610.0
+size_flags_horizontal = 3
+
+[node name="BowlConts" type="HBoxContainer" parent="Control" unique_id=1003470384]
+z_index = 4
+layout_mode = 0
+offset_left = 24.0
+offset_top = 385.0
+offset_right = 1265.0
+offset_bottom = 485.0
+size_flags_horizontal = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="AddBowl" parent="Control/BowlConts" unique_id=949361015 instance=ExtResource("14_kq8l2")]
+z_index = 50
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
 [node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=667592894]
+z_index = 2
 clip_contents = false
 layout_mode = 1
 anchors_preset = 7
@@ -128,20 +143,6 @@ empty_texture = ExtResource("3_ed4vm")
 empty_textureh = ExtResource("7_i53e2")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="BowlConts" type="HBoxContainer" parent="Control" unique_id=1003470384]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 385.0
-offset_right = 1265.0
-offset_bottom = 485.0
-size_flags_horizontal = 3
-
-[node name="AddBowl" parent="Control/BowlConts" unique_id=949361015 instance=ExtResource("14_kq8l2")]
-z_index = 50
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-size_flags_vertical = 4
-
 [node name="FreedBowls" type="Control" parent="Control" unique_id=260643121]
 layout_mode = 1
 anchors_preset = 8
@@ -159,6 +160,7 @@ grow_vertical = 2
 [node name="BowlLabels" type="Node2D" parent="." unique_id=328106633]
 
 [node name="TrashbinTab" parent="." unique_id=18345153 instance=ExtResource("14_o8aqv")]
+z_index = 2
 position = Vector2(1280, 459)
 
 [node name="Exit" type="Button" parent="." unique_id=1943585786]
@@ -168,7 +170,15 @@ offset_right = 1255.0
 offset_bottom = 66.0
 text = "Exit"
 
+[node name="temp" type="Button" parent="." unique_id=851856372]
+offset_left = 44.0
+offset_top = 21.0
+offset_right = 159.0
+offset_bottom = 52.0
+text = "add customer"
+
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
 [connection signal="child_exiting_tree" from="Control/FreedBowls" to="." method="_on_freed_bowls_child_exiting_tree"]
 [connection signal="pressed" from="Exit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="temp" to="." method="_on_temp_pressed"]
