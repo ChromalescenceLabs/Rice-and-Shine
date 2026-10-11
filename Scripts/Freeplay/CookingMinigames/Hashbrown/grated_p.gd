@@ -1,8 +1,9 @@
 extends Area2D
+signal done
 
-@onready var bowl: Area2D = $"../bowl"
-@onready var put_on_cloth: Area2D = $"../putOnCloth"
-@onready var scroll_1: Node2D = $"../scroll1"
+
+@onready var bowl: TextureRect = $"../bowl/bowl"
+@onready var grated_p_bowl: TextureRect = $"../bowl/gratedPBowl"
 
 var hold = false
 var ogPos=position
@@ -23,20 +24,22 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT and canHold:
 			hold = true
 			visible=true
+			bowl.visible=true
+			grated_p_bowl.visible=false
 		if not event.pressed:
 			hold = false
 			visible=false
+			bowl.visible=false
+			grated_p_bowl.visible=true
 			
 			if canHold:
 				canHold=false
 			
 			if hasBeenPut==true:
 				print("done")
-				bowl.get_child(0).visible=true
-				bowl.get_child(1).visible=false
-				put_on_cloth.get_child(0).visible=false
-				put_on_cloth.get_child(1).visible=true
-				scroll_1.visible=true
+				bowl.visible=true
+				grated_p_bowl.visible=false
+				done.emit()
 				set_process_input(false)
 
 func _on_bowl_mouse_entered() -> void:

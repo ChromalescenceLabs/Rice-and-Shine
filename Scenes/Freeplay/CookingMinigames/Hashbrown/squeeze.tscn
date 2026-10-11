@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://jqgwfjxupldu"]
 
+[ext_resource type="Script" uid="uid://dx3id1saykypw" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/squeeze.gd" id="1_ex5yh"]
 [ext_resource type="Texture2D" uid="uid://dx2upm6et2rh3" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/bowl.png" id="1_goi7m"]
 [ext_resource type="Texture2D" uid="uid://dmy3ggx6q1pnu" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/gratedPotatoesBowl.png" id="2_1rw02"]
 [ext_resource type="Script" uid="uid://cko0y5e882xnp" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/grated_p.gd" id="3_ex5yh"]
@@ -26,6 +27,7 @@ size = Vector2(51.60504, 13.698242)
 size = Vector2(52.69967, 59.001465)
 
 [node name="Squeeze" type="Node2D" unique_id=1629429422]
+script = ExtResource("1_ex5yh")
 
 [node name="bowl" type="Area2D" parent="." unique_id=1451277749]
 position = Vector2(314, -86)
@@ -143,6 +145,7 @@ texture = ExtResource("8_6rict")
 metadata/_edit_use_anchors_ = true
 
 [node name="scroll1" type="Node2D" parent="." unique_id=51224198]
+visible = false
 position = Vector2(764, 498)
 
 [node name="bg" type="ColorRect" parent="scroll1" unique_id=1004545775]
@@ -195,8 +198,15 @@ color = Color(0.6365752, 0.2784357, 0.28058097, 1)
 shape = SubResource("RectangleShape2D_dkm2g")
 
 [node name="scroll2" type="Node2D" parent="." unique_id=1031982490]
+visible = false
 position = Vector2(643, 234)
 rotation = 3.1415927
+
+[node name="start" type="Area2D" parent="scroll2" unique_id=196265074]
+position = Vector2(0, 78)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scroll2/start" unique_id=768934616]
+shape = SubResource("RectangleShape2D_dkm2g")
 
 [node name="bg" type="ColorRect" parent="scroll2" unique_id=1167274613]
 anchors_preset = 8
@@ -217,12 +227,6 @@ position = Vector2(-1.8795898e-05, -306)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scroll2/end" unique_id=1788782185]
 shape = SubResource("RectangleShape2D_vgoni")
-
-[node name="start" type="Area2D" parent="scroll2" unique_id=196265074]
-position = Vector2(0, 78)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scroll2/start" unique_id=768934616]
-shape = SubResource("RectangleShape2D_dkm2g")
 
 [node name="knob" type="Area2D" parent="scroll2" unique_id=879141935]
 position = Vector2(0, 78)
@@ -250,6 +254,7 @@ shape = SubResource("RectangleShape2D_dkm2g")
 [connection signal="mouse_entered" from="bowl" to="gratedP" method="_on_bowl_mouse_entered"]
 [connection signal="mouse_exited" from="bowl" to="gratedP" method="_on_bowl_mouse_exited"]
 [connection signal="area_entered" from="gratedP" to="gratedP" method="_on_area_entered"]
+[connection signal="done" from="gratedP" to="." method="_on_grated_p_done"]
 [connection signal="input_event" from="gratedP" to="gratedP" method="_on_input_event"]
 [connection signal="mouse_entered" from="scroll1/start" to="scroll1/knob" method="_on_start_mouse_entered"]
 [connection signal="mouse_exited" from="scroll1/start" to="scroll1/knob" method="_on_start_mouse_exited"]

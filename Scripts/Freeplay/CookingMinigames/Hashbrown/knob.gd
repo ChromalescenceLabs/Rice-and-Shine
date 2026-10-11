@@ -17,21 +17,18 @@ func _process(_delta: float) -> void:
 		position.y = lerp(position.y, ogPos.y, 0.05)
 
 func _on_area_entered(area: Area2D) -> void:
+	var uSqueezed = squeezing.get_child(0)
+	var squeezed = squeezing.get_child(1)
 	if area.name=="end":
 		ogPos=area.position
 		set_process_input(false)
 		
 		if scrolledNum==0:
-			var t = create_tween()
-			var uSqueezed = squeezing.get_child(0)
-			t.tween_property(cloth, "position:y", cloth.position.y-50, 1.0).set_trans(Tween.TRANS_EXPO)
-			await get_tree().create_timer(.5).timeout
-			t.stop()
-			cloth.visible=false
-			uSqueezed.visible=true
-			t.play()
-			t.tween_property(uSqueezed, "position:y", uSqueezed.position.y+20, 1.0).set_trans(Tween.TRANS_CUBIC)
-		scrolledNum+=1
+			hideAndView(cloth,uSqueezed)
+			scrolledNum+=1
+		elif scrolledNum==1:
+			hideAndView(uSqueezed,squeezed)
+		print(scrolledNum)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -47,3 +44,13 @@ func _on_start_mouse_entered() -> void:
 
 func _on_start_mouse_exited() -> void:
 	canHold=false
+
+func hideAndView(h,v):
+	var t = create_tween()
+	t.tween_property(h, "position:y", h.position.y-50, 1.0).set_trans(Tween.TRANS_EXPO)
+	await get_tree().create_timer(.5).timeout
+	t.stop()
+	h.visible=false
+	v.visible=true
+	t = create_tween()
+	t.tween_property(v, "position:y", v.position.y+20, .5).set_trans(Tween.TRANS_ELASTIC)
