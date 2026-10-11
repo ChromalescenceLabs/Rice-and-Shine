@@ -42,7 +42,8 @@ func item_exit(item) -> void:
 	await tw.finished
 	itemExited.emit()
 
-# Customer Serving Funcs
+# Unlocks
+var unlocked_foods : Array = ["rice", "pancake", "hashbrown"]
 
 	
 	
