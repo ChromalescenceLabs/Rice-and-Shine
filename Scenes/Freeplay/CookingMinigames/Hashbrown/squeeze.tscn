@@ -30,12 +30,19 @@ size = Vector2(51.60504, 13.698242)
 position = Vector2(314, -86)
 scale = Vector2(1.06, 1.06)
 
-[node name="bowl" type="TextureRect" parent="bowl" unique_id=1265903803]
-offset_left = 364.1618
-offset_top = 240.4624
-offset_right = 1516.1619
-offset_bottom = 918.4624
-scale = Vector2(0.53, 0.53)
+[node name="bowl" type="TextureRect" parent="bowl" unique_id=171895358]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 487.73578
+offset_top = 361.3207
+offset_right = 1179.7356
+offset_bottom = 746.32056
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.48, 0.48)
 texture = ExtResource("1_goi7m")
 
 [node name="gratedPBowl" type="TextureRect" parent="bowl" unique_id=964199832]
@@ -59,20 +66,26 @@ scale = Vector2(0.53000003, 0.53000003)
 shape = SubResource("RectangleShape2D_ittll")
 
 [node name="gratedP" type="Area2D" parent="." unique_id=56141036]
-position = Vector2(788, 18)
+position = Vector2(1014.99994, 394)
 scale = Vector2(1.225, 1.225)
 script = ExtResource("3_ex5yh")
 
 [node name="gratedP" type="TextureRect" parent="gratedP" unique_id=341902988]
-offset_left = 23.000004
-offset_top = 211.0
-offset_right = 419.0
-offset_bottom = 453.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.91837
+offset_top = -100.40814
+offset_right = 240.08163
+offset_bottom = 141.59186
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.755, 0.755)
 texture = ExtResource("4_j08af")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gratedP" unique_id=1671163843]
-position = Vector2(180, 310.99997)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_ullcx")
 
@@ -189,5 +202,5 @@ scale = Vector2(0.865, 0.865)
 texture = ExtResource("8_6rict")
 metadata/_edit_use_anchors_ = true
 
+[connection signal="mouse_entered" from="bowl" to="gratedP" method="_on_bowl_mouse_entered"]
 [connection signal="area_entered" from="gratedP" to="gratedP" method="_on_area_entered"]
-[connection signal="input_event" from="gratedP" to="gratedP" method="_on_input_event"]
