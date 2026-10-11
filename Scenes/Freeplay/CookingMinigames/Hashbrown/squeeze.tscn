@@ -6,17 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://c2csa4kyjeclm" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated4.png" id="4_j08af"]
 [ext_resource type="Texture2D" uid="uid://jljtf2odkwma" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/cloth.png" id="5_a75fh"]
 [ext_resource type="Texture2D" uid="uid://cvmeirgnsp1kc" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/clothWetPotatoes.png" id="6_c052h"]
+[ext_resource type="Script" uid="uid://bvmrux1w74rsn" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/knob.gd" id="7_1rw02"]
 [ext_resource type="Texture2D" uid="uid://cihxilyx88lvt" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/unsqueezed.png" id="7_qno4u"]
 [ext_resource type="Texture2D" uid="uid://d2twwffaqyktd" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/squeezed.png" id="8_6rict"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
 size = Vector2(682.28186, 345.54565)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj6en"]
+size = Vector2(105.399414, 44.37869)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ullcx"]
 size = Vector2(280, 148)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj6en"]
-size = Vector2(406.8048, 153.4763)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkm2g"]
 size = Vector2(52.69967, 59.001465)
@@ -31,6 +32,7 @@ position = Vector2(314, -86)
 scale = Vector2(1.06, 1.06)
 
 [node name="bowl" type="TextureRect" parent="bowl" unique_id=171895358]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -65,6 +67,33 @@ position = Vector2(653.17914, 455.49133)
 scale = Vector2(0.53000003, 0.53000003)
 shape = SubResource("RectangleShape2D_ittll")
 
+[node name="putOnCloth" type="Area2D" parent="." unique_id=1324027419]
+position = Vector2(122, 353)
+scale = Vector2(1.0816, 1.0816)
+
+[node name="cloth" type="TextureRect" parent="putOnCloth" unique_id=956893208]
+offset_left = 3.0517578e-05
+offset_top = -3.0517578e-05
+offset_right = 548.0
+offset_bottom = 228.99997
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("5_a75fh")
+metadata/_edit_use_anchors_ = true
+
+[node name="clothWetPotatoes" type="TextureRect" parent="putOnCloth" unique_id=2019166644]
+visible = false
+offset_left = 23.113953
+offset_top = 1.8490906
+offset_right = 534.11395
+offset_bottom = 227.84909
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("6_c052h")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="putOnCloth" unique_id=138568753]
+position = Vector2(291.23523, 124.815094)
+shape = SubResource("RectangleShape2D_tj6en")
+
 [node name="gratedP" type="Area2D" parent="." unique_id=56141036]
 position = Vector2(1014.99994, 394)
 scale = Vector2(1.225, 1.225)
@@ -89,60 +118,47 @@ texture = ExtResource("4_j08af")
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_ullcx")
 
-[node name="putOnCloth" type="Area2D" parent="." unique_id=1324027419]
-position = Vector2(346.99997, 362.00003)
-scale = Vector2(1.0816, 1.0816)
-
-[node name="cloth" type="TextureRect" parent="putOnCloth" unique_id=956893208]
-offset_left = 3.0517578e-05
-offset_top = -3.0517578e-05
-offset_right = 548.0
-offset_bottom = 228.99997
-scale = Vector2(1.04, 1.04)
-texture = ExtResource("5_a75fh")
-metadata/_edit_use_anchors_ = true
-
-[node name="clothWetPotatoes" type="TextureRect" parent="putOnCloth" unique_id=2019166644]
-offset_left = 23.113953
-offset_top = 1.8490906
-offset_right = 534.11395
-offset_bottom = 227.84909
-scale = Vector2(1.04, 1.04)
-texture = ExtResource("6_c052h")
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="putOnCloth" unique_id=138568753]
-position = Vector2(281.06512, 111.87131)
-shape = SubResource("RectangleShape2D_tj6en")
-
 [node name="scroll1" type="Node2D" parent="." unique_id=51224198]
-visible = false
-position = Vector2(651, 483.00003)
+position = Vector2(122, 472)
 scale = Vector2(1.0816, 1.0816)
 
 [node name="bg" type="ColorRect" parent="scroll1" unique_id=1004545775]
-offset_left = -278.29144
-offset_top = -83.21009
-offset_right = -239.46008
-offset_bottom = 110.94674
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.41568
+offset_top = -97.078415
+offset_right = 19.41568
+offset_bottom = 97.078415
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="knob" type="Area2D" parent="scroll1" unique_id=241914014]
-position = Vector2(-278.2914, -83.21008)
+position = Vector2(0, 90.60651)
+script = ExtResource("7_1rw02")
 
 [node name="knob(?)" type="ColorRect" parent="scroll1/knob" unique_id=107516045]
-offset_left = -0.92456055
-offset_top = 150.70267
-offset_right = 37.9068
-offset_bottom = 194.15686
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.41568
+offset_top = -21.727097
+offset_right = 19.41568
+offset_bottom = 21.727097
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.0369912, 1)
 color = Color(0.6365752, 0.2784357, 0.28058097, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scroll1/knob" unique_id=1231291573]
-position = Vector2(18.953339, 171.12796)
 shape = SubResource("RectangleShape2D_dkm2g")
 
 [node name="end" type="Area2D" parent="scroll1" unique_id=1543257826]
-position = Vector2(-258.79068, -77.11545)
+position = Vector2(0, -97.07839)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scroll1/end" unique_id=1614934269]
 shape = SubResource("RectangleShape2D_vgoni")
@@ -204,3 +220,5 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="bowl" to="gratedP" method="_on_bowl_mouse_entered"]
 [connection signal="area_entered" from="gratedP" to="gratedP" method="_on_area_entered"]
+[connection signal="area_entered" from="scroll1/knob" to="scroll1/knob" method="_on_area_entered"]
+[connection signal="input_event" from="scroll1/knob" to="scroll1/knob" method="_on_input_event"]

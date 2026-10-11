@@ -1,4 +1,9 @@
 extends Area2D
+
+@onready var bowl: Area2D = $"../bowl"
+@onready var put_on_cloth: Area2D = $"../putOnCloth"
+@onready var scroll_1: Node2D = $"../scroll1"
+
 var hold = false
 var ogPos=position
 var hasBeenPut=false
@@ -22,7 +27,18 @@ func _input(event: InputEvent) -> void:
 			hold = false
 			visible=false
 			canHold=false
-
+			if hasBeenPut==true:
+				print("done")
+				bowl.get_child(0).visible=true
+				bowl.get_child(1).visible=false
+				put_on_cloth.get_child(0).visible=false
+				put_on_cloth.get_child(1).visible=true
+				scroll_1.visible=true
+				set_process_input(false)
 
 func _on_bowl_mouse_entered() -> void:
 	canHold=true
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.name=="putOnCloth":
+		hasBeenPut=true
