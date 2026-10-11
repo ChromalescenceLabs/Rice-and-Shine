@@ -45,8 +45,24 @@ var cracked_egg_amt: int = 0:
 # EGG MIX
 signal egg_mix_finished
 
+# EGG COAT
+signal eggcoat_start
+signal eggcoat_finished
+var uncoated_torta: int = 3:
+	set(value):
+		if not uncoated_torta == value:
+			uncoated_torta = value
+			if uncoated_torta <= 0:
+				eggcoat_finished.emit()
+
+# COOK
+signal torta_frying_finished
+@onready var oil: Area2D = $Cook/Oil
+@onready var torta_pan: TortaPan = $Cook/TortaPan
+var uncooked_eggplants: int = 3
 
 func _ready() -> void:
+	oil.monitoring = false
 	grill.position.x += get_viewport().get_visible_rect().size.x
 	peel_and_flatten.position.x += get_viewport().get_visible_rect().size.x
 	egg_crack.position.x += get_viewport().get_visible_rect().size.x
@@ -54,7 +70,7 @@ func _ready() -> void:
 	coating.position.x += get_viewport().get_visible_rect().size.x
 	cook.position.x += get_viewport().get_visible_rect().size.x
 	
-	_on_egg_crack_finished()
+	GlobalVars.item_enter(grill)
 	
 func _on_tortagrill_finished() -> void:
 	GlobalVars.item_exit(grill)
@@ -77,9 +93,28 @@ func _on_egg_crack_finished() -> void:
 	create_tween().tween_property(top_down_bg, "modulate:a", 1, 0.3).set_trans(Tween.TRANS_CUBIC)
 	
 func _on_egg_mix_finished() -> void:
-	egg_carton.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	GlobalVars.successind(get_tree().current_scene)
 	await GlobalVars.successIndEnd
 	
-	GlobalVars.item_exit(egg_crack)
-	GlobalVars.item_enter(egg_mix)
+	GlobalVars.item_exit(egg_mix)
+	GlobalVars.item_enter(coating)
+	
+	await GlobalVars.itemEntered
+	
+	eggcoat_start.emit()
+
+
+func _on_eggcoat_finished() -> void:
+	GlobalVars.successind(get_tree().current_scene)
+	await GlobalVars.successIndEnd
+	
+	GlobalVars.item_exit(coating)
+	GlobalVars.item_enter(cook)
+	
+	await GlobalVars.itemEntered
+	oil.monitoring = true
+
+
+func _on_torta_frying_finished() -> void:
+	GlobalVars.item_exit(cook)
+	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)

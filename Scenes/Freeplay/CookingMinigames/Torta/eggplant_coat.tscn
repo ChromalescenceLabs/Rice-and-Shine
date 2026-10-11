@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bft57grj34flt"]
+
+[ext_resource type="Texture2D" uid="uid://ck2u4e4gonkj7" path="res://Assets/Freeplay/Cooking_Minigames/Torta/TortaPeeled.png" id="1_mcndl"]
+[ext_resource type="Script" uid="uid://bxgu04cuxu63f" path="res://Scripts/Freeplay/CookingMinigames/Torta/eggplant_coat.gd" id="1_qbr3s"]
+[ext_resource type="Texture2D" uid="uid://dv1yy8subdg0e" path="res://Assets/Freeplay/Cooking_Minigames/Torta/TortaCoated.png" id="2_qbr3s"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tfb8k"]
+radius = 59.0
+height = 406.0
+
+[node name="eggplant_coat" type="Area2D" unique_id=362954361]
+script = ExtResource("1_qbr3s")
+
+[node name="Peeled" type="TextureRect" parent="." unique_id=333521760]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mcndl")
+
+[node name="Coated" type="TextureRect" parent="." unique_id=1110109818]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qbr3s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=566178504]
+position = Vector2(7, 5)
+shape = SubResource("CapsuleShape2D_tfb8k")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="Coated" to="." method="_on_coated_mouse_entered"]
+[connection signal="mouse_exited" from="Coated" to="." method="_on_coated_mouse_exited"]

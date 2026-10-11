@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://xy6lg1ajeyia"]
 
 [ext_resource type="Script" uid="uid://6cv34ty5i004" path="res://Scripts/Freeplay/CookingMinigames/Torta/eggplant_peel.gd" id="1_0c1v8"]
-[ext_resource type="Texture2D" uid="uid://dv1yy8subdg0e" path="res://Assets/Freeplay/Cooking_Minigames/Torta/TortaPeeled.png" id="1_wueb3"]
 [ext_resource type="Texture2D" uid="uid://dxi6b7p75mcpm" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggplantCooked.png" id="2_0c1v8"]
+[ext_resource type="Texture2D" uid="uid://ck2u4e4gonkj7" path="res://Assets/Freeplay/Cooking_Minigames/Torta/TortaPeeled.png" id="3_wk8cb"]
 [ext_resource type="PackedScene" uid="uid://dkhcfxgcjigjp" path="res://Scenes/Freeplay/CookingMinigames/Torta/eggplant_flatten_point.tscn" id="4_wk8cb"]
 
 [node name="eggplant_peel" type="Node2D" unique_id=122180659]
@@ -15,7 +15,7 @@ texture = ExtResource("2_0c1v8")
 
 [node name="Peeled" type="Sprite2D" parent="Textures" unique_id=534000050]
 position = Vector2(-99, -249)
-texture = ExtResource("1_wueb3")
+texture = ExtResource("3_wk8cb")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 200, 47.66)

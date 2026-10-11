@@ -4,6 +4,8 @@ var og_pos
 var hovering : bool = false
 var dragging : bool = false
 var whiskable : bool = false
+var mixed: bool = false
+@onready var bowl: BowlArea = $"../Bowl"
 @onready var egg: Sprite2D = $"../Bowl/Egg"
 @onready var egg_mixed: Sprite2D = $"../Bowl/EggMixed"
 
@@ -19,8 +21,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Click"):
 		if hovering: dragging = true
 	elif event.is_action_released("Click"):
-		dragging = false
-		self.global_position = og_pos
+		if hovering:
+			dragging = false
+			self.global_position = og_pos
 
 func _on_mouse_entered() -> void: hovering = true
 func _on_mouse_exited() -> void: hovering = false
@@ -37,5 +40,7 @@ func mix():
 	egg.rotation_degrees += 5
 	egg_mixed.rotation_degrees += 5
 	
-	if egg_mixed.modulate.a >= 1:
+	if egg_mixed.modulate.a >= 1 and not mixed:
+		mixed = true
+		bowl.monitorable = false
 		get_tree().current_scene.egg_mix_finished.emit()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck2u4e4gonkj7"
-path="res://.godot/imported/TortaPreCooked.png-aa8a30d3bd97055f9afb997d2045b6a8.ctex"
+uid="uid://dv1yy8subdg0e"
+path="res://.godot/imported/TortaCoated.png-9dbf893e10a1f67c6ca8ea2b4c96baba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Freeplay/Cooking_Minigames/Torta/TortaPreCooked.png"
-dest_files=["res://.godot/imported/TortaPreCooked.png-aa8a30d3bd97055f9afb997d2045b6a8.ctex"]
+source_file="res://Assets/Freeplay/Cooking_Minigames/Torta/TortaCoated.png"
+dest_files=["res://.godot/imported/TortaCoated.png-9dbf893e10a1f67c6ca8ea2b4c96baba.ctex"]
 
 [params]
 

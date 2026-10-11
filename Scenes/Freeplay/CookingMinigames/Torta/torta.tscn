@@ -16,6 +16,10 @@
 [ext_resource type="Script" uid="uid://dwduvrau26522" path="res://Scripts/Freeplay/CookingMinigames/Non-Specific/pan.gd" id="11_v1cdo"]
 [ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/oil.tscn" id="11_yan7c"]
 [ext_resource type="Script" uid="uid://ctms7me3er5h" path="res://Scripts/Freeplay/CookingMinigames/Torta/whisk.gd" id="15_krt0h"]
+[ext_resource type="PackedScene" uid="uid://bft57grj34flt" path="res://Scenes/Freeplay/CookingMinigames/Torta/eggplant_coat.tscn" id="16_5d7dr"]
+[ext_resource type="Script" uid="uid://bci1qttxxjfa5" path="res://Scripts/Freeplay/CookingMinigames/Torta/torta_pan.gd" id="18_8yo6g"]
+[ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/PanOil.png" id="19_8lmjv"]
+[ext_resource type="PackedScene" uid="uid://w3pw2r0dsx41" path="res://Scenes/Freeplay/CookingMinigames/Torta/eggplant_to_cook.tscn" id="20_8lmjv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y130u"]
 radius = 229.03493
@@ -59,7 +63,6 @@ texture = ExtResource("2_b0qvh")
 metadata/_edit_lock_ = true
 
 [node name="Grill" type="Node2D" parent="." unique_id=1082929421]
-visible = false
 
 [node name="TortaPan" type="Area2D" parent="Grill" unique_id=1568215498]
 position = Vector2(392, 353)
@@ -95,7 +98,6 @@ position = Vector2(1060, 313)
 position = Vector2(958, 323)
 
 [node name="PeelAndFlatten" type="Node2D" parent="." unique_id=2008846090]
-visible = false
 
 [node name="Plate" type="Sprite2D" parent="PeelAndFlatten" unique_id=390128255]
 position = Vector2(645, 335)
@@ -106,7 +108,6 @@ texture = ExtResource("4_ntl77")
 position = Vector2(659, 332)
 
 [node name="EggCrack" type="Node2D" parent="." unique_id=1774307503]
-visible = false
 
 [node name="Bowl" type="Area2D" parent="EggCrack" unique_id=1015155255]
 position = Vector2(359, 354)
@@ -185,9 +186,9 @@ position = Vector2(66.35133, 75.30292)
 shape = SubResource("CircleShape2D_08i74")
 
 [node name="Coating" type="Node2D" parent="." unique_id=2062706086]
-visible = false
 
 [node name="Bowl" type="Area2D" parent="Coating" unique_id=2096943757]
+script = ExtResource("6_t13xu")
 
 [node name="BowlTexture" type="Sprite2D" parent="Coating/Bowl" unique_id=1434336932]
 position = Vector2(349, 335)
@@ -210,23 +211,40 @@ position = Vector2(944.99994, 331)
 scale = Vector2(1.298, 1.298)
 texture = ExtResource("4_ntl77")
 
+[node name="eggplant_coat" parent="Coating/Eggplants" unique_id=362954361 instance=ExtResource("16_5d7dr")]
+position = Vector2(1042, 332)
+
+[node name="eggplant_coat2" parent="Coating/Eggplants" unique_id=2077906678 instance=ExtResource("16_5d7dr")]
+position = Vector2(876, 335)
+
+[node name="eggplant_coat3" parent="Coating/Eggplants" unique_id=335502563 instance=ExtResource("16_5d7dr")]
+position = Vector2(957, 345)
+
 [node name="Cook" type="Node2D" parent="." unique_id=23931654]
-visible = false
 
 [node name="Oil" parent="Cook" unique_id=1503278428 instance=ExtResource("11_yan7c")]
+z_index = 2
 position = Vector2(972, 124)
 
 [node name="TortaPan" type="Area2D" parent="Cook" unique_id=630621223]
+position = Vector2(369, 336)
 scale = Vector2(1.715, 1.715)
-script = ExtResource("11_v1cdo")
+script = ExtResource("18_8yo6g")
+metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Cook/TortaPan" unique_id=222868565]
-position = Vector2(219.82507, 304.95627)
+[node name="NoOil" type="Sprite2D" parent="Cook/TortaPan" unique_id=222868565]
 rotation = -1.5707964
 texture = ExtResource("3_l56b8")
+offset = Vector2(-103.865, 0)
+
+[node name="HasOil" type="Sprite2D" parent="Cook/TortaPan" unique_id=958337886]
+visible = false
+rotation = -1.5707964
+texture = ExtResource("19_8lmjv")
+offset = Vector2(-103.865, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cook/TortaPan" unique_id=86701226]
-position = Vector2(219.82507, 200)
+position = Vector2(-1.1661682, -1.1661835)
 scale = Vector2(0.58309036, 0.58309036)
 shape = SubResource("CircleShape2D_y130u")
 
@@ -237,8 +255,19 @@ position = Vector2(964.99994, 441)
 scale = Vector2(1.298, 1.298)
 texture = ExtResource("4_ntl77")
 
+[node name="EggplantToCook" parent="Cook/Eggplants" unique_id=1462972664 instance=ExtResource("20_8lmjv")]
+position = Vector2(1064, 433)
+
+[node name="EggplantToCook2" parent="Cook/Eggplants" unique_id=2012220450 instance=ExtResource("20_8lmjv")]
+position = Vector2(955, 437)
+
+[node name="EggplantToCook3" parent="Cook/Eggplants" unique_id=1000055691 instance=ExtResource("20_8lmjv")]
+position = Vector2(854, 433)
+
 [connection signal="egg_crack_finished" from="." to="." method="_on_egg_crack_finished"]
 [connection signal="egg_mix_finished" from="." to="." method="_on_egg_mix_finished"]
+[connection signal="eggcoat_finished" from="." to="." method="_on_eggcoat_finished"]
+[connection signal="torta_frying_finished" from="." to="." method="_on_torta_frying_finished"]
 [connection signal="tortagrill_finished" from="." to="." method="_on_tortagrill_finished"]
 [connection signal="tortapeelnflatten_finished" from="." to="." method="_on_tortapeelnflatten_finished"]
 [connection signal="mouse_entered" from="EggCrack/EggCarton" to="EggCrack/EggCarton" method="_on_mouse_entered"]
