@@ -220,4 +220,4 @@ scale = Vector2(1.298, 1.298)
 texture = ExtResource("4_ntl77")
 
 [connection signal="tortagrill_finished" from="." to="." method="_on_tortagrill_finished"]
-[connection signal="eggplantPeelLeft" from="PeelAndFlatten/eggplant_peel" to="." method="_on_eggplant_peel_eggplant_peel_left"]
+[connection signal="tortapeelnflatten_finished" from="." to="." method="_on_tortapeelnflatten_finished"]

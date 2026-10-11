@@ -15,7 +15,21 @@ signal tortagrill_finished
 var uncooked_torta: int = 3
 
 #PEEL & FLATTEN
+signal tortapeelnflatten_finished
 const EGGPLANT_PEEL = preload("uid://xy6lg1ajeyia")
+@onready var plate: Sprite2D = $PeelAndFlatten/Plate
+var peelednflattened_torta: int = 0:
+	set(value):
+		if not peelednflattened_torta == value:
+			peelednflattened_torta = value
+			if peelednflattened_torta >= 3:
+				tortapeelnflatten_finished.emit()
+			else:
+				var eggpl_peel = EGGPLANT_PEEL.instantiate()
+				eggpl_peel.global_position = plate.global_position
+				eggpl_peel.global_position.x += get_viewport().get_visible_rect().size.x
+				peel_and_flatten.add_child(eggpl_peel)
+				create_tween().tween_property(eggpl_peel, "position", plate.global_position, 1.5).set_trans(Tween.TRANS_ELASTIC)
 
 func _ready() -> void:
 	grill.position.x += get_viewport().get_visible_rect().size.x
@@ -32,9 +46,6 @@ func _on_tortagrill_finished() -> void:
 	GlobalVars.item_exit(grill)
 	GlobalVars.item_enter(peel_and_flatten)
 
-func _on_eggplant_peel_eggplant_peel_left() -> void:
-	var eggpl_peel = EGGPLANT_PEEL.instantiate()
-	eggpl_peel.global_position = Vector2(get_viewport_rect().size.x/2, get_viewport_rect().size.y/2)
-	eggpl_peel.position.x += get_viewport().get_visible_rect().size.x
-	
-	GlobalVars.item_enter(eggpl_peel)
+func _on_tortapeelnflatten_finished() -> void:
+	GlobalVars.item_exit(peel_and_flatten)
+	GlobalVars.item_enter(egg_crack)
