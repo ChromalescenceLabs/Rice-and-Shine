@@ -19,11 +19,11 @@ size = Vector2(105.399414, 44.37869)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ullcx"]
 size = Vector2(280, 148)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkm2g"]
-size = Vector2(52.69967, 59.001465)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgoni"]
 size = Vector2(51.60504, 13.698242)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkm2g"]
+size = Vector2(52.69967, 59.001465)
 
 [node name="Squeeze" type="Node2D" unique_id=1629429422]
 
@@ -119,8 +119,6 @@ scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_ullcx")
 
 [node name="scroll1" type="Node2D" parent="." unique_id=51224198]
-position = Vector2(122, 472)
-scale = Vector2(1.0816, 1.0816)
 
 [node name="bg" type="ColorRect" parent="scroll1" unique_id=1004545775]
 anchors_preset = 8
@@ -128,18 +126,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -19.41568
-offset_top = -97.078415
-offset_right = 19.41568
-offset_bottom = 97.078415
+offset_left = 741.0
+offset_top = 375.0
+offset_right = 779.83136
+offset_bottom = 569.15686
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="knob" type="Area2D" parent="scroll1" unique_id=241914014]
-position = Vector2(0, 90.60651)
+[node name="end" type="Area2D" parent="scroll1" unique_id=1543257826]
+position = Vector2(760.41565, 375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scroll1/end" unique_id=1614934269]
+shape = SubResource("RectangleShape2D_vgoni")
+
+[node name="knob" type="Area2D" parent="." unique_id=241914014]
+position = Vector2(760.41565, 562.07837)
 script = ExtResource("7_1rw02")
 
-[node name="knob(?)" type="ColorRect" parent="scroll1/knob" unique_id=107516045]
+[node name="knob(?)" type="ColorRect" parent="knob" unique_id=107516045]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -154,14 +158,8 @@ grow_vertical = 2
 scale = Vector2(1.0369912, 1)
 color = Color(0.6365752, 0.2784357, 0.28058097, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scroll1/knob" unique_id=1231291573]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="knob" unique_id=1231291573]
 shape = SubResource("RectangleShape2D_dkm2g")
-
-[node name="end" type="Area2D" parent="scroll1" unique_id=1543257826]
-position = Vector2(0, -97.07839)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scroll1/end" unique_id=1614934269]
-shape = SubResource("RectangleShape2D_vgoni")
 
 [node name="scroll2" type="Node2D" parent="." unique_id=1328272973]
 visible = false
@@ -220,5 +218,6 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="bowl" to="gratedP" method="_on_bowl_mouse_entered"]
 [connection signal="area_entered" from="gratedP" to="gratedP" method="_on_area_entered"]
-[connection signal="area_entered" from="scroll1/knob" to="scroll1/knob" method="_on_area_entered"]
-[connection signal="input_event" from="scroll1/knob" to="scroll1/knob" method="_on_input_event"]
+[connection signal="area_entered" from="knob" to="knob" method="_on_area_entered"]
+[connection signal="input_event" from="knob" to="knob" method="_on_input_event"]
+[connection signal="mouse_entered" from="knob" to="knob" method="_on_mouse_entered"]
