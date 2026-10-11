@@ -123,6 +123,7 @@ position = Vector2(208, 453)
 scale = Vector2(1.04, 1.04)
 
 [node name="unsqueezed" type="TextureRect" parent="squeezing" unique_id=1066860998]
+visible = false
 offset_left = 75.0
 offset_top = -341.34616
 offset_right = 381.0
@@ -132,6 +133,7 @@ texture = ExtResource("7_qno4u")
 metadata/_edit_use_anchors_ = true
 
 [node name="squeezed" type="TextureRect" parent="squeezing" unique_id=710190419]
+visible = false
 offset_left = 109.61539
 offset_top = -344.23077
 offset_right = 358.6154
@@ -141,6 +143,7 @@ texture = ExtResource("8_6rict")
 metadata/_edit_use_anchors_ = true
 
 [node name="scroll1" type="Node2D" parent="." unique_id=51224198]
+position = Vector2(764, 498)
 
 [node name="bg" type="ColorRect" parent="scroll1" unique_id=1004545775]
 anchors_preset = 8
@@ -148,28 +151,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 741.0
-offset_top = 375.0
-offset_right = 779.83136
-offset_bottom = 569.15686
+offset_left = -19.41568
+offset_top = -97.07843
+offset_right = 19.41568
+offset_bottom = 97.07843
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
 [node name="end" type="Area2D" parent="scroll1" unique_id=1543257826]
-position = Vector2(760.41565, 375)
+position = Vector2(0, -91)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scroll1/end" unique_id=1614934269]
 shape = SubResource("RectangleShape2D_vgoni")
 
 [node name="start" type="Area2D" parent="scroll1" unique_id=203533222]
-position = Vector2(760.41565, 562.07837)
+position = Vector2(0, 78)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scroll1/start" unique_id=1427952012]
 shape = SubResource("RectangleShape2D_dkm2g")
 
 [node name="knob" type="Area2D" parent="scroll1" unique_id=241914014]
-position = Vector2(760.41565, 562.07837)
+position = Vector2(0, 78)
 script = ExtResource("7_1rw02")
 
 [node name="knob(?)" type="ColorRect" parent="scroll1/knob" unique_id=107516045]
@@ -191,37 +194,58 @@ color = Color(0.6365752, 0.2784357, 0.28058097, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scroll1/knob" unique_id=1231291573]
 shape = SubResource("RectangleShape2D_dkm2g")
 
-[node name="scroll2" type="Node2D" parent="." unique_id=1328272973]
-visible = false
-position = Vector2(589, 341)
-rotation = -1.5707964
+[node name="scroll2" type="Node2D" parent="." unique_id=1031982490]
+position = Vector2(643, 234)
+rotation = 3.1415927
 
-[node name="bg" type="ColorRect" parent="scroll2" unique_id=314169948]
-offset_left = -278.29144
-offset_top = -83.21009
-offset_right = -239.46008
-offset_bottom = 206.86682
+[node name="bg" type="ColorRect" parent="scroll2" unique_id=1167274613]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.41568
+offset_top = -308.3506
+offset_right = 19.41568
+offset_bottom = 97.07843
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="knob" type="Area2D" parent="scroll2" unique_id=100606631]
-position = Vector2(-278.2914, 13.789917)
+[node name="end" type="Area2D" parent="scroll2" unique_id=1538775643]
+position = Vector2(-1.8795898e-05, -306)
 
-[node name="knob(?)" type="ColorRect" parent="scroll2/knob" unique_id=509243137]
-offset_left = -0.92456055
-offset_top = 150.70267
-offset_right = 37.9068
-offset_bottom = 194.15686
-scale = Vector2(1.0369912, 1)
-color = Color(0.6365752, 0.2784357, 0.28058097, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scroll2/end" unique_id=1788782185]
+shape = SubResource("RectangleShape2D_vgoni")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scroll2/knob" unique_id=2104038420]
-position = Vector2(18.953339, 171.12796)
+[node name="start" type="Area2D" parent="scroll2" unique_id=196265074]
+position = Vector2(0, 78)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scroll2/start" unique_id=768934616]
 shape = SubResource("RectangleShape2D_dkm2g")
 
-[node name="end" type="Area2D" parent="scroll2" unique_id=636271080]
-position = Vector2(-258.79068, -77.11545)
+[node name="knob" type="Area2D" parent="scroll2" unique_id=879141935]
+position = Vector2(0, 78)
+script = ExtResource("7_1rw02")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scroll2/end" unique_id=432330795]
-shape = SubResource("RectangleShape2D_vgoni")
+[node name="knob(?)" type="ColorRect" parent="scroll2/knob" unique_id=274242603]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.41565
+offset_top = -21.727112
+offset_right = 19.41571
+offset_bottom = 21.72705
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0369912, 1)
+mouse_filter = 2
+color = Color(0.6365752, 0.2784357, 0.28058097, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scroll2/knob" unique_id=1983144201]
+shape = SubResource("RectangleShape2D_dkm2g")
 
 [connection signal="mouse_entered" from="bowl" to="gratedP" method="_on_bowl_mouse_entered"]
 [connection signal="mouse_exited" from="bowl" to="gratedP" method="_on_bowl_mouse_exited"]
@@ -230,3 +254,6 @@ shape = SubResource("RectangleShape2D_vgoni")
 [connection signal="mouse_entered" from="scroll1/start" to="scroll1/knob" method="_on_start_mouse_entered"]
 [connection signal="mouse_exited" from="scroll1/start" to="scroll1/knob" method="_on_start_mouse_exited"]
 [connection signal="area_entered" from="scroll1/knob" to="scroll1/knob" method="_on_area_entered"]
+[connection signal="mouse_entered" from="scroll2/start" to="scroll2/knob" method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="scroll2/start" to="scroll2/knob" method="_on_start_mouse_exited"]
+[connection signal="area_entered" from="scroll2/knob" to="scroll2/knob" method="_on_area_entered"]
