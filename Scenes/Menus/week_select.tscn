@@ -2,15 +2,161 @@
 
 [ext_resource type="Texture2D" uid="uid://b5s3gdbnh5kai" path="res://Assets/Menus/ChapterSelect/week one.png" id="1_q88pd"]
 [ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/placeholderbg.png" id="1_yue0x"]
+[ext_resource type="Script" uid="uid://bqee6mcelhbps" path="res://Scenes/Menus/week_one.gd" id="3_6gum4"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_f7kjc"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_rn5ul"]
+
+[sub_resource type="Resource" id="Resource_f7kjc"]
+script = ExtResource("5_rn5ul")
+
+[sub_resource type="Resource" id="Resource_rn5ul"]
+script = ExtResource("5_rn5ul")
 
 [node name="Node2D" type="Node2D" unique_id=812155023]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=267043113]
+[node name="BG" type="Sprite2D" parent="." unique_id=267043113]
 modulate = Color(1, 1, 1, 0.48235294)
-position = Vector2(650, 370)
+position = Vector2(644, 357)
 texture = ExtResource("1_yue0x")
 
-[node name="WeekOne" type="Sprite2D" parent="." unique_id=120636608]
-position = Vector2(356, 348.99997)
+[node name="DESCRIPTION" type="Label" parent="." unique_id=1229580947]
+offset_left = 46.0
+offset_top = 531.0
+offset_right = 680.0
+offset_bottom = 592.11115
+theme_override_font_sizes/font_size = 30
+text = "WEEK ONE DESCRIPTION TESTING TEST TEST"
+metadata/_edit_use_anchors_ = true
+
+[node name="WeekSeven" type="Sprite2D" parent="." unique_id=1741573179]
+position = Vector2(215.92436, 286.9244)
+rotation = 0.101229094
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
+
+[node name="WeekSix" type="Sprite2D" parent="." unique_id=1968593448]
+position = Vector2(226.9244, 288.92438)
+rotation = -0.24783675
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("1_q88pd")
+
+[node name="WeekFive" type="Sprite2D" parent="." unique_id=1212685339]
+position = Vector2(276.92438, 290.9244)
+rotation = -0.03490658
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("1_q88pd")
+
+[node name="WeekFour" type="Sprite2D" parent="." unique_id=1813907432]
+position = Vector2(316.92438, 301.9244)
+rotation = -0.2687807
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("1_q88pd")
+
+[node name="WeekThree" type="Sprite2D" parent="." unique_id=1511646685]
+position = Vector2(377.92438, 309.9244)
+rotation = -0.15184365
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("1_q88pd")
+
+[node name="WeekTwo" type="Sprite2D" parent="." unique_id=115854033]
+position = Vector2(426.92438, 303.9244)
+rotation = -0.2687807
+scale = Vector2(0.7200001, 0.7200001)
+texture = ExtResource("1_q88pd")
+
+[node name="WeekOne" type="Sprite2D" parent="." unique_id=120636608]
+position = Vector2(488.9244, 333.9244)
+rotation = 0.12391838
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("1_q88pd")
+script = ExtResource("3_6gum4")
+
+[node name="WeekScroll" type="ScrollContainer" parent="." unique_id=1922362238]
+offset_left = 730.0
+offset_top = 88.0
+offset_right = 1240.0
+offset_bottom = 666.0
+script = ExtResource("4_f7kjc")
+wheel_scroll_damper = SubResource("Resource_f7kjc")
+dragging_scroll_damper = SubResource("Resource_rn5ul")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WeekScroll" unique_id=738724787]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 30
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer" type="MarginContainer" parent="WeekScroll/VBoxContainer" unique_id=1660941153]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DAYONE" type="Button" parent="WeekScroll/VBoxContainer" unique_id=1474732525]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "DAY ONE"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DAYTWO" type="Button" parent="WeekScroll/VBoxContainer" unique_id=4387427]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "DAY TWO
+"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DAYTHREE" type="Button" parent="WeekScroll/VBoxContainer" unique_id=212494990]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "DAY THREE
+"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DAYFOUR" type="Button" parent="WeekScroll/VBoxContainer" unique_id=201245919]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "DAY FOUR
+"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DAYFIVE" type="Button" parent="WeekScroll/VBoxContainer" unique_id=630219886]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "DAY FIVE
+
+"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DAYSIX" type="Button" parent="WeekScroll/VBoxContainer" unique_id=314298777]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "DAY SIX
+
+
+"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DAYSEVEN" type="Button" parent="WeekScroll/VBoxContainer" unique_id=1430273747]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "DAY SEVEN
+
+
+"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="WeekScroll/VBoxContainer" unique_id=485881556]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[connection signal="mouse_entered" from="DESCRIPTION" to="WeekOne" method="_on_label_mouse_entered"]
+[connection signal="mouse_exited" from="DESCRIPTION" to="WeekOne" method="_on_label_mouse_exited"]
