@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://xy6lg1ajeyia" path="res://Scenes/Freeplay/CookingMinigames/Torta/eggplant_peel.tscn" id="8_35lg7"]
 [ext_resource type="Texture2D" uid="uid://dknguuyqp4nmk" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggInBowl.png" id="9_v1cdo"]
 [ext_resource type="Texture2D" uid="uid://b2i0p3coh4lty" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggInBowlMixed.png" id="10_yan7c"]
+[ext_resource type="Script" uid="uid://c7ve2hx18mgtf" path="res://Scripts/Freeplay/CookingMinigames/Torta/egg_carton.gd" id="11_6arap"]
 [ext_resource type="Script" uid="uid://dwduvrau26522" path="res://Scripts/Freeplay/CookingMinigames/Non-Specific/pan.gd" id="11_v1cdo"]
 [ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/oil.tscn" id="11_yan7c"]
 
@@ -25,7 +26,10 @@ size = Vector2(348, 36)
 size = Vector2(348, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1cdo"]
-size = Vector2(357, 198)
+size = Vector2(32, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35lg7"]
+size = Vector2(34, 80)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_08i74"]
 
@@ -40,15 +44,14 @@ radius = 199.02261
 [node name="Torta" type="Node2D" unique_id=1253407073]
 script = ExtResource("1_lbxyh")
 
+[node name="FrontBG" type="Sprite2D" parent="." unique_id=382706163]
+texture = ExtResource("3_fsr8o")
+centered = false
+metadata/_edit_lock_ = true
+
 [node name="TopDownBG" type="Sprite2D" parent="." unique_id=1492994240]
 position = Vector2(902, 582)
 texture = ExtResource("2_b0qvh")
-metadata/_edit_lock_ = true
-
-[node name="FrontBG" type="Sprite2D" parent="." unique_id=382706163]
-visible = false
-texture = ExtResource("3_fsr8o")
-centered = false
 metadata/_edit_lock_ = true
 
 [node name="Grill" type="Node2D" parent="." unique_id=1082929421]
@@ -88,6 +91,7 @@ position = Vector2(1060, 313)
 position = Vector2(958, 323)
 
 [node name="PeelAndFlatten" type="Node2D" parent="." unique_id=2008846090]
+visible = false
 
 [node name="Plate" type="Sprite2D" parent="PeelAndFlatten" unique_id=390128255]
 position = Vector2(645, 335)
@@ -98,31 +102,32 @@ texture = ExtResource("4_ntl77")
 position = Vector2(659, 332)
 
 [node name="EggCrack" type="Node2D" parent="." unique_id=1774307503]
-visible = false
 
 [node name="Bowl" type="Area2D" parent="EggCrack" unique_id=1015155255]
+position = Vector2(359, 354)
 script = ExtResource("6_t13xu")
+metadata/_edit_group_ = true
 
 [node name="BowlFront" type="Sprite2D" parent="EggCrack/Bowl" unique_id=1025351695]
-position = Vector2(317, 280)
+position = Vector2(5.5, -58.5)
 scale = Vector2(0.795, 0.795)
 texture = ExtResource("7_e3k5g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EggCrack/Bowl" unique_id=532381839]
-position = Vector2(310, 338)
+position = Vector2(3.5, -0.5)
 shape = SubResource("RectangleShape2D_08i74")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="EggCrack/Bowl" unique_id=1779277030]
-position = Vector2(317, 252)
+position = Vector2(5.5, -87.5)
 shape = SubResource("RectangleShape2D_3v3rl")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EggCrack/Bowl" unique_id=313023030]
-position = Vector2(138, 296)
+position = Vector2(-175.5, -42.5)
 shape = SubResource("RectangleShape2D_v1cdo")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="EggCrack/Bowl" unique_id=1402631391]
-position = Vector2(486, 294)
-shape = SubResource("RectangleShape2D_v1cdo")
+position = Vector2(174.5, -44.5)
+shape = SubResource("RectangleShape2D_35lg7")
 
 [node name="EggCarton" type="TextureRect" parent="EggCrack" unique_id=560069496]
 offset_left = 661.0
@@ -130,6 +135,7 @@ offset_top = 312.0
 offset_right = 1164.0
 offset_bottom = 478.0
 texture = SubResource("PlaceholderTexture2D_08i74")
+script = ExtResource("11_6arap")
 
 [node name="EggMix" type="Node2D" parent="." unique_id=1266515050]
 visible = false
@@ -219,5 +225,8 @@ position = Vector2(964.99994, 441)
 scale = Vector2(1.298, 1.298)
 texture = ExtResource("4_ntl77")
 
+[connection signal="egg_crack_finished" from="." to="." method="_on_egg_crack_finished"]
 [connection signal="tortagrill_finished" from="." to="." method="_on_tortagrill_finished"]
 [connection signal="tortapeelnflatten_finished" from="." to="." method="_on_tortapeelnflatten_finished"]
+[connection signal="mouse_entered" from="EggCrack/EggCarton" to="EggCrack/EggCarton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="EggCrack/EggCarton" to="EggCrack/EggCarton" method="_on_mouse_exited"]

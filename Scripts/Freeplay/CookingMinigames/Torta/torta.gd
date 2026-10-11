@@ -31,6 +31,18 @@ var peelednflattened_torta: int = 0:
 				peel_and_flatten.add_child(eggpl_peel)
 				create_tween().tween_property(eggpl_peel, "position", plate.global_position, 1.5).set_trans(Tween.TRANS_ELASTIC)
 
+# EGG CRACK 
+signal egg_crack_finished
+@onready var egg_carton: TextureRect = $EggCrack/EggCarton
+@onready var eggcrack_bowl: BowlArea = $EggCrack/Bowl
+var cracked_egg_amt: int = 0:
+	set(value):
+		if not cracked_egg_amt == value:
+			cracked_egg_amt = value
+			if cracked_egg_amt >= 2:
+				egg_crack_finished.emit()
+
+
 func _ready() -> void:
 	grill.position.x += get_viewport().get_visible_rect().size.x
 	peel_and_flatten.position.x += get_viewport().get_visible_rect().size.x
@@ -39,8 +51,7 @@ func _ready() -> void:
 	coating.position.x += get_viewport().get_visible_rect().size.x
 	cook.position.x += get_viewport().get_visible_rect().size.x
 	
-	#GlobalVars.item_enter(grill)
-	GlobalVars.item_enter(peel_and_flatten)
+	_on_tortapeelnflatten_finished()
 	
 func _on_tortagrill_finished() -> void:
 	GlobalVars.item_exit(grill)
@@ -49,3 +60,13 @@ func _on_tortagrill_finished() -> void:
 func _on_tortapeelnflatten_finished() -> void:
 	GlobalVars.item_exit(peel_and_flatten)
 	GlobalVars.item_enter(egg_crack)
+	
+	create_tween().tween_property(top_down_bg, "modulate:a", 0, 0.3).set_trans(Tween.TRANS_CUBIC)
+
+func _on_egg_crack_finished() -> void:
+	egg_carton.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	GlobalVars.successind(get_tree().current_scene)
+	await GlobalVars.successIndEnd
+	
+	GlobalVars.item_exit(egg_crack)
+	GlobalVars.item_enter(egg_mix)
