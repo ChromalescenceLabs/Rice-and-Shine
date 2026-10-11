@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://3nbi6q3ikgh8"]
 
 [ext_resource type="Texture2D" uid="uid://c3nf38bod08ol" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/Faucet.png" id="1_rgt3r"]
-[ext_resource type="Script" uid="uid://bokpqpdu1mj0s" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/rinsing.gd" id="1_u24y8"]
-[ext_resource type="Texture2D" uid="uid://c2csa4kyjeclm" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated4.png" id="2_3bmws"]
 [ext_resource type="Texture2D" uid="uid://kiwxlmilcqo7" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/FaucetButton.png" id="2_trhme"]
 [ext_resource type="Script" uid="uid://da7ohw2xexi6m" path="res://Scripts/Freeplay/CookingMinigames/Kanin/water.gd" id="3_3bmws"]
 [ext_resource type="Script" uid="uid://cfqpyuacpk5jt" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/potato.gd" id="5_6nrqd"]
+[ext_resource type="Texture2D" uid="uid://dmy3ggx6q1pnu" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/gratedPotatoesBowl.png" id="5_dsqg2"]
 
 [sub_resource type="Gradient" id="Gradient_27br6"]
 offsets = PackedFloat32Array(1)
@@ -34,10 +33,9 @@ hue_variation_max = -2.2351742e-08
 size = Vector2(32, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
-size = Vector2(385, 220)
+size = Vector2(367, 203)
 
 [node name="rinse" type="Node2D" unique_id=258493805]
-script = ExtResource("1_u24y8")
 
 [node name="Faucet2" type="Sprite2D" parent="." unique_id=1669503816]
 position = Vector2(631, 338)
@@ -91,10 +89,11 @@ offset_bottom = 670.0
 wait_time = 0.05
 
 [node name="potato" type="Area2D" parent="." unique_id=1776436212]
-position = Vector2(127, 440)
+position = Vector2(200, 461)
 script = ExtResource("5_6nrqd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="potato" unique_id=1792391125]
+position = Vector2(3.5, 0.5)
 shape = SubResource("RectangleShape2D_ittll")
 
 [node name="gratedPotatoes" type="TextureRect" parent="potato" unique_id=248327213]
@@ -103,17 +102,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -205.0
-offset_top = -133.0
-offset_right = 191.0
-offset_bottom = 109.0
+offset_left = -171.0
+offset_top = -90.00001
+offset_right = 489.0
+offset_bottom = 277.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_3bmws")
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("5_dsqg2")
 
 [connection signal="pressed" from="FaucetButton/Open" to="Water" method="_on_open_pressed"]
 [connection signal="pressed" from="FaucetButton/Close" to="Water" method="_on_close_pressed"]
 [connection signal="finished" from="Water" to="Water" method="_on_finished"]
+[connection signal="area_entered" from="Water/WaterDetect" to="." method="_on_water_detect_area_entered"]
 [connection signal="area_entered" from="Water/WaterDetect" to="Water" method="_on_water_detect_area_entered"]
 [connection signal="area_exited" from="Water/WaterDetect" to="Water" method="_on_water_detect_area_exited"]
+[connection signal="timeout" from="WaterProgressBar/ProgressBarChangeTime" to="Water" method="_on_progress_bar_change_time_timeout"]
 [connection signal="input_event" from="potato" to="potato" method="_on_input_event"]
+[connection signal="mouse_entered" from="potato" to="potato" method="_on_mouse_entered"]

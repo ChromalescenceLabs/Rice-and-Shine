@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx2upm6et2rh3"
-path="res://.godot/imported/bowl.png-5ca7aa7c4cf27a95d9e057335635b93e.ctex"
+uid="uid://cvmeirgnsp1kc"
+path="res://.godot/imported/clothWetPotatoes.png-d7dc76e91ff8ec41e0752e089d82252d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bowl.png"
-dest_files=["res://.godot/imported/bowl.png-5ca7aa7c4cf27a95d9e057335635b93e.ctex"]
+source_file="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/clothWetPotatoes.png"
+dest_files=["res://.godot/imported/clothWetPotatoes.png-d7dc76e91ff8ec41e0752e089d82252d.ctex"]
 
 [params]
 

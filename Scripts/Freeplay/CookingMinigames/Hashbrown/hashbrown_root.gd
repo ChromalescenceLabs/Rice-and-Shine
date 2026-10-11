@@ -8,7 +8,7 @@ func _ready() -> void:
 	grate.position.x += get_viewport().get_visible_rect().size.x
 	rinse.position.x += get_viewport().get_visible_rect().size.x
 	
-	GlobalVars.item_enter(rinse)
+	GlobalVars.item_enter(peel)
 
 
 func _on_peel_peeled() -> void:
@@ -23,3 +23,13 @@ func _on_peel_peeled() -> void:
 func _on_grated_full_grated() -> void:
 	GlobalVars.successind(self)
 	await GlobalVars.successIndEnd
+	
+	GlobalVars.item_exit(grate)
+	peel.set_process(false)
+	GlobalVars.item_enter(rinse)
+
+func _on_water_water_completed() -> void:
+	GlobalVars.successind(self)
+	await GlobalVars.successIndEnd
+	
+	GlobalVars.item_exit(rinse)
