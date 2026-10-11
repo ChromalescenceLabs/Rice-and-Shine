@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Menus/tempbutton.png" id="4_rn5ul"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_rn5ul"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ullcx"]
+
 [sub_resource type="Resource" id="Resource_f7kjc"]
 script = ExtResource("5_rn5ul")
 
@@ -29,50 +31,69 @@ theme_override_font_sizes/font_size = 30
 text = "WEEK ONE DESCRIPTION TESTING TEST TEST"
 metadata/_edit_use_anchors_ = true
 
-[node name="weeks" type="Node2D" parent="." unique_id=1693177920]
+[node name="weeks" type="Node2D" parent="." unique_id=1043191866]
+
+[node name="weeksNum" type="Node2D" parent="weeks" unique_id=1693177920]
 script = ExtResource("2_f7kjc")
 
-[node name="WeekSeven" type="Sprite2D" parent="weeks" unique_id=1741573179]
+[node name="WeekSeven" type="Sprite2D" parent="weeks/weeksNum" unique_id=1741573179]
 position = Vector2(207, 297.00003)
 rotation = 0.5235988
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekSix" type="Sprite2D" parent="weeks" unique_id=1968593448]
+[node name="WeekSix" type="Sprite2D" parent="weeks/weeksNum" unique_id=1968593448]
 position = Vector2(226.9244, 288.92438)
 rotation = -0.24783675
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekFive" type="Sprite2D" parent="weeks" unique_id=1212685339]
+[node name="WeekFive" type="Sprite2D" parent="weeks/weeksNum" unique_id=1212685339]
 position = Vector2(280, 299)
 rotation = -0.034906577
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekFour" type="Sprite2D" parent="weeks" unique_id=1813907432]
+[node name="WeekFour" type="Sprite2D" parent="weeks/weeksNum" unique_id=1813907432]
 position = Vector2(316.92438, 301.9244)
 rotation = -0.2687807
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekThree" type="Sprite2D" parent="weeks" unique_id=1511646685]
+[node name="WeekThree" type="Sprite2D" parent="weeks/weeksNum" unique_id=1511646685]
 position = Vector2(377.92438, 309.9244)
 rotation = -0.15184365
 scale = Vector2(0.71999997, 0.71999997)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekTwo" type="Sprite2D" parent="weeks" unique_id=115854033]
+[node name="WeekTwo" type="Sprite2D" parent="weeks/weeksNum" unique_id=115854033]
 position = Vector2(426.92438, 303.9244)
 rotation = -0.2687807
 scale = Vector2(0.7200001, 0.7200001)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekOne" type="Sprite2D" parent="weeks" unique_id=120636608]
-position = Vector2(466, 328.00003)
+[node name="WeekOne" type="Sprite2D" parent="weeks/weeksNum" unique_id=120636608]
+material = SubResource("CanvasItemMaterial_ullcx")
+position = Vector2(466.00003, 328.00003)
 rotation = 0.34906584
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
+
+[node name="highlight" type="ColorRect" parent="weeks/weeksNum/WeekOne" unique_id=2006927983]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5019608)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -420.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.17254902, 1)
 
 [node name="WeekScroll" type="ScrollContainer" parent="." unique_id=1922362238]
 offset_left = 730.0
@@ -188,7 +209,4 @@ rotation = 3.1415927
 scale = Vector2(0.5287411, 0.5287411)
 texture_normal = ExtResource("4_rn5ul")
 
-[connection signal="mouse_entered" from="DESCRIPTION" to="weeks/WeekOne" method="_on_label_mouse_entered"]
-[connection signal="mouse_exited" from="DESCRIPTION" to="weeks/WeekOne" method="_on_label_mouse_exited"]
-[connection signal="pressed" from="WeekButton/Back" to="weeks" method="_on_back_pressed"]
-[connection signal="pressed" from="WeekButton/Forward" to="weeks" method="_on_forward_pressed"]
+[connection signal="pressed" from="WeekButton/Forward" to="weeks/weeksNum" method="_on_forward_pressed"]
