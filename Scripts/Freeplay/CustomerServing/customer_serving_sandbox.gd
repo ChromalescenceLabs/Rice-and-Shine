@@ -33,6 +33,12 @@ func _ready() -> void:
 				
 			for i in node_data.size():
 				foodcontchildren[i].qty = node_data[i]
+				
+		node_data = GlobalSaveManager.fetch_node_persistent_value(data, "CustomerConts")
+		if not node_data == null:
+			for i in node_data.size():
+				var customer = add_customer()
+				customer.customer_info = node_data[i]
 
 func _on_add_bowl_pressed() -> void: add_bowl_func()
 
@@ -96,8 +102,12 @@ func _on_tree_exiting() -> void:
 	var foodcont_data = []
 	for i in food_conts.get_children(): foodcont_data.append(i.qty)
 	
+	var customercont_data = []
+	for i in customers_cont.get_children(): customercont_data.append(i.customer_info)
+	
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "Bowls", bowl_data)
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "FoodConts", foodcont_data)
+	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "CustomerConts", customercont_data)
 
 func _on_button_pressed() -> void:
 	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
