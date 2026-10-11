@@ -2,13 +2,14 @@ extends Node2D
 @onready var peel: Node2D = $peel
 @onready var grate: Node2D = $grate
 @onready var rinse: Node2D = $rinse
+@onready var squeeze: Node2D = $Squeeze
 
 func _ready() -> void:
 	peel.position.x += get_viewport().get_visible_rect().size.x
 	grate.position.x += get_viewport().get_visible_rect().size.x
 	rinse.position.x += get_viewport().get_visible_rect().size.x
 	
-	GlobalVars.item_enter(peel)
+	GlobalVars.item_enter(squeeze)
 
 
 func _on_peel_peeled() -> void:
