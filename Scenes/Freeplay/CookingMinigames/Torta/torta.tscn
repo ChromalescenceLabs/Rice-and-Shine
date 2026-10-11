@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cfjgsnkmmit3k" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Plate.png" id="4_ntl77"]
 [ext_resource type="Script" uid="uid://b5v3p3jgr4d5v" path="res://Scripts/Freeplay/CustomerServing/bowl_area.gd" id="6_t13xu"]
 [ext_resource type="Texture2D" uid="uid://cenib63n7hwbs" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/BowlFront.png" id="7_e3k5g"]
+[ext_resource type="PackedScene" uid="uid://ctjs5gsclriie" path="res://Scenes/Freeplay/CookingMinigames/Torta/eggplant_norm.tscn" id="7_s1j6r"]
 [ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Bowl.png" id="8_3v3rl"]
 [ext_resource type="Texture2D" uid="uid://dknguuyqp4nmk" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggInBowl.png" id="9_v1cdo"]
 [ext_resource type="Texture2D" uid="uid://b2i0p3coh4lty" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggInBowlMixed.png" id="10_yan7c"]
@@ -52,24 +53,37 @@ metadata/_edit_lock_ = true
 [node name="Grill" type="Node2D" parent="." unique_id=1082929421]
 
 [node name="TortaPan" type="Area2D" parent="Grill" unique_id=1568215498]
+position = Vector2(392, 353)
 scale = Vector2(1.715, 1.715)
+script = ExtResource("11_v1cdo")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Grill/TortaPan" unique_id=1772105853]
-position = Vector2(219.82507, 304.95627)
 rotation = -1.5707964
 texture = ExtResource("3_l56b8")
+offset = Vector2(-103.105, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grill/TortaPan" unique_id=1436397068]
-position = Vector2(219.82507, 200)
+position = Vector2(-0.5830841, -0.5830841)
 scale = Vector2(0.58309036, 0.58309036)
 shape = SubResource("CircleShape2D_y130u")
 
 [node name="Eggplants" type="Node2D" parent="Grill" unique_id=369072245]
+position = Vector2(20, 50)
 
 [node name="Plate" type="Sprite2D" parent="Grill/Eggplants" unique_id=1447009211]
 position = Vector2(965.99994, 324)
 scale = Vector2(1.298, 1.298)
 texture = ExtResource("4_ntl77")
+
+[node name="EggplantNorm" parent="Grill/Eggplants" unique_id=1504297967 instance=ExtResource("7_s1j6r")]
+position = Vector2(861, 313)
+
+[node name="EggplantNorm2" parent="Grill/Eggplants" unique_id=5854023 instance=ExtResource("7_s1j6r")]
+position = Vector2(1060, 313)
+
+[node name="EggplantNorm3" parent="Grill/Eggplants" unique_id=38129985 instance=ExtResource("7_s1j6r")]
+position = Vector2(958, 323)
 
 [node name="PeelAndFlatten" type="Node2D" parent="." unique_id=2008846090]
 visible = false
@@ -200,3 +214,5 @@ shape = SubResource("CircleShape2D_y130u")
 position = Vector2(964.99994, 441)
 scale = Vector2(1.298, 1.298)
 texture = ExtResource("4_ntl77")
+
+[connection signal="tortagrill_finished" from="." to="." method="_on_tortagrill_finished"]

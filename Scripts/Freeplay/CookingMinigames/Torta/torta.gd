@@ -10,6 +10,9 @@ extends Node2D
 @onready var cook: Node2D = $Cook
 
 # GRILL
+signal tortagrill_finished
+@onready var grill_torta_pan: Area2D = $Grill/TortaPan
+var uncooked_torta: int = 3
 
 
 func _ready() -> void:
@@ -22,3 +25,6 @@ func _ready() -> void:
 	
 	GlobalVars.item_enter(grill)
 	
+
+func _on_tortagrill_finished() -> void:
+	GlobalVars.item_exit(grill)
