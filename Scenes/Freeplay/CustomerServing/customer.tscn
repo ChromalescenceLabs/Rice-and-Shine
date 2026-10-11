@@ -67,14 +67,15 @@ _data = {
 &"enter_exit": SubResource("Animation_ss3q5")
 }
 
-[node name="Customer" type="TextureRect" unique_id=873331728]
+[node name="Customer" type="TextureButton" unique_id=572008476]
 modulate = Color(1, 1, 1, 0)
 offset_left = -124.0
 offset_top = -249.0
 offset_right = 126.0
 offset_bottom = 251.0
 offset_transform_enabled = true
-texture = ExtResource("1_800xo")
+texture_normal = ExtResource("1_800xo")
+texture_hover = ExtResource("1_800xo")
 script = ExtResource("2_cnr3u")
 
 [node name="CustomerArea" type="Area2D" parent="." unique_id=1136218565]
@@ -86,3 +87,5 @@ shape = SubResource("CapsuleShape2D_08i74")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=426553017]
 libraries/ = SubResource("AnimationLibrary_8e4aw")
 speed_scale = 3.0
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

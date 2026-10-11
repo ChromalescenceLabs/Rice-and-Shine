@@ -1,0 +1,11 @@
+~ student
+Student: [[Mabuhay|Kamusta|Magandang Umaga]]! 
+~ order
+Student: I'd like to place an order!
+~ choices
+- Hey! How's it going?
+	Student: Doing alright, thanks for asking! => choices
+- Aren't you supposed to be in school?
+	Student: It just finished. Can I get my order please?. => choices
+- Sorry, could you please repeat your order? => order
+- Got it. => END

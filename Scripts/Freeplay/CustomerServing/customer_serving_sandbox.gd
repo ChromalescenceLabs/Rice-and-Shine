@@ -80,11 +80,12 @@ func add_bowl_func() -> TextureRect:
 	
 	return newBowl
 
-func add_customer() -> TextureRect:
+func add_customer() -> TextureButton:
 	var newCustomer = CUSTOMER.instantiate()
 	newCustomer.modulate.a = 0.0
 	customers_cont.add_child(newCustomer)
 	newCustomer.initialization()
+	newCustomer.indx = customers_cont.get_child_count()
 	
 	return newCustomer
 

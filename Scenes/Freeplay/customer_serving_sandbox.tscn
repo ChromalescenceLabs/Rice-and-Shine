@@ -61,10 +61,10 @@ texture = SubResource("GradientTexture2D_08i74")
 [node name="CustomersCont" type="HBoxContainer" parent="Control" unique_id=736920282]
 propagate_maximum_size = false
 layout_mode = 0
-offset_left = 24.0
-offset_top = 110.0
+offset_left = 13.0
+offset_top = 119.0
 offset_right = 1265.0
-offset_bottom = 610.0
+offset_bottom = 633.0
 size_flags_horizontal = 3
 
 [node name="BowlConts" type="HBoxContainer" parent="Control" unique_id=1003470384]
