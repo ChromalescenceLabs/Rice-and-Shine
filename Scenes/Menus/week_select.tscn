@@ -2,9 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://b5s3gdbnh5kai" path="res://Assets/Menus/ChapterSelect/week one.png" id="1_q88pd"]
 [ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/placeholderbg.png" id="1_yue0x"]
-[ext_resource type="Script" uid="uid://bqee6mcelhbps" path="res://Scenes/Menus/week_one.gd" id="3_6gum4"]
+[ext_resource type="Script" uid="uid://4k3twsh5t7rh" path="res://Scenes/Menus/weeks.gd" id="2_f7kjc"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_f7kjc"]
+[ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Menus/tempbutton.png" id="4_rn5ul"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_rn5ul"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ullcx"]
 
 [sub_resource type="Resource" id="Resource_f7kjc"]
 script = ExtResource("5_rn5ul")
@@ -28,48 +31,69 @@ theme_override_font_sizes/font_size = 30
 text = "WEEK ONE DESCRIPTION TESTING TEST TEST"
 metadata/_edit_use_anchors_ = true
 
-[node name="WeekSeven" type="Sprite2D" parent="." unique_id=1741573179]
-position = Vector2(215.92436, 286.9244)
-rotation = 0.101229094
+[node name="weeks" type="Node2D" parent="." unique_id=1043191866]
+
+[node name="weeksNum" type="Node2D" parent="weeks" unique_id=1693177920]
+script = ExtResource("2_f7kjc")
+
+[node name="WeekSeven" type="Sprite2D" parent="weeks/weeksNum" unique_id=1741573179]
+position = Vector2(207, 297.00003)
+rotation = 0.5235988
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekSix" type="Sprite2D" parent="." unique_id=1968593448]
+[node name="WeekSix" type="Sprite2D" parent="weeks/weeksNum" unique_id=1968593448]
 position = Vector2(226.9244, 288.92438)
 rotation = -0.24783675
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekFive" type="Sprite2D" parent="." unique_id=1212685339]
-position = Vector2(276.92438, 290.9244)
-rotation = -0.03490658
+[node name="WeekFive" type="Sprite2D" parent="weeks/weeksNum" unique_id=1212685339]
+position = Vector2(280, 299)
+rotation = -0.034906577
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekFour" type="Sprite2D" parent="." unique_id=1813907432]
+[node name="WeekFour" type="Sprite2D" parent="weeks/weeksNum" unique_id=1813907432]
 position = Vector2(316.92438, 301.9244)
 rotation = -0.2687807
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekThree" type="Sprite2D" parent="." unique_id=1511646685]
+[node name="WeekThree" type="Sprite2D" parent="weeks/weeksNum" unique_id=1511646685]
 position = Vector2(377.92438, 309.9244)
 rotation = -0.15184365
-scale = Vector2(0.72, 0.72)
+scale = Vector2(0.71999997, 0.71999997)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekTwo" type="Sprite2D" parent="." unique_id=115854033]
+[node name="WeekTwo" type="Sprite2D" parent="weeks/weeksNum" unique_id=115854033]
 position = Vector2(426.92438, 303.9244)
 rotation = -0.2687807
 scale = Vector2(0.7200001, 0.7200001)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekOne" type="Sprite2D" parent="." unique_id=120636608]
-position = Vector2(488.9244, 333.9244)
-rotation = 0.12391838
+[node name="WeekOne" type="Sprite2D" parent="weeks/weeksNum" unique_id=120636608]
+material = SubResource("CanvasItemMaterial_ullcx")
+position = Vector2(466.00003, 328.00003)
+rotation = 0.34906584
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
-script = ExtResource("3_6gum4")
+
+[node name="highlight" type="ColorRect" parent="weeks/weeksNum/WeekOne" unique_id=2006927983]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5019608)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -420.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.17254902, 1)
 
 [node name="WeekScroll" type="ScrollContainer" parent="." unique_id=1922362238]
 offset_left = 730.0
@@ -81,26 +105,26 @@ wheel_scroll_damper = SubResource("Resource_f7kjc")
 dragging_scroll_damper = SubResource("Resource_rn5ul")
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="WeekScroll" unique_id=738724787]
+[node name="DayButton" type="VBoxContainer" parent="WeekScroll" unique_id=738724787]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 30
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="MarginContainer" type="MarginContainer" parent="WeekScroll/VBoxContainer" unique_id=1660941153]
+[node name="MarginContainer" type="MarginContainer" parent="WeekScroll/DayButton" unique_id=1660941153]
 layout_mode = 2
 theme_override_constants/margin_top = 20
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DAYONE" type="Button" parent="WeekScroll/VBoxContainer" unique_id=1474732525]
+[node name="DAYONE" type="Button" parent="WeekScroll/DayButton" unique_id=1474732525]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 50
 text = "DAY ONE"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DAYTWO" type="Button" parent="WeekScroll/VBoxContainer" unique_id=4387427]
+[node name="DAYTWO" type="Button" parent="WeekScroll/DayButton" unique_id=4387427]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 50
@@ -108,7 +132,7 @@ text = "DAY TWO
 "
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DAYTHREE" type="Button" parent="WeekScroll/VBoxContainer" unique_id=212494990]
+[node name="DAYTHREE" type="Button" parent="WeekScroll/DayButton" unique_id=212494990]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 50
@@ -116,7 +140,7 @@ text = "DAY THREE
 "
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DAYFOUR" type="Button" parent="WeekScroll/VBoxContainer" unique_id=201245919]
+[node name="DAYFOUR" type="Button" parent="WeekScroll/DayButton" unique_id=201245919]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 50
@@ -124,7 +148,7 @@ text = "DAY FOUR
 "
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DAYFIVE" type="Button" parent="WeekScroll/VBoxContainer" unique_id=630219886]
+[node name="DAYFIVE" type="Button" parent="WeekScroll/DayButton" unique_id=630219886]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 50
@@ -133,7 +157,7 @@ text = "DAY FIVE
 "
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DAYSIX" type="Button" parent="WeekScroll/VBoxContainer" unique_id=314298777]
+[node name="DAYSIX" type="Button" parent="WeekScroll/DayButton" unique_id=314298777]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 50
@@ -143,7 +167,7 @@ text = "DAY SIX
 "
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DAYSEVEN" type="Button" parent="WeekScroll/VBoxContainer" unique_id=1430273747]
+[node name="DAYSEVEN" type="Button" parent="WeekScroll/DayButton" unique_id=1430273747]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 50
@@ -153,10 +177,36 @@ text = "DAY SEVEN
 "
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="MarginContainer2" type="MarginContainer" parent="WeekScroll/VBoxContainer" unique_id=485881556]
+[node name="MarginContainer2" type="MarginContainer" parent="WeekScroll/DayButton" unique_id=485881556]
 layout_mode = 2
 theme_override_constants/margin_bottom = 20
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[connection signal="mouse_entered" from="DESCRIPTION" to="WeekOne" method="_on_label_mouse_entered"]
-[connection signal="mouse_exited" from="DESCRIPTION" to="WeekOne" method="_on_label_mouse_exited"]
+[node name="WeekButton" type="Control" parent="." unique_id=624151659]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -18.0
+offset_top = 29.0
+offset_right = 22.0
+offset_bottom = 69.0
+
+[node name="Back" type="TextureButton" parent="WeekButton" unique_id=2060082198]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 258.99997
+offset_right = 376.0
+offset_bottom = 367.99997
+scale = Vector2(0.5287411, 0.5287411)
+texture_normal = ExtResource("4_rn5ul")
+
+[node name="Forward" type="TextureButton" parent="WeekButton" unique_id=1677498718]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 314.00003
+offset_right = 829.0
+offset_bottom = 423.00003
+rotation = 3.1415927
+scale = Vector2(0.5287411, 0.5287411)
+texture_normal = ExtResource("4_rn5ul")
+
+[connection signal="pressed" from="WeekButton/Forward" to="weeks/weeksNum" method="_on_forward_pressed"]
