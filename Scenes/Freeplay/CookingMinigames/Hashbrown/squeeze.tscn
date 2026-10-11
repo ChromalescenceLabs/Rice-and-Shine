@@ -259,6 +259,7 @@ shape = SubResource("RectangleShape2D_dkm2g")
 [connection signal="mouse_entered" from="scroll1/start" to="scroll1/knob" method="_on_start_mouse_entered"]
 [connection signal="mouse_exited" from="scroll1/start" to="scroll1/knob" method="_on_start_mouse_exited"]
 [connection signal="area_entered" from="scroll1/knob" to="scroll1/knob" method="_on_area_entered"]
+[connection signal="pulled" from="scroll1/knob" to="." method="_on_knob_pulled"]
 [connection signal="mouse_entered" from="scroll2/start" to="scroll2/knob" method="_on_start_mouse_entered"]
 [connection signal="mouse_exited" from="scroll2/start" to="scroll2/knob" method="_on_start_mouse_exited"]
 [connection signal="area_entered" from="scroll2/knob" to="scroll2/knob" method="_on_area_entered"]

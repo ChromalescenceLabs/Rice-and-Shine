@@ -1,7 +1,6 @@
 extends Area2D
 signal done
 
-
 @onready var bowl: TextureRect = $"../bowl/bowl"
 @onready var grated_p_bowl: TextureRect = $"../bowl/gratedPBowl"
 
@@ -31,10 +30,10 @@ func _input(event: InputEvent) -> void:
 			visible=false
 			bowl.visible=false
 			grated_p_bowl.visible=true
-			
+
 			if canHold:
 				canHold=false
-			
+
 			if hasBeenPut==true:
 				print("done")
 				bowl.visible=true
