@@ -26,7 +26,10 @@ func _input(event: InputEvent) -> void:
 		if not event.pressed:
 			hold = false
 			visible=false
-			canHold=false
+			
+			if canHold:
+				canHold=false
+			
 			if hasBeenPut==true:
 				print("done")
 				bowl.get_child(0).visible=true
@@ -38,6 +41,9 @@ func _input(event: InputEvent) -> void:
 
 func _on_bowl_mouse_entered() -> void:
 	canHold=true
+
+func _on_bowl_mouse_exited() -> void:
+	canHold=false
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name=="putOnCloth":
