@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cenib63n7hwbs" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/BowlFront.png" id="7_e3k5g"]
 [ext_resource type="PackedScene" uid="uid://ctjs5gsclriie" path="res://Scenes/Freeplay/CookingMinigames/Torta/eggplant_norm.tscn" id="7_s1j6r"]
 [ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Bowl.png" id="8_3v3rl"]
+[ext_resource type="PackedScene" uid="uid://xy6lg1ajeyia" path="res://Scenes/Freeplay/CookingMinigames/Torta/eggplant_peel.tscn" id="8_35lg7"]
 [ext_resource type="Texture2D" uid="uid://dknguuyqp4nmk" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggInBowl.png" id="9_v1cdo"]
 [ext_resource type="Texture2D" uid="uid://b2i0p3coh4lty" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggInBowlMixed.png" id="10_yan7c"]
 [ext_resource type="Script" uid="uid://dwduvrau26522" path="res://Scripts/Freeplay/CookingMinigames/Non-Specific/pan.gd" id="11_v1cdo"]
@@ -51,6 +52,7 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Grill" type="Node2D" parent="." unique_id=1082929421]
+visible = false
 
 [node name="TortaPan" type="Area2D" parent="Grill" unique_id=1568215498]
 position = Vector2(392, 353)
@@ -86,12 +88,14 @@ position = Vector2(1060, 313)
 position = Vector2(958, 323)
 
 [node name="PeelAndFlatten" type="Node2D" parent="." unique_id=2008846090]
-visible = false
 
 [node name="Plate" type="Sprite2D" parent="PeelAndFlatten" unique_id=390128255]
 position = Vector2(645, 335)
 scale = Vector2(1.298, 1.298)
 texture = ExtResource("4_ntl77")
+
+[node name="eggplant_peel" parent="PeelAndFlatten" unique_id=122180659 instance=ExtResource("8_35lg7")]
+position = Vector2(659, 332)
 
 [node name="EggCrack" type="Node2D" parent="." unique_id=1774307503]
 visible = false
@@ -216,3 +220,4 @@ scale = Vector2(1.298, 1.298)
 texture = ExtResource("4_ntl77")
 
 [connection signal="tortagrill_finished" from="." to="." method="_on_tortagrill_finished"]
+[connection signal="eggplantPeelLeft" from="PeelAndFlatten/eggplant_peel" to="." method="_on_eggplant_peel_eggplant_peel_left"]

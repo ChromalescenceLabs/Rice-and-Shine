@@ -14,6 +14,8 @@ signal tortagrill_finished
 @onready var grill_torta_pan: Area2D = $Grill/TortaPan
 var uncooked_torta: int = 3
 
+#PEEL & FLATTEN
+const EGGPLANT_PEEL = preload("uid://xy6lg1ajeyia")
 
 func _ready() -> void:
 	grill.position.x += get_viewport().get_visible_rect().size.x
@@ -23,8 +25,16 @@ func _ready() -> void:
 	coating.position.x += get_viewport().get_visible_rect().size.x
 	cook.position.x += get_viewport().get_visible_rect().size.x
 	
-	GlobalVars.item_enter(grill)
+	#GlobalVars.item_enter(grill)
+	GlobalVars.item_enter(peel_and_flatten)
 	
-
 func _on_tortagrill_finished() -> void:
 	GlobalVars.item_exit(grill)
+	GlobalVars.item_enter(peel_and_flatten)
+
+func _on_eggplant_peel_eggplant_peel_left() -> void:
+	var eggpl_peel = EGGPLANT_PEEL.instantiate()
+	eggpl_peel.global_position = Vector2(get_viewport_rect().size.x/2, get_viewport_rect().size.y/2)
+	eggpl_peel.position.x += get_viewport().get_visible_rect().size.x
+	
+	GlobalVars.item_enter(eggpl_peel)

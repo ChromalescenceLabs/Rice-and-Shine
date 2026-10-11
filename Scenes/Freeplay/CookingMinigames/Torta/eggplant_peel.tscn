@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://xy6lg1ajeyia"]
+
+[ext_resource type="Script" uid="uid://6cv34ty5i004" path="res://Scripts/Freeplay/CookingMinigames/Torta/eggplant_peel.gd" id="1_0c1v8"]
+[ext_resource type="Texture2D" uid="uid://dv1yy8subdg0e" path="res://Assets/Freeplay/Cooking_Minigames/Torta/TortaPeeled.png" id="1_wueb3"]
+[ext_resource type="Texture2D" uid="uid://dxi6b7p75mcpm" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggplantCooked.png" id="2_0c1v8"]
+
+[node name="eggplant_peel" type="Node2D" unique_id=122180659]
+script = ExtResource("1_0c1v8")
+
+[node name="Textures" type="Node2D" parent="." unique_id=541268799]
+
+[node name="Cooked" type="Sprite2D" parent="Textures" unique_id=2079105774]
+texture = ExtResource("2_0c1v8")
+
+[node name="Peeled" type="Sprite2D" parent="Textures" unique_id=534000050]
+position = Vector2(-99, -249)
+scale = Vector2(1, 2.45)
+texture = ExtResource("1_wueb3")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 200, 20)
+
+[node name="HoverTexture" type="TextureRect" parent="." unique_id=582140142]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0c1v8")
+
+[connection signal="mouse_entered" from="HoverTexture" to="." method="_on_hover_texture_mouse_entered"]
+[connection signal="mouse_exited" from="HoverTexture" to="." method="_on_hover_texture_mouse_exited"]
