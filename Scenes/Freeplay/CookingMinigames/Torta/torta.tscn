@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://dqrhc8pu68q17"]
+
+[ext_resource type="Script" uid="uid://de2bylthnvx48" path="res://Scripts/Freeplay/CookingMinigames/Torta/torta.gd" id="1_lbxyh"]
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="2_b0qvh"]
+[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Freeplay/Cooking_Minigames/CookingBG.jpg" id="3_fsr8o"]
+[ext_resource type="Texture2D" uid="uid://iqxaxa0bo02s" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Pan.png" id="3_l56b8"]
+[ext_resource type="Texture2D" uid="uid://cfjgsnkmmit3k" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Plate.png" id="4_ntl77"]
+[ext_resource type="Script" uid="uid://b5v3p3jgr4d5v" path="res://Scripts/Freeplay/CustomerServing/bowl_area.gd" id="6_t13xu"]
+[ext_resource type="Texture2D" uid="uid://cenib63n7hwbs" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/BowlFront.png" id="7_e3k5g"]
+[ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Bowl.png" id="8_3v3rl"]
+[ext_resource type="Texture2D" uid="uid://dknguuyqp4nmk" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggInBowl.png" id="9_v1cdo"]
+[ext_resource type="Texture2D" uid="uid://b2i0p3coh4lty" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggInBowlMixed.png" id="10_yan7c"]
+[ext_resource type="Script" uid="uid://dwduvrau26522" path="res://Scripts/Freeplay/CookingMinigames/Non-Specific/pan.gd" id="11_v1cdo"]
+[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/oil.tscn" id="11_yan7c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y130u"]
+radius = 229.03493
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08i74"]
+size = Vector2(348, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3v3rl"]
+size = Vector2(348, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1cdo"]
+size = Vector2(357, 198)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_08i74"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_idtpb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
+radius = 84.967026
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_idtpb"]
+radius = 199.02261
+
+[node name="Torta" type="Node2D" unique_id=1253407073]
+script = ExtResource("1_lbxyh")
+
+[node name="TopDownBG" type="Sprite2D" parent="." unique_id=1492994240]
+position = Vector2(902, 582)
+texture = ExtResource("2_b0qvh")
+metadata/_edit_lock_ = true
+
+[node name="FrontBG" type="Sprite2D" parent="." unique_id=382706163]
+visible = false
+texture = ExtResource("3_fsr8o")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Grill" type="Node2D" parent="." unique_id=1082929421]
+
+[node name="TortaPan" type="Area2D" parent="Grill" unique_id=1568215498]
+scale = Vector2(1.715, 1.715)
+
+[node name="Sprite2D" type="Sprite2D" parent="Grill/TortaPan" unique_id=1772105853]
+position = Vector2(219.82507, 304.95627)
+rotation = -1.5707964
+texture = ExtResource("3_l56b8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grill/TortaPan" unique_id=1436397068]
+position = Vector2(219.82507, 200)
+scale = Vector2(0.58309036, 0.58309036)
+shape = SubResource("CircleShape2D_y130u")
+
+[node name="Eggplants" type="Node2D" parent="Grill" unique_id=369072245]
+
+[node name="Plate" type="Sprite2D" parent="Grill/Eggplants" unique_id=1447009211]
+position = Vector2(965.99994, 324)
+scale = Vector2(1.298, 1.298)
+texture = ExtResource("4_ntl77")
+
+[node name="PeelAndFlatten" type="Node2D" parent="." unique_id=2008846090]
+visible = false
+
+[node name="Plate" type="Sprite2D" parent="PeelAndFlatten" unique_id=390128255]
+position = Vector2(645, 335)
+scale = Vector2(1.298, 1.298)
+texture = ExtResource("4_ntl77")
+
+[node name="EggCrack" type="Node2D" parent="." unique_id=1774307503]
+visible = false
+
+[node name="Bowl" type="Area2D" parent="EggCrack" unique_id=1015155255]
+script = ExtResource("6_t13xu")
+
+[node name="BowlFront" type="Sprite2D" parent="EggCrack/Bowl" unique_id=1025351695]
+position = Vector2(317, 280)
+scale = Vector2(0.795, 0.795)
+texture = ExtResource("7_e3k5g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EggCrack/Bowl" unique_id=532381839]
+position = Vector2(310, 338)
+shape = SubResource("RectangleShape2D_08i74")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="EggCrack/Bowl" unique_id=1779277030]
+position = Vector2(317, 252)
+shape = SubResource("RectangleShape2D_3v3rl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EggCrack/Bowl" unique_id=313023030]
+position = Vector2(138, 296)
+shape = SubResource("RectangleShape2D_v1cdo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EggCrack/Bowl" unique_id=1402631391]
+position = Vector2(486, 294)
+shape = SubResource("RectangleShape2D_v1cdo")
+
+[node name="EggCarton" type="TextureRect" parent="EggCrack" unique_id=560069496]
+offset_left = 661.0
+offset_top = 312.0
+offset_right = 1164.0
+offset_bottom = 478.0
+texture = SubResource("PlaceholderTexture2D_08i74")
+
+[node name="EggMix" type="Node2D" parent="." unique_id=1266515050]
+visible = false
+
+[node name="Bowl" type="Node2D" parent="EggMix" unique_id=360570584]
+
+[node name="BowlTexture" type="Sprite2D" parent="EggMix/Bowl" unique_id=804151601]
+position = Vector2(450, 363.00003)
+scale = Vector2(1.454039, 1.454039)
+texture = ExtResource("8_3v3rl")
+
+[node name="Egg" type="Sprite2D" parent="EggMix/Bowl" unique_id=283851842]
+position = Vector2(450, 363.00003)
+scale = Vector2(1.454039, 1.454039)
+texture = ExtResource("9_v1cdo")
+
+[node name="EggMixed" type="Sprite2D" parent="EggMix/Bowl" unique_id=1298287993]
+position = Vector2(450, 363.00003)
+scale = Vector2(1.454039, 1.454039)
+texture = ExtResource("10_yan7c")
+
+[node name="Whisk" type="TextureRect" parent="EggMix" unique_id=815182595]
+offset_left = 910.1944
+offset_top = 118.831604
+offset_right = 1051.8057
+offset_bottom = 595.1684
+rotation = -0.26529005
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("PlaceholderTexture2D_idtpb")
+
+[node name="WhiskArea" type="Area2D" parent="EggMix/Whisk" unique_id=845166419]
+
+[node name="WhiskCollision" type="CollisionShape2D" parent="EggMix/Whisk/WhiskArea" unique_id=1955030171]
+position = Vector2(66.35133, 75.30292)
+shape = SubResource("CircleShape2D_08i74")
+
+[node name="Coating" type="Node2D" parent="." unique_id=2062706086]
+visible = false
+
+[node name="Bowl" type="Area2D" parent="Coating" unique_id=2096943757]
+
+[node name="BowlTexture" type="Sprite2D" parent="Coating/Bowl" unique_id=1434336932]
+position = Vector2(349, 335)
+scale = Vector2(1.3537605, 1.3537605)
+texture = ExtResource("8_3v3rl")
+
+[node name="EggMixed" type="Sprite2D" parent="Coating/Bowl" unique_id=1067909711]
+position = Vector2(349, 335)
+scale = Vector2(1.3537605, 1.3537605)
+texture = ExtResource("10_yan7c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coating/Bowl" unique_id=1570772677]
+position = Vector2(358, 338)
+shape = SubResource("CircleShape2D_idtpb")
+
+[node name="Eggplants" type="Node2D" parent="Coating" unique_id=230958727]
+
+[node name="Plate" type="Sprite2D" parent="Coating/Eggplants" unique_id=2102780325]
+position = Vector2(944.99994, 331)
+scale = Vector2(1.298, 1.298)
+texture = ExtResource("4_ntl77")
+
+[node name="Cook" type="Node2D" parent="." unique_id=23931654]
+visible = false
+
+[node name="Oil" parent="Cook" unique_id=1503278428 instance=ExtResource("11_yan7c")]
+position = Vector2(972, 124)
+
+[node name="TortaPan" type="Area2D" parent="Cook" unique_id=630621223]
+scale = Vector2(1.715, 1.715)
+script = ExtResource("11_v1cdo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cook/TortaPan" unique_id=222868565]
+position = Vector2(219.82507, 304.95627)
+rotation = -1.5707964
+texture = ExtResource("3_l56b8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cook/TortaPan" unique_id=86701226]
+position = Vector2(219.82507, 200)
+scale = Vector2(0.58309036, 0.58309036)
+shape = SubResource("CircleShape2D_y130u")
+
+[node name="Eggplants" type="Node2D" parent="Cook" unique_id=801264964]
+
+[node name="Plate" type="Sprite2D" parent="Cook/Eggplants" unique_id=554262678]
+position = Vector2(964.99994, 441)
+scale = Vector2(1.298, 1.298)
+texture = ExtResource("4_ntl77")

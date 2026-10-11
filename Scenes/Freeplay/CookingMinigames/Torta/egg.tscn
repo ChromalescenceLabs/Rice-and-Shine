@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c3xdcqpla8eix"]
+
+[ext_resource type="Texture2D" uid="uid://bt1yiys6pcvfi" path="res://Assets/Freeplay/Cooking_Minigames/Torta/Egg.png" id="1_g8upy"]
+[ext_resource type="Texture2D" uid="uid://c8xn767v1vktv" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggCrack.png" id="2_5nyct"]
+[ext_resource type="Texture2D" uid="uid://dns5j15js5fjr" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggCrackT.png" id="3_hykmp"]
+[ext_resource type="Texture2D" uid="uid://ddx5agyx4e6xn" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggCrackB.png" id="4_q2g85"]
+
+[node name="Egg" type="Node2D" unique_id=174244838]
+
+[node name="EggTextures" type="Node2D" parent="." unique_id=453821437]
+rotation = 1.5707964
+
+[node name="EggNormal" type="Sprite2D" parent="EggTextures" unique_id=928317091]
+texture = ExtResource("1_g8upy")
+
+[node name="EggCrack" type="Sprite2D" parent="EggTextures" unique_id=1871456632]
+visible = false
+texture = ExtResource("2_5nyct")
+
+[node name="EggCrackT" type="Sprite2D" parent="EggTextures" unique_id=1440474798]
+visible = false
+texture = ExtResource("3_hykmp")
+
+[node name="EggCrackB" type="Sprite2D" parent="EggTextures" unique_id=1049783061]
+visible = false
+texture = ExtResource("4_q2g85")
