@@ -1,12 +1,15 @@
 extends Node2D
 @onready var peel: Node2D = $peel
 @onready var grate: Node2D = $grate
+@onready var rinse: Node2D = $rinse
+@onready var squeeze: Node2D = $Squeeze
 
 func _ready() -> void:
 	peel.position.x += get_viewport().get_visible_rect().size.x
 	grate.position.x += get_viewport().get_visible_rect().size.x
+	rinse.position.x += get_viewport().get_visible_rect().size.x
 	
-	GlobalVars.item_enter(peel)
+	GlobalVars.item_enter(squeeze)
 
 
 func _on_peel_peeled() -> void:
@@ -21,3 +24,13 @@ func _on_peel_peeled() -> void:
 func _on_grated_full_grated() -> void:
 	GlobalVars.successind(self)
 	await GlobalVars.successIndEnd
+	
+	GlobalVars.item_exit(grate)
+	peel.set_process(false)
+	GlobalVars.item_enter(rinse)
+
+func _on_water_water_completed() -> void:
+	GlobalVars.successind(self)
+	await GlobalVars.successIndEnd
+	
+	GlobalVars.item_exit(rinse)

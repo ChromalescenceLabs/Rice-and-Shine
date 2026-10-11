@@ -13,11 +13,11 @@ func _on_finished() -> void:
 	water_detect.monitoring = false
 
 func _on_water_detect_area_entered(area: Area2D) -> void:
-	if area is BowlFillArea:
+	if area is BowlFillArea or area.name == "potato":
 		progress_bar_change_time.start()
 
 func _on_water_detect_area_exited(area: Area2D) -> void:
-	if area is BowlFillArea:
+	if area is BowlFillArea or area.name == "potato":
 		progress_bar_change_time.stop()
 
 func _on_rice_or_kanin_water_section() -> void:

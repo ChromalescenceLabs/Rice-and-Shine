@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bc6e5imjyoy6d" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated3.png" id="9_8bsfq"]
 [ext_resource type="Texture2D" uid="uid://c2csa4kyjeclm" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated4.png" id="10_ouisr"]
 [ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/recipe_book.tscn" id="10_penps"]
+[ext_resource type="PackedScene" uid="uid://3nbi6q3ikgh8" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/rinsing.tscn" id="11_avunj"]
+[ext_resource type="PackedScene" uid="uid://jqgwfjxupldu" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/squeeze.tscn" id="12_meb1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
 
@@ -170,6 +172,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_ouisr")
 
+[node name="rinse" parent="." unique_id=258493805 instance=ExtResource("11_avunj")]
+visible = false
+
+[node name="gratedPotatoes" parent="rinse/potato" parent_id_path=PackedInt32Array(258493805, 1776436212) index="1" unique_id=248327213]
+offset_left = -210.0
+offset_top = -139.0
+offset_right = 186.0
+offset_bottom = 103.0
+
+[node name="Squeeze" parent="." unique_id=1629429422 instance=ExtResource("12_meb1c")]
+
 [node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("10_penps")]
 offset_left = 9.0
 offset_top = 528.0
@@ -177,11 +190,14 @@ offset_right = 192.0
 offset_bottom = 765.0
 scale = Vector2(0.795, 0.795)
 
-[connection signal="peeled" from="peel" to="." method="_on_peel_peeled"]
 [connection signal="mouse_exited" from="peel/Line2D/AreaPPotato" to="peel" method="_on_area_p_potato_mouse_exited"]
+[connection signal="mouse_entered" from="peel/Peeler" to="peel" method="_on_peeler_mouse_entered"]
+[connection signal="peeled" from="peel/Peeler/peel" to="." method="_on_peel_peeled"]
 [connection signal="mouse_entered" from="grate/grater" to="grate/gratedFull" method="_on_grater_mouse_entered"]
 [connection signal="mouse_exited" from="grate/grater" to="grate/gratedFull" method="_on_grater_mouse_exited"]
 [connection signal="grated" from="grate/gratedFull" to="." method="_on_grated_full_grated"]
 
 [editable path="peel"]
 [editable path="grate/gratedFull"]
+[editable path="rinse"]
+[editable path="Squeeze"]
