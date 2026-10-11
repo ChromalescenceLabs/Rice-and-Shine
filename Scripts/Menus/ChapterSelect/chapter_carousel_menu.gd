@@ -4,8 +4,7 @@ extends Control
 @onready var scroll_container: ScrollContainer = %ScrollContainer
 
 var targetScroll = 0
-
-
+var init_setup : bool = true 
 func _ready() -> void:
 
 	_set_selection()
@@ -15,12 +14,14 @@ func _set_selection():
 	_select_deselect_highlight()
 
 func _on_previous_pressed() -> void:
+	init_setup = false #makes it go back to norm
 	var scrollValue = targetScroll - _get_space_between()
 	await _tween_scroll(scrollValue)
 	
 	_select_deselect_highlight()
 
 func _on_next_pressed() -> void:
+	init_setup = false #makes it go back to norm
 	var scrollValue = targetScroll + _get_space_between()
 	await _tween_scroll(scrollValue)
 	
@@ -56,6 +57,11 @@ func _select_deselect_highlight():
 func get_selected_value():
 	var selectedPosition = %SelectionMarker.global_position
 	
+	if init_setup: #para so like when ur from mode select screen, highlighted agad chap 1
+		var initialNode = object_container.get_node_or_null("CH1IMG")
+		if initialNode:
+			return initialNode
+		
 	for object in object_container.get_children():
 		if object.get_global_rect().has_point(selectedPosition):
 			return object
