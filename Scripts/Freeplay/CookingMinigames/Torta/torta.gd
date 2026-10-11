@@ -42,6 +42,9 @@ var cracked_egg_amt: int = 0:
 			if cracked_egg_amt >= 2:
 				egg_crack_finished.emit()
 
+# EGG MIX
+signal egg_mix_finished
+
 
 func _ready() -> void:
 	grill.position.x += get_viewport().get_visible_rect().size.x
@@ -51,7 +54,7 @@ func _ready() -> void:
 	coating.position.x += get_viewport().get_visible_rect().size.x
 	cook.position.x += get_viewport().get_visible_rect().size.x
 	
-	_on_tortapeelnflatten_finished()
+	_on_egg_crack_finished()
 	
 func _on_tortagrill_finished() -> void:
 	GlobalVars.item_exit(grill)
@@ -64,6 +67,16 @@ func _on_tortapeelnflatten_finished() -> void:
 	create_tween().tween_property(top_down_bg, "modulate:a", 0, 0.3).set_trans(Tween.TRANS_CUBIC)
 
 func _on_egg_crack_finished() -> void:
+	egg_carton.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	GlobalVars.successind(get_tree().current_scene)
+	await GlobalVars.successIndEnd
+	
+	GlobalVars.item_exit(egg_crack)
+	GlobalVars.item_enter(egg_mix)
+
+	create_tween().tween_property(top_down_bg, "modulate:a", 1, 0.3).set_trans(Tween.TRANS_CUBIC)
+	
+func _on_egg_mix_finished() -> void:
 	egg_carton.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	GlobalVars.successind(get_tree().current_scene)
 	await GlobalVars.successIndEnd

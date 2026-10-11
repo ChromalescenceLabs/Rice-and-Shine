@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://c7ve2hx18mgtf" path="res://Scripts/Freeplay/CookingMinigames/Torta/egg_carton.gd" id="11_6arap"]
 [ext_resource type="Script" uid="uid://dwduvrau26522" path="res://Scripts/Freeplay/CookingMinigames/Non-Specific/pan.gd" id="11_v1cdo"]
 [ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/oil.tscn" id="11_yan7c"]
+[ext_resource type="Script" uid="uid://ctms7me3er5h" path="res://Scripts/Freeplay/CookingMinigames/Torta/whisk.gd" id="15_krt0h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y130u"]
 radius = 229.03493
@@ -32,6 +33,9 @@ size = Vector2(32, 86)
 size = Vector2(34, 80)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_08i74"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vljv"]
+radius = 214.03738
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_idtpb"]
 
@@ -102,6 +106,7 @@ texture = ExtResource("4_ntl77")
 position = Vector2(659, 332)
 
 [node name="EggCrack" type="Node2D" parent="." unique_id=1774307503]
+visible = false
 
 [node name="Bowl" type="Area2D" parent="EggCrack" unique_id=1015155255]
 position = Vector2(359, 354)
@@ -138,9 +143,9 @@ texture = SubResource("PlaceholderTexture2D_08i74")
 script = ExtResource("11_6arap")
 
 [node name="EggMix" type="Node2D" parent="." unique_id=1266515050]
-visible = false
 
-[node name="Bowl" type="Node2D" parent="EggMix" unique_id=360570584]
+[node name="Bowl" type="Area2D" parent="EggMix" unique_id=1939769075]
+script = ExtResource("6_t13xu")
 
 [node name="BowlTexture" type="Sprite2D" parent="EggMix/Bowl" unique_id=804151601]
 position = Vector2(450, 363.00003)
@@ -153,9 +158,15 @@ scale = Vector2(1.454039, 1.454039)
 texture = ExtResource("9_v1cdo")
 
 [node name="EggMixed" type="Sprite2D" parent="EggMix/Bowl" unique_id=1298287993]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(450, 363.00003)
 scale = Vector2(1.454039, 1.454039)
 texture = ExtResource("10_yan7c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EggMix/Bowl" unique_id=1311307750]
+visible = false
+position = Vector2(462, 362)
+shape = SubResource("CircleShape2D_3vljv")
 
 [node name="Whisk" type="TextureRect" parent="EggMix" unique_id=815182595]
 offset_left = 910.1944
@@ -165,6 +176,7 @@ offset_bottom = 595.1684
 rotation = -0.26529005
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = SubResource("PlaceholderTexture2D_idtpb")
+script = ExtResource("15_krt0h")
 
 [node name="WhiskArea" type="Area2D" parent="EggMix/Whisk" unique_id=845166419]
 
@@ -226,7 +238,12 @@ scale = Vector2(1.298, 1.298)
 texture = ExtResource("4_ntl77")
 
 [connection signal="egg_crack_finished" from="." to="." method="_on_egg_crack_finished"]
+[connection signal="egg_mix_finished" from="." to="." method="_on_egg_mix_finished"]
 [connection signal="tortagrill_finished" from="." to="." method="_on_tortagrill_finished"]
 [connection signal="tortapeelnflatten_finished" from="." to="." method="_on_tortapeelnflatten_finished"]
 [connection signal="mouse_entered" from="EggCrack/EggCarton" to="EggCrack/EggCarton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="EggCrack/EggCarton" to="EggCrack/EggCarton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="EggMix/Whisk" to="EggMix/Whisk" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="EggMix/Whisk" to="EggMix/Whisk" method="_on_mouse_exited"]
+[connection signal="area_entered" from="EggMix/Whisk/WhiskArea" to="EggMix/Whisk" method="_on_whisk_area_area_entered"]
+[connection signal="area_exited" from="EggMix/Whisk/WhiskArea" to="EggMix/Whisk" method="_on_whisk_area_area_exited"]
