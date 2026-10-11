@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://bci1qttxxjfa5" path="res://Scripts/Freeplay/CookingMinigames/Torta/torta_pan.gd" id="18_8yo6g"]
 [ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/PanOil.png" id="19_8lmjv"]
 [ext_resource type="PackedScene" uid="uid://w3pw2r0dsx41" path="res://Scenes/Freeplay/CookingMinigames/Torta/eggplant_to_cook.tscn" id="20_8lmjv"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/recipe_book.tscn" id="21_3ih7q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y130u"]
 radius = 229.03493
@@ -263,6 +264,10 @@ position = Vector2(955, 437)
 
 [node name="EggplantToCook3" parent="Cook/Eggplants" unique_id=1000055691 instance=ExtResource("20_8lmjv")]
 position = Vector2(854, 433)
+
+[node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("21_3ih7q")]
+offset_top = 477.0
+offset_bottom = 714.0
 
 [connection signal="egg_crack_finished" from="." to="." method="_on_egg_crack_finished"]
 [connection signal="egg_mix_finished" from="." to="." method="_on_egg_mix_finished"]

@@ -5,7 +5,7 @@ extends Node2D
 # CHOPPING PORK BELLIES
 signal chopping_finished
 @onready var chopping_board_chopping: Sprite2D = $Chopping/ChoppingBoard
-@onready var chopping: Node2D = $Chopping
+@onready var inihaw_chopping: Node2D = $Chopping
 const CHOPPABLE_PBELLY = preload("uid://cy1qe3w0ip4cu")
 var chopped_pbelly: int = 0:
 	set(value):
@@ -15,7 +15,7 @@ var chopped_pbelly: int = 0:
 				var chdog = CHOPPABLE_PBELLY.instantiate()
 				chdog.position = chopping_board_chopping.position
 				chdog.position.x += get_viewport().get_visible_rect().size.x
-				chopping.add_child(chdog)
+				inihaw_chopping.add_child(chdog)
 				create_tween().tween_property(chdog, "position", chopping_board_chopping.position, 1.5).set_trans(Tween.TRANS_ELASTIC)
 			else:
 				chopping_finished.emit()
@@ -57,22 +57,22 @@ var shakes: int = 0:
 
 
 func _ready() -> void:
-	chopping.position.x += get_viewport().get_visible_rect().size.x
+	inihaw_chopping.position.x += get_viewport().get_visible_rect().size.x
 	mincing.position.x += get_viewport().get_visible_rect().size.x
 	prepping.position.x += get_viewport().get_visible_rect().size.x
 	prep_sugar.position.x += get_viewport().get_visible_rect().size.x
 	shaking.position.x += get_viewport().get_visible_rect().size.x
 	
-	GlobalVars.item_enter(chopping)
+	GlobalVars.item_enter(inihaw_chopping)
 	
 func _on_chopping_finished() -> void:
 	GlobalVars.item_enter(mincing)
 	choppable_garlic.progbar_fade_in()
 
 func _on_choppable_garlic_chopped_garlic_finished() -> void:
-	GlobalVars.item_exit(chopping)
+	GlobalVars.item_exit(inihaw_chopping)
 	GlobalVars.item_exit(mincing)
-	chopping.position.x += get_viewport().get_visible_rect().size.x
+	inihaw_chopping.position.x += get_viewport().get_visible_rect().size.x
 	
 	create_tween().tween_property(top_down_bg, "modulate:a", 0, 0.3).set_trans(Tween.TRANS_CUBIC)
 
