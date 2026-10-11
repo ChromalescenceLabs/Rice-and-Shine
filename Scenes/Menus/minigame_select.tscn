@@ -33,6 +33,11 @@ offset_bottom = 599.0
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("2_l46wx")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Selection/Rice" unique_id=955367114]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Pancake" type="TextureButton" parent="Selection" unique_id=435824771]
 layout_mode = 0
 offset_left = 450.0
