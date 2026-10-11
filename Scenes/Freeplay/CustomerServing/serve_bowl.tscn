@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cokiq4wv1pq6d" path="res://Assets/Freeplay/Serving/ServeBowl.png" id="1_6rml4"]
 [ext_resource type="Script" uid="uid://bggu3b225yqvm" path="res://Scripts/Freeplay/CustomerServing/serve_bowl.gd" id="1_a3eqt"]
+[ext_resource type="Script" uid="uid://b5v3p3jgr4d5v" path="res://Scripts/Freeplay/CustomerServing/bowl_area.gd" id="3_2g3by"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08i74"]
 bg_color = Color(0.014275216, 0.014275219, 0.014275208, 0.65882355)
@@ -74,6 +75,7 @@ _data = {
 radius = 48.0
 
 [node name="ServeBowl" type="TextureRect" unique_id=209391391]
+z_index = 2
 offset_left = -74.0
 offset_top = -46.0
 offset_right = 76.0
@@ -103,6 +105,7 @@ libraries/ = SubResource("AnimationLibrary_fgyrq")
 speed_scale = 3.0
 
 [node name="BowlArea" type="Area2D" parent="." unique_id=1099617648]
+script = ExtResource("3_2g3by")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BowlArea" unique_id=1087544455]
 position = Vector2(74, 45)

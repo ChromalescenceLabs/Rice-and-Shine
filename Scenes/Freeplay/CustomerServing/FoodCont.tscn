@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://dwfqsvk1lxqyw"]
+
+[ext_resource type="Texture2D" uid="uid://dko8vg62oll8w" path="res://Assets/Freeplay/Serving/Empty/TBACont.png" id="1_ybycj"]
+[ext_resource type="Texture2D" uid="uid://bgya7yialyiv4" path="res://Assets/Freeplay/Serving/Empty/TBAContH.png" id="2_8ncux"]
+[ext_resource type="Script" uid="uid://iiap5fslcr1i" path="res://Scripts/Freeplay/CustomerServing/food_cont.gd" id="2_pqie0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybycj"]
+bg_color = Color(0.6, 0.6, 0.6, 0.6784314)
+
+[sub_resource type="Animation" id="Animation_ybycj"]
+resource_name = "EnterExit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Counter:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -135.635)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Counter:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8ncux"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Counter:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Counter:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nptdr"]
+_data = {
+&"EnterExit": SubResource("Animation_ybycj"),
+&"RESET": SubResource("Animation_8ncux")
+}
+
+[node name="FoodCont" type="TextureButton" unique_id=218262186]
+offset_left = -160.0
+offset_top = -130.0
+offset_right = 160.0
+offset_bottom = 130.0
+texture_normal = ExtResource("1_ybycj")
+texture_hover = ExtResource("2_8ncux")
+script = ExtResource("2_pqie0")
+
+[node name="Counter" type="RichTextLabel" parent="." unique_id=313410687 groups=["FoodContLabels"]]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.0
+offset_top = 115.0
+offset_right = 35.0
+offset_bottom = 147.0
+grow_horizontal = 2
+offset_transform_enabled = true
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_font_sizes/normal_font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_ybycj")
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CounterAnim" type="AnimationPlayer" parent="." unique_id=429491939]
+libraries/ = SubResource("AnimationLibrary_nptdr")
+speed_scale = 3.0
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

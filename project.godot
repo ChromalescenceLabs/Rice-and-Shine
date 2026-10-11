@@ -26,6 +26,12 @@ DialogueManager="*uid://c3rodes2l3gxb"
 SceneLoader="*uid://jauffil1d42j"
 Sfx="*uid://du6gjwu6i72mh"
 MusicManager="*uid://c71mkx0ylpomy"
+PersistentData="*uid://8ylc5ax50tcm"
+GlobalSaveManager="*uid://cc2qr4errlth2"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://Dialogues/balloon.tscn"
 
 [display]
 
@@ -42,8 +48,9 @@ enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/
 [file_customization]
 
 folder_colors={
-"res://Assets/": "purple",
-"res://Scenes/": "red",
+"res://Assets/": "red",
+"res://Dialogues/": "orange",
+"res://Scenes/": "yellow",
 "res://Scripts/": "green"
 }
 
@@ -64,6 +71,10 @@ Pour={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialogues/customers.dialogue")
 
 [physics]
 

@@ -1,101 +1,72 @@
 extends Node2D
 
-const FOOD_PICKUP = preload("uid://bp3wrjfknjyxt")
+const CUSTOMER = preload("uid://v1ke2myaadm3")
 const SERVE_BOWL = preload("uid://curuxisd3l6in")
+const FOOD_CONT = preload("uid://dwfqsvk1lxqyw")
+
 @onready var bowl_labels: Node2D = $BowlLabels
 @onready var bowl_conts: HBoxContainer = $Control/BowlConts
 @onready var freed_bowls: Control = $Control/FreedBowls
-
-@onready var rice_cont: TextureButton = $Control/ScrollContainer/FoodConts/RiceCont
-@onready var pcake_cont: TextureButton = $Control/ScrollContainer/FoodConts/PancakeCont
-@onready var hbrown_cont: TextureButton = $Control/ScrollContainer/FoodConts/HashbrownCont
-
-@onready var rice_counter: RichTextLabel = $Control/Counters/RiceCounter
-@onready var pcake_counter: RichTextLabel = $Control/Counters/PcakeCounter
-@onready var hbrown_counter: RichTextLabel = $Control/Counters/HbrownCounter
-
-var rice_state = GlobalVars.rice_cont_state
-var pcake_state = GlobalVars.pcake_cont_state
-var hbrown_state = GlobalVars.hbrown_cont_state
+@onready var food_conts: HBoxContainer = $Control/ScrollContainer/FoodConts
+@onready var customers_cont: HBoxContainer = $Control/CustomersCont
 
 @onready var add_bowl: Button = $Control/BowlConts/AddBowl
 var bowl_no : int = 0
 
-var textureDict = {
-	"rice_cont" = load("uid://chv7ovq6nnca3"),
-	"rice_conth" = load("uid://bfxatlh6arx51"),
-	"pcake_cont" = load("uid://dlns6abi2siiy"),
-	"pcake_conth" = load("uid://7hk0brvbupc2"),
-	"hbrown_cont" = load("uid://cuqrumfstfqqu"),
-	"hbrown_conth" = load("uid://4msdq3gandfm"),
-	
-	"ricef_cont" = load("uid://doy8fthnvd5lo"),
-	"ricef_conth" = load("uid://svjtmt5lpf1b"),
-	"pcakef_cont" = load("uid://t3ul20puiuov"),
-	"pcakef_conth" = load("uid://cevrrowe651af"),
-	"hbrownf_cont" = load("uid://cfu2uvbts2ldr"),
-	"hbrownf_conth" = load("uid://c4jbnbugoscts"),
-}
-
 func _ready() -> void:
-	update_texturesncounters()
-	change_textures()
 	GlobalVars.is_customer_serving = true
-	GlobalVars.foodValueChanged.connect(_on_food_val_changed)
+	
+	#Checks if Scene has saved data
+	var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
+	if not data == null:
+		# Check if a Node in that scene has data for bowls
+		var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "Bowls")
+		if not node_data == null:
+			for i in node_data.size():
+				var bowl = await add_bowl_func()
+				bowl.contentDict = node_data[i]
+				
+		# Check if a Node in that scene has data for FoodConts	
+		node_data = GlobalSaveManager.fetch_node_persistent_value(data, "FoodConts")
+		if not node_data == null:
+			var foodcontchildren = food_conts.get_children()
+				
+			for i in node_data.size():
+				foodcontchildren[i].qty = node_data[i]
+				
+		node_data = GlobalSaveManager.fetch_node_persistent_value(data, "CustomerConts")
+		if not node_data == null:
+			for i in node_data.size():
+				var customer = add_customer()
+				customer.customer_info = node_data[i]
 
-func _process(_delta: float) -> void:
-	change_textures()
+func _on_add_bowl_pressed() -> void: add_bowl_func()
+
+func _on_freed_bowls_child_exiting_tree(node: Node) -> void:
+	if node is Bowl:
+		var pos = node.final_pos
+		bowl_no -= 1
 		
-func change_textures():
-	change_texture(rice_state, rice_cont, textureDict.get("rice_cont"), textureDict.get("rice_conth"), textureDict.get("ricef_cont"), textureDict.get("ricef_conth"))
-	change_texture(pcake_state, pcake_cont, textureDict.get("pcake_cont"), textureDict.get("pcake_conth"), textureDict.get("pcakef_cont"), textureDict.get("pcakef_conth"))
-	change_texture(hbrown_state, hbrown_cont, textureDict.get("hbrown_cont"), textureDict.get("hbrown_conth"), textureDict.get("hbrownf_cont"), textureDict.get("hbrownf_conth"))
-	
-func update_texturesncounters():
-	rice_state = GlobalVars.rice_cont_state
-	pcake_state = GlobalVars.pcake_cont_state
-	hbrown_state = GlobalVars.hbrown_cont_state
-	
-	rice_counter.text = str(GlobalVars.rice_value)
-	pcake_counter.text = str(GlobalVars.pcake_value)
-	hbrown_counter.text = str(GlobalVars.hbrown_value)
+		for i in bowl_conts.get_children():
+			if i.global_position == pos:
+				i.queue_free()
+				break
+		
+		if bowl_no < 7:
+			add_bowl.disabled = false
+			add_bowl.visible = true
+		
+		await node.tree_exited
+		
+		for i in freed_bowls.get_child_count():
+			var current_back_bowl = bowl_conts.get_children()[i]
+			var current_freed_bowl = freed_bowls.get_children()[i]
+			
+			if current_back_bowl is TextureRect:
+				current_freed_bowl.final_pos = current_back_bowl.global_position
+				current_freed_bowl.global_position = current_back_bowl.global_position
 
-func change_texture(cont_state, cont, e_text, e_texth, f_text, f_texth):
-	match cont_state:
-		"EMPTY":
-			cont.texture_normal = e_text
-			cont.texture_hover = e_texth
-		"FILLED":
-			cont.texture_normal = f_text
-			cont.texture_hover = f_texth
-
-func check_value_forbtn(cont_state, scene: String, foodStr : String):
-	match cont_state:
-		"EMPTY":
-			SceneLoader.load_scene(scene, 1)
-		"FILLED":
-			var food = FOOD_PICKUP.instantiate()
-			food.global_position = get_global_mouse_position()
-			food.texture = foodStr
-			add_child(food)
-
-func _on_food_val_changed(var_name : String, new_value : int, current_state: String):
-	match var_name:
-		"rice_value": 
-			rice_state = current_state
-			rice_counter.text = str(new_value)
-		"pcake_value": 
-			pcake_state = current_state
-			pcake_counter.text = str(new_value)
-		"hbrown_value": 
-			hbrown_state = current_state
-			hbrown_counter.text = str(new_value)
-
-func _on_rice_cont_button_down() -> void: check_value_forbtn(rice_state, "uid://sukerfnpt5d5", "rice")
-func _on_pancake_cont_button_down() -> void: check_value_forbtn(pcake_state, "uid://bf86igy00f6sq", "pancake")
-func _on_hashbrown_cont_button_down() -> void: check_value_forbtn(hbrown_state, "uid://j42ywdsfuawg", "hashbrown")
-
-func _on_add_bowl_pressed() -> void:
+func add_bowl_func() -> TextureRect:
 	var newBowl = SERVE_BOWL.instantiate()
 	newBowl.modulate.a = 0.0
 	bowl_conts.add_child(newBowl)
@@ -112,16 +83,35 @@ func _on_add_bowl_pressed() -> void:
 	if bowl_no == 7:
 		add_bowl.disabled = true
 		add_bowl.visible = false
+	
+	return newBowl
 
-func _on_freed_bowls_child_exiting_tree(node: Node) -> void:
-	if node is Bowl:
-		var pos = node.final_pos
-		bowl_no -= 1
-		
-		for i in bowl_conts.get_children():
-			if i.global_position == pos:
-				i.queue_free()
-		
-		if bowl_no < 7:
-			add_bowl.disabled = false
-			add_bowl.visible = true
+func add_customer() -> TextureButton:
+	var newCustomer = CUSTOMER.instantiate()
+	newCustomer.modulate.a = 0.0
+	customers_cont.add_child(newCustomer)
+	newCustomer.initialization()
+	newCustomer.indx = customers_cont.get_child_count()
+	
+	return newCustomer
+
+func _on_tree_exiting() -> void:
+	var bowl_data = []
+	for i in freed_bowls.get_children(): bowl_data.append(i.contentDict)
+	
+	var foodcont_data = []
+	for i in food_conts.get_children(): foodcont_data.append(i.qty)
+	
+	var customercont_data = []
+	for i in customers_cont.get_children(): customercont_data.append(i.customer_info)
+	
+	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "Bowls", bowl_data)
+	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "FoodConts", foodcont_data)
+	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "CustomerConts", customercont_data)
+
+func _on_button_pressed() -> void:
+	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
+
+
+func _on_temp_pressed() -> void:
+	add_customer()

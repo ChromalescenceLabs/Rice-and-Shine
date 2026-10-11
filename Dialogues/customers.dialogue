@@ -1,0 +1,36 @@
+~ student
+Student: [[Mabuhay|Kamusta|Magandang Umaga]]! 
+~ student_order
+Student: I'd like to place an order!
+~ student_choices
+- Hey! How's it going?
+	Student: Doing alright, thanks for asking! => student_choices
+- Aren't you supposed to be in school?
+	Student: It just finished. Can I get my order please?. => student_choices
+- Sorry, could you please repeat your order? => student_order
+- Got it. => END
+
+
+~ lolo
+Lolo: Kamusta iha? 
+~ lolo_order
+Lolo: Just one bowl please.
+~ lolo_choices
+- Hello po 'lo! How are you po?
+	Lolo: Doing alright, iha! => lolo_choices
+- Sorry, could you please repeat your order? => lolo_order
+- Got it. => END
+
+
+~ marites
+Marites: Hay naku! Ang init ng panahon. 
+~ marites_order
+Marites: One bowl please!.
+~ marites_choices
+- Hello po 'lo! How are you po?
+	Marites: Doing alright, iha! => marites_choices
+- Sorry, could you please repeat your order? => marites_order
+- Got it.
+	Marites: Speaking of, do you want to hear of word on the street?
+	- I'll pass for now, tita! => END
+	- Oh, sure tita! => END

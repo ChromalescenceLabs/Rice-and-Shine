@@ -7,13 +7,17 @@
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="2_pwox5"]
 [ext_resource type="Texture2D" uid="uid://cuqrumfstfqqu" path="res://Assets/Freeplay/Serving/Empty/HashbrownCont.png" id="3_ed4vm"]
 [ext_resource type="Texture2D" uid="uid://bfxatlh6arx51" path="res://Assets/Freeplay/Serving/Empty/RiceContH.png" id="4_3ollt"]
-[ext_resource type="Texture2D" uid="uid://dko8vg62oll8w" path="res://Assets/Freeplay/Serving/Empty/TBACont.png" id="4_pwox5"]
+[ext_resource type="PackedScene" uid="uid://dwfqsvk1lxqyw" path="res://Scenes/Freeplay/CustomerServing/FoodCont.tscn" id="4_ed4vm"]
+[ext_resource type="Texture2D" uid="uid://doy8fthnvd5lo" path="res://Assets/Freeplay/Serving/Filled/RiceContFilled.png" id="5_p6lx8"]
 [ext_resource type="Texture2D" uid="uid://7hk0brvbupc2" path="res://Assets/Freeplay/Serving/Empty/PancakeContH.png" id="6_i53e2"]
+[ext_resource type="Texture2D" uid="uid://svjtmt5lpf1b" path="res://Assets/Freeplay/Serving/Filled/RiceContFilledH.png" id="6_lteyg"]
 [ext_resource type="Texture2D" uid="uid://4msdq3gandfm" path="res://Assets/Freeplay/Serving/Empty/HashbrownContH.png" id="7_i53e2"]
-[ext_resource type="Texture2D" uid="uid://bgya7yialyiv4" path="res://Assets/Freeplay/Serving/Empty/TBAContH.png" id="9_wgjyl"]
-[ext_resource type="Script" uid="uid://cxthuam3ves36" path="res://Scripts/Freeplay/CustomerServing/counters.gd" id="12_vol7o"]
+[ext_resource type="Texture2D" uid="uid://t3ul20puiuov" path="res://Assets/Freeplay/Serving/Filled/PancakeContFilled.png" id="9_g0hnr"]
+[ext_resource type="Texture2D" uid="uid://cevrrowe651af" path="res://Assets/Freeplay/Serving/Filled/PancakeContFilledH.png" id="10_hkugj"]
+[ext_resource type="Texture2D" uid="uid://cfu2uvbts2ldr" path="res://Assets/Freeplay/Serving/Filled/HashbrownContFilled.png" id="13_n0jka"]
 [ext_resource type="PackedScene" uid="uid://cntangxcnp6xg" path="res://Scenes/Freeplay/CustomerServing/add_bowl_btn.tscn" id="14_kq8l2"]
 [ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="14_o8aqv"]
+[ext_resource type="Texture2D" uid="uid://c4jbnbugoscts" path="res://Assets/Freeplay/Serving/Filled/HashbrownContFilledH.png" id="14_xhxoy"]
 
 [sub_resource type="Gradient" id="Gradient_wgjyl"]
 offsets = PackedFloat32Array(0, 0.6204819, 0.9939759)
@@ -30,25 +34,8 @@ script = ExtResource("2_pwox5")
 [sub_resource type="Resource" id="Resource_3ollt"]
 script = ExtResource("2_pwox5")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vol7o"]
-bg_color = Color(0.6, 0.6, 0.6, 0.6784314)
-
 [node name="CustomerServingSandbox" type="Node2D" unique_id=1724706127]
 script = ExtResource("1_wgjyl")
-
-[node name="Customers" type="Control" parent="." unique_id=754894326]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CustomersCont" type="HBoxContainer" parent="Customers" unique_id=736920282]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 135.0
-offset_right = 1265.0
-offset_bottom = 626.0
-size_flags_horizontal = 3
 
 [node name="Control" type="Control" parent="." unique_id=2072875163]
 layout_mode = 3
@@ -57,6 +44,7 @@ offset_right = 1280.0
 offset_bottom = 720.0
 
 [node name="FoodContBG" type="TextureRect" parent="Control" unique_id=134774901]
+z_index = 2
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -70,7 +58,36 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("GradientTexture2D_08i74")
 
+[node name="CustomersCont" type="HBoxContainer" parent="Control" unique_id=736920282]
+propagate_maximum_size = false
+layout_mode = 0
+offset_left = 13.0
+offset_top = 119.0
+offset_right = 1265.0
+offset_bottom = 633.0
+size_flags_horizontal = 3
+
+[node name="BowlConts" type="HBoxContainer" parent="Control" unique_id=1003470384]
+z_index = 4
+layout_mode = 0
+offset_left = 24.0
+offset_top = 385.0
+offset_right = 1265.0
+offset_bottom = 485.0
+size_flags_horizontal = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="AddBowl" parent="Control/BowlConts" unique_id=949361015 instance=ExtResource("14_kq8l2")]
+z_index = 50
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
 [node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=667592894]
+z_index = 2
+clip_contents = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -96,137 +113,35 @@ metadata/_custom_type_script = "uid://bgqglerkcylxx"
 layout_mode = 2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="RiceCont" type="TextureButton" parent="Control/ScrollContainer/FoodConts" unique_id=839576300]
+[node name="Rice" parent="Control/ScrollContainer/FoodConts" unique_id=218262186 instance=ExtResource("4_ed4vm")]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("1_gd0cl")
-texture_hover = ExtResource("4_3ollt")
+food_type = "RICE"
+filled_texture = ExtResource("5_p6lx8")
+filled_textureh = ExtResource("6_lteyg")
+empty_texture = ExtResource("1_gd0cl")
+empty_textureh = ExtResource("4_3ollt")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="PancakeCont" type="TextureButton" parent="Control/ScrollContainer/FoodConts" unique_id=1260264982]
+[node name="Pancake" parent="Control/ScrollContainer/FoodConts" unique_id=277610253 instance=ExtResource("4_ed4vm")]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("2_junut")
-texture_hover = ExtResource("6_i53e2")
+food_type = "PANCAKE"
+filled_texture = ExtResource("9_g0hnr")
+filled_textureh = ExtResource("10_hkugj")
+empty_texture = ExtResource("2_junut")
+empty_textureh = ExtResource("6_i53e2")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="HashbrownCont" type="TextureButton" parent="Control/ScrollContainer/FoodConts" unique_id=2137797740]
+[node name="Hashbrown" parent="Control/ScrollContainer/FoodConts" unique_id=997735249 instance=ExtResource("4_ed4vm")]
 layout_mode = 2
 mouse_filter = 1
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("3_ed4vm")
-texture_hover = ExtResource("7_i53e2")
+food_type = "HASHBROWN"
+filled_texture = ExtResource("13_n0jka")
+filled_textureh = ExtResource("14_xhxoy")
+empty_texture = ExtResource("3_ed4vm")
+empty_textureh = ExtResource("7_i53e2")
 metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="TbaCont" type="TextureButton" parent="Control/ScrollContainer/FoodConts" unique_id=381818134]
-layout_mode = 2
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_pwox5")
-texture_hover = ExtResource("9_wgjyl")
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="TbaCont2" type="TextureButton" parent="Control/ScrollContainer/FoodConts" unique_id=907113144]
-layout_mode = 2
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_pwox5")
-texture_hover = ExtResource("9_wgjyl")
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="TbaCont3" type="TextureButton" parent="Control/ScrollContainer/FoodConts" unique_id=820204728]
-layout_mode = 2
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_pwox5")
-texture_hover = ExtResource("9_wgjyl")
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="Counters" type="Control" parent="Control" unique_id=940841773 node_paths=PackedStringArray("rice_counter", "pcake_counter", "hbrown_counter")]
-z_index = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("12_vol7o")
-rice_counter = NodePath("RiceCounter")
-pcake_counter = NodePath("PcakeCounter")
-hbrown_counter = NodePath("HbrownCounter")
-
-[node name="RiceCounter" type="RichTextLabel" parent="Control/Counters" unique_id=268955624 groups=["FoodContLabels"]]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 105.0
-offset_top = 448.0
-offset_right = 175.0
-offset_bottom = 488.0
-grow_horizontal = 2
-mouse_filter = 1
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
-theme_override_font_sizes/normal_font_size = 23
-theme_override_styles/normal = SubResource("StyleBoxFlat_vol7o")
-text = "0"
-fit_content = true
-horizontal_alignment = 1
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="PcakeCounter" type="RichTextLabel" parent="Control/Counters" unique_id=956064383 groups=["FoodContLabels"]]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 430.0
-offset_top = 448.0
-offset_right = 500.0
-offset_bottom = 488.0
-grow_horizontal = 2
-mouse_filter = 1
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
-theme_override_font_sizes/normal_font_size = 23
-theme_override_styles/normal = SubResource("StyleBoxFlat_vol7o")
-text = "0"
-fit_content = true
-horizontal_alignment = 1
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="HbrownCounter" type="RichTextLabel" parent="Control/Counters" unique_id=450006028 groups=["FoodContLabels"]]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 754.0
-offset_top = 449.0
-offset_right = 824.0
-offset_bottom = 489.0
-grow_horizontal = 2
-mouse_filter = 1
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
-theme_override_font_sizes/normal_font_size = 23
-theme_override_styles/normal = SubResource("StyleBoxFlat_vol7o")
-text = "0"
-fit_content = true
-horizontal_alignment = 1
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="BowlConts" type="HBoxContainer" parent="Control" unique_id=1003470384]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 385.0
-offset_right = 1265.0
-offset_bottom = 485.0
-size_flags_horizontal = 3
-
-[node name="AddBowl" parent="Control/BowlConts" unique_id=949361015 instance=ExtResource("14_kq8l2")]
-z_index = 50
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-size_flags_vertical = 4
 
 [node name="FreedBowls" type="Control" parent="Control" unique_id=260643121]
 layout_mode = 1
@@ -245,17 +160,25 @@ grow_vertical = 2
 [node name="BowlLabels" type="Node2D" parent="." unique_id=328106633]
 
 [node name="TrashbinTab" parent="." unique_id=18345153 instance=ExtResource("14_o8aqv")]
+z_index = 2
 position = Vector2(1280, 459)
 
-[connection signal="button_down" from="Control/ScrollContainer/FoodConts/RiceCont" to="." method="_on_rice_cont_button_down"]
-[connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/RiceCont" to="Control/Counters" method="_on_rice_cont_mouse_entered"]
-[connection signal="mouse_exited" from="Control/ScrollContainer/FoodConts/RiceCont" to="Control/Counters" method="_on_rice_cont_mouse_exited"]
-[connection signal="button_down" from="Control/ScrollContainer/FoodConts/PancakeCont" to="." method="_on_pancake_cont_button_down"]
-[connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/PancakeCont" to="Control/Counters" method="_on_pancake_cont_mouse_entered"]
-[connection signal="mouse_exited" from="Control/ScrollContainer/FoodConts/PancakeCont" to="Control/Counters" method="_on_pancake_cont_mouse_exited"]
-[connection signal="button_down" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="." method="_on_hashbrown_cont_button_down"]
-[connection signal="mouse_entered" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="Control/Counters" method="_on_hashbrown_cont_mouse_entered"]
-[connection signal="mouse_exited" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="Control/Counters" method="_on_hashbrown_cont_mouse_exited"]
-[connection signal="pressed" from="Control/ScrollContainer/FoodConts/HashbrownCont" to="." method="_on_hashbrown_cont_pressed"]
+[node name="Exit" type="Button" parent="." unique_id=1943585786]
+offset_left = 1116.0
+offset_top = 17.0
+offset_right = 1255.0
+offset_bottom = 66.0
+text = "Exit"
+
+[node name="temp" type="Button" parent="." unique_id=851856372]
+offset_left = 44.0
+offset_top = 21.0
+offset_right = 159.0
+offset_bottom = 52.0
+text = "add customer"
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
 [connection signal="child_exiting_tree" from="Control/FreedBowls" to="." method="_on_freed_bowls_child_exiting_tree"]
+[connection signal="pressed" from="Exit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="temp" to="." method="_on_temp_pressed"]
