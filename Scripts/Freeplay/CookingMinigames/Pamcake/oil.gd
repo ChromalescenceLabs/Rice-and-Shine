@@ -26,7 +26,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		self.global_position = og_pos
 
 func _on_area_entered(area: Area2D) -> void:
-	if area is PancakePan or area is HdogPan:
+	if area is PancakePan or area is HdogPan or area is Pan or area is TortaPan:
 		oil(area)
 		
 func oil(area):

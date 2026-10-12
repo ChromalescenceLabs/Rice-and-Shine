@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://p8ja8tqo05ds" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/prep_sugar.gd" id="10_q0lgo"]
 [ext_resource type="Script" uid="uid://bq8ayildkmedc" path="res://Scripts/Freeplay/CustomerServing/shaking.gd" id="11_6bvxl"]
 [ext_resource type="Texture2D" uid="uid://c4rus6mfbs2mx" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/PepperShaker.png" id="11_6yvch"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/recipe_book.tscn" id="13_v1uch"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ubv0"]
 
@@ -228,6 +229,12 @@ shape = SubResource("RectangleShape2D_08i74")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Shaking" unique_id=1679159468]
 libraries/ = SubResource("AnimationLibrary_v1uch")
 speed_scale = 1.5
+
+[node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("13_v1uch")]
+offset_left = 1.0
+offset_top = 483.0
+offset_right = 184.0
+offset_bottom = 720.0
 
 [connection signal="chopping_finished" from="." to="." method="_on_chopping_finished"]
 [connection signal="prepSugarDone" from="." to="." method="_on_prep_sugar_done"]

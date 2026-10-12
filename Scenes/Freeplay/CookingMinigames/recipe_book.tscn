@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cp6b2av42pmrw"]
 
-[ext_resource type="Script" uid="uid://33ygglvspse" path="res://Scripts/Freeplay/CookingMinigames/recipe_book.gd" id="1_lbn4d"]
+[ext_resource type="Script" uid="uid://cx5hdtgomv26h" path="res://Scripts/Freeplay/CookingMinigames/recipe_book.gd" id="1_lbn4d"]
 [ext_resource type="Texture2D" uid="uid://decvmrjgt6vxc" path="res://Assets/Freeplay/Cooking_Minigames/RecBookClosed.png" id="2_po80a"]
 [ext_resource type="Texture2D" uid="uid://b04ykbm6g3xci" path="res://Assets/Freeplay/Cooking_Minigames/RecBookOpen.png" id="3_4wqci"]
 [ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Menus/FreeplayMenu/RICE.png" id="4_po80a"]
@@ -243,7 +243,6 @@ offset_left = 36.0
 offset_top = 32.0
 offset_right = 145.0
 offset_bottom = 78.000565
-text = "loreming the ipsum"
 fit_content = true
 
 [node name="Instructions2" type="RichTextLabel" parent="Opened" unique_id=2121340261]
@@ -252,7 +251,6 @@ offset_left = 169.0
 offset_top = 32.0
 offset_right = 278.0
 offset_bottom = 72.00001
-text = "lorem ipsum"
 fit_content = true
 
 [node name="TextureRect" type="TextureRect" parent="Opened" unique_id=1551310623]

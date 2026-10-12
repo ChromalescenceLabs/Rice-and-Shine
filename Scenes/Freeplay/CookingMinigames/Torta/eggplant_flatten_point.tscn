@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://dkhcfxgcjigjp"]
+
+[ext_resource type="Texture2D" uid="uid://c0q17l4wjag2n" path="res://Assets/Freeplay/Cooking_Minigames/Torta/spotlight.png" id="1_h0jql"]
+[ext_resource type="Script" uid="uid://dx8hjixr5ek1k" path="res://Scripts/Freeplay/CookingMinigames/Torta/eggplant_flatten_point.gd" id="2_coa0v"]
+
+[sub_resource type="Animation" id="Animation_8t3aq"]
+resource_name = "HeldDown"
+length = 2.0
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.0000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 0, 1), Color(0.023529412, 1, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5716w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wlrbr"]
+_data = {
+&"HeldDown": SubResource("Animation_8t3aq"),
+&"RESET": SubResource("Animation_5716w")
+}
+
+[sub_resource type="Gradient" id="Gradient_coa0v"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.14901961, 1, 0, 0.7019608)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_coa0v"]
+gradient = SubResource("Gradient_coa0v")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8t3aq"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 128.0
+angle_min = -296.69998
+angle_max = 173.00002
+inherit_velocity_ratio = 0.057
+velocity_pivot = Vector3(0.105, 0, 0)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+flatness = 0.263
+initial_velocity_min = 167.37999
+initial_velocity_max = 236.04999
+angular_velocity_min = -92.70001
+angular_velocity_max = 67.98998
+radial_accel_min = -21.460001
+radial_accel_max = -2.2351742e-06
+scale_min = 0.01
+scale_max = 0.099999994
+hue_variation_min = -2.2351742e-08
+hue_variation_max = -2.2351742e-08
+turbulence_enabled = true
+turbulence_noise_strength = 20.0
+turbulence_noise_scale = 7.31
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.363
+turbulence_initial_displacement_min = -100.0
+turbulence_initial_displacement_max = 100.0
+
+[node name="EggplantFlattenPoint" type="PointLight2D" unique_id=1872700792]
+energy = 4.65
+texture = ExtResource("1_h0jql")
+script = ExtResource("2_coa0v")
+
+[node name="HoverArea" type="TextureRect" parent="." unique_id=816855918]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h0jql")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=666403489]
+libraries/ = SubResource("AnimationLibrary_wlrbr")
+speed_scale = 2.5
+
+[node name="SuccessParticles" type="GPUParticles2D" parent="." unique_id=700446008]
+z_index = 1
+position = Vector2(-1.0000001, 1.0000038)
+scale = Vector2(0.165, 0.165)
+emitting = false
+amount = 24
+texture = SubResource("GradientTexture2D_coa0v")
+lifetime = 0.6
+one_shot = true
+speed_scale = 1.25
+randomness = 0.24
+process_material = SubResource("ParticleProcessMaterial_8t3aq")
+
+[connection signal="mouse_entered" from="HoverArea" to="." method="_on_hover_area_mouse_entered"]
+[connection signal="mouse_exited" from="HoverArea" to="." method="_on_hover_area_mouse_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
