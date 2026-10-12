@@ -192,12 +192,21 @@ Things I've done:
 2. tweak grab mechanic for peel
  - lowk bc it was bugging me that not all drag mechanics are the same, did not change the mechanic for grate cuz i was lazy
 3. added the squeezing scene 
- - so the part where u get the potatoes from the bowl is like the first scene of ur rice tree but like i was having a skill issue so i was stuck there for like a few hours i think
- - idk what to call it but i added like a lever mechanic kinda(?)
+- so the part where u get the potatoes from the bowl is like the first scene of the rice scene but i was having a skill issue so i was stuck there for like a few hours i think
+- idk what to call it but i added like a lever mechanic kinda(?). It's not exactly a lever but I'll just call it that for now bc of convenience
 4. added transition animation
- - it was ok until i got to like the part when u change after the lever mechanic is done ggs why did i do this
+- it was ok until i got to like the part when the other item transitions into another sprite after the lever mechanic is done 
 
-_[To be updated with thoughts!]_
+My thoughts on the matter: 
+bro tbh i feel like i did not make a lot of progress this week lol.. I need to severely lock in so this hashbrown is actually done smh. At that time, I didn't feel like coding at all which is annoying the current me because I wanna fix the bug rn but I can't because I need to do my schoolworks for tomorrow first. i might lock in this week and have over 15 hours, just maybe.
+
+Things I had trouble with:
+1) The part where you grab the grated potatoes from the bowl and if you drop it, it turns invisible
+- I actually don't remember a lot but I remember it was because the potatoes can't be dropped when it was outside the area of the bowl and also it was getting picked up somehow when I was grabbing the knob of the lever. 
+2) my laptop keeps lagging when testing
+- idk if it was because I was in discord when coding but whenever like my signal was low, it started freezing godot too.
+3) I barely had any motivation to code
+- Maybe bc Ive been on this minigame since like forever, I did not feel like coding lol. I was getting more annoyed at bugs than the usual locking in order to fix it--which caused me to be slower.
 
 ### 2. CLIF
 Fourth week and oh! What's that? Yup, progress once again:
