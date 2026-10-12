@@ -11,6 +11,18 @@ You play as Mary Rose Suarez, who manages a carinderia named â€œRice and Shineâ€
       <th>KEYBIND</th>
       <th>ACTION</th>
     </tr>
+    <tr>
+      <td>Click</td>
+      <td>Most of the actions in the game.</td>
+    </tr>
+    <tr>
+      <td>Right Click</td>
+      <td>View bowl contents</td>
+    </tr>
+    <tr>
+      <td>E (Pour)</td>
+      <td>To Pour Liquid (Only at the Inihaw Minigame at the moment)</td>
+    </tr>
 </table>
 
 ## How to Run
@@ -20,16 +32,18 @@ You play as Mary Rose Suarez, who manages a carinderia named â€œRice and Shineâ€
 4. Feel free to give us constructive criticism - we're beginners and are always open to respectful advice.
 
 ## Versions
-*TBA*
+_Information on previous versions to be written soon_
+
+**v0.4.0 - Released October 12, 2026:** Initial functionality for the UI in the Story Mode section done. Progress done on the minigames, mainly hashbrown minigame polishing, and the addition of the tortang talong minigame. Progress done on the customer serving mechanics, with data persistence and initial randomization of the customers themselves done.
 
 ## Acknowledgements
-- **PROGRAMMERS:** Jazzminum, AlliumC, and NyctoNuvra
+- **PROGRAMMERS:** Jazzminum, AlliumC, RaphlTicket, and NyctoNuvra
 - **LORE:** RaphlTicket, AlliumC
-- **MECHANICS:** Jazzminum, NyctoNuvra
-- **ART:** RaphlTicket 
-- **SOUND DESIGN:** NyctoNuvra
+- **ART:** RaphlTicket, NyctoNuvra, AlliumC
+- **SOUND DESIGN:** RaphlTicket, NyctoNuvra, Jazzminum
 - **PROGRAMS/TOOLS USED:** Godot, Git/Github, Milanote, Pixabay, Beepbox, IbisPaintX, Krita
-- **SPECIAL MENTIONS:** Hack Club
+- **ADDONS USED:** Dialogue Manager by Nathan Hoad, SmoothScroll by SpyrexDE, and Godot Super Wakatime
+- **SPECIAL MENTIONS:** Hack Club, and the ThirdSpace Orgs
 
 ## Screenshots
 *TBA*
