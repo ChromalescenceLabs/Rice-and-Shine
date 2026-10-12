@@ -75,7 +75,6 @@ offset_right = 126.0
 offset_bottom = 251.0
 offset_transform_enabled = true
 texture_normal = ExtResource("1_800xo")
-texture_hover = ExtResource("1_800xo")
 script = ExtResource("2_cnr3u")
 
 [node name="CustomerArea" type="Area2D" parent="." unique_id=1136218565]
@@ -87,5 +86,20 @@ shape = SubResource("CapsuleShape2D_08i74")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=426553017]
 libraries/ = SubResource("AnimationLibrary_8e4aw")
 speed_scale = 3.0
+
+[node name="HappinessBar" type="ProgressBar" parent="." unique_id=423385428]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -325.0
+offset_right = 135.0
+offset_bottom = -298.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

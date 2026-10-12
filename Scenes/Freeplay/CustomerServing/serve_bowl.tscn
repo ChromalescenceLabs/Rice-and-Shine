@@ -74,7 +74,7 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
 radius = 48.0
 
-[node name="ServeBowl" type="TextureRect" unique_id=209391391]
+[node name="ServeBowl" type="TextureRect" unique_id=209391391 groups=["oldBowls"]]
 z_index = 2
 offset_left = -74.0
 offset_top = -46.0

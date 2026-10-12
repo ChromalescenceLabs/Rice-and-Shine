@@ -114,16 +114,26 @@ func initialization():
 		self.reparent(freed_bowls)
 		
 		var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
-		if data == null:
+		if not data == null:
+			var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "Bowls")
+			if node_data == null and not self.is_in_group("oldBowls"):
+				self.global_position = Vector2(1280, final_pos.y) + Vector2(self.size.x, 0)
+				
+				self.modulate.a = 1.0
+				var tw = create_tween().tween_property(self, "global_position:x", final_pos.x, 0.5).set_trans(Tween.TRANS_CUBIC)
+				self.mouse_filter = Control.MOUSE_FILTER_PASS
+				
+				await tw.finished
+			else:
+				self.mouse_filter = Control.MOUSE_FILTER_PASS
+				self.modulate.a = 1.0
+		else:
 			self.global_position = Vector2(1280, final_pos.y) + Vector2(self.size.x, 0)
-			
+				
 			self.modulate.a = 1.0
 			var tw = create_tween().tween_property(self, "global_position:x", final_pos.x, 0.5).set_trans(Tween.TRANS_CUBIC)
 			self.mouse_filter = Control.MOUSE_FILTER_PASS
 			
 			await tw.finished
-		else:
-			self.mouse_filter = Control.MOUSE_FILTER_PASS
-			self.modulate.a = 1.0
 		
 		node_ready = true

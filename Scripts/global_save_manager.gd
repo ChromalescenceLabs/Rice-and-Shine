@@ -37,7 +37,10 @@ func fetch_scene_persistent_value(scene_name : String):
 
 func fetch_node_persistent_value(dict: Dictionary, node_name : String):
 	if dict.has(node_name):
-		return dict[node_name]
+		if dict[node_name].is_empty():
+			return null
+		else:
+			return dict[node_name]
 	return null
 
 func get_scene_path() -> String:

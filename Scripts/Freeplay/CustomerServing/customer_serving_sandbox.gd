@@ -25,6 +25,7 @@ func _ready() -> void:
 			for i in node_data.size():
 				var bowl = await add_bowl_func()
 				bowl.contentDict = node_data[i]
+				bowl.add_to_group("oldBowls")
 				
 		# Check if a Node in that scene has data for FoodConts	
 		node_data = GlobalSaveManager.fetch_node_persistent_value(data, "FoodConts")
@@ -39,6 +40,7 @@ func _ready() -> void:
 			for i in node_data.size():
 				var customer = add_customer()
 				customer.customer_info = node_data[i]
+				customer.update_texture()
 
 func _on_add_bowl_pressed() -> void: add_bowl_func()
 

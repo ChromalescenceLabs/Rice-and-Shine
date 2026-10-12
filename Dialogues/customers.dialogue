@@ -34,3 +34,13 @@ Marites: One bowl please!.
 	Marites: Speaking of, do you want to hear of word on the street?
 	- I'll pass for now, tita! => END
 	- Oh, sure tita! => END
+
+~ tatay
+Tatay: Uy, kamusta iha..
+~ tatay_order
+Tatay: Could I get.. Whatever's the cheapest on your menu?
+~ tatay_choices
+- Hello po 'tay! Kamusta?
+	Tatay: All good iha! => tatay_choices
+- Sorry, could you please repeat your order? => tatay_order
+- Got it.
