@@ -67,6 +67,9 @@ Then from September 19-20, I began coding for thirdspace.
 - With my remaining time, I decided to polish some parts of the main menu, and options menu before my ten hours were up.
 
 
+
+
+
 ## WEEK 2: SEPTEMBER 21-28
 ### 1. ALLIUMC
 Things I've done:
@@ -123,6 +126,9 @@ On 09/26/2026, I worked on coding. I first tried to implement a carousel menu fo
 - https://lapse.hackclub.com/timelapse/iJ4D1aWzsH4I
 - https://lapse.hackclub.com/timelapse/8fSgLJqLsnZd
 
+
+
+
 ## WEEK 3: SEPTEMBER 28 - OCTOBER 5
 ### 1. ALLIUMC
 Things I've done:
@@ -176,3 +182,43 @@ I had a smooth time coding this week actually! Surprisingly no mind-numbing prob
 
 ### 4. JEANKAMAGALING
 On 10/04/2026, i started reworking the mode select menu. I changed the layout, and animations for the buttons. I struggled with the mode select menu, specifically on the animations for the buttons. I made a temporary solution to fix it using sprite 2ds to be able to animate the buttons until i found a better way to fix it. I then  changed the layout of the chapter select menu and added  the carousel menu I had planned for it in the first place. I then added a confirm button which allows you to change the scene to the chapter you want to play and an indicator for when the chapter is inaccessible. I also added a description which would pop up if you hovered over the button. On 10/05/2026, i reworked on the mode select menu. After following the advice of one of my teammates, and experimenting with the code, i was able to fix the button animations for the mode select menu.
+
+
+## WEEK 4: OCTOBER 5 - OCTOBER 12
+### 1. ALLIUMC
+Things I've done:
+1. added rinsing scene
+ - which is basically similar to Jazz' rinsing mechanic in the rice minigame
+2. tweak grab mechanic for peel
+ - lowk bc it was bugging me that not all drag mechanics are the same, did not change the mechanic for grate cuz i was lazy
+3. added the squeezing scene 
+ - so the part where u get the potatoes from the bowl is like the first scene of ur rice tree but like i was having a skill issue so i was stuck there for like a few hours i think
+ - idk what to call it but i added like a lever mechanic kinda(?)
+4. added transition animation
+ - it was ok until i got to like the part when u change after the lever mechanic is done ggs why did i do this
+
+_[To be updated with thoughts!]_
+
+### 2. CLIF
+Fourth week and oh! What's that? Yup, progress once again:
+Got another minigame done, it being the "tortang talong" minigame, which is essentially just eggplant with actual eggs
+- added the grilling stage which had practically the same logic as all the other frying mechanics I'd already done
+- added the peel mechanic which wasn't that hard thanks to me having to deal with mouse velocity already for stuff like chopping
+- also added the flattening mechanic, which is literally just pushing some buttons
+- made a little egg crack animation, alongside the mixing mechanic
+- aaand pretty much finished up with the frying of the coated eggplant.
+Decided to also implement the recipe books in the cooking minigames that already didn't have them.
+
+### 3. JAZZ
+Hi! I'm pretty proud with the stuff I worked on for this week; once again still on the customer serving mechanics.. But I think I've built a pretty good system on it, hopefully making my life implementing it into the actual story mode easier! I worked on specifically the following; 
+- Added a persistent data manager (I initially looked for tutorials on how to make good ones... And ended up just conjuring up my own because none of them had what I wanted the data manager to do- Proud of how I made it work though!)
+- Updated the food containers to be a separate scene from the customer serving scene, to help with adding persistent data to it
+- Actually began working on the customers themselves, like customer the entry animation
+- Also started editing the Dialogues for the customers using Nathan Hoad's dialogue manager addon! Found it to be very intuitive and useful, definitely makes our lives easier.
+- Added the data persistence to the customers themselves, to save stuff like customer type, wants, etc.
+- Began coding the randomization of orders for the customers.
+
+Again, the bugs I had to face (which were primarily from the data persistence manager) weren't that big of a deal, and were resolved pretty quickly. Hopefully I'll actually get the customers done next week so I can maybe start on the story mode's tutorial. Maybe we'd get a demo working by next week? After the UI as well is sorted out (which'll be primarily Raph's job :p) But that'd be it for me this week! I personally am satisfied with my progress and think it's quite polished.
+
+### 4. JEANKAMAGALING
+On 10/11/2026, i mainly redrew certain assets for the game, such as the customers, since unfortunately some of it got corrupted as i was moving files across my laptops. I guess it was ok since i had planned on reworking them anyway. I  also started to make some chapter art, and art for the serving customers mechanics. On 10/12/2026, i used the other 50% of my time in fixing the carousel for the week select. I'd say it was alright since i already had somewhat of an idea of how to do it from the get go, but  i mostly just focused on making it more visually appealing and actually functional. I also tried to add a highlight to the current week selected, but had troubles configuring it so that it'd actually go on the selected week. 
