@@ -27,8 +27,6 @@ Marites: Hay naku! Ang init ng panahon.
 ~ marites_order
 Marites: One bowl please!.
 ~ marites_choices
-- Hello po 'lo! How are you po?
-	Marites: Doing alright, iha! => marites_choices
 - Sorry, could you please repeat your order? => marites_order
 - Got it.
 	Marites: Speaking of, do you want to hear of word on the street?

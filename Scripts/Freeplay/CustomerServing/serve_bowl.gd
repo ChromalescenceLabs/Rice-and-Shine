@@ -1,5 +1,7 @@
-extends Control
-class_name Bowl
+class_name Bowl extends TextureRect
+
+var servable: bool = false
+
 signal contentsCheck
 
 const BOWL_CONTENTS_LABEL = preload("uid://ye58mwdno13d")
@@ -31,8 +33,13 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("RightClick") and not dragging:
 		contentsCheck.emit()
 	elif event.is_action_pressed("Click"):
+		get_tree().call_group("Customers", "upd_colmask", 1)
 		dragging = true
-	if event.is_action_released("Click"):
+	elif event.is_action_released("Click"):
+		if servable:
+			get_tree().call_group("Customers", "receive_bowl", contentDict, self)
+			
+		get_tree().call_group("Customers", "upd_colmask", 2)
 		dragging = false
 		if in_trash:
 			self.queue_free()
@@ -114,7 +121,20 @@ func initialization():
 		self.reparent(freed_bowls)
 		
 		var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
-		if data == null:
+		if not data == null:
+			var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "Bowls")
+			if node_data == null or not self.is_in_group("oldBowls"):
+				self.global_position = Vector2(1280, final_pos.y) + Vector2(self.size.x, 0)
+				
+				self.modulate.a = 1.0
+				var tw = create_tween().tween_property(self, "global_position:x", final_pos.x, 0.5).set_trans(Tween.TRANS_CUBIC)
+				self.mouse_filter = Control.MOUSE_FILTER_PASS
+				
+				await tw.finished
+			else:
+				self.mouse_filter = Control.MOUSE_FILTER_PASS
+				self.modulate.a = 1.0
+		else:
 			self.global_position = Vector2(1280, final_pos.y) + Vector2(self.size.x, 0)
 			
 			self.modulate.a = 1.0
@@ -122,8 +142,5 @@ func initialization():
 			self.mouse_filter = Control.MOUSE_FILTER_PASS
 			
 			await tw.finished
-		else:
-			self.mouse_filter = Control.MOUSE_FILTER_PASS
-			self.modulate.a = 1.0
 		
 		node_ready = true

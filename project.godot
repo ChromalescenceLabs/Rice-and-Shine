@@ -54,6 +54,11 @@ folder_colors={
 "res://Scripts/": "green"
 }
 
+[global_group]
+
+oldBowls="For Customer Serving Scene"
+Customers=""
+
 [input]
 
 Click={
