@@ -42,3 +42,6 @@ Tatay: Could I get.. Whatever's the cheapest on your menu?
 	Tatay: All good iha! => tatay_choices
 - Sorry, could you please repeat your order? => tatay_order
 - Got it.
+
+~ correct
+{{GlobalVars.character_name}}: Thanks!
