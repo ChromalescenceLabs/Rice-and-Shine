@@ -1,5 +1,7 @@
-extends Control
-class_name Bowl
+class_name Bowl extends TextureRect
+
+var servable: bool = false
+
 signal contentsCheck
 
 const BOWL_CONTENTS_LABEL = preload("uid://ye58mwdno13d")
@@ -31,8 +33,13 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("RightClick") and not dragging:
 		contentsCheck.emit()
 	elif event.is_action_pressed("Click"):
+		get_tree().call_group("Customers", "upd_colmask", 1)
 		dragging = true
-	if event.is_action_released("Click"):
+	elif event.is_action_released("Click"):
+		if servable:
+			get_tree().call_group("Customers", "receive_bowl", contentDict, self)
+			
+		get_tree().call_group("Customers", "upd_colmask", 2)
 		dragging = false
 		if in_trash:
 			self.queue_free()
@@ -116,7 +123,7 @@ func initialization():
 		var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
 		if not data == null:
 			var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "Bowls")
-			if node_data == null and not self.is_in_group("oldBowls"):
+			if node_data == null or not self.is_in_group("oldBowls"):
 				self.global_position = Vector2(1280, final_pos.y) + Vector2(self.size.x, 0)
 				
 				self.modulate.a = 1.0

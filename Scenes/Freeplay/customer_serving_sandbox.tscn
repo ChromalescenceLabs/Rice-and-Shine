@@ -62,9 +62,9 @@ texture = SubResource("GradientTexture2D_08i74")
 propagate_maximum_size = false
 layout_mode = 0
 offset_left = 13.0
-offset_top = 119.0
+offset_top = 50.0
 offset_right = 1265.0
-offset_bottom = 633.0
+offset_bottom = 567.0
 size_flags_horizontal = 3
 
 [node name="BowlConts" type="HBoxContainer" parent="Control" unique_id=1003470384]
