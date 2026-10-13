@@ -20,10 +20,8 @@ var qty : int = 5:
 			counter.text = str(qty)
 
 func _ready() -> void:
-	#var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
-	#if data == null:
-		counter.text = str(qty)
-		upd_texture()
+	counter.text = str(qty)
+	upd_texture()
 
 func _on_button_down() -> void:
 	match food_type:

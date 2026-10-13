@@ -23,7 +23,7 @@ func _ready() -> void:
 		var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "Bowls")
 		if not node_data == null:
 			for i in node_data.size():
-				var bowl = await add_bowl_func()
+				var bowl = await add_bowl_func(true)
 				bowl.contentDict = node_data[i]
 				
 		# Check if a Node in that scene has data for FoodConts	
@@ -34,13 +34,14 @@ func _ready() -> void:
 			for i in node_data.size():
 				foodcontchildren[i].qty = node_data[i]
 				
+		# Check if a Node in that scene has data for CustomerConts	
 		node_data = GlobalSaveManager.fetch_node_persistent_value(data, "CustomerConts")
 		if not node_data == null:
 			for i in node_data.size():
 				var customer = add_customer()
 				customer.customer_info = node_data[i]
 
-func _on_add_bowl_pressed() -> void: add_bowl_func()
+func _on_add_bowl_pressed() -> void: add_bowl_func(false)
 
 func _on_freed_bowls_child_exiting_tree(node: Node) -> void:
 	if node is Bowl:
@@ -66,7 +67,7 @@ func _on_freed_bowls_child_exiting_tree(node: Node) -> void:
 				current_freed_bowl.final_pos = current_back_bowl.global_position
 				current_freed_bowl.global_position = current_back_bowl.global_position
 
-func add_bowl_func() -> TextureRect:
+func add_bowl_func(is_old : bool) -> TextureRect:
 	var newBowl = SERVE_BOWL.instantiate()
 	newBowl.modulate.a = 0.0
 	bowl_conts.add_child(newBowl)
@@ -76,6 +77,9 @@ func add_bowl_func() -> TextureRect:
 
 	await get_tree().process_frame
 
+	if is_old:
+		newBowl.add_to_group("oldBowls")
+	
 	newBowl.initialization()
 	
 	bowl_no += 1

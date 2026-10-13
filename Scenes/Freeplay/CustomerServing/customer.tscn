@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b1t0ld5ii8tj3" path="res://Assets/Freeplay/Serving/Customers/CustomerPlaceholder.png" id="1_800xo"]
 [ext_resource type="Script" uid="uid://dr6xqgi8cdx1d" path="res://Scripts/Freeplay/CustomerServing/customer.gd" id="2_cnr3u"]
+[ext_resource type="Script" uid="uid://c4r73hu0gf136" path="res://Scripts/Freeplay/CustomerServing/customer_area.gd" id="3_ss3q5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_08i74"]
 radius = 98.0
@@ -67,7 +68,7 @@ _data = {
 &"enter_exit": SubResource("Animation_ss3q5")
 }
 
-[node name="Customer" type="TextureButton" unique_id=572008476]
+[node name="Customer" type="TextureButton" unique_id=572008476 groups=["Customers"]]
 modulate = Color(1, 1, 1, 0)
 offset_left = -124.0
 offset_top = -249.0
@@ -79,6 +80,8 @@ texture_hover = ExtResource("1_800xo")
 script = ExtResource("2_cnr3u")
 
 [node name="CustomerArea" type="Area2D" parent="." unique_id=1136218565]
+collision_mask = 2
+script = ExtResource("3_ss3q5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CustomerArea" unique_id=1333736707]
 position = Vector2(126, 261)
@@ -89,3 +92,5 @@ libraries/ = SubResource("AnimationLibrary_8e4aw")
 speed_scale = 3.0
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="area_entered" from="CustomerArea" to="." method="_on_customer_area_area_entered"]
+[connection signal="area_exited" from="CustomerArea" to="." method="_on_customer_area_area_exited"]
