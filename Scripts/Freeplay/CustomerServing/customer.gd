@@ -1,14 +1,18 @@
 extends TextureButton
 const CUSTOMERS_BALLOON = preload("uid://cm4n4dbr706j")
 
+# Dialogue Food Images
+const HASHBROWN_LABEL_IMG = preload("uid://be4y7ewpqycrh")
+const PANCAKE_LABEL_IMG = preload("uid://bu18d5et72sre")
+const RICE_LABEL_IMG = preload("uid://c46do5q6bcopm")
+
+
 # Textures
 const LOLO = preload("uid://dg47vo7v7vwqq")
 const MARITES = preload("uid://gh1at5fdem7h")
 const STUDENT = preload("uid://cww1ucg2b6yl2")
 const TATAY = preload("uid://crl6y8dtirpjd")
 
-
-const DIALOGUE_ORDER_LABEL = preload("uid://cksm00h67pcy1")
 var final_pos
 var indx : int
 var received_order : Dictionary
@@ -95,13 +99,30 @@ func _on_pressed() -> void:
 	var dict_index : int = 0
 	for i in customer_info["CustomerWants"]:
 		dict_index += 1
+		
 		if customer_info["CustomerWants"].size() > 1 and dict_index == customer_info["CustomerWants"].size():
 			order = order + "and "
 			
-		order = order + str(customer_info["CustomerWants"][i]) + " " + i
-		if customer_info["CustomerWants"][i] > 1:
-			order = order + "s"
+		# Gets type & qty
+		var food_texture
+		match i:
+			"rice":
+				food_texture = RICE_LABEL_IMG
+			"pancake":
+				food_texture = PANCAKE_LABEL_IMG
+			"hashbrown":
+				food_texture = HASHBROWN_LABEL_IMG
 		
+		# This method shows the order as images
+		order = order + str(customer_info["CustomerWants"][i]) + ""
+		order = order + " [img=32x32]" + str(food_texture.resource_path) + "[/img]"
+		
+		#This method shows the order as words
+		#order = order + str(customer_info["CustomerWants"][i]) + " " + i
+		#if customer_info["CustomerWants"][i] > 1:
+			#order = order + "s"
+		
+		#Sees if a comma should be added
 		if customer_info["CustomerWants"].size() > 1 and not dict_index == customer_info["CustomerWants"].size():
 			order = order + ", "
 		
@@ -111,6 +132,7 @@ func _on_pressed() -> void:
 	balloon.global_position = self.global_position
 	balloon.indx = indx
 
+	self.disabled = true
 
 func _on_customer_area_area_entered(area: Area2D) -> void:
 	if area is BowlArea: 
@@ -121,8 +143,3 @@ func _on_customer_area_area_exited(area: Area2D) -> void:
 	if area is BowlArea: 
 		var bowl = area.get_parent() as TextureRect
 		bowl.set("servable", false)
-	
-func get_order_label():
-	var order_label = DIALOGUE_ORDER_LABEL.instantiate()
-	
-	return order_label
