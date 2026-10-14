@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dniwio1arxhol"]
 
 [ext_resource type="Script" uid="uid://b3yg37jllbb67" path="res://Scripts/Menus/ModeSelect/MODE_SELECT.gd" id="1_rel82"]
-[ext_resource type="Texture2D" uid="uid://dnulc8osr7rqc" path="res://Assets/TEMPMENUBG.png" id="2_xxbn6"]
+[ext_resource type="Texture2D" uid="uid://dnulc8osr7rqc" path="res://Assets/Menus/ModeSelect/TEMPMENUBG.png" id="2_xxbn6"]
 [ext_resource type="Script" uid="uid://b8h8y1dk1kvm5" path="res://Scripts/Menus/ModeSelect/storybtn.gd" id="4_6vmvb"]
 [ext_resource type="Script" uid="uid://b56iqah5om6xq" path="res://Scripts/Menus/ModeSelect/freeplaybtn.gd" id="4_taxq6"]
-[ext_resource type="Texture2D" uid="uid://coimcmqajakru" path="res://Assets/TEMPCLOSEDWINDOW.png" id="5_bril0"]
-[ext_resource type="Script" uid="uid://8itcbbm40jlf" path="res://Scripts/Menus/ModeSelect/modebg_anim.gd" id="7_jan6t"]
+[ext_resource type="Texture2D" uid="uid://coimcmqajakru" path="res://Assets/Menus/ModeSelect/TEMPCLOSEDWINDOW.png" id="5_bril0"]
+[ext_resource type="Script" uid="uid://bddhu0viv0yn" path="res://Scripts/Menus/ModeSelect/modebg_anim.gd" id="7_jan6t"]
 [ext_resource type="Animation" uid="uid://c4l8g78egdc2g" path="res://Assets/ANIMATIONS/BG.res" id="7_w8xo7"]
-[ext_resource type="Texture2D" uid="uid://b57au0x8eieye" path="res://Assets/TEMPOPENWINDOW.png" id="8_nec4f"]
+[ext_resource type="Texture2D" uid="uid://b57au0x8eieye" path="res://Assets/Menus/ModeSelect/TEMPOPENWINDOW.png" id="8_nec4f"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bril0"]
 load_path = "res://.godot/imported/TEMPCLOSEDWINDOW.png-f93d940505afd9cfe64bdb340430f494.ctex"

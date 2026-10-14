@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ere1gahnngi"
-path="res://.godot/imported/TEMPCLOSEDVER2.png-edb051d2827231dad31a8e9cb3324953.ctex"
+uid="uid://hv75qihdrnvp"
+path="res://.godot/imported/placeholderbg.png-08c7ceabbd35f4f43691bb8b77efab9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TEMPCLOSEDVER2.png"
-dest_files=["res://.godot/imported/TEMPCLOSEDVER2.png-edb051d2827231dad31a8e9cb3324953.ctex"]
+source_file="res://Assets/Menus/ModeSelect/placeholderbg.png"
+dest_files=["res://.godot/imported/placeholderbg.png-08c7ceabbd35f4f43691bb8b77efab9c.ctex"]
 
 [params]
 

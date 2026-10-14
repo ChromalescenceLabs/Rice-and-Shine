@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coimcmqajakru"
-path="res://.godot/imported/TEMPCLOSEDWINDOW.png-f93d940505afd9cfe64bdb340430f494.ctex"
+uid="uid://2ceaiwbikgt2"
+path="res://.godot/imported/tempcursor.png-db62517f8445c4ad2f67cf96d3e8989a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TEMPCLOSEDWINDOW.png"
-dest_files=["res://.godot/imported/TEMPCLOSEDWINDOW.png-f93d940505afd9cfe64bdb340430f494.ctex"]
+source_file="res://Assets/Menus/ModeSelect/tempcursor.png"
+dest_files=["res://.godot/imported/tempcursor.png-db62517f8445c4ad2f67cf96d3e8989a.ctex"]
 
 [params]
 

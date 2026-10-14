@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://benuikw1v40e"]
 
 [ext_resource type="Texture2D" uid="uid://b5s3gdbnh5kai" path="res://Assets/Menus/ChapterSelect/week one.png" id="1_q88pd"]
-[ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/placeholderbg.png" id="1_yue0x"]
-[ext_resource type="Script" uid="uid://4k3twsh5t7rh" path="res://Scenes/Menus/weeks.gd" id="2_f7kjc"]
+[ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/Menus/ModeSelect/placeholderbg.png" id="1_yue0x"]
+[ext_resource type="Script" path="res://Scenes/Menus/weeks.gd" id="2_f7kjc"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_f7kjc"]
-[ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Menus/tempbutton.png" id="4_rn5ul"]
+[ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Menus/ChapterSelect/tempbutton.png" id="4_rn5ul"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_rn5ul"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ullcx"]

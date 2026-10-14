@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnulc8osr7rqc"
-path="res://.godot/imported/TEMPMENUBG.png-c97907a10e9aa0c96049481af4228d3d.ctex"
+uid="uid://bocqq4a2tmhu6"
+path="res://.godot/imported/TEMPOPENVER2.png-2f0f162aaf1d207598abf1a9f1a512bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TEMPMENUBG.png"
-dest_files=["res://.godot/imported/TEMPMENUBG.png-c97907a10e9aa0c96049481af4228d3d.ctex"]
+source_file="res://Assets/Menus/ModeSelect/TEMPOPENVER2.png"
+dest_files=["res://.godot/imported/TEMPOPENVER2.png-2f0f162aaf1d207598abf1a9f1a512bb.ctex"]
 
 [params]
 
