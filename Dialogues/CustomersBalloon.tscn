@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cm4n4dbr706j"]
 
-[ext_resource type="Script" uid="uid://mlpc1bpck4nk" path="res://Dialogues/balloon.gd" id="1_36de5"]
-[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Script" uid="uid://mlpc1bpck4nk" path="res://Dialogues/CustomersBalloon.gd" id="1_u3yri"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_gv1cq"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_al7d6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 content_margin_left = 20.0
@@ -172,7 +172,7 @@ _data = {
 }
 
 [node name="CustomerOrderBalloon" type="Node2D" unique_id=2062467046]
-script = ExtResource("1_36de5")
+script = ExtResource("1_u3yri")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1340933418]
 modulate = Color(1, 1, 1, 0)
@@ -238,7 +238,7 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1301798052 instance=ExtResource("2_a8ve6")]
+[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1301798052 instance=ExtResource("2_gv1cq")]
 unique_name_in_owner = true
 z_index = 2
 layout_mode = 2
@@ -280,7 +280,7 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 2
 alignment = 2
-script = ExtResource("3_72ixx")
+script = ExtResource("3_al7d6")
 response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/CenterContainer/ResponsesMenu" unique_id=1446810977]

@@ -2,6 +2,7 @@
 Student: [[Mabuhay|Kamusta|Magandang Umaga]]! 
 ~ student_order
 Student: I'd like to place an order!
+{{GlobalVars.character_name}}: I'd specifically like {{GlobalVars.character_order}}. 
 ~ student_choices
 - Hey! How's it going?
 	Student: Doing alright, thanks for asking! => student_choices
@@ -15,6 +16,7 @@ Student: I'd like to place an order!
 Lolo: Kamusta iha? 
 ~ lolo_order
 Lolo: Just one bowl please.
+{{GlobalVars.character_name}}: I'd specifically like {{GlobalVars.character_order}}.
 ~ lolo_choices
 - Hello po 'lo! How are you po?
 	Lolo: Doing alright, iha! => lolo_choices
@@ -26,22 +28,21 @@ Lolo: Just one bowl please.
 Marites: Hay naku! Ang init ng panahon. 
 ~ marites_order
 Marites: One bowl please!.
+{{GlobalVars.character_name}}: I'd specifically like {{GlobalVars.character_order}}. 
 ~ marites_choices
 - Sorry, could you please repeat your order? => marites_order
-- Got it.
-	Marites: Speaking of, do you want to hear of word on the street?
-	- I'll pass for now, tita! => END
-	- Oh, sure tita! => END
+- Got it. => END
 
 ~ tatay
 Tatay: Uy, kamusta iha..
 ~ tatay_order
 Tatay: Could I get.. Whatever's the cheapest on your menu?
+{{GlobalVars.character_name}}: I'd specifically like {{GlobalVars.character_order}}.
 ~ tatay_choices
 - Hello po 'tay! Kamusta?
 	Tatay: All good iha! => tatay_choices
 - Sorry, could you please repeat your order? => tatay_order
-- Got it.
+- Got it. => END
 
 ~ correct
 {{GlobalVars.character_name}}: Thanks!
