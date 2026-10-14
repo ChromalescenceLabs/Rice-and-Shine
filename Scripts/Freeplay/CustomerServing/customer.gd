@@ -149,8 +149,8 @@ func _on_pressed() -> void:
 			"hashbrown": food_texture = HASHBROWN_LABEL_IMG
 			
 		var label_text
-		label_text = str(customer_info["CustomerWants"][i]) + ""
-		label_text = label_text + " [img=32x32]" + str(food_texture.resource_path) + "[/img]"
+		label_text = "[img=32x32]" + str(food_texture.resource_path) + "[/img]"
+		label_text = label_text + " x" + str(customer_info["CustomerWants"][i])
 		var label = RichTextLabel.new()
 		label.custom_minimum_size = Vector2(70, 0)
 		label.bbcode_enabled = true
