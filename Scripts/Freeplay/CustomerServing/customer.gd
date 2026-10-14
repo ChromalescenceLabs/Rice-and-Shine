@@ -1,11 +1,14 @@
 extends TextureButton
 const CUSTOMERS_BALLOON = preload("uid://cm4n4dbr706j")
+@onready var order_label_animator: AnimationPlayer = $OrderLabel/OrderLabelAnimator
+
+@onready var order_container: HBoxContainer = $OrderLabel/SmoothScrollContainer/OrderContainer
+@onready var order_label: Control = $OrderLabel
 
 # Dialogue Food Images
 const HASHBROWN_LABEL_IMG = preload("uid://be4y7ewpqycrh")
 const PANCAKE_LABEL_IMG = preload("uid://bu18d5et72sre")
 const RICE_LABEL_IMG = preload("uid://c46do5q6bcopm")
-
 
 # Textures
 const LOLO = preload("uid://dg47vo7v7vwqq")
@@ -16,7 +19,7 @@ const TATAY = preload("uid://crl6y8dtirpjd")
 var final_pos
 var indx : int
 var received_order : Dictionary
-@onready var happiness_bar: ProgressBar = $HappinessBar
+@onready var happiness_bar: ProgressBar = $Control/HappinessBar
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var customer_area: CustomerArea = $CustomerArea
 
@@ -33,6 +36,7 @@ var customer_info : Dictionary = {
 	# CustomerHappiness : int
 }
 
+# Have to be in the same style as the cues in the customer ordering dialogue resource
 var customerTypes : Array = [
 	"student",
 	"lolo",
@@ -41,6 +45,9 @@ var customerTypes : Array = [
 	#"basketball_player",
 	#"daughter",
 ]
+
+func _ready() -> void:
+	order_label.modulate.a = 0
 
 func initialization() -> bool:
 	self.modulate.a = 1.0
@@ -85,7 +92,9 @@ func receive_bowl(bowlContents : Dictionary, bowl : TextureRect):
 	bowl.queue_free()
 	if received_order == customer_info["CustomerWants"]:
 		GlobalVars.character_name = customer_info["CustomerType"][0].to_upper() + customer_info["CustomerType"].substr(1, -1)
-		GlobalVars.show_dialogue(indx, "correct", self, null, null)
+		var balloon = DialogueManager.show_dialogue_balloon_scene(CUSTOMERS_BALLOON, load("uid://bivmd1klxx532"), "correct")
+		balloon.global_position = self.global_position
+		balloon.indx = indx
 		
 		await DialogueManager.dialogue_ended
 		
@@ -106,12 +115,9 @@ func _on_pressed() -> void:
 		# Gets type & qty
 		var food_texture
 		match i:
-			"rice":
-				food_texture = RICE_LABEL_IMG
-			"pancake":
-				food_texture = PANCAKE_LABEL_IMG
-			"hashbrown":
-				food_texture = HASHBROWN_LABEL_IMG
+			"rice": food_texture = RICE_LABEL_IMG
+			"pancake": food_texture = PANCAKE_LABEL_IMG
+			"hashbrown": food_texture = HASHBROWN_LABEL_IMG
 		
 		# This method shows the order as images
 		order = order + str(customer_info["CustomerWants"][i]) + ""
@@ -133,6 +139,30 @@ func _on_pressed() -> void:
 	balloon.indx = indx
 
 	self.disabled = true
+	
+	print(customer_info["CustomerWants"])
+	for i in customer_info["CustomerWants"]:
+		var food_texture
+		match i:
+			"rice": food_texture = RICE_LABEL_IMG
+			"pancake": food_texture = PANCAKE_LABEL_IMG
+			"hashbrown": food_texture = HASHBROWN_LABEL_IMG
+			
+		var label_text
+		label_text = str(customer_info["CustomerWants"][i]) + ""
+		label_text = label_text + " [img=32x32]" + str(food_texture.resource_path) + "[/img]"
+		var label = RichTextLabel.new()
+		label.custom_minimum_size = Vector2(70, 0)
+		label.bbcode_enabled = true
+		label.scroll_active = false
+		label.clip_contents = false
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		label.text = label_text
+		order_container.add_child(label)
+		
+	await DialogueManager.dialogue_ended
+	order_label_animator.play("Exit_Entrance")
 
 func _on_customer_area_area_entered(area: Area2D) -> void:
 	if area is BowlArea: 
