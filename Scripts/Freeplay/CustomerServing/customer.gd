@@ -173,3 +173,6 @@ func _on_customer_area_area_exited(area: Area2D) -> void:
 	if area is BowlArea: 
 		var bowl = area.get_parent() as TextureRect
 		bowl.set("servable", false)
+
+func _on_tree_exiting() -> void:
+	get_tree().current_scene.upd_customer_indexes(indx)
