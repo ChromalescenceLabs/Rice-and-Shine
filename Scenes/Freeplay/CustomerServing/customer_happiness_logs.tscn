@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://dpjeqy63lxdvr"]
+
+[ext_resource type="Script" uid="uid://m08vrhmpgvp5" path="res://Scripts/Freeplay/CustomerServing/customer_happiness_logs.gd" id="1_ycu8y"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="2_qdwd8"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="3_wo0jf"]
+
+[sub_resource type="Resource" id="Resource_r6tlj"]
+script = ExtResource("3_wo0jf")
+
+[sub_resource type="Resource" id="Resource_rkxtm"]
+script = ExtResource("3_wo0jf")
+
+[sub_resource type="Animation" id="Animation_ycu8y"]
+resource_name = "ProgressBarsContsAnim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/ProgressBarsContsBG:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-348.71, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/ShowProgressBars:offset_transform_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 33.075)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/CloseProgressBars:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/CloseProgressBars:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.100000024),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_7p0b6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/ProgressBarsContsBG:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/ShowProgressBars:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/CloseProgressBars:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/CloseProgressBars:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7p0b6"]
+_data = {
+&"Entrance_Exit": SubResource("Animation_ycu8y"),
+&"RESET": SubResource("Animation_7p0b6")
+}
+
+[node name="CustomerHappinessLogs" type="Node2D" unique_id=23440669]
+script = ExtResource("1_ycu8y")
+
+[node name="Control" type="Control" parent="." unique_id=338885040]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="ProgressBarsContsBG" type="ColorRect" parent="Control" unique_id=1909103057]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 349.0
+offset_bottom = 182.0
+grow_horizontal = 0
+offset_transform_enabled = true
+color = Color(0, 0, 0, 0.654902)
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="Control/ProgressBarsContsBG" unique_id=712283852]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 4.0
+offset_right = -9.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_qdwd8")
+wheel_scroll_damper = SubResource("Resource_r6tlj")
+dragging_scroll_damper = SubResource("Resource_rkxtm")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="ProgressBarsConts" type="VBoxContainer" parent="Control/ProgressBarsContsBG/SmoothScrollContainer" unique_id=1183933709]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/ProgressBarsConts" unique_id=336253053]
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 1
+value = 7.07
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ProgressBar2" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/ProgressBarsConts" unique_id=330516176]
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 1
+value = 7.07
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ProgressBar3" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/ProgressBarsConts" unique_id=1660801250]
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 1
+value = 7.07
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ProgressBar4" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/ProgressBarsConts" unique_id=283779456]
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 1
+value = 7.07
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ShowProgressBars" type="Button" parent="Control" unique_id=1716144586]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -31.0
+offset_top = 181.0
+offset_right = 148.77026
+offset_bottom = 212.0
+grow_horizontal = 0
+rotation = -1.5707964
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 12
+text = "View Customer Happiness"
+
+[node name="CloseProgressBars" type="Button" parent="Control" unique_id=1104675540]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 897.0
+offset_top = 5.0
+offset_right = 927.0
+offset_bottom = 36.0
+disabled = true
+text = "X"
+
+[node name="ProgressBarsContsAnim" type="AnimationPlayer" parent="." unique_id=1614624402]
+libraries/ = SubResource("AnimationLibrary_7p0b6")
+speed_scale = 3.0
+
+[connection signal="pressed" from="Control/ShowProgressBars" to="." method="_on_show_progress_bars_pressed"]
+[connection signal="pressed" from="Control/CloseProgressBars" to="." method="_on_close_progress_bars_pressed"]
