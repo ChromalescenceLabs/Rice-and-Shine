@@ -3,11 +3,15 @@
 [ext_resource type="Script" uid="uid://m08vrhmpgvp5" path="res://Scripts/Freeplay/CustomerServing/customer_happiness_logs.gd" id="1_ycu8y"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="2_qdwd8"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="3_wo0jf"]
+[ext_resource type="Texture2D" uid="uid://xjdoixqri3rb" path="res://Assets/Freeplay/Serving/CustomerLabelImages/LoloIcon.png" id="4_fa1af"]
+[ext_resource type="Texture2D" uid="uid://cl01be381tomn" path="res://Assets/Freeplay/Serving/CustomerLabelImages/MaritesIcon.png" id="5_nhaim"]
+[ext_resource type="Texture2D" uid="uid://cbnq3e8e222c5" path="res://Assets/Freeplay/Serving/CustomerLabelImages/StudentIcon.png" id="6_m7cko"]
+[ext_resource type="Texture2D" uid="uid://dl3fu0qp4t7nq" path="res://Assets/Freeplay/Serving/CustomerLabelImages/TatayIcon.png" id="7_pnoap"]
 
-[sub_resource type="Resource" id="Resource_r6tlj"]
+[sub_resource type="Resource" id="Resource_fa1af"]
 script = ExtResource("3_wo0jf")
 
-[sub_resource type="Resource" id="Resource_rkxtm"]
+[sub_resource type="Resource" id="Resource_nhaim"]
 script = ExtResource("3_wo0jf")
 
 [sub_resource type="Animation" id="Animation_ycu8y"]
@@ -22,43 +26,43 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-348.71, 0)]
+"values": [Vector2(0, 0), Vector2(-358.79, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/ShowProgressBars:offset_transform_position")
-tracks/1/interp = 2
+tracks/1/path = NodePath("Control/CloseProgressBars:modulate")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 33.075)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/CloseProgressBars:modulate")
+tracks/2/path = NodePath("Control/CloseProgressBars:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Control/CloseProgressBars:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.100000024),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/ShowProgressBars:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1244.335, 201), Vector2(1284.77, 201)]
 }
 
 [sub_resource type="Animation" id="Animation_7p0b6"]
@@ -78,38 +82,38 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/ShowProgressBars:offset_transform_position")
+tracks/1/path = NodePath("Control/CloseProgressBars:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/CloseProgressBars:modulate")
+tracks/2/path = NodePath("Control/CloseProgressBars:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Control/CloseProgressBars:disabled")
+tracks/3/path = NodePath("Control/ShowProgressBars:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(1247, 201)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7p0b6"]
@@ -126,66 +130,118 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
+mouse_filter = 2
 
 [node name="ProgressBarsContsBG" type="ColorRect" parent="Control" unique_id=1909103057]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_right = 349.0
-offset_bottom = 182.0
+offset_top = 1.0
+offset_right = 359.0
+offset_bottom = 203.0
 grow_horizontal = 0
 offset_transform_enabled = true
+mouse_filter = 2
+mouse_behavior_recursive = 1
 color = Color(0, 0, 0, 0.654902)
 
-[node name="SmoothScrollContainer" type="ScrollContainer" parent="Control/ProgressBarsContsBG" unique_id=712283852]
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="Control/ProgressBarsContsBG" unique_id=326865753]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 4.0
-offset_right = -9.0
-offset_bottom = -4.0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = -8.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
+mouse_behavior_recursive = 2
+mouse_force_pass_scroll_events = false
 script = ExtResource("2_qdwd8")
-wheel_scroll_damper = SubResource("Resource_r6tlj")
-dragging_scroll_damper = SubResource("Resource_rkxtm")
+wheel_scroll_damper = SubResource("Resource_fa1af")
+dragging_scroll_damper = SubResource("Resource_nhaim")
+allow_horizontal_scroll = false
+override_mouse_filters = false
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
-[node name="ProgressBarsConts" type="VBoxContainer" parent="Control/ProgressBarsContsBG/SmoothScrollContainer" unique_id=1183933709]
+[node name="OverallCont" type="HBoxContainer" parent="Control/ProgressBarsContsBG/SmoothScrollContainer" unique_id=867788044]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="ProgressBar" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/ProgressBarsConts" unique_id=336253053]
+[node name="IconsCont" type="VBoxContainer" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont" unique_id=1505005077]
+layout_mode = 2
+size_flags_vertical = 4
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont/IconsCont" unique_id=21183118]
+layout_mode = 2
+texture = ExtResource("4_fa1af")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont/IconsCont" unique_id=996515299]
+layout_mode = 2
+texture = ExtResource("5_nhaim")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect3" type="TextureRect" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont/IconsCont" unique_id=585971224]
+layout_mode = 2
+texture = ExtResource("6_m7cko")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect4" type="TextureRect" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont/IconsCont" unique_id=661933886]
+layout_mode = 2
+texture = ExtResource("7_pnoap")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TextureRect5" type="TextureRect" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont/IconsCont" unique_id=1308990545]
+layout_mode = 2
+texture = ExtResource("7_pnoap")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ProgressBarsConts" type="VBoxContainer" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont" unique_id=1183933709]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont/ProgressBarsConts" unique_id=336253053]
 layout_mode = 2
 size_flags_vertical = 6
 mouse_filter = 1
 value = 7.07
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="ProgressBar2" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/ProgressBarsConts" unique_id=330516176]
+[node name="ProgressBar2" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont/ProgressBarsConts" unique_id=330516176]
 layout_mode = 2
 size_flags_vertical = 6
 mouse_filter = 1
 value = 7.07
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="ProgressBar3" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/ProgressBarsConts" unique_id=1660801250]
+[node name="ProgressBar3" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont/ProgressBarsConts" unique_id=1660801250]
 layout_mode = 2
 size_flags_vertical = 6
 mouse_filter = 1
 value = 7.07
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="ProgressBar4" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/ProgressBarsConts" unique_id=283779456]
+[node name="ProgressBar4" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont/ProgressBarsConts" unique_id=283779456]
 layout_mode = 2
 size_flags_vertical = 6
 mouse_filter = 1
-value = 7.07
+value = 100.0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ProgressBar5" type="ProgressBar" parent="Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont/ProgressBarsConts" unique_id=1730355414]
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 1
+value = 100.0
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="ShowProgressBars" type="Button" parent="Control" unique_id=1716144586]
@@ -193,10 +249,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -31.0
-offset_top = 181.0
-offset_right = 148.77026
-offset_bottom = 212.0
+offset_left = -33.0
+offset_top = 201.0
+offset_right = 167.12695
+offset_bottom = 232.0
 grow_horizontal = 0
 rotation = -1.5707964
 offset_transform_enabled = true
@@ -206,10 +262,10 @@ text = "View Customer Happiness"
 [node name="CloseProgressBars" type="Button" parent="Control" unique_id=1104675540]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 897.0
+offset_left = 883.0
 offset_top = 5.0
-offset_right = 927.0
-offset_bottom = 36.0
+offset_right = 913.0
+offset_bottom = 36.000008
 disabled = true
 text = "X"
 
@@ -217,5 +273,7 @@ text = "X"
 libraries/ = SubResource("AnimationLibrary_7p0b6")
 speed_scale = 3.0
 
+[connection signal="mouse_entered" from="Control/ProgressBarsContsBG" to="." method="_on_progress_bars_conts_bg_mouse_entered"]
+[connection signal="mouse_entered" from="Control/ProgressBarsContsBG/SmoothScrollContainer" to="." method="_on_smooth_scroll_container_mouse_entered"]
 [connection signal="pressed" from="Control/ShowProgressBars" to="." method="_on_show_progress_bars_pressed"]
 [connection signal="pressed" from="Control/CloseProgressBars" to="." method="_on_close_progress_bars_pressed"]
