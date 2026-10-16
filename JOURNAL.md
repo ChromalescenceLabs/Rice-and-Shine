@@ -239,7 +239,7 @@ On 10/11/2026, i mainly redrew certain assets for the game, such as the customer
 
 
 
-## WEEK 4: OCTOBER 12 - OCTOBER 19
+## WEEK 5: OCTOBER 12 - OCTOBER 19
 ### 1. ALLIUMC
 
 ### 2. CLIF
