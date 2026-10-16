@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cntangxcnp6xg" path="res://Scenes/Freeplay/CustomerServing/add_bowl_btn.tscn" id="14_kq8l2"]
 [ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="14_o8aqv"]
 [ext_resource type="Texture2D" uid="uid://c4jbnbugoscts" path="res://Assets/Freeplay/Serving/Filled/HashbrownContFilledH.png" id="14_xhxoy"]
+[ext_resource type="PackedScene" uid="uid://dpjeqy63lxdvr" path="res://Scenes/Freeplay/CustomerServing/customer_happiness_logs.tscn" id="19_lteyg"]
 
 [sub_resource type="Gradient" id="Gradient_wgjyl"]
 offsets = PackedFloat32Array(0, 0.6204819, 0.9939759)
@@ -165,22 +166,26 @@ grow_vertical = 2
 z_index = 2
 position = Vector2(1280, 459)
 
+[node name="CustomerHappinessLogs" parent="." unique_id=23440669 instance=ExtResource("19_lteyg")]
+
 [node name="Exit" type="Button" parent="." unique_id=1943585786]
-offset_left = 1116.0
-offset_top = 17.0
-offset_right = 1255.0
-offset_bottom = 66.0
+z_index = 2
+offset_left = 1117.0
+offset_top = 654.0
+offset_right = 1256.0
+offset_bottom = 703.0
 text = "Exit"
 
 [node name="temp" type="Button" parent="." unique_id=851856372]
-offset_left = 44.0
-offset_top = 21.0
-offset_right = 159.0
-offset_bottom = 52.0
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 128.0
+offset_bottom = 42.0
 text = "add customer"
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
 [connection signal="child_exiting_tree" from="Control/FreedBowls" to="." method="_on_freed_bowls_child_exiting_tree"]
+[connection signal="remove_customer" from="CustomerHappinessLogs" to="." method="_on_customer_happiness_logs_remove_customer"]
 [connection signal="pressed" from="Exit" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="temp" to="." method="_on_temp_pressed"]

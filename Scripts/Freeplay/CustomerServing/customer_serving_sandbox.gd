@@ -124,3 +124,11 @@ func upd_customer_indexes(current_node_index : int) -> void:
 
 func _on_temp_pressed() -> void:
 	add_customer()
+
+
+func _on_customer_happiness_logs_remove_customer(index: int) -> void:
+	var customer = customers_cont.get_children()[index]
+	customer.animation_player.play_backwards("enter_exit")
+	await customer.animation_player.animation_finished
+	customer.queue_free()
+	
