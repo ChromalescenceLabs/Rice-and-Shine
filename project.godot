@@ -31,7 +31,7 @@ GlobalSaveManager="*uid://cc2qr4errlth2"
 
 [dialogue_manager]
 
-runtime/balloon_path="res://Dialogues/balloon.tscn"
+runtime/balloon_path="res://Dialogues/CustomersBalloon.tscn"
 
 [display]
 

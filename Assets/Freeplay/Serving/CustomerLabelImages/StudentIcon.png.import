@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnulc8osr7rqc"
-path="res://.godot/imported/TEMPMENUBG.png-c97907a10e9aa0c96049481af4228d3d.ctex"
+uid="uid://cbnq3e8e222c5"
+path="res://.godot/imported/StudentIcon.png-58ab9422997443e50c7a9843cd81526a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TEMPMENUBG.png"
-dest_files=["res://.godot/imported/TEMPMENUBG.png-c97907a10e9aa0c96049481af4228d3d.ctex"]
+source_file="res://Assets/Freeplay/Serving/CustomerLabelImages/StudentIcon.png"
+dest_files=["res://.godot/imported/StudentIcon.png-58ab9422997443e50c7a9843cd81526a.ctex"]
 
 [params]
 

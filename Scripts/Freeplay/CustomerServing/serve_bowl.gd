@@ -20,6 +20,7 @@ var dragging : bool = false
 var in_trash : bool = false
 
 var contentDict : Dictionary = {}
+var servableDict : Dictionary = {}
 
 func _ready() -> void:
 	set_process_input(false)
@@ -37,7 +38,7 @@ func _input(event: InputEvent) -> void:
 		dragging = true
 	elif event.is_action_released("Click"):
 		if servable:
-			get_tree().call_group("Customers", "receive_bowl", contentDict, self)
+			get_tree().call_group("Customers", "receive_bowl", servableDict, self)
 			
 		get_tree().call_group("Customers", "upd_colmask", 2)
 		dragging = false
@@ -64,23 +65,29 @@ func _on_contents_check() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is FoodPickup:
 		var food = str(area.texture)
-		var texture
+		var food_texture
 		food_entered = true
 		
 		await area.tree_exited
+		
+		if not servableDict.has(food):
+				servableDict[food] = 1
+		else:
+			servableDict[food] += 1
+		
 		if food_entered == true:
 			match food:
 				"rice":
-					texture = preload("uid://c46do5q6bcopm")
+					food_texture = preload("uid://c46do5q6bcopm")
 				"pancake":
-					texture = preload("uid://bu18d5et72sre")
+					food_texture = preload("uid://bu18d5et72sre")
 				"hashbrown":
-					texture = preload("uid://be4y7ewpqycrh")
+					food_texture = preload("uid://be4y7ewpqycrh")
 			
-			if not contentDict.has(texture):
-				contentDict[texture] = 1
+			if not contentDict.has(food_texture):
+				contentDict[food_texture] = 1
 			else:
-				contentDict[texture] += 1
+				contentDict[food_texture] += 1
 	elif area.get_parent() is Trashbin:
 		in_trash = true
 

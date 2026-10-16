@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3ere1gahnngi"
-path="res://.godot/imported/TEMPCLOSEDVER2.png-edb051d2827231dad31a8e9cb3324953.ctex"
+path="res://.godot/imported/TEMPCLOSEDVER2.png-89e4b37a19ffda9a2cf5146eea62b74a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TEMPCLOSEDVER2.png"
-dest_files=["res://.godot/imported/TEMPCLOSEDVER2.png-edb051d2827231dad31a8e9cb3324953.ctex"]
+source_file="res://Assets/Menus/ModeSelect/TEMPCLOSEDVER2.png"
+dest_files=["res://.godot/imported/TEMPCLOSEDVER2.png-89e4b37a19ffda9a2cf5146eea62b74a.ctex"]
 
 [params]
 

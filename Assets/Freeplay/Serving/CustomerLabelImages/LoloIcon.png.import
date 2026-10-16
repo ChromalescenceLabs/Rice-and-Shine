@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2ceaiwbikgt2"
-path="res://.godot/imported/tempcursor.png-c7d977865dfbeeece6bbd1f5ca3f9d04.ctex"
+uid="uid://xjdoixqri3rb"
+path="res://.godot/imported/LoloIcon.png-ba27e6647a581917b8478d7a89659d16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tempcursor.png"
-dest_files=["res://.godot/imported/tempcursor.png-c7d977865dfbeeece6bbd1f5ca3f9d04.ctex"]
+source_file="res://Assets/Freeplay/Serving/CustomerLabelImages/LoloIcon.png"
+dest_files=["res://.godot/imported/LoloIcon.png-ba27e6647a581917b8478d7a89659d16.ctex"]
 
 [params]
 

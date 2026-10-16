@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coimcmqajakru"
-path="res://.godot/imported/TEMPCLOSEDWINDOW.png-f93d940505afd9cfe64bdb340430f494.ctex"
+uid="uid://dl3fu0qp4t7nq"
+path="res://.godot/imported/TatayIcon.png-529c34e8a4681d98a97d4130768e18f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TEMPCLOSEDWINDOW.png"
-dest_files=["res://.godot/imported/TEMPCLOSEDWINDOW.png-f93d940505afd9cfe64bdb340430f494.ctex"]
+source_file="res://Assets/Freeplay/Serving/CustomerLabelImages/TatayIcon.png"
+dest_files=["res://.godot/imported/TatayIcon.png-529c34e8a4681d98a97d4130768e18f3.ctex"]
 
 [params]
 
