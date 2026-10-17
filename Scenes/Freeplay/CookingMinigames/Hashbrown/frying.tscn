@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://nxlhp5ta2hf7"]
 
 [ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/oil.tscn" id="1_1dhit"]
-[ext_resource type="Script" uid="uid://dj0hdtjtvet2k" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/pan.gd" id="1_8bvmg"]
+[ext_resource type="Script" uid="uid://cc33yeqhxwmpr" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/pan.gd" id="1_8bvmg"]
 [ext_resource type="Texture2D" uid="uid://iqxaxa0bo02s" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Pan.png" id="2_smott"]
 [ext_resource type="Texture2D" uid="uid://ddadkkftueyml" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/GratedTop.png" id="3_8bvmg"]
 [ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/PanOil.png" id="3_afdtn"]
 [ext_resource type="Texture2D" uid="uid://c0otj8wnqtb62" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/friedBowlTop.png" id="4_afdtn"]
 [ext_resource type="Texture2D" uid="uid://k8cx4k4rrfeb" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/bowlTop.png" id="5_1n4ja"]
-[ext_resource type="Script" uid="uid://clk28umsc5tr3" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/bowl.gd" id="6_afdtn"]
+[ext_resource type="Script" uid="uid://bs3t22wfrgfqa" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/bowl.gd" id="6_afdtn"]
 [ext_resource type="Texture2D" uid="uid://c2csa4kyjeclm" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated4.png" id="7_c7pxj"]
 [ext_resource type="Script" uid="uid://cvlx4edx0e8v5" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/potato.gd" id="8_8bvmg"]
 
@@ -63,6 +63,7 @@ offset_bottom = 364.04764
 texture = SubResource("CompressedTexture2D_fxmeo")
 
 [node name="FriedTop" type="TextureRect" parent="Bowl" unique_id=426276968]
+visible = false
 offset_left = -138.09521
 offset_top = -155.95236
 offset_right = 396.9048
@@ -70,6 +71,7 @@ offset_bottom = 361.04764
 texture = ExtResource("4_afdtn")
 
 [node name="BowlTop" type="TextureRect" parent="Bowl" unique_id=82345516]
+visible = false
 offset_left = -138.09521
 offset_top = -155.95236
 offset_right = 406.9048
@@ -111,6 +113,7 @@ scale = Vector2(1.03, 1.03)
 texture = ExtResource("7_c7pxj")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=2139161178]
+visible = false
 offset_left = 79.0
 offset_top = 615.0
 offset_right = 1202.0

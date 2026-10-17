@@ -190,6 +190,12 @@ offset_bottom = 285.0
 
 [node name="frying" parent="." unique_id=103076593 instance=ExtResource("13_35cbw")]
 
+[node name="FriedTop" parent="frying/Bowl" parent_id_path=PackedInt32Array(103076593, 1480348359) index="1" unique_id=426276968]
+visible = false
+
+[node name="BowlTop" parent="frying/Bowl" parent_id_path=PackedInt32Array(103076593, 1480348359) index="2" unique_id=82345516]
+visible = false
+
 [node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("10_penps")]
 offset_left = 9.0
 offset_top = 528.0
