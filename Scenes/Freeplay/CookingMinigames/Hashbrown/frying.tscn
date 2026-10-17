@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://nxlhp5ta2hf7"]
+
+[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/oil.tscn" id="1_1dhit"]
+[ext_resource type="Script" uid="uid://dj0hdtjtvet2k" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/pan.gd" id="1_8bvmg"]
+[ext_resource type="Texture2D" uid="uid://iqxaxa0bo02s" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Pan.png" id="2_smott"]
+[ext_resource type="Texture2D" uid="uid://ddadkkftueyml" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/GratedTop.png" id="3_8bvmg"]
+[ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/PanOil.png" id="3_afdtn"]
+[ext_resource type="Texture2D" uid="uid://c0otj8wnqtb62" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/friedBowlTop.png" id="4_afdtn"]
+[ext_resource type="Texture2D" uid="uid://k8cx4k4rrfeb" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/bowlTop.png" id="5_1n4ja"]
+[ext_resource type="Script" uid="uid://clk28umsc5tr3" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/bowl.gd" id="6_afdtn"]
+[ext_resource type="Texture2D" uid="uid://c2csa4kyjeclm" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated4.png" id="7_c7pxj"]
+[ext_resource type="Script" uid="uid://cvlx4edx0e8v5" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/potato.gd" id="8_8bvmg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 58.572132
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fxmeo"]
+load_path = "res://.godot/imported/GratedPotatoesBowlTop.png-a554b565483a35c62b1f16196ccc6709.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ittll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n4ja"]
+size = Vector2(211.30746, 203)
+
+[node name="frying" type="Node2D" unique_id=103076593]
+
+[node name="Pan" type="Area2D" parent="." unique_id=842265276]
+position = Vector2(281, 393)
+rotation = -0.87266463
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_8bvmg")
+
+[node name="Pan" type="Sprite2D" parent="Pan" unique_id=1727484637]
+texture = ExtResource("2_smott")
+
+[node name="PanOil" type="Sprite2D" parent="Pan" unique_id=1111401018]
+visible = false
+texture = ExtResource("3_afdtn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pan" unique_id=73279494]
+position = Vector2(107, -1)
+shape = SubResource("CircleShape2D_1vivr")
+
+[node name="Grated" type="TextureRect" parent="Pan" unique_id=959053568]
+visible = false
+offset_left = -16.179642
+offset_top = -139.59146
+offset_right = 361.82037
+offset_bottom = 286.40854
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("3_8bvmg")
+
+[node name="Bowl" type="Area2D" parent="." unique_id=1480348359]
+position = Vector2(818, 365)
+scale = Vector2(0.945, 0.945)
+script = ExtResource("6_afdtn")
+
+[node name="GratedTop" type="TextureRect" parent="Bowl" unique_id=606056327]
+offset_left = -138.09521
+offset_top = -155.95236
+offset_right = 402.9048
+offset_bottom = 364.04764
+texture = SubResource("CompressedTexture2D_fxmeo")
+
+[node name="FriedTop" type="TextureRect" parent="Bowl" unique_id=426276968]
+offset_left = -138.09521
+offset_top = -155.95236
+offset_right = 396.9048
+offset_bottom = 361.04764
+texture = ExtResource("4_afdtn")
+
+[node name="BowlTop" type="TextureRect" parent="Bowl" unique_id=82345516]
+offset_left = -138.09521
+offset_top = -155.95236
+offset_right = 406.9048
+offset_bottom = 340.04764
+texture = ExtResource("5_1n4ja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" unique_id=280289112]
+position = Vector2(135.44974, 91.005295)
+scale = Vector2(-18.678055, 18.564266)
+shape = SubResource("CircleShape2D_ittll")
+
+[node name="Oil" parent="." unique_id=1503278428 instance=ExtResource("1_1dhit")]
+position = Vector2(1171, 116)
+
+[node name="potato" type="Area2D" parent="." unique_id=360158193]
+visible = false
+position = Vector2(895.99994, 431)
+scale = Vector2(1.415, 1.415)
+script = ExtResource("8_8bvmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="potato" unique_id=1576843685]
+position = Vector2(6.007141, 0.49996948)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_1n4ja")
+
+[node name="gratedPotatoes" type="TextureRect" parent="potato" unique_id=1056311046]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -209.99998
+offset_top = -136.0
+offset_right = 186.00002
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("7_c7pxj")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2139161178]
+offset_left = 79.0
+offset_top = 615.0
+offset_right = 1202.0
+offset_bottom = 670.0
+
+[node name="ProgressBarChangeTime" type="Timer" parent="ProgressBar" unique_id=1980752191]
+wait_time = 0.05
+
+[connection signal="visibility_changed" from="Pan/Grated" to="Pan" method="_on_grated_visibility_changed"]
+[connection signal="input_event" from="Bowl" to="Bowl" method="_on_input_event"]
+[connection signal="area_entered" from="potato" to="potato" method="_on_area_entered"]
+[connection signal="input_event" from="potato" to="Bowl" method="_on_potato_input_event"]
+[connection signal="input_event" from="potato" to="potato" method="_on_input_event"]
+[connection signal="mouse_entered" from="potato" to="potato" method="_on_mouse_entered"]
+[connection signal="timeout" from="ProgressBar/ProgressBarChangeTime" to="Pan" method="_on_progress_bar_change_time_timeout"]

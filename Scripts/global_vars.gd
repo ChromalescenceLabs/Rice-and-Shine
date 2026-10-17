@@ -22,6 +22,7 @@ func successind(tree):
 	successIndEnd.emit()
 	
 func item_enter(item) -> void:
+	item.visible=true
 	var tw = create_tween().tween_property(item, "position", Vector2(0,0), 2).set_trans(Tween.TRANS_ELASTIC)
 	await tw.finished
 	itemEntered.emit(item)
@@ -30,6 +31,7 @@ func item_exit(item) -> void:
 	var vw = get_viewport().size.x
 	var tw = create_tween().tween_property(item, "position", Vector2(vw * -1, 0), 2).set_trans(Tween.TRANS_ELASTIC)
 	await tw.finished
+	item.visible=false
 	itemExited.emit()
 
 # Unlocks

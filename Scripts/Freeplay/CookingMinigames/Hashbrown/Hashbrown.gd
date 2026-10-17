@@ -1,7 +1,5 @@
 extends Node2D
 
-#bro this is connected to the peel area of peeler dont remove (reminder for me LMAO)
-
 @onready var line_2d: Line2D = $Line2D
 @onready var peeler: Area2D = $Peeler
 @onready var p_potato: TextureRect = $Line2D/AreaPPotato/PPotato
