@@ -17,27 +17,28 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 func _on_potato_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_released("Click"):
 		potato.visible=false
-		#grated on pan
-		if potato.areaEnter.name.to_lower() == "pan":
-			if potato.areaEnter.has_oil:
-				var grated=potato.areaEnter.find_child("Grated")
-				grated.visible=true
-				potato.frying=true
-			elif not potato.frying:
-				GlobalVars.shake(potato.areaEnter)
+		if potato.areaEnter:
+			#grated on pan
+			if potato.areaEnter.name.to_lower() == "pan":
+				if potato.areaEnter.has_oil:
+					var grated=potato.areaEnter.find_child("Grated")
+					grated.visible=true
+					potato.frying=true
+				elif not potato.frying:
+					GlobalVars.shake(potato.areaEnter)
 				
-		potato.hold = false
+			potato.hold = false
 		
-		#fried on bowl
-		if potato.frying:
-			pan.find_child("Grated").visible=true
-			if potato.areaEnter.name=="Bowl":
-				fried_top.visible=true
-				bowl_top.visible=false
-				pan.find_child("Grated").visible=false
-				done.emit()
-		elif not potato.frying:
-			bowl_top.visible=false
+			#fried on bowl
+			if potato.frying:
+				pan.find_child("Grated").visible=true
+				if potato.areaEnter.name=="Bowl":
+					fried_top.visible=true
+					bowl_top.visible=false
+					pan.find_child("Grated").visible=false
+					done.emit()
+			elif not potato.frying:
+					bowl_top.visible=false
 
 
 func _on_pan_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

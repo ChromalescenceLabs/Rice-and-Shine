@@ -65,22 +65,22 @@ texture = SubResource("CompressedTexture2D_fxmeo")
 
 [node name="FriedTop" type="TextureRect" parent="Bowl" unique_id=426276968]
 visible = false
-offset_left = -138.09521
-offset_top = -155.95236
-offset_right = 396.9048
-offset_bottom = 361.04764
+offset_left = -134.9206
+offset_top = -151.71954
+offset_right = 400.0794
+offset_bottom = 365.28046
 texture = ExtResource("4_afdtn")
 
 [node name="BowlTop" type="TextureRect" parent="Bowl" unique_id=82345516]
 visible = false
-offset_left = -138.09521
-offset_top = -155.95236
-offset_right = 406.9048
-offset_bottom = 340.04764
+offset_left = -140.21161
+offset_top = -134.78828
+offset_right = 404.7884
+offset_bottom = 361.21173
 texture = ExtResource("5_1n4ja")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" unique_id=280289112]
-position = Vector2(140.74074, 124.86773)
+position = Vector2(140.74072, 125.9259)
 scale = Vector2(-18.678055, 18.564266)
 shape = SubResource("CircleShape2D_ittll")
 
