@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b5s3gdbnh5kai" path="res://Assets/Menus/ChapterSelect/week one.png" id="1_q88pd"]
 [ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/Menus/ModeSelect/placeholderbg.png" id="1_yue0x"]
+[ext_resource type="Script" uid="uid://by0d3iblmgm5y" path="res://Scripts/Menus/WeekSelect/description.gd" id="2_v84np"]
 [ext_resource type="Script" uid="uid://xyji33kmtddw" path="res://Scripts/Menus/WeekSelect/weeks.gd" id="2_yvrl2"]
 [ext_resource type="Shader" uid="uid://biqbyurw0d4oo" path="res://Assets/Shaders/weekoutline.gdshader" id="3_61fw1"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_f7kjc"]
@@ -83,6 +84,7 @@ offset_right = 680.0
 offset_bottom = 592.11115
 theme_override_font_sizes/font_size = 30
 text = "WEEK ONE DESCRIPTION TESTING TEST TEST"
+script = ExtResource("2_v84np")
 metadata/_edit_use_anchors_ = true
 
 [node name="Weeks" type="Control" parent="." unique_id=904295972]
@@ -239,13 +241,14 @@ texture_normal = ExtResource("4_rn5ul")
 
 [node name="Forward" type="TextureButton" parent="WeekButton" unique_id=1677498718]
 layout_mode = 0
-offset_left = 730.0
-offset_top = 314.0
-offset_right = 845.0
-offset_bottom = 423.0
+offset_left = 748.9999
+offset_top = 314.00003
+offset_right = 863.9999
+offset_bottom = 423.00003
 rotation = 3.1415927
 scale = Vector2(0.5287411, 0.5287411)
 texture_normal = ExtResource("4_rn5ul")
 
+[connection signal="change_week" from="Weeks" to="DESCRIPTION" method="_on_weeks_change_week"]
 [connection signal="pressed" from="WeekButton/Back" to="Weeks" method="_on_back_pressed"]
 [connection signal="pressed" from="WeekButton/Forward" to="Weeks" method="_on_forward_pressed"]
