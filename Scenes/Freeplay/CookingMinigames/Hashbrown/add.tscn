@@ -1,18 +1,23 @@
 [gd_scene format=3 uid="uid://b761rh068s0so"]
 
 [ext_resource type="Texture2D" uid="uid://tuu8mm2np658" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/friedBowl.png" id="1_arw06"]
+[ext_resource type="Texture2D" uid="uid://s84x8e63flfd" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/flourSprinkle.png" id="2_6iq1h"]
 [ext_resource type="Texture2D" uid="uid://buow6kyt5sh43" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/Salt.png" id="2_bnbi0"]
+[ext_resource type="Texture2D" uid="uid://d3hq4x278ooyi" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/cheeseSprinkle.png" id="2_g7wev"]
 [ext_resource type="Script" uid="uid://bl600m0cbeiyv" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/condiments.gd" id="2_xmpae"]
+[ext_resource type="Texture2D" uid="uid://dxgejk8cc5yrv" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/saltSprinkle.png" id="3_6iq1h"]
 [ext_resource type="Texture2D" uid="uid://bus65ldlaj4qw" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/flour.png" id="3_arw06"]
 [ext_resource type="Script" uid="uid://cvlx4edx0e8v5" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/potato.gd" id="4_317yh"]
+[ext_resource type="Texture2D" uid="uid://rwvy4wsoyydb" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/pepperSprinkle.png" id="4_h4qbo"]
 [ext_resource type="Texture2D" uid="uid://dptskfbow0ly7" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/cheeseBowl.png" id="4_xh2ca"]
 [ext_resource type="Texture2D" uid="uid://dcjlo3ooxjiim" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/Pepper.png" id="4_xmpae"]
 [ext_resource type="Texture2D" uid="uid://bjhp70wj71uhi" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/Paprika.png" id="5_317yh"]
+[ext_resource type="Texture2D" uid="uid://d0jdf7yb31nhf" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/paprikaSprinkle.png" id="5_lvaan"]
 [ext_resource type="Texture2D" uid="uid://ddug8gb5yp07p" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/cheese.png" id="6_bnbi0"]
 [ext_resource type="Texture2D" uid="uid://c2csa4kyjeclm" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated4.png" id="9_xh2ca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
-size = Vector2(404.4693, 316.89383)
+size = Vector2(224.58105, 150.83789)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj6en"]
 size = Vector2(345.16156, 217.74197)
@@ -29,15 +34,55 @@ size = Vector2(211.30746, 203)
 position = Vector2(363, 274)
 scale = Vector2(0.895, 0.895)
 
-[node name="TextureRect" type="TextureRect" parent="Bowl" unique_id=1831486017]
+[node name="bowl" type="TextureRect" parent="Bowl" unique_id=1831486017]
 offset_left = 3.3519592
 offset_top = -6.703888
 offset_right = 681.3519
 offset_bottom = 372.2961
 texture = ExtResource("1_arw06")
 
+[node name="flour" type="TextureRect" parent="Bowl" unique_id=257530616]
+visible = false
+offset_left = -204.46925
+offset_top = -223.46371
+offset_right = 947.53076
+offset_bottom = 454.5363
+texture = ExtResource("2_6iq1h")
+
+[node name="cheese" type="TextureRect" parent="Bowl" unique_id=1866035509]
+visible = false
+offset_left = -208.93854
+offset_top = -229.0503
+offset_right = 943.06146
+offset_bottom = 448.9497
+texture = ExtResource("2_g7wev")
+
+[node name="salt" type="TextureRect" parent="Bowl" unique_id=1099496389]
+visible = false
+offset_left = -221.22906
+offset_top = -239.10614
+offset_right = 930.77094
+offset_bottom = 438.89386
+texture = ExtResource("3_6iq1h")
+
+[node name="pepper" type="TextureRect" parent="Bowl" unique_id=1220339203]
+visible = false
+offset_left = -189.94414
+offset_top = -223.4637
+offset_right = 962.05585
+offset_bottom = 454.53632
+texture = ExtResource("4_h4qbo")
+
+[node name="paprika" type="TextureRect" parent="Bowl" unique_id=19441100]
+visible = false
+offset_left = -195.53073
+offset_top = -230.1676
+offset_right = 956.46924
+offset_bottom = 447.8324
+texture = ExtResource("5_lvaan")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" unique_id=385979204]
-position = Vector2(356.4246, 188.82681)
+position = Vector2(350.27936, 186.0336)
 shape = SubResource("RectangleShape2D_ittll")
 
 [node name="Condiments" type="Node2D" parent="." unique_id=1260316097]
@@ -62,6 +107,7 @@ grow_vertical = 2
 texture = ExtResource("6_bnbi0")
 
 [node name="noCheese" type="TextureRect" parent="Condiments/cheese" unique_id=1256869799]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -210,6 +256,7 @@ scale_amount_max = 10.0
 color = Color(0.48257142, 0.13438341, 0.07457846, 1)
 
 [node name="potato" type="Area2D" parent="." unique_id=323084645]
+visible = false
 position = Vector2(1128, 522)
 scale = Vector2(0.5042502, 0.5042502)
 script = ExtResource("4_317yh")
@@ -233,7 +280,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_xh2ca")
 
-[connection signal="input_event" from="Bowl" to="Condiments" method="_on_bowl_input_event"]
 [connection signal="area_entered" from="potato" to="potato" method="_on_area_entered"]
+[connection signal="input_event" from="potato" to="Condiments" method="_on_potato_input_event"]
 [connection signal="input_event" from="potato" to="potato" method="_on_input_event"]
 [connection signal="mouse_entered" from="potato" to="potato" method="_on_mouse_entered"]

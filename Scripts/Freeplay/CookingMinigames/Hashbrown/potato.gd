@@ -27,7 +27,7 @@ func _on_area_entered(area: Area2D) -> void:
 	print(areaEnter)
 	if area.name.to_lower() == "pan":
 		areaEnter=area
-	elif area.name.to_lower() == "bowl" and frying:
+	elif area.name.to_lower() == "bowl":
 		areaEnter=area
 	else:
 		areaEnter=null
