@@ -159,9 +159,6 @@ texture = SubResource("PlaceholderTexture2D_cuu35")
 [node name="Wrapping" type="Node2D" parent="." unique_id=1672150117]
 script = ExtResource("10_ukqqi")
 
-[node name="Wrap" parent="Wrapping" unique_id=2041569049 instance=ExtResource("10_r7m3d")]
-position = Vector2(325, 341)
-
 [node name="BowlArea" type="Area2D" parent="Wrapping" unique_id=347955211]
 position = Vector2(889, 337.00003)
 scale = Vector2(1.375, 1.375)
@@ -187,6 +184,9 @@ texture = ExtResource("5_y8cil")
 position = Vector2(7, 2)
 shape = SubResource("CircleShape2D_ab5ch")
 
+[node name="Wrap" parent="Wrapping" unique_id=2041569049 instance=ExtResource("10_r7m3d")]
+position = Vector2(325, 341)
+
 [node name="Frying" type="Node2D" parent="." unique_id=516377241]
 
 [connection signal="filling_finished" from="." to="." method="_on_filling_finished"]
@@ -200,6 +200,6 @@ shape = SubResource("CircleShape2D_ab5ch")
 [connection signal="tree_exited" from="Slicing&Mincing/ChoppableGarlic" to="." method="_on_choppable_garlic_tree_exited"]
 [connection signal="value_changed" from="PouringMix/PouringBowl/OilProgress" to="." method="_on_oil_progress_value_changed"]
 [connection signal="wrap_filled" from="Wrapping" to="Wrapping" method="_on_wrap_filled"]
-[connection signal="wrap_finished" from="Wrapping/Wrap" to="Wrapping" method="_on_wrap_wrap_finished"]
 [connection signal="mouse_entered" from="Wrapping/BowlArea/BowlTexture" to="Wrapping" method="_on_bowl_texture_mouse_entered"]
 [connection signal="mouse_exited" from="Wrapping/BowlArea/BowlTexture" to="Wrapping" method="_on_bowl_texture_mouse_exited"]
+[connection signal="wrap_finished" from="Wrapping/Wrap" to="Wrapping" method="_on_wrap_wrap_finished"]

@@ -50,7 +50,7 @@ func _ready() -> void:
 	frying.position.x += get_viewport().get_visible_rect().size.x
 	
 	#GlobalVars.item_enter(slicing_mincing)
-	GlobalVars.item_enter(pouring_mix)
+	GlobalVars.item_enter(wrapping)
 	choppable_garlic.progbar_fade_in()
 	
 func _on_choppable_garlic_chopped_garlic_finished() -> void:

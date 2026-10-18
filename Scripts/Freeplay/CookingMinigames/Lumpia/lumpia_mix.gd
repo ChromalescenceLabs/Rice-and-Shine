@@ -13,7 +13,7 @@ func _input(event: InputEvent) -> void:
 		
 		queue_free()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	self.global_position = lerp(self.global_position, get_global_mouse_position(), 0.2)
 
 

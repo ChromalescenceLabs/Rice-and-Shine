@@ -28,8 +28,8 @@ func item_enter(item) -> void:
 	await tw.finished
 	itemEntered.emit(item)
 
-func indiv_item_enter(item) -> void:
-	var tw = create_tween().tween_property(item, "global_position", Vector2(get_viewport().size.x/2, get_viewport().size.y/2), 2).set_trans(Tween.TRANS_ELASTIC)
+func indiv_item_enter(item, position : Vector2 = Vector2(get_viewport().size.x/2, get_viewport().size.y/2)) -> void:
+	var tw = create_tween().tween_property(item, "global_position", position, 2).set_trans(Tween.TRANS_ELASTIC)
 	await tw.finished
 	itemEntered.emit(item)
 
