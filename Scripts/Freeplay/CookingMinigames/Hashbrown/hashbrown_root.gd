@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var control: Control = $Control
+const BORDER = preload("uid://bqevegjdxbpb6")
 
 var myChild=[]
 var scene=3
@@ -36,3 +37,6 @@ func _on_squeeze_done() -> void:
 	await GlobalVars.successIndEnd
 	GlobalVars.item_exit(control.get_child(0))
 	GlobalVars.item_enter(control.get_child(1))
+
+func _on_bowl_done() -> void:
+	nextScene(myChild[scene],myChild[scene+1])

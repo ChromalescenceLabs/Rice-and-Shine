@@ -1,8 +1,6 @@
 extends Area2D
-@onready var bowl: Area2D = $"../Bowl"
 var hold = false
 var ogPos=position
-var grated
 var areaEnter
 var frying=false
 
@@ -20,25 +18,13 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			hold = true
 			if not event.pressed:
-
-				if areaEnter:
-					if areaEnter.name.to_lower() == "pan":
-						if areaEnter.has_oil:
-							grated=areaEnter.find_child("Grated")
-							grated.visible=true
-							frying=true
-						elif not frying:
-							GlobalVars.shake(areaEnter)
-					elif areaEnter.name.to_lower() == "bowl":
-						bowl.fried_top.visible=true
-						bowl.grated_top.visible=false
-
 				hold = false
 
 func _on_mouse_entered() -> void:
 	set_process(true)
 
 func _on_area_entered(area: Area2D) -> void:
+	print(areaEnter)
 	if area.name.to_lower() == "pan":
 		areaEnter=area
 	elif area.name.to_lower() == "bowl" and frying:
