@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b0yukpeuqjxne"]
+
+[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Freeplay/Cooking_Minigames/CookingBG.jpg" id="1_8y4gq"]
+[ext_resource type="Script" uid="uid://fd524a175b5g" path="res://Scripts/Freeplay/CookingMinigames/Lumpia/lumpia.gd" id="1_ijbrh"]
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="2_1b5b2"]
+[ext_resource type="PackedScene" uid="uid://b3pmbrftfet5g" path="res://Scenes/Freeplay/CookingMinigames/GeneralMinigames/choppable_garlic.tscn" id="3_1b5b2"]
+
+[node name="Lumpia" type="Node2D" unique_id=79476681]
+script = ExtResource("1_ijbrh")
+
+[node name="FrontBG" type="Sprite2D" parent="." unique_id=1732175536]
+texture = ExtResource("1_8y4gq")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="TopDownBG" type="Sprite2D" parent="." unique_id=514457605]
+position = Vector2(902, 582)
+texture = ExtResource("2_1b5b2")
+metadata/_edit_lock_ = true
+
+[node name="Slicing&Mincing" type="Node2D" parent="." unique_id=1468842770]
+
+[node name="ChoppableGarlic" parent="Slicing&Mincing" unique_id=1855347188 instance=ExtResource("3_1b5b2")]
+position = Vector2(627, 358)
+
+[node name="FillingMix" type="Node2D" parent="." unique_id=1628095035]
+
+[node name="Wrapping" type="Node2D" parent="." unique_id=1672150117]
+
+[node name="Frying" type="Node2D" parent="." unique_id=516377241]
+
+[connection signal="tree_exited" from="Slicing&Mincing/ChoppableGarlic" to="." method="_on_choppable_garlic_tree_exited"]
