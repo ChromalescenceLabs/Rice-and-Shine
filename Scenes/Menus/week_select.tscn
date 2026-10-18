@@ -2,55 +2,51 @@
 
 [ext_resource type="Texture2D" uid="uid://b5s3gdbnh5kai" path="res://Assets/Menus/ChapterSelect/week one.png" id="1_q88pd"]
 [ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/Menus/ModeSelect/placeholderbg.png" id="1_yue0x"]
-[ext_resource type="Script" uid="uid://bu8ysmylvleq8" path="res://Scenes/Menus/weekscontainer.gd" id="3_yvrl2"]
+[ext_resource type="Shader" uid="uid://biqbyurw0d4oo" path="res://Assets/Shaders/weekoutline.gdshader" id="3_61fw1"]
+[ext_resource type="Script" uid="uid://b2cinv72nur4h" path="res://Scripts/Menus/WeekSelect/weekscontainer.gd" id="3_yvrl2"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_f7kjc"]
 [ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Menus/ChapterSelect/tempbutton.png" id="4_rn5ul"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_rn5ul"]
-[ext_resource type="Shader" uid="uid://otyw24mg8e2u" path="res://Scenes/Menus/weekoutline.gdshader" id="5_v84np"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_154id"]
 resource_local_to_scene = true
-shader = ExtResource("5_v84np")
+shader = ExtResource("3_61fw1")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/enable_shader = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_io1cu"]
-resource_local_to_scene = true
-shader = ExtResource("5_v84np")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvrl2"]
+shader = ExtResource("3_61fw1")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/enable_shader = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2usau"]
-resource_local_to_scene = true
-shader = ExtResource("5_v84np")
-shader_parameter/outline_thickness = 8.0
-shader_parameter/anti_alias_amount = 1.0
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-shader_parameter/enable_shader = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pn6m1"]
-resource_local_to_scene = true
-shader = ExtResource("5_v84np")
-shader_parameter/outline_thickness = 8.0
-shader_parameter/anti_alias_amount = 1.0
-shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/enable_shader = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ovjf"]
-resource_local_to_scene = true
-shader = ExtResource("5_v84np")
+shader = ExtResource("3_61fw1")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
-shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/enable_shader = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pn6m1"]
+shader = ExtResource("3_61fw1")
+shader_parameter/outline_thickness = 8.0
+shader_parameter/anti_alias_amount = 1.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/enable_shader = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2usau"]
+shader = ExtResource("3_61fw1")
+shader_parameter/outline_thickness = 8.0
+shader_parameter/anti_alias_amount = 1.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/enable_shader = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v84np"]
 resource_local_to_scene = true
-shader = ExtResource("5_v84np")
+shader = ExtResource("3_61fw1")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
@@ -58,7 +54,7 @@ shader_parameter/enable_shader = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cqy6c"]
 resource_local_to_scene = true
-shader = ExtResource("5_v84np")
+shader = ExtResource("3_61fw1")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
@@ -107,13 +103,13 @@ scale = Vector2(0.71999997, 0.71999997)
 texture = ExtResource("1_q88pd")
 
 [node name="WeekSix" type="Sprite2D" parent="Control/WeekContainer" unique_id=1968593448]
-material = SubResource("ShaderMaterial_io1cu")
+material = SubResource("ShaderMaterial_yvrl2")
 position = Vector2(260, 326)
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
 [node name="WeekFive" type="Sprite2D" parent="Control/WeekContainer" unique_id=1212685339]
-material = SubResource("ShaderMaterial_2usau")
+material = SubResource("ShaderMaterial_1ovjf")
 position = Vector2(300, 327)
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
@@ -125,7 +121,7 @@ scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
 [node name="WeekThree" type="Sprite2D" parent="Control/WeekContainer" unique_id=1511646685]
-material = SubResource("ShaderMaterial_1ovjf")
+material = SubResource("ShaderMaterial_2usau")
 position = Vector2(400, 326)
 scale = Vector2(0.7199999, 0.7199999)
 texture = ExtResource("1_q88pd")
