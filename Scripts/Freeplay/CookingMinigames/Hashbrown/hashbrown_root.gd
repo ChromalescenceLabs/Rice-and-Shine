@@ -15,29 +15,24 @@ func _ready() -> void:
 	GlobalVars.item_enter(myChild[scene])
 
 func nextScene(exit, enter):
+	GlobalVars.successind(self)
+	await GlobalVars.successIndEnd
 	GlobalVars.item_exit(exit)
 	exit.set_process(false)
 	GlobalVars.item_enter(enter)
 	scene+=1
 
 func _on_peel_peeled() -> void:
-	GlobalVars.successind(self)
-	await GlobalVars.successIndEnd
 	nextScene(myChild[scene],myChild[scene+1])
 
 func _on_grated_full_grated() -> void:
-	GlobalVars.successind(self)
-	await GlobalVars.successIndEnd
 	nextScene(myChild[scene],myChild[scene+1])
 
 func _on_water_water_completed() -> void:
-	GlobalVars.successind(self)
-	await GlobalVars.successIndEnd
 	nextScene(myChild[scene],myChild[scene+1])
 
 func _on_squeeze_done() -> void:
-	GlobalVars.successind(self)
+	nextScene(myChild[scene],myChild[scene+1])
 	await GlobalVars.successIndEnd
 	GlobalVars.item_exit(control.get_child(0))
 	GlobalVars.item_enter(control.get_child(1))
-	nextScene(myChild[scene],myChild[scene+1])

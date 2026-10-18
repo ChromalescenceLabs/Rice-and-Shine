@@ -12,12 +12,13 @@
 [ext_resource type="Script" uid="uid://cvlx4edx0e8v5" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/potato.gd" id="8_8bvmg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
-radius = 58.572132
+radius = 97.043335
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fxmeo"]
 load_path = "res://.godot/imported/GratedPotatoesBowlTop.png-a554b565483a35c62b1f16196ccc6709.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ittll"]
+radius = 6.065972
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n4ja"]
 size = Vector2(211.30746, 203)
@@ -79,7 +80,7 @@ offset_bottom = 340.04764
 texture = ExtResource("5_1n4ja")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" unique_id=280289112]
-position = Vector2(135.44974, 91.005295)
+position = Vector2(140.74074, 124.86773)
 scale = Vector2(-18.678055, 18.564266)
 shape = SubResource("CircleShape2D_ittll")
 
@@ -122,6 +123,7 @@ offset_bottom = 670.0
 [node name="ProgressBarChangeTime" type="Timer" parent="ProgressBar" unique_id=1980752191]
 wait_time = 0.05
 
+[connection signal="input_event" from="Pan" to="Bowl" method="_on_pan_input_event"]
 [connection signal="visibility_changed" from="Pan/Grated" to="Pan" method="_on_grated_visibility_changed"]
 [connection signal="input_event" from="Bowl" to="Bowl" method="_on_input_event"]
 [connection signal="area_entered" from="potato" to="potato" method="_on_area_entered"]
