@@ -23,7 +23,7 @@ void fragment() {
 	}
 	
 	float alpha = 1.0 - smoothstep(outline_thickness - anti_alias_amount, outline_thickness + anti_alias_amount, closest_outline_dist);
-	vec4 tex_color = texture(TEXTURE, UV);
+	vec4 tex_color = texture(TEXTURE, UV) * COLOR;
 	if (enable_shader) {
 		COLOR = mix(vec4(outline_color.rgb,alpha), tex_color, tex_color.a);
 	} else {
