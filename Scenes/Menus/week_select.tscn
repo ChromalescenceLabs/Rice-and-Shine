@@ -8,11 +8,60 @@
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_rn5ul"]
 [ext_resource type="Shader" uid="uid://otyw24mg8e2u" path="res://Scenes/Menus/weekoutline.gdshader" id="5_v84np"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cqy6c"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_154id"]
+resource_local_to_scene = true
 shader = ExtResource("5_v84np")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
-shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/enable_shader = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_io1cu"]
+resource_local_to_scene = true
+shader = ExtResource("5_v84np")
+shader_parameter/outline_thickness = 8.0
+shader_parameter/anti_alias_amount = 1.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/enable_shader = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2usau"]
+resource_local_to_scene = true
+shader = ExtResource("5_v84np")
+shader_parameter/outline_thickness = 8.0
+shader_parameter/anti_alias_amount = 1.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/enable_shader = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pn6m1"]
+resource_local_to_scene = true
+shader = ExtResource("5_v84np")
+shader_parameter/outline_thickness = 8.0
+shader_parameter/anti_alias_amount = 1.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/enable_shader = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ovjf"]
+resource_local_to_scene = true
+shader = ExtResource("5_v84np")
+shader_parameter/outline_thickness = 8.0
+shader_parameter/anti_alias_amount = 1.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/enable_shader = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v84np"]
+resource_local_to_scene = true
+shader = ExtResource("5_v84np")
+shader_parameter/outline_thickness = 8.0
+shader_parameter/anti_alias_amount = 1.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/enable_shader = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cqy6c"]
+resource_local_to_scene = true
+shader = ExtResource("5_v84np")
+shader_parameter/outline_thickness = 8.0
+shader_parameter/anti_alias_amount = 1.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/enable_shader = true
 
 [sub_resource type="Resource" id="Resource_f7kjc"]
@@ -52,31 +101,37 @@ offset_bottom = 40.0
 script = ExtResource("3_yvrl2")
 
 [node name="WeekSeven" type="Sprite2D" parent="Control/WeekContainer" unique_id=1741573179]
+material = SubResource("ShaderMaterial_154id")
 position = Vector2(210, 327)
 scale = Vector2(0.71999997, 0.71999997)
 texture = ExtResource("1_q88pd")
 
 [node name="WeekSix" type="Sprite2D" parent="Control/WeekContainer" unique_id=1968593448]
+material = SubResource("ShaderMaterial_io1cu")
 position = Vector2(260, 326)
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
 [node name="WeekFive" type="Sprite2D" parent="Control/WeekContainer" unique_id=1212685339]
+material = SubResource("ShaderMaterial_2usau")
 position = Vector2(300, 327)
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
 [node name="WeekFour" type="Sprite2D" parent="Control/WeekContainer" unique_id=1813907432]
+material = SubResource("ShaderMaterial_pn6m1")
 position = Vector2(350, 325)
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
 [node name="WeekThree" type="Sprite2D" parent="Control/WeekContainer" unique_id=1511646685]
+material = SubResource("ShaderMaterial_1ovjf")
 position = Vector2(400, 326)
 scale = Vector2(0.7199999, 0.7199999)
 texture = ExtResource("1_q88pd")
 
 [node name="WeekTwo" type="Sprite2D" parent="Control/WeekContainer" unique_id=115854033]
+material = SubResource("ShaderMaterial_v84np")
 position = Vector2(440, 325)
 scale = Vector2(0.7200001, 0.7200001)
 texture = ExtResource("1_q88pd")
