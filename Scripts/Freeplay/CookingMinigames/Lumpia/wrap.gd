@@ -9,7 +9,7 @@ var folded_forward : int = 0
 var allow_wrapping : bool = false
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_just_pressed("Click"):
+	if event.is_action_pressed("Click"):
 		if Input.get_last_mouse_velocity().x > 800 and not folded_right:
 			fold_right()
 		elif Input.get_last_mouse_velocity().x < 800 and not folded_left:

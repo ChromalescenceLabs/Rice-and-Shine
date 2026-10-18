@@ -43,7 +43,7 @@ func progbar_fade_in():
 	create_tween().tween_property(progress_bar, "modulate:a", 1, 0.3).set_trans(Tween.TRANS_CUBIC)
 
 func _on_chopped_carrot_finished() -> void:
-	GlobalVars.item_exit(get_parent())
+	GlobalVars.item_exit(self)
 	await GlobalVars.itemExited
 	
 	self.queue_free()

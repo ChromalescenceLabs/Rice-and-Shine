@@ -26,10 +26,10 @@ func _input(event: InputEvent) -> void:
 		if hovering: 
 			if in_mixbowl:
 				match type:
-					"GroundPork": get_parent().current_scene.roundpork_added = true
-					"MincedOnion": get_parent().current_scene.mincedonion_added = true
-					"Carrot": get_parent().current_scene.carrot_added = true
-					"Parsley": get_parent().current_scene.parsley_added = true
+					"GroundPork": get_tree().current_scene.roundpork_added = true
+					"MincedOnion": get_tree().current_scene.mincedonion_added = true
+					"Carrot": get_tree().current_scene.carrot_added = true
+					"Parsley": get_tree().current_scene.parsley_added = true
 				get_parent().current_scene.check_mixbowl_contents()
 				self.queue_free()
 					

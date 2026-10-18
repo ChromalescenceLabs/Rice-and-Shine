@@ -10,6 +10,7 @@ var item_og_pos : Vector2
 @onready var slicing_mincing: Node2D = $"Slicing&Mincing"
 @onready var filling_mix: Node2D = $FillingMix
 @onready var pouring_mix: Node2D = $PouringMix
+@onready var mixing: Node2D = $Mixing
 @onready var wrapping: Node2D = $Wrapping
 @onready var frying: Node2D = $Frying
 
@@ -33,23 +34,22 @@ signal pouring_finished
 
 # MIXING
 signal mixing_finished
-@onready var mixing: Node2D = $Mixing
 
 # WRAPPING
 signal wrapping_finished
 
 func _ready() -> void:
-	item_og_pos = slicing_mincing.global_position
-	choppable_garlic_og_pos = choppable_garlic.global_position
+	choppable_garlic_og_pos = choppable_garlic.position
 	slicing_mincing.position.x += get_viewport().get_visible_rect().size.x
 	
 	filling_mix.position.x += get_viewport().get_visible_rect().size.x
 	pouring_mix.position.x += get_viewport().get_visible_rect().size.x
+	mixing.position.x += get_viewport().get_visible_rect().size.x
 	wrapping.position.x += get_viewport().get_visible_rect().size.x
 	frying.position.x += get_viewport().get_visible_rect().size.x
 	
-	#GlobalVars.item_enter(slicing_mincing)
-	GlobalVars.item_enter(filling_mix)
+	GlobalVars.item_enter(slicing_mincing)
+	#GlobalVars.item_enter(filling_mix)
 	choppable_garlic.progbar_fade_in()
 	
 func _on_choppable_garlic_chopped_garlic_finished() -> void:
@@ -59,21 +59,20 @@ func _on_choppable_garlic_chopped_garlic_finished() -> void:
 	choppable_garlic.queue_free()
 	
 func _on_choppable_garlic_tree_exited() -> void:
-	slicing_mincing.position = item_og_pos
-	slicing_mincing.position.x += get_viewport().get_visible_rect().size.x
 	var carrot = CHOPPABLE_CARROT.instantiate()
 	carrot.global_position = choppable_garlic_og_pos
+	carrot.position.x += get_viewport().get_visible_rect().size.x * 2
 	slicing_mincing.add_child(carrot)
+	GlobalVars.indiv_item_enter(carrot)
 	carrot.progbar_fade_in()
 	
 	await carrot.tree_exited
 	
-	
-	slicing_mincing.position = item_og_pos
-	slicing_mincing.position.x += get_viewport().get_visible_rect().size.x
 	var pork = MINCEABLE_PORK.instantiate()
 	pork.global_position = choppable_garlic_og_pos
+	pork.position.x += get_viewport().get_visible_rect().size.x * 2
 	slicing_mincing.add_child(pork)
+	GlobalVars.indiv_item_enter(pork)
 	pork.progbar_fade_in()
 	
 	await pork.tree_exited
