@@ -15,6 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://d0jdf7yb31nhf" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/paprikaSprinkle.png" id="5_lvaan"]
 [ext_resource type="Texture2D" uid="uid://ddug8gb5yp07p" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/cheese.png" id="6_bnbi0"]
 [ext_resource type="Texture2D" uid="uid://c2csa4kyjeclm" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated4.png" id="9_xh2ca"]
+[ext_resource type="Script" uid="uid://ds3nrb6vwagb3" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/mix.gd" id="15_h4qbo"]
+[ext_resource type="Texture2D" uid="uid://ct36ntdromxo6" path="res://Assets/LoadingBG.png" id="16_lvaan"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lvaan"]
+load_path = "res://.godot/imported/mixedPotato.png-2dbed9ca4d5891aabb37373defb2265c.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
 size = Vector2(224.58105, 150.83789)
@@ -27,6 +32,9 @@ size = Vector2(187, 312)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fv0u4"]
 size = Vector2(211.30746, 203)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkm2g"]
+size = Vector2(548, 73)
 
 [node name="Add" type="Node2D" unique_id=323244026]
 
@@ -80,6 +88,14 @@ offset_top = -230.1676
 offset_right = 956.46924
 offset_bottom = 447.8324
 texture = ExtResource("5_lvaan")
+
+[node name="mixed" type="TextureRect" parent="Bowl" unique_id=1096931483]
+visible = false
+offset_left = -195.53073
+offset_top = -207.82135
+offset_right = 956.46924
+offset_bottom = 470.17865
+texture = SubResource("CompressedTexture2D_lvaan")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" unique_id=385979204]
 position = Vector2(350.27936, 186.0336)
@@ -280,7 +296,38 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_xh2ca")
 
+[node name="mix" type="Node2D" parent="." unique_id=1153935733]
+visible = false
+script = ExtResource("15_h4qbo")
+
+[node name="mixer" type="Area2D" parent="mix" unique_id=1141931023]
+position = Vector2(1124, 389)
+rotation = 1.5707964
+script = ExtResource("4_317yh")
+
+[node name="TextureRect" type="TextureRect" parent="mix/mixer" unique_id=2114497273]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.40857
+offset_top = -34.0
+offset_right = 122.59143
+offset_bottom = 366.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3828251, 0.16720639)
+texture = ExtResource("16_lvaan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mix/mixer" unique_id=1682432305]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_dkm2g")
+
+[connection signal="mouse_entered" from="Bowl" to="Condiments" method="_on_bowl_mouse_entered"]
+[connection signal="mouse_exited" from="Bowl" to="Condiments" method="_on_bowl_mouse_exited"]
 [connection signal="area_entered" from="potato" to="potato" method="_on_area_entered"]
 [connection signal="input_event" from="potato" to="Condiments" method="_on_potato_input_event"]
 [connection signal="input_event" from="potato" to="potato" method="_on_input_event"]
 [connection signal="mouse_entered" from="potato" to="potato" method="_on_mouse_entered"]
+[connection signal="input_event" from="mix/mixer" to="mix" method="_on_mixer_input_event"]
