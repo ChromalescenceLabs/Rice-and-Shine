@@ -136,9 +136,11 @@ offset_right = 100.64514
 offset_bottom = 98.06448
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = SubResource("PlaceholderTexture2D_cuu35")
 
 [node name="BowlContentsMixed" type="TextureRect" parent="Mixing/BowlArea" unique_id=957302843]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -191,6 +193,7 @@ shape = SubResource("CircleShape2D_ab5ch")
 [connection signal="mincing_finished" from="." to="." method="_on_mincing_finished"]
 [connection signal="mixing_finished" from="." to="." method="_on_mixing_finished"]
 [connection signal="pouring_finished" from="." to="." method="_on_pouring_finished"]
+[connection signal="pouring_finished" from="." to="PouringMix/SesameOil" method="_on_lumpia_pouring_finished"]
 [connection signal="pouring_finished" from="." to="Mixing" method="_on_lumpia_pouring_finished"]
 [connection signal="wrapping_finished" from="." to="." method="_on_wrapping_finished"]
 [connection signal="chopped_garlic_finished" from="Slicing&Mincing/ChoppableGarlic" to="." method="_on_choppable_garlic_chopped_garlic_finished"]

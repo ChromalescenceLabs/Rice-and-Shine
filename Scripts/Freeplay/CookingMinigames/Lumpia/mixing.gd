@@ -13,13 +13,13 @@ func _input(event: InputEvent) -> void:
 		mouse_down = false
 
 func _process(_delta: float) -> void:
-	if abs(Input.get_last_mouse_velocity()) > Vector2(800, 800) and mouse_down: mix()
+	if abs(Input.get_last_mouse_velocity()) > Vector2(800, 800) and mouse_down and not bowl_contents_mixed.modulate.a >= 1: mix()
 	
 func mix():
 	bowl_contents_unmixed.rotation_degrees += 5
 	bowl_contents_mixed.rotation_degrees += 5
 	
-	bowl_contents_mixed.modulate.a += 0.05
+	bowl_contents_mixed.modulate.a += 0.005
 	
 	if bowl_contents_mixed.modulate.a >= 1:
 		GlobalVars.successind(get_tree().current_scene)

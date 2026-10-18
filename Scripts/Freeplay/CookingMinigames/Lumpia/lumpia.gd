@@ -31,6 +31,7 @@ var parsley_added : bool = false
 # POURING MIX
 signal pouring_finished
 @onready var pouring_bowl: BowlArea = $PouringMix/PouringBowl
+@onready var oil_progress: ProgressBar = $PouringMix/PouringBowl/OilProgress
 
 # MIXING
 signal mixing_finished
@@ -48,12 +49,12 @@ func _ready() -> void:
 	wrapping.position.x += get_viewport().get_visible_rect().size.x
 	frying.position.x += get_viewport().get_visible_rect().size.x
 	
-	GlobalVars.item_enter(slicing_mincing)
-	#GlobalVars.item_enter(filling_mix)
+	#GlobalVars.item_enter(slicing_mincing)
+	GlobalVars.item_enter(pouring_mix)
 	choppable_garlic.progbar_fade_in()
 	
 func _on_choppable_garlic_chopped_garlic_finished() -> void:
-	GlobalVars.item_exit(slicing_mincing)
+	GlobalVars.item_exit(pouring_mix)
 	await GlobalVars.itemExited
 	
 	choppable_garlic.queue_free()
@@ -61,7 +62,7 @@ func _on_choppable_garlic_chopped_garlic_finished() -> void:
 func _on_choppable_garlic_tree_exited() -> void:
 	var carrot = CHOPPABLE_CARROT.instantiate()
 	carrot.global_position = choppable_garlic_og_pos
-	carrot.position.x += get_viewport().get_visible_rect().size.x * 2
+	if get_viewport(): carrot.position.x += get_viewport().get_visible_rect().size.x * 2
 	slicing_mincing.add_child(carrot)
 	GlobalVars.indiv_item_enter(carrot)
 	carrot.progbar_fade_in()
@@ -89,6 +90,9 @@ func check_mixbowl_contents():
 		filling_finished.emit()
 
 func _on_filling_finished() -> void:
+	GlobalVars.successind(get_tree().current_scene)
+	await GlobalVars.successIndEnd
+	
 	GlobalVars.item_exit(filling_mix)
 	GlobalVars.item_enter(pouring_mix)
 	
@@ -98,6 +102,9 @@ func _on_oil_progress_value_changed(value: float) -> void:
 	if value >= 100:
 		pouring_bowl.monitorable = false
 		pouring_bowl.monitoring = false
+		
+		GlobalVars.successind(get_tree().current_scene)
+		await GlobalVars.successIndEnd
 		
 		pouring_finished.emit()
 		
