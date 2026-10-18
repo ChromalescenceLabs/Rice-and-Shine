@@ -1,6 +1,5 @@
 extends Label
 
-
 func _on_weeks_change_week(current_week) -> void:
 	var number= current_week.name.to_lower().substr(4, -1)
 	match number:

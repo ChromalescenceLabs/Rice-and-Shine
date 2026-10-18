@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_f7kjc"]
 [ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Menus/ChapterSelect/tempbutton.png" id="4_rn5ul"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_rn5ul"]
+[ext_resource type="Script" uid="uid://dnxascxpbslyk" path="res://Scripts/Menus/WeekSelect/daybuttons.gd" id="8_v84np"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_154id"]
 resource_local_to_scene = true
@@ -61,10 +62,10 @@ shader_parameter/anti_alias_amount = 1.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/enable_shader = true
 
-[sub_resource type="Resource" id="Resource_f7kjc"]
+[sub_resource type="Resource" id="Resource_1ovjf"]
 script = ExtResource("5_rn5ul")
 
-[sub_resource type="Resource" id="Resource_rn5ul"]
+[sub_resource type="Resource" id="Resource_pn6m1"]
 script = ExtResource("5_rn5ul")
 
 [node name="Node2D" type="Control" unique_id=817455315]
@@ -142,8 +143,8 @@ offset_top = 88.0
 offset_right = 1240.0
 offset_bottom = 666.0
 script = ExtResource("4_f7kjc")
-wheel_scroll_damper = SubResource("Resource_f7kjc")
-dragging_scroll_damper = SubResource("Resource_rn5ul")
+wheel_scroll_damper = SubResource("Resource_1ovjf")
+dragging_scroll_damper = SubResource("Resource_pn6m1")
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
 [node name="DayButton" type="VBoxContainer" parent="WeekScroll" unique_id=738724787]
@@ -151,6 +152,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 30
+script = ExtResource("8_v84np")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="MarginContainer" type="MarginContainer" parent="WeekScroll/DayButton" unique_id=1660941153]

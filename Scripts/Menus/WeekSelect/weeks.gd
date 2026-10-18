@@ -12,12 +12,10 @@ func _ready() -> void:
 
 		if index == 0 or index == 6:
 			child.rotation_degrees = 20
-			print(child.name, child.rotation_degrees)
 			child.position.x -= -10
 			_update_shader(index, true if index==6 else false)
 		else:
 			child.rotation_degrees = randi_range(-20, 10)
-			print(child.name, child.rotation_degrees)
 			_update_shader(index, false)
 
 func moveCarousel(forward: bool) -> void:
