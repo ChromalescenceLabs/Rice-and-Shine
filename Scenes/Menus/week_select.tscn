@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b5s3gdbnh5kai" path="res://Assets/Menus/ChapterSelect/week one.png" id="1_q88pd"]
 [ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/Menus/ModeSelect/placeholderbg.png" id="1_yue0x"]
+[ext_resource type="Script" uid="uid://xyji33kmtddw" path="res://Scripts/Menus/WeekSelect/weeks.gd" id="2_yvrl2"]
 [ext_resource type="Shader" uid="uid://biqbyurw0d4oo" path="res://Assets/Shaders/weekoutline.gdshader" id="3_61fw1"]
-[ext_resource type="Script" uid="uid://b2cinv72nur4h" path="res://Scripts/Menus/WeekSelect/weekscontainer.gd" id="3_yvrl2"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_f7kjc"]
 [ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Menus/ChapterSelect/tempbutton.png" id="4_rn5ul"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_rn5ul"]
@@ -85,54 +85,49 @@ theme_override_font_sizes/font_size = 30
 text = "WEEK ONE DESCRIPTION TESTING TEST TEST"
 metadata/_edit_use_anchors_ = true
 
-[node name="Control" type="Control" parent="." unique_id=904295972]
+[node name="Weeks" type="Control" parent="." unique_id=904295972]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("2_yvrl2")
 
-[node name="WeekContainer" type="Container" parent="Control" unique_id=225044889]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_yvrl2")
-
-[node name="WeekSeven" type="Sprite2D" parent="Control/WeekContainer" unique_id=1741573179]
+[node name="WeekSeven" type="Sprite2D" parent="Weeks" unique_id=1741573179]
 material = SubResource("ShaderMaterial_154id")
 position = Vector2(210, 327)
 scale = Vector2(0.71999997, 0.71999997)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekSix" type="Sprite2D" parent="Control/WeekContainer" unique_id=1968593448]
+[node name="WeekSix" type="Sprite2D" parent="Weeks" unique_id=1968593448]
 material = SubResource("ShaderMaterial_yvrl2")
 position = Vector2(260, 326)
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekFive" type="Sprite2D" parent="Control/WeekContainer" unique_id=1212685339]
+[node name="WeekFive" type="Sprite2D" parent="Weeks" unique_id=1212685339]
 material = SubResource("ShaderMaterial_1ovjf")
 position = Vector2(300, 327)
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekFour" type="Sprite2D" parent="Control/WeekContainer" unique_id=1813907432]
+[node name="WeekFour" type="Sprite2D" parent="Weeks" unique_id=1813907432]
 material = SubResource("ShaderMaterial_pn6m1")
 position = Vector2(350, 325)
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekThree" type="Sprite2D" parent="Control/WeekContainer" unique_id=1511646685]
+[node name="WeekThree" type="Sprite2D" parent="Weeks" unique_id=1511646685]
 material = SubResource("ShaderMaterial_2usau")
 position = Vector2(400, 326)
 scale = Vector2(0.7199999, 0.7199999)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekTwo" type="Sprite2D" parent="Control/WeekContainer" unique_id=115854033]
+[node name="WeekTwo" type="Sprite2D" parent="Weeks" unique_id=115854033]
 material = SubResource("ShaderMaterial_v84np")
 position = Vector2(440, 325)
 scale = Vector2(0.7200001, 0.7200001)
 texture = ExtResource("1_q88pd")
 
-[node name="WeekOne" type="Sprite2D" parent="Control/WeekContainer" unique_id=120636608]
+[node name="WeekOne" type="Sprite2D" parent="Weeks" unique_id=120636608]
 material = SubResource("ShaderMaterial_cqy6c")
 position = Vector2(504, 326)
 scale = Vector2(0.72, 0.72)
@@ -252,5 +247,5 @@ rotation = 3.1415927
 scale = Vector2(0.5287411, 0.5287411)
 texture_normal = ExtResource("4_rn5ul")
 
-[connection signal="pressed" from="WeekButton/Back" to="Control/WeekContainer" method="_on_back_pressed"]
-[connection signal="pressed" from="WeekButton/Forward" to="Control/WeekContainer" method="_on_forward_pressed"]
+[connection signal="pressed" from="WeekButton/Back" to="Weeks" method="_on_back_pressed"]
+[connection signal="pressed" from="WeekButton/Forward" to="Weeks" method="_on_forward_pressed"]
