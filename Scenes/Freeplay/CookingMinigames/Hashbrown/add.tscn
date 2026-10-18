@@ -4,18 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://buow6kyt5sh43" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/Salt.png" id="2_bnbi0"]
 [ext_resource type="Script" uid="uid://bl600m0cbeiyv" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/condiments.gd" id="2_xmpae"]
 [ext_resource type="Texture2D" uid="uid://bus65ldlaj4qw" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/flour.png" id="3_arw06"]
+[ext_resource type="Script" uid="uid://cvlx4edx0e8v5" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/potato.gd" id="4_317yh"]
+[ext_resource type="Texture2D" uid="uid://dptskfbow0ly7" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/cheeseBowl.png" id="4_xh2ca"]
 [ext_resource type="Texture2D" uid="uid://dcjlo3ooxjiim" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/Pepper.png" id="4_xmpae"]
 [ext_resource type="Texture2D" uid="uid://bjhp70wj71uhi" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/Paprika.png" id="5_317yh"]
 [ext_resource type="Texture2D" uid="uid://ddug8gb5yp07p" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/cheese.png" id="6_bnbi0"]
+[ext_resource type="Texture2D" uid="uid://c2csa4kyjeclm" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated4.png" id="9_xh2ca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
-size = Vector2(650, 347)
+size = Vector2(404.4693, 316.89383)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj6en"]
+size = Vector2(345.16156, 217.74197)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ullcx"]
 size = Vector2(187, 312)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj6en"]
-size = Vector2(345.16156, 217.74197)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fv0u4"]
+size = Vector2(211.30746, 203)
 
 [node name="Add" type="Node2D" unique_id=323244026]
 
@@ -31,125 +37,203 @@ offset_bottom = 372.2961
 texture = ExtResource("1_arw06")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" unique_id=385979204]
-position = Vector2(340, 182.5)
+position = Vector2(356.4246, 188.82681)
 shape = SubResource("RectangleShape2D_ittll")
 
 [node name="Condiments" type="Node2D" parent="." unique_id=1260316097]
 script = ExtResource("2_xmpae")
 
-[node name="salt" type="Area2D" parent="Condiments" unique_id=366448863]
-position = Vector2(117.00001, 160.00003)
-scale = Vector2(0.62, 0.62)
-
-[node name="TextureRect" type="TextureRect" parent="Condiments/salt" unique_id=1478533501]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -96.225815
-offset_top = -25.806427
-offset_right = 89.774185
-offset_bottom = 466.19357
-grow_horizontal = 2
-texture = ExtResource("2_bnbi0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Condiments/salt" unique_id=785036540]
-position = Vector2(1.2741928, 258.06454)
-shape = SubResource("RectangleShape2D_ullcx")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Condiments/salt" unique_id=945434898]
-scale = Vector2(0.99999994, 0.99999994)
-scale_amount_min = 10.0
-scale_amount_max = 10.0
-
-[node name="flour" type="Area2D" parent="Condiments" unique_id=1334309836]
-position = Vector2(265, 160.00003)
-scale = Vector2(0.62, 0.62)
-
-[node name="TextureRect" type="TextureRect" parent="Condiments/flour" unique_id=337757178]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -89.774185
-offset_top = -25.806427
-offset_right = 96.225815
-offset_bottom = 466.19357
-grow_horizontal = 2
-texture = ExtResource("3_arw06")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Condiments/flour" unique_id=1505189750]
-position = Vector2(1.2741928, 258.06454)
-shape = SubResource("RectangleShape2D_ullcx")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Condiments/flour" unique_id=1819401805]
-scale = Vector2(0.99999994, 0.99999994)
-scale_amount_min = 10.0
-scale_amount_max = 10.0
-
-[node name="pepper" type="Area2D" parent="Condiments" unique_id=1714281096]
-position = Vector2(1009.0001, 166.00003)
-scale = Vector2(0.62, 0.62)
-
-[node name="TextureRect" type="TextureRect" parent="Condiments/pepper" unique_id=1037914687]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -91.3871
-offset_top = -24.193512
-offset_right = 94.6129
-offset_bottom = 467.8065
-grow_horizontal = 2
-texture = ExtResource("4_xmpae")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Condiments/pepper" unique_id=1063045008]
-position = Vector2(1.2741928, 258.06454)
-shape = SubResource("RectangleShape2D_ullcx")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Condiments/pepper" unique_id=87903759]
-scale = Vector2(0.99999994, 0.99999994)
-scale_amount_min = 10.0
-scale_amount_max = 10.0
-
-[node name="paprika" type="Area2D" parent="Condiments" unique_id=1587454802]
-position = Vector2(1175, 160.00003)
-scale = Vector2(0.62, 0.62)
-
-[node name="TextureRect" type="TextureRect" parent="Condiments/paprika" unique_id=375785269]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -91.3871
-offset_top = -24.193512
-offset_right = 94.6129
-offset_bottom = 467.8065
-grow_horizontal = 2
-texture = ExtResource("5_317yh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Condiments/paprika" unique_id=2052998865]
-position = Vector2(1.2741928, 258.06454)
-shape = SubResource("RectangleShape2D_ullcx")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Condiments/paprika" unique_id=1535074892]
-scale = Vector2(0.99999994, 0.99999994)
-scale_amount_min = 10.0
-scale_amount_max = 10.0
-
 [node name="cheese" type="Area2D" parent="Condiments" unique_id=1686387682]
-position = Vector2(1009, 445)
+position = Vector2(1107.9999, 522)
 scale = Vector2(0.62, 0.62)
 
-[node name="TextureRect" type="TextureRect" parent="Condiments/cheese" unique_id=891038211]
+[node name="cheese" type="TextureRect" parent="Condiments/cheese" unique_id=891038211]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 340.0
-offset_bottom = 239.0
+offset_left = -170.0
+offset_top = -119.5
+offset_right = 170.0
+offset_bottom = 119.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_bnbi0")
 
+[node name="noCheese" type="TextureRect" parent="Condiments/cheese" unique_id=1256869799]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -119.5
+offset_right = 170.0
+offset_bottom = 119.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xh2ca")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Condiments/cheese" unique_id=72121590]
-position = Vector2(167.74194, 126.612915)
+position = Vector2(0, 9.677429)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_tj6en")
+
+[node name="salt" type="Area2D" parent="Condiments" unique_id=366448863]
+position = Vector2(117.00001, 298.00003)
+scale = Vector2(0.62, 0.62)
+script = ExtResource("4_317yh")
+
+[node name="TextureRect" type="TextureRect" parent="Condiments/salt" unique_id=1478533501]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -246.0
+offset_right = 93.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bnbi0")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Condiments/salt" unique_id=785036540]
+position = Vector2(3.2258148, 37.0968)
+shape = SubResource("RectangleShape2D_ullcx")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Condiments/salt" unique_id=945434898]
+position = Vector2(4.83871, -212.9033)
+scale = Vector2(0.99999994, 0.99999994)
+emitting = false
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+
+[node name="flour" type="Area2D" parent="Condiments" unique_id=1334309836]
+position = Vector2(265, 299.00003)
+scale = Vector2(0.62, 0.62)
+script = ExtResource("4_317yh")
+
+[node name="TextureRect" type="TextureRect" parent="Condiments/flour" unique_id=337757178]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -246.0
+offset_right = 93.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_arw06")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Condiments/flour" unique_id=867473298]
+position = Vector2(3.2258148, 37.0968)
+shape = SubResource("RectangleShape2D_ullcx")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Condiments/flour" unique_id=1819401805]
+position = Vector2(-1.612915, -225.80652)
+scale = Vector2(0.9999998, 0.9999998)
+emitting = false
+amount = 30
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+
+[node name="pepper" type="Area2D" parent="Condiments" unique_id=1714281096]
+position = Vector2(1009.0001, 305.00003)
+scale = Vector2(0.62, 0.62)
+script = ExtResource("4_317yh")
+
+[node name="TextureRect" type="TextureRect" parent="Condiments/pepper" unique_id=1037914687]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -246.0
+offset_right = 93.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xmpae")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Condiments/pepper" unique_id=2027362955]
+position = Vector2(3.22583, 37.0968)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_ullcx")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Condiments/pepper" unique_id=87903759]
+position = Vector2(1.6127064, -220.96779)
+scale = Vector2(0.99999994, 0.99999994)
+emitting = false
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+color = Color(0, 0, 0, 1)
+
+[node name="paprika" type="Area2D" parent="Condiments" unique_id=1587454802]
+position = Vector2(1175.0001, 301.00003)
+scale = Vector2(0.62, 0.62)
+script = ExtResource("4_317yh")
+
+[node name="TextureRect" type="TextureRect" parent="Condiments/paprika" unique_id=375785269]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -246.0
+offset_right = 93.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_317yh")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Condiments/paprika" unique_id=776005244]
+position = Vector2(3.22583, 37.0968)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_ullcx")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Condiments/paprika" unique_id=1535074892]
+position = Vector2(0, -237.09683)
+scale = Vector2(0.99999994, 0.99999994)
+emitting = false
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+color = Color(0.48257142, 0.13438341, 0.07457846, 1)
+
+[node name="potato" type="Area2D" parent="." unique_id=323084645]
+position = Vector2(1128, 522)
+scale = Vector2(0.5042502, 0.5042502)
+script = ExtResource("4_317yh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="potato" unique_id=1746004461]
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_fv0u4")
+
+[node name="gratedPotatoes" type="TextureRect" parent="potato" unique_id=1671801052]
+modulate = Color(1.1367457, 1.0791982, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.43195
+offset_top = -121.0
+offset_right = 176.56805
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_xh2ca")
+
+[connection signal="input_event" from="Bowl" to="Condiments" method="_on_bowl_input_event"]
+[connection signal="area_entered" from="potato" to="potato" method="_on_area_entered"]
+[connection signal="input_event" from="potato" to="potato" method="_on_input_event"]
+[connection signal="mouse_entered" from="potato" to="potato" method="_on_mouse_entered"]
