@@ -39,6 +39,7 @@ offset_top = 181.0
 offset_right = 192.0
 offset_bottom = 226.0
 
+[connection signal="chopped_carrot_finished" from="." to="." method="_on_chopped_carrot_finished"]
 [connection signal="slice" from="." to="." method="_on_slice"]
 [connection signal="mouse_entered" from="Detector" to="." method="_on_detector_mouse_entered"]
 [connection signal="mouse_exited" from="Detector" to="." method="_on_detector_mouse_exited"]

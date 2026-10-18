@@ -23,10 +23,14 @@ metadata/_edit_lock_ = true
 [node name="ChoppableGarlic" parent="Slicing&Mincing" unique_id=1855347188 instance=ExtResource("3_1b5b2")]
 position = Vector2(627, 358)
 
+[node name="Grounding" type="Node2D" parent="." unique_id=1584256450]
+
 [node name="FillingMix" type="Node2D" parent="." unique_id=1628095035]
 
 [node name="Wrapping" type="Node2D" parent="." unique_id=1672150117]
 
 [node name="Frying" type="Node2D" parent="." unique_id=516377241]
 
+[connection signal="mincing_finished" from="." to="." method="_on_mincing_finished"]
+[connection signal="chopped_garlic_finished" from="Slicing&Mincing/ChoppableGarlic" to="." method="_on_choppable_garlic_chopped_garlic_finished"]
 [connection signal="tree_exited" from="Slicing&Mincing/ChoppableGarlic" to="." method="_on_choppable_garlic_tree_exited"]
