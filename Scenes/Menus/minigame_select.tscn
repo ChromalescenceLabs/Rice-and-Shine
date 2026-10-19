@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="3_kyrjg"]
 [ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/Menus/FreeplayMenu/hasbrown.png" id="4_h6rov"]
 [ext_resource type="Texture2D" uid="uid://cvqb826b4xwtl" path="res://Assets/Menus/FreeplayMenu/hotdog.png" id="5_kyrjg"]
+[ext_resource type="PackedScene" uid="uid://bk5qv1csxokg6" path="res://Scenes/Menus/minigame_buttons.tscn" id="6_8omsi"]
 [ext_resource type="Texture2D" uid="uid://kewsf4o5v8dg" path="res://Assets/Menus/FreeplayMenu/Inihaw.png" id="6_l46wx"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Menus/FreeplayMenu/torta.png" id="7_l46wx"]
@@ -78,34 +79,25 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Rice" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer" unique_id=1869897126]
-custom_maximum_size = Vector2(420, 236)
+[node name="Rice" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer" unique_id=1670701451 instance=ExtResource("6_8omsi")]
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 5
 mouse_filter = 1
 texture_normal = ExtResource("2_l46wx")
-stretch_mode = 0
+scene = "uid://sukerfnpt5d5"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Pancake" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer" unique_id=1785250156]
-custom_maximum_size = Vector2(420, 236)
+[node name="Pancake" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer" unique_id=514353001 instance=ExtResource("6_8omsi")]
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 5
 mouse_filter = 1
 texture_normal = ExtResource("3_btba4")
-stretch_mode = 0
+scene = "uid://bf86igy00f6sq"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Hashbrown" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer" unique_id=1561646085]
-custom_maximum_size = Vector2(420, 236)
+[node name="Hashbrown" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer" unique_id=1761106524 instance=ExtResource("6_8omsi")]
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 5
 mouse_filter = 1
 texture_normal = ExtResource("4_h6rov")
-stretch_mode = 0
+scene = "uid://j42ywdsfuawg"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="SmoothScrollContainer/VBoxContainer" unique_id=881844820]
@@ -114,55 +106,36 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Hotdog" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer2" unique_id=975345697]
-custom_maximum_size = Vector2(420, 236)
+[node name="Hotdog" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer2" unique_id=782165539 instance=ExtResource("6_8omsi")]
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 5
 mouse_filter = 1
 texture_normal = ExtResource("5_kyrjg")
-stretch_mode = 0
+scene = "uid://bgi803ffeyeae"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Inihaw" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer2" unique_id=782415508]
-custom_maximum_size = Vector2(420, 236)
+[node name="Inihaw" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1520383153 instance=ExtResource("6_8omsi")]
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 5
 mouse_filter = 1
 texture_normal = ExtResource("6_l46wx")
-stretch_mode = 0
+scene = "uid://cphb8p5iecw0j"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Torta" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer2" unique_id=786767976]
-custom_maximum_size = Vector2(420, 236)
+[node name="Torta" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer2" unique_id=2640522 instance=ExtResource("6_8omsi")]
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 5
 mouse_filter = 1
 texture_normal = ExtResource("7_l46wx")
-stretch_mode = 0
+scene = "uid://dqrhc8pu68q17"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="SmoothScrollContainer/VBoxContainer" unique_id=1909784508]
 layout_mode = 2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Lumpia" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer3" unique_id=479861868]
-custom_maximum_size = Vector2(420, 236)
+[node name="Lumpia" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer3" unique_id=291767803 instance=ExtResource("6_8omsi")]
 layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 5
 mouse_filter = 1
 texture_normal = ExtResource("11_kyrjg")
-stretch_mode = 0
+scene = "uid://b0yukpeuqjxne"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [connection signal="pressed" from="ServeCustomers" to="." method="_on_serve_customers_pressed"]
-[connection signal="pressed" from="SmoothScrollContainer/VBoxContainer/HBoxContainer/Rice" to="." method="_on_rice_pressed"]
-[connection signal="pressed" from="SmoothScrollContainer/VBoxContainer/HBoxContainer/Pancake" to="." method="_on_pancake_pressed"]
-[connection signal="pressed" from="SmoothScrollContainer/VBoxContainer/HBoxContainer/Hashbrown" to="." method="_on_hashbrown_pressed"]
-[connection signal="pressed" from="SmoothScrollContainer/VBoxContainer/HBoxContainer2/Hotdog" to="." method="_on_hotdog_pressed"]
-[connection signal="pressed" from="SmoothScrollContainer/VBoxContainer/HBoxContainer2/Inihaw" to="." method="_on_inihaw_pressed"]
-[connection signal="pressed" from="SmoothScrollContainer/VBoxContainer/HBoxContainer2/Torta" to="." method="_on_torta_pressed"]
-[connection signal="pressed" from="SmoothScrollContainer/VBoxContainer/HBoxContainer3/Lumpia" to="." method="_on_lumpia_pressed"]

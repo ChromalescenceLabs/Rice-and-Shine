@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://c1cqj0tka2d08"]
+
+[ext_resource type="Script" uid="uid://ct6yfwk124ngg" path="res://Scripts/Menus/minigame_select_btn_hover.gd" id="1_ih2g1"]
+
+[sub_resource type="Animation" id="Animation_lova8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ih2g1"]
+resource_name = "enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 319.22), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1cfum"]
+_data = {
+&"RESET": SubResource("Animation_lova8"),
+&"enter": SubResource("Animation_ih2g1")
+}
+
+[node name="MinigameSelectBtnHover" type="Panel" unique_id=864807193]
+offset_left = -7.0
+offset_top = -10.0
+offset_right = 423.0
+offset_bottom = 241.0
+offset_transform_enabled = true
+mouse_filter = 1
+script = ExtResource("1_ih2g1")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=350360686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 92
+bbcode_enabled = true
+text = "[wave]PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=820804412]
+libraries/ = SubResource("AnimationLibrary_1cfum")
+speed_scale = 2.6
