@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5dqg1uou3ovd"]
 
 [ext_resource type="Texture2D" uid="uid://dbpijpal5q8k7" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/SoySauce.png" id="1_3t564"]
-[ext_resource type="Script" uid="uid://lj607magxct3" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/inihaw_liquids.gd" id="1_wbji5"]
+[ext_resource type="Script" uid="uid://ctt3ou5ymnqsb" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/inihaw_liquids.gd" id="1_wbji5"]
 [ext_resource type="Texture2D" uid="uid://qtr2m4xvfh61" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Calamansi.png" id="2_yo38x"]
 [ext_resource type="Texture2D" uid="uid://chg5lfqlhd8ua" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Ketchup.png" id="3_23aw0"]
 [ext_resource type="Texture2D" uid="uid://bncak8lem38ni" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Sprite.png" id="4_wbji5"]

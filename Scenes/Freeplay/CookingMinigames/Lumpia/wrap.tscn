@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dcwdlqnrugjlk"]
+
+[ext_resource type="Script" uid="uid://dydmu1rh30qil" path="res://Scripts/Freeplay/CookingMinigames/Lumpia/wrap.gd" id="1_nx22g"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_862lc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cuu35"]
+size = Vector2(436, 442)
+
+[node name="Wrap" type="Area2D" unique_id=875097744]
+script = ExtResource("1_nx22g")
+
+[node name="WrapFlat" type="TextureRect" parent="." unique_id=1549395574]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -220.0
+offset_right = 220.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_862lc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1544090913]
+shape = SubResource("RectangleShape2D_cuu35")

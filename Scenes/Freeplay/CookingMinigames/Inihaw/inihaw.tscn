@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bwdtu1y2vud8i" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/inihaw.gd" id="1_yfbyh"]
 [ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="2_4ubv0"]
 [ext_resource type="PackedScene" uid="uid://cy1qe3w0ip4cu" path="res://Scenes/Freeplay/CookingMinigames/Inihaw/choppable_pork_belly.tscn" id="3_rcqij"]
-[ext_resource type="PackedScene" uid="uid://b3pmbrftfet5g" path="res://Scenes/Freeplay/CookingMinigames/Inihaw/choppable_garlic.tscn" id="5_f2kep"]
+[ext_resource type="PackedScene" uid="uid://b3pmbrftfet5g" path="res://Scenes/Freeplay/CookingMinigames/GeneralMinigames/choppable_garlic.tscn" id="5_f2kep"]
 [ext_resource type="Script" uid="uid://digl8i878c0ha" path="res://Scripts/Freeplay/CookingMinigames/Kanin/rice_bowl_fill_area.gd" id="6_qsqwy"]
 [ext_resource type="Texture2D" uid="uid://cokiq4wv1pq6d" path="res://Assets/Freeplay/Serving/ServeBowl.png" id="7_lqdy4"]
 [ext_resource type="Script" uid="uid://itktjbufikfl" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/progress_bars.gd" id="8_ewaq1"]

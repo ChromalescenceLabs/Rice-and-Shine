@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dlpdjso7pw4p2"]
+
+[ext_resource type="Script" uid="uid://c5fji80t24e8" path="res://Scripts/Freeplay/CookingMinigames/Lumpia/lumpia_sesameoil.gd" id="1_e01mt"]
+[ext_resource type="Texture2D" uid="uid://qtr2m4xvfh61" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Calamansi.png" id="1_ura38"]
+
+[sub_resource type="Gradient" id="Gradient_23aw0"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.8378878, 0.8499174, 0.24558902, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e01mt"]
+gradient = SubResource("Gradient_23aw0")
+
+[sub_resource type="Curve" id="Curve_102j8"]
+_data = [Vector2(0, 0.8876405), 0.0, 0.0, 0, 0, Vector2(0.3581081, 0.77528095), 0.0, 0.0, 0, 0, Vector2(0.7905406, 0.52808994), -0.35274094, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_idtpb"]
+curve = SubResource("Curve_102j8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j621y"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+scale_min = 0.7
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_idtpb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dm7d"]
+size = Vector2(34.53238, 82.01437)
+
+[node name="lumpia_sesameoil" type="Node2D" unique_id=1650143724]
+script = ExtResource("1_e01mt")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=495307656]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_ura38")
+
+[node name="SesameOilParticles" type="GPUParticles2D" parent="." unique_id=269852801]
+modulate = Color(1, 1, 1, 0.827451)
+position = Vector2(-156, -28)
+scale = Vector2(0.695, 0.695)
+emitting = false
+texture = SubResource("GradientTexture2D_e01mt")
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_j621y")
+
+[node name="SesameOilArea" type="Area2D" parent="SesameOilParticles" unique_id=493950561]
+position = Vector2(-28.77698, -136.69066)
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SesameOilParticles/SesameOilArea" unique_id=1302867410]
+position = Vector2(28.776987, 345.32376)
+shape = SubResource("RectangleShape2D_4dm7d")
+
+[connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect" to="." method="_on_texture_rect_mouse_exited"]
+[connection signal="area_entered" from="SesameOilParticles/SesameOilArea" to="." method="_on_sesame_oil_area_area_entered"]
+[connection signal="area_exited" from="SesameOilParticles/SesameOilArea" to="." method="_on_sesame_oil_area_area_exited"]

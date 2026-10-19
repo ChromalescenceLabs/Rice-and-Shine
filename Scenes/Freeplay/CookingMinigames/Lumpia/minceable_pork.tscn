@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dbhjxs8qkv73p"]
+
+[ext_resource type="Script" uid="uid://h0lo8l2wve6o" path="res://Scripts/Freeplay/CookingMinigames/Lumpia/minceable_pork.gd" id="1_j4eag"]
+[ext_resource type="Texture2D" uid="uid://hhxapbx6tbi3" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Garlic.png" id="2_lweb4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_av541"]
+radius = 145.08618
+
+[node name="MinceablePork" type="Area2D" unique_id=1855347188]
+script = ExtResource("1_j4eag")
+
+[node name="Chopped" type="Node2D" parent="." unique_id=1825565028]
+
+[node name="TextureFull" type="Sprite2D" parent="." unique_id=278474510]
+texture = ExtResource("2_lweb4")
+
+[node name="Detector" type="TextureRect" parent="." unique_id=900025975]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -250.0
+offset_right = 100.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lweb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1859349374]
+position = Vector2(-6, 14)
+shape = SubResource("CircleShape2D_av541")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=23727781]
+offset_left = -190.0
+offset_top = 181.0
+offset_right = 192.0
+offset_bottom = 226.0
+
+[connection signal="chopped_pork_finished" from="." to="." method="_on_chopped_pork_finished"]
+[connection signal="slice" from="." to="." method="_on_slice"]
+[connection signal="mouse_entered" from="Detector" to="." method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="Detector" to="." method="_on_detector_mouse_exited"]
