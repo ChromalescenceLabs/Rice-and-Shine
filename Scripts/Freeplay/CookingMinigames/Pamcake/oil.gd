@@ -14,7 +14,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 		if dragging: self.global_position = lerp(self.global_position, get_global_mouse_position(), 0.2)
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("Click"):
 		dragging = true
 		oil_open.visible = true
@@ -26,7 +26,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		self.global_position = og_pos
 
 func _on_area_entered(area: Area2D) -> void:
-	if area is PancakePan or area is HdogPan or area is Pan or area is TortaPan:
+	if "pan" in area.name.to_lower():
 		oil(area)
 		
 func oil(area):

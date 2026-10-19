@@ -12,6 +12,7 @@ var is_customer_serving: bool = false
 signal successIndEnd
 signal itemEntered
 signal itemExited
+signal shakeDone
 
 const SUCCIND = preload("uid://beppy36ki8xum")
 
@@ -24,6 +25,7 @@ func successind(tree):
 	successIndEnd.emit()
 	
 func item_enter(item) -> void:
+	item.visible=true
 	var tw = create_tween().tween_property(item, "position", Vector2(0,0), 2).set_trans(Tween.TRANS_ELASTIC)
 	await tw.finished
 	itemEntered.emit(item)
@@ -38,6 +40,15 @@ func item_exit(item) -> void:
 	var tw = create_tween().tween_property(item, "position", Vector2(vw * -1, 0), 2).set_trans(Tween.TRANS_ELASTIC)
 	await tw.finished
 	itemExited.emit()
+
+func shake(item):
+	var t = create_tween()
+	t.tween_property(item, "position:x", item.position.x+30, .1).set_trans(Tween.TRANS_CUBIC)
+	t.tween_property(item, "position:x", item.position.x-30, .1).set_trans(Tween.TRANS_CUBIC)
+	t.tween_property(item, "position:x", item.position.x, .1).set_trans(Tween.TRANS_CUBIC)
+	shakeDone.emit()
+
+
 	
 # Unlocks
 var unlocked_foods : Array = ["rice", "pancake", "hashbrown"]

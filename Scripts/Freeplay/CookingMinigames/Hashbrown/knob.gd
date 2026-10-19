@@ -5,7 +5,6 @@ signal pulled
 var hold = false
 var ogPos=position
 var canHold=false
-var scrolledNum=0
 
 func _process(_delta: float) -> void:
 	var mouse=get_local_mouse_position().y+position.y
@@ -16,9 +15,9 @@ func _process(_delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name=="end":
-		ogPos=area.position
 		pulled.emit()
 		set_process_input(false)
+		ogPos=area.position
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
