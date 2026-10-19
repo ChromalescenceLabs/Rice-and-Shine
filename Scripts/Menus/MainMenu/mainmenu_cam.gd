@@ -1,7 +1,7 @@
 extends Camera2D
 
 @export var max_offset: Vector2 = Vector2(60, 25)
-@export var smooth_speed: float = 10.0
+@export var smooth_speed: float = 5.0
 var center: Vector2
 
 func _ready() -> void:
