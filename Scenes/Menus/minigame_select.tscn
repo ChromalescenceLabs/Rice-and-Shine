@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="2_h6rov"]
 [ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Menus/FreeplayMenu/RICE.png" id="2_l46wx"]
 [ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/Menus/FreeplayMenu/pancake.png" id="3_btba4"]
+[ext_resource type="Script" uid="uid://dc38i3otaiqmx" path="res://Scripts/Menus/game_logo.gd" id="3_gl1wp"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="3_kyrjg"]
 [ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/Menus/FreeplayMenu/hasbrown.png" id="4_h6rov"]
 [ext_resource type="Texture2D" uid="uid://cvqb826b4xwtl" path="res://Assets/Menus/FreeplayMenu/hotdog.png" id="5_kyrjg"]
@@ -44,10 +45,11 @@ offset_bottom = 166.0
 theme_override_font_sizes/font_size = 30
 text = "Serve Customers Sandbox"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510853050]
+[node name="GameLogo" type="Sprite2D" parent="." unique_id=1510853050]
 position = Vector2(640, 117)
 scale = Vector2(0.19780816, 0.19780816)
 texture = ExtResource("7_8omsi")
+script = ExtResource("3_gl1wp")
 
 [node name="SmoothScrollContainer" type="ScrollContainer" parent="." unique_id=1061169522]
 layout_mode = 1
