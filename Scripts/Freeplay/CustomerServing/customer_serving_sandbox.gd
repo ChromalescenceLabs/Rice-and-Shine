@@ -118,6 +118,17 @@ func _on_tree_exiting() -> void:
 func _on_button_pressed() -> void:
 	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
 
+func upd_customer_indexes(current_node_index : int) -> void:
+	for i in customers_cont.get_children().slice(current_node_index):
+		i.indx -= 1
 
 func _on_temp_pressed() -> void:
 	add_customer()
+
+
+func _on_customer_happiness_logs_remove_customer(index: int) -> void:
+	var customer = customers_cont.get_children()[index]
+	customer.animation_player.play_backwards("enter_exit")
+	await customer.animation_player.animation_finished
+	customer.queue_free()
+	

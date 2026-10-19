@@ -184,6 +184,9 @@ I had a smooth time coding this week actually! Surprisingly no mind-numbing prob
 On 10/04/2026, i started reworking the mode select menu. I changed the layout, and animations for the buttons. I struggled with the mode select menu, specifically on the animations for the buttons. I made a temporary solution to fix it using sprite 2ds to be able to animate the buttons until i found a better way to fix it. I then  changed the layout of the chapter select menu and added  the carousel menu I had planned for it in the first place. I then added a confirm button which allows you to change the scene to the chapter you want to play and an indicator for when the chapter is inaccessible. I also added a description which would pop up if you hovered over the button. On 10/05/2026, i reworked on the mode select menu. After following the advice of one of my teammates, and experimenting with the code, i was able to fix the button animations for the mode select menu.
 
 
+
+
+
 ## WEEK 4: OCTOBER 5 - OCTOBER 12
 ### 1. ALLIUMC
 Things I've done:
@@ -231,3 +234,25 @@ Again, the bugs I had to face (which were primarily from the data persistence ma
 
 ### 4. JEANKAMAGALING
 On 10/11/2026, i mainly redrew certain assets for the game, such as the customers, since unfortunately some of it got corrupted as i was moving files across my laptops. I guess it was ok since i had planned on reworking them anyway. I  also started to make some chapter art, and art for the serving customers mechanics. On 10/12/2026, i used the other 50% of my time in fixing the carousel for the week select. I'd say it was alright since i already had somewhat of an idea of how to do it from the get go, but  i mostly just focused on making it more visually appealing and actually functional. I also tried to add a highlight to the current week selected, but had troubles configuring it so that it'd actually go on the selected week. 
+
+
+
+
+
+## WEEK 5: OCTOBER 12 - OCTOBER 19
+### 1. ALLIUMC
+
+### 2. CLIF
+
+
+### 3. JAZZ
+AUGHH THE CUSTOMER SYSTEMS AREN'T DONE anyway hi yes got some more progress for Rice and Shine this week! I specifically worked on:
+- Add the customer serving mechanic (where you're able to drag and drop your made bowl towards a customer to serve it to them), which also includes the customer's ability to check whether the bowl's contents are equal to the customer's order.
+- Update the dialogue boxes of the customer to include images instead of words when stating their orders.
+- Added order labels that pop up after taking a customer's order so that it's easier for players to see what they ordered.
+- Worked on the initial happiness meter system (to be updated and polished next week by me!)
+- Fixed bugs like customers' indexes not updating, and the scrollbar for the happiness logs not working (which took me an embarrassingly long time to fix - and I figured out it was because setting its offset instead of its actual position keeps it off the viewport :p)
+
+Rararara I'm gonna need to lock in next week and actually get the entire system for customer serving done, mainly with the happiness progress bars functionality/syncing with the customer serving scene itself, as well as a potential revamp of the code in it to be able to easily use the scene as a template in future days/weeks, and additionally have the randomization of customers down as well (across scenes); I'll see! But that's just my plan for next week. Anywaysss hope to get some more significant stuff done next week!
+
+### 4. JEANKAMAGALING

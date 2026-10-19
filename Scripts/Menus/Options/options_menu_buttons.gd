@@ -1,13 +1,17 @@
 extends Control
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @export var tween_intensity: float
 @export var tween_duration : float
 
 @onready var back: Button = $BACK
 
+func _ready() -> void:
+	animation_player.play("enterexit")
 
 func _process(_delta: float) -> void:
-	btn_hovered(back)
+	if is_instance_valid(back):
+		btn_hovered(back)
 
 func start_tween(object: Object, property: String, final_val: Variant, duration: float):
 	var tween = create_tween()

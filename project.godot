@@ -26,12 +26,11 @@ DialogueManager="*uid://c3rodes2l3gxb"
 SceneLoader="*uid://jauffil1d42j"
 Sfx="*uid://du6gjwu6i72mh"
 MusicManager="*uid://c71mkx0ylpomy"
-PersistentData="*uid://8ylc5ax50tcm"
-GlobalSaveManager="*uid://cc2qr4errlth2"
+GlobalSaveManager="*uid://cdayiwwj2beiv"
 
 [dialogue_manager]
 
-runtime/balloon_path="res://Dialogues/balloon.tscn"
+runtime/balloon_path="res://Dialogues/CustomersBalloon.tscn"
 
 [display]
 
