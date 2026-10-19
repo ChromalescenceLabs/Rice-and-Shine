@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bk5qv1csxokg6"]
 
-[ext_resource type="Script" uid="uid://68gvfvi4xeyr" path="res://Scripts/Menus/minigame_buttons.gd" id="1_2lk8l"]
+[ext_resource type="Script" uid="uid://dsp06tvo3eo7l" path="res://Scripts/Menus/minigame_buttons.gd" id="1_2lk8l"]
 [ext_resource type="PackedScene" uid="uid://c1cqj0tka2d08" path="res://Scenes/Menus/minigame_select_btn_hover.tscn" id="2_387ue"]
 
 [node name="minigame_buttons" type="TextureButton" unique_id=1670701451]

@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://j28786r700op" path="res://Scripts/Menus/MainMenu/quit.gd" id="5_2k7c8"]
 [ext_resource type="Script" uid="uid://clvovqtgykaen" path="res://Scripts/Menus/MainMenu/start.gd" id="6_2k7c8"]
 [ext_resource type="Script" uid="uid://c1eyxkwtk5vr" path="res://Scripts/Menus/Options/options.gd" id="7_2k7c8"]
-[ext_resource type="Script" uid="uid://jdotem5lhvpb" path="res://Scripts/Menus/MainMenu/mainmenu_cam.gd" id="7_neey8"]
+[ext_resource type="Script" uid="uid://cbiudsrq3kr8" path="res://Scripts/Menus/MainMenu/mainmenu_cam.gd" id="7_neey8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf7jh"]
 bg_color = Color(0.19607843, 0.5803922, 0.85882354, 1)

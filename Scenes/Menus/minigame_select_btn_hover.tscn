@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1cqj0tka2d08"]
 
-[ext_resource type="Script" uid="uid://ct6yfwk124ngg" path="res://Scripts/Menus/minigame_select_btn_hover.gd" id="1_ih2g1"]
+[ext_resource type="Script" uid="uid://2m0i63ei7ud6" path="res://Scripts/Menus/minigame_select_btn_hover.gd" id="1_ih2g1"]
 
 [sub_resource type="Animation" id="Animation_lova8"]
 length = 0.001

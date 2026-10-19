@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cu1sr6c6dt5hx"]
 
-[ext_resource type="Script" uid="uid://dqqads702dacy" path="res://Scripts/Freeplay/CustomerServing/trashbin_tab.gd" id="1_011fy"]
+[ext_resource type="Script" uid="uid://dlqvc4dn0a112" path="res://Scripts/Freeplay/CustomerServing/trashbin_tab.gd" id="1_011fy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_08i74"]
 
