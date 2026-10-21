@@ -104,6 +104,7 @@ func receive_bowl(bowlContents : Dictionary, bowl : TextureRect):
 		animation_player.play_backwards("enter_exit")
 		await animation_player.animation_finished
 		self.queue_free()
+		
 
 func _on_pressed() -> void:
 	GlobalVars.character_name = customer_info["CustomerType"][0].to_upper() + customer_info["CustomerType"].substr(1, -1)
@@ -143,7 +144,6 @@ func _on_pressed() -> void:
 
 	self.disabled = true
 	
-	print(customer_info["CustomerWants"])
 	for i in customer_info["CustomerWants"]:
 		var food_texture
 		match i:

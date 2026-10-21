@@ -134,3 +134,10 @@ func _on_customer_happiness_logs_remove_customer(index: int) -> void:
 	await customer.animation_player.animation_finished
 	customer.queue_free()
 	
+
+func _on_customers_cont_child_exiting_tree(node: Node) -> void:
+	var indx : int = 0
+	for i in customers_cont.get_children():
+		if i == node:
+			customer_happiness_logs.overall_cont.get_children()[indx].queue_free()
+		indx += 1
