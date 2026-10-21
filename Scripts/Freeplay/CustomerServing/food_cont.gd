@@ -28,6 +28,10 @@ func _on_button_down() -> void:
 		"RICE": check_value_forbtn(state, "uid://sukerfnpt5d5", "rice")
 		"PANCAKE": check_value_forbtn(state, "uid://bf86igy00f6sq", "pancake")
 		"HASHBROWN": check_value_forbtn(state, "uid://j42ywdsfuawg", "hashbrown")
+		"HOTDOG": check_value_forbtn(state, "uid://bgi803ffeyeae", "hotdog")
+		"INIHAW": check_value_forbtn(state, "uid://cphb8p5iecw0j", "inihaw")
+		"TORTA": check_value_forbtn(state, "uid://dqrhc8pu68q17", "torta")
+		"LUMPIA": check_value_forbtn(state, "uid://b0yukpeuqjxne", "lumpia")
 
 func check_value_forbtn(cont_state, scene: String, foodStr : String):
 	match cont_state:
