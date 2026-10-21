@@ -9,6 +9,7 @@ const FOOD_CONT = preload("uid://dwfqsvk1lxqyw")
 @onready var freed_bowls: Control = $Control/FreedBowls
 @onready var food_conts: HBoxContainer = $Control/ScrollContainer/FoodConts
 @onready var customers_cont: HBoxContainer = $Control/CustomersCont
+@onready var customer_happiness_logs: Node2D = $CustomerHappinessLogs
 
 @onready var add_bowl: Button = $Control/BowlConts/AddBowl
 var bowl_no : int = 0
@@ -96,8 +97,9 @@ func add_customer() -> TextureButton:
 	var newCustomer = CUSTOMER.instantiate()
 	newCustomer.modulate.a = 0.0
 	customers_cont.add_child(newCustomer)
-	newCustomer.initialization()
+	var type = newCustomer.initialization()
 	newCustomer.indx = customers_cont.get_child_count()
+	customer_happiness_logs.new_happiness_bar(type)
 	
 	return newCustomer
 

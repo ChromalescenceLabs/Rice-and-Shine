@@ -49,17 +49,18 @@ var customerTypes : Array = [
 func _ready() -> void:
 	order_label.modulate.a = 0
 
-func initialization() -> bool:
+func initialization() -> String:
 	self.modulate.a = 1.0
 	var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
+	var char_type
 	if not data == null:
 		var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "CustomerConts")
 		if node_data == null:
-			update_customerInfo()
+			char_type = update_customerInfo()
 	else:
-		update_customerInfo()
+		char_type = update_customerInfo()
 	
-	return true
+	return char_type
 
 func update_customerInfo():
 	animation_player.play("enter_exit")
@@ -76,6 +77,8 @@ func update_customerInfo():
 		var rand_food = possible_foods.pick_random()
 		customer_info["CustomerWants"][rand_food] = randi_range(1, 5)
 		possible_foods.erase(rand_food)	
+		
+	return customer_info["CustomerType"]
 
 func update_texture() -> void:
 	match customer_info["CustomerType"]:
