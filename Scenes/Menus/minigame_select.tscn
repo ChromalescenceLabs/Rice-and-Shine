@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://kewsf4o5v8dg" path="res://Assets/Menus/FreeplayMenu/Inihaw.png" id="6_l46wx"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Menus/FreeplayMenu/torta.png" id="7_l46wx"]
+[ext_resource type="Script" uid="uid://ivfye6hmjyn8" path="res://Scenes/Menus/minigamecontainer.gd" id="8_btba4"]
+[ext_resource type="Texture2D" uid="uid://biymioqcxvn8k" path="res://Assets/Menus/ChapterSelect/PLATE.png" id="9_h6rov"]
 
 [node name="Minigame Selection" type="Node2D" unique_id=380012965]
 script = ExtResource("1_tovjb")
@@ -20,6 +22,7 @@ offset_bottom = 783.0
 color = Color(1, 0.5372549, 0.21176471, 1)
 
 [node name="Selection" type="Control" parent="." unique_id=1185375392]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -93,8 +96,96 @@ offset_bottom = 166.0
 theme_override_font_sizes/font_size = 30
 text = "Serve Customers Sandbox"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510853050]
-position = Vector2(640, 117)
+[node name="New Selection" type="Control" parent="." unique_id=1778755543]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container" type="Container" parent="New Selection" unique_id=481209569]
+layout_mode = 0
+offset_left = 831.0
+offset_top = 407.0
+offset_right = 991.0
+offset_bottom = 553.0
+script = ExtResource("8_btba4")
+radius = 350.0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Rice" type="Button" parent="New Selection/Container" unique_id=504060987]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "RICE"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="New Selection/Container/Rice" unique_id=1447540350]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Pancake" type="Button" parent="New Selection/Container" unique_id=1421556202]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "Pancake"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Hashbrown" type="Button" parent="New Selection/Container" unique_id=1529590526]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "Hashbrown"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Hotdog" type="Button" parent="New Selection/Container" unique_id=2114420349]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "Hotdog"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Inihaw" type="Button" parent="New Selection/Container" unique_id=330696785]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "Inihaw"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Torta" type="Button" parent="New Selection/Container" unique_id=735349444]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "Torta"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BLANK" type="Button" parent="New Selection/Container" unique_id=188741094]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "BLANK"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ServeCustomers" type="Button" parent="New Selection" unique_id=1623527969]
+layout_mode = 0
+offset_left = 961.0
+offset_top = -37.0
+offset_right = 1360.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 30
+text = "Serve Customers Sandbox"
+
+[node name="BG IMAGE" type="Sprite2D" parent="." unique_id=233006868]
+
+[node name="Plate" type="Sprite2D" parent="." unique_id=1406370295]
+position = Vector2(83, 381)
+scale = Vector2(2.1268196, 1.9760791)
+texture = ExtResource("9_h6rov")
+
+[node name="LOGO" type="Sprite2D" parent="." unique_id=1510853050]
+visible = false
+position = Vector2(282, 181)
 scale = Vector2(0.19780816, 0.19780816)
 texture = ExtResource("7_8omsi")
 
@@ -105,3 +196,10 @@ texture = ExtResource("7_8omsi")
 [connection signal="pressed" from="Selection/Inihaw" to="." method="_on_minigame_5_pressed"]
 [connection signal="pressed" from="Selection/Torta" to="." method="_on_minigame_6_pressed"]
 [connection signal="pressed" from="Selection/ServeCustomers" to="." method="_on_serve_customers_pressed"]
+[connection signal="pressed" from="New Selection/Container/Rice" to="." method="_on_minigame_1_pressed"]
+[connection signal="pressed" from="New Selection/Container/Pancake" to="." method="_on_minigame_2_pressed"]
+[connection signal="pressed" from="New Selection/Container/Hashbrown" to="." method="_on_minigame_3_pressed"]
+[connection signal="pressed" from="New Selection/Container/Hotdog" to="." method="_on_minigame_4_pressed"]
+[connection signal="pressed" from="New Selection/Container/Inihaw" to="." method="_on_minigame_5_pressed"]
+[connection signal="pressed" from="New Selection/Container/Torta" to="." method="_on_minigame_6_pressed"]
+[connection signal="pressed" from="New Selection/ServeCustomers" to="." method="_on_serve_customers_pressed"]
