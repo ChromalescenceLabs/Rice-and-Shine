@@ -9,7 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Menus/FreeplayMenu/torta.png" id="7_l46wx"]
 [ext_resource type="Script" uid="uid://ivfye6hmjyn8" path="res://Scenes/Menus/minigamecontainer.gd" id="8_btba4"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="8_gl1wp"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="9_8omsi"]
 [ext_resource type="Texture2D" uid="uid://biymioqcxvn8k" path="res://Assets/Menus/ChapterSelect/PLATE.png" id="9_h6rov"]
+
+[sub_resource type="Resource" id="Resource_jn51n"]
+script = ExtResource("9_8omsi")
+
+[sub_resource type="Resource" id="Resource_iito2"]
+script = ExtResource("9_8omsi")
 
 [node name="Minigame Selection" type="Node2D" unique_id=380012965]
 script = ExtResource("1_tovjb")
@@ -102,85 +110,98 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Container" type="Container" parent="New Selection" unique_id=481209569]
+[node name="ServeCustomers" type="Button" parent="New Selection" unique_id=1623527969]
 layout_mode = 0
-offset_left = 831.0
-offset_top = 407.0
-offset_right = 991.0
-offset_bottom = 553.0
+offset_left = 863.0
+offset_top = 21.0
+offset_right = 1262.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 30
+text = "Serve Customers Sandbox"
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="New Selection" unique_id=793391149]
+custom_minimum_size = Vector2(650, 700)
+layout_mode = 0
+offset_left = 378.0
+offset_top = 16.0
+offset_right = 1246.0
+offset_bottom = 798.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("8_gl1wp")
+wheel_scroll_damper = SubResource("Resource_jn51n")
+dragging_scroll_damper = SubResource("Resource_iito2")
+hide_scrollbar_over_time = true
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="Container" type="Container" parent="New Selection/SmoothScrollContainer" unique_id=481209569]
+custom_minimum_size = Vector2(650, 800)
+layout_mode = 2
 script = ExtResource("8_btba4")
-radius = 350.0
+spacing = 150.0
+diagonal_vector = Vector2(0.7071068, 0.7071068)
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Rice" type="Button" parent="New Selection/Container" unique_id=504060987]
+[node name="Rice" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=504060987]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 60
 text = "RICE"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="New Selection/Container/Rice" unique_id=1447540350]
+[node name="HBoxContainer" type="HBoxContainer" parent="New Selection/SmoothScrollContainer/Container/Rice" unique_id=1447540350]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Pancake" type="Button" parent="New Selection/Container" unique_id=1421556202]
+[node name="Pancake" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=1421556202]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 60
 text = "Pancake"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Hashbrown" type="Button" parent="New Selection/Container" unique_id=1529590526]
+[node name="Hashbrown" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=1529590526]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 60
 text = "Hashbrown"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Hotdog" type="Button" parent="New Selection/Container" unique_id=2114420349]
+[node name="Hotdog" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=2114420349]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 60
 text = "Hotdog"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Inihaw" type="Button" parent="New Selection/Container" unique_id=330696785]
+[node name="Inihaw" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=330696785]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 60
 text = "Inihaw"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Torta" type="Button" parent="New Selection/Container" unique_id=735349444]
+[node name="Torta" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=735349444]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 60
 text = "Torta"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="BLANK" type="Button" parent="New Selection/Container" unique_id=188741094]
+[node name="BLANK" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=188741094]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 60
 text = "BLANK"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="ServeCustomers" type="Button" parent="New Selection" unique_id=1623527969]
-layout_mode = 0
-offset_left = 961.0
-offset_top = -37.0
-offset_right = 1360.0
-offset_bottom = 51.0
-theme_override_font_sizes/font_size = 30
-text = "Serve Customers Sandbox"
-
 [node name="BG IMAGE" type="Sprite2D" parent="." unique_id=233006868]
 
 [node name="Plate" type="Sprite2D" parent="." unique_id=1406370295]
-position = Vector2(83, 381)
-scale = Vector2(2.1268196, 1.9760791)
+position = Vector2(34.999996, 417)
+scale = Vector2(1.4928131, 1.4340826)
 texture = ExtResource("9_h6rov")
 
 [node name="LOGO" type="Sprite2D" parent="." unique_id=1510853050]
@@ -196,10 +217,10 @@ texture = ExtResource("7_8omsi")
 [connection signal="pressed" from="Selection/Inihaw" to="." method="_on_minigame_5_pressed"]
 [connection signal="pressed" from="Selection/Torta" to="." method="_on_minigame_6_pressed"]
 [connection signal="pressed" from="Selection/ServeCustomers" to="." method="_on_serve_customers_pressed"]
-[connection signal="pressed" from="New Selection/Container/Rice" to="." method="_on_minigame_1_pressed"]
-[connection signal="pressed" from="New Selection/Container/Pancake" to="." method="_on_minigame_2_pressed"]
-[connection signal="pressed" from="New Selection/Container/Hashbrown" to="." method="_on_minigame_3_pressed"]
-[connection signal="pressed" from="New Selection/Container/Hotdog" to="." method="_on_minigame_4_pressed"]
-[connection signal="pressed" from="New Selection/Container/Inihaw" to="." method="_on_minigame_5_pressed"]
-[connection signal="pressed" from="New Selection/Container/Torta" to="." method="_on_minigame_6_pressed"]
 [connection signal="pressed" from="New Selection/ServeCustomers" to="." method="_on_serve_customers_pressed"]
+[connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Rice" to="." method="_on_minigame_1_pressed"]
+[connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Pancake" to="." method="_on_minigame_2_pressed"]
+[connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Hashbrown" to="." method="_on_minigame_3_pressed"]
+[connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Hotdog" to="." method="_on_minigame_4_pressed"]
+[connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Inihaw" to="." method="_on_minigame_5_pressed"]
+[connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Torta" to="." method="_on_minigame_6_pressed"]
