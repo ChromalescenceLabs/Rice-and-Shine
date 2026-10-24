@@ -4,6 +4,13 @@ signal upset(index : int)
 @onready var bar: ProgressBar = $Bar
 @onready var timer: Timer = $Timer
 var indx : int 
+var type : String
+
+var info = []
+
+func _ready() -> void:
+	timer.start()
+
 func _on_timer_timeout() -> void: bar.value -= 1
 
 func _on_bar_value_changed(value: float) -> void:
@@ -15,3 +22,13 @@ func _on_bar_value_changed(value: float) -> void:
 				
 		upset.emit(indx)
 		self.queue_free()
+
+func set_value():
+	bar.value = info[2]
+	
+func _on_tree_exiting() -> void:
+	info.append(type)
+	info.append(icon.texture)
+	info.append(bar.value)
+	info.append(timer.time_left)
+	

@@ -20,7 +20,7 @@ size_flags_vertical = 1
 value = 100.0
 
 [node name="Timer" type="Timer" parent="." unique_id=729074724]
-autostart = true
 
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="value_changed" from="Bar" to="." method="_on_bar_value_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

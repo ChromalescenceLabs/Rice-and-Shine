@@ -62,7 +62,7 @@ func initialization() -> String:
 	
 	return char_type
 
-func update_customerInfo():
+func update_customerInfo() -> String:
 	animation_player.play("enter_exit")
 		
 	# Picks Customer Type

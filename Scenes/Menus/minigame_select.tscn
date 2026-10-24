@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Menus/FreeplayMenu/torta.png" id="7_l46wx"]
 [ext_resource type="Texture2D" uid="uid://drhabplta78w7" path="res://Assets/Menus/FreeplayMenu/Lumpia.png" id="11_kyrjg"]
+[ext_resource type="PackedScene" uid="uid://dpjeqy63lxdvr" path="res://Scenes/Freeplay/CustomerServing/customer_happiness_logs.tscn" id="14_jn51n"]
 
 [sub_resource type="Resource" id="Resource_h6rov"]
 script = ExtResource("3_kyrjg")
@@ -138,4 +139,7 @@ texture_normal = ExtResource("11_kyrjg")
 scene = "uid://b0yukpeuqjxne"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
+[node name="CustomerHappinessLogs" parent="." unique_id=23440669 instance=ExtResource("14_jn51n")]
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="ServeCustomers" to="." method="_on_serve_customers_pressed"]

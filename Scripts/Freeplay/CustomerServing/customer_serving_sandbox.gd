@@ -2,7 +2,7 @@ extends Node2D
 
 const CUSTOMER = preload("uid://v1ke2myaadm3")
 const SERVE_BOWL = preload("uid://curuxisd3l6in")
-const FOOD_CONT = preload("uid://dwfqsvk1lxqyw")
+const FOOD_CONT = preload("uid://csole0o4ydmgm")
 
 @onready var bowl_labels: Node2D = $BowlLabels
 @onready var bowl_conts: HBoxContainer = $Control/BowlConts
@@ -19,6 +19,7 @@ func _ready() -> void:
 	
 	#Checks if Scene has saved data
 	var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
+	print(data)
 	if not data == null:
 		# Check if a Node in that scene has data for bowls
 		var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "Bowls")
@@ -113,17 +114,19 @@ func _on_tree_exiting() -> void:
 	var customercont_data = []
 	for i in customers_cont.get_children(): customercont_data.append(i.customer_info)
 	
+	var customerhappiness_data = []
+	for i in customer_happiness_logs.overall_cont.get_children(): 
+		customerhappiness_data.append(i.info)
+	
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "Bowls", bowl_data)
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "FoodConts", foodcont_data)
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "CustomerConts", customercont_data)
-
-func _on_button_pressed() -> void:
-	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
+	GlobalSaveManager.add_persistent_value("GlobalData", "CustomerHappiness", customerhappiness_data)
 
 func upd_customer_indexes(current_node_index : int) -> void:
 	for i in customers_cont.get_children().slice(current_node_index):
 		i.indx -= 1
-
+ 
 func _on_temp_pressed() -> void:
 	add_customer()
 
@@ -141,3 +144,7 @@ func _on_customers_cont_child_exiting_tree(node: Node) -> void:
 		if i == node:
 			customer_happiness_logs.overall_cont.get_children()[indx].queue_free()
 		indx += 1
+
+
+func _on_exit_pressed() -> void:
+	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)

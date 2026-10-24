@@ -15,12 +15,15 @@ var icon_textures : Dictionary = {
 func _on_show_progress_bars_pressed() -> void: progress_bars_conts_anim.play("Entrance_Exit")
 func _on_close_progress_bars_pressed() -> void: progress_bars_conts_anim.play_backwards("Entrance_Exit")
 
-func new_happiness_bar(texture : String):
-	print(icon_textures[texture])
+func new_happiness_bar(texture : String, time : float = 0):
+	await get_tree().create_timer(1 - time).timeout
 	var hapbar = HAPPINESS_BAR.instantiate()
 	hapbar.upset.connect(_on_upset)
 	overall_cont.add_child(hapbar)
 	hapbar.icon.texture = icon_textures[texture]
+	hapbar.type = texture
+	
+	return hapbar
 
 func _on_upset(index : int) -> void:
 	remove_customer.emit(index)
