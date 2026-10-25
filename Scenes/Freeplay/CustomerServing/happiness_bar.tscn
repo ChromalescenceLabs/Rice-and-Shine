@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d1c4e3m2dk23a"]
 
 [ext_resource type="Texture2D" uid="uid://xjdoixqri3rb" path="res://Assets/Freeplay/Serving/CustomerLabelImages/LoloIcon.png" id="1_f0mcy"]
-[ext_resource type="Script" uid="uid://dvr8701if7ibx" path="res://Scripts/Freeplay/CustomerServing/happiness_bar.gd" id="1_w4d78"]
+[ext_resource type="Script" uid="uid://cdocxm1g5mx5h" path="res://Scripts/Freeplay/CustomerServing/happiness_bar.gd" id="1_w4d78"]
 
 [node name="HappinessBar" type="HBoxContainer" unique_id=1284632882]
 offset_left = -52.0

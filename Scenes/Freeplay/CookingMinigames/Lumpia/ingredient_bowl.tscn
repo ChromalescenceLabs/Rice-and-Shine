@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cgsbvuaq5223a"]
+
+[ext_resource type="Script" uid="uid://byh0qyqaogx0p" path="res://Scripts/Freeplay/CookingMinigames/Lumpia/ingredients_bowls.gd" id="1_guxer"]
+[ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Bowl.png" id="2_guxer"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cuu35"]
+radius = 151.8127
+
+[node name="IngredientBowl" type="Area2D" unique_id=1561521898]
+scale = Vector2(0.475, 0.475)
+script = ExtResource("1_guxer")
+
+[node name="BowlTexture" type="TextureRect" parent="." unique_id=1643881596]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_guxer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=240851839]
+position = Vector2(6.3157897, 2.1052551)
+shape = SubResource("CircleShape2D_cuu35")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="BowlTexture" to="." method="_on_bowl_texture_mouse_entered"]
+[connection signal="mouse_exited" from="BowlTexture" to="." method="_on_bowl_texture_mouse_exited"]

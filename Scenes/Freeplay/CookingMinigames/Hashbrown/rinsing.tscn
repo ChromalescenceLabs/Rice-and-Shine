@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c3nf38bod08ol" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/Faucet.png" id="1_rgt3r"]
 [ext_resource type="Texture2D" uid="uid://kiwxlmilcqo7" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/FaucetButton.png" id="2_trhme"]
 [ext_resource type="Script" uid="uid://da7ohw2xexi6m" path="res://Scripts/Freeplay/CookingMinigames/Kanin/water.gd" id="3_3bmws"]
-[ext_resource type="Script" uid="uid://cfqpyuacpk5jt" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/potato.gd" id="5_6nrqd"]
+[ext_resource type="Script" uid="uid://cvlx4edx0e8v5" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/potato.gd" id="5_6nrqd"]
 [ext_resource type="Texture2D" uid="uid://dmy3ggx6q1pnu" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/gratedPotatoesBowl.png" id="5_dsqg2"]
 
 [sub_resource type="Gradient" id="Gradient_27br6"]

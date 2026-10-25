@@ -26,6 +26,7 @@ func _input(event: InputEvent) -> void:
 			bowl.visible=true
 			grated_p_bowl.visible=false
 		if not event.pressed:
+			
 			hold = false
 			visible=false
 			bowl.visible=false

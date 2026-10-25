@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://b0yukpeuqjxne"]
+
+[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Freeplay/Cooking_Minigames/CookingBG.jpg" id="1_8y4gq"]
+[ext_resource type="Script" uid="uid://fd524a175b5g" path="res://Scripts/Freeplay/CookingMinigames/Lumpia/lumpia.gd" id="1_ijbrh"]
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="2_1b5b2"]
+[ext_resource type="PackedScene" uid="uid://b3pmbrftfet5g" path="res://Scenes/Freeplay/CookingMinigames/GeneralMinigames/choppable_garlic.tscn" id="3_1b5b2"]
+[ext_resource type="Texture2D" uid="uid://cenib63n7hwbs" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/BowlFront.png" id="5_kt44c"]
+[ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Bowl.png" id="5_y8cil"]
+[ext_resource type="Script" uid="uid://c2ynholbibnn3" path="res://Scripts/Freeplay/CustomerServing/bowl_area.gd" id="6_tn5sj"]
+[ext_resource type="PackedScene" uid="uid://cgsbvuaq5223a" path="res://Scenes/Freeplay/CookingMinigames/Lumpia/ingredient_bowl.tscn" id="7_ctmwq"]
+[ext_resource type="PackedScene" uid="uid://dlpdjso7pw4p2" path="res://Scenes/Freeplay/CookingMinigames/Lumpia/lumpia_sesameoil.tscn" id="8_r7jt7"]
+[ext_resource type="Script" uid="uid://cuis4v68wi7wj" path="res://Scripts/Freeplay/CookingMinigames/Lumpia/mixing.gd" id="9_3xkko"]
+[ext_resource type="PackedScene" uid="uid://dcwdlqnrugjlk" path="res://Scenes/Freeplay/CookingMinigames/Lumpia/wrap.tscn" id="10_r7m3d"]
+[ext_resource type="Script" uid="uid://bud0oevdavpel" path="res://Scripts/Freeplay/CookingMinigames/Lumpia/wrapping.gd" id="10_ukqqi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cuu35"]
+radius = 156.76976
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6mow"]
+radius = 154.25395
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_raa7b"]
+radius = 156.16017
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cuu35"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ab5ch"]
+radius = 155.02902
+
+[node name="Lumpia" type="Node2D" unique_id=79476681]
+script = ExtResource("1_ijbrh")
+
+[node name="FrontBG" type="Sprite2D" parent="." unique_id=1732175536]
+texture = ExtResource("1_8y4gq")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="TopDownBG" type="Sprite2D" parent="." unique_id=514457605]
+position = Vector2(902, 582)
+texture = ExtResource("2_1b5b2")
+metadata/_edit_lock_ = true
+
+[node name="Slicing&Mincing" type="Node2D" parent="." unique_id=1468842770]
+
+[node name="ChoppableGarlic" parent="Slicing&Mincing" unique_id=1855347188 instance=ExtResource("3_1b5b2")]
+position = Vector2(627, 358)
+
+[node name="FillingMix" type="Node2D" parent="." unique_id=1628095035]
+
+[node name="MixBowl" type="Sprite2D" parent="FillingMix" unique_id=947824274]
+position = Vector2(642, 330)
+scale = Vector2(1.237, 1.225)
+texture = ExtResource("5_y8cil")
+metadata/_edit_group_ = true
+
+[node name="MixBowlArea" type="Area2D" parent="FillingMix/MixBowl" unique_id=1557437633]
+script = ExtResource("6_tn5sj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FillingMix/MixBowl/MixBowlArea" unique_id=2144828527]
+position = Vector2(7.12146, 0.14370728)
+shape = SubResource("CircleShape2D_cuu35")
+
+[node name="IngredientBowls" type="Node2D" parent="FillingMix" unique_id=2093213158]
+
+[node name="IngredientBowl" parent="FillingMix/IngredientBowls" unique_id=1561521898 instance=ExtResource("7_ctmwq")]
+position = Vector2(259, 159)
+ingredient = ExtResource("5_y8cil")
+type = "GroundPork"
+
+[node name="IngredientBowl2" parent="FillingMix/IngredientBowls" unique_id=1968472972 instance=ExtResource("7_ctmwq")]
+position = Vector2(1045, 562)
+ingredient = ExtResource("5_y8cil")
+type = "Parsley"
+
+[node name="IngredientBowl3" parent="FillingMix/IngredientBowls" unique_id=186863582 instance=ExtResource("7_ctmwq")]
+position = Vector2(1044, 154)
+ingredient = ExtResource("5_y8cil")
+type = "Carrot"
+
+[node name="IngredientBowl4" parent="FillingMix/IngredientBowls" unique_id=591623837 instance=ExtResource("7_ctmwq")]
+position = Vector2(255, 549)
+ingredient = ExtResource("5_y8cil")
+type = "MincedOnion"
+
+[node name="PouringMix" type="Node2D" parent="." unique_id=1896185776]
+
+[node name="PouringBowl" type="Area2D" parent="PouringMix" unique_id=1825004676]
+position = Vector2(458, 329)
+scale = Vector2(0.765, 0.765)
+script = ExtResource("6_tn5sj")
+metadata/_custom_type_script = "uid://c2ynholbibnn3"
+metadata/_edit_group_ = true
+
+[node name="PourBowlSprite" type="Sprite2D" parent="PouringMix/PouringBowl" unique_id=559692849]
+texture = ExtResource("5_kt44c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PouringMix/PouringBowl" unique_id=1674725650]
+position = Vector2(-3.9215684, 96.73203)
+shape = SubResource("CircleShape2D_j6mow")
+
+[node name="OilProgress" type="ProgressBar" parent="PouringMix/PouringBowl" unique_id=595530949]
+offset_left = -300.6536
+offset_top = -137.25491
+offset_right = 304.49667
+offset_bottom = -91.05228
+
+[node name="SesameOil" parent="PouringMix" unique_id=1650143724 instance=ExtResource("8_r7jt7")]
+position = Vector2(947, 340)
+
+[node name="Mixing" type="Node2D" parent="." unique_id=2003732751]
+script = ExtResource("9_3xkko")
+
+[node name="BowlArea" type="Area2D" parent="Mixing" unique_id=1230646089]
+position = Vector2(618, 359.00003)
+scale = Vector2(1.55, 1.55)
+script = ExtResource("6_tn5sj")
+metadata/_custom_type_script = "uid://c2ynholbibnn3"
+metadata/_edit_group_ = true
+
+[node name="BowlSprite" type="Sprite2D" parent="Mixing/BowlArea" unique_id=662078579]
+texture = ExtResource("5_y8cil")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mixing/BowlArea" unique_id=1036538919]
+position = Vector2(8, 2)
+shape = SubResource("CircleShape2D_raa7b")
+
+[node name="BowlContentsUnmixed" type="TextureRect" parent="Mixing/BowlArea" unique_id=1665482426]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.64514
+offset_top = -98.06448
+offset_right = 100.64514
+offset_bottom = 98.06448
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("PlaceholderTexture2D_cuu35")
+
+[node name="BowlContentsMixed" type="TextureRect" parent="Mixing/BowlArea" unique_id=957302843]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.64514
+offset_top = -98.06448
+offset_right = 100.64514
+offset_bottom = 98.06448
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.46251225
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("PlaceholderTexture2D_cuu35")
+
+[node name="Wrapping" type="Node2D" parent="." unique_id=1672150117]
+script = ExtResource("10_ukqqi")
+
+[node name="BowlArea" type="Area2D" parent="Wrapping" unique_id=347955211]
+position = Vector2(889, 337.00003)
+scale = Vector2(1.375, 1.375)
+script = ExtResource("6_tn5sj")
+metadata/_custom_type_script = "uid://c2ynholbibnn3"
+metadata/_edit_group_ = true
+
+[node name="BowlTexture" type="TextureRect" parent="Wrapping/BowlArea" unique_id=215935990]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.0
+offset_top = -179.5
+offset_right = 319.0
+offset_bottom = 179.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_y8cil")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wrapping/BowlArea" unique_id=326411390]
+position = Vector2(7, 2)
+shape = SubResource("CircleShape2D_ab5ch")
+
+[node name="Wrap" parent="Wrapping" unique_id=2041569049 instance=ExtResource("10_r7m3d")]
+position = Vector2(325, 341)
+
+[node name="Frying" type="Node2D" parent="." unique_id=516377241]
+
+[connection signal="filling_finished" from="." to="." method="_on_filling_finished"]
+[connection signal="mincing_finished" from="." to="." method="_on_mincing_finished"]
+[connection signal="mixing_finished" from="." to="." method="_on_mixing_finished"]
+[connection signal="pouring_finished" from="." to="." method="_on_pouring_finished"]
+[connection signal="pouring_finished" from="." to="PouringMix/SesameOil" method="_on_lumpia_pouring_finished"]
+[connection signal="pouring_finished" from="." to="Mixing" method="_on_lumpia_pouring_finished"]
+[connection signal="wrapping_finished" from="." to="." method="_on_wrapping_finished"]
+[connection signal="chopped_garlic_finished" from="Slicing&Mincing/ChoppableGarlic" to="." method="_on_choppable_garlic_chopped_garlic_finished"]
+[connection signal="tree_exited" from="Slicing&Mincing/ChoppableGarlic" to="." method="_on_choppable_garlic_tree_exited"]
+[connection signal="value_changed" from="PouringMix/PouringBowl/OilProgress" to="." method="_on_oil_progress_value_changed"]
+[connection signal="wrap_filled" from="Wrapping" to="Wrapping" method="_on_wrap_filled"]
+[connection signal="mouse_entered" from="Wrapping/BowlArea/BowlTexture" to="Wrapping" method="_on_bowl_texture_mouse_entered"]
+[connection signal="mouse_exited" from="Wrapping/BowlArea/BowlTexture" to="Wrapping" method="_on_bowl_texture_mouse_exited"]
+[connection signal="wrap_finished" from="Wrapping/Wrap" to="Wrapping" method="_on_wrap_wrap_finished"]

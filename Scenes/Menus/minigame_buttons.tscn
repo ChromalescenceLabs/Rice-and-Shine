@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bk5qv1csxokg6"]
+
+[ext_resource type="Script" uid="uid://dsp06tvo3eo7l" path="res://Scripts/Menus/minigame_buttons.gd" id="1_2lk8l"]
+[ext_resource type="PackedScene" uid="uid://c1cqj0tka2d08" path="res://Scenes/Menus/minigame_select_btn_hover.tscn" id="2_387ue"]
+
+[node name="minigame_buttons" type="TextureButton" unique_id=1670701451]
+custom_maximum_size = Vector2(420, 236)
+clip_contents = true
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+stretch_mode = 0
+script = ExtResource("1_2lk8l")
+
+[node name="MinigameSelectBtnHover" parent="." unique_id=864807193 instance=ExtResource("2_387ue")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 430.0
+offset_bottom = 251.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

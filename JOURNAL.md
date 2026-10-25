@@ -241,9 +241,33 @@ On 10/11/2026, i mainly redrew certain assets for the game, such as the customer
 
 ## WEEK 5: OCTOBER 12 - OCTOBER 19
 ### 1. ALLIUMC
+Things I've done:
+1. finish the animations for squeezing scene
+2. added frying scene
+- when you put the potato in the pan, it chabges colour from how long you cook it
+- shakes when you put the potato in the pan before you put the oil in
+3. coded a mechanic when you hover an area2d, it gets highlighted
+4. added scene where you add condiments
+- I made it so you can put condiments at any order and it works
+
+*I feel like it will get too long if I added my thoughts at the moment, so you can read those at my commits in github*
+
+My thoughts on the matters:
+Soo i didnt meet my goal of having more than 15 hours.. I am so close to finishing this hashbrown. Just two more scenes and im done. Even if I was super bummed out for not gettibg more hours, I had fun coding and fixing the bugs.
+
+Things I had trouble with:
+1) honestly, in terms of bugs, I fixed it within the next hour so I didn't have much trouble.
+2) my laptop keeps lagging when testing
+3) at the first few days, I had trouble bringing myself to code but that got fixed immediately when I actually started
 
 ### 2. CLIF
-
+Hmm I wonder what I worked on this week... Oh right, a minigame!
+I got the initial lumpia/spring rolls minigame set (but got too lazy to do programmer art so most of it is just either recycled placeholder art or that weird no texture purple and black thing)
+- added slicing and mincing mechanics to foods needed for lumpia
+- basically spedran through all the other mechanics too, such as the mixing minigames, initial wrapping minigame
+- also updated the minigame selection screen to have a scrolling container to be able to fit more minigames
+- fixed a bunch of issues that stemmed from my speedrunning during the creation of the lumpia mechanics, all found on my commits
+And I also worked on some art for the previous minigames I had done, to replace the original programmer art I had made.
 
 ### 3. JAZZ
 AUGHH THE CUSTOMER SYSTEMS AREN'T DONE anyway hi yes got some more progress for Rice and Shine this week! I specifically worked on:
@@ -256,3 +280,4 @@ AUGHH THE CUSTOMER SYSTEMS AREN'T DONE anyway hi yes got some more progress for 
 Rararara I'm gonna need to lock in next week and actually get the entire system for customer serving done, mainly with the happiness progress bars functionality/syncing with the customer serving scene itself, as well as a potential revamp of the code in it to be able to easily use the scene as a template in future days/weeks, and additionally have the randomization of customers down as well (across scenes); I'll see! But that's just my plan for next week. Anywaysss hope to get some more significant stuff done next week!
 
 ### 4. JEANKAMAGALING
+I worked my entire 10 hours on 10/18/26, first fixing the week selection system I'd worked on the previous week. After doing a bit of tinkering with that, I then proceeded to draw assets for the customer serving scene that Jazz is making. I had a bit of a hiccup when I tried to reorganize the files (after my teammates pointed out that I had my files in the wrong places... Oops), but accidentally discarded all of those, and then proceeded to restore all instead of restore selected, but that got fixed quickly. I had forgotten to add animations when you clicked the back button in the week select, so I quickly added those. I also added the description changes depending on the week selected, as well as a day counter that allows for locking of days. I then polished some of the earlier UIs I had made, such as the Main menu, updating the background movement effect and the options menu, fixed a bug in the mode select scene, and also added animations to the minigame selection scene.

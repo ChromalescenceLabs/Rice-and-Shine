@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://lnpgiahuyntr" path="res://Scripts/Menus/MainMenu/main_menu_buttons.gd" id="1_2k7c8"]
 [ext_resource type="Texture2D" uid="uid://bmdh8xfhqe17j" path="res://Assets/Menus/MainMenu/main menu bg.png" id="2_e5w6c"]
-[ext_resource type="Script" uid="uid://c0o4q05uwc1n" path="res://Scripts/Menus/MainMenu/background.gd" id="3_2k7c8"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="4_euxup"]
 [ext_resource type="Script" uid="uid://j28786r700op" path="res://Scripts/Menus/MainMenu/quit.gd" id="5_2k7c8"]
 [ext_resource type="Script" uid="uid://clvovqtgykaen" path="res://Scripts/Menus/MainMenu/start.gd" id="6_2k7c8"]
 [ext_resource type="Script" uid="uid://c1eyxkwtk5vr" path="res://Scripts/Menus/Options/options.gd" id="7_2k7c8"]
+[ext_resource type="Script" uid="uid://cbiudsrq3kr8" path="res://Scripts/Menus/MainMenu/mainmenu_cam.gd" id="7_neey8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf7jh"]
 bg_color = Color(0.19607843, 0.5803922, 0.85882354, 1)
@@ -56,21 +56,27 @@ script = ExtResource("1_2k7c8")
 tween_intensity = 1.2
 tween_duration = 0.3
 
-[node name="Node2D" type="Node2D" parent="." unique_id=2019943700]
+[node name="Parallax" type="Node2D" parent="." unique_id=2019943700]
 texture_filter = 1
 position = Vector2(642, 87)
 scale = Vector2(1.1, 1.1)
 
-[node name="BACKGROUND" type="Sprite2D" parent="Node2D" unique_id=417947079]
-texture_filter = 1
-position = Vector2(1, 0)
-texture = ExtResource("2_e5w6c")
-script = ExtResource("3_2k7c8")
+[node name="Parallax2D" type="Parallax2D" parent="Parallax" unique_id=488780139]
+scroll_scale = Vector2(0.845, 0.845)
 
-[node name="LOGO" type="Sprite2D" parent="Node2D" unique_id=1486802928]
+[node name="BACKGROUND" type="Sprite2D" parent="Parallax/Parallax2D" unique_id=417947079]
+texture_filter = 1
+position = Vector2(0.99993896, 0)
+scale = Vector2(1.0757576, 1.0757575)
+texture = ExtResource("2_e5w6c")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Parallax" unique_id=1396458393]
+scroll_scale = Vector2(0.9, 0.9)
+
+[node name="LOGO" type="Sprite2D" parent="Parallax/Parallax2D2" unique_id=1486802928]
 texture_filter = 1
 position = Vector2(-632.7272, -326.36362)
-scale = Vector2(0.19496661, 0.20438762)
+scale = Vector2(0.19496661, 0.2043876)
 texture = ExtResource("4_euxup")
 centered = false
 
@@ -125,6 +131,12 @@ text = " OPTIONS
 "
 alignment = 0
 script = ExtResource("7_2k7c8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=97000852]
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer" unique_id=1677103678]
+anchor_mode = 0
+script = ExtResource("7_neey8")
 
 [connection signal="pressed" from="QUIT" to="QUIT" method="_on_pressed"]
 [connection signal="pressed" from="START" to="START" method="_on_pressed"]

@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
 
 [ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/Freeplay/minigame_select.gd" id="1_tovjb"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="2_h6rov"]
 [ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Menus/FreeplayMenu/RICE.png" id="2_l46wx"]
 [ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/Menus/FreeplayMenu/pancake.png" id="3_btba4"]
+[ext_resource type="Script" uid="uid://dc38i3otaiqmx" path="res://Scripts/Menus/game_logo.gd" id="3_gl1wp"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="3_kyrjg"]
 [ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/Menus/FreeplayMenu/hasbrown.png" id="4_h6rov"]
 [ext_resource type="Texture2D" uid="uid://cvqb826b4xwtl" path="res://Assets/Menus/FreeplayMenu/hotdog.png" id="5_kyrjg"]
+[ext_resource type="PackedScene" uid="uid://bk5qv1csxokg6" path="res://Scenes/Menus/minigame_buttons.tscn" id="6_8omsi"]
 [ext_resource type="Texture2D" uid="uid://kewsf4o5v8dg" path="res://Assets/Menus/FreeplayMenu/Inihaw.png" id="6_l46wx"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Menus/FreeplayMenu/torta.png" id="7_l46wx"]
@@ -18,11 +22,25 @@ script = ExtResource("9_8omsi")
 
 [sub_resource type="Resource" id="Resource_iito2"]
 script = ExtResource("9_8omsi")
+[ext_resource type="Texture2D" uid="uid://drhabplta78w7" path="res://Assets/Menus/FreeplayMenu/Lumpia.png" id="11_kyrjg"]
 
-[node name="Minigame Selection" type="Node2D" unique_id=380012965]
+[sub_resource type="Resource" id="Resource_h6rov"]
+script = ExtResource("3_kyrjg")
+
+[sub_resource type="Resource" id="Resource_kyrjg"]
+script = ExtResource("3_kyrjg")
+
+[node name="Minigame Selection" type="Control" unique_id=2144740964]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_tovjb")
 
 [node name="BG" type="ColorRect" parent="." unique_id=916736482]
+layout_mode = 0
 offset_left = -123.0
 offset_top = -59.0
 offset_right = 1382.0
@@ -37,65 +55,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Rice" type="TextureButton" parent="Selection" unique_id=1511388286]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 240.0
-offset_right = 688.0
-offset_bottom = 599.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("2_l46wx")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Selection/Rice" unique_id=955367114]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Pancake" type="TextureButton" parent="Selection" unique_id=435824771]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 240.0
-offset_right = 1088.0
-offset_bottom = 599.0008
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("3_btba4")
-
-[node name="Hashbrown" type="TextureButton" parent="Selection" unique_id=1438000863]
-layout_mode = 0
-offset_left = 850.0
-offset_top = 240.0
-offset_right = 1488.0
-offset_bottom = 599.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("4_h6rov")
-
-[node name="Hotdog" type="TextureButton" parent="Selection" unique_id=1236986991]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 475.0
-offset_right = 688.0
-offset_bottom = 834.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("5_kyrjg")
-
-[node name="Inihaw" type="TextureButton" parent="Selection" unique_id=1682458591]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 475.0
-offset_right = 797.0
-offset_bottom = 689.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("6_l46wx")
-
-[node name="Torta" type="TextureButton" parent="Selection" unique_id=446821078]
-layout_mode = 0
-offset_left = 850.0
-offset_top = 475.0
-offset_right = 1488.0
-offset_bottom = 834.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("7_l46wx")
-
-[node name="ServeCustomers" type="Button" parent="Selection" unique_id=1987029645]
+[node name="ServeCustomers" type="Button" parent="." unique_id=1987029645]
 layout_mode = 0
 offset_left = 837.0
 offset_top = 78.0
@@ -103,6 +63,91 @@ offset_right = 1236.0
 offset_bottom = 166.0
 theme_override_font_sizes/font_size = 30
 text = "Serve Customers Sandbox"
+
+[node name="GameLogo" type="Sprite2D" parent="." unique_id=1510853050]
+position = Vector2(640, 117)
+scale = Vector2(0.19780816, 0.19780816)
+texture = ExtResource("7_8omsi")
+script = ExtResource("3_gl1wp")
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="." unique_id=1061169522]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -480.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_scroll_mode = 0
+script = ExtResource("2_h6rov")
+wheel_scroll_damper = SubResource("Resource_h6rov")
+dragging_scroll_damper = SubResource("Resource_kyrjg")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SmoothScrollContainer" unique_id=644743705]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SmoothScrollContainer/VBoxContainer" unique_id=71520638]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Rice" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer" unique_id=1670701451 instance=ExtResource("6_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("2_l46wx")
+scene = "uid://sukerfnpt5d5"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Pancake" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer" unique_id=514353001 instance=ExtResource("6_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_btba4")
+scene = "uid://bf86igy00f6sq"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Hashbrown" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer" unique_id=1761106524 instance=ExtResource("6_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("4_h6rov")
+scene = "uid://j42ywdsfuawg"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SmoothScrollContainer/VBoxContainer" unique_id=881844820]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Hotdog" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer2" unique_id=782165539 instance=ExtResource("6_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("5_kyrjg")
+scene = "uid://bgi803ffeyeae"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Inihaw" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1520383153 instance=ExtResource("6_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("6_l46wx")
+scene = "uid://cphb8p5iecw0j"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Torta" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer2" unique_id=2640522 instance=ExtResource("6_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("7_l46wx")
+scene = "uid://dqrhc8pu68q17"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SmoothScrollContainer/VBoxContainer" unique_id=1909784508]
+layout_mode = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="New Selection" type="Control" parent="." unique_id=1778755543]
 layout_mode = 3
@@ -224,3 +269,11 @@ texture = ExtResource("7_8omsi")
 [connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Hotdog" to="." method="_on_minigame_4_pressed"]
 [connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Inihaw" to="." method="_on_minigame_5_pressed"]
 [connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Torta" to="." method="_on_minigame_6_pressed"]
+[node name="Lumpia" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer3" unique_id=291767803 instance=ExtResource("6_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("11_kyrjg")
+scene = "uid://b0yukpeuqjxne"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[connection signal="pressed" from="ServeCustomers" to="." method="_on_serve_customers_pressed"]

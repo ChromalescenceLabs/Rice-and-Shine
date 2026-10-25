@@ -1,6 +1,8 @@
 extends Area2D
 var hold = false
 var ogPos=position
+var areaEnter
+var frying=false
 
 func _ready() -> void:
 	set_process(false)
@@ -20,3 +22,12 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 
 func _on_mouse_entered() -> void:
 	set_process(true)
+
+func _on_area_entered(area: Area2D) -> void:
+	print(areaEnter)
+	if area.name.to_lower() == "pan":
+		areaEnter=area
+	elif area.name.to_lower() == "bowl":
+		areaEnter=area
+	else:
+		areaEnter=null

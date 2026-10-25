@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3pmbrftfet5g"]
 
-[ext_resource type="Script" uid="uid://3i6th3751dki" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/choppable_garlic.gd" id="1_4klyn"]
+[ext_resource type="Script" uid="uid://bmgspdkytxy5p" path="res://Scripts/Freeplay/CookingMinigames/GeneralMinigames/choppable_garlic.gd" id="1_4klyn"]
 [ext_resource type="Texture2D" uid="uid://hhxapbx6tbi3" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Garlic.png" id="2_rdvay"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_av541"]

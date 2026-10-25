@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/recipe_book.tscn" id="10_penps"]
 [ext_resource type="PackedScene" uid="uid://3nbi6q3ikgh8" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/rinsing.tscn" id="11_avunj"]
 [ext_resource type="PackedScene" uid="uid://jqgwfjxupldu" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/squeeze.tscn" id="12_meb1c"]
+[ext_resource type="PackedScene" uid="uid://nxlhp5ta2hf7" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/frying.tscn" id="13_35cbw"]
+[ext_resource type="Shader" uid="uid://bqevegjdxbpb6" path="res://Border.gdshader" id="14_b1sxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
 
@@ -52,23 +54,38 @@ _data = {
 &"grate": SubResource("Animation_avunj")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tj6en"]
+shader = ExtResource("14_b1sxt")
+shader_parameter/line_colour = Color(1, 1, 0.7176471, 1)
+shader_parameter/line_thickness = 0.0090000004275
+shader_parameter/border_visibility = 1.0
+shader_parameter/gradient_intensity = 3.0
+shader_parameter/gradient_steps = 2.0000000475
+
 [node name="Hashbrowns" type="Node2D" unique_id=1704651639]
 script = ExtResource("1_o12im")
 
-[node name="CookingBg" type="Sprite2D" parent="." unique_id=367473960]
-position = Vector2(642, 363)
-scale = Vector2(1.2890625, 1.046875)
+[node name="Control" type="Control" parent="." unique_id=1821932654]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 642.0
+offset_top = 363.0
+offset_right = 682.0
+offset_bottom = 403.0
+
+[node name="CookingBg" type="Sprite2D" parent="Control" unique_id=367473960]
 texture = ExtResource("1_jjcf2")
 
-[node name="CookingBgTopDown" type="Sprite2D" parent="." unique_id=965929414]
-visible = false
-position = Vector2(635, 559)
-scale = Vector2(0.90000004, 0.9000001)
+[node name="CookingBgTopDown" type="Sprite2D" parent="Control" unique_id=965929414]
+position = Vector2(15, 192)
+scale = Vector2(0.6825923, 0.87143856)
 texture = ExtResource("2_y804u")
 
 [node name="peel" parent="." unique_id=243397758 instance=ExtResource("4_o12im")]
+visible = false
 
 [node name="grate" type="Node2D" parent="." unique_id=1471228203]
+visible = false
 
 [node name="grater" type="Area2D" parent="grate" unique_id=318729698]
 position = Vector2(211, 181)
@@ -176,12 +193,19 @@ texture = ExtResource("10_ouisr")
 visible = false
 
 [node name="gratedPotatoes" parent="rinse/potato" parent_id_path=PackedInt32Array(258493805, 1776436212) index="1" unique_id=248327213]
-offset_left = -210.0
-offset_top = -139.0
-offset_right = 186.0
-offset_bottom = 103.0
+offset_left = -182.0
+offset_top = -100.0
+offset_right = 510.0
+offset_bottom = 285.0
 
 [node name="Squeeze" parent="." unique_id=1629429422 instance=ExtResource("12_meb1c")]
+
+[node name="frying" parent="." unique_id=103076593 instance=ExtResource("13_35cbw")]
+
+[node name="Pan" parent="frying/Pan" parent_id_path=PackedInt32Array(103076593, 842265276) index="0" unique_id=1727484637]
+material = SubResource("ShaderMaterial_tj6en")
+
+[node name="add" type="Node2D" parent="." unique_id=594739755]
 
 [node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("10_penps")]
 offset_left = 9.0
@@ -196,8 +220,13 @@ scale = Vector2(0.795, 0.795)
 [connection signal="mouse_entered" from="grate/grater" to="grate/gratedFull" method="_on_grater_mouse_entered"]
 [connection signal="mouse_exited" from="grate/grater" to="grate/gratedFull" method="_on_grater_mouse_exited"]
 [connection signal="grated" from="grate/gratedFull" to="." method="_on_grated_full_grated"]
+[connection signal="WaterCompleted" from="rinse/Water" to="." method="_on_water_water_completed"]
+[connection signal="done" from="Squeeze" to="." method="_on_squeeze_done"]
+[connection signal="visibility_changed" from="Squeeze/squeezing/unsqueezed" to="Squeeze" method="_on_unsqueezed_visibility_changed"]
+[connection signal="done" from="frying/Bowl" to="." method="_on_bowl_done"]
 
 [editable path="peel"]
 [editable path="grate/gratedFull"]
 [editable path="rinse"]
 [editable path="Squeeze"]
+[editable path="frying"]

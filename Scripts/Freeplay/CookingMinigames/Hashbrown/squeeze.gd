@@ -1,4 +1,5 @@
 extends Node2D
+signal done
 
 @onready var cloth: Area2D = $putOnCloth
 @onready var scroll_1: Node2D = $scroll1
@@ -32,6 +33,9 @@ func hideAndView(h,v):
 	v.visible=true
 	t = create_tween()
 	t.tween_property(v, "position:y", v.position.y+20, .5).set_trans(Tween.TRANS_ELASTIC)
+	await t.finished
+	if pulledNum==2:
+		done.emit()
 
 func _on_grated_p_done() -> void:
 	cloth.get_child(0).visible=false
@@ -41,10 +45,15 @@ func _on_grated_p_done() -> void:
 func _on_knob_pulled() -> void:
 	var uSqueezed = squeezing.get_child(0)
 	var squeezed = squeezing.get_child(1)
+	print(pulledNum)
 	if pulledNum==0:
 		hideAndView(cloth, uSqueezed)
 		scrollOut(scroll_1)
 		scrollIn(scroll_2)
+		await get_tree().create_timer(1).timeout
 	elif pulledNum==1:
 		hideAndView(uSqueezed, squeezed)
+		scrollOut(scroll_2)
+
+func _on_unsqueezed_visibility_changed() -> void:
 	pulledNum+=1
