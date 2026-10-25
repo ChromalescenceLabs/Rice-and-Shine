@@ -34,7 +34,6 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is BatterBowl:
 		if not dragging:
 			return
-			
 		if cup_state == CupState.READY or cup_state == CupState.EMPTY:
 			if area.batterLevel > 0:
 				area.batterLevel -= 1
@@ -43,12 +42,12 @@ func _on_area_entered(area: Area2D) -> void:
 				batter_cup_state()
 			
 			
-	if area is PancakePan:
+	if area is CookingPan:
 		if area.has_oil == false:
 			return
 			
 		elif area.has_oil == true:
-			if area.pancState > 0:
+			if get_tree().current_scene.pancState > 0:
 				return
 				
 			if not dragging:
@@ -57,4 +56,4 @@ func _on_area_entered(area: Area2D) -> void:
 			if cup_state == CupState.FILLED:
 				cup_state = CupState.EMPTY
 				batter_cup_state()
-				area.pancState += 1
+				get_tree().current_scene.pancState += 1
