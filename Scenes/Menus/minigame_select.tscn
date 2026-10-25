@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://kewsf4o5v8dg" path="res://Assets/Menus/FreeplayMenu/Inihaw.png" id="6_l46wx"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Menus/FreeplayMenu/torta.png" id="7_l46wx"]
-[ext_resource type="Script" uid="uid://ivfye6hmjyn8" path="res://Scenes/Menus/minigamecontainer.gd" id="8_btba4"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="8_gl1wp"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="9_8omsi"]
 [ext_resource type="Texture2D" uid="uid://biymioqcxvn8k" path="res://Assets/Menus/ChapterSelect/PLATE.png" id="9_h6rov"]
+[ext_resource type="Script" uid="uid://b48hwu822kapi" path="res://Scenes/Menus/decreasingcontainer.gd" id="10_gl1wp"]
 
 [sub_resource type="Resource" id="Resource_jn51n"]
 script = ExtResource("9_8omsi")
@@ -124,7 +124,7 @@ custom_minimum_size = Vector2(650, 700)
 layout_mode = 0
 offset_left = 378.0
 offset_top = 16.0
-offset_right = 1246.0
+offset_right = 1028.0
 offset_bottom = 798.0
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
@@ -134,12 +134,12 @@ dragging_scroll_damper = SubResource("Resource_iito2")
 hide_scrollbar_over_time = true
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
-[node name="Container" type="Container" parent="New Selection/SmoothScrollContainer" unique_id=481209569]
-custom_minimum_size = Vector2(650, 800)
+[node name="Container" type="Container" parent="New Selection/SmoothScrollContainer" unique_id=738950337]
+custom_minimum_size = Vector2(600, 800)
 layout_mode = 2
-script = ExtResource("8_btba4")
-spacing = 150.0
-diagonal_vector = Vector2(0.7071068, 0.7071068)
+script = ExtResource("10_gl1wp")
+total_height = 600.0
+curve_amp = 430.0
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="Rice" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=504060987]
@@ -200,8 +200,8 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="BG IMAGE" type="Sprite2D" parent="." unique_id=233006868]
 
 [node name="Plate" type="Sprite2D" parent="." unique_id=1406370295]
-position = Vector2(34.999996, 417)
-scale = Vector2(1.4928131, 1.4340826)
+position = Vector2(-178, 399)
+scale = Vector2(1.5338885, 1.5127248)
 texture = ExtResource("9_h6rov")
 
 [node name="LOGO" type="Sprite2D" parent="." unique_id=1510853050]
