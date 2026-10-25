@@ -207,6 +207,5 @@ grow_horizontal = 2
 value = 100.0
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
-[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="area_entered" from="CustomerArea" to="." method="_on_customer_area_area_entered"]
 [connection signal="area_exited" from="CustomerArea" to="." method="_on_customer_area_area_exited"]

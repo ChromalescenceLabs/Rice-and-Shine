@@ -281,3 +281,22 @@ Rararara I'm gonna need to lock in next week and actually get the entire system 
 
 ### 4. JEANKAMAGALING
 I worked my entire 10 hours on 10/18/26, first fixing the week selection system I'd worked on the previous week. After doing a bit of tinkering with that, I then proceeded to draw assets for the customer serving scene that Jazz is making. I had a bit of a hiccup when I tried to reorganize the files (after my teammates pointed out that I had my files in the wrong places... Oops), but accidentally discarded all of those, and then proceeded to restore all instead of restore selected, but that got fixed quickly. I had forgotten to add animations when you clicked the back button in the week select, so I quickly added those. I also added the description changes depending on the week selected, as well as a day counter that allows for locking of days. I then polished some of the earlier UIs I had made, such as the Main menu, updating the background movement effect and the options menu, fixed a bug in the mode select scene, and also added animations to the minigame selection scene.
+
+
+
+
+## WEEK 5: OCTOBER 12 - OCTOBER 19
+### 1. ALLIUMC
+
+### 2. CLIF
+
+### 3. JAZZ
+OK SO the customers system is *technically* done... But like I still kinda need to add the time tracker within the scene, BUT THAT'S AN EASY ADDITION FOR NEXT WEEK... Customer Serving System is essentially done..! Just need to do some heavy refactoring next week- But anyway! I did the following things this week:
+- Added new checks for the new minigames added by Clif in the food cont scenes.
+- Added the customer happiness logs function (not sure if I made the code for this optimal but.. It's maintainable and it works so, I'm gonna deal with it for now)
+- Made the initial customer serving base for the Story Mode so that it would be easier to change stuff around for specific days, rather than having to recreate the same things over and over again for each day
+- Added the updated textures for the food conts
+
+I highkey lost my mind over trying to fix the loading issue from the minigame select scene to the customer serving sandbox scene, but ended up just reconstructing the food cont scenes for it. Other than that, after doing the time tracker in the customer serving scene system, I can FINALLY start on the tutorial, and proceeding days after that. I do also want to clean up some of my spaghetti code for the customer serving base, so I'm gonna do that too - and perhaps help with some of the art next week. 
+
+### 4. JEANKAMAGALING

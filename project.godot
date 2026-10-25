@@ -27,6 +27,7 @@ SceneLoader="*uid://jauffil1d42j"
 Sfx="*uid://du6gjwu6i72mh"
 MusicManager="*uid://c71mkx0ylpomy"
 GlobalSaveManager="*uid://cdayiwwj2beiv"
+GlobalScenes="*uid://ddyvxe1aoo6kg"
 
 [dialogue_manager]
 

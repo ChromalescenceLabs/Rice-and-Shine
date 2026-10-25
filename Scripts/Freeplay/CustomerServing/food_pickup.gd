@@ -9,7 +9,8 @@ var food_in_bowl : bool = false
 var textureDict : Dictionary = {
 	"rice" : load("uid://b8pycewahokgt"),
 	"pancake" : load("uid://b8pycewahokgt"),
-	"hashbrown" : load("uid://b8pycewahokgt")
+	"hashbrown" : load("uid://b8pycewahokgt"),
+	"lumpia" : load("uid://b8pycewahokgt")
 }
 
 func _ready() -> void:

@@ -20,6 +20,7 @@ func load_scene(_scene_path: String, duration: float) -> void:
 	add_child(new_load_screen)
 	load_finished.connect(new_load_screen._on_load_finished)
 	
+	GlobalScenes.process_mode = Node.PROCESS_MODE_DISABLED
 	await new_load_screen.loading_screen_ready
 	new_load_screen.duration = duration
 	
@@ -31,7 +32,10 @@ func start_load() -> void:
 		set_process(true)
 		
 func _process(_delta: float) -> void:
-	var load_status = ResourceLoader.load_threaded_get_status(scene_path)
+	var progress = []
+	
+	var load_status = ResourceLoader.load_threaded_get_status(scene_path, progress)
+	
 	match load_status:
 		ResourceLoader.THREAD_LOAD_INVALID_RESOURCE, ResourceLoader.THREAD_LOAD_FAILED:
 			set_process(false)
