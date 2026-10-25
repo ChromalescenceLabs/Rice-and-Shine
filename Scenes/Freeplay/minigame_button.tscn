@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://wy5lkqs1nt26"]
 
+[ext_resource type="Script" uid="uid://ctmt34bfoiy2d" path="res://Scripts/Freeplay/minigame_button.gd" id="1_nx1pe"]
+
 [node name="Button" type="Button" unique_id=451413400]
-offset_left = -147.70589
-offset_top = -31.0
-offset_right = 147.70589
-offset_bottom = 31.0
+custom_minimum_size = Vector2(464, 110)
+offset_left = -231.99977
+offset_top = -55.0
+offset_right = 231.99998
+offset_bottom = 55.0
 theme_override_font_sizes/font_size = 30
 text = "Minigame"
+clip_text = true
+script = ExtResource("1_nx1pe")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
