@@ -15,7 +15,8 @@ const FOOD_CONT = preload("uid://csole0o4ydmgm")
 var bowl_no : int = 0
 
 func _ready() -> void:
-	GlobalVars.is_customer_serving = true
+	instantiate_food_conts()
+	GlobalVars.is_in_story = true
 	
 	#Checks if Scene has saved data
 	var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
@@ -74,10 +75,11 @@ func add_customer() -> TextureButton:
 	return newCustomer
 	
 func instantiate_food_conts() -> void:
-	for i in GlobalVars.unlocked_customers:
+	for i in GlobalVars.unlocked_foods:
 		var foodcont = FOOD_CONT.instantiate()
 		food_conts.add_child(foodcont)
-		foodcont.food_type = i
+		foodcont.food_type = i.to_upper()
+		foodcont.initialize()
 
 func _on_add_bowl_pressed() -> void: add_bowl_func(false)
 

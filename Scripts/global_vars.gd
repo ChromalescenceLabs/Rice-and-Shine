@@ -7,6 +7,7 @@ var character_order : String = "Placeholder"
 # Player Info
 var current_db : float = -25
 var is_customer_serving: bool = false
+var is_in_story: bool = false
 
 # Systems
 signal successIndEnd
@@ -51,7 +52,7 @@ func shake(item):
 
 	
 # Unlocks
-var unlocked_foods : Array = ["rice", "pancake", "hashbrown"]
+var unlocked_foods : Array = ["rice", "pancake", "hashbrown", "lumpia"]
 var unlocked_customers : Array = ["marites", "student", "lolo", "tatay"]
 var customer_weights : PackedFloat32Array = []
 

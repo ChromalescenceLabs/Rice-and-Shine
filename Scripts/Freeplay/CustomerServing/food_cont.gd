@@ -25,13 +25,11 @@ var qty : int = 5:
 			upd_texture()
 			counter.text = food_type + ": " + str(qty)
 
-func _ready() -> void:
+func initialize() -> void:
 	counter.text = food_type + ": " + str(qty)
-	filled_texture = textures[food_type][0]
-	filled_textureh = textures[food_type][1]
+	filled_texture = textures[food_type.to_upper()][0]
+	filled_textureh = textures[food_type.to_upper()][1]
 	upd_texture()
-	
-	
 
 func _on_button_down() -> void:
 	match food_type:

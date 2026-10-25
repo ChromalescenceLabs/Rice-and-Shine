@@ -4,19 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://cntangxcnp6xg" path="res://Scenes/Freeplay/CustomerServing/add_bowl_btn.tscn" id="2_tbsef"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="3_h5bb6"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="4_pbxxb"]
-[ext_resource type="PackedScene" uid="uid://csole0o4ydmgm" path="res://Scenes/Freeplay/CustomerServing/food_cont.tscn" id="5_tghj7"]
-[ext_resource type="Texture2D" uid="uid://doy8fthnvd5lo" path="res://Assets/Freeplay/Serving/Filled/RiceContFilled.png" id="6_1tt4c"]
-[ext_resource type="Texture2D" uid="uid://svjtmt5lpf1b" path="res://Assets/Freeplay/Serving/Filled/RiceContFilledH.png" id="7_0arqv"]
-[ext_resource type="Texture2D" uid="uid://chv7ovq6nnca3" path="res://Assets/Freeplay/Serving/Empty/RiceCont.png" id="8_tuk8d"]
-[ext_resource type="Texture2D" uid="uid://bfxatlh6arx51" path="res://Assets/Freeplay/Serving/Empty/RiceContH.png" id="9_qn4g0"]
-[ext_resource type="Texture2D" uid="uid://t3ul20puiuov" path="res://Assets/Freeplay/Serving/Filled/PancakeContFilled.png" id="10_llkvi"]
-[ext_resource type="Texture2D" uid="uid://cevrrowe651af" path="res://Assets/Freeplay/Serving/Filled/PancakeContFilledH.png" id="11_g2m4b"]
-[ext_resource type="Texture2D" uid="uid://dlns6abi2siiy" path="res://Assets/Freeplay/Serving/Empty/PancakeCont.png" id="12_ifkf1"]
-[ext_resource type="Texture2D" uid="uid://7hk0brvbupc2" path="res://Assets/Freeplay/Serving/Empty/PancakeContH.png" id="13_xua5w"]
-[ext_resource type="Texture2D" uid="uid://cfu2uvbts2ldr" path="res://Assets/Freeplay/Serving/Filled/HashbrownContFilled.png" id="14_rt3bf"]
-[ext_resource type="Texture2D" uid="uid://c4jbnbugoscts" path="res://Assets/Freeplay/Serving/Filled/HashbrownContFilledH.png" id="15_d31lj"]
-[ext_resource type="Texture2D" uid="uid://cuqrumfstfqqu" path="res://Assets/Freeplay/Serving/Empty/HashbrownCont.png" id="16_jei14"]
-[ext_resource type="Texture2D" uid="uid://4msdq3gandfm" path="res://Assets/Freeplay/Serving/Empty/HashbrownContH.png" id="17_nmh0g"]
 [ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="18_xd6nw"]
 [ext_resource type="PackedScene" uid="uid://dpjeqy63lxdvr" path="res://Scenes/Freeplay/CustomerServing/customer_happiness_logs.tscn" id="19_cfcfs"]
 
@@ -127,36 +114,6 @@ metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
 [node name="FoodConts" type="HBoxContainer" parent="Control/ScrollContainer" unique_id=817125299]
 layout_mode = 2
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="Rice" parent="Control/ScrollContainer/FoodConts" unique_id=218262186 instance=ExtResource("5_tghj7")]
-layout_mode = 2
-mouse_filter = 1
-food_type = "RICE"
-filled_texture = ExtResource("6_1tt4c")
-filled_textureh = ExtResource("7_0arqv")
-empty_texture = ExtResource("8_tuk8d")
-empty_textureh = ExtResource("9_qn4g0")
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="Pancake" parent="Control/ScrollContainer/FoodConts" unique_id=1947481052 instance=ExtResource("5_tghj7")]
-layout_mode = 2
-mouse_filter = 1
-food_type = "PANCAKE"
-filled_texture = ExtResource("10_llkvi")
-filled_textureh = ExtResource("11_g2m4b")
-empty_texture = ExtResource("12_ifkf1")
-empty_textureh = ExtResource("13_xua5w")
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="Hashbrown" parent="Control/ScrollContainer/FoodConts" unique_id=408254311 instance=ExtResource("5_tghj7")]
-layout_mode = 2
-mouse_filter = 1
-food_type = "HASHBROWN"
-filled_texture = ExtResource("14_rt3bf")
-filled_textureh = ExtResource("15_d31lj")
-empty_texture = ExtResource("16_jei14")
-empty_textureh = ExtResource("17_nmh0g")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="BowlLabels" type="Node2D" parent="." unique_id=80505418]
