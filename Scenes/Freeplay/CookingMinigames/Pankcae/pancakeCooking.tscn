@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://byr6psf6yi4m3" path="res://Scripts/Freeplay/CookingMinigames/Pamcake/pancake_cooking.gd" id="1_rm7bj"]
 [ext_resource type="PackedScene" uid="uid://d3o3pud744tt1" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/batter_cup.tscn" id="2_rm7bj"]
 [ext_resource type="PackedScene" uid="uid://2756jtyts0ga" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/bowl.tscn" id="3_y2edm"]
-[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/oil.tscn" id="5_1f2tk"]
+[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/oil.tscn" id="5_1f2tk"]
 [ext_resource type="Texture2D" uid="uid://dpesqyakkyses" path="res://Assets/Freeplay/Cooking_Minigames/Pankcae/PancakeS1.png" id="6_5qf87"]
 [ext_resource type="Texture2D" uid="uid://c1u1cp4kewa4t" path="res://Assets/Freeplay/Cooking_Minigames/Pankcae/PancakeS2.png" id="7_iuvri"]
 [ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/recipe_book.tscn" id="7_y2edm"]

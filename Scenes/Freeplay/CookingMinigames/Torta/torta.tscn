@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b2i0p3coh4lty" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggInBowlMixed.png" id="10_yan7c"]
 [ext_resource type="Script" uid="uid://dt2028chwwxf4" path="res://Scripts/Freeplay/CookingMinigames/Torta/egg_carton.gd" id="11_6arap"]
 [ext_resource type="Script" uid="uid://d0s3do3882k7q" path="res://Scripts/Freeplay/CookingMinigames/Non-Specific/pan.gd" id="11_v1cdo"]
-[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/oil.tscn" id="11_yan7c"]
+[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/oil.tscn" id="11_yan7c"]
 [ext_resource type="Script" uid="uid://c0v6ddr401svw" path="res://Scripts/Freeplay/CookingMinigames/Torta/whisk.gd" id="15_krt0h"]
 [ext_resource type="PackedScene" uid="uid://bft57grj34flt" path="res://Scenes/Freeplay/CookingMinigames/Torta/eggplant_coat.tscn" id="16_5d7dr"]
 [ext_resource type="Script" uid="uid://cfxk2bwm1i3jy" path="res://Scripts/Freeplay/CookingMinigames/Torta/torta_pan.gd" id="18_8yo6g"]

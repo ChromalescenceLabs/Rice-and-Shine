@@ -2,6 +2,7 @@ class_name CookingPan extends Area2D
 @onready var normal: TextureRect = $Normal
 @onready var oiled: TextureRect = $Oiled
 var has_oil := false 
+var is_occupied := false
 
 func _on_area_entered(area: Area2D) -> void:
 	match area: 

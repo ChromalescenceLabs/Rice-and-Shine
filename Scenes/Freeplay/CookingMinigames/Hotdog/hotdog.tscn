@@ -2,10 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="1_ugtlu"]
 [ext_resource type="Script" uid="uid://dd4uy6m5oqwu2" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/hotdog_minigame.gd" id="1_x6sm1"]
-[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/oil.tscn" id="2_6vnog"]
-[ext_resource type="Texture2D" uid="uid://iqxaxa0bo02s" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Pan.png" id="3_f7vh4"]
-[ext_resource type="Script" uid="uid://dtfcatx84joak" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/hdog_pan.gd" id="3_ifmqp"]
-[ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/PanOil.png" id="4_ifmqp"]
+[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/oil.tscn" id="2_6vnog"]
+[ext_resource type="PackedScene" uid="uid://ns536h1evtqt" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/pan.tscn" id="3_mtx4t"]
 [ext_resource type="Texture2D" uid="uid://cfjgsnkmmit3k" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Plate.png" id="6_ni26i"]
 [ext_resource type="PackedScene" uid="uid://cv4xskrudeikq" path="res://Scenes/Freeplay/CookingMinigames/Hotdog/hotdog_indiv.tscn" id="7_x6sm1"]
 [ext_resource type="PackedScene" uid="uid://dplwtlc2jhxoo" path="res://Scenes/Freeplay/CookingMinigames/Hotdog/slice_hotdog.tscn" id="9_bgbgk"]
@@ -17,9 +15,6 @@
 [ext_resource type="Script" uid="uid://dx667alnabkqu" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/hotdog_bowl.gd" id="14_kyla7"]
 [ext_resource type="PackedScene" uid="uid://dse2mctmqkges" path="res://Scenes/Freeplay/CookingMinigames/Hotdog/stick.tscn" id="16_kyla7"]
 [ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/recipe_book.tscn" id="17_ikk8w"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_pocx5"]
-radius = 95.50916
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5h11f"]
 
@@ -44,25 +39,10 @@ metadata/_edit_lock_ = true
 
 [node name="Frying" type="Node2D" parent="." unique_id=1557546142]
 
-[node name="HdogPan" type="Area2D" parent="Frying" unique_id=819248779]
-visible = false
-position = Vector2(309, 320)
+[node name="Pan" parent="Frying" unique_id=1647326065 instance=ExtResource("3_mtx4t")]
+position = Vector2(312.99997, 326.00003)
 rotation = -1.5707964
 scale = Vector2(1.715, 1.715)
-script = ExtResource("3_ifmqp")
-
-[node name="Pan" type="Sprite2D" parent="Frying/HdogPan" unique_id=1819557132]
-position = Vector2(-106.51312, 1.737611)
-texture = ExtResource("3_f7vh4")
-
-[node name="PanOil" type="Sprite2D" parent="Frying/HdogPan" unique_id=1889596687]
-visible = false
-position = Vector2(-106.513, 1.738)
-texture = ExtResource("4_ifmqp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Frying/HdogPan" unique_id=1160576310]
-position = Vector2(-0.58309174, -0.58308184)
-shape = SubResource("CircleShape2D_pocx5")
 
 [node name="Oil" parent="Frying" unique_id=1503278428 instance=ExtResource("2_6vnog")]
 position = Vector2(1139, 146)
