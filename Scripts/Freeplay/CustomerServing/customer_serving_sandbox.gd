@@ -39,18 +39,39 @@ func _ready() -> void:
 		if GlobalScenes.get_node("Customers").get_child_count() > 0:
 			for i in GlobalScenes.get_node("Customers").get_children():
 				i.reparent(customers_cont)
-				
-		# Check if a Node in that scene has data for CustomerConts	
-		#node_data = GlobalSaveManager.fetch_node_persistent_value(GlobalSaveManager.fetch_scene_persistent_value("Global"), "CustomerConts")
-		#if not node_data == null:
-			#for i in node_data.size():
-				#var newCustomer = CUSTOMER.instantiate()
-				#newCustomer.modulate.a = 0.0
-				#customers_cont.add_child(newCustomer)
-				#newCustomer.customer_info = node_data[i]
-				#newCustomer.initialization()
-				#newCustomer.indx = customers_cont.get_child_count()
-				#newCustomer.update_texture()
+
+func add_bowl_func(is_old : bool) -> TextureRect:
+	var newBowl = SERVE_BOWL.instantiate()
+	newBowl.modulate.a = 0.0
+	bowl_conts.add_child(newBowl)
+
+	var last_index := bowl_conts.get_child_count() - 1
+	bowl_conts.move_child(newBowl, max(0, last_index - 1))
+
+	await get_tree().process_frame
+
+	if is_old:
+		newBowl.add_to_group("oldBowls")
+	
+	newBowl.initialization()
+	
+	bowl_no += 1
+	
+	if bowl_no == 7:
+		add_bowl.disabled = true
+		add_bowl.visible = false
+	
+	return newBowl
+	
+func add_customer() -> TextureButton:
+	var newCustomer = CUSTOMER.instantiate()
+	newCustomer.modulate.a = 0.0
+	customers_cont.add_child(newCustomer)
+	var type = newCustomer.initialization()
+	newCustomer.indx = customers_cont.get_child_count()
+	customer_happiness_logs.new_happiness_bar(type, newCustomer)
+	
+	return newCustomer
 
 func _on_add_bowl_pressed() -> void: add_bowl_func(false)
 
@@ -78,63 +99,19 @@ func _on_freed_bowls_child_exiting_tree(node: Node) -> void:
 				current_freed_bowl.final_pos = current_back_bowl.global_position
 				current_freed_bowl.global_position = current_back_bowl.global_position
 
-func add_bowl_func(is_old : bool) -> TextureRect:
-	var newBowl = SERVE_BOWL.instantiate()
-	newBowl.modulate.a = 0.0
-	bowl_conts.add_child(newBowl)
-
-	var last_index := bowl_conts.get_child_count() - 1
-	bowl_conts.move_child(newBowl, max(0, last_index - 1))
-
-	await get_tree().process_frame
-
-	if is_old:
-		newBowl.add_to_group("oldBowls")
-	
-	newBowl.initialization()
-	
-	bowl_no += 1
-	
-	if bowl_no == 7:
-		add_bowl.disabled = true
-		add_bowl.visible = false
-	
-	return newBowl
-
-func add_customer() -> TextureButton:
-	var newCustomer = CUSTOMER.instantiate()
-	newCustomer.modulate.a = 0.0
-	customers_cont.add_child(newCustomer)
-	var type = newCustomer.initialization()
-	newCustomer.indx = customers_cont.get_child_count()
-	customer_happiness_logs.new_happiness_bar(type, newCustomer)
-	
-	return newCustomer
-
 func _on_tree_exiting() -> void:
+	if customers_cont.get_child_count() > 0:
+		for i in customers_cont.get_children():
+			i.reparent(GlobalScenes.get_node("Customers"))
+			
 	var bowl_data = []
 	for i in freed_bowls.get_children(): bowl_data.append(i.contentDict)
 	
 	var foodcont_data = []
 	for i in food_conts.get_children(): foodcont_data.append(i.qty)
 	
-	#var customercont_data = []
-	#for i in customers_cont.get_children(): customercont_data.append(i.customer_info)
-	
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "Bowls", bowl_data)
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "FoodConts", foodcont_data)
-	#GlobalSaveManager.add_persistent_value("Global", "CustomerConts", customercont_data)
-	
-	if customers_cont.get_child_count() > 0:
-		for i in customers_cont.get_children():
-			i.reparent(GlobalScenes.get_node("Customers"))
-
-func upd_customer_indexes(current_node_index : int) -> void:
-	for i in customers_cont.get_children().slice(current_node_index):
-		i.indx -= 1
- 
-func _on_temp_pressed() -> void:
-	add_customer()
 
 func _on_customer_happiness_logs_remove_customer(index: int, node : TextureButton) -> void:
 	for customer in customers_cont.get_children():
@@ -143,5 +120,7 @@ func _on_customer_happiness_logs_remove_customer(index: int, node : TextureButto
 			await customer.animation_player.animation_finished
 			customer.queue_free()
 
-func _on_exit_pressed() -> void:
-	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
+func _on_customers_cont_child_exiting_tree(node: Node) -> void:
+	for i in customer_happiness_logs.overall_cont.get_children():
+		if i.associated_node == node:
+			i.queue_free()

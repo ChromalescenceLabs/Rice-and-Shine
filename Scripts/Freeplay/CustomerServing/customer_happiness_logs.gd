@@ -33,16 +33,6 @@ func new_happiness_bar(texture : String, node : TextureButton):
 
 func _on_upset(index : int, node : TextureButton) -> void:
 	remove_customer.emit(index, node)
-	
-	#var data = GlobalSaveManager.fetch_scene_persistent_value("Global")
-	#if not data == null:
-		#var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "CustomerConts")
-		#if node_data == null:
-			#print("No CustomerConts Data Found in Global!")
-		#else:
-			#node_data.remove_at(index)
-	#else:
-		#print("No Global Data Persistence Found!")
 
 func _on_tree_exiting() -> void:
 	if overall_cont.get_child_count() > 0:
