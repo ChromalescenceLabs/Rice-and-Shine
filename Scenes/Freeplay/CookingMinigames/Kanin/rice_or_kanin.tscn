@@ -10,10 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://dgfb1ox42rcxe" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/RiceBowlThird.png" id="7_o1cgv"]
 [ext_resource type="Texture2D" uid="uid://cq0j108sk2ota" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/RiceContClosed.png" id="8_4pyhc"]
 [ext_resource type="Texture2D" uid="uid://dncc6uhk1254" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/RiceContOpened.png" id="9_7nwvv"]
-[ext_resource type="PackedScene" uid="uid://dbhoiq6ipsn5g" path="res://Scenes/Freeplay/CookingMinigames/Kanin/rice_bowl.tscn" id="11_t3ihu"]
 [ext_resource type="Texture2D" uid="uid://dg0q3xee1yae3" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/RiceCooker.png" id="12_1dyx4"]
+[ext_resource type="PackedScene" uid="uid://cglg18ytbkwv1" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/CookingBowl.tscn" id="12_b7x1o"]
 [ext_resource type="PackedScene" uid="uid://cuyklj2grjhwn" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/faucet.tscn" id="12_vaj5w"]
 [ext_resource type="Texture2D" uid="uid://cetcq4pl8nunu" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/RiceCookerwBubbles.png" id="13_8qhpp"]
+[ext_resource type="Texture2D" uid="uid://cjhw8jso6hgcn" path="res://Assets/Freeplay/Serving/ServingBowlFilled.png" id="13_dgm4y"]
 [ext_resource type="Texture2D" uid="uid://dj8ngma7xp07l" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/RiceCookerwRice.png" id="14_sbke8"]
 [ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/recipe_book.tscn" id="15_h7to0"]
 [ext_resource type="Script" uid="uid://dnfxiiim3c85s" path="res://Scripts/Freeplay/CookingMinigames/Kanin/rice_cooker.gd" id="15_ienqq"]
@@ -44,6 +45,7 @@ texture = ExtResource("3_km12d")
 metadata/_edit_lock_ = true
 
 [node name="RiceCups" type="Node2D" parent="." unique_id=1168144650]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="RiceCont" type="Node2D" parent="RiceCups" unique_id=1486711832]
@@ -109,14 +111,18 @@ shape = SubResource("RectangleShape2D_idtpb")
 
 [node name="Water" type="Node2D" parent="." unique_id=935142887]
 
-[node name="RiceBowl" parent="Water" unique_id=1504106188 instance=ExtResource("11_t3ihu")]
-position = Vector2(1037, 300)
-
 [node name="Faucet" parent="Water" unique_id=1510681216 instance=ExtResource("12_vaj5w")]
 
-[node name="RiceCooker" type="Node2D" parent="." unique_id=835867329 node_paths=PackedStringArray("ricebowl")]
+[node name="CookingBowl" parent="Water" unique_id=990471959 instance=ExtResource("12_b7x1o")]
+offset_left = 1069.0
+offset_top = 455.00003
+offset_right = 1069.0
+offset_bottom = 455.00003
+scale = Vector2(2.065, 2.065)
+bowl_texture = ExtResource("13_dgm4y")
+
+[node name="RiceCooker" type="Node2D" parent="." unique_id=835867329]
 script = ExtResource("15_ienqq")
-ricebowl = NodePath("../Water/RiceBowl")
 metadata/_edit_lock_ = true
 
 [node name="RiceCooker" type="Sprite2D" parent="RiceCooker" unique_id=719095520]
@@ -163,6 +169,7 @@ scale = Vector2(0.795, 0.795)
 [connection signal="mouse_entered" from="RiceCups/RiceCont/RiceContOpened" to="." method="_on_rice_cont_opened_mouse_entered"]
 [connection signal="mouse_exited" from="RiceCups/RiceCont/RiceContOpened" to="." method="_on_rice_cont_opened_mouse_exited"]
 [connection signal="riceCupDone" from="RiceCups/RiceBowl" to="." method="_on_rice_bowl_rice_cup_done"]
+[connection signal="faucet_done" from="Water/Faucet" to="." method="_on_faucet_faucet_done"]
 [connection signal="RiceCookerDone" from="RiceCooker" to="." method="_on_rice_cooker_rice_cooker_done"]
 [connection signal="area_entered" from="RiceCooker/RiceCooker/RiceCookerCol" to="RiceCooker" method="_on_rice_cooker_col_area_entered"]
 [connection signal="area_exited" from="RiceCooker/RiceCooker/RiceCookerCol" to="RiceCooker" method="_on_rice_cooker_col_area_exited"]
