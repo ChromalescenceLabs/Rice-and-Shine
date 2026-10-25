@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://vmgjpjtmak2a" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/mallows_bag.gd" id="12_x6ma3"]
 [ext_resource type="Script" uid="uid://dx667alnabkqu" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/hotdog_bowl.gd" id="14_kyla7"]
 [ext_resource type="PackedScene" uid="uid://dse2mctmqkges" path="res://Scenes/Freeplay/CookingMinigames/Hotdog/stick.tscn" id="16_kyla7"]
-[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/recipe_book.tscn" id="17_ikk8w"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/recipe_book.tscn" id="17_ikk8w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pocx5"]
 radius = 95.50916

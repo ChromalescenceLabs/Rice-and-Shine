@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://j42ywdsfuawg"]
 
 [ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Freeplay/Cooking_Minigames/CookingBG.jpg" id="1_jjcf2"]
-[ext_resource type="Script" uid="uid://q0a4vib1me85" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/hashbrown_root.gd" id="1_o12im"]
+[ext_resource type="Script" uid="uid://d06vxmqqbp836" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/hashbrown_root.gd" id="1_o12im"]
 [ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="2_y804u"]
 [ext_resource type="Texture2D" uid="uid://c32mg1ke0dp8" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grater.png" id="4_0c4c0"]
 [ext_resource type="PackedScene" uid="uid://b8yqa13xod3tx" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/HashbrownInitial.tscn" id="4_o12im"]
@@ -10,11 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://dq8oklhvamkn0" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated2.png" id="8_penps"]
 [ext_resource type="Texture2D" uid="uid://bc6e5imjyoy6d" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated3.png" id="9_8bsfq"]
 [ext_resource type="Texture2D" uid="uid://c2csa4kyjeclm" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/grated4.png" id="10_ouisr"]
-[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/recipe_book.tscn" id="10_penps"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/recipe_book.tscn" id="10_penps"]
 [ext_resource type="PackedScene" uid="uid://3nbi6q3ikgh8" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/rinsing.tscn" id="11_avunj"]
 [ext_resource type="PackedScene" uid="uid://jqgwfjxupldu" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/squeeze.tscn" id="12_meb1c"]
 [ext_resource type="PackedScene" uid="uid://nxlhp5ta2hf7" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/frying.tscn" id="13_35cbw"]
-[ext_resource type="Shader" uid="uid://bqevegjdxbpb6" path="res://Border.gdshader" id="14_b1sxt"]
+[ext_resource type="Shader" uid="uid://b7cg3ikv2m2w7" path="res://Border.gdshader" id="14_b1sxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
 

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://u20pd4eimjre"]
+
+[ext_resource type="Script" uid="uid://do18tmlgletgd" path="res://Scripts/Freeplay/CookingMinigames/Pancit/pancit.gd" id="1_jqkg7"]
+[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Freeplay/Cooking_Minigames/CookingBG.jpg" id="1_lhy4m"]
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="2_jqkg7"]
+[ext_resource type="PackedScene" uid="uid://cuyklj2grjhwn" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/faucet.tscn" id="4_71mrm"]
+[ext_resource type="PackedScene" uid="uid://cglg18ytbkwv1" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/CookingBowl.tscn" id="5_5amsd"]
+
+[node name="pancit" type="Node2D" unique_id=1729307115]
+script = ExtResource("1_jqkg7")
+
+[node name="FrontBG" type="Sprite2D" parent="." unique_id=1777408633]
+texture = ExtResource("1_lhy4m")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="TopDownBG" type="Sprite2D" parent="." unique_id=1075516553]
+visible = false
+position = Vector2(902, 582)
+texture = ExtResource("2_jqkg7")
+metadata/_edit_lock_ = true
+
+[node name="Steps" type="Node2D" parent="." unique_id=747913987]
+
+[node name="Blanching" type="Node2D" parent="Steps" unique_id=2123389687]
+
+[node name="Faucet" parent="Steps/Blanching" unique_id=1510681216 instance=ExtResource("4_71mrm")]
+
+[node name="CookingBowl" parent="Steps/Blanching" unique_id=990471959 instance=ExtResource("5_5amsd")]
+offset_left = 1094.0001
+offset_top = 444.00003
+offset_right = 1094.0001
+offset_bottom = 444.00003
+scale = Vector2(2.045, 2.045)
+
+[node name="Ice" type="Node2D" parent="Steps" unique_id=135414625]
+
+[node name="Draining" type="Node2D" parent="Steps" unique_id=529774826]
+
+[node name="Sauteing" type="Node2D" parent="Steps" unique_id=114307747]
+
+[node name="AdditionalIngredients" type="Node2D" parent="Steps" unique_id=1931313091]
+
+[node name="Noodles" type="Node2D" parent="Steps" unique_id=717988187]
+
+[node name="Vegetables" type="Node2D" parent="Steps" unique_id=2122106854]
+
+[node name="Seasoning" type="Node2D" parent="Steps" unique_id=767332746]
+
+[connection signal="faucet_done" from="Steps/Blanching/Faucet" to="." method="_on_faucet_faucet_done"]

@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dt40snmionwjb" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/prep_sugar.gd" id="10_q0lgo"]
 [ext_resource type="Script" uid="uid://ikai52yhqe3x" path="res://Scripts/Freeplay/CustomerServing/shaking.gd" id="11_6bvxl"]
 [ext_resource type="Texture2D" uid="uid://c4rus6mfbs2mx" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/PepperShaker.png" id="11_6yvch"]
-[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/recipe_book.tscn" id="13_v1uch"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/recipe_book.tscn" id="13_v1uch"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4ubv0"]
 
