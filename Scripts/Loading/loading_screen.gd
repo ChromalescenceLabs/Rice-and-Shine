@@ -22,5 +22,6 @@ func _on_load_finished() -> void:
 	await get_tree().create_timer(duration).timeout
 	var tw = create_tween().set_ignore_time_scale(true).tween_property(node_2d, "position:y", -770, 0.5).set_ease(Tween.EASE_IN)
 	await tw.finished
+	GlobalScenes.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = false
 	queue_free()

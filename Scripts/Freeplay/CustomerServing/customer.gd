@@ -36,36 +36,24 @@ var customer_info : Dictionary = {
 	# CustomerHappiness : int
 }
 
-# Have to be in the same style as the cues in the customer ordering dialogue resource
-var customerTypes : Array = [
-	"student",
-	"lolo",
-	"marites",
-	"tatay"#,
-	#"basketball_player",
-	#"daughter",
-]
+var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
+	rng.randomize()
 	order_label.modulate.a = 0
 
-func initialization() -> bool:
+func initialization() -> String:
 	self.modulate.a = 1.0
-	var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
-	if not data == null:
-		var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "CustomerConts")
-		if node_data == null:
-			update_customerInfo()
-	else:
-		update_customerInfo()
+	var char_type = update_customerInfo()
 	
-	return true
+	return char_type
 
-func update_customerInfo():
+func update_customerInfo() -> String:
 	animation_player.play("enter_exit")
 		
 	# Picks Customer Type
-	var randType = customerTypes.pick_random()
+	var index = rng.rand_weighted(GlobalVars.customer_weights)
+	var randType = GlobalVars.unlocked_customers[index]
 	customer_info["CustomerType"] = randType
 	update_texture()
 	
@@ -76,6 +64,8 @@ func update_customerInfo():
 		var rand_food = possible_foods.pick_random()
 		customer_info["CustomerWants"][rand_food] = randi_range(1, 5)
 		possible_foods.erase(rand_food)	
+		
+	return customer_info["CustomerType"]
 
 func update_texture() -> void:
 	match customer_info["CustomerType"]:
@@ -101,6 +91,7 @@ func receive_bowl(bowlContents : Dictionary, bowl : TextureRect):
 		animation_player.play_backwards("enter_exit")
 		await animation_player.animation_finished
 		self.queue_free()
+		
 
 func _on_pressed() -> void:
 	GlobalVars.character_name = customer_info["CustomerType"][0].to_upper() + customer_info["CustomerType"].substr(1, -1)
@@ -140,7 +131,6 @@ func _on_pressed() -> void:
 
 	self.disabled = true
 	
-	print(customer_info["CustomerWants"])
 	for i in customer_info["CustomerWants"]:
 		var food_texture
 		match i:
@@ -173,6 +163,3 @@ func _on_customer_area_area_exited(area: Area2D) -> void:
 	if area is BowlArea: 
 		var bowl = area.get_parent() as TextureRect
 		bowl.set("servable", false)
-
-func _on_tree_exiting() -> void:
-	get_tree().current_scene.upd_customer_indexes(indx)
