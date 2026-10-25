@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://dhqlppqtrs5qp"]
+
+[ext_resource type="Texture2D" uid="uid://ccu5u8g78r3lu" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mold1.png" id="1_4j1qc"]
+[ext_resource type="Script" uid="uid://bvo7twnggy6qm" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/mixed_bowl.gd" id="1_c3qlr"]
+[ext_resource type="Texture2D" uid="uid://cfjgsnkmmit3k" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Plate.png" id="1_so17a"]
+[ext_resource type="Texture2D" uid="uid://bwu7cwubl4wla" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mold2.png" id="2_2m555"]
+[ext_resource type="Texture2D" uid="uid://bbfp4eyes2qkr" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mixedBowl.png" id="2_so17a"]
+[ext_resource type="Texture2D" uid="uid://cq6orp202oh07" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mold3.png" id="3_7vcde"]
+[ext_resource type="Texture2D" uid="uid://cjlf66ihl5uvc" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mixedBowl2.png" id="3_ahi5k"]
+[ext_resource type="Texture2D" uid="uid://c1eym2kw5w5qi" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mixedBowl3.png" id="4_nrnpv"]
+[ext_resource type="Texture2D" uid="uid://bxsyrjgen3y7j" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mixedBowl4.png" id="5_y7qrn"]
+[ext_resource type="Script" uid="uid://cvlx4edx0e8v5" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/potato.gd" id="6_sm363"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj6en"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ullcx"]
+size = Vector2(347, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
+size = Vector2(162, 108)
+
+[node name="FINAL FINAL SCENE" type="Node2D" unique_id=2120303028]
+
+[node name="Plate" type="Area2D" parent="." unique_id=252147059]
+
+[node name="plate" type="TextureRect" parent="Plate" unique_id=535738040]
+offset_left = -187.0
+offset_top = 75.0
+offset_right = 451.0
+offset_bottom = 434.0
+scale = Vector2(1.5606544, 1.5559206)
+texture = ExtResource("1_so17a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plate" unique_id=1938201816]
+position = Vector2(322.00003, 373.99997)
+rotation = 3.1415927
+scale = Vector2(16.118584, -17.34765)
+shape = SubResource("RectangleShape2D_tj6en")
+
+[node name="mixedBowl" type="Area2D" parent="." unique_id=96661074]
+position = Vector2(1014, 361)
+script = ExtResource("1_c3qlr")
+
+[node name="mixedBowl" type="TextureRect" parent="mixedBowl" unique_id=1619961901]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = -292.0
+offset_right = 222.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_so17a")
+
+[node name="mixedBowl2" type="TextureRect" parent="mixedBowl" unique_id=1539020987]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = -292.0
+offset_right = 222.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ahi5k")
+
+[node name="mixedBowl3" type="TextureRect" parent="mixedBowl" unique_id=880040551]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = -292.0
+offset_right = 222.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_nrnpv")
+
+[node name="mixedBowl4" type="TextureRect" parent="mixedBowl" unique_id=1095867506]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = -292.0
+offset_right = 222.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_y7qrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mixedBowl" unique_id=521165779]
+position = Vector2(-56.5, 19)
+shape = SubResource("RectangleShape2D_ullcx")
+
+[node name="mold" type="Area2D" parent="." unique_id=559377965]
+visible = false
+position = Vector2(892, 406)
+script = ExtResource("6_sm363")
+
+[node name="mold" type="TextureRect" parent="mold" unique_id=495406790]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = -103.5
+offset_right = 127.5
+offset_bottom = 103.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4j1qc")
+
+[node name="mold2" type="TextureRect" parent="mold" unique_id=153586844]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = -103.5
+offset_right = 127.5
+offset_bottom = 103.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2m555")
+
+[node name="mold3" type="TextureRect" parent="mold" unique_id=1286957797]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.00006
+offset_top = -83.0
+offset_right = 132.99994
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7vcde")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mold" unique_id=495812472]
+position = Vector2(-6, 2)
+shape = SubResource("RectangleShape2D_ittll")
+
+[connection signal="input_event" from="mixedBowl" to="mixedBowl" method="_on_input_event"]
+[connection signal="input_event" from="mold" to="mixedBowl" method="_on_mold_input_event"]
