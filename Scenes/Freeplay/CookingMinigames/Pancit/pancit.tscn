@@ -47,4 +47,5 @@ scale = Vector2(2.045, 2.045)
 
 [node name="Seasoning" type="Node2D" parent="Steps" unique_id=767332746]
 
+[connection signal="enter_ice" from="." to="." method="_on_enter_ice"]
 [connection signal="faucet_done" from="Steps/Blanching/Faucet" to="." method="_on_faucet_faucet_done"]

@@ -14,14 +14,13 @@ signal enter_ice
 func _ready() -> void:
 	for i in steps.get_children(): i.position.x += get_viewport().get_visible_rect().size.x
 	
+	GlobalVars.item_enter(blanching)
+	
 func _on_faucet_faucet_done() -> void:
 	GlobalVars.successind(get_tree())
 	await GlobalVars.successIndEnd
 	
 	enter_ice.emit()
 	
-	
-
-
 func _on_enter_ice() -> void:
 	pass # Replace with function body.
