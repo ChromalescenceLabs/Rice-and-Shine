@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://wy5lkqs1nt26"]
+
+[node name="Button" type="Button" unique_id=451413400]
+offset_left = -147.70589
+offset_top = -31.0
+offset_right = 147.70589
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 30
+text = "Minigame"
