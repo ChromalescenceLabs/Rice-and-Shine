@@ -119,6 +119,7 @@ _data = {
 }
 
 [node name="CustomerHappinessLogs" type="Node2D" unique_id=23440669]
+z_index = 100
 script = ExtResource("1_ycu8y")
 
 [node name="Control" type="Control" parent="." unique_id=338885040]
@@ -161,11 +162,10 @@ allow_horizontal_scroll = false
 override_mouse_filters = false
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
-[node name="OverallCont" type="VBoxContainer" parent="Control/ProgressBarsContsBG/SmoothScrollContainer" unique_id=517145779]
+[node name="OverallCont" type="VBoxContainer" parent="Control/ProgressBarsContsBG/SmoothScrollContainer" unique_id=1437875278]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="ShowProgressBars" type="Button" parent="Control" unique_id=1716144586]
 layout_mode = 1
@@ -196,5 +196,7 @@ text = "X"
 libraries/ = SubResource("AnimationLibrary_7p0b6")
 speed_scale = 3.0
 
+[connection signal="remove_customer" from="." to="." method="_on_remove_customer"]
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="Control/ShowProgressBars" to="." method="_on_show_progress_bars_pressed"]
 [connection signal="pressed" from="Control/CloseProgressBars" to="." method="_on_close_progress_bars_pressed"]

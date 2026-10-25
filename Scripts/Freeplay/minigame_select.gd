@@ -13,9 +13,7 @@ func _ready() -> void:
 				hapbar.set_value()
 
 func _on_serve_customers_pressed() -> void:
-	#get_tree().change_scene_to_file("uid://cvg4i1rwk4hbd")
 	SceneLoader.load_scene("uid://cvg4i1rwk4hbd", 1.5)
-	#bro idk why this isn't working
 
 func _on_tree_exiting() -> void:
 	var customerhappiness_data = []

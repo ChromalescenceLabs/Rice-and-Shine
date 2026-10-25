@@ -19,7 +19,6 @@ func _ready() -> void:
 	
 	#Checks if Scene has saved data
 	var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
-	print(data)
 	if not data == null:
 		# Check if a Node in that scene has data for bowls
 		var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "Bowls")
@@ -37,13 +36,21 @@ func _ready() -> void:
 			for i in node_data.size():
 				foodcontchildren[i].qty = node_data[i]
 				
+		if GlobalScenes.get_node("Customers").get_child_count() > 0:
+			for i in GlobalScenes.get_node("Customers").get_children():
+				i.reparent(customers_cont)
+				
 		# Check if a Node in that scene has data for CustomerConts	
-		node_data = GlobalSaveManager.fetch_node_persistent_value(data, "CustomerConts")
-		if not node_data == null:
-			for i in node_data.size():
-				var customer = add_customer()
-				customer.customer_info = node_data[i]
-				customer.update_texture()
+		#node_data = GlobalSaveManager.fetch_node_persistent_value(GlobalSaveManager.fetch_scene_persistent_value("Global"), "CustomerConts")
+		#if not node_data == null:
+			#for i in node_data.size():
+				#var newCustomer = CUSTOMER.instantiate()
+				#newCustomer.modulate.a = 0.0
+				#customers_cont.add_child(newCustomer)
+				#newCustomer.customer_info = node_data[i]
+				#newCustomer.initialization()
+				#newCustomer.indx = customers_cont.get_child_count()
+				#newCustomer.update_texture()
 
 func _on_add_bowl_pressed() -> void: add_bowl_func(false)
 
@@ -100,7 +107,7 @@ func add_customer() -> TextureButton:
 	customers_cont.add_child(newCustomer)
 	var type = newCustomer.initialization()
 	newCustomer.indx = customers_cont.get_child_count()
-	customer_happiness_logs.new_happiness_bar(type)
+	customer_happiness_logs.new_happiness_bar(type, newCustomer)
 	
 	return newCustomer
 
@@ -111,17 +118,16 @@ func _on_tree_exiting() -> void:
 	var foodcont_data = []
 	for i in food_conts.get_children(): foodcont_data.append(i.qty)
 	
-	var customercont_data = []
-	for i in customers_cont.get_children(): customercont_data.append(i.customer_info)
-	
-	var customerhappiness_data = []
-	for i in customer_happiness_logs.overall_cont.get_children(): 
-		customerhappiness_data.append(i.info)
+	#var customercont_data = []
+	#for i in customers_cont.get_children(): customercont_data.append(i.customer_info)
 	
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "Bowls", bowl_data)
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "FoodConts", foodcont_data)
-	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "CustomerConts", customercont_data)
-	GlobalSaveManager.add_persistent_value("GlobalData", "CustomerHappiness", customerhappiness_data)
+	#GlobalSaveManager.add_persistent_value("Global", "CustomerConts", customercont_data)
+	
+	if customers_cont.get_child_count() > 0:
+		for i in customers_cont.get_children():
+			i.reparent(GlobalScenes.get_node("Customers"))
 
 func upd_customer_indexes(current_node_index : int) -> void:
 	for i in customers_cont.get_children().slice(current_node_index):
@@ -130,21 +136,12 @@ func upd_customer_indexes(current_node_index : int) -> void:
 func _on_temp_pressed() -> void:
 	add_customer()
 
-
-func _on_customer_happiness_logs_remove_customer(index: int) -> void:
-	var customer = customers_cont.get_children()[index]
-	customer.animation_player.play_backwards("enter_exit")
-	await customer.animation_player.animation_finished
-	customer.queue_free()
-	
-
-func _on_customers_cont_child_exiting_tree(node: Node) -> void:
-	var indx : int = 0
-	for i in customers_cont.get_children():
-		if i == node:
-			customer_happiness_logs.overall_cont.get_children()[indx].queue_free()
-		indx += 1
-
+func _on_customer_happiness_logs_remove_customer(index: int, node : TextureButton) -> void:
+	for customer in customers_cont.get_children():
+		if customer == node:
+			customer.animation_player.play_backwards("enter_exit")
+			await customer.animation_player.animation_finished
+			customer.queue_free()
 
 func _on_exit_pressed() -> void:
 	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)

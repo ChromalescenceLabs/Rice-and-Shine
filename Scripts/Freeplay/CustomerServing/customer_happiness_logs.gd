@@ -1,5 +1,5 @@
 extends Node2D
-signal remove_customer(index : int)
+signal remove_customer(index : int, node : TextureButton)
 @onready var progress_bars_conts_anim: AnimationPlayer = $ProgressBarsContsAnim
 @onready var smooth_scroll_container: SmoothScrollContainer = $Control/ProgressBarsContsBG/SmoothScrollContainer
 @onready var overall_cont: VBoxContainer = $Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont
@@ -12,18 +12,45 @@ var icon_textures : Dictionary = {
 	"tatay" : preload("uid://dl3fu0qp4t7nq")
 }
 
+func _ready() -> void:
+	if GlobalScenes.get_node("HappinessBars").get_child_count() > 0:
+		for i in GlobalScenes.get_node("HappinessBars").get_children():
+			i.reparent(overall_cont)
+			i.upset.connect(_on_upset)
+
 func _on_show_progress_bars_pressed() -> void: progress_bars_conts_anim.play("Entrance_Exit")
 func _on_close_progress_bars_pressed() -> void: progress_bars_conts_anim.play_backwards("Entrance_Exit")
 
-func new_happiness_bar(texture : String, time : float = 0):
-	await get_tree().create_timer(1 - time).timeout
+func new_happiness_bar(texture : String, node : TextureButton):
 	var hapbar = HAPPINESS_BAR.instantiate()
-	hapbar.upset.connect(_on_upset)
 	overall_cont.add_child(hapbar)
+	hapbar.upset.connect(_on_upset)
 	hapbar.icon.texture = icon_textures[texture]
 	hapbar.type = texture
+	hapbar.associated_node = node
 	
 	return hapbar
 
-func _on_upset(index : int) -> void:
-	remove_customer.emit(index)
+func _on_upset(index : int, node : TextureButton) -> void:
+	remove_customer.emit(index, node)
+	
+	#var data = GlobalSaveManager.fetch_scene_persistent_value("Global")
+	#if not data == null:
+		#var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "CustomerConts")
+		#if node_data == null:
+			#print("No CustomerConts Data Found in Global!")
+		#else:
+			#node_data.remove_at(index)
+	#else:
+		#print("No Global Data Persistence Found!")
+
+func _on_tree_exiting() -> void:
+	if overall_cont.get_child_count() > 0:
+		for i in overall_cont.get_children():
+			i.reparent(GlobalScenes.get_node("HappinessBars"))
+
+func _on_remove_customer(index: int, node: TextureButton) -> void:
+	if GlobalScenes.get_node("Customers").get_child_count():
+		for i in GlobalScenes.get_node("Customers").get_children():
+			if i == node:
+				i.queue_free()

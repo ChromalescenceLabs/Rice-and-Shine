@@ -5,6 +5,7 @@ signal upset(index : int)
 @onready var timer: Timer = $Timer
 var indx : int 
 var type : String
+var associated_node : TextureButton
 
 var info = []
 
@@ -20,15 +21,6 @@ func _on_bar_value_changed(value: float) -> void:
 			if i == self:
 				indx = siblings.find(self)
 				
-		upset.emit(indx)
+		upset.emit(indx, associated_node)
 		self.queue_free()
-
-func set_value():
-	bar.value = info[2]
-	
-func _on_tree_exiting() -> void:
-	info.append(type)
-	info.append(icon.texture)
-	info.append(bar.value)
-	info.append(timer.time_left)
 	

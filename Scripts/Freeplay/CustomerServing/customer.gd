@@ -51,12 +51,14 @@ func _ready() -> void:
 
 func initialization() -> String:
 	self.modulate.a = 1.0
-	var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
+	var data = GlobalSaveManager.fetch_scene_persistent_value("Global")
 	var char_type
 	if not data == null:
 		var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "CustomerConts")
 		if node_data == null:
 			char_type = update_customerInfo()
+		else:
+			char_type = node_data[0]["CustomerType"]
 	else:
 		char_type = update_customerInfo()
 	
@@ -178,4 +180,5 @@ func _on_customer_area_area_exited(area: Area2D) -> void:
 		bowl.set("servable", false)
 
 func _on_tree_exiting() -> void:
-	get_tree().current_scene.upd_customer_indexes(indx)
+	#get_tree().current_scene.upd_customer_indexes(indx)
+	pass
