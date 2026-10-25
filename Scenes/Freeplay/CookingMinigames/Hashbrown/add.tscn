@@ -22,7 +22,7 @@
 load_path = "res://.godot/imported/mixedPotato.png-2dbed9ca4d5891aabb37373defb2265c.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
-size = Vector2(320.67038, 150.83789)
+size = Vector2(498.32416, 277.095)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj6en"]
 size = Vector2(345.16156, 217.74197)
@@ -58,6 +58,7 @@ texture = ExtResource("1_arw06")
 
 [node name="mixed" type="TextureRect" parent="Bowl" unique_id=1096931483]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -545.2512
 offset_top = -404.4693
 offset_right = 606.7488
@@ -65,6 +66,7 @@ offset_bottom = 273.5307
 texture = SubResource("CompressedTexture2D_lvaan")
 
 [node name="flour" type="TextureRect" parent="Bowl" unique_id=257530616]
+visible = false
 offset_left = -545.2514
 offset_top = -404.46927
 offset_right = 606.7486
@@ -72,6 +74,7 @@ offset_bottom = 273.53073
 texture = ExtResource("2_6iq1h")
 
 [node name="cheese" type="TextureRect" parent="Bowl" unique_id=1866035509]
+visible = false
 offset_left = -549.72034
 offset_top = -410.05576
 offset_right = 602.27966
@@ -79,6 +82,7 @@ offset_bottom = 267.94424
 texture = ExtResource("2_g7wev")
 
 [node name="salt" type="TextureRect" parent="Bowl" unique_id=1099496389]
+visible = false
 offset_left = -562.0112
 offset_top = -420.11166
 offset_right = 589.9888
@@ -86,6 +90,7 @@ offset_bottom = 257.88834
 texture = ExtResource("3_6iq1h")
 
 [node name="pepper" type="TextureRect" parent="Bowl" unique_id=1220339203]
+visible = false
 offset_left = -530.72644
 offset_top = -404.46927
 offset_right = 621.27356
@@ -94,18 +99,17 @@ texture = ExtResource("4_h4qbo")
 
 [node name="paprika" type="TextureRect" parent="Bowl" unique_id=19441100]
 visible = false
-offset_left = -195.53073
-offset_top = -230.1676
-offset_right = 956.46924
-offset_bottom = 447.8324
+offset_left = -540.7822
+offset_top = -410.0559
+offset_right = 611.2178
+offset_bottom = 267.9441
 texture = ExtResource("5_lvaan")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" unique_id=385979204]
-position = Vector2(12.849304, 5.0279846)
+position = Vector2(23.463318, 22.346375)
 shape = SubResource("RectangleShape2D_ittll")
 
 [node name="Condiments" type="Node2D" parent="." unique_id=1260316097]
-visible = false
 script = ExtResource("2_xmpae")
 
 [node name="cheese" type="Area2D" parent="Condiments" unique_id=1686387682]
@@ -301,6 +305,7 @@ grow_vertical = 2
 texture = ExtResource("9_xh2ca")
 
 [node name="mix" type="Node2D" parent="." unique_id=1153935733]
+visible = false
 script = ExtResource("15_h4qbo")
 
 [node name="mixer" type="Area2D" parent="mix" unique_id=1141931023]
