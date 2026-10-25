@@ -200,7 +200,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="BG IMAGE" type="Sprite2D" parent="." unique_id=233006868]
 
 [node name="Plate" type="Sprite2D" parent="." unique_id=1406370295]
-position = Vector2(-178, 399)
+position = Vector2(-36, 392)
 scale = Vector2(1.5338885, 1.5127248)
 texture = ExtResource("9_h6rov")
 
