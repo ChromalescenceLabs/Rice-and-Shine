@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 @onready var customer_happiness_logs: Node2D = $CustomerHappinessLogs
 const CUSTOMER_SERVING_SANDBOX = preload("uid://cvg4i1rwk4hbd")
 
