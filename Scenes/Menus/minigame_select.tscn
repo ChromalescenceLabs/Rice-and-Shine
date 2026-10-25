@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
 
 [ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/Freeplay/minigame_select.gd" id="1_tovjb"]
+[ext_resource type="Script" uid="uid://csh0f5isj1g1u" path="res://Scripts/Menus/bg_image.gd" id="2_gl1wp"]
 [ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Menus/FreeplayMenu/RICE.png" id="2_l46wx"]
 [ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/Menus/FreeplayMenu/pancake.png" id="3_btba4"]
 [ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/Menus/FreeplayMenu/hasbrown.png" id="4_h6rov"]
@@ -9,18 +10,130 @@
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Menus/FreeplayMenu/torta.png" id="7_l46wx"]
 [ext_resource type="Texture2D" uid="uid://biymioqcxvn8k" path="res://Assets/Menus/ChapterSelect/PLATE.png" id="9_h6rov"]
-[ext_resource type="Script" uid="uid://bqo17hfbf73tx" path="res://Scripts/Freeplay/decreasingcontainer.gd" id="10_gl1wp"]
+[ext_resource type="Script" uid="uid://wpmxw5kkus21" path="res://Scripts/Freeplay/decreasingcontainer.gd" id="10_gl1wp"]
 [ext_resource type="PackedScene" uid="uid://wy5lkqs1nt26" path="res://Scenes/Freeplay/minigame_button.tscn" id="11_8omsi"]
 
 [node name="Minigame Selection" type="Node2D" unique_id=380012965]
 script = ExtResource("1_tovjb")
 
-[node name="BG" type="ColorRect" parent="." unique_id=916736482]
+[node name="Bg Image" type="Control" parent="." unique_id=1476362318]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_gl1wp")
+
+[node name="pancake" type="ColorRect" parent="Bg Image" unique_id=89038020]
+layout_mode = 0
 offset_left = -123.0
 offset_top = -59.0
 offset_right = 1382.0
 offset_bottom = 783.0
 color = Color(1, 0.5372549, 0.21176471, 1)
+
+[node name="rice" type="ColorRect" parent="Bg Image" unique_id=655175834]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(0.9659297, 0.5370438, 0.5245656, 1)
+
+[node name="hotdog" type="ColorRect" parent="Bg Image" unique_id=490706465]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(1, 0.46005398, 0.7512762, 1)
+
+[node name="hashbrown" type="ColorRect" parent="Bg Image" unique_id=740326722]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(0.8070605, 0.5444038, 1, 1)
+
+[node name="inihaw" type="ColorRect" parent="Bg Image" unique_id=832999191]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(0.59641206, 0.6474006, 1, 1)
+
+[node name="torta" type="ColorRect" parent="Bg Image" unique_id=415666459]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(0, 0.7776667, 0.768044, 1)
+
+[node name="placeholder" type="ColorRect" parent="Bg Image" unique_id=1565325446]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(1, 0.5372549, 0.21176471, 1)
+
+[node name="placeholder2" type="ColorRect" parent="Bg Image" unique_id=1573709112]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(0.9659297, 0.5370438, 0.5245656, 1)
+
+[node name="placeholder3" type="ColorRect" parent="Bg Image" unique_id=1172131986]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(1, 0.46005398, 0.7512762, 1)
+
+[node name="placeholder4" type="ColorRect" parent="Bg Image" unique_id=1952880616]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(0.8070605, 0.5444038, 1, 1)
+
+[node name="placeholder5" type="ColorRect" parent="Bg Image" unique_id=499415442]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(0, 0.7776667, 0.768044, 1)
+
+[node name="placeholder6" type="ColorRect" parent="Bg Image" unique_id=932690291]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(0.59641206, 0.6474006, 1, 1)
+
+[node name="placeholder7" type="ColorRect" parent="Bg Image" unique_id=4642965]
+layout_mode = 0
+offset_left = -116.0
+offset_top = -61.0
+offset_right = 1389.0
+offset_bottom = 781.0
+color = Color(1, 0.5372549, 0.21176471, 1)
+
+[node name="placeholder8" type="ColorRect" parent="Bg Image" unique_id=262784977]
+layout_mode = 0
+offset_left = -116.0
+offset_top = -61.0
+offset_right = 1389.0
+offset_bottom = 781.0
+color = Color(0.9659297, 0.5370438, 0.5245656, 1)
 
 [node name="Selection" type="Control" parent="." unique_id=1185375392]
 visible = false
@@ -235,8 +348,6 @@ disabled = true
 label = "LOCKED"
 minigame_scene = "uid://dqrhc8pu68q17"
 metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="BG IMAGE" type="Sprite2D" parent="." unique_id=233006868]
 
 [node name="Plate" type="Sprite2D" parent="." unique_id=1406370295]
 position = Vector2(-36, 392)
