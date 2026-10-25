@@ -39,42 +39,57 @@ size = Vector2(548, 73)
 [node name="Add" type="Node2D" unique_id=323244026]
 
 [node name="Bowl" type="Area2D" parent="." unique_id=1075048237]
-position = Vector2(363, 274)
+position = Vector2(597.00006, 441.00003)
 scale = Vector2(0.895, 0.895)
 
 [node name="bowl" type="TextureRect" parent="Bowl" unique_id=1831486017]
-offset_left = 3.3519592
-offset_top = -6.703888
-offset_right = 681.3519
-offset_bottom = 372.2961
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -339.0
+offset_top = -189.5
+offset_right = 339.0
+offset_bottom = 189.5
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_arw06")
 
+[node name="mixed" type="TextureRect" parent="Bowl" unique_id=1096931483]
+visible = false
+offset_left = -545.2512
+offset_top = -404.4693
+offset_right = 606.7488
+offset_bottom = 273.5307
+texture = SubResource("CompressedTexture2D_lvaan")
+
 [node name="flour" type="TextureRect" parent="Bowl" unique_id=257530616]
-offset_left = -204.46925
-offset_top = -223.46371
-offset_right = 947.53076
-offset_bottom = 454.5363
+offset_left = -545.2514
+offset_top = -404.46927
+offset_right = 606.7486
+offset_bottom = 273.53073
 texture = ExtResource("2_6iq1h")
 
 [node name="cheese" type="TextureRect" parent="Bowl" unique_id=1866035509]
-offset_left = -208.93854
-offset_top = -229.0503
-offset_right = 943.06146
-offset_bottom = 448.9497
+offset_left = -549.72034
+offset_top = -410.05576
+offset_right = 602.27966
+offset_bottom = 267.94424
 texture = ExtResource("2_g7wev")
 
 [node name="salt" type="TextureRect" parent="Bowl" unique_id=1099496389]
-offset_left = -221.22906
-offset_top = -239.10614
-offset_right = 930.77094
-offset_bottom = 438.89386
+offset_left = -562.0112
+offset_top = -420.11166
+offset_right = 589.9888
+offset_bottom = 257.88834
 texture = ExtResource("3_6iq1h")
 
 [node name="pepper" type="TextureRect" parent="Bowl" unique_id=1220339203]
-offset_left = -189.94414
-offset_top = -223.4637
-offset_right = 962.05585
-offset_bottom = 454.53632
+offset_left = -530.72644
+offset_top = -404.46927
+offset_right = 621.27356
+offset_bottom = 273.53073
 texture = ExtResource("4_h4qbo")
 
 [node name="paprika" type="TextureRect" parent="Bowl" unique_id=19441100]
@@ -85,16 +100,8 @@ offset_right = 956.46924
 offset_bottom = 447.8324
 texture = ExtResource("5_lvaan")
 
-[node name="mixed" type="TextureRect" parent="Bowl" unique_id=1096931483]
-visible = false
-offset_left = -195.53073
-offset_top = -207.82135
-offset_right = 956.46924
-offset_bottom = 470.17865
-texture = SubResource("CompressedTexture2D_lvaan")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" unique_id=385979204]
-position = Vector2(353.63147, 186.0336)
+position = Vector2(12.849304, 5.0279846)
 shape = SubResource("RectangleShape2D_ittll")
 
 [node name="Condiments" type="Node2D" parent="." unique_id=1260316097]
@@ -323,6 +330,7 @@ shape = SubResource("RectangleShape2D_dkm2g")
 
 [connection signal="mouse_entered" from="Bowl" to="Condiments" method="_on_bowl_mouse_entered"]
 [connection signal="mouse_exited" from="Bowl" to="Condiments" method="_on_bowl_mouse_exited"]
+[connection signal="mouse_exited" from="Bowl" to="mix" method="_on_bowl_mouse_exited"]
 [connection signal="area_entered" from="potato" to="potato" method="_on_area_entered"]
 [connection signal="input_event" from="potato" to="Condiments" method="_on_potato_input_event"]
 [connection signal="input_event" from="potato" to="potato" method="_on_input_event"]

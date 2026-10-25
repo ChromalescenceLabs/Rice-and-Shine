@@ -4,7 +4,7 @@ extends Node2D
 #const BORDER = preload("uid://bqevegjdxbpb6")
 
 var myChild=[]
-var scene=4
+var scene=1
 var currentObject
 
 func _ready() -> void:

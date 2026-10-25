@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://3nbi6q3ikgh8" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/rinsing.tscn" id="11_avunj"]
 [ext_resource type="PackedScene" uid="uid://jqgwfjxupldu" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/squeeze.tscn" id="12_meb1c"]
 [ext_resource type="PackedScene" uid="uid://nxlhp5ta2hf7" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/frying.tscn" id="13_35cbw"]
-[ext_resource type="Shader" uid="uid://bqevegjdxbpb6" path="res://Border.gdshader" id="14_b1sxt"]
+[ext_resource type="Shader" uid="uid://b7cg3ikv2m2w7" path="res://Assets/Shaders/Border.gdshader" id="14_b1sxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
 
@@ -85,7 +85,6 @@ texture = ExtResource("2_y804u")
 visible = false
 
 [node name="grate" type="Node2D" parent="." unique_id=1471228203]
-visible = false
 
 [node name="grater" type="Area2D" parent="grate" unique_id=318729698]
 position = Vector2(211, 181)
