@@ -12,6 +12,16 @@
 [ext_resource type="Texture2D" uid="uid://kewsf4o5v8dg" path="res://Assets/Menus/FreeplayMenu/Inihaw.png" id="6_l46wx"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Menus/FreeplayMenu/torta.png" id="7_l46wx"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="8_gl1wp"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="9_8omsi"]
+[ext_resource type="Texture2D" uid="uid://biymioqcxvn8k" path="res://Assets/Menus/ChapterSelect/PLATE.png" id="9_h6rov"]
+[ext_resource type="Script" uid="uid://b48hwu822kapi" path="res://Scenes/Menus/decreasingcontainer.gd" id="10_gl1wp"]
+
+[sub_resource type="Resource" id="Resource_jn51n"]
+script = ExtResource("9_8omsi")
+
+[sub_resource type="Resource" id="Resource_iito2"]
+script = ExtResource("9_8omsi")
 [ext_resource type="Texture2D" uid="uid://drhabplta78w7" path="res://Assets/Menus/FreeplayMenu/Lumpia.png" id="11_kyrjg"]
 
 [sub_resource type="Resource" id="Resource_h6rov"]
@@ -37,6 +47,14 @@ offset_right = 1382.0
 offset_bottom = 783.0
 color = Color(1, 0.5372549, 0.21176471, 1)
 
+[node name="Selection" type="Control" parent="." unique_id=1185375392]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Rice" type="TextureButton" parent="Selection" unique_id=1511388286]
 [node name="ServeCustomers" type="Button" parent="." unique_id=1987029645]
 layout_mode = 0
 offset_left = 837.0
@@ -131,6 +149,126 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 layout_mode = 2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
+[node name="New Selection" type="Control" parent="." unique_id=1778755543]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ServeCustomers" type="Button" parent="New Selection" unique_id=1623527969]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 21.0
+offset_right = 1262.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 30
+text = "Serve Customers Sandbox"
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="New Selection" unique_id=793391149]
+custom_minimum_size = Vector2(650, 700)
+layout_mode = 0
+offset_left = 378.0
+offset_top = 16.0
+offset_right = 1028.0
+offset_bottom = 798.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("8_gl1wp")
+wheel_scroll_damper = SubResource("Resource_jn51n")
+dragging_scroll_damper = SubResource("Resource_iito2")
+hide_scrollbar_over_time = true
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="Container" type="Container" parent="New Selection/SmoothScrollContainer" unique_id=738950337]
+custom_minimum_size = Vector2(600, 800)
+layout_mode = 2
+script = ExtResource("10_gl1wp")
+total_height = 600.0
+curve_amp = 430.0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Rice" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=504060987]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "RICE"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="New Selection/SmoothScrollContainer/Container/Rice" unique_id=1447540350]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Pancake" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=1421556202]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "Pancake"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Hashbrown" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=1529590526]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "Hashbrown"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Hotdog" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=2114420349]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "Hotdog"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Inihaw" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=330696785]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "Inihaw"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Torta" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=735349444]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "Torta"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BLANK" type="Button" parent="New Selection/SmoothScrollContainer/Container" unique_id=188741094]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 60
+text = "BLANK"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BG IMAGE" type="Sprite2D" parent="." unique_id=233006868]
+
+[node name="Plate" type="Sprite2D" parent="." unique_id=1406370295]
+position = Vector2(-36, 392)
+scale = Vector2(1.5338885, 1.5127248)
+texture = ExtResource("9_h6rov")
+
+[node name="LOGO" type="Sprite2D" parent="." unique_id=1510853050]
+visible = false
+position = Vector2(282, 181)
+scale = Vector2(0.19780816, 0.19780816)
+texture = ExtResource("7_8omsi")
+
+[connection signal="pressed" from="Selection/Rice" to="." method="_on_minigame_1_pressed"]
+[connection signal="pressed" from="Selection/Pancake" to="." method="_on_minigame_2_pressed"]
+[connection signal="pressed" from="Selection/Hashbrown" to="." method="_on_minigame_3_pressed"]
+[connection signal="pressed" from="Selection/Hotdog" to="." method="_on_minigame_4_pressed"]
+[connection signal="pressed" from="Selection/Inihaw" to="." method="_on_minigame_5_pressed"]
+[connection signal="pressed" from="Selection/Torta" to="." method="_on_minigame_6_pressed"]
+[connection signal="pressed" from="Selection/ServeCustomers" to="." method="_on_serve_customers_pressed"]
+[connection signal="pressed" from="New Selection/ServeCustomers" to="." method="_on_serve_customers_pressed"]
+[connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Rice" to="." method="_on_minigame_1_pressed"]
+[connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Pancake" to="." method="_on_minigame_2_pressed"]
+[connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Hashbrown" to="." method="_on_minigame_3_pressed"]
+[connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Hotdog" to="." method="_on_minigame_4_pressed"]
+[connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Inihaw" to="." method="_on_minigame_5_pressed"]
+[connection signal="pressed" from="New Selection/SmoothScrollContainer/Container/Torta" to="." method="_on_minigame_6_pressed"]
 [node name="Lumpia" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer3" unique_id=291767803 instance=ExtResource("6_8omsi")]
 layout_mode = 2
 mouse_filter = 1
