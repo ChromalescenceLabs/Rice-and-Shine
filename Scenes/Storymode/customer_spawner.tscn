@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cln3gtus3v2r"]
+
+[ext_resource type="Script" uid="uid://bps6ibkr218k4" path="res://Scripts/Freeplay/Storymode/customer_spawner.gd" id="1_gbusx"]
+
+[node name="CustomerSpawner" type="Node2D" unique_id=140030450]
+script = ExtResource("1_gbusx")
+
+[node name="AddCustomerTimeout" type="Timer" parent="." unique_id=1105627112]
+one_shot = true
+
+[connection signal="timeout" from="AddCustomerTimeout" to="." method="_on_add_customer_timeout_timeout"]

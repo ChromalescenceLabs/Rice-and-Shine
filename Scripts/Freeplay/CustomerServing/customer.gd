@@ -36,31 +36,15 @@ var customer_info : Dictionary = {
 	# CustomerHappiness : int
 }
 
-# Have to be in the same style as the cues in the customer ordering dialogue resource
-var customerTypes : Array = [
-	"student",
-	"lolo",
-	"marites",
-	"tatay"#,
-	#"basketball_player",
-	#"daughter",
-]
+var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
+	rng.randomize()
 	order_label.modulate.a = 0
 
 func initialization() -> String:
 	self.modulate.a = 1.0
-	var data = GlobalSaveManager.fetch_scene_persistent_value("Global")
-	var char_type
-	if not data == null:
-		var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "CustomerConts")
-		if node_data == null:
-			char_type = update_customerInfo()
-		else:
-			char_type = node_data[0]["CustomerType"]
-	else:
-		char_type = update_customerInfo()
+	var char_type = update_customerInfo()
 	
 	return char_type
 
@@ -68,7 +52,8 @@ func update_customerInfo() -> String:
 	animation_player.play("enter_exit")
 		
 	# Picks Customer Type
-	var randType = customerTypes.pick_random()
+	var index = rng.rand_weighted(GlobalVars.customer_weights)
+	var randType = GlobalVars.unlocked_customers[index]
 	customer_info["CustomerType"] = randType
 	update_texture()
 	
@@ -178,7 +163,3 @@ func _on_customer_area_area_exited(area: Area2D) -> void:
 	if area is BowlArea: 
 		var bowl = area.get_parent() as TextureRect
 		bowl.set("servable", false)
-
-func _on_tree_exiting() -> void:
-	#get_tree().current_scene.upd_customer_indexes(indx)
-	pass

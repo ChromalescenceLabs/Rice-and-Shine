@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bs83acug1c5xl"]
 
-[ext_resource type="Script" uid="uid://cst44s67ajtrq" path="res://Scripts/Freeplay/CustomerServing/customer_serving_sandbox.gd" id="1_5av7u"]
+[ext_resource type="Script" uid="uid://bv7dyvtgl8ga7" path="res://Scripts/Freeplay/Storymode/serving_customers_base.gd" id="1_5av7u"]
 [ext_resource type="PackedScene" uid="uid://cntangxcnp6xg" path="res://Scenes/Freeplay/CustomerServing/add_bowl_btn.tscn" id="2_tbsef"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="3_h5bb6"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="4_pbxxb"]
@@ -29,10 +29,10 @@ gradient = SubResource("Gradient_kc8g2")
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_khlfu"]
+[sub_resource type="Resource" id="Resource_5av7u"]
 script = ExtResource("4_pbxxb")
 
-[sub_resource type="Resource" id="Resource_3ollt"]
+[sub_resource type="Resource" id="Resource_tbsef"]
 script = ExtResource("4_pbxxb")
 
 [node name="ServingCustomersBase" type="Node2D" unique_id=1724706127]
@@ -101,32 +101,31 @@ offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=508435507]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=1401998401]
 z_index = 2
 clip_contents = false
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -639.0
-offset_top = -239.91501
-offset_right = 639.0
-offset_bottom = 20.085571
+offset_top = -219.745
+offset_right = 97.41943
+offset_bottom = 33.255005
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.93, 0.93)
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 scroll_horizontal_by_default = true
 script = ExtResource("3_h5bb6")
-wheel_scroll_damper = SubResource("Resource_khlfu")
-dragging_scroll_damper = SubResource("Resource_3ollt")
+wheel_scroll_damper = SubResource("Resource_5av7u")
+dragging_scroll_damper = SubResource("Resource_tbsef")
 drag_with_mouse = false
 allow_vertical_scroll = false
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
-[node name="FoodConts" type="HBoxContainer" parent="Control/ScrollContainer" unique_id=972313461]
+[node name="FoodConts" type="HBoxContainer" parent="Control/ScrollContainer" unique_id=817125299]
 layout_mode = 2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
@@ -140,7 +139,7 @@ empty_texture = ExtResource("8_tuk8d")
 empty_textureh = ExtResource("9_qn4g0")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Pancake" parent="Control/ScrollContainer/FoodConts" unique_id=1500125057 instance=ExtResource("5_tghj7")]
+[node name="Pancake" parent="Control/ScrollContainer/FoodConts" unique_id=1947481052 instance=ExtResource("5_tghj7")]
 layout_mode = 2
 mouse_filter = 1
 food_type = "PANCAKE"
@@ -150,7 +149,7 @@ empty_texture = ExtResource("12_ifkf1")
 empty_textureh = ExtResource("13_xua5w")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Hashbrown" parent="Control/ScrollContainer/FoodConts" unique_id=1435522645 instance=ExtResource("5_tghj7")]
+[node name="Hashbrown" parent="Control/ScrollContainer/FoodConts" unique_id=408254311 instance=ExtResource("5_tghj7")]
 layout_mode = 2
 mouse_filter = 1
 food_type = "HASHBROWN"

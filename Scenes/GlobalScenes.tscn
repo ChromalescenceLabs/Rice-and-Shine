@@ -6,3 +6,5 @@ visible = false
 [node name="HappinessBars" type="Node2D" parent="." unique_id=252155382]
 
 [node name="Customers" type="Node2D" parent="." unique_id=887249497]
+
+[node name="StoryCustomers" type="Node2D" parent="." unique_id=647456288]

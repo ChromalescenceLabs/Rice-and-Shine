@@ -5,23 +5,33 @@ extends TextureButton
 @export var food_type : String
 @export var filled_texture : Texture
 @export var filled_textureh : Texture
-@export var empty_texture : Texture
-@export var empty_textureh : Texture
+@export var empty_texture : Texture = preload("uid://bsqv34s5n6jua")
+@export var empty_textureh : Texture = preload("uid://d4ejlsmnfb3fk")
 
 const FOOD_PICKUP = preload("uid://bp3wrjfknjyxt")
 
 var state : String
+var textures : Dictionary = {
+	"RICE": [preload("uid://pdgkrk5blfm6"), preload("uid://bx6lx7oiddght")],
+	"PANCAKE": [preload("uid://bud6gaclyr7kc"), preload("uid://dmu3u6rp8tpr3")],
+	"HASHBROWN": [preload("uid://c5st1ydxjpqdq"), preload("uid://bhivobiuw4dqx")],
+	"LUMPIA": [preload("uid://dafnwn4p4j7hm"), preload("uid://uhja1md1q4k8")]
+}
 
 var qty : int = 5:
 	set(value):
 		if not qty == value:
 			qty = value
 			upd_texture()
-			counter.text = str(qty)
+			counter.text = food_type + ": " + str(qty)
 
 func _ready() -> void:
-	counter.text = str(qty)
+	counter.text = food_type + ": " + str(qty)
+	filled_texture = textures[food_type][0]
+	filled_textureh = textures[food_type][1]
 	upd_texture()
+	
+	
 
 func _on_button_down() -> void:
 	match food_type:

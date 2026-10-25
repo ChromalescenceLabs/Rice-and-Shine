@@ -124,3 +124,9 @@ func _on_customers_cont_child_exiting_tree(node: Node) -> void:
 	for i in customer_happiness_logs.overall_cont.get_children():
 		if i.associated_node == node:
 			i.queue_free()
+
+func _on_exit_pressed() -> void: SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1.5)
+
+func _on_customer_spawner_add_customer() -> void: 
+	if not customers_cont.get_child_count() > 6:
+		add_customer()

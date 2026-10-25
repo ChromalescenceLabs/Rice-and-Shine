@@ -19,13 +19,14 @@
 [ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="14_o8aqv"]
 [ext_resource type="Texture2D" uid="uid://c4jbnbugoscts" path="res://Assets/Freeplay/Serving/Filled/HashbrownContFilledH.png" id="14_xhxoy"]
 [ext_resource type="PackedScene" uid="uid://dpjeqy63lxdvr" path="res://Scenes/Freeplay/CustomerServing/customer_happiness_logs.tscn" id="19_lteyg"]
+[ext_resource type="PackedScene" uid="uid://cln3gtus3v2r" path="res://Scenes/Storymode/customer_spawner.tscn" id="20_g0hnr"]
 
-[sub_resource type="Gradient" id="Gradient_wgjyl"]
+[sub_resource type="Gradient" id="Gradient_kc8g2"]
 offsets = PackedFloat32Array(0, 0.6204819, 0.9939759)
 colors = PackedColorArray(0.28708315, 0.14834896, 0.0949044, 1, 0.6441346, 0.2909285, 0.056175753, 1, 0.71782947, 0.37462825, 0.19089448, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_08i74"]
-gradient = SubResource("Gradient_wgjyl")
+gradient = SubResource("Gradient_kc8g2")
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
@@ -111,11 +112,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -639.0
-offset_top = -239.91501
-offset_right = 639.0
-offset_bottom = 20.085571
+offset_top = -219.745
+offset_right = 735.1936
+offset_bottom = 55.34082
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.93, 0.93)
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 scroll_horizontal_by_default = true
@@ -176,12 +178,7 @@ offset_right = 1256.0
 offset_bottom = 703.0
 text = "Exit"
 
-[node name="temp" type="Button" parent="." unique_id=1620262690]
-offset_left = 13.0
-offset_top = 11.0
-offset_right = 128.0
-offset_bottom = 42.0
-text = "add customer"
+[node name="CustomerSpawner" parent="." unique_id=140030450 instance=ExtResource("20_g0hnr")]
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="child_exiting_tree" from="Control/CustomersCont" to="." method="_on_customers_cont_child_exiting_tree"]
@@ -189,4 +186,4 @@ text = "add customer"
 [connection signal="child_exiting_tree" from="Control/FreedBowls" to="." method="_on_freed_bowls_child_exiting_tree"]
 [connection signal="remove_customer" from="CustomerHappinessLogs" to="." method="_on_customer_happiness_logs_remove_customer"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="temp" to="." method="_on_temp_pressed"]
+[connection signal="add_customer" from="CustomerSpawner" to="." method="_on_customer_spawner_add_customer"]
