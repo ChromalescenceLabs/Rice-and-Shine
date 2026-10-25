@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cgsbvuaq5223a" path="res://Scenes/Freeplay/CookingMinigames/Lumpia/ingredient_bowl.tscn" id="9_4ohnk"]
 [ext_resource type="PackedScene" uid="uid://ns536h1evtqt" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/pan.tscn" id="10_t0yvv"]
 [ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/oil.tscn" id="11_st0dy"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/recipe_book.tscn" id="12_mdxbi"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8bmql"]
 particle_flag_disable_z = true
@@ -122,6 +123,7 @@ position = Vector2(408, 610)
 type = "Cabbage"
 
 [node name="Sauteing" type="Node2D" parent="Steps" unique_id=114307747]
+visible = false
 
 [node name="Pan" parent="Steps/Sauteing" unique_id=1647326065 instance=ExtResource("10_t0yvv")]
 position = Vector2(619, 354)
@@ -132,16 +134,52 @@ scale = Vector2(1.495, 1.495)
 position = Vector2(1155, 129)
 
 [node name="AdditionalIngredients" type="Node2D" parent="Steps" unique_id=1931313091]
+visible = false
+
+[node name="IngredientBowl4" parent="Steps/AdditionalIngredients" unique_id=284916315 instance=ExtResource("9_4ohnk")]
+position = Vector2(298, 96)
+type = "P_Onion"
+
+[node name="IngredientBowl5" parent="Steps/AdditionalIngredients" unique_id=923854891 instance=ExtResource("9_4ohnk")]
+position = Vector2(261, 354)
+type = "P_Garlic"
+
+[node name="IngredientBowl6" parent="Steps/AdditionalIngredients" unique_id=1434116250 instance=ExtResource("9_4ohnk")]
+position = Vector2(126.00003, 217)
+type = "P_Pork"
+
+[node name="IngredientBowl7" parent="Steps/AdditionalIngredients" unique_id=415688359 instance=ExtResource("9_4ohnk")]
+position = Vector2(988, 359)
+type = "P_Chinese"
+
+[node name="IngredientBowl8" parent="Steps/AdditionalIngredients" unique_id=1505328859 instance=ExtResource("9_4ohnk")]
+position = Vector2(941, 581)
+type = "P_SoySauce"
+
+[node name="IngredientBowl9" parent="Steps/AdditionalIngredients" unique_id=2108731429 instance=ExtResource("9_4ohnk")]
+position = Vector2(1143, 493)
+type = "P_OysterSauce"
 
 [node name="Draining" type="Node2D" parent="Steps" unique_id=529774826]
+
+[node name="TiltingObject" parent="Steps/Draining" unique_id=1432219035 instance=ExtResource("6_8bmql")]
+position = Vector2(615, 281)
 
 [node name="Noodles" type="Node2D" parent="Steps" unique_id=717988187]
 
 [node name="Seasoning" type="Node2D" parent="Steps" unique_id=767332746]
 
+[node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("12_mdxbi")]
+offset_left = 1.0
+offset_top = 481.0
+offset_right = 184.0
+offset_bottom = 718.0
+
 [connection signal="enter_ice" from="." to="." method="_on_enter_ice"]
 [connection signal="ice_done" from="." to="." method="_on_ice_done"]
+[connection signal="saute_finished" from="." to="." method="_on_saute_finished"]
 [connection signal="saute_start" from="." to="." method="_on_saute_start"]
 [connection signal="faucet_done" from="Steps/Blanching/Faucet" to="." method="_on_faucet_faucet_done"]
 [connection signal="area_entered" from="Steps/Ice/IceBowl/GPUParticles2D/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Steps/Ice/IceBowl/GPUParticles2D/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="Steps/Sauteing/Pan" to="." method="_on_pan_area_entered"]

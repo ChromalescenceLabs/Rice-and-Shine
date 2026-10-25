@@ -28,12 +28,21 @@ var ice_qty := 0:
 			ice_done.emit()
 var filling_ice := false
 
-signal saute_start
-
 # Blanching Vegetables
 var snappeas_added := false
 var carrots_added := false
 var cabbage_added := false
+
+# Sauteing Vegetables
+signal saute_start
+signal saute_finished
+var onion_added := false
+var garlic_added := false
+var pork_added := false
+var chinese_added := false
+var soysauce_added := false
+var oystersauce_added := false
+
 
 func _process(_delta: float) -> void:
 	if filling_ice: ice_qty += 1
@@ -80,7 +89,23 @@ func check_mixbowl_contents() -> void:
 		await GlobalVars.successIndEnd
 		
 		saute_start.emit()
+	elif onion_added and garlic_added and pork_added and chinese_added and soysauce_added and oystersauce_added:
+		
+		# ADD MIXING HERE
+		
+		GlobalVars.successind(get_tree().current_scene)
+		await GlobalVars.successIndEnd
+		
+		saute_finished.emit()
 
 func _on_saute_start() -> void:
 	GlobalVars.item_exit(vegetables)
 	GlobalVars.item_enter(sauteing)
+	
+func _on_pan_area_entered(area: Area2D) -> void:
+	if area is Oil: GlobalVars.item_enter(additional_ingredients)
+
+func _on_saute_finished() -> void:
+	GlobalVars.item_enter(draining)
+	
+	

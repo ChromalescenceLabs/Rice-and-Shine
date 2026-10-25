@@ -23,7 +23,6 @@ func _ready() -> void: texture_rect.texture = texture
 func _process(_delta: float) -> void:
 	if dragging: 
 		self.global_position = lerp(self.global_position, get_global_mouse_position(), 0.2)
-		#particles.global_position = self.global_position
 
 func _input(event: InputEvent) -> void:
 	if hovering: 
