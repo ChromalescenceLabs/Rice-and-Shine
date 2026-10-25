@@ -26,10 +26,15 @@ func _input(event: InputEvent) -> void:
 		if hovering: 
 			if in_mixbowl:
 				match type:
+					# For Lumpia Scene
 					"GroundPork": get_tree().current_scene.groundpork_added = true
 					"MincedOnion": get_tree().current_scene.mincedonion_added = true
 					"Carrot": get_tree().current_scene.carrot_added = true
 					"Parsley": get_tree().current_scene.parsley_added = true
+					# For Pancit Scene
+					"SnapPeas": get_tree().current_scene.snappeas_added = true
+					"P_Carrot": get_tree().current_scene.carrots_added = true
+					"Cabbage": get_tree().current_scene.cabbage_added = true
 				get_tree().current_scene.check_mixbowl_contents()
 				self.queue_free()
 					
