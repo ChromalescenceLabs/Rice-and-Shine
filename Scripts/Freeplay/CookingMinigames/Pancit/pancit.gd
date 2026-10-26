@@ -50,7 +50,7 @@ func _process(_delta: float) -> void:
 func _ready() -> void:
 	ice_bowl.snap_to_og_pos = true
 	ice_bowl.set_og_pos()
-	oil.ice_bowl.snap_to_og_pos = true
+	oil.snap_to_og_pos = true
 	oil.set_og_pos()
 	for i in steps.get_children(): i.position.x += get_viewport().get_visible_rect().size.x
 	

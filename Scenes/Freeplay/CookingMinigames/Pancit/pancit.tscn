@@ -38,6 +38,7 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="TopDownBG" type="Sprite2D" parent="." unique_id=1075516553]
+visible = false
 position = Vector2(902, 582)
 texture = ExtResource("2_jqkg7")
 metadata/_edit_lock_ = true
