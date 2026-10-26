@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://lnpgiahuyntr" path="res://Scripts/Menus/MainMenu/main_menu_buttons.gd" id="1_2k7c8"]
 [ext_resource type="Texture2D" uid="uid://bmdh8xfhqe17j" path="res://Assets/Menus/MainMenu/main menu bg.png" id="2_e5w6c"]
+[ext_resource type="StyleBox" uid="uid://dsabeskj33dsp" path="res://Scenes/Menus/MainMenu/MainMenuHoverButtonStyle.tres" id="4_4fgt5"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="4_euxup"]
+[ext_resource type="StyleBox" uid="uid://ru223rr65m5a" path="res://Scenes/Menus/MainMenu/MainMenuHoverandPressStyle.tres" id="4_j4kqa"]
 [ext_resource type="Script" uid="uid://j28786r700op" path="res://Scripts/Menus/MainMenu/quit.gd" id="5_2k7c8"]
 [ext_resource type="Script" uid="uid://clvovqtgykaen" path="res://Scripts/Menus/MainMenu/start.gd" id="6_2k7c8"]
 [ext_resource type="Script" uid="uid://c1eyxkwtk5vr" path="res://Scripts/Menus/Options/options.gd" id="7_2k7c8"]
@@ -10,16 +12,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf7jh"]
 bg_color = Color(0.19607843, 0.5803922, 0.85882354, 1)
-border_width_left = 5
-border_width_top = 5
-border_color = Color(0.19607843, 0.38431373, 0.7882353, 1)
-corner_detail = 1
-shadow_color = Color(0, 0, 0.61960787, 0.3019608)
-shadow_size = 2
-shadow_offset = Vector2(5, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syw6n"]
-bg_color = Color(0.1969659, 0.58062536, 0.85766184, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -30,8 +22,8 @@ shadow_color = Color(0, 0, 0.61960787, 0.3019608)
 shadow_size = 2
 shadow_offset = Vector2(5, 5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ndqe"]
-bg_color = Color(0.19607843, 0.5803922, 0.85882354, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syw6n"]
+bg_color = Color(0.1969659, 0.58062536, 0.85766184, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -93,6 +85,8 @@ offset_right = 119.443954
 offset_bottom = 29.5
 theme_override_constants/outline_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_rf7jh")
+theme_override_styles/pressed = ExtResource("4_j4kqa")
+theme_override_styles/hover = ExtResource("4_4fgt5")
 text = " QUIT"
 alignment = 0
 script = ExtResource("5_2k7c8")
@@ -110,6 +104,8 @@ offset_right = 120.149994
 offset_bottom = 28.86
 theme_override_constants/outline_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_syw6n")
+theme_override_styles/pressed = ExtResource("4_j4kqa")
+theme_override_styles/hover = ExtResource("4_4fgt5")
 text = " START"
 alignment = 0
 script = ExtResource("6_2k7c8")
@@ -126,7 +122,9 @@ offset_top = -29.967995
 offset_right = 119.384995
 offset_bottom = 30.120018
 theme_override_constants/outline_size = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_1ndqe")
+theme_override_styles/normal = ExtResource("4_j4kqa")
+theme_override_styles/pressed = ExtResource("4_j4kqa")
+theme_override_styles/hover = ExtResource("4_4fgt5")
 text = " OPTIONS
 "
 alignment = 0
