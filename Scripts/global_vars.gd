@@ -1,9 +1,5 @@
 extends Node
 
-var customer = load("uid://bivmd1klxx532")
-var character_name : String = "Placeholder"
-var character_order : String = "Placeholder"
-
 # Player Info
 var current_db : float = -25
 var is_customer_serving: bool = false
@@ -49,6 +45,10 @@ func shake(item):
 	t.tween_property(item, "position:x", item.position.x, .1).set_trans(Tween.TRANS_CUBIC)
 	shakeDone.emit()
 
+	
+	
+
+	
 # Unlocks
 var unlocked_foods : Array = ["rice", "pancake", "hashbrown", "lumpia"]
 var unlocked_customers : Array = ["marites", "student", "lolo", "tatay"]

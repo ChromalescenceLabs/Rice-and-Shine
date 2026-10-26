@@ -12,7 +12,8 @@ signal waterSection
 @onready var rice_cooker: Node2D = $RiceCooker
 @onready var rice_cooker_col: Area2D = $RiceCooker/RiceCooker/RiceCookerCol
 
-@onready var water_rice_bowl: Node2D = $Water/RiceBowl
+#@onready var water_rice_bowl: Node2D = $Water/RiceBowl
+@onready var cooking_bowl: Control = $Water/CookingBowl
 
 const RICE_CUP = preload("uid://cpvm4q1ywd7h5")
 var rice_cup_pos : Vector2
@@ -23,7 +24,8 @@ func _ready() -> void:
 	water.position.x += get_viewport().get_visible_rect().size.x
 	rice_cooker.position.x += get_viewport().get_visible_rect().size.x
 	
-	GlobalVars.item_enter(rice_cups)
+	#GlobalVars.item_enter(rice_cups)
+	GlobalVars.item_enter(water)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Click"):
@@ -60,26 +62,22 @@ func _on_rice_bowl_rice_cup_done() -> void:
 
 func _on_water_section() -> void:
 	GlobalVars.item_enter(water)
-
-func _on_water_water_completed() -> void:
-	water_rice_bowl.reparent(self)
+	
+func _on_faucet_faucet_done() -> void:
+	cooking_bowl.reparent(self)
 	
 	GlobalVars.successind(self)
-	water_rice_bowl.process_mode = Node.PROCESS_MODE_DISABLED
+	cooking_bowl.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	await GlobalVars.successIndEnd
 	
 	GlobalVars.item_exit(water)
 	RiceCookerSection.emit()
 
-
 func _on_rice_cooker_section() -> void:
 	GlobalVars.item_enter(rice_cooker)
+	cooking_bowl.process_mode = Node.PROCESS_MODE_INHERIT
 	
-	water_rice_bowl.process_mode = Node.PROCESS_MODE_INHERIT
-	
-
-
 func _on_rice_cooker_rice_cooker_done() -> void:
 	GlobalVars.successind(self)
 	
