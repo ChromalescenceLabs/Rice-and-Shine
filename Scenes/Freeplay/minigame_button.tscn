@@ -16,6 +16,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_nx1pe"]
 resource_name = "hover"
@@ -31,6 +43,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(45.615, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.19, 1.19)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iu2u1"]
 _data = {
@@ -45,6 +69,7 @@ offset_top = -55.0
 offset_right = 231.99998
 offset_bottom = 55.0
 offset_transform_enabled = true
+offset_transform_visual_only = false
 theme_override_font_sizes/font_size = 30
 text = "Minigame"
 clip_text = true

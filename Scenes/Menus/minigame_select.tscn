@@ -1,17 +1,111 @@
 [gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
 
 [ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/Freeplay/minigame_select.gd" id="1_tovjb"]
-[ext_resource type="Script" uid="uid://csh0f5isj1g1u" path="res://Scripts/Menus/bg_image.gd" id="2_gl1wp"]
-[ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Menus/FreeplayMenu/RICE.png" id="2_l46wx"]
-[ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/Menus/FreeplayMenu/pancake.png" id="3_btba4"]
-[ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/Menus/FreeplayMenu/hasbrown.png" id="4_h6rov"]
-[ext_resource type="Texture2D" uid="uid://cvqb826b4xwtl" path="res://Assets/Menus/FreeplayMenu/hotdog.png" id="5_kyrjg"]
-[ext_resource type="Texture2D" uid="uid://kewsf4o5v8dg" path="res://Assets/Menus/FreeplayMenu/Inihaw.png" id="6_l46wx"]
+[ext_resource type="Script" uid="uid://v14b0q5pkknt" path="res://Scripts/Menus/bg_image.gd" id="2_gl1wp"]
+[ext_resource type="Script" uid="uid://di8gnpcdeqlvd" path="res://Scripts/Freeplay/minigame_description.gd" id="6_tovjb"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
-[ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Menus/FreeplayMenu/torta.png" id="7_l46wx"]
 [ext_resource type="Texture2D" uid="uid://biymioqcxvn8k" path="res://Assets/Menus/ChapterSelect/PLATE.png" id="9_h6rov"]
-[ext_resource type="Script" uid="uid://wpmxw5kkus21" path="res://Scripts/Freeplay/decreasingcontainer.gd" id="10_gl1wp"]
+[ext_resource type="Script" uid="uid://bqo17hfbf73tx" path="res://Scripts/Freeplay/decreasingcontainer.gd" id="10_gl1wp"]
 [ext_resource type="PackedScene" uid="uid://wy5lkqs1nt26" path="res://Scenes/Freeplay/minigame_button.tscn" id="11_8omsi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuu35"]
+content_margin_left = 20.0
+content_margin_top = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.07450981, 0.07450981, 0.07450981, 0.79607844)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 20
+
+[sub_resource type="Animation" id="Animation_tovjb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LOGO:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(199, 228)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Minigame Description:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(31, 395)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Minigame Description:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l46wx"]
+resource_name = "show_hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LOGO:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(199, 366.64), Vector2(199, 228)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Minigame Description:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(31, 296.76), Vector2(31, 395)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Minigame Description:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_btba4"]
+_data = {
+&"RESET": SubResource("Animation_tovjb"),
+&"show_hide": SubResource("Animation_l46wx")
+}
 
 [node name="Minigame Selection" type="Node2D" unique_id=380012965]
 script = ExtResource("1_tovjb")
@@ -23,14 +117,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_gl1wp")
 
-[node name="pancake" type="ColorRect" parent="Bg Image" unique_id=89038020]
-layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(1, 0.5372549, 0.21176471, 1)
-
 [node name="rice" type="ColorRect" parent="Bg Image" unique_id=655175834]
 layout_mode = 0
 offset_left = -123.0
@@ -39,13 +125,13 @@ offset_right = 1382.0
 offset_bottom = 783.0
 color = Color(0.9659297, 0.5370438, 0.5245656, 1)
 
-[node name="hotdog" type="ColorRect" parent="Bg Image" unique_id=490706465]
+[node name="pancake" type="ColorRect" parent="Bg Image" unique_id=89038020]
 layout_mode = 0
 offset_left = -123.0
 offset_top = -59.0
 offset_right = 1382.0
 offset_bottom = 783.0
-color = Color(1, 0.46005398, 0.7512762, 1)
+color = Color(1, 0.5372549, 0.21176471, 1)
 
 [node name="hashbrown" type="ColorRect" parent="Bg Image" unique_id=740326722]
 layout_mode = 0
@@ -54,6 +140,14 @@ offset_top = -59.0
 offset_right = 1382.0
 offset_bottom = 783.0
 color = Color(0.8070605, 0.5444038, 1, 1)
+
+[node name="hotdog" type="ColorRect" parent="Bg Image" unique_id=490706465]
+layout_mode = 0
+offset_left = -123.0
+offset_top = -59.0
+offset_right = 1382.0
+offset_bottom = 783.0
+color = Color(1, 0.46005398, 0.7512762, 1)
 
 [node name="inihaw" type="ColorRect" parent="Bg Image" unique_id=832999191]
 layout_mode = 0
@@ -135,81 +229,6 @@ offset_right = 1389.0
 offset_bottom = 781.0
 color = Color(0.9659297, 0.5370438, 0.5245656, 1)
 
-[node name="Selection" type="Control" parent="." unique_id=1185375392]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Rice" type="TextureButton" parent="Selection" unique_id=1511388286]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 240.0
-offset_right = 688.0
-offset_bottom = 599.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("2_l46wx")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Selection/Rice" unique_id=955367114]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Pancake" type="TextureButton" parent="Selection" unique_id=435824771]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 240.0
-offset_right = 1088.0
-offset_bottom = 599.0008
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("3_btba4")
-
-[node name="Hashbrown" type="TextureButton" parent="Selection" unique_id=1438000863]
-layout_mode = 0
-offset_left = 850.0
-offset_top = 240.0
-offset_right = 1488.0
-offset_bottom = 599.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("4_h6rov")
-
-[node name="Hotdog" type="TextureButton" parent="Selection" unique_id=1236986991]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 475.0
-offset_right = 688.0
-offset_bottom = 834.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("5_kyrjg")
-
-[node name="Inihaw" type="TextureButton" parent="Selection" unique_id=1682458591]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 475.0
-offset_right = 797.0
-offset_bottom = 689.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("6_l46wx")
-
-[node name="Torta" type="TextureButton" parent="Selection" unique_id=446821078]
-layout_mode = 0
-offset_left = 850.0
-offset_top = 475.0
-offset_right = 1488.0
-offset_bottom = 834.0
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("7_l46wx")
-
-[node name="ServeCustomers" type="Button" parent="Selection" unique_id=1987029645]
-layout_mode = 0
-offset_left = 837.0
-offset_top = 78.0
-offset_right = 1236.0
-offset_bottom = 166.0
-theme_override_font_sizes/font_size = 30
-text = "Serve Customers Sandbox"
-
 [node name="New Selection" type="Control" parent="." unique_id=1778755543]
 layout_mode = 3
 anchors_preset = 0
@@ -246,6 +265,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="Rice" parent="New Selection/Container" unique_id=451413400 instance=ExtResource("11_8omsi")]
 layout_mode = 2
 mouse_filter = 1
+text = "Rice"
 label = "Rice"
 minigame_scene = "uid://sukerfnpt5d5"
 metadata/_smooth_scroll_default_mouse_filter_set = true
@@ -253,13 +273,15 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="Pancake" parent="New Selection/Container" unique_id=1314799880 instance=ExtResource("11_8omsi")]
 layout_mode = 2
 mouse_filter = 1
-label = "Hotdog"
+text = "Pancake"
+label = "Pancake"
 minigame_scene = "uid://bf86igy00f6sq"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="Hashbrown" parent="New Selection/Container" unique_id=26142224 instance=ExtResource("11_8omsi")]
 layout_mode = 2
 mouse_filter = 1
+text = "Hashbrown"
 label = "Hashbrown"
 minigame_scene = "uid://j42ywdsfuawg"
 metadata/_smooth_scroll_default_mouse_filter_set = true
@@ -267,6 +289,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="Hotdog" parent="New Selection/Container" unique_id=1812360157 instance=ExtResource("11_8omsi")]
 layout_mode = 2
 mouse_filter = 1
+text = "Hotdog"
 label = "Hotdog"
 minigame_scene = "uid://bgi803ffeyeae"
 metadata/_smooth_scroll_default_mouse_filter_set = true
@@ -274,6 +297,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="Inihaw" parent="New Selection/Container" unique_id=384284277 instance=ExtResource("11_8omsi")]
 layout_mode = 2
 mouse_filter = 1
+text = "Inihaw"
 label = "Inihaw"
 minigame_scene = "uid://cphb8p5iecw0j"
 metadata/_smooth_scroll_default_mouse_filter_set = true
@@ -281,6 +305,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="Torta" parent="New Selection/Container" unique_id=2034463664 instance=ExtResource("11_8omsi")]
 layout_mode = 2
 mouse_filter = 1
+text = "Torta"
 label = "Torta"
 minigame_scene = "uid://dqrhc8pu68q17"
 metadata/_smooth_scroll_default_mouse_filter_set = true
@@ -289,6 +314,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 layout_mode = 2
 mouse_filter = 1
 disabled = true
+text = "LOCKED"
 label = "LOCKED"
 minigame_scene = "uid://dqrhc8pu68q17"
 metadata/_smooth_scroll_default_mouse_filter_set = true
@@ -297,6 +323,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 layout_mode = 2
 mouse_filter = 1
 disabled = true
+text = "LOCKED"
 label = "LOCKED"
 minigame_scene = "uid://dqrhc8pu68q17"
 metadata/_smooth_scroll_default_mouse_filter_set = true
@@ -305,6 +332,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 layout_mode = 2
 mouse_filter = 1
 disabled = true
+text = "LOCKED"
 label = "LOCKED"
 minigame_scene = "uid://dqrhc8pu68q17"
 metadata/_smooth_scroll_default_mouse_filter_set = true
@@ -313,6 +341,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 layout_mode = 2
 mouse_filter = 1
 disabled = true
+text = "LOCKED"
 label = "LOCKED"
 minigame_scene = "uid://dqrhc8pu68q17"
 metadata/_smooth_scroll_default_mouse_filter_set = true
@@ -321,6 +350,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 layout_mode = 2
 mouse_filter = 1
 disabled = true
+text = "LOCKED"
 label = "LOCKED"
 minigame_scene = "uid://dqrhc8pu68q17"
 metadata/_smooth_scroll_default_mouse_filter_set = true
@@ -329,6 +359,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 layout_mode = 2
 mouse_filter = 1
 disabled = true
+text = "LOCKED"
 label = "LOCKED"
 minigame_scene = "uid://dqrhc8pu68q17"
 metadata/_smooth_scroll_default_mouse_filter_set = true
@@ -337,6 +368,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 layout_mode = 2
 mouse_filter = 1
 disabled = true
+text = "LOCKED"
 label = "LOCKED"
 minigame_scene = "uid://dqrhc8pu68q17"
 metadata/_smooth_scroll_default_mouse_filter_set = true
@@ -345,28 +377,38 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 layout_mode = 2
 mouse_filter = 1
 disabled = true
+text = "LOCKED"
 label = "LOCKED"
 minigame_scene = "uid://dqrhc8pu68q17"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Plate" type="Sprite2D" parent="." unique_id=1406370295]
+[node name="Plate" type="Sprite2D" parent="New Selection" unique_id=1406370295]
 position = Vector2(-36, 392)
 scale = Vector2(1.5338885, 1.5127248)
 texture = ExtResource("9_h6rov")
 
+[node name="Minigame Description" type="RichTextLabel" parent="." unique_id=1240179745]
+offset_left = 31.0
+offset_top = 395.0
+offset_right = 362.0375
+offset_bottom = 592.99915
+theme_override_styles/normal = SubResource("StyleBoxFlat_cuu35")
+text = "Minigame Description
+"
+scroll_following = true
+script = ExtResource("6_tovjb")
+
 [node name="LOGO" type="Sprite2D" parent="." unique_id=1510853050]
-visible = false
-position = Vector2(282, 181)
-scale = Vector2(0.19780816, 0.19780816)
+position = Vector2(199, 228)
+scale = Vector2(0.28124997, 0.28125003)
 texture = ExtResource("7_8omsi")
 
-[connection signal="pressed" from="Selection/Rice" to="." method="_on_minigame_1_pressed"]
-[connection signal="pressed" from="Selection/Pancake" to="." method="_on_minigame_2_pressed"]
-[connection signal="pressed" from="Selection/Hashbrown" to="." method="_on_minigame_3_pressed"]
-[connection signal="pressed" from="Selection/Hotdog" to="." method="_on_minigame_4_pressed"]
-[connection signal="pressed" from="Selection/Inihaw" to="." method="_on_minigame_5_pressed"]
-[connection signal="pressed" from="Selection/Torta" to="." method="_on_minigame_6_pressed"]
-[connection signal="pressed" from="Selection/ServeCustomers" to="." method="_on_serve_customers_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1373538784]
+libraries/ = SubResource("AnimationLibrary_btba4")
+speed_scale = 3.0
+
 [connection signal="pressed" from="New Selection/ServeCustomers" to="." method="_on_serve_customers_pressed"]
 [connection signal="mouse_entered" from="New Selection/Container" to="New Selection/Container" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="New Selection/Container" to="Minigame Description" method="_on_container_mouse_entered"]
 [connection signal="mouse_exited" from="New Selection/Container" to="New Selection/Container" method="_on_mouse_exited"]
+[connection signal="mouse_exited" from="New Selection/Container" to="Minigame Description" method="_on_container_mouse_exited"]
