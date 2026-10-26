@@ -39,7 +39,9 @@ func _ready() -> void:
 		if GlobalScenes.get_node("Customers").get_child_count() > 0:
 			for i in GlobalScenes.get_node("Customers").get_children():
 				i.reparent(customers_cont)
-
+	
+	for i in food_conts.get_children(): i.initialize()
+	
 func add_bowl_func(is_old : bool) -> TextureRect:
 	var newBowl = SERVE_BOWL.instantiate()
 	newBowl.modulate.a = 0.0

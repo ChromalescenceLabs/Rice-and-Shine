@@ -59,6 +59,6 @@ func _ready() -> void:
 
 func append_equal_weights():
 	var customers_num : int = unlocked_customers.size()
-	var weight = 100 / customers_num
+	var weight = 100.0 / customers_num
 	for i in customers_num:
 		customer_weights.append(weight)

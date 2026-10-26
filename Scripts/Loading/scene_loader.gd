@@ -3,6 +3,7 @@ extends Node
 signal load_finished
 
 var loading_screen : PackedScene = preload("uid://chgdopktb0d2w")
+var loading_screen_fade : PackedScene = preload("uid://dnkgil0k2g8ap")
 var loaded_resource : PackedScene
 var scene_path : String               
 var previous_scene_path : String       
@@ -12,11 +13,11 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	set_process(false)
 	
-func load_scene(_scene_path: String, duration: float) -> void:
+func load_scene(_scene_path: String, duration: float, loading_screen_scene : PackedScene = loading_screen) -> void:
 	previous_scene_path = scene_path
 	scene_path = _scene_path
 	
-	var new_load_screen = loading_screen.instantiate()
+	var new_load_screen = loading_screen_scene.instantiate()
 	add_child(new_load_screen)
 	load_finished.connect(new_load_screen._on_load_finished)
 	

@@ -258,5 +258,6 @@ scale = Vector2(0.5287411, 0.5287411)
 texture_normal = ExtResource("4_rn5ul")
 
 [connection signal="change_week" from="Weeks" to="DESCRIPTION" method="_on_weeks_change_week"]
+[connection signal="change_week" from="Weeks" to="WeekScroll/DayButton" method="_on_weeks_change_week"]
 [connection signal="pressed" from="WeekButton/Back" to="Weeks" method="_on_back_pressed"]
 [connection signal="pressed" from="WeekButton/Forward" to="Weeks" method="_on_forward_pressed"]

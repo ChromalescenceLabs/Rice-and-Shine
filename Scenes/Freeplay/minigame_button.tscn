@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://wy5lkqs1nt26"]
+
+[ext_resource type="Script" uid="uid://ctmt34bfoiy2d" path="res://Scripts/Freeplay/minigame_button.gd" id="1_nx1pe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iito2"]
+bg_color = Color(0.78039217, 0.42352942, 0.10980392, 0.80784315)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5a36"]
+bg_color = Color(0.61370784, 0.35442072, 0.120720424, 0.8784314)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fomy"]
+bg_color = Color(0.8382433, 0.48504812, 0.13694376, 0.8392157)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Animation" id="Animation_iu2u1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nx1pe"]
+resource_name = "hover"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(45.615, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.19, 1.19)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iu2u1"]
+_data = {
+&"RESET": SubResource("Animation_iu2u1"),
+&"hover": SubResource("Animation_nx1pe")
+}
+
+[node name="Button" type="Button" unique_id=451413400]
+custom_minimum_size = Vector2(464, 110)
+offset_left = -231.99977
+offset_top = -55.0
+offset_right = 231.99998
+offset_bottom = 55.0
+offset_transform_enabled = true
+offset_transform_visual_only = false
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_iito2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b5a36")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8fomy")
+text = "Minigame"
+clip_text = true
+script = ExtResource("1_nx1pe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1317456265]
+libraries/ = SubResource("AnimationLibrary_iu2u1")
+speed_scale = 3.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

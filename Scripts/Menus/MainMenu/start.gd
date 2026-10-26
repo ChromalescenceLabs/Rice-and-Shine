@@ -1,4 +1,4 @@
 extends Button
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("uid://dniwio1arxhol")
+	SceneLoader.load_scene("uid://dniwio1arxhol", 1.5, SceneLoader.loading_screen_fade)

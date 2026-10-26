@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bkjubyh6wcmam"]
+
+[ext_resource type="Script" uid="uid://fdx4w0463b83" path="res://Scripts/Freeplay/minigame_select_background.gd" id="1_kvogs"]
+
+[sub_resource type="Animation" id="Animation_5wiq5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ymodt"]
+resource_name = "enter_exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1280, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j6fnh"]
+_data = {
+&"RESET": SubResource("Animation_5wiq5"),
+&"enter_exit": SubResource("Animation_ymodt")
+}
+
+[node name="MinigameSelectBackground" type="TextureRect" unique_id=38212654]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+script = ExtResource("1_kvogs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1020675768]
+libraries/ = SubResource("AnimationLibrary_j6fnh")
+speed_scale = 2.5
