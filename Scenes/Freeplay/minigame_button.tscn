@@ -2,6 +2,27 @@
 
 [ext_resource type="Script" uid="uid://ctmt34bfoiy2d" path="res://Scripts/Freeplay/minigame_button.gd" id="1_nx1pe"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iito2"]
+bg_color = Color(0.78039217, 0.42352942, 0.10980392, 0.80784315)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5a36"]
+bg_color = Color(0.61370784, 0.35442072, 0.120720424, 0.8784314)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fomy"]
+bg_color = Color(0.8382433, 0.48504812, 0.13694376, 0.8392157)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [sub_resource type="Animation" id="Animation_iu2u1"]
 length = 0.001
 tracks/0/type = "value"
@@ -71,6 +92,9 @@ offset_bottom = 55.0
 offset_transform_enabled = true
 offset_transform_visual_only = false
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_iito2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b5a36")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8fomy")
 text = "Minigame"
 clip_text = true
 script = ExtResource("1_nx1pe")

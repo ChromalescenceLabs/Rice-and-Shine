@@ -2,8 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/Freeplay/minigame_select.gd" id="1_tovjb"]
 [ext_resource type="Script" uid="uid://v14b0q5pkknt" path="res://Scripts/Menus/bg_image.gd" id="2_gl1wp"]
+[ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Menus/FreeplayMenu/RICE.png" id="2_l46wx"]
+[ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/Menus/FreeplayMenu/pancake.png" id="3_btba4"]
+[ext_resource type="PackedScene" uid="uid://bkjubyh6wcmam" path="res://Scenes/Freeplay/minigame_select_background.tscn" id="3_l46wx"]
+[ext_resource type="Texture2D" uid="uid://b4lajgqgw3lqx" path="res://Assets/Menus/FreeplayMenu/minigame_bg_placeholder.jpg" id="4_btba4"]
+[ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/Menus/FreeplayMenu/hasbrown.png" id="4_h6rov"]
+[ext_resource type="Texture2D" uid="uid://cvqb826b4xwtl" path="res://Assets/Menus/FreeplayMenu/hotdog.png" id="5_kyrjg"]
+[ext_resource type="Texture2D" uid="uid://kewsf4o5v8dg" path="res://Assets/Menus/FreeplayMenu/Inihaw.png" id="6_l46wx"]
 [ext_resource type="Script" uid="uid://di8gnpcdeqlvd" path="res://Scripts/Freeplay/minigame_description.gd" id="6_tovjb"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
+[ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Menus/FreeplayMenu/torta.png" id="7_l46wx"]
 [ext_resource type="Texture2D" uid="uid://biymioqcxvn8k" path="res://Assets/Menus/ChapterSelect/PLATE.png" id="9_h6rov"]
 [ext_resource type="Script" uid="uid://bqo17hfbf73tx" path="res://Scripts/Freeplay/decreasingcontainer.gd" id="10_gl1wp"]
 [ext_resource type="PackedScene" uid="uid://wy5lkqs1nt26" path="res://Scenes/Freeplay/minigame_button.tscn" id="11_8omsi"]
@@ -117,117 +125,172 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_gl1wp")
 
-[node name="rice" type="ColorRect" parent="Bg Image" unique_id=655175834]
+[node name="rice" parent="Bg Image" unique_id=38212654 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(0.9659297, 0.5370438, 0.5245656, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1279.5543
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("2_l46wx")
+bg_texture = ExtResource("2_l46wx")
 
-[node name="pancake" type="ColorRect" parent="Bg Image" unique_id=89038020]
+[node name="pancake" parent="Bg Image" unique_id=1741403080 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(1, 0.5372549, 0.21176471, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("3_btba4")
+bg_texture = ExtResource("3_btba4")
 
-[node name="hashbrown" type="ColorRect" parent="Bg Image" unique_id=740326722]
+[node name="hashbrown" parent="Bg Image" unique_id=1046325021 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(0.8070605, 0.5444038, 1, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_h6rov")
+bg_texture = ExtResource("4_h6rov")
 
-[node name="hotdog" type="ColorRect" parent="Bg Image" unique_id=490706465]
+[node name="hotdog" parent="Bg Image" unique_id=1010762894 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(1, 0.46005398, 0.7512762, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("5_kyrjg")
+bg_texture = ExtResource("5_kyrjg")
 
-[node name="inihaw" type="ColorRect" parent="Bg Image" unique_id=832999191]
+[node name="inihaw" parent="Bg Image" unique_id=1294449177 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(0.59641206, 0.6474006, 1, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("6_l46wx")
+bg_texture = ExtResource("6_l46wx")
 
-[node name="torta" type="ColorRect" parent="Bg Image" unique_id=415666459]
+[node name="torta" parent="Bg Image" unique_id=1294588552 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(0, 0.7776667, 0.768044, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("7_l46wx")
+bg_texture = ExtResource("7_l46wx")
 
-[node name="placeholder" type="ColorRect" parent="Bg Image" unique_id=1565325446]
+[node name="placeholder" parent="Bg Image" unique_id=1988775610 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(1, 0.5372549, 0.21176471, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
 
-[node name="placeholder2" type="ColorRect" parent="Bg Image" unique_id=1573709112]
+[node name="placeholder2" parent="Bg Image" unique_id=646184110 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(0.9659297, 0.5370438, 0.5245656, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
 
-[node name="placeholder3" type="ColorRect" parent="Bg Image" unique_id=1172131986]
+[node name="placeholder3" parent="Bg Image" unique_id=24355817 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(1, 0.46005398, 0.7512762, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
 
-[node name="placeholder4" type="ColorRect" parent="Bg Image" unique_id=1952880616]
+[node name="placeholder4" parent="Bg Image" unique_id=955826574 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(0.8070605, 0.5444038, 1, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
 
-[node name="placeholder5" type="ColorRect" parent="Bg Image" unique_id=499415442]
+[node name="placeholder5" parent="Bg Image" unique_id=674847810 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(0, 0.7776667, 0.768044, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
 
-[node name="placeholder6" type="ColorRect" parent="Bg Image" unique_id=932690291]
+[node name="placeholder6" parent="Bg Image" unique_id=1292604863 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(0.59641206, 0.6474006, 1, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
 
-[node name="placeholder7" type="ColorRect" parent="Bg Image" unique_id=4642965]
+[node name="placeholder7" parent="Bg Image" unique_id=1993550465 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -116.0
-offset_top = -61.0
-offset_right = 1389.0
-offset_bottom = 781.0
-color = Color(1, 0.5372549, 0.21176471, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
 
-[node name="placeholder8" type="ColorRect" parent="Bg Image" unique_id=262784977]
+[node name="placeholder8" parent="Bg Image" unique_id=1924007144 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = -116.0
-offset_top = -61.0
-offset_right = 1389.0
-offset_bottom = 781.0
-color = Color(0.9659297, 0.5370438, 0.5245656, 1)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=931682143]
+offset_left = -34.0
+offset_top = -12.0
+offset_right = 1291.0
+offset_bottom = 728.0
+color = Color(0, 0, 0, 0.54901963)
 
 [node name="New Selection" type="Control" parent="." unique_id=1778755543]
 layout_mode = 3
