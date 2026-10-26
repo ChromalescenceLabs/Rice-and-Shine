@@ -10,44 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://dgfb1ox42rcxe" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/RiceBowlThird.png" id="7_o1cgv"]
 [ext_resource type="Texture2D" uid="uid://cq0j108sk2ota" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/RiceContClosed.png" id="8_4pyhc"]
 [ext_resource type="Texture2D" uid="uid://dncc6uhk1254" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/RiceContOpened.png" id="9_7nwvv"]
-[ext_resource type="Texture2D" uid="uid://c3nf38bod08ol" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/Faucet.png" id="10_lbrr1"]
-[ext_resource type="Texture2D" uid="uid://kiwxlmilcqo7" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/FaucetButton.png" id="11_2g4ky"]
-[ext_resource type="PackedScene" uid="uid://dbhoiq6ipsn5g" path="res://Scenes/Freeplay/CookingMinigames/Kanin/rice_bowl.tscn" id="11_t3ihu"]
 [ext_resource type="Texture2D" uid="uid://dg0q3xee1yae3" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/RiceCooker.png" id="12_1dyx4"]
+[ext_resource type="PackedScene" uid="uid://cglg18ytbkwv1" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/CookingBowl.tscn" id="12_b7x1o"]
+[ext_resource type="PackedScene" uid="uid://cuyklj2grjhwn" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/faucet.tscn" id="12_vaj5w"]
 [ext_resource type="Texture2D" uid="uid://cetcq4pl8nunu" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/RiceCookerwBubbles.png" id="13_8qhpp"]
-[ext_resource type="Script" uid="uid://da7ohw2xexi6m" path="res://Scripts/Freeplay/CookingMinigames/Kanin/water.gd" id="13_km12d"]
+[ext_resource type="Texture2D" uid="uid://cjhw8jso6hgcn" path="res://Assets/Freeplay/Serving/ServingBowlFilled.png" id="13_dgm4y"]
 [ext_resource type="Texture2D" uid="uid://dj8ngma7xp07l" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/RiceCookerwRice.png" id="14_sbke8"]
-[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/recipe_book.tscn" id="15_h7to0"]
+[ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/recipe_book.tscn" id="15_h7to0"]
 [ext_resource type="Script" uid="uid://dnfxiiim3c85s" path="res://Scripts/Freeplay/CookingMinigames/Kanin/rice_cooker.gd" id="15_ienqq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idtpb"]
 size = Vector2(460, 312)
-
-[sub_resource type="Gradient" id="Gradient_27br6"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0.2990381, 0.5185409, 0.99969333, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_08i74"]
-gradient = SubResource("Gradient_27br6")
-
-[sub_resource type="Curve" id="Curve_km12d"]
-_data = [Vector2(0, 0.8876405), 0.0, 0.0, 0, 0, Vector2(0.3581081, 0.77528095), 0.0, 0.0, 0, 0, Vector2(0.7905406, 0.52808994), -0.35274094, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_idtpb"]
-curve = SubResource("Curve_km12d")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_08i74"]
-particle_flag_disable_z = true
-gravity = Vector3(0, 98, 0)
-scale_min = 0.7
-scale_max = 0.7
-scale_curve = SubResource("CurveTexture_idtpb")
-hue_variation_min = -0.06000002
-hue_variation_max = -2.2351742e-08
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_08i74"]
-size = Vector2(32, 110)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
 radius = 239.41791
@@ -72,6 +45,7 @@ texture = ExtResource("3_km12d")
 metadata/_edit_lock_ = true
 
 [node name="RiceCups" type="Node2D" parent="." unique_id=1168144650]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="RiceCont" type="Node2D" parent="RiceCups" unique_id=1486711832]
@@ -137,61 +111,18 @@ shape = SubResource("RectangleShape2D_idtpb")
 
 [node name="Water" type="Node2D" parent="." unique_id=935142887]
 
-[node name="RiceBowl" parent="Water" unique_id=1504106188 instance=ExtResource("11_t3ihu")]
-position = Vector2(1037, 300)
+[node name="Faucet" parent="Water" unique_id=1510681216 instance=ExtResource("12_vaj5w")]
 
-[node name="Faucet" type="Sprite2D" parent="Water" unique_id=327294265]
-position = Vector2(631, 338)
-scale = Vector2(1.0055556, 1.0055555)
-texture = ExtResource("10_lbrr1")
+[node name="CookingBowl" parent="Water" unique_id=990471959 instance=ExtResource("12_b7x1o")]
+offset_left = 1069.0
+offset_top = 455.00003
+offset_right = 1069.0
+offset_bottom = 455.00003
+scale = Vector2(2.065, 2.065)
+bowl_texture = ExtResource("13_dgm4y")
 
-[node name="FaucetButton" type="Sprite2D" parent="Water" unique_id=1801152036]
-position = Vector2(637, 243)
-scale = Vector2(0.63, 0.63)
-texture = ExtResource("11_2g4ky")
-
-[node name="Open" type="Button" parent="Water/FaucetButton" unique_id=1009449481]
-offset_left = 180.95245
-offset_top = 171.42853
-offset_right = 285.7143
-offset_bottom = 257.14288
-mouse_default_cursor_shape = 2
-
-[node name="Close" type="Button" parent="Water/FaucetButton" unique_id=72948423]
-offset_left = -273.01587
-offset_top = 177.77779
-offset_right = -168.25403
-offset_bottom = 263.49213
-mouse_default_cursor_shape = 2
-
-[node name="Water" type="GPUParticles2D" parent="Water" unique_id=2026971331]
-position = Vector2(625, 346)
-scale = Vector2(0.695, 0.695)
-texture = SubResource("GradientTexture2D_08i74")
-lifetime = 2.0
-process_material = SubResource("ParticleProcessMaterial_08i74")
-script = ExtResource("13_km12d")
-
-[node name="WaterDetect" type="Area2D" parent="Water/Water" unique_id=1723123421]
-position = Vector2(-47.482018, 58.99281)
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Water/Water/WaterDetect" unique_id=464032414]
-position = Vector2(47.481995, 162.58997)
-shape = SubResource("RectangleShape2D_08i74")
-
-[node name="WaterProgressBar" type="ProgressBar" parent="Water" unique_id=592523546]
-offset_left = 79.0
-offset_top = 615.0
-offset_right = 1202.0
-offset_bottom = 670.0
-
-[node name="ProgressBarChangeTime" type="Timer" parent="Water/WaterProgressBar" unique_id=562624450]
-wait_time = 0.05
-
-[node name="RiceCooker" type="Node2D" parent="." unique_id=835867329 node_paths=PackedStringArray("ricebowl")]
+[node name="RiceCooker" type="Node2D" parent="." unique_id=835867329]
 script = ExtResource("15_ienqq")
-ricebowl = NodePath("../Water/RiceBowl")
 metadata/_edit_lock_ = true
 
 [node name="RiceCooker" type="Sprite2D" parent="RiceCooker" unique_id=719095520]
@@ -234,18 +165,11 @@ scale = Vector2(0.795, 0.795)
 [connection signal="RiceCookerSection" from="." to="." method="_on_rice_cooker_section"]
 [connection signal="RiceCookerSection" from="." to="RiceCooker" method="_on_rice_or_kanin_rice_cooker_section"]
 [connection signal="waterSection" from="." to="." method="_on_water_section"]
-[connection signal="waterSection" from="." to="Water/Water" method="_on_rice_or_kanin_water_section"]
 [connection signal="pressed" from="RiceCups/RiceCont/RiceContClosed" to="." method="_on_rice_cont_closed_pressed"]
 [connection signal="mouse_entered" from="RiceCups/RiceCont/RiceContOpened" to="." method="_on_rice_cont_opened_mouse_entered"]
 [connection signal="mouse_exited" from="RiceCups/RiceCont/RiceContOpened" to="." method="_on_rice_cont_opened_mouse_exited"]
 [connection signal="riceCupDone" from="RiceCups/RiceBowl" to="." method="_on_rice_bowl_rice_cup_done"]
-[connection signal="pressed" from="Water/FaucetButton/Open" to="Water/Water" method="_on_open_pressed"]
-[connection signal="pressed" from="Water/FaucetButton/Close" to="Water/Water" method="_on_close_pressed"]
-[connection signal="WaterCompleted" from="Water/Water" to="." method="_on_water_water_completed"]
-[connection signal="finished" from="Water/Water" to="Water/Water" method="_on_finished"]
-[connection signal="area_entered" from="Water/Water/WaterDetect" to="Water/Water" method="_on_water_detect_area_entered"]
-[connection signal="area_exited" from="Water/Water/WaterDetect" to="Water/Water" method="_on_water_detect_area_exited"]
-[connection signal="timeout" from="Water/WaterProgressBar/ProgressBarChangeTime" to="Water/Water" method="_on_progress_bar_change_time_timeout"]
+[connection signal="faucet_done" from="Water/Faucet" to="." method="_on_faucet_faucet_done"]
 [connection signal="RiceCookerDone" from="RiceCooker" to="." method="_on_rice_cooker_rice_cooker_done"]
 [connection signal="area_entered" from="RiceCooker/RiceCooker/RiceCookerCol" to="RiceCooker" method="_on_rice_cooker_col_area_entered"]
 [connection signal="area_exited" from="RiceCooker/RiceCooker/RiceCookerCol" to="RiceCooker" method="_on_rice_cooker_col_area_exited"]

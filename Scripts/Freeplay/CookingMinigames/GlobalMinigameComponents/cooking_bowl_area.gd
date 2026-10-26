@@ -1,0 +1,1 @@
+class_name CookingBowlArea extends Area2D
