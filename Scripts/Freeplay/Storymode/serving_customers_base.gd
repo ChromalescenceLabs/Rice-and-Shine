@@ -1,4 +1,5 @@
 extends Node2D
+signal day_finished
 
 const CUSTOMER = preload("uid://v1ke2myaadm3")
 const SERVE_BOWL = preload("uid://curuxisd3l6in")
@@ -10,6 +11,8 @@ const FOOD_CONT = preload("uid://csole0o4ydmgm")
 @onready var food_conts: HBoxContainer = $Control/ScrollContainer/FoodConts
 @onready var customers_cont: HBoxContainer = $Control/CustomersCont
 @onready var customer_happiness_logs: Node2D = $CustomerHappinessLogs
+
+@onready var clock: Node2D = $Clock
 
 @onready var add_bowl: Button = $Control/BowlConts/AddBowl
 var bowl_no : int = 0
@@ -132,3 +135,6 @@ func _on_customers_cont_child_exiting_tree(node: Node) -> void:
 	for i in customer_happiness_logs.overall_cont.get_children():
 		if i.associated_node == node:
 			i.queue_free()
+
+func start_day_clock() -> void: clock.start_timer()
+func _on_clock_day_finished() -> void: day_finished.emit()
