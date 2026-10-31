@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ddyvxe1aoo6kg"]
+
+[node name="GlobalScenes" type="Node2D" unique_id=1551262820]
+visible = false
+
+[node name="HappinessBars" type="Node2D" parent="." unique_id=252155382]
+
+[node name="Customers" type="Node2D" parent="." unique_id=887249497]
+
+[node name="StoryCustomers" type="Node2D" parent="." unique_id=647456288]

@@ -1,141 +1,477 @@
 [gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
 
 [ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/Freeplay/minigame_select.gd" id="1_tovjb"]
-[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="2_h6rov"]
+[ext_resource type="Script" uid="uid://v14b0q5pkknt" path="res://Scripts/Menus/bg_image.gd" id="2_gl1wp"]
 [ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Menus/FreeplayMenu/RICE.png" id="2_l46wx"]
 [ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/Menus/FreeplayMenu/pancake.png" id="3_btba4"]
-[ext_resource type="Script" uid="uid://dc38i3otaiqmx" path="res://Scripts/Menus/game_logo.gd" id="3_gl1wp"]
-[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="3_kyrjg"]
+[ext_resource type="PackedScene" uid="uid://bkjubyh6wcmam" path="res://Scenes/Freeplay/minigame_select_background.tscn" id="3_l46wx"]
+[ext_resource type="Texture2D" uid="uid://b4lajgqgw3lqx" path="res://Assets/Menus/FreeplayMenu/minigame_bg_placeholder.jpg" id="4_btba4"]
 [ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/Menus/FreeplayMenu/hasbrown.png" id="4_h6rov"]
 [ext_resource type="Texture2D" uid="uid://cvqb826b4xwtl" path="res://Assets/Menus/FreeplayMenu/hotdog.png" id="5_kyrjg"]
-[ext_resource type="PackedScene" uid="uid://bk5qv1csxokg6" path="res://Scenes/Menus/minigame_buttons.tscn" id="6_8omsi"]
 [ext_resource type="Texture2D" uid="uid://kewsf4o5v8dg" path="res://Assets/Menus/FreeplayMenu/Inihaw.png" id="6_l46wx"]
+[ext_resource type="Script" uid="uid://di8gnpcdeqlvd" path="res://Scripts/Freeplay/minigame_description.gd" id="6_tovjb"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Menus/FreeplayMenu/torta.png" id="7_l46wx"]
-[ext_resource type="Texture2D" uid="uid://drhabplta78w7" path="res://Assets/Menus/FreeplayMenu/Lumpia.png" id="11_kyrjg"]
+[ext_resource type="Texture2D" uid="uid://biymioqcxvn8k" path="res://Assets/Menus/ChapterSelect/PLATE.png" id="9_h6rov"]
+[ext_resource type="Script" uid="uid://bqo17hfbf73tx" path="res://Scripts/Freeplay/decreasingcontainer.gd" id="10_gl1wp"]
+[ext_resource type="PackedScene" uid="uid://wy5lkqs1nt26" path="res://Scenes/Freeplay/minigame_button.tscn" id="11_8omsi"]
 
-[sub_resource type="Resource" id="Resource_h6rov"]
-script = ExtResource("3_kyrjg")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuu35"]
+content_margin_left = 20.0
+content_margin_top = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.07450981, 0.07450981, 0.07450981, 0.79607844)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 20
 
-[sub_resource type="Resource" id="Resource_kyrjg"]
-script = ExtResource("3_kyrjg")
+[sub_resource type="Animation" id="Animation_tovjb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LOGO:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(199, 228)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Minigame Description:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(31, 395)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Minigame Description:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
-[node name="Minigame Selection" type="Control" unique_id=2144740964]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="Animation" id="Animation_l46wx"]
+resource_name = "show_hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LOGO:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(199, 366.64), Vector2(199, 228)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Minigame Description:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(31, 296.76), Vector2(31, 395)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Minigame Description:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_btba4"]
+_data = {
+&"RESET": SubResource("Animation_tovjb"),
+&"show_hide": SubResource("Animation_l46wx")
+}
+
+[node name="Minigame Selection" type="Node2D" unique_id=380012965]
 script = ExtResource("1_tovjb")
 
-[node name="BG" type="ColorRect" parent="." unique_id=916736482]
-layout_mode = 0
-offset_left = -123.0
-offset_top = -59.0
-offset_right = 1382.0
-offset_bottom = 783.0
-color = Color(1, 0.5372549, 0.21176471, 1)
+[node name="Bg Image" type="Control" parent="." unique_id=1476362318]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_gl1wp")
 
-[node name="ServeCustomers" type="Button" parent="." unique_id=1987029645]
+[node name="rice" parent="Bg Image" unique_id=38212654 instance=ExtResource("3_l46wx")]
 layout_mode = 0
-offset_left = 837.0
-offset_top = 78.0
-offset_right = 1236.0
-offset_bottom = 166.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1279.5543
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("2_l46wx")
+bg_texture = ExtResource("2_l46wx")
+
+[node name="pancake" parent="Bg Image" unique_id=1741403080 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("3_btba4")
+bg_texture = ExtResource("3_btba4")
+
+[node name="hashbrown" parent="Bg Image" unique_id=1046325021 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_h6rov")
+bg_texture = ExtResource("4_h6rov")
+
+[node name="hotdog" parent="Bg Image" unique_id=1010762894 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("5_kyrjg")
+bg_texture = ExtResource("5_kyrjg")
+
+[node name="inihaw" parent="Bg Image" unique_id=1294449177 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("6_l46wx")
+bg_texture = ExtResource("6_l46wx")
+
+[node name="torta" parent="Bg Image" unique_id=1294588552 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("7_l46wx")
+bg_texture = ExtResource("7_l46wx")
+
+[node name="placeholder" parent="Bg Image" unique_id=1988775610 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
+
+[node name="placeholder2" parent="Bg Image" unique_id=646184110 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
+
+[node name="placeholder3" parent="Bg Image" unique_id=24355817 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
+
+[node name="placeholder4" parent="Bg Image" unique_id=955826574 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
+
+[node name="placeholder5" parent="Bg Image" unique_id=674847810 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
+
+[node name="placeholder6" parent="Bg Image" unique_id=1292604863 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
+
+[node name="placeholder7" parent="Bg Image" unique_id=1993550465 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
+
+[node name="placeholder8" parent="Bg Image" unique_id=1924007144 instance=ExtResource("3_l46wx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("4_btba4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=931682143]
+offset_left = -34.0
+offset_top = -12.0
+offset_right = 1291.0
+offset_bottom = 728.0
+color = Color(0, 0, 0, 0.54901963)
+
+[node name="New Selection" type="Control" parent="." unique_id=1778755543]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ServeCustomers" type="Button" parent="New Selection" unique_id=1623527969]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 21.0
+offset_right = 1262.0
+offset_bottom = 109.0
 theme_override_font_sizes/font_size = 30
 text = "Serve Customers Sandbox"
 
-[node name="GameLogo" type="Sprite2D" parent="." unique_id=1510853050]
-position = Vector2(640, 117)
-scale = Vector2(0.19780816, 0.19780816)
+[node name="Container" type="Container" parent="New Selection" unique_id=158561353]
+layout_mode = 0
+offset_left = -803.0
+offset_top = -425.0
+offset_right = 777.26
+offset_bottom = 1155.26
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("10_gl1wp")
+rings = 1
+ring_spacing = 10.0
+start_radius = 558.13
+items_per_ring = 20
+rotation_offset_degrees = 360.0
+auto_size = true
+arc_angle = 210.015
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Rice" parent="New Selection/Container" unique_id=451413400 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+text = "Rice"
+label = "Rice"
+minigame_scene = "uid://sukerfnpt5d5"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Pancake" parent="New Selection/Container" unique_id=1314799880 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+text = "Pancake"
+label = "Pancake"
+minigame_scene = "uid://bf86igy00f6sq"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Hashbrown" parent="New Selection/Container" unique_id=26142224 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+text = "Hashbrown"
+label = "Hashbrown"
+minigame_scene = "uid://j42ywdsfuawg"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Hotdog" parent="New Selection/Container" unique_id=1812360157 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+text = "Hotdog"
+label = "Hotdog"
+minigame_scene = "uid://bgi803ffeyeae"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Inihaw" parent="New Selection/Container" unique_id=384284277 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+text = "Inihaw"
+label = "Inihaw"
+minigame_scene = "uid://cphb8p5iecw0j"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Torta" parent="New Selection/Container" unique_id=2034463664 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+text = "Torta"
+label = "Torta"
+minigame_scene = "uid://dqrhc8pu68q17"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Placeholder" parent="New Selection/Container" unique_id=1744927665 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+disabled = true
+text = "LOCKED"
+label = "LOCKED"
+minigame_scene = "uid://dqrhc8pu68q17"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Placeholder2" parent="New Selection/Container" unique_id=1932044987 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+disabled = true
+text = "LOCKED"
+label = "LOCKED"
+minigame_scene = "uid://dqrhc8pu68q17"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Placeholder3" parent="New Selection/Container" unique_id=498362103 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+disabled = true
+text = "LOCKED"
+label = "LOCKED"
+minigame_scene = "uid://dqrhc8pu68q17"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Placeholder4" parent="New Selection/Container" unique_id=2111503553 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+disabled = true
+text = "LOCKED"
+label = "LOCKED"
+minigame_scene = "uid://dqrhc8pu68q17"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Placeholder5" parent="New Selection/Container" unique_id=686977421 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+disabled = true
+text = "LOCKED"
+label = "LOCKED"
+minigame_scene = "uid://dqrhc8pu68q17"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Placeholder6" parent="New Selection/Container" unique_id=189808907 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+disabled = true
+text = "LOCKED"
+label = "LOCKED"
+minigame_scene = "uid://dqrhc8pu68q17"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Placeholder7" parent="New Selection/Container" unique_id=191820866 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+disabled = true
+text = "LOCKED"
+label = "LOCKED"
+minigame_scene = "uid://dqrhc8pu68q17"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Placeholder8" parent="New Selection/Container" unique_id=1127354442 instance=ExtResource("11_8omsi")]
+layout_mode = 2
+mouse_filter = 1
+disabled = true
+text = "LOCKED"
+label = "LOCKED"
+minigame_scene = "uid://dqrhc8pu68q17"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Plate" type="Sprite2D" parent="New Selection" unique_id=1406370295]
+position = Vector2(-36, 392)
+scale = Vector2(1.5338885, 1.5127248)
+texture = ExtResource("9_h6rov")
+
+[node name="Minigame Description" type="RichTextLabel" parent="." unique_id=1240179745]
+offset_left = 31.0
+offset_top = 395.0
+offset_right = 362.0375
+offset_bottom = 592.99915
+theme_override_styles/normal = SubResource("StyleBoxFlat_cuu35")
+text = "Minigame Description
+"
+scroll_following = true
+script = ExtResource("6_tovjb")
+
+[node name="LOGO" type="Sprite2D" parent="." unique_id=1510853050]
+position = Vector2(199, 228)
+scale = Vector2(0.28124997, 0.28125003)
 texture = ExtResource("7_8omsi")
-script = ExtResource("3_gl1wp")
 
-[node name="SmoothScrollContainer" type="ScrollContainer" parent="." unique_id=1061169522]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -480.0
-grow_horizontal = 2
-grow_vertical = 0
-horizontal_scroll_mode = 0
-script = ExtResource("2_h6rov")
-wheel_scroll_damper = SubResource("Resource_h6rov")
-dragging_scroll_damper = SubResource("Resource_kyrjg")
-metadata/_custom_type_script = "uid://bgqglerkcylxx"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1373538784]
+libraries/ = SubResource("AnimationLibrary_btba4")
+speed_scale = 3.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SmoothScrollContainer" unique_id=644743705]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="SmoothScrollContainer/VBoxContainer" unique_id=71520638]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="Rice" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer" unique_id=1670701451 instance=ExtResource("6_8omsi")]
-layout_mode = 2
-mouse_filter = 1
-texture_normal = ExtResource("2_l46wx")
-scene = "uid://sukerfnpt5d5"
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="Pancake" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer" unique_id=514353001 instance=ExtResource("6_8omsi")]
-layout_mode = 2
-mouse_filter = 1
-texture_normal = ExtResource("3_btba4")
-scene = "uid://bf86igy00f6sq"
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="Hashbrown" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer" unique_id=1761106524 instance=ExtResource("6_8omsi")]
-layout_mode = 2
-mouse_filter = 1
-texture_normal = ExtResource("4_h6rov")
-scene = "uid://j42ywdsfuawg"
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="SmoothScrollContainer/VBoxContainer" unique_id=881844820]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="Hotdog" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer2" unique_id=782165539 instance=ExtResource("6_8omsi")]
-layout_mode = 2
-mouse_filter = 1
-texture_normal = ExtResource("5_kyrjg")
-scene = "uid://bgi803ffeyeae"
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="Inihaw" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1520383153 instance=ExtResource("6_8omsi")]
-layout_mode = 2
-mouse_filter = 1
-texture_normal = ExtResource("6_l46wx")
-scene = "uid://cphb8p5iecw0j"
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="Torta" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer2" unique_id=2640522 instance=ExtResource("6_8omsi")]
-layout_mode = 2
-mouse_filter = 1
-texture_normal = ExtResource("7_l46wx")
-scene = "uid://dqrhc8pu68q17"
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="SmoothScrollContainer/VBoxContainer" unique_id=1909784508]
-layout_mode = 2
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="Lumpia" parent="SmoothScrollContainer/VBoxContainer/HBoxContainer3" unique_id=291767803 instance=ExtResource("6_8omsi")]
-layout_mode = 2
-mouse_filter = 1
-texture_normal = ExtResource("11_kyrjg")
-scene = "uid://b0yukpeuqjxne"
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[connection signal="pressed" from="ServeCustomers" to="." method="_on_serve_customers_pressed"]
+[connection signal="pressed" from="New Selection/ServeCustomers" to="." method="_on_serve_customers_pressed"]
+[connection signal="mouse_entered" from="New Selection/Container" to="New Selection/Container" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="New Selection/Container" to="Minigame Description" method="_on_container_mouse_entered"]
+[connection signal="mouse_exited" from="New Selection/Container" to="New Selection/Container" method="_on_mouse_exited"]
+[connection signal="mouse_exited" from="New Selection/Container" to="Minigame Description" method="_on_container_mouse_exited"]

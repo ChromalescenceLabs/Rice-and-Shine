@@ -1,11 +1,14 @@
-extends Area2D
+class_name Oil extends Area2D
 
 @onready var oil_open: Sprite2D = $OilOpened
 @onready var oil_closed: Sprite2D = $OilClosed
 
 var dragging: bool = false
-var og_pos: Vector2
-var tween
+var og_pos : Vector2
+# Change this if the bowl should snap to its original position
+var snap_to_og_pos := false
+# Call this function, passing the desired og pos in the parameter to set its original position
+func set_og_pos(pos : Vector2 = self.global_position): og_pos = pos
 
 func _ready() -> void:
 	og_pos = position
@@ -23,17 +26,8 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		dragging = false
 		oil_closed.visible = true
 		oil_open.visible = false
-		self.global_position = og_pos
+		if snap_to_og_pos: self.global_position = og_pos
 
 func _on_area_entered(area: Area2D) -> void:
-	if "pan" in area.name.to_lower():
-		oil(area)
-		
-func oil(area):
-	if area.has_oil == false:
-		if not dragging:
-			return
-			
-		if dragging:
-			area.has_oil = true
-			area.oiled()
+	if area is CookingPan:
+		area.oil()

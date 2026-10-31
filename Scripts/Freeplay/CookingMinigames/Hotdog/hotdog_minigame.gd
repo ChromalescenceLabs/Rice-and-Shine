@@ -1,4 +1,5 @@
 extends Node2D
+@onready var oil: Oil = $Frying/Oil
 
 # SLICING
 @warning_ignore("unused_signal")
@@ -24,7 +25,7 @@ var sliced_hotdog: int = 0:
 @warning_ignore("unused_signal")
 signal frying_finished
 @onready var frying: Node2D = $Frying
-@onready var hdog_pan: HdogPan = $Frying/HdogPan
+@onready var pan: CookingPan = $Frying/Pan
 var frying_hotdog_no: int = 3
 
 # CHOPPING
@@ -80,6 +81,9 @@ func stick_exit(sticknode, nextnode):
 
 
 func _ready() -> void:
+	oil.snap_to_og_pos = true
+	oil.set_og_pos()
+	
 	frying.position.x += get_viewport().get_visible_rect().size.x
 	slicing.position.x += get_viewport().get_visible_rect().size.x
 	chopping.position.x += get_viewport().get_visible_rect().size.x
