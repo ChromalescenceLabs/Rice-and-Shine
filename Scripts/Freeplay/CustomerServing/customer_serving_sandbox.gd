@@ -132,3 +132,7 @@ func _on_exit_pressed() -> void: SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1
 func _on_customer_spawner_add_customer() -> void: 
 	if not customers_cont.get_child_count() > 6:
 		add_customer()
+
+
+func _on_button_pressed() -> void:
+	add_customer()

@@ -1,21 +1,13 @@
 [gd_scene format=3 uid="uid://bs83acug1c5xl"]
 
 [ext_resource type="Script" uid="uid://bv7dyvtgl8ga7" path="res://Scripts/Freeplay/Storymode/serving_customers_base.gd" id="1_5av7u"]
+[ext_resource type="Texture2D" uid="uid://bh8pjmbpu08k7" path="res://Assets/Level/Table.png" id="2_ja7qr"]
 [ext_resource type="PackedScene" uid="uid://cntangxcnp6xg" path="res://Scenes/Freeplay/CustomerServing/add_bowl_btn.tscn" id="2_tbsef"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="3_h5bb6"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="4_pbxxb"]
 [ext_resource type="PackedScene" uid="uid://btok7aisotru6" path="res://Scenes/Storymode/day_timer.tscn" id="7_ay3sv"]
 [ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="18_xd6nw"]
 [ext_resource type="PackedScene" uid="uid://dpjeqy63lxdvr" path="res://Scenes/Freeplay/CustomerServing/customer_happiness_logs.tscn" id="19_cfcfs"]
-
-[sub_resource type="Gradient" id="Gradient_kc8g2"]
-offsets = PackedFloat32Array(0, 0.6204819, 0.9939759)
-colors = PackedColorArray(0.28708315, 0.14834896, 0.0949044, 1, 0.6441346, 0.2909285, 0.056175753, 1, 0.71782947, 0.37462825, 0.19089448, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_08i74"]
-gradient = SubResource("Gradient_kc8g2")
-fill_from = Vector2(0, 1)
-fill_to = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_5av7u"]
 script = ExtResource("4_pbxxb")
@@ -46,7 +38,7 @@ offset_right = 640.0
 offset_bottom = 20.08545
 grow_horizontal = 2
 grow_vertical = 0
-texture = SubResource("GradientTexture2D_08i74")
+texture = ExtResource("2_ja7qr")
 
 [node name="CustomersCont" type="HBoxContainer" parent="Control" unique_id=900914495]
 propagate_maximum_size = false
@@ -124,9 +116,10 @@ z_index = 2
 position = Vector2(1280, 459)
 
 [node name="CustomerHappinessLogs" parent="." unique_id=23440669 instance=ExtResource("19_cfcfs")]
+metadata/_edit_lock_ = true
 
 [node name="Clock" parent="." unique_id=1251713995 instance=ExtResource("7_ay3sv")]
-position = Vector2(77, -1)
+position = Vector2(53, -1)
 day_length = 10.0
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

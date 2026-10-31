@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="14_o8aqv"]
 [ext_resource type="Texture2D" uid="uid://c4jbnbugoscts" path="res://Assets/Freeplay/Serving/Filled/HashbrownContFilledH.png" id="14_xhxoy"]
 [ext_resource type="PackedScene" uid="uid://dpjeqy63lxdvr" path="res://Scenes/Freeplay/CustomerServing/customer_happiness_logs.tscn" id="19_lteyg"]
-[ext_resource type="PackedScene" uid="uid://cln3gtus3v2r" path="res://Scenes/Storymode/customer_spawner.tscn" id="20_g0hnr"]
 
 [sub_resource type="Gradient" id="Gradient_kc8g2"]
 offsets = PackedFloat32Array(0, 0.6204819, 0.9939759)
@@ -178,7 +177,11 @@ offset_right = 1256.0
 offset_bottom = 703.0
 text = "Exit"
 
-[node name="CustomerSpawner" parent="." unique_id=140030450 instance=ExtResource("20_g0hnr")]
+[node name="Button" type="Button" parent="." unique_id=2078590488]
+offset_left = 35.0
+offset_top = 19.0
+offset_right = 151.0
+offset_bottom = 66.0
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="child_exiting_tree" from="Control/CustomersCont" to="." method="_on_customers_cont_child_exiting_tree"]
@@ -186,4 +189,4 @@ text = "Exit"
 [connection signal="child_exiting_tree" from="Control/FreedBowls" to="." method="_on_freed_bowls_child_exiting_tree"]
 [connection signal="remove_customer" from="CustomerHappinessLogs" to="." method="_on_customer_happiness_logs_remove_customer"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
-[connection signal="add_customer" from="CustomerSpawner" to="." method="_on_customer_spawner_add_customer"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

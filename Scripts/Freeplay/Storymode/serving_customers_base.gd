@@ -18,6 +18,8 @@ const FOOD_CONT = preload("uid://csole0o4ydmgm")
 var bowl_no : int = 0
 
 func _ready() -> void:
+	if not GlobalScenes.add_customer.is_connected(reparent_customer):
+		GlobalScenes.add_customer.connect(reparent_customer)
 	instantiate_food_conts()
 	GlobalVars.is_in_story = true
 	
@@ -43,6 +45,10 @@ func _ready() -> void:
 		if GlobalScenes.get_node("StoryCustomers").get_child_count() > 0:
 			for i in GlobalScenes.get_node("StoryCustomers").get_children():
 				i.reparent(customers_cont)
+				
+func reparent_customer():
+	var hapbarchildren = GlobalScenes.happiness_bars.get_children(true)
+	hapbarchildren[0].reparent(customers_cont)
 
 func add_bowl_func(is_old : bool) -> TextureRect:
 	var newBowl = SERVE_BOWL.instantiate()
@@ -66,16 +72,6 @@ func add_bowl_func(is_old : bool) -> TextureRect:
 		add_bowl.visible = false
 	
 	return newBowl
-	
-func add_customer() -> TextureButton:
-	var newCustomer = CUSTOMER.instantiate()
-	newCustomer.modulate.a = 0.0
-	customers_cont.add_child(newCustomer)
-	var type = newCustomer.initialization()
-	newCustomer.indx = customers_cont.get_child_count()
-	customer_happiness_logs.new_happiness_bar(type, newCustomer)
-	
-	return newCustomer
 	
 func instantiate_food_conts() -> void:
 	for i in GlobalVars.unlocked_foods:
@@ -123,13 +119,6 @@ func _on_tree_exiting() -> void:
 	
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "Bowls", bowl_data)
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "FoodConts", foodcont_data)
-
-func _on_customer_happiness_logs_remove_customer(index: int, node : TextureButton) -> void:
-	for customer in customers_cont.get_children():
-		if customer == node:
-			customer.animation_player.play_backwards("enter_exit")
-			await customer.animation_player.animation_finished
-			customer.queue_free()
 
 func _on_customers_cont_child_exiting_tree(node: Node) -> void:
 	for i in customer_happiness_logs.overall_cont.get_children():
