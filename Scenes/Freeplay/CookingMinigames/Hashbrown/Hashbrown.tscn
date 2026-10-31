@@ -14,7 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://3nbi6q3ikgh8" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/rinsing.tscn" id="11_avunj"]
 [ext_resource type="PackedScene" uid="uid://jqgwfjxupldu" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/squeeze.tscn" id="12_meb1c"]
 [ext_resource type="PackedScene" uid="uid://nxlhp5ta2hf7" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/frying.tscn" id="13_35cbw"]
-[ext_resource type="Shader" uid="uid://b7cg3ikv2m2w7" path="res://Border.gdshader" id="14_b1sxt"]
+[ext_resource type="Shader" uid="uid://b7cg3ikv2m2w7" path="res://Assets/Shaders/Border.gdshader" id="14_b1sxt"]
+[ext_resource type="PackedScene" uid="uid://b761rh068s0so" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/add.tscn" id="15_s0hno"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
 
@@ -74,11 +75,14 @@ offset_right = 682.0
 offset_bottom = 403.0
 
 [node name="CookingBg" type="Sprite2D" parent="Control" unique_id=367473960]
+visible = false
+position = Vector2(-1.5, 0)
+scale = Vector2(1.0023438, 1)
 texture = ExtResource("1_jjcf2")
 
 [node name="CookingBgTopDown" type="Sprite2D" parent="Control" unique_id=965929414]
-position = Vector2(15, 192)
-scale = Vector2(0.6825923, 0.87143856)
+position = Vector2(-0.6443051, 182.13965)
+scale = Vector2(0.6683795, 0.8560318)
 texture = ExtResource("2_y804u")
 
 [node name="peel" parent="." unique_id=243397758 instance=ExtResource("4_o12im")]
@@ -199,13 +203,14 @@ offset_right = 510.0
 offset_bottom = 285.0
 
 [node name="Squeeze" parent="." unique_id=1629429422 instance=ExtResource("12_meb1c")]
+visible = false
 
 [node name="frying" parent="." unique_id=103076593 instance=ExtResource("13_35cbw")]
 
 [node name="Pan" parent="frying/Pan" parent_id_path=PackedInt32Array(103076593, 842265276) index="0" unique_id=1727484637]
 material = SubResource("ShaderMaterial_tj6en")
 
-[node name="add" type="Node2D" parent="." unique_id=594739755]
+[node name="Add" parent="." unique_id=323244026 instance=ExtResource("15_s0hno")]
 
 [node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("10_penps")]
 offset_left = 9.0
@@ -224,9 +229,11 @@ scale = Vector2(0.795, 0.795)
 [connection signal="done" from="Squeeze" to="." method="_on_squeeze_done"]
 [connection signal="visibility_changed" from="Squeeze/squeezing/unsqueezed" to="Squeeze" method="_on_unsqueezed_visibility_changed"]
 [connection signal="done" from="frying/Bowl" to="." method="_on_bowl_done"]
+[connection signal="done" from="Add/mix" to="." method="_on_mix_done"]
 
 [editable path="peel"]
 [editable path="grate/gratedFull"]
 [editable path="rinse"]
 [editable path="Squeeze"]
 [editable path="frying"]
+[editable path="Add"]

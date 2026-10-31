@@ -48,7 +48,7 @@ func _process(_delta: float) -> void:
 		global_position = lerp(global_position, origPos, 0.05)
 
 #gg this is so unoptimized
-	if canGrate and picked and get_global_mouse_position().x<origPosGrater.x+100 and get_global_mouse_position().x>origPosGrater.x-100:
+	if canGrate and picked and abs(get_global_mouse_position().x - origPosGrater.x) < 100.0:
 		grater.position.x = lerp(grater.position.x, get_global_mouse_position().x, 0.2)
 	elif start:
 		grater.position = lerp(grater.position, origPosGrater, 0.05)

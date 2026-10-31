@@ -40,6 +40,14 @@ func nextScene(exit, enter):
 	GlobalVars.item_enter(enter)
 	scene+=1
 
+func changeBG(goOut, goIn):
+	control.get_child(goIn).visible=true
+	GlobalVars.item_exit(control.get_child(goOut))
+	move_child(control.get_child(goOut),0)
+	GlobalVars.item_enter(control.get_child(goIn))
+	await GlobalVars.itemEntered
+	control.get_child(goOut).visible=false
+
 func _on_peel_peeled() -> void:
 	nextScene(myChild[scene],myChild[scene+1])
 
@@ -52,8 +60,13 @@ func _on_water_water_completed() -> void:
 func _on_squeeze_done() -> void:
 	nextScene(myChild[scene],myChild[scene+1])
 	await GlobalVars.successIndEnd
-	GlobalVars.item_exit(control.get_child(0))
-	GlobalVars.item_enter(control.get_child(1))
+	changeBG(0,1)
 
 func _on_bowl_done() -> void:
 	nextScene(myChild[scene],myChild[scene+1])
+	await GlobalVars.successIndEnd
+	changeBG(1,0)
+
+func _on_mix_done() -> void:
+	GlobalVars.successind(self)
+	await GlobalVars.successIndEnd
