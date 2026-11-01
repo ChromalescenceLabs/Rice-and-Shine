@@ -30,6 +30,8 @@ func drop(mold):
 				progress_bar.modulate.a=1
 				progress_bar.visible=true
 				curMold=mold
+				await get_tree().create_timer(.2).timeout
+				curMold.process_mode = Node.PROCESS_MODE_DISABLED
 			else: GlobalVars.shake(pan)
 
 func _on_progress_bar_change_time_timeout() -> void:
@@ -50,7 +52,6 @@ func _on_progress_bar_change_time_timeout() -> void:
 
 		await GlobalVars.item_exit(curMold)
 		curMold.visible = false
-		curMold.set_process(false)
 		pan.unoil()
 		moldOnPan=false
 		progress_bar.value=0

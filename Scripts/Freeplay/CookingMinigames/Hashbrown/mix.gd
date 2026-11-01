@@ -6,14 +6,14 @@ extends Node2D
 signal done
 
 func _process(_delta: float) -> void:
-		if mixer.hold && abs(get_global_mouse_position().x - origPosBowl.x) < 100.0:
+		if mixer.hold && abs(get_global_mouse_position().x - origPosBowl.x) < 100.0 && not bowl.get_child(1).modulate.a>=1:
 			bowl.position.x = lerp(bowl.position.x, get_global_mouse_position().x, 0.2)
 		else:
 			bowl.position = bowl.position.lerp(origPosBowl, 0.05)
 
 
 func _on_mixer_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and not bowl.get_child(1).modulate.a>=1:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			mixer.hold = true
 			mixer.set_process(true)
@@ -39,8 +39,8 @@ func _on_bowl_mouse_exited() -> void:
 		mix()
 		if bowl.get_child(1).modulate.a>=1:
 			done.emit()
-			mixer.set_process(false)
-			mixer.set_process_input(false)
+			mixer.process_mode = Node.PROCESS_MODE_DISABLED
+
 	
 func mix():
 	for child in bowl.get_children():

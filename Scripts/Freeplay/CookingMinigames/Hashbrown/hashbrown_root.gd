@@ -4,7 +4,7 @@ extends Node2D
 #const BORDER = preload("uid://bqevegjdxbpb6")
 
 var myChild=[]
-var scene=5
+var scene=0
 var currentObject
 
 func _ready() -> void:
@@ -48,7 +48,6 @@ func changeBG(goOut, goIn):
 	bgIn.position.x = get_viewport().get_visible_rect().size.x
 	bgIn.visible = true
 	GlobalVars.item_exit(bgOut)
-	control.move_child(bgOut, 0)
 	GlobalVars.item_enter(bgIn)
 	await GlobalVars.itemEntered
 	bgOut.visible = false
