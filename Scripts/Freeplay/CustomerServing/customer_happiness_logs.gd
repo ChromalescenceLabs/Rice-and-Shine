@@ -1,5 +1,5 @@
 extends Node2D
-signal remove_customer(index : int, node : TextureButton)
+
 @onready var progress_bars_conts_anim: AnimationPlayer = $ProgressBarsContsAnim
 @onready var smooth_scroll_container: SmoothScrollContainer = $Control/ProgressBarsContsBG/SmoothScrollContainer
 @onready var overall_cont: VBoxContainer = $Control/ProgressBarsContsBG/SmoothScrollContainer/OverallCont

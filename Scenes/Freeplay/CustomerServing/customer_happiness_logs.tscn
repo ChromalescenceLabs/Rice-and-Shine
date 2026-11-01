@@ -196,7 +196,6 @@ text = "X"
 libraries/ = SubResource("AnimationLibrary_7p0b6")
 speed_scale = 3.0
 
-[connection signal="remove_customer" from="." to="." method="_on_remove_customer"]
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="Control/ShowProgressBars" to="." method="_on_show_progress_bars_pressed"]
 [connection signal="pressed" from="Control/CloseProgressBars" to="." method="_on_close_progress_bars_pressed"]

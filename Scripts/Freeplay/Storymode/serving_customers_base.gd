@@ -20,6 +20,8 @@ var bowl_no : int = 0
 func _ready() -> void:
 	if not GlobalScenes.add_customer.is_connected(reparent_customer):
 		GlobalScenes.add_customer.connect(reparent_customer)
+	if not GlobalScenes.remove_customer.is_connected(remove_customer):
+		GlobalScenes.remove_customer.connect(remove_customer)
 	instantiate_food_conts()
 	GlobalVars.is_in_story = true
 	
