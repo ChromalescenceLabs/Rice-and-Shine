@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhqlppqtrs5qp"]
 
 [ext_resource type="Texture2D" uid="uid://ccu5u8g78r3lu" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mold1.png" id="1_4j1qc"]
-[ext_resource type="Script" uid="uid://bvo7twnggy6qm" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/mixed_bowl.gd" id="1_c3qlr"]
+[ext_resource type="Script" uid="uid://c5ekxc3xs81ac" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/mixed_bowl.gd" id="1_c3qlr"]
 [ext_resource type="Texture2D" uid="uid://cfjgsnkmmit3k" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Plate.png" id="1_so17a"]
 [ext_resource type="Texture2D" uid="uid://bwu7cwubl4wla" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mold2.png" id="2_2m555"]
 [ext_resource type="Texture2D" uid="uid://bbfp4eyes2qkr" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mixedBowl.png" id="2_so17a"]
@@ -113,7 +113,7 @@ shape = SubResource("RectangleShape2D_ullcx")
 
 [node name="mold" type="Area2D" parent="." unique_id=559377965]
 visible = false
-position = Vector2(892, 406)
+position = Vector2(963, 366)
 script = ExtResource("6_sm363")
 
 [node name="mold" type="TextureRect" parent="mold" unique_id=495406790]
@@ -131,6 +131,7 @@ grow_vertical = 2
 texture = ExtResource("1_4j1qc")
 
 [node name="mold2" type="TextureRect" parent="mold" unique_id=153586844]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -145,6 +146,7 @@ grow_vertical = 2
 texture = ExtResource("2_2m555")
 
 [node name="mold3" type="TextureRect" parent="mold" unique_id=1286957797]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -158,13 +160,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_7vcde")
 
+[node name="ProgressBarChangeTime" type="Timer" parent="mold" unique_id=1473944224]
+wait_time = 0.1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mold" unique_id=495812472]
 position = Vector2(-0.5, 3)
 shape = SubResource("RectangleShape2D_ittll")
 
-[connection signal="mouse_entered" from="Plate" to="mixedBowl" method="_on_plate_mouse_entered"]
-[connection signal="mouse_exited" from="Plate" to="mixedBowl" method="_on_plate_mouse_exited"]
 [connection signal="area_entered" from="mixedBowl" to="mold" method="_on_mixed_bowl_area_entered"]
 [connection signal="input_event" from="mixedBowl" to="mixedBowl" method="_on_input_event"]
 [connection signal="area_entered" from="mold" to="mold" method="_on_area_entered"]
 [connection signal="input_event" from="mold" to="mixedBowl" method="_on_mold_input_event"]
+[connection signal="mouse_entered" from="mold" to="mixedBowl" method="_on_mold_mouse_entered"]
+[connection signal="mouse_exited" from="mold" to="mixedBowl" method="_on_mold_mouse_exited"]
+[connection signal="timeout" from="mold/ProgressBarChangeTime" to="mixedBowl" method="_on_progress_bar_change_time_timeout"]

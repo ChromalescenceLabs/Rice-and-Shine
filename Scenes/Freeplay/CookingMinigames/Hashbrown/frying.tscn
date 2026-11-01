@@ -124,10 +124,10 @@ offset_bottom = 670.0
 wait_time = 0.05
 
 [connection signal="input_event" from="Pan" to="Bowl" method="_on_pan_input_event"]
-[connection signal="visibility_changed" from="Pan/Grated" to="Pan" method="_on_grated_visibility_changed"]
+[connection signal="visibility_changed" from="Pan/Grated" to="Bowl" method="_on_grated_visibility_changed"]
 [connection signal="input_event" from="Bowl" to="Bowl" method="_on_input_event"]
 [connection signal="area_entered" from="potato" to="potato" method="_on_area_entered"]
 [connection signal="input_event" from="potato" to="Bowl" method="_on_potato_input_event"]
 [connection signal="input_event" from="potato" to="potato" method="_on_input_event"]
 [connection signal="mouse_entered" from="potato" to="potato" method="_on_mouse_entered"]
-[connection signal="timeout" from="ProgressBar/ProgressBarChangeTime" to="Pan" method="_on_progress_bar_change_time_timeout"]
+[connection signal="timeout" from="ProgressBar/ProgressBarChangeTime" to="Bowl" method="_on_progress_bar_change_time_timeout"]

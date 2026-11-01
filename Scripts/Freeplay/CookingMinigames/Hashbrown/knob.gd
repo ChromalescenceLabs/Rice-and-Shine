@@ -5,6 +5,7 @@ signal pulled
 var hold = false
 var ogPos=position
 var canHold=false
+var pull = false
 
 func _process(_delta: float) -> void:
 	var mouse=get_local_mouse_position().y+position.y
@@ -14,10 +15,11 @@ func _process(_delta: float) -> void:
 		position.y = lerp(position.y, ogPos.y, 0.05)
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.name=="end":
+	if area.name=="end" and not pull:
 		pulled.emit()
 		set_process_input(false)
 		ogPos=area.position
+		pull= true
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

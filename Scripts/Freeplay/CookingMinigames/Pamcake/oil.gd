@@ -29,5 +29,5 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		if snap_to_og_pos: self.global_position = og_pos
 
 func _on_area_entered(area: Area2D) -> void:
-	if area is CookingPan:
+	if "pan" in area.name.to_lower():
 		area.oil()

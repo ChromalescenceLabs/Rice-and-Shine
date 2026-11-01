@@ -3,10 +3,14 @@ extends Area2D
 signal peeled
 
 @onready var peeled_particles: CPUParticles2D = $"../PeeledParticles"
+@onready var checking_areas: Node2D = $"../../Line2D/CheckingAreas"
 
-var areas:int = 34
+var areas:int 
 var areas_checked:int = 0
 var canCheck=false
+
+func _ready() -> void:
+	areas=checking_areas.get_children().size()
 
 func _process(_delta: float) -> void:
 	if areas_checked == areas:
