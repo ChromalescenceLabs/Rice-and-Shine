@@ -37,23 +37,24 @@ func _on_weeks_change_week(current_week) -> void:
 	
 	match number:
 		"one":
-			day=5
+			if not GlobalVars.tutorial_finished: day = 0
+			else: day = GlobalVars.w1_days
 			changeDays()
 		"two":
-			day=2
+			day = GlobalVars.w2_days
 			changeDays()
 		"three":
-			day=6
+			day = GlobalVars.w3_days
 			changeDays()
 		"four":
-			day=3
+			day = GlobalVars.w4_days
 			changeDays()
 		"five":
-			day=1
+			day = GlobalVars.w5_days
 			changeDays()
 		"six":
-			day=7
+			day = GlobalVars.w6_days
 			changeDays()
 		"seven":
-			day=0
+			day = GlobalVars.w7_days
 			changeDays()
