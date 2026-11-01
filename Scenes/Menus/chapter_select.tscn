@@ -64,6 +64,10 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yam8d"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2cts"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aic0f"]
+
 [node name="Control" type="Control" unique_id=685714052]
 layout_mode = 3
 anchors_preset = 15
@@ -232,23 +236,23 @@ grow_vertical = 2
 
 [node name="TITLE" type="RichTextLabel" parent="." unique_id=705083939]
 layout_mode = 0
-offset_left = 693.0
+offset_left = 450.0
 offset_top = 234.0
-offset_right = 1090.0
+offset_right = 884.0
 offset_bottom = 293.0
 theme_override_font_sizes/normal_font_size = 40
-text = " "
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o2cts")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DESCRIPTION" type="RichTextLabel" parent="." unique_id=573047361]
 layout_mode = 0
-offset_left = 694.0
+offset_left = 450.0
 offset_top = 303.0
-offset_right = 1127.0
+offset_right = 883.0
 offset_bottom = 535.0
 theme_override_font_sizes/normal_font_size = 20
-text = " "
+theme_override_styles/normal = SubResource("StyleBoxEmpty_aic0f")
 
 [node name="HEADER" type="RichTextLabel" parent="." unique_id=1746309897]
 layout_mode = 1
