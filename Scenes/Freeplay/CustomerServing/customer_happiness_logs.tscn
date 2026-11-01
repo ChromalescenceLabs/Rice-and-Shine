@@ -125,7 +125,7 @@ script = ExtResource("1_ycu8y")
 [node name="Control" type="Control" parent="." unique_id=338885040]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 77.0
+offset_top = 65.0
 offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2

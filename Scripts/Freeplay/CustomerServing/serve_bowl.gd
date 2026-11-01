@@ -56,7 +56,7 @@ func _on_contents_check() -> void:
 	contentLabel.content_dict = contentDict
 	contentLabel.global_position = self.global_position
 	contentLabel.global_position.x = self.global_position.x + self.size.x/2
-	get_tree().current_scene.bowl_labels.add_child(contentLabel)
+	get_tree().current_scene.serving_customers_base.bowl_labels.add_child(contentLabel)
 	
 	await contentLabel.tree_exited
 	contents_shown = false
