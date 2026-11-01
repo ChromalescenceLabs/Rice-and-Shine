@@ -1,5 +1,5 @@
 extends Node2D
-const BORDER = preload("uid://bqevegjdxbpb6")
+const BORDER = preload("uid://b7cg3ikv2m2w7")
 @onready var bowl: Area2D = $"../Bowl"
 @onready var potato: Area2D = $"../potato"
 @onready var mix: Node2D = $"../mix"
@@ -15,8 +15,10 @@ func _ready() -> void:
 			child.input_event.connect(input.bind(child))
 
 func input(_viewport: Node, event: InputEvent, _shape_idx: int, area: Area2D):
-	if area.name !="cheese":
+	if area.name !="cheese" and not potato.visible:
+		var origIndex =area.get_index()
 		if event.is_action_pressed("Click"):
+			move_child(area,-1)
 			curObject=area
 			area.set_process(true)
 			area.hold=true
@@ -24,13 +26,13 @@ func input(_viewport: Node, event: InputEvent, _shape_idx: int, area: Area2D):
 			particle=area.find_child("CPUParticles2D")
 			particle.emitting=true
 		if event.is_action_released("Click"):
+			move_child(area,origIndex)
 			area.hold=false
 			area.rotation_degrees=0
 			particle.emitting=false
 			if not bowl.find_child(area.name.to_lower()).visible and canPut:
 				done+=1
 				bowl.find_child(area.name.to_lower()).visible=true
-				print(done)
 				if done == 5:
 					print("done")
 					next()
@@ -52,7 +54,6 @@ func _on_potato_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 				if not bowl.find_child("cheese").visible and canPut:
 					bowl.find_child("cheese").visible=true
 					done +=1
-					print(done)
 					if done == 5:
 						print("done")
 						next()

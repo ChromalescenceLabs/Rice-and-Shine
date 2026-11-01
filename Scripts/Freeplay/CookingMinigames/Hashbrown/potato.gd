@@ -29,5 +29,7 @@ func _on_area_entered(area: Area2D) -> void:
 		areaEnter=area
 	elif area.name.to_lower() == "bowl":
 		areaEnter=area
+	elif area.name.to_lower() == "plate":
+		areaEnter=area
 	else:
 		areaEnter=null
