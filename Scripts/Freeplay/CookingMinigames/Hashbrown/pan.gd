@@ -19,5 +19,5 @@ func unoil() -> void:
 	find_child("PanOil").visible=false
 
 
-func _on_ready() -> void:
+func _ready() -> void:
 	oilAsset.snap_to_og_pos=true

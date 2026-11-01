@@ -6,20 +6,24 @@ signal done
 @onready var oil: Oil = $"../Oil"
 @onready var progress_bar_change_time: Timer = $"../ProgressBar/ProgressBarChangeTime"
 @onready var progress_bar: ProgressBar = $"../ProgressBar"
+@onready var frying: Node2D = $".."
 
 var moldOnPan=false
 var curMold
 var molded = 0
 
-func _on_ready() -> void:
+func _ready() -> void:
 	for child in get_parent().get_children():
 		if "mold" in child.name.to_lower():
 			print(child.name)
 			child.drop.connect(drop.bind(child))
 
 func drop(mold):
+	print ("hey", mold.areaEnter)
 	if not moldOnPan && mold.areaEnter:
+		print("JUST DO ITTTT")
 		if mold.areaEnter.name.to_lower() == "pan":
+			
 			if pan.has_oil:
 				mold.ogPos = Vector2(382, 269)
 				moldOnPan = true

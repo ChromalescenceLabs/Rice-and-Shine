@@ -124,7 +124,6 @@ offset_bottom = 670.0
 wait_time = 0.05
 
 [connection signal="input_event" from="Pan" to="Bowl" method="_on_pan_input_event"]
-[connection signal="ready" from="Pan" to="Pan" method="_on_ready"]
 [connection signal="visibility_changed" from="Pan/Grated" to="Bowl" method="_on_grated_visibility_changed"]
 [connection signal="input_event" from="Bowl" to="Bowl" method="_on_input_event"]
 [connection signal="area_entered" from="potato" to="potato" method="_on_area_entered"]

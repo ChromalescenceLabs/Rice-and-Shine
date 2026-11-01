@@ -165,6 +165,7 @@ offset_right = 510.0
 offset_bottom = 285.0
 
 [node name="Squeeze" parent="." unique_id=1629429422 instance=ExtResource("12_meb1c")]
+visible = false
 
 [node name="frying" parent="." unique_id=103076593 instance=ExtResource("13_35cbw")]
 visible = false
@@ -176,8 +177,9 @@ material = SubResource("ShaderMaterial_tj6en")
 visible = false
 
 [node name="molding" parent="." unique_id=2120303028 instance=ExtResource("16_05ltl")]
+visible = false
 
-[node name="frying2" parent="." unique_id=1586133376 instance=ExtResource("17_jh2rk")]
+[node name="frying2" parent="." unique_id=422463727 instance=ExtResource("17_jh2rk")]
 
 [node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("10_penps")]
 offset_left = 9.0
@@ -198,7 +200,6 @@ scale = Vector2(0.795, 0.795)
 [connection signal="done" from="frying/Bowl" to="." method="_on_bowl_done"]
 [connection signal="done" from="Add/mix" to="." method="_on_mix_done"]
 [connection signal="done" from="molding/mixedBowl" to="." method="_on_mixed_bowl_done"]
-[connection signal="done" from="frying2/Plate" to="." method="_on_plate_done"]
 
 [editable path="peel"]
 [editable path="grate/gratedFull"]

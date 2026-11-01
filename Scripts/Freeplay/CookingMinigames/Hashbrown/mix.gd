@@ -39,6 +39,8 @@ func _on_bowl_mouse_exited() -> void:
 		mix()
 		if bowl.get_child(1).modulate.a>=1:
 			done.emit()
+			mixer.set_process(false)
+			mixer.set_process_input(false)
 	
 func mix():
 	for child in bowl.get_children():

@@ -77,6 +77,7 @@ func _on_progress_bar_change_time_timeout() -> void:
 			else:
 				print("done")
 				done.emit()
+				set_process(false)
 
 func moldAgain():
 	mold.visible = false

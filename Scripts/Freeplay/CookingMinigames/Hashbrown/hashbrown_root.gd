@@ -4,7 +4,7 @@ extends Node2D
 #const BORDER = preload("uid://bqevegjdxbpb6")
 
 var myChild=[]
-var scene=5
+var scene=6
 
 var currentObject
 
@@ -71,6 +71,8 @@ func _on_bowl_done() -> void:
 
 func _on_mix_done() -> void:
 	nextScene(myChild[scene],myChild[scene+1])
+	await GlobalVars.successIndEnd
+	changeBG(0,1)
 
 func _on_mixed_bowl_done() -> void:
 	nextScene(myChild[scene],myChild[scene+1])
