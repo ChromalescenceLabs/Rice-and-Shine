@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cvqb826b4xwtl" path="res://Assets/Sprites/Menus/MinigameSelect/hotdog.png" id="7_kwvo7"]
 [ext_resource type="Texture2D" uid="uid://kewsf4o5v8dg" path="res://Assets/Sprites/Menus/MinigameSelect/Inihaw.png" id="8_6lu7b"]
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Sprites/Menus/MinigameSelect/torta.png" id="9_cqt1s"]
+[ext_resource type="Texture2D" uid="uid://dcnnxndx0orea" path="res://Assets/Sprites/Menus/MinigameSelect/pancit.png" id="10_towaq"]
 [ext_resource type="Texture2D" uid="uid://b4lajgqgw3lqx" path="res://Assets/Sprites/Menus/MinigameSelect/minigame_bg_placeholder.jpg" id="10_vulic"]
 [ext_resource type="Script" uid="uid://bqo17hfbf73tx" path="res://Scripts/Menus/MinigameSelect/decreasingcontainer.gd" id="11_71n7r"]
 [ext_resource type="PackedScene" uid="uid://wy5lkqs1nt26" path="res://Scenes/Menus/MinigameSelect/minigame_button.tscn" id="12_m0yh6"]
@@ -197,7 +198,7 @@ grow_vertical = 1
 texture = ExtResource("9_cqt1s")
 bg_texture = ExtResource("9_cqt1s")
 
-[node name="placeholder" parent="Bg Image" unique_id=1988775610 instance=ExtResource("3_0i2wu")]
+[node name="pancit" parent="Bg Image" unique_id=1988775610 instance=ExtResource("3_0i2wu")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -206,7 +207,8 @@ offset_right = 1280.0
 offset_bottom = 720.0
 grow_horizontal = 1
 grow_vertical = 1
-texture = ExtResource("10_vulic")
+texture = ExtResource("10_towaq")
+bg_texture = ExtResource("10_towaq")
 
 [node name="placeholder2" parent="Bg Image" unique_id=646184110 instance=ExtResource("3_0i2wu")]
 layout_mode = 0
@@ -311,8 +313,8 @@ text = "Serve Customers Sandbox"
 layout_mode = 0
 offset_left = -803.0
 offset_top = -425.0
-offset_right = -803.0
-offset_bottom = -425.0
+offset_right = 777.26
+offset_bottom = 1155.26
 size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("11_71n7r")
@@ -373,13 +375,12 @@ label = "Torta"
 minigame_scene = "uid://dqrhc8pu68q17"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="Placeholder" parent="New Selection/Container" unique_id=1744927665 instance=ExtResource("12_m0yh6")]
+[node name="Pancit" parent="New Selection/Container" unique_id=1744927665 instance=ExtResource("12_m0yh6")]
 layout_mode = 2
 mouse_filter = 1
-disabled = true
-text = "LOCKED"
-label = "LOCKED"
-minigame_scene = "uid://dqrhc8pu68q17"
+text = "Pancit"
+label = "Pancit"
+minigame_scene = "uid://u20pd4eimjre"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="Placeholder2" parent="New Selection/Container" unique_id=1932044987 instance=ExtResource("12_m0yh6")]
