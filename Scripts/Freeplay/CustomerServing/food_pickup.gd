@@ -14,6 +14,7 @@ var textureDict : Dictionary = {
 }
 
 func _ready() -> void:
+	self.global_position = get_global_mouse_position()
 	food_img.visible = true
 	food_img.texture = textureDict.get(texture)
 

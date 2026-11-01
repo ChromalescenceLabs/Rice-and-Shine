@@ -7,7 +7,7 @@ var og_pos : Vector2
 # Change this if the bowl should snap to its original position
 var snap_to_og_pos := false
 # Change this if the bowl's texture needs any changing
-@export var bowl_texture : Texture2D = preload("res://Assets/Freeplay/Serving/ServeBowl.png")
+@export var bowl_texture : Texture2D = preload("uid://cokiq4wv1pq6d")
 # Call this function, passing the desired og pos in the parameter to set its original position
 func set_og_pos(pos : Vector2 = self.global_position): og_pos = pos
 

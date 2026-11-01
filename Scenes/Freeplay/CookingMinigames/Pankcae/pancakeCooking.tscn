@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://bf86igy00f6sq"]
 
-[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="1_ftsvu"]
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Sprites/Cooking_Minigames/CookingBGTopDown.jpg" id="1_ftsvu"]
 [ext_resource type="Script" uid="uid://byr6psf6yi4m3" path="res://Scripts/Freeplay/CookingMinigames/Pamcake/pancake_cooking.gd" id="1_rm7bj"]
 [ext_resource type="PackedScene" uid="uid://d3o3pud744tt1" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/batter_cup.tscn" id="2_rm7bj"]
 [ext_resource type="PackedScene" uid="uid://2756jtyts0ga" path="res://Scenes/Freeplay/CookingMinigames/Pankcae/bowl.tscn" id="3_y2edm"]
 [ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/oil.tscn" id="5_1f2tk"]
-[ext_resource type="Texture2D" uid="uid://dpesqyakkyses" path="res://Assets/Freeplay/Cooking_Minigames/Pankcae/PancakeS1.png" id="6_5qf87"]
-[ext_resource type="Texture2D" uid="uid://c1u1cp4kewa4t" path="res://Assets/Freeplay/Cooking_Minigames/Pankcae/PancakeS2.png" id="7_iuvri"]
+[ext_resource type="Texture2D" uid="uid://dpesqyakkyses" path="res://Assets/Sprites/Cooking_Minigames/Pankcae/PancakeS1.png" id="6_5qf87"]
+[ext_resource type="Texture2D" uid="uid://c1u1cp4kewa4t" path="res://Assets/Sprites/Cooking_Minigames/Pankcae/PancakeS2.png" id="7_iuvri"]
 [ext_resource type="PackedScene" uid="uid://cp6b2av42pmrw" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/recipe_book.tscn" id="7_y2edm"]
 [ext_resource type="PackedScene" uid="uid://ns536h1evtqt" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/pan.tscn" id="8_hw536"]
-[ext_resource type="Texture2D" uid="uid://bk6jk1qqteoq8" path="res://Assets/Freeplay/Cooking_Minigames/Pankcae/PancakeS3.png" id="8_t1nfb"]
+[ext_resource type="Texture2D" uid="uid://bk6jk1qqteoq8" path="res://Assets/Sprites/Cooking_Minigames/Pankcae/PancakeS3.png" id="8_t1nfb"]
 
 [node name="PancakeCooking" type="Node2D" unique_id=930183867]
 script = ExtResource("1_rm7bj")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d3arbpd44b1pl"]
+
+[ext_resource type="Texture2D" uid="uid://ckij18mlcxt5f" path="res://Assets/Sprites/StoryMode/BaseLevelBG.png" id="1_6y1hq"]
+[ext_resource type="PackedScene" uid="uid://bs83acug1c5xl" path="res://Scenes/Storymode/serving_customers_base.tscn" id="2_v2h5b"]
+
+[node name="Week1Day4" type="Node2D" unique_id=1188034944]
+
+[node name="BG" type="TextureRect" parent="." unique_id=725880602]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_6y1hq")
+
+[node name="ServingCustomersBase" parent="." unique_id=1724706127 instance=ExtResource("2_v2h5b")]

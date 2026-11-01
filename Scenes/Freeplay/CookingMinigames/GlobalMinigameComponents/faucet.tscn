@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cuyklj2grjhwn"]
 
 [ext_resource type="Script" uid="uid://bwsp85an01fuw" path="res://Scripts/Freeplay/CookingMinigames/GlobalMinigameComponents/faucet.gd" id="1_4h07t"]
-[ext_resource type="Texture2D" uid="uid://c3nf38bod08ol" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/Faucet.png" id="1_ulqrh"]
-[ext_resource type="Texture2D" uid="uid://kiwxlmilcqo7" path="res://Assets/Freeplay/Cooking_Minigames/Kanin/FaucetButton.png" id="2_4h07t"]
+[ext_resource type="Texture2D" uid="uid://c3nf38bod08ol" path="res://Assets/Sprites/Cooking_Minigames/Kanin/Faucet.png" id="1_ulqrh"]
+[ext_resource type="Texture2D" uid="uid://kiwxlmilcqo7" path="res://Assets/Sprites/Cooking_Minigames/Kanin/FaucetButton.png" id="2_4h07t"]
 [ext_resource type="Script" uid="uid://dpp3n752g5xjo" path="res://Scripts/Freeplay/CookingMinigames/Kanin/water.gd" id="3_4y36g"]
 
 [sub_resource type="Gradient" id="Gradient_utf8l"]

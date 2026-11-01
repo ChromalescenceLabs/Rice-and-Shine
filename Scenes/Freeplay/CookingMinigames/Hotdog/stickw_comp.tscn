@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c3wh40uuo02gg"]
 
-[ext_resource type="Script" uid="uid://d265inttk5xu5" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/stick_node.gd" id="1_2ynfo"]
-[ext_resource type="Script" uid="uid://cc5hxp20x45np" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/stick.gd" id="2_uhj31"]
-[ext_resource type="Texture2D" uid="uid://dqonpj3xbdl0e" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/Stick.png" id="3_jpue4"]
+[ext_resource type="Script" uid="uid://dng3apa7qci2w" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/stick_node.gd" id="1_2ynfo"]
+[ext_resource type="Script" uid="uid://q5aki8f8lfpd" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/stick.gd" id="2_uhj31"]
+[ext_resource type="Texture2D" uid="uid://dqonpj3xbdl0e" path="res://Assets/Sprites/Cooking_Minigames/Hotdog/Stick.png" id="3_jpue4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bx8n8"]
 height = 488.0

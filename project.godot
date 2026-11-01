@@ -31,7 +31,7 @@ GlobalScenes="*uid://ddyvxe1aoo6kg"
 
 [dialogue_manager]
 
-runtime/balloon_path="res://Dialogues/CustomersBalloon.tscn"
+runtime/balloon_path="res://Dialogues/lola_protag.tscn"
 
 [display]
 
@@ -79,7 +79,7 @@ Pour={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogues/customers.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogues/customers.dialogue", "res://Dialogues/lola_protag.dialogue")
 
 [physics]
 

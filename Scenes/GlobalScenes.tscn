@@ -1,10 +1,23 @@
 [gd_scene format=3 uid="uid://ddyvxe1aoo6kg"]
 
+[ext_resource type="Script" uid="uid://b2keo542elerr" path="res://Scripts/Freeplay/Storymode/global_scenes.gd" id="1_eg5df"]
+[ext_resource type="Script" uid="uid://bps6ibkr218k4" path="res://Scripts/Freeplay/Storymode/customer_spawner.gd" id="1_sbqfh"]
+[ext_resource type="Script" uid="uid://cl47n822ew7in" path="res://Scripts/Freeplay/Storymode/happiness_bars.gd" id="2_xyo0r"]
+
 [node name="GlobalScenes" type="Node2D" unique_id=1551262820]
 visible = false
+script = ExtResource("1_eg5df")
 
 [node name="HappinessBars" type="Node2D" parent="." unique_id=252155382]
+script = ExtResource("2_xyo0r")
 
 [node name="Customers" type="Node2D" parent="." unique_id=887249497]
 
 [node name="StoryCustomers" type="Node2D" parent="." unique_id=647456288]
+script = ExtResource("1_sbqfh")
+
+[node name="SpawnCustomerTimer" type="Timer" parent="." unique_id=1418658466]
+
+[connection signal="add_customer" from="." to="HappinessBars" method="_on_global_scenes_add_customer"]
+[connection signal="duplicate_customer_happiness" from="." to="HappinessBars" method="_on_global_scenes_duplicate_customer_happiness"]
+[connection signal="timeout" from="SpawnCustomerTimer" to="StoryCustomers" method="_on_spawn_customer_timer_timeout"]

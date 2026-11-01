@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://oivqombfgdyo"
+path="res://.godot/imported/lola_protag.dialogue-d0958cefb9f247922422b9836c5c02b5.tres"
+
+[deps]
+
+source_file="res://Dialogues/lola_protag.dialogue"
+dest_files=["res://.godot/imported/lola_protag.dialogue-d0958cefb9f247922422b9836c5c02b5.tres"]
+
+[params]
+
+defaults=true
