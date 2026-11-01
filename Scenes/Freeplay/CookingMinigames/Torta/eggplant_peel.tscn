@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://xy6lg1ajeyia"]
 
-[ext_resource type="Script" uid="uid://6cv34ty5i004" path="res://Scripts/Freeplay/CookingMinigames/Torta/eggplant_peel.gd" id="1_0c1v8"]
-[ext_resource type="Texture2D" uid="uid://dxi6b7p75mcpm" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggplantCooked.png" id="2_0c1v8"]
-[ext_resource type="Texture2D" uid="uid://ck2u4e4gonkj7" path="res://Assets/Freeplay/Cooking_Minigames/Torta/TortaPeeled.png" id="3_wk8cb"]
+[ext_resource type="Script" uid="uid://d303ko455peld" path="res://Scripts/Freeplay/CookingMinigames/Torta/eggplant_peel.gd" id="1_0c1v8"]
+[ext_resource type="Texture2D" uid="uid://dxi6b7p75mcpm" path="res://Assets/Sprites/Cooking_Minigames/Torta/EggplantCooked.png" id="2_0c1v8"]
+[ext_resource type="Texture2D" uid="uid://ck2u4e4gonkj7" path="res://Assets/Sprites/Cooking_Minigames/Torta/TortaPeeled.png" id="3_wk8cb"]
 [ext_resource type="PackedScene" uid="uid://dkhcfxgcjigjp" path="res://Scenes/Freeplay/CookingMinigames/Torta/eggplant_flatten_point.tscn" id="4_wk8cb"]
 
 [node name="eggplant_peel" type="Node2D" unique_id=122180659]

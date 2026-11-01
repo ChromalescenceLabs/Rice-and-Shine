@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://v1ke2myaadm3"]
 
-[ext_resource type="Texture2D" uid="uid://b1t0ld5ii8tj3" path="res://Assets/Freeplay/Serving/Customers/CustomerPlaceholder.png" id="1_800xo"]
+[ext_resource type="Texture2D" uid="uid://b1t0ld5ii8tj3" path="res://Assets/Sprites/Serving/Customers/CustomerPlaceholder.png" id="1_800xo"]
 [ext_resource type="Script" uid="uid://c7jgpkgh2nc1" path="res://Scripts/Freeplay/CustomerServing/customer.gd" id="2_cnr3u"]
 [ext_resource type="Script" uid="uid://d2xq46vwmaa88" path="res://Scripts/Freeplay/CustomerServing/customer_area.gd" id="3_ss3q5"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_ybwgw"]

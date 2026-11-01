@@ -64,7 +64,7 @@ func initialization(type : String = "Random", wants : Dictionary = {}) -> Varian
 		customer_info["CustomerWants"] = {}
 		for i in randi_range(1, 3):
 			var rand_food = possible_foods.pick_random()
-			customer_info["CustomerWants"][rand_food] = randi_range(1, 5)
+			customer_info["CustomerWants"][rand_food] = randi_range(1, 2)
 			possible_foods.erase(rand_food)
 	else:
 		customer_info["CustomerWants"] = wants

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dplwtlc2jhxoo"]
 
-[ext_resource type="Texture2D" uid="uid://c57kg12rlasjx" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HotdogRaw3.png" id="1_dy6cj"]
-[ext_resource type="Script" uid="uid://2dyeuyhqmfms" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/slice_hotdog.gd" id="1_uqdda"]
-[ext_resource type="Texture2D" uid="uid://c0iagrtp1o8t6" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HotdogRaw.png" id="2_gu8ka"]
-[ext_resource type="Texture2D" uid="uid://4ob5exyjq7ya" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HotdogRaw1.png" id="2_ljgtu"]
-[ext_resource type="Texture2D" uid="uid://pusasorbm3u3" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HotdogRaw2.png" id="3_p0frt"]
+[ext_resource type="Texture2D" uid="uid://c57kg12rlasjx" path="res://Assets/Sprites/Cooking_Minigames/Hotdog/HotdogRaw3.png" id="1_dy6cj"]
+[ext_resource type="Script" uid="uid://d3mbnphe4w3yv" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/slice_hotdog.gd" id="1_uqdda"]
+[ext_resource type="Texture2D" uid="uid://c0iagrtp1o8t6" path="res://Assets/Sprites/Cooking_Minigames/Hotdog/HotdogRaw.png" id="2_gu8ka"]
+[ext_resource type="Texture2D" uid="uid://4ob5exyjq7ya" path="res://Assets/Sprites/Cooking_Minigames/Hotdog/HotdogRaw1.png" id="2_ljgtu"]
+[ext_resource type="Texture2D" uid="uid://pusasorbm3u3" path="res://Assets/Sprites/Cooking_Minigames/Hotdog/HotdogRaw2.png" id="3_p0frt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljgtu"]
 radius = 44.0

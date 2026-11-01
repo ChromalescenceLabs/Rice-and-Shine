@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dlpdjso7pw4p2"]
 
 [ext_resource type="Script" uid="uid://c5fji80t24e8" path="res://Scripts/Freeplay/CookingMinigames/Lumpia/lumpia_sesameoil.gd" id="1_e01mt"]
-[ext_resource type="Texture2D" uid="uid://qtr2m4xvfh61" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Calamansi.png" id="1_ura38"]
+[ext_resource type="Texture2D" uid="uid://qtr2m4xvfh61" path="res://Assets/Sprites/Cooking_Minigames/Inihaw/Calamansi.png" id="1_ura38"]
 
 [sub_resource type="Gradient" id="Gradient_23aw0"]
 offsets = PackedFloat32Array(1)

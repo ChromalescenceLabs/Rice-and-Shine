@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btok7aisotru6"]
 
-[ext_resource type="Texture2D" uid="uid://qhn1ppht5ikl" path="res://Assets/Level/Clock.png" id="1_2ovnd"]
+[ext_resource type="Texture2D" uid="uid://qhn1ppht5ikl" path="res://Assets/Sprites/Serving/Clock.png" id="1_2ovnd"]
 [ext_resource type="Script" uid="uid://wkf8r7jofu21" path="res://Scripts/Freeplay/Storymode/clock.gd" id="1_11f6k"]
 
 [node name="Clock" type="Node2D" unique_id=1251713995]

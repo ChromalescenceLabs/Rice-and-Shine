@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwi7ud17itmbg"]
 
-[ext_resource type="Texture2D" uid="uid://b8pycewahokgt" path="res://Assets/Freeplay/Serving/FoodPickupImgs/rice.png" id="1_hwlt5"]
-[ext_resource type="Script" uid="uid://buiggaucsdr0n" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/sugar_piece.gd" id="1_qmldi"]
+[ext_resource type="Texture2D" uid="uid://b8pycewahokgt" path="res://Assets/Sprites/Serving/FoodPickupImgs/rice.png" id="1_hwlt5"]
+[ext_resource type="Script" uid="uid://4aup31ggv7l2" path="res://Scripts/Freeplay/CookingMinigames/Inihaw/sugar_piece.gd" id="1_qmldi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
 radius = 21.213203

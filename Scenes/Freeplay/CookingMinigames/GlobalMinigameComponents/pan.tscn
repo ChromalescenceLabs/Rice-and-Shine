@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ns536h1evtqt"]
 
 [ext_resource type="Script" uid="uid://0nf4drne5ldj" path="res://Scripts/Freeplay/CookingMinigames/GlobalMinigameComponents/pan.gd" id="1_hxt1p"]
-[ext_resource type="Texture2D" uid="uid://iqxaxa0bo02s" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Pan.png" id="1_scgy0"]
-[ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/PanOil.png" id="2_hxt1p"]
+[ext_resource type="Texture2D" uid="uid://iqxaxa0bo02s" path="res://Assets/Sprites/Cooking_Minigames/Non-specific/Pan.png" id="1_scgy0"]
+[ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Sprites/Cooking_Minigames/Non-specific/PanOil.png" id="2_hxt1p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_raa7b"]
 radius = 131.01526

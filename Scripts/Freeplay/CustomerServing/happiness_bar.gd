@@ -13,6 +13,7 @@ func _ready() -> void:
 		GlobalScenes.add_customer.connect(start_timer)
 	
 func start_timer():
+	GlobalScenes.add_customer.disconnect(start_timer)
 	timer.start()
 
 func _on_timer_timeout() -> void: bar.value -= 1
