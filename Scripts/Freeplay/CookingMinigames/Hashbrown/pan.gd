@@ -10,7 +10,7 @@ var has_hdog: bool = false
 var has_oil: bool = false
 var fried = false
 
-func oiled() -> void:
+func oil() -> void:
 	has_oil = true
 	find_child("Pan").visible=false
 	find_child("PanOil").visible=true
