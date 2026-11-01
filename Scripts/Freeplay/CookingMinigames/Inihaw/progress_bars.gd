@@ -20,31 +20,22 @@ func fade_out(bar):
 
 func _on_soy_sauce_bar_value_changed(value: float) -> void:
 	if value >= 100:
-		GlobalVars.successind(get_tree().current_scene)
-		await GlobalVars.successIndEnd
 		soy_sauce_done.emit()
 
 func _on_calamansi_bar_value_changed(value: float) -> void:
 	if value >= 100:
-		GlobalVars.successind(get_tree().current_scene)
-		await GlobalVars.successIndEnd
 		calamansi_done.emit()
 
 func _on_ketchup_bar_value_changed(value: float) -> void:
 	if value >= 100:
-		GlobalVars.successind(get_tree().current_scene)
-		await GlobalVars.successIndEnd
 		ketchup_done.emit()
 
 func _on_sprite_bar_value_changed(value: float) -> void:
 	if value >= 100:
-		GlobalVars.successind(get_tree().current_scene)
-		await GlobalVars.successIndEnd
 		sprite_done.emit()
 
 func _on_soy_sauce_done() -> void:
 	await fade_out(soy_sauce_bar)
-	print("done")
 	fade_in(calamansi_bar)
 	
 func _on_calamansi_done() -> void:

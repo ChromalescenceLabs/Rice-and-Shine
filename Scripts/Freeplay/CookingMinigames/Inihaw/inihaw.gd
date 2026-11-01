@@ -66,6 +66,8 @@ func _ready() -> void:
 	GlobalVars.item_enter(inihaw_chopping)
 	
 func _on_chopping_finished() -> void:
+	GlobalVars.successind(get_tree().current_scene)
+	await GlobalVars.successIndEnd
 	GlobalVars.item_enter(mincing)
 	choppable_garlic.progbar_fade_in()
 
@@ -132,9 +134,7 @@ func _on_prep_sugar_done() -> void:
 	shake_start.emit()
 
 func _on_shake_end() -> void:
-	GlobalVars.successind(get_tree().current_scene)
-	await GlobalVars.successIndEnd
-	
+	shaking.done = true
 	GlobalVars.item_exit(shaking)
 	GlobalVars.item_exit(prepping)
 	
