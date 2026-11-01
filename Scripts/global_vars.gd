@@ -49,8 +49,9 @@ func shake(item):
 # Customer Serving
 var character_name : String
 var character_order : String
-var payment : float = 350.0
-
+var payment : float = 0.0
+var day : int
+var week : int
 	
 # Unlocks
 var unlocked_foods : Array = ["rice"]
