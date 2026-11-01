@@ -5,7 +5,8 @@ var onPlate=false
 var plate=false
 
 func _process(_delta: float) -> void:
-	if onPlate && plate && abs(get_global_mouse_position().y - mold.ogPos.y) < 100.0:
+	var current_velocity = Input.get_last_mouse_velocity().y
+	if onPlate && plate && abs(get_global_mouse_position().y - mold.ogPos.y) < 150.0 && abs(current_velocity) < 500:
 		mold.position.y = lerp(mold.position.y, get_global_mouse_position().y, 0.2)
 	else:
 		mold.position = mold.position.lerp(mold.ogPos, 0.05) 
@@ -26,9 +27,13 @@ func _on_mold_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -
 			mold.visible=true
 
 
-func _on_plate_mouse_entered() -> void:
+func _on_mold_mouse_entered() -> void:
 	plate=true
+	for child in mold.get_children():
+		var index = mold.get_children().find(child)
+		if onPlate && child is TextureRect && child.modulate.a == 1 && index != 2:
+			print(child)
 
 
-func _on_plate_mouse_exited() -> void:
+func _on_mold_mouse_exited() -> void:
 	plate=false

@@ -1,5 +1,5 @@
 extends Node2D
-const BORDER = preload("uid://b7cg3ikv2m2w7")
+const BORDER = preload("uid://ctefyjfnenj8p")
 @onready var bowl: Area2D = $"../Bowl"
 @onready var potato: Area2D = $"../potato"
 @onready var mix: Node2D = $"../mix"

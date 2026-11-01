@@ -5,6 +5,7 @@ signal WaterCompleted
 @onready var water_detect: Area2D = $WaterDetect
 @onready var water_progress_bar: ProgressBar = $"../WaterProgressBar"
 @onready var progress_bar_change_time: Timer = $"../WaterProgressBar/ProgressBarChangeTime"
+@onready var potato: Area2D = $"../potato"
 
 func _ready() -> void:
 	emitting = false
@@ -26,6 +27,7 @@ func _on_close_pressed() -> void:
 	water_detect.monitoring = false
 	
 	if water_progress_bar.value >= 100:
+		potato.set_process(false)
 		WaterCompleted.emit()
 
 func _on_open_pressed() -> void:

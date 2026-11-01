@@ -5,6 +5,7 @@ extends Node2D
 
 var myChild=[]
 var scene=4
+
 var currentObject
 
 func _ready() -> void:
@@ -37,6 +38,7 @@ func nextScene(exit, enter):
 	await GlobalVars.successIndEnd
 	GlobalVars.item_exit(exit)
 	exit.set_process(false)
+	exit.set_process_input(false)
 	GlobalVars.item_enter(enter)
 	scene+=1
 
