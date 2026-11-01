@@ -142,9 +142,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -125.0
-offset_top = -40.91
+offset_top = -27.075
 offset_right = 125.0
-offset_bottom = 5.7800026
+offset_bottom = 19.615002
 grow_horizontal = 2
 
 [node name="OrderLabelBG" type="ColorRect" parent="OrderLabel" unique_id=1808142043]

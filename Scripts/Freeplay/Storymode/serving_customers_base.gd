@@ -47,7 +47,7 @@ func _ready() -> void:
 				i.reparent(customers_cont)
 				
 func reparent_customer():
-	var hapbarchildren = GlobalScenes.happiness_bars.get_children(true)
+	var hapbarchildren = GlobalScenes.story_customers.get_children(true)
 	hapbarchildren[0].reparent(customers_cont)
 
 func add_bowl_func(is_old : bool) -> TextureRect:
@@ -123,6 +123,11 @@ func _on_tree_exiting() -> void:
 func _on_customers_cont_child_exiting_tree(node: Node) -> void:
 	for i in customer_happiness_logs.overall_cont.get_children():
 		if i.associated_node == node:
+			i.queue_free()
+
+func remove_customer(node: TextureButton):
+	for i in customers_cont.get_children():
+		if i == node:
 			i.queue_free()
 
 func start_day_clock() -> void: clock.start_timer()

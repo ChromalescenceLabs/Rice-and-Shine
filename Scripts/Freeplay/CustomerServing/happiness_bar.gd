@@ -1,5 +1,5 @@
 extends HBoxContainer
-signal upset(node : int)
+signal upset(node : TextureButton)
 @onready var icon: TextureRect = $Icon
 @onready var bar: ProgressBar = $Bar
 @onready var timer: Timer = $Timer

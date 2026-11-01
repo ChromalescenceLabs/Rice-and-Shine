@@ -27,17 +27,11 @@ offset_bottom = 720.0
 [node name="FoodContBG" type="TextureRect" parent="Control" unique_id=1283708255]
 z_index = 2
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -640.0
-offset_top = -239.91501
-offset_right = 640.0
-offset_bottom = 20.08545
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 texture = ExtResource("2_ja7qr")
 
 [node name="CustomersCont" type="HBoxContainer" parent="Control" unique_id=900914495]
@@ -109,8 +103,6 @@ metadata/_custom_type_script = "uid://bgqglerkcylxx"
 layout_mode = 2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="BowlLabels" type="Node2D" parent="." unique_id=80505418]
-
 [node name="TrashbinTab" parent="." unique_id=18345153 instance=ExtResource("18_xd6nw")]
 z_index = 2
 position = Vector2(1280, 459)
@@ -121,6 +113,8 @@ metadata/_edit_lock_ = true
 [node name="Clock" parent="." unique_id=1251713995 instance=ExtResource("7_ay3sv")]
 position = Vector2(53, -1)
 day_length = 10.0
+
+[node name="BowlLabels" type="Node2D" parent="." unique_id=80505418]
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="child_exiting_tree" from="Control/CustomersCont" to="." method="_on_customers_cont_child_exiting_tree"]

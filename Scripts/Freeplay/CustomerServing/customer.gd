@@ -25,11 +25,9 @@ var icon_textures : Dictionary = {
 }
 
 var final_pos
-var indx : int
 var received_order : Dictionary
 const HAPPINESS_BAR = preload("uid://d1c4e3m2dk23a")
 @onready var happiness_bar_cont: VBoxContainer = $Control/HappinessBarCont
-@onready var happiness_bar: ProgressBar = $Control/HappinessBar
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var customer_area: CustomerArea = $CustomerArea
 
@@ -49,9 +47,7 @@ func _ready() -> void:
 	order_label.modulate.a = 0
 
 # To Initialize the Customer's Information
-func initialization(index : int, type : String = "Random", wants : Dictionary = {}) -> Variant:
-	indx = index
-		
+func initialization(type : String = "Random", wants : Dictionary = {}) -> Variant:
 	# Picks Customer Type
 	if type == "Random":
 		var weight = rng.rand_weighted(GlobalVars.customer_weights)
@@ -78,7 +74,7 @@ func initialization(index : int, type : String = "Random", wants : Dictionary = 
 		
 	return customer_info
 func enter():
-	self.modulate.a = 1.0
+	GlobalScenes.add_customer.disconnect(enter)
 	animation_player.play("enter_exit")
 	
 # Function to Update Texture Based on the Customer's Type
@@ -135,8 +131,11 @@ func _on_pressed() -> void:
 	
 	var balloon = DialogueManager.show_dialogue_balloon_scene(CUSTOMERS_BALLOON, load("uid://bivmd1klxx532"), customer_info["CustomerType"])
 	balloon.global_position = self.global_position
-	balloon.indx = indx
-
+	if self.global_position.x < 640:
+		balloon.indx = 1
+	elif self.global_position.x > 640:
+		balloon.indx = 3
+	
 	self.disabled = true
 	
 	for i in customer_info["CustomerWants"]:
@@ -180,7 +179,10 @@ func receive_bowl(bowlContents : Dictionary, bowl : TextureRect):
 		GlobalVars.character_name = customer_info["CustomerType"][0].to_upper() + customer_info["CustomerType"].substr(1, -1)
 		var balloon = DialogueManager.show_dialogue_balloon_scene(CUSTOMERS_BALLOON, load("uid://bivmd1klxx532"), "correct")
 		balloon.global_position = self.global_position
-		balloon.indx = indx
+		if self.global_position.x < 640:
+			balloon.indx = 1
+		elif self.global_position.x > 640:
+			balloon.indx = 3
 		
 		await DialogueManager.dialogue_ended
 		

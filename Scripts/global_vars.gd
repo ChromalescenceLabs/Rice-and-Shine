@@ -46,11 +46,13 @@ func shake(item):
 	shakeDone.emit()
 
 	
-	
+# Customer Serving
+var character_name : String
+var character_order : String
 
 	
 # Unlocks
-var unlocked_foods : Array = ["rice", "pancake", "hashbrown", "lumpia"]
+var unlocked_foods : Array = ["rice", "pancake", "hashbrown"]
 var unlocked_customers : Array = ["marites", "student", "lolo", "tatay"]
 var customer_weights : PackedFloat32Array = []
 

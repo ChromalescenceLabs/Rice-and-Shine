@@ -1,11 +1,9 @@
 extends Node2D
-signal customer_removed
 
 const CUSTOMER = preload("uid://v1ke2myaadm3")
 var customer_num : int = 0:
 	set(value):
 		customer_num = value
-		customer_removed
 
 @onready var story_customers: Node2D = $"."
 
@@ -34,17 +32,15 @@ func _on_spawn_customer_timer_timeout() -> void:
 	if not customer_num >= 6:
 		add_customer_func()
 		spawn_customer_timer.wait_time = randf_range(timer_min, timer_max)
-	else:
-		await customer_removed
 	
 	spawn_customer_timer.start()
 
 func add_customer_func(type : String = "Random", wants : Dictionary = {}) -> TextureButton:
-	var customer = CUSTOMER.new()
+	var customer = CUSTOMER.instantiate()
 	story_customers.add_child(customer)
-	var c_info = customer.initialize(get_parent().customer_num, type, wants)
-	get_parent().customer_num += 1
+	var c_info = customer.initialization(type, wants)
+	customer_num += 1
 	
-	get_parent().duplicate_customer_happiness.emit(c_info["CustomerType"], customer, c_info["Hapbar"])
+	get_parent().duplicate_customer_happiness.emit(c_info["Hapbar"])
 	
 	return customer
