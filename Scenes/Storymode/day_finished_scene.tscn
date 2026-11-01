@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://c3oabp5jsdb1t"]
+
+[ext_resource type="Texture2D" uid="uid://csk7d3c17ewjs" path="res://Assets/Sprites/StoryMode/DayFinishedBG.png" id="1_4g4j2"]
+[ext_resource type="Script" uid="uid://dnfnkhjrvo7xn" path="res://Scripts/Freeplay/Storymode/day_finished_scene.gd" id="1_rpx48"]
+[ext_resource type="Texture2D" uid="uid://b7xxj5my274a3" path="res://Assets/Sprites/StoryMode/LightCone.png" id="2_ij6hp"]
+[ext_resource type="Script" uid="uid://clyovkxg4cj4f" path="res://addons/perspective_quads/scripts/nodes/perspective_viewport_container_2d.gd" id="3_q7gy3"]
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="5_kvwaw"]
+
+[sub_resource type="Animation" id="Animation_rpx48"]
+resource_name = "PaperEntrance"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paper:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5.88, 582.295), Vector2(5.88, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kvwaw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paper:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.88, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aqdl4"]
+_data = {
+&"PaperEntrance": SubResource("Animation_rpx48"),
+&"RESET": SubResource("Animation_kvwaw")
+}
+
+[sub_resource type="Animation" id="Animation_wo8rv"]
+resource_name = "LightAnim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.6333333, 0.76666665, 0.93333334, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_6d1l8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i78ar"]
+_data = {
+&"LightAnim": SubResource("Animation_wo8rv"),
+&"RESET": SubResource("Animation_6d1l8")
+}
+
+[sub_resource type="Gradient" id="Gradient_ij6hp"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cuu35"]
+gradient = SubResource("Gradient_ij6hp")
+
+[node name="DayFinishedScene" type="Node2D" unique_id=936751786]
+script = ExtResource("1_rpx48")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1101969850]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_4g4j2")
+metadata/_edit_lock_ = true
+
+[node name="DayCompleteLabel" type="RichTextLabel" parent="." unique_id=388108052]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 249.0
+offset_top = 25.0
+offset_right = 981.0
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_kvwaw")
+theme_override_font_sizes/normal_font_size = 86
+text = "DAY [1] COMPLETE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=775576153]
+visible = false
+position = Vector2(617.99994, 343)
+rotation = 3.1415927
+scale = Vector2(15.17393, 6.34065)
+energy = 4.44
+texture = ExtResource("2_ij6hp")
+metadata/_edit_lock_ = true
+
+[node name="PaperAnim" type="AnimationPlayer" parent="." unique_id=747508917]
+libraries/ = SubResource("AnimationLibrary_aqdl4")
+speed_scale = 1.5
+
+[node name="LightAnim" type="AnimationPlayer" parent="." unique_id=1703208569]
+libraries/ = SubResource("AnimationLibrary_i78ar")
+speed_scale = 3.0
+
+[node name="Paper" type="Polygon2D" parent="." unique_id=1381133743]
+position = Vector2(5.88, 0)
+color = Color(0.37036446, 0.3703645, 0.37036446, 1)
+texture = SubResource("GradientTexture2D_cuu35")
+polygon = PackedVector2Array(402, 157, 814, 156, 948, 670, 275, 669)
+
+[node name="PerspectiveViewportContainer2D" type="Node2D" parent="Paper" unique_id=1483028857]
+position = Vector2(604.12, 393)
+script = ExtResource("3_q7gy3")
+corner_top_left = Vector2(0.030562347, 0.008733625)
+corner_top_right = Vector2(0.99144256, 0.0043668123)
+corner_bottom_right = Vector2(1.3019559, 1.0764192)
+corner_bottom_left = Vector2(-0.25794622, 1.0655022)
+metadata/_custom_type_script = "uid://clyovkxg4cj4f"
+metadata/_edit_group_ = true
+
+[node name="SubViewport" type="SubViewport" parent="Paper/PerspectiveViewportContainer2D" unique_id=61538283]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(409, 458)
+render_target_update_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Paper/PerspectiveViewportContainer2D/SubViewport" unique_id=984721026]
+offset_right = 408.7173
+offset_bottom = 458.0
+pivot_offset = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "PAYCHECK THINGY
+
+--------------------------------------------------------------------
+
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+
+--------------------------------------------------------------------"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Paper/PerspectiveViewportContainer2D/SubViewport" unique_id=1930223678]
+offset_top = 357.285
+offset_right = 408.7173
+offset_bottom = 815.28516
+pivot_offset = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 72
+text = "₱ [       ] s"
+horizontal_alignment = 1
