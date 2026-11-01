@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://nxlhp5ta2hf7" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/frying.tscn" id="13_35cbw"]
 [ext_resource type="Shader" uid="uid://ctefyjfnenj8p" path="res://Assets/Shaders/Border.gdshader" id="14_b1sxt"]
 [ext_resource type="PackedScene" uid="uid://b761rh068s0so" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/add.tscn" id="15_s0hno"]
+[ext_resource type="PackedScene" uid="uid://dhqlppqtrs5qp" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/final_final_scene.tscn" id="16_05ltl"]
+[ext_resource type="PackedScene" uid="uid://co4qi673ep0qg" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/fryingLAST.tscn" id="17_jh2rk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
 
@@ -173,6 +175,10 @@ material = SubResource("ShaderMaterial_tj6en")
 [node name="Add" parent="." unique_id=323244026 instance=ExtResource("15_s0hno")]
 visible = false
 
+[node name="molding" parent="." unique_id=2120303028 instance=ExtResource("16_05ltl")]
+
+[node name="frying2" parent="." unique_id=1586133376 instance=ExtResource("17_jh2rk")]
+
 [node name="RecipeBook" parent="." unique_id=1851881949 instance=ExtResource("10_penps")]
 offset_left = 9.0
 offset_top = 528.0
@@ -191,6 +197,8 @@ scale = Vector2(0.795, 0.795)
 [connection signal="visibility_changed" from="Squeeze/squeezing/unsqueezed" to="Squeeze" method="_on_unsqueezed_visibility_changed"]
 [connection signal="done" from="frying/Bowl" to="." method="_on_bowl_done"]
 [connection signal="done" from="Add/mix" to="." method="_on_mix_done"]
+[connection signal="done" from="molding/mixedBowl" to="." method="_on_mixed_bowl_done"]
+[connection signal="done" from="frying2/Plate" to="." method="_on_plate_done"]
 
 [editable path="peel"]
 [editable path="grate/gratedFull"]
@@ -198,3 +206,5 @@ scale = Vector2(0.795, 0.795)
 [editable path="Squeeze"]
 [editable path="frying"]
 [editable path="Add"]
+[editable path="molding"]
+[editable path="frying2"]

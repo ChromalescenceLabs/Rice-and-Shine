@@ -4,6 +4,8 @@ var ogPos=position
 var areaEnter
 var frying=false
 
+signal drop
+
 func _ready() -> void:
 	set_process(false)
 
@@ -19,6 +21,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			hold = true
 			if not event.pressed:
 				hold = false
+				drop.emit()
 
 func _on_mouse_entered() -> void:
 	set_process(true)
