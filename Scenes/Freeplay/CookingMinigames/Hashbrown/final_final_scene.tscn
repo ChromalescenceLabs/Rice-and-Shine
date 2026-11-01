@@ -112,8 +112,11 @@ position = Vector2(-56.5, 19)
 shape = SubResource("RectangleShape2D_ullcx")
 
 [node name="mold" type="Area2D" parent="." unique_id=559377965]
-position = Vector2(892, 406)
+position = Vector2(963, 366)
 script = ExtResource("6_sm363")
+
+[node name="ProgressBarChangeTime" type="Timer" parent="mold" unique_id=1473944224]
+wait_time = 0.1
 
 [node name="mold" type="TextureRect" parent="mold" unique_id=495406790]
 anchors_preset = 8
@@ -169,3 +172,4 @@ shape = SubResource("RectangleShape2D_ittll")
 [connection signal="input_event" from="mold" to="mixedBowl" method="_on_mold_input_event"]
 [connection signal="mouse_entered" from="mold" to="mixedBowl" method="_on_mold_mouse_entered"]
 [connection signal="mouse_exited" from="mold" to="mixedBowl" method="_on_mold_mouse_exited"]
+[connection signal="timeout" from="mold/ProgressBarChangeTime" to="mixedBowl" method="_on_progress_bar_change_time_timeout"]
