@@ -46,13 +46,24 @@ func shake(item):
 	shakeDone.emit()
 
 	
-	
+# Customer Serving
+var character_name : String
+var character_order : String
 
 	
 # Unlocks
-var unlocked_foods : Array = ["rice", "pancake", "hashbrown", "lumpia"]
+var unlocked_foods : Array = ["rice"]
 var unlocked_customers : Array = ["marites", "student", "lolo", "tatay"]
 var customer_weights : PackedFloat32Array = []
+
+var tutorial_finished : bool = false
+var w1_days : int = 1
+var w2_days : int = 1
+var w3_days : int = 0
+var w4_days : int = 0
+var w5_days : int = 0
+var w6_days : int = 0
+var w7_days : int = 0
 
 func _ready() -> void:
 	append_equal_weights()

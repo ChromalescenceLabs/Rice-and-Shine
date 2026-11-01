@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cglg18ytbkwv1"]
 
-[ext_resource type="Texture2D" uid="uid://cokiq4wv1pq6d" path="res://Assets/Freeplay/Serving/ServeBowl.png" id="1_2ds5i"]
+[ext_resource type="Texture2D" uid="uid://cokiq4wv1pq6d" path="res://Assets/Sprites/Serving/ServeBowl.png" id="1_2ds5i"]
 [ext_resource type="Script" uid="uid://cyn0bq4ruju13" path="res://Scripts/Freeplay/CookingMinigames/GlobalMinigameComponents/cooking_bowl.gd" id="1_rtsil"]
 [ext_resource type="Script" uid="uid://rh0anpck01uv" path="res://Scripts/Freeplay/CookingMinigames/GlobalMinigameComponents/cooking_bowl_area.gd" id="3_jiom8"]
 

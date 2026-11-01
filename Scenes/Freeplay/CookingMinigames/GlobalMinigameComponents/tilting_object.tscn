@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://diad5gha2ftbj"]
 
 [ext_resource type="Script" uid="uid://cyrjj27g8ye2k" path="res://Scripts/Freeplay/CookingMinigames/GlobalMinigameComponents/tilting_object.gd" id="1_yqw03"]
-[ext_resource type="Texture2D" uid="uid://cenib63n7hwbs" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/BowlFront.png" id="2_bnq8o"]
+[ext_resource type="Texture2D" uid="uid://cenib63n7hwbs" path="res://Assets/Sprites/Cooking_Minigames/Non-specific/BowlFront.png" id="2_bnq8o"]
 
 [node name="TiltingObject" type="Node2D" unique_id=734560591]
 script = ExtResource("1_yqw03")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cy1qe3w0ip4cu"]
 
-[ext_resource type="Script" uid="uid://wcrmgufisi7g" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/choppable_hotdog.gd" id="1_tvh8m"]
-[ext_resource type="Texture2D" uid="uid://crw8macbscud2" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/PorkBelly.png" id="2_3py71"]
+[ext_resource type="Script" uid="uid://c7qssea7mex58" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/choppable_hotdog.gd" id="1_tvh8m"]
+[ext_resource type="Texture2D" uid="uid://crw8macbscud2" path="res://Assets/Sprites/Cooking_Minigames/Inihaw/PorkBelly.png" id="2_3py71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5h11f"]
 size = Vector2(166, 488)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgsbvuaq5223a"]
 
 [ext_resource type="Script" uid="uid://byh0qyqaogx0p" path="res://Scripts/Freeplay/CookingMinigames/Lumpia/ingredients_bowls.gd" id="1_guxer"]
-[ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Bowl.png" id="2_guxer"]
+[ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Sprites/Cooking_Minigames/Non-specific/Bowl.png" id="2_guxer"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cuu35"]
 radius = 151.8127

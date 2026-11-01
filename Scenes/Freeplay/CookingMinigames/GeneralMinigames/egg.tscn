@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://c3xdcqpla8eix"]
 
 [ext_resource type="Script" uid="uid://dgldsoxmncbht" path="res://Scripts/Freeplay/CookingMinigames/GeneralMinigames/egg.gd" id="1_5nyct"]
-[ext_resource type="Texture2D" uid="uid://bt1yiys6pcvfi" path="res://Assets/Freeplay/Cooking_Minigames/Torta/Egg.png" id="1_g8upy"]
-[ext_resource type="Texture2D" uid="uid://c8xn767v1vktv" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggCrack.png" id="2_5nyct"]
-[ext_resource type="Texture2D" uid="uid://dns5j15js5fjr" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggCrackT.png" id="3_hykmp"]
-[ext_resource type="Texture2D" uid="uid://ddx5agyx4e6xn" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggCrackB.png" id="4_q2g85"]
-[ext_resource type="Texture2D" uid="uid://dyvs4xm3nk3qe" path="res://Assets/Freeplay/Cooking_Minigames/Torta/EggInsides.png" id="6_hykmp"]
+[ext_resource type="Texture2D" uid="uid://bt1yiys6pcvfi" path="res://Assets/Sprites/Cooking_Minigames/Torta/Egg.png" id="1_g8upy"]
+[ext_resource type="Texture2D" uid="uid://c8xn767v1vktv" path="res://Assets/Sprites/Cooking_Minigames/Torta/EggCrack.png" id="2_5nyct"]
+[ext_resource type="Texture2D" uid="uid://dns5j15js5fjr" path="res://Assets/Sprites/Cooking_Minigames/Torta/EggCrackT.png" id="3_hykmp"]
+[ext_resource type="Texture2D" uid="uid://ddx5agyx4e6xn" path="res://Assets/Sprites/Cooking_Minigames/Torta/EggCrackB.png" id="4_q2g85"]
+[ext_resource type="Texture2D" uid="uid://dyvs4xm3nk3qe" path="res://Assets/Sprites/Cooking_Minigames/Torta/EggInsides.png" id="6_hykmp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_08i74"]
 radius = 44.0

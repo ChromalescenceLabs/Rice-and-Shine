@@ -1,20 +1,14 @@
 [gd_scene format=3 uid="uid://bs83acug1c5xl"]
 
 [ext_resource type="Script" uid="uid://bv7dyvtgl8ga7" path="res://Scripts/Freeplay/Storymode/serving_customers_base.gd" id="1_5av7u"]
+[ext_resource type="Texture2D" uid="uid://bh8pjmbpu08k7" path="res://Assets/Sprites/Serving/Table.png" id="2_ja7qr"]
 [ext_resource type="PackedScene" uid="uid://cntangxcnp6xg" path="res://Scenes/Freeplay/CustomerServing/add_bowl_btn.tscn" id="2_tbsef"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="3_h5bb6"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="4_pbxxb"]
+[ext_resource type="PackedScene" uid="uid://btok7aisotru6" path="res://Scenes/Storymode/day_timer.tscn" id="7_ay3sv"]
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="9_gwu6q"]
 [ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="18_xd6nw"]
 [ext_resource type="PackedScene" uid="uid://dpjeqy63lxdvr" path="res://Scenes/Freeplay/CustomerServing/customer_happiness_logs.tscn" id="19_cfcfs"]
-
-[sub_resource type="Gradient" id="Gradient_kc8g2"]
-offsets = PackedFloat32Array(0, 0.6204819, 0.9939759)
-colors = PackedColorArray(0.28708315, 0.14834896, 0.0949044, 1, 0.6441346, 0.2909285, 0.056175753, 1, 0.71782947, 0.37462825, 0.19089448, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_08i74"]
-gradient = SubResource("Gradient_kc8g2")
-fill_from = Vector2(0, 1)
-fill_to = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_5av7u"]
 script = ExtResource("4_pbxxb")
@@ -34,18 +28,12 @@ offset_bottom = 720.0
 [node name="FoodContBG" type="TextureRect" parent="Control" unique_id=1283708255]
 z_index = 2
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -640.0
-offset_top = -239.91501
-offset_right = 640.0
-offset_bottom = 20.08545
 grow_horizontal = 2
-grow_vertical = 0
-texture = SubResource("GradientTexture2D_08i74")
+grow_vertical = 2
+texture = ExtResource("2_ja7qr")
 
 [node name="CustomersCont" type="HBoxContainer" parent="Control" unique_id=900914495]
 propagate_maximum_size = false
@@ -116,16 +104,62 @@ metadata/_custom_type_script = "uid://bgqglerkcylxx"
 layout_mode = 2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="BowlLabels" type="Node2D" parent="." unique_id=80505418]
-
 [node name="TrashbinTab" parent="." unique_id=18345153 instance=ExtResource("18_xd6nw")]
 z_index = 2
 position = Vector2(1280, 459)
 
 [node name="CustomerHappinessLogs" parent="." unique_id=23440669 instance=ExtResource("19_cfcfs")]
+metadata/_edit_lock_ = true
+
+[node name="Clock" parent="." unique_id=1251713995 instance=ExtResource("7_ay3sv")]
+position = Vector2(472, -1)
+
+[node name="BowlLabels" type="Node2D" parent="." unique_id=80505418]
+
+[node name="WeekDayNumCont" type="ColorRect" parent="." unique_id=1520676838]
+self_modulate = Color(1, 1, 1, 0.57254905)
+offset_left = 97.0
+offset_right = 349.0
+offset_bottom = 50.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="WeekDayNumContLabel" type="RichTextLabel" parent="WeekDayNumCont" unique_id=332988703]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_gwu6q")
+theme_override_font_sizes/normal_font_size = 35
+text = "WEEK 1, DAY 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PaymentCont" type="ColorRect" parent="." unique_id=1722601376]
+self_modulate = Color(1, 1, 1, 0.57254905)
+offset_left = 1035.0
+offset_right = 1201.0
+offset_bottom = 50.0
+color = Color(0, 0, 0, 1)
+
+[node name="PaymentLabel" type="RichTextLabel" parent="PaymentCont" unique_id=1079570038]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_gwu6q")
+theme_override_font_sizes/normal_font_size = 35
+text = "₱ 10.00"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="child_exiting_tree" from="Control/CustomersCont" to="." method="_on_customers_cont_child_exiting_tree"]
 [connection signal="pressed" from="Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
 [connection signal="child_exiting_tree" from="Control/FreedBowls" to="." method="_on_freed_bowls_child_exiting_tree"]
-[connection signal="remove_customer" from="CustomerHappinessLogs" to="." method="_on_customer_happiness_logs_remove_customer"]
+[connection signal="day_finished" from="Clock" to="." method="_on_clock_day_finished"]

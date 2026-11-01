@@ -1,4 +1,5 @@
 extends Node2D
+signal day_finished
 
 const CUSTOMER = preload("uid://v1ke2myaadm3")
 const SERVE_BOWL = preload("uid://curuxisd3l6in")
@@ -10,11 +11,18 @@ const FOOD_CONT = preload("uid://csole0o4ydmgm")
 @onready var food_conts: HBoxContainer = $Control/ScrollContainer/FoodConts
 @onready var customers_cont: HBoxContainer = $Control/CustomersCont
 @onready var customer_happiness_logs: Node2D = $CustomerHappinessLogs
+@onready var week_day_num_cont_label: RichTextLabel = $WeekDayNumCont/WeekDayNumContLabel
+
+@onready var clock: Node2D = $Clock
 
 @onready var add_bowl: Button = $Control/BowlConts/AddBowl
 var bowl_no : int = 0
 
 func _ready() -> void:
+	if not GlobalScenes.add_customer.is_connected(reparent_customer):
+		GlobalScenes.add_customer.connect(reparent_customer)
+	if not GlobalScenes.remove_customer.is_connected(remove_customer):
+		GlobalScenes.remove_customer.connect(remove_customer)
 	instantiate_food_conts()
 	GlobalVars.is_in_story = true
 	
@@ -40,6 +48,10 @@ func _ready() -> void:
 		if GlobalScenes.get_node("StoryCustomers").get_child_count() > 0:
 			for i in GlobalScenes.get_node("StoryCustomers").get_children():
 				i.reparent(customers_cont)
+				
+func reparent_customer():
+	var hapbarchildren = GlobalScenes.story_customers.get_children(true)
+	hapbarchildren[0].reparent(customers_cont)
 
 func add_bowl_func(is_old : bool) -> TextureRect:
 	var newBowl = SERVE_BOWL.instantiate()
@@ -63,16 +75,6 @@ func add_bowl_func(is_old : bool) -> TextureRect:
 		add_bowl.visible = false
 	
 	return newBowl
-	
-func add_customer() -> TextureButton:
-	var newCustomer = CUSTOMER.instantiate()
-	newCustomer.modulate.a = 0.0
-	customers_cont.add_child(newCustomer)
-	var type = newCustomer.initialization()
-	newCustomer.indx = customers_cont.get_child_count()
-	customer_happiness_logs.new_happiness_bar(type, newCustomer)
-	
-	return newCustomer
 	
 func instantiate_food_conts() -> void:
 	for i in GlobalVars.unlocked_foods:
@@ -121,14 +123,18 @@ func _on_tree_exiting() -> void:
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "Bowls", bowl_data)
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "FoodConts", foodcont_data)
 
-func _on_customer_happiness_logs_remove_customer(index: int, node : TextureButton) -> void:
-	for customer in customers_cont.get_children():
-		if customer == node:
-			customer.animation_player.play_backwards("enter_exit")
-			await customer.animation_player.animation_finished
-			customer.queue_free()
-
 func _on_customers_cont_child_exiting_tree(node: Node) -> void:
 	for i in customer_happiness_logs.overall_cont.get_children():
 		if i.associated_node == node:
 			i.queue_free()
+
+func remove_customer(node: TextureButton):
+	for i in customers_cont.get_children():
+		if i == node:
+			i.queue_free()
+
+func start_day_clock() -> void: clock.start_timer()
+func _on_clock_day_finished() -> void: day_finished.emit()
+
+func update_weekdaynum(weeknum : String, daynum : String):
+	week_day_num_cont_label.text = "WEEK " + weeknum + "," + " DAY " + daynum
