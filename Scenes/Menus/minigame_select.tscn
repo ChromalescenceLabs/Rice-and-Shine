@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
 
 [ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/Freeplay/minigame_select.gd" id="1_tovjb"]
-[ext_resource type="Script" uid="uid://v14b0q5pkknt" path="res://Scripts/Menus/bg_image.gd" id="2_gl1wp"]
+[ext_resource type="Script" uid="uid://v4rjw01xgxfj" path="res://Scripts/Menus/bg_image.gd" id="2_gl1wp"]
 [ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Menus/FreeplayMenu/RICE.png" id="2_l46wx"]
 [ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/Menus/FreeplayMenu/pancake.png" id="3_btba4"]
 [ext_resource type="PackedScene" uid="uid://bkjubyh6wcmam" path="res://Scenes/Freeplay/minigame_select_background.tscn" id="3_l46wx"]
@@ -9,11 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/Menus/FreeplayMenu/hasbrown.png" id="4_h6rov"]
 [ext_resource type="Texture2D" uid="uid://cvqb826b4xwtl" path="res://Assets/Menus/FreeplayMenu/hotdog.png" id="5_kyrjg"]
 [ext_resource type="Texture2D" uid="uid://kewsf4o5v8dg" path="res://Assets/Menus/FreeplayMenu/Inihaw.png" id="6_l46wx"]
-[ext_resource type="Script" uid="uid://di8gnpcdeqlvd" path="res://Scripts/Freeplay/minigame_description.gd" id="6_tovjb"]
+[ext_resource type="Script" uid="uid://cgpjuj4v11w53" path="res://Scripts/Freeplay/minigame_description.gd" id="6_tovjb"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Logo.png" id="7_8omsi"]
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Menus/FreeplayMenu/torta.png" id="7_l46wx"]
-[ext_resource type="Texture2D" uid="uid://biymioqcxvn8k" path="res://Assets/Menus/ChapterSelect/PLATE.png" id="9_h6rov"]
-[ext_resource type="Script" uid="uid://bqo17hfbf73tx" path="res://Scripts/Freeplay/decreasingcontainer.gd" id="10_gl1wp"]
+[ext_resource type="Texture2D" uid="uid://biymioqcxvn8k" path="res://Assets/Menus/PLATE.png" id="9_h6rov"]
+[ext_resource type="Script" uid="uid://wpmxw5kkus21" path="res://Scripts/Freeplay/decreasingcontainer.gd" id="10_gl1wp"]
 [ext_resource type="PackedScene" uid="uid://wy5lkqs1nt26" path="res://Scenes/Freeplay/minigame_button.tscn" id="11_8omsi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuu35"]
@@ -311,8 +311,8 @@ text = "Serve Customers Sandbox"
 layout_mode = 0
 offset_left = -803.0
 offset_top = -425.0
-offset_right = 777.26
-offset_bottom = 1155.26
+offset_right = -803.0
+offset_bottom = -425.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("10_gl1wp")
