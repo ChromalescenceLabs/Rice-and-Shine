@@ -49,7 +49,7 @@ func shake(item):
 # Customer Serving
 var character_name : String
 var character_order : String
-var payment : float
+var payment : float = 350.0
 
 	
 # Unlocks
