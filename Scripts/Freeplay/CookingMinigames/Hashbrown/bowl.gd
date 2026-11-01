@@ -44,9 +44,8 @@ func _on_potato_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 			elif not potato.frying:
 					bowl_top.visible=false
 
-
 func _on_pan_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event.is_action_pressed("Click") and pan.fried and not fried_top.visible:
+	if event.is_action_pressed("Click") and fried and not fried_top.visible:
 		potato.position=pan.position
 		potato.modulate=Color(4.937, 0.914, 0.503, 1.0)
 		potato.visible=true

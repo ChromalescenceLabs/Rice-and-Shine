@@ -2,7 +2,6 @@ extends Area2D
 
 @onready var gratedp: Control = $"../gratedRemains"
 @onready var grater = $"../grater"
-@onready var animation_player: AnimationPlayer = $"../grater/AnimationPlayer"
 
 signal grated
 

@@ -1,6 +1,5 @@
 extends Area2D
 
-@onready var bowl: Area2D = $"../Bowl"
 @onready var oilAsset: Oil = $"../Oil"
 
 var has_hdog: bool = false

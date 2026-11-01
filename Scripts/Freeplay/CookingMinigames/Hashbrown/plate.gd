@@ -1,7 +1,6 @@
 extends Area2D
 
 signal done
-@onready var potato: Area2D = $"../potato"
 @onready var pan: Area2D = $"../Pan"
 @onready var oil: Oil = $"../Oil"
 @onready var progress_bar_change_time: Timer = $"../ProgressBar/ProgressBarChangeTime"

@@ -7,6 +7,7 @@ var plate=false
 var current_velocity
 var nextMold = false
 var molded=0
+var isDone=false
 
 signal done
 
@@ -73,23 +74,21 @@ func _on_progress_bar_change_time_timeout() -> void:
 			nextMold = true
 			GlobalVars.item_exit(mold)
 			onPlate = false
-			if molded < 3: GlobalVars.itemExited.connect(moldAgain)
-			else:
-				print("done")
-				done.emit()
-				set_process(false)
+			GlobalVars.itemExited.connect(moldAgain)
 
 func moldAgain():
 	mold.visible = false
 	
-	if molded >= 3:
-		return
-		
-	print("im out")
-	nextMold = false
-	mold.ogPos = Vector2(963, 366)
-	for child in mold.get_children():
-		var index = mold.get_children().find(child)
-		if child is TextureRect:
-			child.modulate.a = 1 if index == 0 else 0
-	
+	if molded < 3:
+		print("im out")
+		nextMold = false
+		mold.ogPos = Vector2(963, 366)
+		for child in mold.get_children():
+			var index = mold.get_children().find(child)
+			if child is TextureRect:
+				child.modulate.a = 1 if index == 0 else 0
+	elif not isDone:
+		print("done")
+		isDone=true
+		mold.set_process(false)
+		done.emit()

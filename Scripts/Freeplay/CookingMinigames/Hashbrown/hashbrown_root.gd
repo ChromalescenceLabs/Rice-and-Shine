@@ -4,8 +4,7 @@ extends Node2D
 #const BORDER = preload("uid://bqevegjdxbpb6")
 
 var myChild=[]
-var scene=6
-
+var scene=5
 var currentObject
 
 func _ready() -> void:
@@ -43,12 +42,16 @@ func nextScene(exit, enter):
 	scene+=1
 
 func changeBG(goOut, goIn):
-	control.get_child(goIn).visible=true
-	GlobalVars.item_exit(control.get_child(goOut))
-	move_child(control.get_child(goOut),0)
-	GlobalVars.item_enter(control.get_child(goIn))
+	var bgIn = control.get_child(goIn)
+	var bgOut = control.get_child(goOut)
+	
+	bgIn.position.x = get_viewport().get_visible_rect().size.x
+	bgIn.visible = true
+	GlobalVars.item_exit(bgOut)
+	control.move_child(bgOut, 0)
+	GlobalVars.item_enter(bgIn)
 	await GlobalVars.itemEntered
-	control.get_child(goOut).visible=false
+	bgOut.visible = false
 
 func _on_peel_peeled() -> void:
 	nextScene(myChild[scene],myChild[scene+1])

@@ -14,20 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://3nbi6q3ikgh8" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/rinsing.tscn" id="11_avunj"]
 [ext_resource type="PackedScene" uid="uid://jqgwfjxupldu" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/squeeze.tscn" id="12_meb1c"]
 [ext_resource type="PackedScene" uid="uid://nxlhp5ta2hf7" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/frying.tscn" id="13_35cbw"]
-[ext_resource type="Shader" uid="uid://ctefyjfnenj8p" path="res://Assets/Shaders/Border.gdshader" id="14_b1sxt"]
 [ext_resource type="PackedScene" uid="uid://b761rh068s0so" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/add.tscn" id="15_s0hno"]
 [ext_resource type="PackedScene" uid="uid://dhqlppqtrs5qp" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/final_final_scene.tscn" id="16_05ltl"]
 [ext_resource type="PackedScene" uid="uid://co4qi673ep0qg" path="res://Scenes/Freeplay/CookingMinigames/Hashbrown/fryingLAST.tscn" id="17_jh2rk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tj6en"]
-shader = ExtResource("14_b1sxt")
-shader_parameter/line_colour = Color(1, 1, 0.7176471, 1)
-shader_parameter/line_thickness = 0.0090000004275
-shader_parameter/border_visibility = 1.0
-shader_parameter/gradient_intensity = 3.0
-shader_parameter/gradient_steps = 2.0000000475
 
 [node name="Hashbrowns" type="Node2D" unique_id=1704651639]
 script = ExtResource("1_o12im")
@@ -170,9 +161,6 @@ visible = false
 [node name="frying" parent="." unique_id=103076593 instance=ExtResource("13_35cbw")]
 visible = false
 
-[node name="Pan" parent="frying/Pan" parent_id_path=PackedInt32Array(103076593, 842265276) index="0" unique_id=1727484637]
-material = SubResource("ShaderMaterial_tj6en")
-
 [node name="Add" parent="." unique_id=323244026 instance=ExtResource("15_s0hno")]
 visible = false
 
@@ -200,6 +188,7 @@ scale = Vector2(0.795, 0.795)
 [connection signal="done" from="frying/Bowl" to="." method="_on_bowl_done"]
 [connection signal="done" from="Add/mix" to="." method="_on_mix_done"]
 [connection signal="done" from="molding/mixedBowl" to="." method="_on_mixed_bowl_done"]
+[connection signal="done" from="frying2/Plate" to="." method="_on_plate_done"]
 
 [editable path="peel"]
 [editable path="grate/gratedFull"]
