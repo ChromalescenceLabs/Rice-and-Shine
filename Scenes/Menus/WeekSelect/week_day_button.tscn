@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://x8t8c1s62my5"]
+
+[ext_resource type="Script" uid="uid://bbm56hxd5h8o6" path="res://Scripts/Menus/WeekSelect/week_day_button.gd" id="1_a73x7"]
+
+[node name="WeekDayButton" type="Button" unique_id=1995078601]
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "TUTORIAL"
+script = ExtResource("1_a73x7")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

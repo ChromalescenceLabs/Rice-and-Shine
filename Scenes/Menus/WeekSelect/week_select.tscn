@@ -1,46 +1,47 @@
 [gd_scene format=3 uid="uid://benuikw1v40e"]
 
-[ext_resource type="Texture2D" uid="uid://b5s3gdbnh5kai" path="res://Assets/Sprites/Menus/ChapterSelect/week one.png" id="1_q88pd"]
-[ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/Sprites/Menus/ModeSelect/placeholderbg.png" id="1_yue0x"]
-[ext_resource type="Script" uid="uid://dc8jbr1g8qnbs" path="res://Scripts/Menus/WeekSelect/description.gd" id="2_v84np"]
-[ext_resource type="Script" uid="uid://46l3hsxggc0w" path="res://Scripts/Menus/WeekSelect/weeks.gd" id="2_yvrl2"]
-[ext_resource type="Shader" uid="uid://ciy10rhpj5hej" path="res://Shaders/weekoutline.gdshader" id="3_61fw1"]
-[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_f7kjc"]
-[ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Sprites/Menus/ChapterSelect/tempbutton.png" id="4_rn5ul"]
-[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_rn5ul"]
-[ext_resource type="Script" uid="uid://b04ssmipr1bcp" path="res://Scripts/Menus/WeekSelect/daybuttons.gd" id="8_v84np"]
+[ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/Sprites/Menus/ModeSelect/placeholderbg.png" id="1_w3k1g"]
+[ext_resource type="Script" uid="uid://dc8jbr1g8qnbs" path="res://Scripts/Menus/WeekSelect/description.gd" id="2_u5e5w"]
+[ext_resource type="Script" uid="uid://46l3hsxggc0w" path="res://Scripts/Menus/WeekSelect/weeks.gd" id="3_b1xbh"]
+[ext_resource type="Shader" uid="uid://ciy10rhpj5hej" path="res://Shaders/weekoutline.gdshader" id="4_dy6mn"]
+[ext_resource type="Texture2D" uid="uid://b5s3gdbnh5kai" path="res://Assets/Sprites/Menus/ChapterSelect/week one.png" id="5_x3cja"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="6_uty2n"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="7_wxy26"]
+[ext_resource type="Script" uid="uid://b04ssmipr1bcp" path="res://Scripts/Menus/WeekSelect/daybuttons.gd" id="8_7slvy"]
+[ext_resource type="PackedScene" uid="uid://x8t8c1s62my5" path="res://Scenes/Menus/WeekSelect/week_day_button.tscn" id="9_w0hie"]
+[ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Sprites/Menus/ChapterSelect/tempbutton.png" id="10_2nnt3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_154id"]
 resource_local_to_scene = true
-shader = ExtResource("3_61fw1")
+shader = ExtResource("4_dy6mn")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/enable_shader = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yvrl2"]
-shader = ExtResource("3_61fw1")
+shader = ExtResource("4_dy6mn")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/enable_shader = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ovjf"]
-shader = ExtResource("3_61fw1")
+shader = ExtResource("4_dy6mn")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/enable_shader = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fcg0u"]
-shader = ExtResource("3_61fw1")
+shader = ExtResource("4_dy6mn")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/enable_shader = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5ofv5"]
-shader = ExtResource("3_61fw1")
+shader = ExtResource("4_dy6mn")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
@@ -48,33 +49,33 @@ shader_parameter/enable_shader = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v84np"]
 resource_local_to_scene = true
-shader = ExtResource("3_61fw1")
+shader = ExtResource("4_dy6mn")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/enable_shader = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w4b85"]
-shader = ExtResource("3_61fw1")
+shader = ExtResource("4_dy6mn")
 shader_parameter/outline_thickness = 8.0
 shader_parameter/anti_alias_amount = 1.0
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/enable_shader = true
 
 [sub_resource type="Resource" id="Resource_1ovjf"]
-script = ExtResource("5_rn5ul")
+script = ExtResource("7_wxy26")
 
 [sub_resource type="Resource" id="Resource_pn6m1"]
-script = ExtResource("5_rn5ul")
+script = ExtResource("7_wxy26")
 
-[node name="Node2D" type="Control" unique_id=817455315]
+[node name="WeekSelect" type="Control" unique_id=817455315]
 layout_mode = 3
 anchors_preset = 0
 
 [node name="BG" type="Sprite2D" parent="." unique_id=267043113]
 modulate = Color(1, 1, 1, 0.48235294)
 position = Vector2(644, 357)
-texture = ExtResource("1_yue0x")
+texture = ExtResource("1_w3k1g")
 
 [node name="DESCRIPTION" type="Label" parent="." unique_id=1229580947]
 layout_mode = 0
@@ -84,56 +85,56 @@ offset_right = 680.0
 offset_bottom = 592.11115
 theme_override_font_sizes/font_size = 30
 text = "WEEK ONE DESCRIPTION TESTING TEST TEST"
-script = ExtResource("2_v84np")
+script = ExtResource("2_u5e5w")
 metadata/_edit_use_anchors_ = true
 
 [node name="Weeks" type="Control" parent="." unique_id=904295972]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_yvrl2")
+script = ExtResource("3_b1xbh")
 
 [node name="WeekSeven" type="Sprite2D" parent="Weeks" unique_id=1741573179]
 material = SubResource("ShaderMaterial_154id")
 position = Vector2(210, 327)
 scale = Vector2(0.71999997, 0.71999997)
-texture = ExtResource("1_q88pd")
+texture = ExtResource("5_x3cja")
 
 [node name="WeekSix" type="Sprite2D" parent="Weeks" unique_id=1968593448]
 material = SubResource("ShaderMaterial_yvrl2")
 position = Vector2(260, 326)
 scale = Vector2(0.72, 0.72)
-texture = ExtResource("1_q88pd")
+texture = ExtResource("5_x3cja")
 
 [node name="WeekFive" type="Sprite2D" parent="Weeks" unique_id=1212685339]
 material = SubResource("ShaderMaterial_1ovjf")
 position = Vector2(300, 327)
 scale = Vector2(0.72, 0.72)
-texture = ExtResource("1_q88pd")
+texture = ExtResource("5_x3cja")
 
 [node name="WeekFour" type="Sprite2D" parent="Weeks" unique_id=1813907432]
 material = SubResource("ShaderMaterial_fcg0u")
 position = Vector2(350, 325)
 scale = Vector2(0.72, 0.72)
-texture = ExtResource("1_q88pd")
+texture = ExtResource("5_x3cja")
 
 [node name="WeekThree" type="Sprite2D" parent="Weeks" unique_id=1511646685]
 material = SubResource("ShaderMaterial_5ofv5")
 position = Vector2(400, 326)
 scale = Vector2(0.7199999, 0.7199999)
-texture = ExtResource("1_q88pd")
+texture = ExtResource("5_x3cja")
 
 [node name="WeekTwo" type="Sprite2D" parent="Weeks" unique_id=115854033]
 material = SubResource("ShaderMaterial_v84np")
 position = Vector2(440, 325)
 scale = Vector2(0.7200001, 0.7200001)
-texture = ExtResource("1_q88pd")
+texture = ExtResource("5_x3cja")
 
 [node name="WeekOne" type="Sprite2D" parent="Weeks" unique_id=120636608]
 material = SubResource("ShaderMaterial_w4b85")
 position = Vector2(504, 326)
 scale = Vector2(0.72, 0.72)
-texture = ExtResource("1_q88pd")
+texture = ExtResource("5_x3cja")
 
 [node name="WeekScroll" type="ScrollContainer" parent="." unique_id=1922362238]
 layout_mode = 0
@@ -141,7 +142,7 @@ offset_left = 730.0
 offset_top = 88.0
 offset_right = 1240.0
 offset_bottom = 666.0
-script = ExtResource("4_f7kjc")
+script = ExtResource("6_uty2n")
 wheel_scroll_damper = SubResource("Resource_1ovjf")
 dragging_scroll_damper = SubResource("Resource_pn6m1")
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
@@ -151,7 +152,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 30
-script = ExtResource("8_v84np")
+script = ExtResource("8_7slvy")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="MarginContainer" type="MarginContainer" parent="WeekScroll/DayButton" unique_id=1660941153]
@@ -159,72 +160,36 @@ layout_mode = 2
 theme_override_constants/margin_top = 20
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="TUTORIAL" type="Button" parent="WeekScroll/DayButton" unique_id=1985090766]
+[node name="TUTORIAL" parent="WeekScroll/DayButton" unique_id=1995078601 instance=ExtResource("9_w0hie")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 50
-text = "TUTORIAL"
-metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="DAYONE" type="Button" parent="WeekScroll/DayButton" unique_id=1474732525]
+[node name="DAYONE" parent="WeekScroll/DayButton" unique_id=698316641 instance=ExtResource("9_w0hie")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 50
-text = "DAY ONE"
-metadata/_smooth_scroll_default_mouse_filter_set = true
+text = "DAY 1"
 
-[node name="DAYTWO" type="Button" parent="WeekScroll/DayButton" unique_id=4387427]
+[node name="DAYTWO" parent="WeekScroll/DayButton" unique_id=1073740334 instance=ExtResource("9_w0hie")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 50
-text = "DAY TWO
-"
-metadata/_smooth_scroll_default_mouse_filter_set = true
+text = "DAY 2"
 
-[node name="DAYTHREE" type="Button" parent="WeekScroll/DayButton" unique_id=212494990]
+[node name="DAYTHREE" parent="WeekScroll/DayButton" unique_id=852569285 instance=ExtResource("9_w0hie")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 50
-text = "DAY THREE
-"
-metadata/_smooth_scroll_default_mouse_filter_set = true
+text = "DAY 3"
 
-[node name="DAYFOUR" type="Button" parent="WeekScroll/DayButton" unique_id=201245919]
+[node name="DAYFOUR" parent="WeekScroll/DayButton" unique_id=2029672465 instance=ExtResource("9_w0hie")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 50
-text = "DAY FOUR
-"
-metadata/_smooth_scroll_default_mouse_filter_set = true
+text = "DAY 4"
 
-[node name="DAYFIVE" type="Button" parent="WeekScroll/DayButton" unique_id=630219886]
+[node name="DAYFIVE" parent="WeekScroll/DayButton" unique_id=984034348 instance=ExtResource("9_w0hie")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 50
-text = "DAY FIVE
+text = "DAY 5"
 
-"
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="DAYSIX" type="Button" parent="WeekScroll/DayButton" unique_id=314298777]
+[node name="DAYSIX" parent="WeekScroll/DayButton" unique_id=1179948600 instance=ExtResource("9_w0hie")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 50
-text = "DAY SIX
+text = "DAY 6"
 
-
-"
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="DAYSEVEN" type="Button" parent="WeekScroll/DayButton" unique_id=1430273747]
+[node name="DAYSEVEN" parent="WeekScroll/DayButton" unique_id=516141316 instance=ExtResource("9_w0hie")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 50
-text = "DAY SEVEN
-
-
-"
-metadata/_smooth_scroll_default_mouse_filter_set = true
+text = "DAY 7"
 
 [node name="MarginContainer2" type="MarginContainer" parent="WeekScroll/DayButton" unique_id=485881556]
 layout_mode = 2
@@ -245,7 +210,7 @@ offset_top = 259.0
 offset_right = 140.0
 offset_bottom = 368.0
 scale = Vector2(0.5287411, 0.5287411)
-texture_normal = ExtResource("4_rn5ul")
+texture_normal = ExtResource("10_2nnt3")
 
 [node name="Forward" type="TextureButton" parent="WeekButton" unique_id=1677498718]
 layout_mode = 0
@@ -255,7 +220,7 @@ offset_right = 863.9999
 offset_bottom = 423.00003
 rotation = 3.1415927
 scale = Vector2(0.5287411, 0.5287411)
-texture_normal = ExtResource("4_rn5ul")
+texture_normal = ExtResource("10_2nnt3")
 
 [connection signal="change_week" from="Weeks" to="DESCRIPTION" method="_on_weeks_change_week"]
 [connection signal="change_week" from="Weeks" to="WeekScroll/DayButton" method="_on_weeks_change_week"]
