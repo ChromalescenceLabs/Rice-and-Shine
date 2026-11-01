@@ -112,11 +112,9 @@ position = Vector2(-56.5, 19)
 shape = SubResource("RectangleShape2D_ullcx")
 
 [node name="mold" type="Area2D" parent="." unique_id=559377965]
+visible = false
 position = Vector2(963, 366)
 script = ExtResource("6_sm363")
-
-[node name="ProgressBarChangeTime" type="Timer" parent="mold" unique_id=1473944224]
-wait_time = 0.1
 
 [node name="mold" type="TextureRect" parent="mold" unique_id=495406790]
 anchors_preset = 8
@@ -161,6 +159,9 @@ offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_7vcde")
+
+[node name="ProgressBarChangeTime" type="Timer" parent="mold" unique_id=1473944224]
+wait_time = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mold" unique_id=495812472]
 position = Vector2(-0.5, 3)
