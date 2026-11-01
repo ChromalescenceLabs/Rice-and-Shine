@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://co4qi673ep0qg"]
+
+[ext_resource type="Script" uid="uid://dd4gb70tk2h28" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/pan.gd" id="1_ahm6x"]
+[ext_resource type="Texture2D" uid="uid://iqxaxa0bo02s" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Pan.png" id="2_yskln"]
+[ext_resource type="Texture2D" uid="uid://cbtnrv1kgyd7g" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/PanOil.png" id="3_wl1fx"]
+[ext_resource type="Script" uid="uid://bs1glrmcqr3i6" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/plate.gd" id="5_q5eha"]
+[ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/oil.tscn" id="8_5t5gq"]
+[ext_resource type="Texture2D" uid="uid://cfjgsnkmmit3k" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Plate.png" id="9_lajct"]
+[ext_resource type="Script" uid="uid://cvlx4edx0e8v5" path="res://Scripts/Freeplay/CookingMinigames/Hashbrown/potato.gd" id="10_jud4g"]
+[ext_resource type="Texture2D" uid="uid://cq6orp202oh07" path="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mold3.png" id="11_4ft7m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 97.043335
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ittll"]
+size = Vector2(766.6667, 760.83325)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ullcx"]
+size = Vector2(574.3611, 236.10786)
+
+[node name="frying" type="Node2D" unique_id=103076593]
+
+[node name="Pan" type="Area2D" parent="." unique_id=842265276]
+position = Vector2(281, 393)
+rotation = -0.87266463
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_ahm6x")
+
+[node name="Pan" type="Sprite2D" parent="Pan" unique_id=1727484637]
+texture = ExtResource("2_yskln")
+
+[node name="PanOil" type="Sprite2D" parent="Pan" unique_id=1111401018]
+visible = false
+texture = ExtResource("3_wl1fx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pan" unique_id=73279494]
+position = Vector2(107, -1)
+shape = SubResource("CircleShape2D_1vivr")
+
+[node name="Oil" parent="." unique_id=1503278428 instance=ExtResource("8_5t5gq")]
+position = Vector2(1171, 116)
+
+[node name="Plate" type="Area2D" parent="." unique_id=930512941]
+position = Vector2(913, 431)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("5_q5eha")
+
+[node name="Plate" type="TextureRect" parent="Plate" unique_id=1465378153]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -706.6666
+offset_top = -388.3333
+offset_right = -68.666626
+offset_bottom = -29.333313
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.1667042, 2.1667042)
+texture = ExtResource("9_lajct")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plate" unique_id=1550247494]
+position = Vector2(-0.00024414063, 1.6665955)
+scale = Vector2(0.69072956, 0.7073839)
+shape = SubResource("RectangleShape2D_ittll")
+
+[node name="mold" type="Area2D" parent="." unique_id=1122068797]
+position = Vector2(913.99994, 331.00006)
+scale = Vector2(0.48244345, 0.48244345)
+script = ExtResource("10_jud4g")
+
+[node name="mold" type="TextureRect" parent="mold" unique_id=904159761]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.01306
+offset_top = -186.37932
+offset_right = -4.0130615
+offset_bottom = 16.620682
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.0120256, 2.0120256)
+texture = ExtResource("11_4ft7m")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mold" unique_id=905910144]
+position = Vector2(0.82836914, 0)
+scale = Vector2(0.7662969, 0.7718404)
+shape = SubResource("RectangleShape2D_ullcx")
+
+[node name="mold2" type="Area2D" parent="." unique_id=1469427425]
+position = Vector2(915.99994, 436.00003)
+scale = Vector2(0.4824435, 0.4824435)
+script = ExtResource("10_jud4g")
+
+[node name="mold" type="TextureRect" parent="mold2" unique_id=1829575473]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.01306
+offset_top = -186.37932
+offset_right = -4.0130615
+offset_bottom = 16.620682
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.0120256, 2.0120256)
+texture = ExtResource("11_4ft7m")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mold2" unique_id=1558369554]
+position = Vector2(0.82836914, 0)
+scale = Vector2(0.7662969, 0.7718404)
+shape = SubResource("RectangleShape2D_ullcx")
+
+[node name="mold3" type="Area2D" parent="." unique_id=1175093775]
+position = Vector2(915.9997, 541.0001)
+scale = Vector2(0.48244345, 0.48244345)
+script = ExtResource("10_jud4g")
+
+[node name="mold" type="TextureRect" parent="mold3" unique_id=507984038]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.01306
+offset_top = -186.37932
+offset_right = -4.0130615
+offset_bottom = 16.620682
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.0120256, 2.0120256)
+texture = ExtResource("11_4ft7m")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mold3" unique_id=177644900]
+position = Vector2(0.82836914, 0)
+scale = Vector2(0.7662969, 0.7718404)
+shape = SubResource("RectangleShape2D_ullcx")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2139161178]
+visible = false
+offset_left = 79.0
+offset_top = 615.0
+offset_right = 1202.0
+offset_bottom = 670.0
+
+[node name="ProgressBarChangeTime" type="Timer" parent="ProgressBar" unique_id=1980752191]
+wait_time = 0.05
+
+[connection signal="ready" from="Plate" to="Plate" method="_on_ready"]
+[connection signal="area_entered" from="mold" to="mold" method="_on_area_entered"]
+[connection signal="input_event" from="mold" to="mold" method="_on_input_event"]
+[connection signal="mouse_entered" from="mold" to="mold" method="_on_mouse_entered"]
+[connection signal="area_entered" from="mold2" to="Pan" method="_on_mold_2_area_entered"]
+[connection signal="input_event" from="mold2" to="mold2" method="_on_input_event"]
+[connection signal="mouse_entered" from="mold2" to="mold2" method="_on_mouse_entered"]
+[connection signal="area_entered" from="mold3" to="mold3" method="_on_area_entered"]
+[connection signal="input_event" from="mold3" to="mold3" method="_on_input_event"]
+[connection signal="mouse_entered" from="mold3" to="mold3" method="_on_mouse_entered"]
+[connection signal="timeout" from="ProgressBar/ProgressBarChangeTime" to="Pan" method="_on_progress_bar_change_time_timeout"]

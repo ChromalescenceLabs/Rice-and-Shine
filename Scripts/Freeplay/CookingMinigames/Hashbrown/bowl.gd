@@ -7,9 +7,6 @@ signal done
 @onready var pan: Area2D = $"../Pan"
 @onready var oil: Oil = $"../Oil"
 
-func _ready() -> void:
-	oil.snap_to_og_pos=true
-
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("Click"):
 		if not potato.frying:
