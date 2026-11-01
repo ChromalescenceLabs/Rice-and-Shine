@@ -43,6 +43,8 @@ func _on_potato_input_event(_viewport: Node, event: InputEvent, _shape_idx: int)
 					done.emit()
 			elif not potato.frying:
 					bowl_top.visible=false
+		elif potato.frying: pan.find_child("Grated").visible=true
+		elif not potato.frying: bowl_top.visible=false
 
 func _on_pan_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("Click") and fried and not fried_top.visible:

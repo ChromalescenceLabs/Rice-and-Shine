@@ -16,7 +16,7 @@ func _ready() -> void:
 	set_process(false)
 
 func _process(_delta: float) -> void:
-	if peeling:
+	if peeling and not peel.areas_checked == peel.areas:
 		peeler.global_position = lerp(peeler.global_position, get_global_mouse_position(), 0.2)
 	elif not peel.areas_checked == peel.areas:
 		peeler.global_position = lerp(peeler.global_position, peeler_ogpos, 0.05)

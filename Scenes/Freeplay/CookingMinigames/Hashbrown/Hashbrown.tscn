@@ -42,7 +42,18 @@ scale = Vector2(0.6683795, 0.8560318)
 texture = ExtResource("2_y804u")
 
 [node name="peel" parent="." unique_id=243397758 instance=ExtResource("4_o12im")]
-visible = false
+
+[node name="Potato" parent="peel" index="0" unique_id=2124695233]
+offset_left = 234.99998
+offset_top = 158.0
+offset_right = 470.0
+offset_bottom = 579.0
+
+[node name="Line2D" parent="peel" index="1" unique_id=1856136159]
+position = Vector2(234.99998, 158)
+
+[node name="Peeler" parent="peel" index="2" unique_id=2070195057]
+position = Vector2(796, 305)
 
 [node name="grate" type="Node2D" parent="." unique_id=1471228203]
 visible = false
@@ -162,6 +173,7 @@ visible = false
 visible = false
 
 [node name="Add" parent="." unique_id=323244026 instance=ExtResource("15_s0hno")]
+visible = false
 
 [node name="flour" parent="Add/Condiments" parent_id_path=PackedInt32Array(323244026, 1260316097) index="2" unique_id=1334309836]
 process_mode = 3

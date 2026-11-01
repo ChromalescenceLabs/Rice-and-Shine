@@ -36,4 +36,4 @@ func _on_open_pressed() -> void:
 	water_detect.monitoring = true
 
 func _on_progress_bar_change_time_timeout() -> void:
-	water_progress_bar.value += 0.3
+	water_progress_bar.value += 0.5
