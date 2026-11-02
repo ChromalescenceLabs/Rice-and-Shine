@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dbhjxs8qkv73p"]
 
 [ext_resource type="Script" uid="uid://h0lo8l2wve6o" path="res://Scripts/Freeplay/CookingMinigames/Lumpia/minceable_pork.gd" id="1_j4eag"]
-[ext_resource type="Texture2D" uid="uid://hhxapbx6tbi3" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Garlic.png" id="2_lweb4"]
+[ext_resource type="Texture2D" uid="uid://hhxapbx6tbi3" path="res://Assets/Sprites/Cooking_Minigames/Inihaw/Garlic.png" id="2_lweb4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_av541"]
 radius = 145.08618

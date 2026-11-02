@@ -4,6 +4,8 @@ var ogPos=position
 var areaEnter
 var frying=false
 
+signal drop
+
 func _ready() -> void:
 	set_process(false)
 
@@ -18,6 +20,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			hold = true
 			if not event.pressed:
+				drop.emit()
 				hold = false
 
 func _on_mouse_entered() -> void:
@@ -28,6 +31,8 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.name.to_lower() == "pan":
 		areaEnter=area
 	elif area.name.to_lower() == "bowl":
+		areaEnter=area
+	elif area.name.to_lower() == "plate":
 		areaEnter=area
 	else:
 		areaEnter=null

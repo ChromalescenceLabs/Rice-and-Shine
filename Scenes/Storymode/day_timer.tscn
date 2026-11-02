@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://btok7aisotru6"]
+
+[ext_resource type="Texture2D" uid="uid://qhn1ppht5ikl" path="res://Assets/Sprites/Serving/Clock.png" id="1_2ovnd"]
+[ext_resource type="Script" uid="uid://wkf8r7jofu21" path="res://Scripts/Freeplay/Storymode/clock.gd" id="1_11f6k"]
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="3_3dcdm"]
+
+[node name="Clock" type="Node2D" unique_id=1251713995]
+script = ExtResource("1_11f6k")
+
+[node name="TimeBG" type="ColorRect" parent="." unique_id=2045051734]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 52.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.69803923)
+
+[node name="DayTimer" type="Timer" parent="." unique_id=1021284582]
+one_shot = true
+
+[node name="RotateTimer" type="Timer" parent="." unique_id=1128465328]
+one_shot = true
+
+[node name="ClockTextureContainer" type="TextureRect" parent="." unique_id=723103280]
+clip_contents = true
+offset_left = -92.0
+offset_top = -1.0
+offset_right = -3.0
+offset_bottom = 49.0
+
+[node name="ClockTexture" type="TextureRect" parent="ClockTextureContainer" unique_id=241617416]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.49999
+offset_top = -50.5
+offset_right = 75.50001
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.1415927
+scale = Vector2(0.575, 0.575)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_2ovnd")
+
+[node name="TimeLabel" type="RichTextLabel" parent="." unique_id=14145826]
+offset_top = 2.0
+offset_right = 96.0
+offset_bottom = 54.0
+theme_override_fonts/normal_font = ExtResource("3_3dcdm")
+theme_override_font_sizes/normal_font_size = 22
+text = "00:00 AM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]
+[connection signal="timeout" from="RotateTimer" to="." method="_on_rotate_timer_timeout"]

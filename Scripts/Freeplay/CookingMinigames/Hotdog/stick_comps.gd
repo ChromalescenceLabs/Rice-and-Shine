@@ -10,6 +10,13 @@ var entered:bool = false
 var type: String
 var current: Stick
 
+var mallow_textures : Array = [
+	preload("uid://cbi44cv0gptjt"),
+	preload("uid://cuioqs2bxwp41"),
+	preload("uid://c3cknbv5dew00"),
+	preload("uid://degntwxn1yky")
+]
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("Click"):
 		dropped.emit()
@@ -31,7 +38,9 @@ func _input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	match type:
-		"Mallow": mallows.visible = true
+		"Mallow": 
+			mallows.visible = true
+			mallows.texture = mallow_textures.pick_random()
 		"Hotdog": chopped_hdog.visible = true
 
 func _process(_delta: float) -> void:

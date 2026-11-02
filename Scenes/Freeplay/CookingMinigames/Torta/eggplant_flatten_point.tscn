@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkhcfxgcjigjp"]
 
-[ext_resource type="Texture2D" uid="uid://c0q17l4wjag2n" path="res://Assets/Freeplay/Cooking_Minigames/Torta/spotlight.png" id="1_h0jql"]
-[ext_resource type="Script" uid="uid://dx8hjixr5ek1k" path="res://Scripts/Freeplay/CookingMinigames/Torta/eggplant_flatten_point.gd" id="2_coa0v"]
+[ext_resource type="Texture2D" uid="uid://c0q17l4wjag2n" path="res://Assets/Sprites/Cooking_Minigames/Torta/spotlight.png" id="1_h0jql"]
+[ext_resource type="Script" uid="uid://dg6jjopjagmgb" path="res://Scripts/Freeplay/CookingMinigames/Torta/eggplant_flatten_point.gd" id="2_coa0v"]
 
 [sub_resource type="Animation" id="Animation_8t3aq"]
 resource_name = "HeldDown"

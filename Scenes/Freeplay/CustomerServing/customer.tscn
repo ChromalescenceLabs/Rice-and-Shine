@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://v1ke2myaadm3"]
 
-[ext_resource type="Texture2D" uid="uid://b1t0ld5ii8tj3" path="res://Assets/Freeplay/Serving/Customers/CustomerPlaceholder.png" id="1_800xo"]
+[ext_resource type="Texture2D" uid="uid://b1t0ld5ii8tj3" path="res://Assets/Sprites/Serving/Customers/CustomerPlaceholder.png" id="1_800xo"]
 [ext_resource type="Script" uid="uid://c7jgpkgh2nc1" path="res://Scripts/Freeplay/CustomerServing/customer.gd" id="2_cnr3u"]
 [ext_resource type="Script" uid="uid://d2xq46vwmaa88" path="res://Scripts/Freeplay/CustomerServing/customer_area.gd" id="3_ss3q5"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_ybwgw"]
@@ -142,9 +142,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -125.0
-offset_top = -40.91
+offset_top = -27.075
 offset_right = 125.0
-offset_bottom = 5.7800026
+offset_bottom = 19.615002
 grow_horizontal = 2
 
 [node name="OrderLabelBG" type="ColorRect" parent="OrderLabel" unique_id=1808142043]
@@ -195,7 +195,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="HappinessBar" type="ProgressBar" parent="Control" unique_id=423385428]
+[node name="HappinessBarCont" type="VBoxContainer" parent="Control" unique_id=1860657722]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -204,7 +204,6 @@ offset_left = -135.0
 offset_right = 135.0
 offset_bottom = 27.0
 grow_horizontal = 2
-value = 100.0
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="area_entered" from="CustomerArea" to="." method="_on_customer_area_area_entered"]

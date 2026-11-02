@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://csole0o4ydmgm"]
 
-[ext_resource type="Texture2D" uid="uid://bsqv34s5n6jua" path="res://Assets/Freeplay/Serving/Trays/EmptyTray.png" id="1_lsfcn"]
-[ext_resource type="Texture2D" uid="uid://d4ejlsmnfb3fk" path="res://Assets/Freeplay/Serving/Trays/EmptyTrayH.png" id="2_8ugwq"]
+[ext_resource type="Texture2D" uid="uid://bsqv34s5n6jua" path="res://Assets/Sprites/Serving/Trays/EmptyTray.png" id="1_lsfcn"]
+[ext_resource type="Texture2D" uid="uid://d4ejlsmnfb3fk" path="res://Assets/Sprites/Serving/Trays/EmptyTrayH.png" id="2_8ugwq"]
 [ext_resource type="Script" uid="uid://6kw4x0mctf5u" path="res://Scripts/Freeplay/CustomerServing/food_cont.gd" id="3_filax"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybycj"]

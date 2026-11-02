@@ -1,0 +1,227 @@
+[gd_scene format=3 uid="uid://rsq18gh4a6gf"]
+
+[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Sprites/Cooking_Minigames/CookingBG.jpg" id="1_qnnf3"]
+[ext_resource type="Texture2D" uid="uid://b7hc60k2f7qmo" path="res://Assets/check-box-empty.png" id="2_lisd6"]
+[ext_resource type="Texture2D" uid="uid://ct36ntdromxo6" path="res://Assets/Sprites/LoadingBG.png" id="2_mstou"]
+[ext_resource type="Texture2D" uid="uid://bbow08x8m0x45" path="res://Assets/checkbox.png" id="3_ua6wq"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_rmsmy"]
+[ext_resource type="Script" uid="uid://dexlqtf7dkj7r" path="res://Scripts/Freeplay/Storymode/upgrades/upgrade.gd" id="4_sy0g7"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_sy0g7"]
+[ext_resource type="Script" uid="uid://4ragy8a1150r" path="res://Scripts/Freeplay/Storymode/upgrades/upg.gd" id="6_copim"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ittll"]
+bg_color = Color(0.17785347, 0.17785347, 0.17785338, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ullcx"]
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Resource" id="Resource_jr3vf"]
+script = ExtResource("5_sy0g7")
+
+[sub_resource type="Resource" id="Resource_mi3g6"]
+script = ExtResource("5_sy0g7")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbfdo"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.25275353, 0.2527536, 0.25275344, 1)
+
+[node name="Upgrades" type="Control" unique_id=111021976]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="." unique_id=1624156774]
+modulate = Color(0.33511627, 0.33511627, 0.33511627, 1)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_qnnf3")
+
+[node name="Computer" type="Control" parent="." unique_id=1899228328]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel2" type="Panel" parent="Computer" unique_id=591309373]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 31.0
+offset_top = 11.0
+offset_right = 1133.3815
+offset_bottom = 649.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0386604, 1.0386604)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ittll")
+
+[node name="Panel" type="Panel" parent="Computer" unique_id=125092352]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 136.5
+offset_top = 42.5
+offset_right = 1141.4999
+offset_bottom = 637.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ullcx")
+
+[node name="Upgrades" type="RichTextLabel" parent="Computer" unique_id=2046556613]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 68.0
+offset_right = 731.0
+offset_bottom = 190.0
+theme_override_font_sizes/normal_font_size = 91
+text = "UPGRADES
+"
+scroll_active = false
+
+[node name="upgradeScroll" type="ScrollContainer" parent="Computer" unique_id=67365387]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 201.0
+offset_right = 1126.0
+offset_bottom = 629.0
+script = ExtResource("4_rmsmy")
+wheel_scroll_damper = SubResource("Resource_jr3vf")
+dragging_scroll_damper = SubResource("Resource_mi3g6")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="upgrade" type="VBoxContainer" parent="Computer/upgradeScroll" unique_id=1627356697]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 30
+script = ExtResource("4_sy0g7")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="description" type="RichTextLabel" parent="Computer/upgradeScroll/upgrade" unique_id=1989546101]
+visible = false
+custom_maximum_size = Vector2(-1, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_xbfdo")
+text = "insert desc here
+insert desc here
+insert desc here
+insert desc here
+"
+fit_content = true
+scroll_active = false
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="upg1" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=1995078601]
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+theme_override_font_sizes/font_size = 50
+text = " upg1"
+icon = ExtResource("2_mstou")
+alignment = 0
+expand_icon = true
+script = ExtResource("6_copim")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="upg2" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=81780821]
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+theme_override_font_sizes/font_size = 50
+text = " upg1"
+icon = ExtResource("2_mstou")
+alignment = 0
+expand_icon = true
+script = ExtResource("6_copim")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="upg3" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=389496844]
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+theme_override_font_sizes/font_size = 50
+text = " upg1"
+icon = ExtResource("2_mstou")
+alignment = 0
+expand_icon = true
+script = ExtResource("6_copim")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="upg4" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=1986739004]
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+theme_override_font_sizes/font_size = 50
+text = " upg1"
+icon = ExtResource("2_mstou")
+alignment = 0
+expand_icon = true
+script = ExtResource("6_copim")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="upg100" type="MenuButton" parent="Computer/upgradeScroll/upgrade/upg4" unique_id=867664239]
+layout_mode = 0
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+text = "upg100
+"
+icon = ExtResource("2_mstou")
+item_count = 1
+popup/item_0/text = "1ooooooo"
+popup/item_0/id = 0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="upg100" type="MenuButton" parent="Computer/upgradeScroll/upgrade/upg4/upg100" unique_id=1820027419]
+layout_mode = 0
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+text = "upg100
+"
+icon = ExtResource("2_mstou")
+item_count = 1
+popup/item_0/text = "1ooooooo"
+popup/item_0/id = 0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="Computer/upgradeScroll/upgrade" unique_id=1419416245]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=690266993]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 126.0
+offset_right = 138.0
+offset_bottom = 194.0
+theme_override_constants/icon_max_width = 60
+theme_override_icons/checked = ExtResource("3_ua6wq")
+theme_override_icons/unchecked = ExtResource("2_lisd6")
+theme_override_icons/checked_disabled = ExtResource("3_ua6wq")
+
+[connection signal="pressed" from="Computer/upgradeScroll/upgrade/upg1" to="Computer/upgradeScroll/upgrade/upg1" method="_on_pressed"]
+[connection signal="pressed" from="Computer/upgradeScroll/upgrade/upg2" to="Computer/upgradeScroll/upgrade/upg2" method="_on_pressed"]
+[connection signal="pressed" from="Computer/upgradeScroll/upgrade/upg3" to="Computer/upgradeScroll/upgrade/upg3" method="_on_pressed"]
+[connection signal="pressed" from="Computer/upgradeScroll/upgrade/upg4" to="Computer/upgradeScroll/upgrade/upg4" method="_on_pressed"]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ceh3xp5cmrt7y"]
+
+[node name="Button" type="Button" unique_id=1751042289]
+custom_minimum_size = Vector2(134, 134)
+offset_left = -67.0
+offset_top = -67.0
+offset_right = 67.0
+offset_bottom = 67.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Upgr"

@@ -2,7 +2,6 @@ extends Area2D
 
 @onready var gratedp: Control = $"../gratedRemains"
 @onready var grater = $"../grater"
-@onready var animation_player: AnimationPlayer = $"../grater/AnimationPlayer"
 
 signal grated
 
@@ -19,8 +18,8 @@ var current_velocity
 var imOnGrater=false
 
 func _ready() -> void:
-	GlobalVars.itemEntered.connect(itemEntered)
-	grater.position=Vector2(360, 400)
+	origPos = position
+	origPosGrater = grater.position
 
 func grate(amt:int):
 	var first = amt * 2
@@ -48,7 +47,7 @@ func _process(_delta: float) -> void:
 		global_position = lerp(global_position, origPos, 0.05)
 
 #gg this is so unoptimized
-	if canGrate and picked and get_global_mouse_position().x<origPosGrater.x+100 and get_global_mouse_position().x>origPosGrater.x-100:
+	if canGrate and picked and abs(get_global_mouse_position().x - origPosGrater.x) < 100.0:
 		grater.position.x = lerp(grater.position.x, get_global_mouse_position().x, 0.2)
 	elif start:
 		grater.position = lerp(grater.position, origPosGrater, 0.05)
@@ -61,12 +60,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			if not event.pressed:
 				picked = false
 
-func itemEntered(item):
-	if item.name=="grate":
-		start=true
-		origPos = Vector2(1022.0, 379.0)
-		origPosGrater = Vector2(360, 400)
-		print(amtChange)
 
 func _on_grater_mouse_entered() -> void:
 	canGrate=true

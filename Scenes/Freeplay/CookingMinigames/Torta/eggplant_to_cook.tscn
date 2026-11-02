@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://w3pw2r0dsx41"]
 
-[ext_resource type="Script" uid="uid://imgdhfbhu5i3" path="res://Scripts/Freeplay/CookingMinigames/Torta/eggplant_to_cook.gd" id="1_y5kur"]
-[ext_resource type="Texture2D" uid="uid://dv1yy8subdg0e" path="res://Assets/Freeplay/Cooking_Minigames/Torta/TortaCoated.png" id="1_yoda0"]
-[ext_resource type="Texture2D" uid="uid://cl4f4m7kadma1" path="res://Assets/Freeplay/Cooking_Minigames/Torta/TortaFinalCooked.png" id="2_y5kur"]
+[ext_resource type="Script" uid="uid://csatjj81wndt1" path="res://Scripts/Freeplay/CookingMinigames/Torta/eggplant_to_cook.gd" id="1_y5kur"]
+[ext_resource type="Texture2D" uid="uid://dv1yy8subdg0e" path="res://Assets/Sprites/Cooking_Minigames/Torta/TortaCoated.png" id="1_yoda0"]
+[ext_resource type="Texture2D" uid="uid://cl4f4m7kadma1" path="res://Assets/Sprites/Cooking_Minigames/Torta/TortaFinalCooked.png" id="2_y5kur"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mp2bf"]
 radius = 59.0

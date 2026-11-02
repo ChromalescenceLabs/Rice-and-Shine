@@ -1,0 +1,49 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://biymioqcxvn8k"
+<<<<<<<< HEAD:Assets/Sprites/Menus/PLATE.png.import
+path="res://.godot/imported/PLATE.png-9b98270908343b747550a6c37919a549.ctex"
+========
+path="res://.godot/imported/PLATE.png-4d47ae484579a5d0e7757dbb4947c1cc.ctex"
+>>>>>>>> main:Assets/Sprites/Menus/MinigameSelect/PLATE.png.import
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+<<<<<<<< HEAD:Assets/Sprites/Menus/PLATE.png.import
+source_file="res://Assets/Menus/PLATE.png"
+dest_files=["res://.godot/imported/PLATE.png-9b98270908343b747550a6c37919a549.ctex"]
+========
+source_file="res://Assets/Sprites/Menus/MinigameSelect/PLATE.png"
+dest_files=["res://.godot/imported/PLATE.png-4d47ae484579a5d0e7757dbb4947c1cc.ctex"]
+>>>>>>>> main:Assets/Sprites/Menus/MinigameSelect/PLATE.png.import
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

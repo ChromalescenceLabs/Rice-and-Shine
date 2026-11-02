@@ -4,7 +4,7 @@ extends Node2D
 #const BORDER = preload("uid://bqevegjdxbpb6")
 
 var myChild=[]
-var scene=4
+var scene=0
 var currentObject
 
 func _ready() -> void:
@@ -37,8 +37,20 @@ func nextScene(exit, enter):
 	await GlobalVars.successIndEnd
 	GlobalVars.item_exit(exit)
 	exit.set_process(false)
+	exit.set_process_input(false)
 	GlobalVars.item_enter(enter)
 	scene+=1
+
+func changeBG(goOut, goIn):
+	var bgIn = control.get_child(goIn)
+	var bgOut = control.get_child(goOut)
+	
+	bgIn.position.x = get_viewport().get_visible_rect().size.x
+	bgIn.visible = true
+	GlobalVars.item_exit(bgOut)
+	GlobalVars.item_enter(bgIn)
+	await GlobalVars.itemEntered
+	bgOut.visible = false
 
 func _on_peel_peeled() -> void:
 	nextScene(myChild[scene],myChild[scene+1])
@@ -52,8 +64,21 @@ func _on_water_water_completed() -> void:
 func _on_squeeze_done() -> void:
 	nextScene(myChild[scene],myChild[scene+1])
 	await GlobalVars.successIndEnd
-	GlobalVars.item_exit(control.get_child(0))
-	GlobalVars.item_enter(control.get_child(1))
+	changeBG(0,1)
 
 func _on_bowl_done() -> void:
 	nextScene(myChild[scene],myChild[scene+1])
+	await GlobalVars.successIndEnd
+	changeBG(1,0)
+
+func _on_mix_done() -> void:
+	nextScene(myChild[scene],myChild[scene+1])
+	await GlobalVars.successIndEnd
+	changeBG(0,1)
+
+func _on_mixed_bowl_done() -> void:
+	nextScene(myChild[scene],myChild[scene+1])
+
+func _on_plate_done() -> void:
+	GlobalVars.successind(self)
+	await GlobalVars.successIndEnd

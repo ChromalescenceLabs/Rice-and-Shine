@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://kqe7h1lfhspa"]
 
 [ext_resource type="Script" uid="uid://b303igi8as7y8" path="res://Scripts/Freeplay/CookingMinigames/GeneralMinigames/choppable_carrot.gd" id="1_e2d5p"]
-[ext_resource type="Texture2D" uid="uid://hhxapbx6tbi3" path="res://Assets/Freeplay/Cooking_Minigames/Inihaw/Garlic.png" id="2_kaygn"]
+[ext_resource type="Texture2D" uid="uid://hhxapbx6tbi3" path="res://Assets/Sprites/Cooking_Minigames/Inihaw/Garlic.png" id="2_kaygn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_av541"]
 radius = 145.08618

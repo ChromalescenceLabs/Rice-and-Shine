@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://g2mj87nvmarh"]
+
+[ext_resource type="Script" uid="uid://lnpgiahuyntr" path="res://Scripts/Menus/MainMenu/main_menu_buttons.gd" id="1_2k7c8"]
+[ext_resource type="Texture2D" uid="uid://bmdh8xfhqe17j" path="res://Assets/Sprites/Menus/MainMenu/main menu bg.png" id="2_e5w6c"]
+[ext_resource type="StyleBox" uid="uid://dsabeskj33dsp" path="res://Scenes/Menus/MainMenu/MainMenuNormalButtonStyle.tres" id="4_4fgt5"]
+[ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Sprites/Logo.png" id="4_euxup"]
+[ext_resource type="StyleBox" uid="uid://ru223rr65m5a" path="res://Scenes/Menus/MainMenu/MainMenuHoverandPressStyle.tres" id="4_j4kqa"]
+[ext_resource type="Script" uid="uid://j28786r700op" path="res://Scripts/Menus/MainMenu/quit.gd" id="5_2k7c8"]
+[ext_resource type="Script" uid="uid://clvovqtgykaen" path="res://Scripts/Menus/MainMenu/start.gd" id="6_2k7c8"]
+[ext_resource type="Script" uid="uid://c1eyxkwtk5vr" path="res://Scripts/Menus/Options/options.gd" id="7_2k7c8"]
+[ext_resource type="Script" uid="uid://cbiudsrq3kr8" path="res://Scripts/Menus/MainMenu/mainmenu_cam.gd" id="7_neey8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf7jh"]
+bg_color = Color(0.19607843, 0.5803922, 0.85882354, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.19607843, 0.38431373, 0.7882353, 1)
+corner_detail = 1
+shadow_color = Color(0, 0, 0.61960787, 0.3019608)
+shadow_size = 2
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syw6n"]
+bg_color = Color(0.1969659, 0.58062536, 0.85766184, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.19607843, 0.38431373, 0.7882353, 1)
+corner_detail = 1
+shadow_color = Color(0, 0, 0.61960787, 0.3019608)
+shadow_size = 2
+shadow_offset = Vector2(5, 5)
+
+[node name="Buttons" type="Control" unique_id=60872865]
+layout_mode = 3
+anchor_left = 0.136
+anchor_top = 0.57600003
+anchor_right = 0.136
+anchor_bottom = 0.57600003
+offset_left = -176.08002
+offset_top = -141.72003
+offset_right = 176.91998
+offset_bottom = 142.27997
+script = ExtResource("1_2k7c8")
+tween_intensity = 1.2
+tween_duration = 0.3
+
+[node name="Parallax" type="Node2D" parent="." unique_id=2019943700]
+texture_filter = 1
+position = Vector2(642, 87)
+scale = Vector2(1.1, 1.1)
+
+[node name="Parallax2D" type="Parallax2D" parent="Parallax" unique_id=488780139]
+scroll_scale = Vector2(0.845, 0.845)
+
+[node name="BACKGROUND" type="Sprite2D" parent="Parallax/Parallax2D" unique_id=417947079]
+texture_filter = 1
+position = Vector2(0.99993896, 0)
+scale = Vector2(1.0757576, 1.0757575)
+texture = ExtResource("2_e5w6c")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Parallax" unique_id=1396458393]
+scroll_scale = Vector2(0.9, 0.9)
+
+[node name="LOGO" type="Sprite2D" parent="Parallax/Parallax2D2" unique_id=1486802928]
+texture_filter = 1
+position = Vector2(-632.7272, -326.36362)
+scale = Vector2(0.19496661, 0.2043876)
+texture = ExtResource("4_euxup")
+centered = false
+
+[node name="QUIT" type="Button" parent="." unique_id=586502751]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45200002
+anchor_top = 0.625
+anchor_right = 0.45200002
+anchor_bottom = 0.625
+offset_left = -119.556015
+offset_top = -29.5
+offset_right = 119.443954
+offset_bottom = 29.5
+theme_override_constants/outline_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_rf7jh")
+theme_override_styles/pressed = ExtResource("4_j4kqa")
+theme_override_styles/hover = ExtResource("4_4fgt5")
+text = " QUIT"
+alignment = 0
+script = ExtResource("5_2k7c8")
+
+[node name="START" type="Button" parent="." unique_id=1996352847]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45000002
+anchor_top = 0.085
+anchor_right = 0.45000002
+anchor_bottom = 0.085
+offset_left = -119.850006
+offset_top = -29.14
+offset_right = 120.149994
+offset_bottom = 28.86
+theme_override_constants/outline_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_syw6n")
+theme_override_styles/pressed = ExtResource("4_j4kqa")
+theme_override_styles/hover = ExtResource("4_4fgt5")
+text = " START"
+alignment = 0
+script = ExtResource("6_2k7c8")
+
+[node name="OPTIONS" type="Button" parent="." unique_id=1140753139]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.455
+anchor_top = 0.35200003
+anchor_right = 0.455
+anchor_bottom = 0.35200003
+offset_left = -119.615005
+offset_top = -29.967995
+offset_right = 119.384995
+offset_bottom = 30.120018
+theme_override_constants/outline_size = 10
+theme_override_styles/normal = ExtResource("4_j4kqa")
+theme_override_styles/pressed = ExtResource("4_j4kqa")
+theme_override_styles/hover = ExtResource("4_4fgt5")
+text = " OPTIONS
+"
+alignment = 0
+script = ExtResource("7_2k7c8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=97000852]
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer" unique_id=1677103678]
+anchor_mode = 0
+script = ExtResource("7_neey8")
+
+[connection signal="pressed" from="QUIT" to="QUIT" method="_on_pressed"]
+[connection signal="pressed" from="START" to="START" method="_on_pressed"]
+[connection signal="pressed" from="OPTIONS" to="OPTIONS" method="_on_pressed"]

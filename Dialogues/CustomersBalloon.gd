@@ -3,14 +3,7 @@ extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var margin_container: MarginContainer = $Balloon/MarginContainer
-var indx : int#:
-	#set(value):
-		#if not indx == value:
-			#indx = value
-			#if indx == 1 or indx == 2:
-				#right_position()
-			#elif indx == 3 or indx == 4 or indx == 5:
-				#left_position()
+var indx : int
 
 ## The dialogue resource
 @export var dialogue_resource: DialogueResource
@@ -83,10 +76,8 @@ var mutation_cooldown: Timer = Timer.new()
 @onready var progress: Polygon2D = %Progress
 
 func _ready() -> void:
-	if indx == 1 or indx == 2:
-		right_position()
-	elif indx == 3 or indx == 4:
-		left_position()
+	if indx == 1: right_position()
+	elif indx == 3: left_position()
 	balloon.visible = false
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dj3rvq375j1te"]
 
-[ext_resource type="Script" uid="uid://ct2elhliicwll" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/choppable_hotdog.gd" id="1_ij4jc"]
-[ext_resource type="Texture2D" uid="uid://b1yhmjv7iscs1" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HotdogCooked.png" id="1_k8yli"]
-[ext_resource type="Texture2D" uid="uid://c57kg12rlasjx" path="res://Assets/Freeplay/Cooking_Minigames/Hotdog/HotdogRaw3.png" id="2_ij4jc"]
+[ext_resource type="Script" uid="uid://c7qssea7mex58" path="res://Scripts/Freeplay/CookingMinigames/Hotdog/choppable_hotdog.gd" id="1_ij4jc"]
+[ext_resource type="Texture2D" uid="uid://b1yhmjv7iscs1" path="res://Assets/Sprites/Cooking_Minigames/Hotdog/HotdogCooked.png" id="1_k8yli"]
+[ext_resource type="Texture2D" uid="uid://c57kg12rlasjx" path="res://Assets/Sprites/Cooking_Minigames/Hotdog/HotdogRaw3.png" id="2_ij4jc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lsj3f"]
 radius = 44.0

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://u20pd4eimjre"]
 
 [ext_resource type="Script" uid="uid://do18tmlgletgd" path="res://Scripts/Freeplay/CookingMinigames/Pancit/pancit.gd" id="1_jqkg7"]
-[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Freeplay/Cooking_Minigames/CookingBG.jpg" id="1_lhy4m"]
-[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Freeplay/Cooking_Minigames/CookingBGTopDown.jpg" id="2_jqkg7"]
+[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Sprites/Cooking_Minigames/CookingBG.jpg" id="1_lhy4m"]
+[ext_resource type="Texture2D" uid="uid://b5o2l14701jof" path="res://Assets/Sprites/Cooking_Minigames/CookingBGTopDown.jpg" id="2_jqkg7"]
 [ext_resource type="PackedScene" uid="uid://cuyklj2grjhwn" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/faucet.tscn" id="4_71mrm"]
 [ext_resource type="PackedScene" uid="uid://cglg18ytbkwv1" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/CookingBowl.tscn" id="5_5amsd"]
 [ext_resource type="PackedScene" uid="uid://diad5gha2ftbj" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/tilting_object.tscn" id="6_8bmql"]
 [ext_resource type="Script" uid="uid://c2ynholbibnn3" path="res://Scripts/Freeplay/CustomerServing/bowl_area.gd" id="7_jq2ad"]
-[ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Freeplay/Cooking_Minigames/Non-specific/Bowl.png" id="8_4ohnk"]
+[ext_resource type="Texture2D" uid="uid://dvg2fs2ecy4ja" path="res://Assets/Sprites/Cooking_Minigames/Non-specific/Bowl.png" id="8_4ohnk"]
 [ext_resource type="PackedScene" uid="uid://cgsbvuaq5223a" path="res://Scenes/Freeplay/CookingMinigames/Lumpia/ingredient_bowl.tscn" id="9_4ohnk"]
 [ext_resource type="PackedScene" uid="uid://ns536h1evtqt" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/pan.tscn" id="10_t0yvv"]
 [ext_resource type="PackedScene" uid="uid://dyhiafkx186ho" path="res://Scenes/Freeplay/CookingMinigames/GlobalMinigameComponents/oil.tscn" id="11_st0dy"]
@@ -38,6 +38,7 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="TopDownBG" type="Sprite2D" parent="." unique_id=1075516553]
+visible = false
 position = Vector2(902, 582)
 texture = ExtResource("2_jqkg7")
 metadata/_edit_lock_ = true

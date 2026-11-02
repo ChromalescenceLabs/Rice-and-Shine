@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dniwio1arxhol"]
 
 [ext_resource type="Script" uid="uid://2nwmarwgn0y8" path="res://Scripts/Menus/ModeSelect/MODE_SELECT.gd" id="1_rel82"]
-[ext_resource type="Texture2D" uid="uid://dnulc8osr7rqc" path="res://Assets/Menus/ModeSelect/TEMPMENUBG.png" id="2_xxbn6"]
+[ext_resource type="Texture2D" uid="uid://dnulc8osr7rqc" path="res://Assets/Sprites/Menus/ModeSelect/TEMPMENUBG.png" id="2_xxbn6"]
 [ext_resource type="Script" uid="uid://cyiace1yl3rkq" path="res://Scripts/Menus/ModeSelect/storybtn.gd" id="4_6vmvb"]
 [ext_resource type="Script" uid="uid://dy4d8dexua0ho" path="res://Scripts/Menus/ModeSelect/freeplaybtn.gd" id="4_taxq6"]
-[ext_resource type="Texture2D" uid="uid://coimcmqajakru" path="res://Assets/Menus/ModeSelect/TEMPCLOSEDWINDOW.png" id="5_bril0"]
+[ext_resource type="Texture2D" uid="uid://coimcmqajakru" path="res://Assets/Sprites/Menus/ModeSelect/TEMPCLOSEDWINDOW.png" id="5_bril0"]
 [ext_resource type="Script" uid="uid://bddhu0viv0yn" path="res://Scripts/Menus/ModeSelect/modebg_anim.gd" id="7_jan6t"]
-[ext_resource type="Animation" uid="uid://c4l8g78egdc2g" path="res://Assets/ANIMATIONS/BG.res" id="7_w8xo7"]
-[ext_resource type="Texture2D" uid="uid://b57au0x8eieye" path="res://Assets/Menus/ModeSelect/TEMPOPENWINDOW.png" id="8_nec4f"]
+[ext_resource type="Animation" uid="uid://c4l8g78egdc2g" path="res://Assets/Animations/BG.res" id="7_w8xo7"]
+[ext_resource type="Texture2D" uid="uid://b57au0x8eieye" path="res://Assets/Sprites/Menus/ModeSelect/TEMPOPENWINDOW.png" id="8_nec4f"]
 
 [sub_resource type="Animation" id="Animation_bril0"]
 resource_name = "FREEPLAY"
@@ -399,8 +399,8 @@ script = ExtResource("7_jan6t")
 
 [connection signal="mouse_entered" from="STORY" to="." method="_on_story_mouse_entered"]
 [connection signal="mouse_exited" from="STORY" to="." method="_on_story_mouse_exited"]
-[connection signal="pressed" from="STORY" to="MODEANIM" method="_on_story_pressed"]
 [connection signal="pressed" from="STORY" to="STORY" method="_on_pressed"]
+[connection signal="pressed" from="STORY" to="MODEANIM" method="_on_story_pressed"]
 [connection signal="mouse_entered" from="FREEPLAY" to="." method="_on_freeplay_mouse_entered"]
 [connection signal="mouse_exited" from="FREEPLAY" to="." method="_on_freeplay_mouse_exited"]
 [connection signal="pressed" from="FREEPLAY" to="FREEPLAY" method="_on_pressed"]

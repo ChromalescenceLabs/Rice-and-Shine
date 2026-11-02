@@ -50,9 +50,6 @@ func cook() -> void:
 	var tw = create_tween().tween_property(cooked, "modulate:a", 1, 1)
 	await tw.finished
 	
-	GlobalVars.successind(get_tree().current_scene)
-	await GlobalVars.successIndEnd
-	
 	GlobalVars.item_exit(self)
 	get_tree().current_scene.frying_hotdog_no -= 1
 	if get_tree().current_scene.frying_hotdog_no <= 0: get_tree().current_scene.frying_finished.emit()

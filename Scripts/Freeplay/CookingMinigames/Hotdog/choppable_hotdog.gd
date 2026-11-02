@@ -50,10 +50,11 @@ func _on_slice() -> void:
 	
 	if slice_count == 4:
 		detector.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		GlobalVars.successind(root)
-		await GlobalVars.successIndEnd
 		
-		root.chopped_pbelly += 1
+		if "chopped_hdog" in root:
+			root.chopped_hdog += 1
+		else:
+			root.chopped_pbelly += 1
 		
 		var new_pos = self.position.x - get_viewport().get_visible_rect().size.x
 		var tw = create_tween().tween_property(self, "position:x", new_pos, 1.5).set_trans(Tween.TRANS_ELASTIC)
