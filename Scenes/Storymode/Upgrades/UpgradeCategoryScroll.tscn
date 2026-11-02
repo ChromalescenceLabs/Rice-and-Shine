@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c7wwr87x20hvx"]
+
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="1_qvd8d"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="2_1eq7i"]
+[ext_resource type="PackedScene" uid="uid://ceh3xp5cmrt7y" path="res://Scenes/Storymode/Upgrades/UpgradeButton.tscn" id="3_1eq7i"]
+
+[sub_resource type="Resource" id="Resource_fnuuy"]
+script = ExtResource("2_1eq7i")
+
+[sub_resource type="Resource" id="Resource_wead7"]
+script = ExtResource("2_1eq7i")
+
+[node name="UpgradeCategoryScroll1" type="Panel" unique_id=660905246]
+custom_minimum_size = Vector2(0, 167.89)
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=725603648]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MARGIN" type="MarginContainer" parent="HBoxContainer" unique_id=625226565]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=619265601]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MARGIN" type="MarginContainer" parent="HBoxContainer/VBoxContainer" unique_id=755275613]
+modulate = Color(1, 1, 1, 0)
+custom_maximum_size = Vector2(-1, 15)
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer" unique_id=1602802083]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 0
+script = ExtResource("1_qvd8d")
+wheel_scroll_damper = SubResource("Resource_fnuuy")
+dragging_scroll_damper = SubResource("Resource_wead7")
+drag_with_mouse = false
+allow_vertical_scroll = false
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="Button" parent="HBoxContainer/VBoxContainer/SmoothScrollContainer" unique_id=1751042289 instance=ExtResource("3_1eq7i")]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MARGIN2" type="MarginContainer" parent="HBoxContainer/VBoxContainer" unique_id=1931777318]
+modulate = Color(1, 1, 1, 0)
+custom_maximum_size = Vector2(-1, 15)
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MARGIN3" type="MarginContainer" parent="HBoxContainer" unique_id=527677165]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true

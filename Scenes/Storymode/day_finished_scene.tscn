@@ -5,13 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://b7xxj5my274a3" path="res://Assets/Sprites/StoryMode/LightCone.png" id="2_ij6hp"]
 [ext_resource type="Script" uid="uid://clyovkxg4cj4f" path="res://addons/perspective_quads/scripts/nodes/perspective_viewport_container_2d.gd" id="3_q7gy3"]
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="5_kvwaw"]
+[ext_resource type="Texture2D" uid="uid://dfrm6w264b84k" path="res://Assets/Sprites/StoryMode/PaymentBGAnim.png" id="6_aqdl4"]
+[ext_resource type="StyleBox" uid="uid://dsabeskj33dsp" path="res://Scenes/Menus/MainMenu/MainMenuNormalButtonStyle.tres" id="7_6d1l8"]
+[ext_resource type="StyleBox" uid="uid://ru223rr65m5a" path="res://Scenes/Menus/MainMenu/MainMenuHoverandPressStyle.tres" id="8_i78ar"]
 
 [sub_resource type="Animation" id="Animation_rpx48"]
 resource_name = "PaperEntrance"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paper:position")
+tracks/0/path = NodePath("InitialScreen/Paper:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +29,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Paper:position")
+tracks/0/path = NodePath("InitialScreen/Paper:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,7 +41,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PointLight2D:visible")
+tracks/1/path = NodePath("InitialScreen/PaperLight:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -59,7 +62,7 @@ resource_name = "LightAnim"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:visible")
+tracks/0/path = NodePath("InitialScreen/PaperLight:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -74,7 +77,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:visible")
+tracks/0/path = NodePath("InitialScreen/PaperLight:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -90,6 +93,127 @@ _data = {
 &"RESET": SubResource("Animation_6d1l8")
 }
 
+[sub_resource type="Animation" id="Animation_aqdl4"]
+resource_name = "DayCounterAnim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InitialScreen/DayCompleteLabel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(249, 140.785), Vector2(249, 25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InitialScreen/DayCompleteLabel:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i78ar"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InitialScreen/DayCompleteLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(249, 25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InitialScreen/DayCompleteLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6u28k"]
+_data = {
+&"DayCounterAnim": SubResource("Animation_aqdl4"),
+&"RESET": SubResource("Animation_i78ar")
+}
+
+[sub_resource type="Animation" id="Animation_6u28k"]
+resource_name = "PaymentBGAnim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ContinuedScreen/PaymentBGAnimTexture:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1360.26, -8), Vector2(-34, -8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ContinuedScreen/PaymentBGLight:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.0333333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6gjou"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ContinuedScreen/PaymentBGAnimTexture:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1371.84, -8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ContinuedScreen/PaymentBGLight:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sqi2r"]
+_data = {
+&"PaymentBGAnim": SubResource("Animation_6u28k"),
+&"RESET": SubResource("Animation_6gjou")
+}
+
 [sub_resource type="Gradient" id="Gradient_ij6hp"]
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(1, 1, 1, 1)
@@ -97,23 +221,62 @@ colors = PackedColorArray(1, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_cuu35"]
 gradient = SubResource("Gradient_ij6hp")
 
+[sub_resource type="Animation" id="Animation_sqi2r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paper:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-500, 24)]
+}
+
+[sub_resource type="Animation" id="Animation_jdui3"]
+resource_name = "SecondPaperEnter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paper:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-500, 24), Vector2(787, 24)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ttud6"]
+_data = {
+&"RESET": SubResource("Animation_sqi2r"),
+&"SecondPaperEnter": SubResource("Animation_jdui3")
+}
+
 [node name="DayFinishedScene" type="Node2D" unique_id=936751786]
 script = ExtResource("1_rpx48")
 
-[node name="Background" type="TextureRect" parent="." unique_id=1101969850]
+[node name="InitialScreen" type="Node2D" parent="." unique_id=1422336749]
+
+[node name="Background" type="TextureRect" parent="InitialScreen" unique_id=1101969850]
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("1_4g4j2")
 metadata/_edit_lock_ = true
 
-[node name="DayCompleteLabel" type="RichTextLabel" parent="." unique_id=388108052]
+[node name="DayCompleteLabel" type="RichTextLabel" parent="InitialScreen" unique_id=388108052]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 249.0
 offset_top = 25.0
 offset_right = 981.0
-offset_bottom = 133.0
+offset_bottom = 132.9998
 grow_horizontal = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("5_kvwaw")
@@ -122,30 +285,42 @@ text = "DAY ... COMPLETE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=775576153]
+[node name="PaperLight" type="PointLight2D" parent="InitialScreen" unique_id=775576153]
 visible = false
 position = Vector2(617.99994, 343)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(15.17393, 6.34065)
 energy = 4.44
 texture = ExtResource("2_ij6hp")
 metadata/_edit_lock_ = true
 
-[node name="PaperAnim" type="AnimationPlayer" parent="." unique_id=747508917]
+[node name="PaperAnim" type="AnimationPlayer" parent="InitialScreen" unique_id=747508917]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_aqdl4")
 speed_scale = 1.5
 
-[node name="LightAnim" type="AnimationPlayer" parent="." unique_id=1703208569]
+[node name="LightAnim" type="AnimationPlayer" parent="InitialScreen" unique_id=1703208569]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_i78ar")
 speed_scale = 3.0
 
-[node name="Paper" type="Polygon2D" parent="." unique_id=1381133743]
+[node name="DayCounterAnim" type="AnimationPlayer" parent="InitialScreen" unique_id=1816886540]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_6u28k")
+speed_scale = 2.5
+
+[node name="PaymentBGAnimAnim" type="AnimationPlayer" parent="InitialScreen" unique_id=1514014832]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sqi2r")
+speed_scale = 3.0
+
+[node name="Paper" type="Polygon2D" parent="InitialScreen" unique_id=1381133743]
 position = Vector2(5.88, 0)
 color = Color(0.37036446, 0.3703645, 0.37036446, 1)
 texture = SubResource("GradientTexture2D_cuu35")
 polygon = PackedVector2Array(402, 157, 814, 156, 948, 670, 275, 669)
 
-[node name="PerspectiveViewportContainer2D" type="Node2D" parent="Paper" unique_id=1483028857]
+[node name="PerspectiveViewportContainer2D" type="Node2D" parent="InitialScreen/Paper" unique_id=1483028857]
 position = Vector2(604.12, 393)
 script = ExtResource("3_q7gy3")
 corner_top_left = Vector2(0.030562347, 0.008733625)
@@ -155,13 +330,13 @@ corner_bottom_left = Vector2(-0.25794622, 1.0655022)
 metadata/_custom_type_script = "uid://clyovkxg4cj4f"
 metadata/_edit_group_ = true
 
-[node name="SubViewport" type="SubViewport" parent="Paper/PerspectiveViewportContainer2D" unique_id=61538283]
+[node name="SubViewport" type="SubViewport" parent="InitialScreen/Paper/PerspectiveViewportContainer2D" unique_id=61538283]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(409, 458)
 render_target_update_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Paper/PerspectiveViewportContainer2D/SubViewport" unique_id=984721026]
+[node name="ReceiptComponents" type="RichTextLabel" parent="InitialScreen/Paper/PerspectiveViewportContainer2D/SubViewport" unique_id=984721026]
 offset_right = 408.7173
 offset_bottom = 458.0
 pivot_offset = Vector2(0.5, 0.5)
@@ -184,7 +359,7 @@ Insert very real accurate receipt stuff here
 --------------------------------------------------------------------"
 horizontal_alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Paper/PerspectiveViewportContainer2D/SubViewport" unique_id=1930223678]
+[node name="PayLabel" type="RichTextLabel" parent="InitialScreen/Paper/PerspectiveViewportContainer2D/SubViewport" unique_id=1930223678]
 offset_top = 357.285
 offset_right = 408.7173
 offset_bottom = 815.28516
@@ -193,3 +368,119 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 72
 text = "₱ [       ] s"
 horizontal_alignment = 1
+
+[node name="Payment" type="RichTextLabel" parent="InitialScreen/Paper/PerspectiveViewportContainer2D/SubViewport" unique_id=938416014]
+offset_left = 111.285
+offset_top = 321.43
+offset_right = 311.2848
+offset_bottom = 504.42917
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 52
+text = "0.00"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinuedScreen" type="Node2D" parent="." unique_id=451494529]
+
+[node name="PaymentBGAnimTexture" type="TextureRect" parent="ContinuedScreen" unique_id=432497038]
+clip_contents = true
+offset_left = -34.0
+offset_top = -8.0
+offset_right = 1317.96
+offset_bottom = 722.0
+texture = ExtResource("6_aqdl4")
+
+[node name="Panel" type="Panel" parent="ContinuedScreen/PaymentBGAnimTexture" unique_id=923713046]
+layout_mode = 0
+offset_right = 1376.0
+offset_bottom = 768.0
+
+[node name="PaymentBGLight" type="TextureRect" parent="ContinuedScreen" unique_id=1360201136]
+modulate = Color(1, 1, 1, 0)
+offset_left = 983.0
+offset_top = 886.99994
+offset_right = 1111.0
+offset_bottom = 1014.99994
+rotation = -2.9670596
+scale = Vector2(10.075608, 7.095)
+texture = ExtResource("2_ij6hp")
+
+[node name="SecondPaperAnim" type="AnimationPlayer" parent="ContinuedScreen" unique_id=1149499820]
+libraries/ = SubResource("AnimationLibrary_ttud6")
+speed_scale = 2.0
+
+[node name="Paper" type="ColorRect" parent="ContinuedScreen" unique_id=1376263717]
+offset_left = -500.0
+offset_top = 24.0
+offset_right = -60.000366
+offset_bottom = 591.8219
+
+[node name="ReceiptComponents" type="RichTextLabel" parent="ContinuedScreen/Paper" unique_id=130128106]
+layout_mode = 0
+offset_left = 7.422
+offset_top = 46.9725
+offset_right = 416.13928
+offset_bottom = 504.9725
+scale = Vector2(1.035, 1.035)
+pivot_offset = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "PAYCHECK THINGY
+
+--------------------------------------------------------------------
+
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+Insert very real accurate receipt stuff here
+
+--------------------------------------------------------------------"
+horizontal_alignment = 1
+
+[node name="PayLabel" type="RichTextLabel" parent="ContinuedScreen/Paper" unique_id=341555683]
+layout_mode = 0
+offset_left = 7.422
+offset_top = 427.877
+offset_right = 416.13928
+offset_bottom = 885.8772
+scale = Vector2(1.035, 1.035)
+pivot_offset = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 72
+text = "₱ [       ] s"
+horizontal_alignment = 1
+
+[node name="Payment" type="RichTextLabel" parent="ContinuedScreen/Paper" unique_id=1253184827]
+layout_mode = 0
+offset_left = 126.537
+offset_top = 393.222
+offset_right = 326.5367
+offset_bottom = 576.22095
+scale = Vector2(1.035, 1.035)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 52
+text = "0.00"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="Button" parent="ContinuedScreen" unique_id=1095574570]
+modulate = Color(1, 1, 1, 0)
+offset_left = 801.0
+offset_top = 629.0
+offset_right = 1210.0
+offset_bottom = 690.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = ExtResource("7_6d1l8")
+theme_override_styles/pressed = ExtResource("7_6d1l8")
+theme_override_styles/hover = ExtResource("8_i78ar")
+text = "CONTINUE"
+
+[connection signal="pressed" from="ContinuedScreen/Continue" to="." method="_on_continue_pressed"]
