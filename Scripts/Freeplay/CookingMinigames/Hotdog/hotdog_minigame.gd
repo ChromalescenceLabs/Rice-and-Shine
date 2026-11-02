@@ -93,14 +93,20 @@ func _ready() -> void:
 	GlobalVars.item_enter(slicing)
 
 func _on_frying_finished() -> void:
+	GlobalVars.successind(get_tree().current_scene)
+	await GlobalVars.successIndEnd
 	GlobalVars.item_exit(frying)
 	GlobalVars.item_enter(chopping)
 
 func _on_slicing_finished() -> void:
+	GlobalVars.successind(get_tree().current_scene)
+	await GlobalVars.successIndEnd
 	GlobalVars.item_exit(slicing)
 	GlobalVars.item_enter(frying)
 
 func _on_chopping_finished() -> void:
+	GlobalVars.successind(get_tree().current_scene)
+	await GlobalVars.successIndEnd
 	GlobalVars.item_exit(chopping)
 	GlobalVars.item_enter(stick)
 

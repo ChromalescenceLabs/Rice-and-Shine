@@ -15,8 +15,8 @@ func changeDesc(button, is_disabled):
 			"hotdog": set_description("hotdog description")
 			"inihaw": set_description("inihaw description")
 			"torta": set_description("torta description")
-	elif is_disabled:
-		set_description("???")
+			"pancit": set_description("pancit description")
+	else: set_description("???")
 	
 func hide_desc(): animation_player.play_backwards("show_hide")
 func show_desc(): animation_player.play("show_hide")

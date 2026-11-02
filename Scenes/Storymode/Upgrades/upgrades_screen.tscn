@@ -1,0 +1,338 @@
+[gd_scene format=3 uid="uid://ioxwjdwyns2e"]
+
+[ext_resource type="Script" uid="uid://bpdg08kga3rme" path="res://Scripts/Freeplay/Storymode/Upgrades/upgrades_screen.gd" id="1_l7ic5"]
+[ext_resource type="Texture2D" uid="uid://dxxsj58y4f3d8" path="res://Scenes/Storymode/Upgrades/UpgradesBG.png" id="1_merh3"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="2_ej072"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="3_l7ic5"]
+[ext_resource type="PackedScene" uid="uid://ck0rn4gedlbmo" path="res://Scenes/Storymode/Upgrades/upgrade_category_tab.tscn" id="4_ej072"]
+[ext_resource type="PackedScene" uid="uid://c7wwr87x20hvx" path="res://Scenes/Storymode/Upgrades/UpgradeCategoryScroll.tscn" id="4_fneei"]
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="5_dxm2b"]
+[ext_resource type="StyleBox" uid="uid://dsabeskj33dsp" path="res://Scenes/Menus/MainMenu/MainMenuNormalButtonStyle.tres" id="8_dxm2b"]
+[ext_resource type="StyleBox" uid="uid://ru223rr65m5a" path="res://Scenes/Menus/MainMenu/MainMenuHoverandPressStyle.tres" id="9_4urik"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuu35"]
+bg_color = Color(0, 0, 0, 0.70980394)
+
+[sub_resource type="Gradient" id="Gradient_emd00"]
+offsets = PackedFloat32Array(0.006024096)
+colors = PackedColorArray(0.3882353, 0.6039216, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cuu35"]
+gradient = SubResource("Gradient_emd00")
+
+[sub_resource type="Resource" id="Resource_jfep3"]
+script = ExtResource("3_l7ic5")
+
+[sub_resource type="Resource" id="Resource_rs628"]
+script = ExtResource("3_l7ic5")
+
+[sub_resource type="Animation" id="Animation_l7ic5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpgradesTitle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-450, -3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UpgradePanel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(108, 738.465)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ExitUpgrPanel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExitUpgrPanel:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../BGTexture/Panel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../SceneButtons/OpenUpgrades:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../SceneButtons/OpenUpgrades:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ej072"]
+resource_name = "UpgradeLabelAnim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpgradesTitle:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-419.93, -3), Vector2(108, -3.0000002)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UpgradePanel:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(108, 738.465), Vector2(108, 111)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ExitUpgrPanel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExitUpgrPanel:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.001, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../BGTexture/Panel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../SceneButtons/OpenUpgrades:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../SceneButtons/OpenUpgrades:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l7ic5"]
+_data = {
+&"RESET": SubResource("Animation_l7ic5"),
+&"UpgradeLabelAnim": SubResource("Animation_ej072")
+}
+
+[node name="UpgradesScreen" type="Node2D" unique_id=1232642036]
+script = ExtResource("1_l7ic5")
+
+[node name="BGTexture" type="TextureRect" parent="." unique_id=1766380526]
+clip_contents = true
+offset_left = -12.0
+offset_top = -6.0
+offset_right = 1295.2092
+offset_bottom = 724.0
+texture = ExtResource("1_merh3")
+
+[node name="Panel" type="Panel" parent="BGTexture" unique_id=1975440541]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -43.0
+offset_top = -32.0
+offset_right = 1388.0
+offset_bottom = 784.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cuu35")
+
+[node name="UpgradesPanelComponents" type="Node2D" parent="." unique_id=778565080]
+
+[node name="UpgradePanel" type="TextureRect" parent="UpgradesPanelComponents" unique_id=590711496]
+modulate = Color(1, 1, 1, 0.95686275)
+offset_left = 108.0
+offset_top = 738.465
+offset_right = 1166.0
+offset_bottom = 1310.464
+texture = SubResource("GradientTexture2D_cuu35")
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="UpgradesPanelComponents/UpgradePanel" unique_id=74308946]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ej072")
+wheel_scroll_damper = SubResource("Resource_jfep3")
+dragging_scroll_damper = SubResource("Resource_rs628")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradesPanelComponents/UpgradePanel/SmoothScrollContainer" unique_id=2050866018]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="UpgradeCategoryTab1" parent="UpgradesPanelComponents/UpgradePanel/SmoothScrollContainer/VBoxContainer" unique_id=731510327 instance=ExtResource("4_ej072")]
+layout_mode = 2
+color = Color(0.1584723, 0.15847233, 0.1584723, 1)
+category_text = "Category 1"
+bgcolor = Color(0.1584723, 0.15847233, 0.1584723, 1)
+
+[node name="UpgradeCategoryScroll1" parent="UpgradesPanelComponents/UpgradePanel/SmoothScrollContainer/VBoxContainer" unique_id=660905246 instance=ExtResource("4_fneei")]
+layout_mode = 2
+
+[node name="UpgradeCategoryTab2" parent="UpgradesPanelComponents/UpgradePanel/SmoothScrollContainer/VBoxContainer" unique_id=942724625 instance=ExtResource("4_ej072")]
+layout_mode = 2
+color = Color(0.06469653, 0.06469653, 0.06469653, 1)
+category_text = "Category 2"
+bgcolor = Color(0.06469653, 0.06469653, 0.06469653, 1)
+
+[node name="UpgradeCategoryScroll2" parent="UpgradesPanelComponents/UpgradePanel/SmoothScrollContainer/VBoxContainer" unique_id=56444187 instance=ExtResource("4_fneei")]
+layout_mode = 2
+
+[node name="UpgradeCategoryTab3" parent="UpgradesPanelComponents/UpgradePanel/SmoothScrollContainer/VBoxContainer" unique_id=1364170039 instance=ExtResource("4_ej072")]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+category_text = "Category 3"
+
+[node name="UpgradeCategoryScroll3" parent="UpgradesPanelComponents/UpgradePanel/SmoothScrollContainer/VBoxContainer" unique_id=808693123 instance=ExtResource("4_fneei")]
+layout_mode = 2
+
+[node name="ExitUpgrPanel" type="Button" parent="UpgradesPanelComponents" unique_id=1750429896]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1088.0
+offset_top = 25.0
+offset_right = 1148.0
+offset_bottom = 86.0
+theme_override_font_sizes/font_size = 38
+disabled = true
+text = "X"
+
+[node name="UpgradesTitle" type="RichTextLabel" parent="UpgradesPanelComponents" unique_id=105654224]
+offset_left = -450.0
+offset_top = -3.0
+offset_right = -264.65378
+offset_bottom = 49.0
+scale = Vector2(2.525, 2.525)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_dxm2b")
+theme_override_font_sizes/normal_font_size = 38
+text = "UPGRADES"
+fit_content = true
+vertical_alignment = 1
+
+[node name="UpgrLabelAnim" type="AnimationPlayer" parent="UpgradesPanelComponents" unique_id=1927823164]
+libraries/ = SubResource("AnimationLibrary_l7ic5")
+speed_scale = 2.5
+
+[node name="SceneButtons" type="Node2D" parent="." unique_id=2054553947]
+
+[node name="OpenUpgrades" type="Button" parent="SceneButtons" unique_id=425858792]
+offset_left = 1059.0
+offset_top = 586.0
+offset_right = 1262.0
+offset_bottom = 639.0
+text = "Open Upgrades"
+
+[node name="ReturntoMainMenu" type="Button" parent="SceneButtons" unique_id=114499911]
+offset_left = 1059.0
+offset_top = 521.0
+offset_right = 1262.0
+offset_bottom = 574.0
+text = "Return to Main Menu"
+
+[node name="NextDay" type="Button" parent="SceneButtons" unique_id=2009054562]
+offset_left = 1059.0
+offset_top = 650.0
+offset_right = 1262.0
+offset_bottom = 703.0
+theme_override_styles/normal = ExtResource("8_dxm2b")
+theme_override_styles/pressed = ExtResource("9_4urik")
+theme_override_styles/hover = ExtResource("9_4urik")
+text = "Next Day ➜"
+
+[connection signal="pressed" from="UpgradesPanelComponents/ExitUpgrPanel" to="." method="_on_exit_upgr_panel_pressed"]
+[connection signal="pressed" from="SceneButtons/OpenUpgrades" to="." method="_on_open_upgrades_pressed"]
+[connection signal="pressed" from="SceneButtons/ReturntoMainMenu" to="." method="_on_returnto_main_menu_pressed"]
+[connection signal="pressed" from="SceneButtons/NextDay" to="." method="_on_next_day_pressed"]

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ck0rn4gedlbmo"]
+
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="1_0sgqc"]
+[ext_resource type="Script" uid="uid://c4jev63gaoose" path="res://Scripts/Freeplay/Storymode/Upgrades/upgrade_category_tab.gd" id="1_ecawc"]
+
+[node name="UpgradeCategoryTab1" type="ColorRect" unique_id=731510327]
+custom_minimum_size = Vector2(0, 35.65)
+mouse_filter = 1
+script = ExtResource("1_ecawc")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=475317892]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=458079835]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer" unique_id=209533702]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("1_0sgqc")
+theme_override_font_sizes/normal_font_size = 20
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer" unique_id=424400357]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3

@@ -45,8 +45,6 @@ func _on_slice() -> void:
 	
 	if slice_count == 3:
 		detector.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		GlobalVars.successind(root)
-		await GlobalVars.successIndEnd
 		
 		root.sliced_hotdog += 1
 		plate = get_tree().current_scene.plate

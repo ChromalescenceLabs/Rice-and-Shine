@@ -131,17 +131,17 @@ func _on_sprite_mouse_exited() -> void: draggable = false
 
 
 
-func _on_soy_area_area_entered(area: Area2D) -> void: if area is BowlFillArea and not soy_done: in_soy = true
-func _on_soy_area_area_exited(area: Area2D) -> void: if area is BowlFillArea: in_soy = false
+func _on_soy_area_area_entered(area: Area2D) -> void: if area is BowlArea and not soy_done: in_soy = true
+func _on_soy_area_area_exited(area: Area2D) -> void: if area is BowlArea: in_soy = false
 
-func _on_calamansi_area_area_entered(area: Area2D) -> void: if area is BowlFillArea and not cal_done: in_cal = true
-func _on_calamansi_area_area_exited(area: Area2D) -> void: if area is BowlFillArea: in_cal = false 
+func _on_calamansi_area_area_entered(area: Area2D) -> void: if area is BowlArea and not cal_done: in_cal = true
+func _on_calamansi_area_area_exited(area: Area2D) -> void: if area is BowlArea: in_cal = false 
 
-func _on_ketchup_area_area_entered(area: Area2D) -> void: if area is BowlFillArea and not ketchup_done: in_ketchup = true
-func _on_ketchup_area_area_exited(area: Area2D) -> void: if area is BowlFillArea: in_ketchup = false
+func _on_ketchup_area_area_entered(area: Area2D) -> void: if area is BowlArea and not ketchup_done: in_ketchup = true
+func _on_ketchup_area_area_exited(area: Area2D) -> void: if area is BowlArea: in_ketchup = false
 
-func _on_sprite_area_area_entered(area: Area2D) -> void: if area is BowlFillArea and not sprite_done: in_sprite = true
-func _on_sprite_area_area_exited(area: Area2D) -> void: if area is BowlFillArea: in_sprite = false
+func _on_sprite_area_area_entered(area: Area2D) -> void: if area is BowlArea and not sprite_done: in_sprite = true
+func _on_sprite_area_area_exited(area: Area2D) -> void: if area is BowlArea: in_sprite = false
 
 
 
