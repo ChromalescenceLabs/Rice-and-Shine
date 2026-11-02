@@ -62,7 +62,7 @@ func initialization(type : String = "Random", wants : Dictionary = {}) -> Varian
 	if wants.is_empty():
 		var possible_foods : Array = GlobalVars.unlocked_foods.duplicate()
 		customer_info["CustomerWants"] = {}
-		for i in randi_range(1, 3):
+		for i in randi_range(1, possible_foods.size()):
 			var rand_food = possible_foods.pick_random()
 			customer_info["CustomerWants"][rand_food] = randi_range(1, 2)
 			possible_foods.erase(rand_food)
