@@ -60,7 +60,7 @@ var customer_weights : PackedFloat32Array = []
 
 var tutorial_finished : bool = false
 var w1_days : int = 1
-var w2_days : int = 1
+var w2_days : int = 0
 var w3_days : int = 0
 var w4_days : int = 0
 var w5_days : int = 0

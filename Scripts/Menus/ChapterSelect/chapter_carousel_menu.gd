@@ -46,7 +46,9 @@ func _tween_scroll(scrollValue):
 	
 	scroll_tween.set_ease(Tween.EASE_OUT)
 	scroll_tween.set_trans(Tween.TRANS_QUAD)
-	scroll_tween.tween_property(scroll_container, "scroll_horizontal", scrollValue, 0.25)
+	if not scrollValue > scroll_container.custom_maximum_size.x: scroll_tween.tween_property(scroll_container, "scroll_horizontal", scrollValue, 0.25)
+	else: scroll_tween.tween_property(scroll_container, "scroll_horizontal", scroll_container.custom_maximum_size.x, 0.25)
+		
 	await scroll_tween.finished
 
 func _select_deselect_highlight(dir_next: bool):
