@@ -1,19 +1,10 @@
 extends Control
-@onready var previous: TextureButton = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Previous
-@onready var next: TextureButton = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Next
-
-@export var CHAP1: CanvasItem
-@export var CHAP2: CanvasItem
-@export var CHAP3: CanvasItem
-@export var desc2: RichTextLabel
-@export var title: RichTextLabel
 
 @onready var object_container: HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer
 @onready var scroll_container: ScrollContainer = %ScrollContainer
 
 var scroll_tween: Tween
 var targetScroll = 0
-var init_setup : bool = true
 var selected_indx : int = 0
 
 func _ready() -> void:
@@ -24,8 +15,6 @@ func _set_selection():
 	_select_deselect_highlight(true)
 
 func _on_previous_pressed() -> void:
-	init_setup = false #makes it go back to norm
-		
 	if selected_indx > 0:
 		var scrollValue = targetScroll - _get_space_between()
 		await _tween_scroll(scrollValue)
@@ -34,8 +23,6 @@ func _on_previous_pressed() -> void:
 		_select_deselect_highlight(false)
 
 func _on_next_pressed() -> void:
-	init_setup = false #makes it go back to norm
-	
 	if selected_indx < 2:
 		var scrollValue = targetScroll + _get_space_between()
 		await _tween_scroll(scrollValue)
@@ -72,12 +59,3 @@ func _select_deselect_highlight(dir_next: bool):
 			else: 
 				if not object == object_container.get_children()[selected_indx - 1] and not object == object_container.get_children()[selected_indx]: object.play_anim()
 						
-
-func get_selected_value():
-	if init_setup: #para so like when ur from mode select screen, highlighted agad chap 1
-		var initialNode = object_container.get_node_or_null("CH1IMG")
-		if initialNode:
-			return initialNode
-	
-
-	
