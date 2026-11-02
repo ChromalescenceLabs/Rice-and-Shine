@@ -3,7 +3,7 @@ extends Node
 # Player Info
 var current_db : float = -25
 var is_customer_serving: bool = false
-var is_in_story: bool = false
+var current_scene
 
 # Systems
 signal successIndEnd

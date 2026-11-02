@@ -107,5 +107,7 @@ func _on_pan_area_entered(area: Area2D) -> void:
 
 func _on_saute_finished() -> void:
 	GlobalVars.item_enter(draining)
+	if GlobalVars.is_customer_serving: SceneLoader.load_scene(GlobalVars.current_scene, 1)
+	else: SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
 	
 	

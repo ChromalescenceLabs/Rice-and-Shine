@@ -19,6 +19,9 @@ const FOOD_CONT = preload("uid://csole0o4ydmgm")
 var bowl_no : int = 0
 
 func _ready() -> void:
+	GlobalVars.is_customer_serving = true
+	GlobalVars.current_scene = GlobalSaveManager.get_scene_path()
+	
 	if not GlobalScenes.add_customer.is_connected(reparent_customer):
 		GlobalScenes.add_customer.connect(reparent_customer)
 	if not GlobalScenes.remove_customer.is_connected(remove_customer):

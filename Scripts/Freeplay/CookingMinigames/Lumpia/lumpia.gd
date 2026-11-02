@@ -122,3 +122,5 @@ func _on_mixing_finished() -> void:
 func _on_wrapping_finished() -> void:
 	GlobalVars.item_exit(wrapping)
 	GlobalVars.item_enter(frying)
+	if GlobalVars.is_customer_serving: SceneLoader.load_scene(GlobalVars.current_scene, 1)
+	else: SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)

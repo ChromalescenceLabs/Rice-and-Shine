@@ -138,4 +138,5 @@ func _on_shake_end() -> void:
 	GlobalVars.item_exit(shaking)
 	GlobalVars.item_exit(prepping)
 	
-	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1.5)
+	if GlobalVars.is_customer_serving: SceneLoader.load_scene(GlobalVars.current_scene, 1)
+	else: SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)

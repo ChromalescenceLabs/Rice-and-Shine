@@ -84,11 +84,6 @@ func _on_rice_cooker_rice_cooker_done() -> void:
 	await GlobalVars.successIndEnd
 	GlobalVars.item_exit(rice_cooker)
 	
-	GlobalVars.rice_value += 5
-	
-	match GlobalVars.is_customer_serving:
-		false:
-			SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
-		true:
-			SceneLoader.load_scene("uid://cvg4i1rwk4hbd", 1)
+	if GlobalVars.is_customer_serving: SceneLoader.load_scene(GlobalVars.current_scene, 1)
+	else: SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
 			

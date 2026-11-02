@@ -82,3 +82,5 @@ func _on_mixed_bowl_done() -> void:
 func _on_plate_done() -> void:
 	GlobalVars.successind(self)
 	await GlobalVars.successIndEnd
+	if GlobalVars.is_customer_serving: SceneLoader.load_scene(GlobalVars.current_scene, 1)
+	else: SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
