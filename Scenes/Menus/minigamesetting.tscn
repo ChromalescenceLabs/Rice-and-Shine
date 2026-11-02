@@ -1,0 +1,270 @@
+[gd_scene format=3 uid="uid://c3unocg7kw2e3"]
+
+[ext_resource type="Texture2D" uid="uid://dukph3yu4xg1" path="res://Assets/Menus/setting.png" id="1_0wv7b"]
+[ext_resource type="Script" uid="uid://cglkx8nua74x6" path="res://Scenes/Menus/minigamesetting.gd" id="1_1tygw"]
+[ext_resource type="Script" uid="uid://b5hebbm802doi" path="res://Scenes/Menus/settingbtn.gd" id="2_8dvo0"]
+[ext_resource type="Script" uid="uid://cq82el718nd8f" path="res://Scripts/Menus/MainMenu/master_slide.gd" id="3_06lvd"]
+[ext_resource type="Script" uid="uid://vel24jfsjgg2" path="res://Scripts/Menus/Options/sfx_slide.gd" id="4_1tygw"]
+[ext_resource type="Script" uid="uid://c4ycfn1q82esg" path="res://Scripts/Menus/Options/music_slide.gd" id="5_gcvbt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32akw"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56ox0"]
+bg_color = Color(0.36970517, 0.7913994, 0.8210312, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4v6c"]
+bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7ce3"]
+bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qunpu"]
+bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjyf8"]
+bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyvwt"]
+bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
+
+[node name="Control" type="Control" unique_id=124713226]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1tygw")
+
+[node name="Settings" type="TextureButton" parent="." unique_id=1679595592]
+layout_mode = 0
+offset_right = 63.0
+offset_bottom = 58.0
+texture_normal = ExtResource("1_0wv7b")
+texture_pressed = ExtResource("1_0wv7b")
+texture_hover = ExtResource("1_0wv7b")
+stretch_mode = 0
+script = ExtResource("2_8dvo0")
+
+[node name="Panel" type="Panel" parent="." unique_id=1126503066]
+visible = false
+layout_mode = 0
+offset_left = 418.0
+offset_top = 95.0
+offset_right = 877.0
+offset_bottom = 672.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_32akw")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel" unique_id=1209178857]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 458.0
+offset_bottom = 70.0
+theme_override_font_sizes/normal_font_size = 50
+text = "PAUSED"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="Panel" unique_id=41220307]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 138.0
+offset_right = 411.0
+offset_bottom = 162.0
+
+[node name="Button" type="Button" parent="Panel" unique_id=1136120686]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 499.0
+offset_right = 353.0
+offset_bottom = 562.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 40
+text = "QUIT GAME"
+
+[node name="PAUSEMENU" type="TabContainer" parent="." unique_id=1424306649]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 56.0
+offset_right = 869.0
+offset_bottom = 677.0
+theme_override_font_sizes/font_size = 30
+current_tab = 2
+
+[node name="AUDIO" type="MarginContainer" parent="PAUSEMENU" unique_id=1844519874]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PAUSEMENU/AUDIO" unique_id=1856583251]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PAUSEMENU/AUDIO/MarginContainer" unique_id=1054177627]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="MASTERLABEL" type="RichTextLabel" parent="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer" unique_id=1921808244]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "MASTER"
+
+[node name="MASTERSLIDE" type="HSlider" parent="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MASTERLABEL" unique_id=1845423985]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 7.0
+offset_right = 421.0
+offset_bottom = 38.0
+size_flags_stretch_ratio = 0.0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_56ox0")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_i4v6c")
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("3_06lvd")
+
+[node name="SFXLABEL" type="RichTextLabel" parent="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer" unique_id=1062155189]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "SFX
+"
+
+[node name="SFXSLIDE" type="HSlider" parent="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/SFXLABEL" unique_id=1649140217]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 7.0
+offset_right = 419.0
+offset_bottom = 33.0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_d7ce3")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_qunpu")
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("4_1tygw")
+
+[node name="MUSICLABEL" type="RichTextLabel" parent="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer" unique_id=548011574]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "MUSIC
+"
+
+[node name="MUSICSLIDE" type="HSlider" parent="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MUSICLABEL" unique_id=1751021523]
+layout_mode = 0
+offset_left = 129.0
+offset_right = 421.0
+offset_bottom = 50.0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_fjyf8")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_gyvwt")
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("5_gcvbt")
+
+[node name="GRAPHICS" type="MarginContainer" parent="PAUSEMENU" unique_id=513740606]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PAUSEMENU/GRAPHICS" unique_id=560964524]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PAUSEMENU/GRAPHICS/MarginContainer" unique_id=1490297132]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="FULLSCREEN" type="HBoxContainer" parent="PAUSEMENU/GRAPHICS/MarginContainer/VBoxContainer" unique_id=1777549641]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PAUSEMENU/GRAPHICS/MarginContainer/VBoxContainer/FULLSCREEN" unique_id=2061024573]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "WINDOW MODE"
+
+[node name="VSeparator" type="VSeparator" parent="PAUSEMENU/GRAPHICS/MarginContainer/VBoxContainer/FULLSCREEN" unique_id=364297517]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 40
+
+[node name="ScreenBTN" type="OptionButton" parent="PAUSEMENU/GRAPHICS/MarginContainer/VBoxContainer/FULLSCREEN" unique_id=77396125]
+layout_mode = 2
+
+[node name="ASPECT RATIO" type="HBoxContainer" parent="PAUSEMENU/GRAPHICS/MarginContainer/VBoxContainer" unique_id=1386329388]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PAUSEMENU/GRAPHICS/MarginContainer/VBoxContainer/ASPECT RATIO" unique_id=590621268]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "ASPECT RATIO "
+
+[node name="VSeparator" type="VSeparator" parent="PAUSEMENU/GRAPHICS/MarginContainer/VBoxContainer/ASPECT RATIO" unique_id=1176676781]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="AspectBTN" type="OptionButton" parent="PAUSEMENU/GRAPHICS/MarginContainer/VBoxContainer/ASPECT RATIO" unique_id=425654426]
+layout_mode = 2
+
+[node name="MISC" type="MarginContainer" parent="PAUSEMENU" unique_id=1722086022]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PAUSEMENU/MISC" unique_id=101053546]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="reminder to self ignore" type="RichTextLabel" parent="PAUSEMENU/MISC/MarginContainer" unique_id=897236040]
+visible = false
+layout_mode = 2
+text = "UNDER CONSTRUCTION
+YOU ARE IN MISC
+
+tba :
+statistics
+achievements? maybe?
+language toggle
+credits
+
+"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PAUSEMENU/MISC/MarginContainer" unique_id=336761258]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=1525436569]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "LANGUAGE TOGGLE (WIP)"
+
+[node name="ENGLISH" type="CheckBox" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=391468303]
+layout_mode = 2
+text = "ENGLISH"
+
+[node name="TAGALOG" type="CheckBox" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=919458252]
+layout_mode = 2
+text = "TAGALOG"
+
+[connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
+[connection signal="value_changed" from="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MASTERLABEL/MASTERSLIDE" to="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MASTERLABEL/MASTERSLIDE" method="_on_value_changed"]
+[connection signal="value_changed" from="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/SFXLABEL/SFXSLIDE" to="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/SFXLABEL/SFXSLIDE" method="_on_value_changed"]
+[connection signal="value_changed" from="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MUSICLABEL/MUSICSLIDE" to="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MUSICLABEL/MUSICSLIDE" method="_on_value_changed"]

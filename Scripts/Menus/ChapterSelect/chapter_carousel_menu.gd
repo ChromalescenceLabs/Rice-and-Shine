@@ -1,8 +1,15 @@
 extends Control
 
+@export var CHAP1: CanvasItem
+@export var CHAP2: CanvasItem
+@export var CHAP3: CanvasItem
+@export var desc2: RichTextLabel
+@export var title: RichTextLabel
+
 @onready var object_container: HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer
 @onready var scroll_container: ScrollContainer = %ScrollContainer
 
+var scroll_tween: Tween
 var targetScroll = 0
 var init_setup : bool = true 
 func _ready() -> void:
@@ -36,10 +43,15 @@ func _get_space_between():
 
 func _tween_scroll(scrollValue):
 	targetScroll = scrollValue
+	if scroll_tween and scroll_tween.is_valid():
+		scroll_tween.kill()
+		
+	scroll_tween = get_tree().create_tween()
 	
-	var tween = get_tree().create_tween()
-	tween.tween_property(scroll_container, "scroll_horizontal", scrollValue, 0.25)
-	await tween.finished
+	scroll_tween.set_ease(Tween.EASE_OUT)
+	scroll_tween.set_trans(Tween.TRANS_QUAD)
+	scroll_tween.tween_property(scroll_container, "scroll_horizontal", scrollValue, 0.25)
+	await scroll_tween.finished
 
 func _select_deselect_highlight():
 	var selectedNode = get_selected_value()
@@ -65,4 +77,6 @@ func get_selected_value():
 	for object in object_container.get_children():
 		if object.get_global_rect().has_point(selectedPosition):
 			return object
+	
+
 	

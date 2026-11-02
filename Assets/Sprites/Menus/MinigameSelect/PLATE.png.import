@@ -3,15 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://biymioqcxvn8k"
+<<<<<<<< HEAD:Assets/Sprites/Menus/PLATE.png.import
+path="res://.godot/imported/PLATE.png-9b98270908343b747550a6c37919a549.ctex"
+========
 path="res://.godot/imported/PLATE.png-4d47ae484579a5d0e7757dbb4947c1cc.ctex"
+>>>>>>>> main:Assets/Sprites/Menus/MinigameSelect/PLATE.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:Assets/Sprites/Menus/PLATE.png.import
+source_file="res://Assets/Menus/PLATE.png"
+dest_files=["res://.godot/imported/PLATE.png-9b98270908343b747550a6c37919a549.ctex"]
+========
 source_file="res://Assets/Sprites/Menus/MinigameSelect/PLATE.png"
 dest_files=["res://.godot/imported/PLATE.png-4d47ae484579a5d0e7757dbb4947c1cc.ctex"]
+>>>>>>>> main:Assets/Sprites/Menus/MinigameSelect/PLATE.png.import
 
 [params]
 
