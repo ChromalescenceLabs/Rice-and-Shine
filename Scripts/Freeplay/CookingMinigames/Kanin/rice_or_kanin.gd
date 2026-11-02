@@ -84,6 +84,12 @@ func _on_rice_cooker_rice_cooker_done() -> void:
 	await GlobalVars.successIndEnd
 	GlobalVars.item_exit(rice_cooker)
 	
-	if GlobalVars.is_customer_serving: SceneLoader.load_scene(GlobalVars.current_scene, 1)
+	if GlobalVars.is_customer_serving: 
+		var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalVars.current_scene)
+		if not data == null:
+			var node_data = GlobalSaveManager.fetch_node_persistent_value(data, "FoodConts")
+			node_data["rice"] += 5
+			
+		SceneLoader.load_scene(GlobalVars.current_scene, 1)
 	else: SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
 			

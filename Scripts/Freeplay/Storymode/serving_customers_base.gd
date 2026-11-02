@@ -27,7 +27,6 @@ func _ready() -> void:
 	if not GlobalScenes.remove_customer.is_connected(remove_customer):
 		GlobalScenes.remove_customer.connect(remove_customer)
 	instantiate_food_conts()
-	GlobalVars.is_in_story = true
 	
 	#Checks if Scene has saved data
 	var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
@@ -43,10 +42,9 @@ func _ready() -> void:
 		# Check if a Node in that scene has data for FoodConts	
 		node_data = GlobalSaveManager.fetch_node_persistent_value(data, "FoodConts")
 		if not node_data == null:
-			var foodcontchildren = food_conts.get_children()
-				
-			for i in node_data.size():
-				foodcontchildren[i].qty = node_data[i]
+			for i in food_conts.get_children():
+				var qty = node_data[i.food_type.to_lower()]
+				i.qty = qty
 				
 		if GlobalScenes.get_node("StoryCustomers").get_child_count() > 0:
 			for i in GlobalScenes.get_node("StoryCustomers").get_children():
@@ -120,11 +118,11 @@ func _on_tree_exiting() -> void:
 	var bowl_data = []
 	for i in freed_bowls.get_children(): bowl_data.append(i.contentDict)
 	
-	var foodcont_data = []
-	for i in food_conts.get_children(): foodcont_data.append(i.qty)
+	var foodcontqty_data = {}
+	for i in food_conts.get_children(): foodcontqty_data[i.food_type.to_lower()] = i.qty
 	
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "Bowls", bowl_data)
-	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "FoodConts", foodcont_data)
+	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "FoodConts", foodcontqty_data)
 
 func _on_customers_cont_child_exiting_tree(node: Node) -> void:
 	for i in customer_happiness_logs.overall_cont.get_children():
