@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="4_pbxxb"]
 [ext_resource type="PackedScene" uid="uid://btok7aisotru6" path="res://Scenes/Storymode/day_timer.tscn" id="7_ay3sv"]
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="9_gwu6q"]
+[ext_resource type="PackedScene" uid="uid://c3unocg7kw2e3" path="res://Scenes/Menus/minigamesetting.tscn" id="10_rsqi0"]
 [ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="18_xd6nw"]
 [ext_resource type="PackedScene" uid="uid://dpjeqy63lxdvr" path="res://Scenes/Freeplay/CustomerServing/customer_happiness_logs.tscn" id="19_cfcfs"]
 
@@ -157,6 +158,8 @@ theme_override_font_sizes/normal_font_size = 35
 text = "₱ 10.00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MinigameSetting" parent="." unique_id=124713226 instance=ExtResource("10_rsqi0")]
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="child_exiting_tree" from="Control/CustomersCont" to="." method="_on_customers_cont_child_exiting_tree"]

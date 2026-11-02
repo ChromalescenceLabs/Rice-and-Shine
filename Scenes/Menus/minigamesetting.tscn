@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c3unocg7kw2e3"]
 
-[ext_resource type="Texture2D" uid="uid://dukph3yu4xg1" path="res://Assets/Menus/setting.png" id="1_0wv7b"]
-[ext_resource type="Script" uid="uid://cglkx8nua74x6" path="res://Scenes/Menus/minigamesetting.gd" id="1_1tygw"]
-[ext_resource type="Script" uid="uid://b5hebbm802doi" path="res://Scenes/Menus/settingbtn.gd" id="2_8dvo0"]
+[ext_resource type="Texture2D" uid="uid://dukph3yu4xg1" path="res://Assets/Sprites/Menus/setting.png" id="1_0wv7b"]
+[ext_resource type="Script" uid="uid://xm8obiul63lg" path="res://Scenes/Menus/minigamesetting.gd" id="1_1tygw"]
+[ext_resource type="Script" uid="uid://b1wtlrg6rsv7r" path="res://Scenes/Menus/settingbtn.gd" id="2_8dvo0"]
 [ext_resource type="Script" uid="uid://cq82el718nd8f" path="res://Scripts/Menus/MainMenu/master_slide.gd" id="3_06lvd"]
 [ext_resource type="Script" uid="uid://vel24jfsjgg2" path="res://Scripts/Menus/Options/sfx_slide.gd" id="4_1tygw"]
 [ext_resource type="Script" uid="uid://c4ycfn1q82esg" path="res://Scripts/Menus/Options/music_slide.gd" id="5_gcvbt"]
@@ -32,6 +32,7 @@ bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
 bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
 
 [node name="Control" type="Control" unique_id=124713226]
+z_index = 300
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

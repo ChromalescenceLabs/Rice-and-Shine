@@ -31,7 +31,7 @@ func press(button):
 
 	# 2. Make sure description is visible before calculating height
 	description.visible = true
-	-7
+	
 	# Optional: update text here based on button.name if needed
 	
 	# 3. Move the description right after the button (+1)
@@ -43,4 +43,4 @@ func press(button):
 	
 	curButton = button
 
-func release(button):
+func release(button): pass
