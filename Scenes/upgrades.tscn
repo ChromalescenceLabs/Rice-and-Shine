@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://ct36ntdromxo6" path="res://Assets/Sprites/LoadingBG.png" id="2_mstou"]
 [ext_resource type="Texture2D" uid="uid://bbow08x8m0x45" path="res://Assets/checkbox.png" id="3_ua6wq"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_rmsmy"]
-[ext_resource type="Script" uid="uid://xh6nqirsyoe5" path="res://Scripts/Freeplay/upg.gd" id="5_rmsmy"]
+[ext_resource type="Script" uid="uid://dexlqtf7dkj7r" path="res://Scripts/Freeplay/Storymode/upgrades/upgrade.gd" id="4_sy0g7"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_sy0g7"]
+[ext_resource type="Script" uid="uid://4ragy8a1150r" path="res://Scripts/Freeplay/Storymode/upgrades/upg.gd" id="6_copim"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ittll"]
 bg_color = Color(0.17785347, 0.17785347, 0.17785338, 1)
@@ -113,22 +114,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 30
+script = ExtResource("4_sy0g7")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="upg1" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=1995078601]
-layout_mode = 2
-mouse_filter = 1
-theme_override_constants/icon_max_width = 70
-theme_override_font_sizes/font_size = 50
-text = " upg1"
-icon = ExtResource("2_mstou")
-alignment = 0
-expand_icon = true
-script = ExtResource("5_rmsmy")
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Computer/upgradeScroll/upgrade" unique_id=1989546101]
-custom_minimum_size = Vector2(0, 75)
+[node name="description" type="RichTextLabel" parent="Computer/upgradeScroll/upgrade" unique_id=1989546101]
+visible = false
+custom_maximum_size = Vector2(-1, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 27
@@ -140,6 +131,78 @@ insert desc here
 "
 fit_content = true
 scroll_active = false
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="upg1" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=1995078601]
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+theme_override_font_sizes/font_size = 50
+text = " upg1"
+icon = ExtResource("2_mstou")
+alignment = 0
+expand_icon = true
+script = ExtResource("6_copim")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="upg2" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=81780821]
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+theme_override_font_sizes/font_size = 50
+text = " upg1"
+icon = ExtResource("2_mstou")
+alignment = 0
+expand_icon = true
+script = ExtResource("6_copim")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="upg3" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=389496844]
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+theme_override_font_sizes/font_size = 50
+text = " upg1"
+icon = ExtResource("2_mstou")
+alignment = 0
+expand_icon = true
+script = ExtResource("6_copim")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="upg4" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=1986739004]
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+theme_override_font_sizes/font_size = 50
+text = " upg1"
+icon = ExtResource("2_mstou")
+alignment = 0
+expand_icon = true
+script = ExtResource("6_copim")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="upg100" type="MenuButton" parent="Computer/upgradeScroll/upgrade/upg4" unique_id=867664239]
+layout_mode = 0
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+text = "upg100
+"
+icon = ExtResource("2_mstou")
+item_count = 1
+popup/item_0/text = "1ooooooo"
+popup/item_0/id = 0
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="upg100" type="MenuButton" parent="Computer/upgradeScroll/upgrade/upg4/upg100" unique_id=1820027419]
+layout_mode = 0
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+text = "upg100
+"
+icon = ExtResource("2_mstou")
+item_count = 1
+popup/item_0/text = "1ooooooo"
+popup/item_0/id = 0
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="Computer/upgradeScroll/upgrade" unique_id=1419416245]
@@ -159,3 +222,6 @@ theme_override_icons/unchecked = ExtResource("2_lisd6")
 theme_override_icons/checked_disabled = ExtResource("3_ua6wq")
 
 [connection signal="pressed" from="Computer/upgradeScroll/upgrade/upg1" to="Computer/upgradeScroll/upgrade/upg1" method="_on_pressed"]
+[connection signal="pressed" from="Computer/upgradeScroll/upgrade/upg2" to="Computer/upgradeScroll/upgrade/upg2" method="_on_pressed"]
+[connection signal="pressed" from="Computer/upgradeScroll/upgrade/upg3" to="Computer/upgradeScroll/upgrade/upg3" method="_on_pressed"]
+[connection signal="pressed" from="Computer/upgradeScroll/upgrade/upg4" to="Computer/upgradeScroll/upgrade/upg4" method="_on_pressed"]
