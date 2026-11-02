@@ -1,5 +1,7 @@
 extends Button
 #i feel like yandev whenever i code, this feels embarassing
+const LOADING_SCREEN_FADE = preload("uid://dnkgil0k2g8ap")
+
 @export var CHAP1: CanvasItem
 @export var CHAP2: CanvasItem
 @export var CHAP3: CanvasItem
@@ -8,7 +10,7 @@ extends Button
 @onready var status: RichTextLabel = get_node("../../../../STATUS")
 @onready var desc: RichTextLabel = get_node("../../../../DESCRIPTION")
 
-const CH1SCENE = "res://Scenes/Menus/week_select.tscn"
+const CH1SCENE = "uid://benuikw1v40e"
 
 var tween: Tween
 
@@ -20,7 +22,7 @@ func _on_pressed() -> void:
 	if not CHAP1 or not CHAP2 or not CHAP3:
 		return
 	if CHAP1.modulate == Color(1,1,1):
-		get_tree().change_scene_to_file(CH1SCENE)
+		SceneLoader.load_scene(CH1SCENE, 1.5, LOADING_SCREEN_FADE)
 	elif CHAP2.modulate == Color(1,1,1):
 		status.text = "LOCKED"
 		await get_tree().create_timer(1.0).timeout

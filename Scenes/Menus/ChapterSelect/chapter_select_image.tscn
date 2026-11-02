@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://diiw84fvn3qw"]
+
+[ext_resource type="Texture2D" uid="uid://52s7q3ht5fdx" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP1ART.png" id="1_g7imo"]
+[ext_resource type="Script" uid="uid://dptwmluvppx77" path="res://Scripts/Menus/ChapterSelect/chapter_select_image.gd" id="2_jwi5h"]
+
+[sub_resource type="Animation" id="Animation_jwi5h"]
+resource_name = "Fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_875u7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ximy7"]
+_data = {
+&"Fade": SubResource("Animation_jwi5h"),
+&"RESET": SubResource("Animation_875u7")
+}
+
+[node name="ChapterSelectImage" type="TextureRect" unique_id=1479120411]
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("1_g7imo")
+script = ExtResource("2_jwi5h")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=412364449]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=530500856]
+libraries/ = SubResource("AnimationLibrary_ximy7")
+speed_scale = 3.0
