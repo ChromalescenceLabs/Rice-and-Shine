@@ -1,4 +1,7 @@
 extends TextureButton
+signal ask_fillconf(node : TextureButton)
+signal confirmation(confirm : bool)
+
 @onready var counter_anim: AnimationPlayer = $CounterAnim
 @onready var counter: RichTextLabel = $Counter
 
@@ -7,6 +10,8 @@ extends TextureButton
 @export var filled_textureh : Texture
 @export var empty_texture : Texture = preload("uid://bsqv34s5n6jua")
 @export var empty_textureh : Texture = preload("uid://d4ejlsmnfb3fk")
+
+var scene : String
 
 const FOOD_PICKUP = preload("uid://bp3wrjfknjyxt")
 
@@ -29,22 +34,22 @@ func initialize() -> void:
 	counter.text = food_type + ": " + str(qty)
 	filled_texture = textures[food_type.to_upper()][0]
 	filled_textureh = textures[food_type.to_upper()][1]
+	match food_type:
+		"RICE": scene = "uid://sukerfnpt5d5"
+		"PANCAKE": scene = "uid://bf86igy00f6sq"
+		"HASHBROWN": scene = "uid://j42ywdsfuawg"
+		"HOTDOG": scene = "uid://bgi803ffeyeae"
+		"INIHAW": scene = "uid://cphb8p5iecw0j"
+		"TORTA": scene = "uid://dqrhc8pu68q17"
+		"LUMPIA": scene = "uid://b0yukpeuqjxne"
 	upd_texture()
 
-func _on_button_down() -> void:
-	match food_type:
-		"RICE": check_value_forbtn(state, "uid://sukerfnpt5d5", "rice")
-		"PANCAKE": check_value_forbtn(state, "uid://bf86igy00f6sq", "pancake")
-		"HASHBROWN": check_value_forbtn(state, "uid://j42ywdsfuawg", "hashbrown")
-		"HOTDOG": check_value_forbtn(state, "uid://bgi803ffeyeae", "hotdog")
-		"INIHAW": check_value_forbtn(state, "uid://cphb8p5iecw0j", "inihaw")
-		"TORTA": check_value_forbtn(state, "uid://dqrhc8pu68q17", "torta")
-		"LUMPIA": check_value_forbtn(state, "uid://b0yukpeuqjxne", "lumpia")
-
-func check_value_forbtn(cont_state, scene: String, foodStr : String):
+func check_value_forbtn(cont_state, foodStr : String):
 	match cont_state:
 		"EMPTY":
-			SceneLoader.load_scene(scene, 1)
+			ask_fillconf.emit(self)
+			var confirm : bool = await confirmation
+			if confirm: SceneLoader.load_scene(scene, 1)
 		"FILLED":
 			var food = FOOD_PICKUP.instantiate()
 			food.global_position = get_global_mouse_position()
@@ -68,3 +73,20 @@ func upd_texture():
 
 func _on_mouse_entered() -> void: counter_anim.play("EnterExit")
 func _on_mouse_exited() -> void: counter_anim.play_backwards("EnterExit")
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Click"):
+		match food_type:
+			"RICE": check_value_forbtn(state, "rice")
+			"PANCAKE": check_value_forbtn(state, "pancake")
+			"HASHBROWN": check_value_forbtn(state, "hashbrown")
+			"HOTDOG": check_value_forbtn(state, "hotdog")
+			"INIHAW": check_value_forbtn(state, "inihaw")
+			"TORTA": check_value_forbtn(state, "torta")
+			"LUMPIA": check_value_forbtn(state, "lumpia")
+	elif event.is_action_pressed("RightClick"): 
+		ask_fillconf.emit(self)
+		var confirm : bool = await confirmation
+		if confirm: 
+			SceneLoader.load_scene(scene, 1)

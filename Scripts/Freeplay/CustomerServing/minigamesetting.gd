@@ -1,6 +1,7 @@
 extends Control
 @onready var screen_btn: OptionButton = $PAUSEMENU/GRAPHICS/MarginContainer/VBoxContainer/FULLSCREEN/ScreenBTN
 @onready var aspect_btn: OptionButton = $"PAUSEMENU/GRAPHICS/MarginContainer/VBoxContainer/ASPECT RATIO/AspectBTN"
+@onready var pausemenu: TabContainer = $PAUSEMENU
 
 const RESOLUTION_DICTIONARY: Dictionary = {
 	"1280 x 720" : Vector2i(1280, 720),
@@ -16,6 +17,8 @@ const WINDOW_MODE_ARRAY : Array[String] = [
 ]
 
 func _ready() -> void:
+	get_parent().disable_mouse()
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_window_mode_items()
 	screen_btn.item_selected.connect(on_window_mode_selected)
 	aspect_btn.item_selected.connect(on_resolution_selected)

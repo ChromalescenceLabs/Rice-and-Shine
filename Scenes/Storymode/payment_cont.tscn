@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://b2x6isusl8rfr"]
+
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="1_1x8s6"]
+[ext_resource type="Script" uid="uid://bhka12sdcjdm8" path="res://Scripts/Freeplay/Storymode/payment_cont.gd" id="1_4duih"]
+
+[sub_resource type="Gradient" id="Gradient_4duih"]
+offsets = PackedFloat32Array(0.006024096)
+colors = PackedColorArray(0.2048805, 0.972369, 0.40011033, 0.6313726)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xl873"]
+gradient = SubResource("Gradient_4duih")
+fill_to = Vector2(0.98695654, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e4vm7"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 84.34
+angle_min = -720.0
+angle_max = 564.9
+inherit_velocity_ratio = 0.669
+velocity_pivot = Vector3(0.105, 0, 0)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+flatness = 0.263
+initial_velocity_min = 69.89
+initial_velocity_max = 129.2
+angular_velocity_min = -92.70001
+angular_velocity_max = 67.98998
+radial_accel_min = -2.2351742e-06
+radial_accel_max = -2.2351742e-06
+scale_min = 0.0
+scale_max = 0.29999998
+color = Color(0.99999934, 0.85008574, 0.67261523, 1)
+hue_variation_min = -0.94
+hue_variation_max = -0.77
+turbulence_enabled = true
+turbulence_noise_strength = 4.54
+turbulence_noise_scale = 7.31
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.363
+turbulence_initial_displacement_min = -100.0
+turbulence_initial_displacement_max = 100.0
+
+[sub_resource type="Animation" id="Animation_4duih"]
+resource_name = "Deduct"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeductEffect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 3), Vector2(2, 42)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeductEffect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e4vm7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeductEffect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeductEffect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c4sjg"]
+_data = {
+&"Deduct": SubResource("Animation_4duih"),
+&"RESET": SubResource("Animation_e4vm7")
+}
+
+[sub_resource type="Animation" id="Animation_c4sjg"]
+resource_name = "AddAnim"
+length = 0.93333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PaymentLabel:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.49, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.44231245, 0.9999997, 0.48181385, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xl873"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PaymentLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gvq5k"]
+_data = {
+&"AddAnim": SubResource("Animation_c4sjg"),
+&"RESET": SubResource("Animation_xl873")
+}
+
+[node name="PaymentCont" type="ColorRect" unique_id=476718731]
+self_modulate = Color(1, 1, 1, 0.57254905)
+offset_left = -86.0
+offset_right = 80.0
+offset_bottom = 50.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_4duih")
+
+[node name="PayParticles" type="GPUParticles2D" parent="." unique_id=960237617]
+position = Vector2(86, 28)
+emitting = false
+amount = 24
+texture = SubResource("GradientTexture2D_xl873")
+lifetime = 0.4
+one_shot = true
+speed_scale = 0.95
+randomness = 0.24
+process_material = SubResource("ParticleProcessMaterial_e4vm7")
+
+[node name="PaymentLabel" type="RichTextLabel" parent="." unique_id=899560391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_1x8s6")
+theme_override_font_sizes/normal_font_size = 35
+text = "₱ 0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeductEffect" type="RichTextLabel" parent="." unique_id=445294777]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 2.0
+offset_bottom = 2.9999924
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.9999998, 0.1724025, 0.14313203, 1)
+theme_override_fonts/normal_font = ExtResource("1_1x8s6")
+theme_override_font_sizes/normal_font_size = 35
+text = "- 10.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeductAnim" type="AnimationPlayer" parent="." unique_id=175363936]
+libraries/ = SubResource("AnimationLibrary_c4sjg")
+speed_scale = 3.0
+
+[node name="AddAnim" type="AnimationPlayer" parent="." unique_id=59475726]
+libraries/ = SubResource("AnimationLibrary_gvq5k")
+speed_scale = 2.0

@@ -19,6 +19,8 @@ var node_ready : bool = false
 var dragging : bool = false
 var in_trash : bool = false
 
+var customer_node : TextureButton
+
 var contentDict : Dictionary = {}
 var servableDict : Dictionary = {}
 
@@ -38,10 +40,14 @@ func _input(event: InputEvent) -> void:
 		dragging = true
 	elif event.is_action_released("Click"):
 		if servable:
-			get_tree().call_group("Customers", "receive_bowl", servableDict, self)
+			var customers = get_tree().get_nodes_in_group("Customers")
+			for i in customers: 
+				if i == customer_node:
+					i.receive_bowl(servableDict, self)
 			
 		get_tree().call_group("Customers", "upd_colmask", 2)
 		dragging = false
+		
 		if in_trash:
 			self.queue_free()
 		else:
@@ -88,6 +94,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 				contentDict[food_texture] = 1
 			else:
 				contentDict[food_texture] += 1
+	elif area is CustomerArea:
+		customer_node = area.get_parent()
 	elif area.get_parent() is Trashbin:
 		in_trash = true
 

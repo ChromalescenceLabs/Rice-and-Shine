@@ -5,26 +5,34 @@ const CUSTOMER = preload("uid://v1ke2myaadm3")
 const SERVE_BOWL = preload("uid://curuxisd3l6in")
 const FOOD_CONT = preload("uid://csole0o4ydmgm")
 
-@onready var bowl_labels: Node2D = $BowlLabels
-@onready var bowl_conts: HBoxContainer = $Control/BowlConts
-@onready var freed_bowls: Control = $Control/FreedBowls
-@onready var food_conts: HBoxContainer = $Control/ScrollContainer/FoodConts
-@onready var customers_cont: HBoxContainer = $Control/CustomersCont
-@onready var customer_happiness_logs: Node2D = $CustomerHappinessLogs
-@onready var week_day_num_cont_label: RichTextLabel = $WeekDayNumCont/WeekDayNumContLabel
+@onready var bowl_labels: Node2D = $Camera2D/CanvasLayer/BowlLabels
+@onready var bowl_conts: HBoxContainer = $Camera2D/CanvasLayer/Control/BowlConts
+@onready var freed_bowls: Control = $Camera2D/CanvasLayer/Control/FreedBowls
+@onready var food_conts: HBoxContainer = $Camera2D/CanvasLayer/Control/ScrollContainer/FoodConts
+@onready var customers_cont: HBoxContainer = $Camera2D/CanvasLayer/Control/CustomersCont
+@onready var customer_happiness_logs: Node2D = $Camera2D/CanvasLayer/CustomerHappinessLogs
 
-@onready var clock: Node2D = $Clock
+@onready var ui_anim: AnimationPlayer = $Camera2D/CanvasLayer/UI/UIAnim
+@onready var clock: Node2D = $Camera2D/CanvasLayer/UI/Clock
+@onready var payment_cont: ColorRect = $Camera2D/CanvasLayer/UI/PaymentCont
+@onready var minigame_setting: Control = $Camera2D/CanvasLayer/UI/MinigameBox/MinigameSetting
+@onready var week_day_num_cont_label: RichTextLabel = $Camera2D/CanvasLayer/UI/WeekDayNumCont/WeekDayNumContLabel
+@onready var food_cont_confirmation: Panel = $Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation
 
-@onready var add_bowl: Button = $Control/BowlConts/AddBowl
+@onready var add_bowl: Button = $Camera2D/CanvasLayer/Control/BowlConts/AddBowl
 var bowl_no : int = 0
 
 func _ready() -> void:
+	ui_anim.play("Ui_Enter")
+	payment_cont.set_pay(GlobalVars.payment)
+	GlobalVars.is_customer_serving = true
+	GlobalVars.current_scene = GlobalSaveManager.get_scene_path()
+	
 	if not GlobalScenes.add_customer.is_connected(reparent_customer):
 		GlobalScenes.add_customer.connect(reparent_customer)
 	if not GlobalScenes.remove_customer.is_connected(remove_customer):
 		GlobalScenes.remove_customer.connect(remove_customer)
 	instantiate_food_conts()
-	GlobalVars.is_in_story = true
 	
 	#Checks if Scene has saved data
 	var data = GlobalSaveManager.fetch_scene_persistent_value(GlobalSaveManager.get_scene_path())
@@ -40,10 +48,9 @@ func _ready() -> void:
 		# Check if a Node in that scene has data for FoodConts	
 		node_data = GlobalSaveManager.fetch_node_persistent_value(data, "FoodConts")
 		if not node_data == null:
-			var foodcontchildren = food_conts.get_children()
-				
-			for i in node_data.size():
-				foodcontchildren[i].qty = node_data[i]
+			for i in food_conts.get_children():
+				var qty = node_data[i.food_type.to_lower()]
+				i.qty = qty
 				
 		if GlobalScenes.get_node("StoryCustomers").get_child_count() > 0:
 			for i in GlobalScenes.get_node("StoryCustomers").get_children():
@@ -82,6 +89,8 @@ func instantiate_food_conts() -> void:
 		food_conts.add_child(foodcont)
 		foodcont.food_type = i.to_upper()
 		foodcont.initialize()
+		if not foodcont.ask_fillconf.is_connected(food_cont_confirmation.enter):
+			foodcont.ask_fillconf.connect(food_cont_confirmation.enter)
 
 func _on_add_bowl_pressed() -> void: add_bowl_func(false)
 
@@ -117,11 +126,11 @@ func _on_tree_exiting() -> void:
 	var bowl_data = []
 	for i in freed_bowls.get_children(): bowl_data.append(i.contentDict)
 	
-	var foodcont_data = []
-	for i in food_conts.get_children(): foodcont_data.append(i.qty)
+	var foodcontqty_data = {}
+	for i in food_conts.get_children(): foodcontqty_data[i.food_type.to_lower()] = i.qty
 	
 	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "Bowls", bowl_data)
-	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "FoodConts", foodcont_data)
+	GlobalSaveManager.add_persistent_value(GlobalSaveManager.get_scene_path(), "FoodConts", foodcontqty_data)
 
 func _on_customers_cont_child_exiting_tree(node: Node) -> void:
 	for i in customer_happiness_logs.overall_cont.get_children():
@@ -135,6 +144,9 @@ func remove_customer(node: TextureButton):
 
 func start_day_clock() -> void: clock.start_timer()
 func _on_clock_day_finished() -> void: day_finished.emit()
+
+func upd_pay(amt : float): payment_cont.upd_pay(amt)
+func deduct_pay(amt : float): payment_cont.deduct_pay(amt)
 
 func update_weekdaynum(weeknum : String, daynum : String):
 	week_day_num_cont_label.text = "WEEK " + weeknum + "," + " DAY " + daynum

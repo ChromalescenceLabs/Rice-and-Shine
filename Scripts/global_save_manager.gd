@@ -13,13 +13,15 @@ extends Node
 var current_save : Dictionary = {
 	scenes_persistence = {
 		#Scene Name: {
-		# Node Name: Data[],
-		# Node2 Name : Data[]
+		# Node Name: Data[] or Data{},
+		# Node2 Name : Data[] or Data{}
 		#}
 	}
 }
 
-func add_persistent_value(scene_name : String, node_name : String, data : Array) -> void:
+var foodqty : Dictionary = {}
+
+func add_persistent_value(scene_name : String, node_name : String, data : Variant) -> void:
 	if check_scene_persistent_value(scene_name):
 		current_save.scenes_persistence[scene_name][node_name] = data
 	else:

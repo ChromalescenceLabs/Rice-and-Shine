@@ -28,6 +28,7 @@ func _on_rotate_timer_timeout() -> void:
 		rotate_timer.stop()
 		
 	day_seconds += 1
+	@warning_ignore("integer_division")
 	var mins = int(day_seconds) / 60
 	var secs = int(day_seconds) % 60
 	

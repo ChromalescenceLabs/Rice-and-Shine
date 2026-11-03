@@ -1,14 +1,16 @@
 extends Button
 #i feel like yandev whenever i code, this feels embarassing
-@export var CHAP1: CanvasItem
-@export var CHAP2: CanvasItem
-@export var CHAP3: CanvasItem
+const LOADING_SCREEN_FADE = preload("uid://dnkgil0k2g8ap")
+
+@onready var CHAP1: TextureRect = $"../HBoxContainer/ScrollContainer/ObjectContainer/CHAP1"
+@onready var CHAP2: TextureRect = $"../HBoxContainer/ScrollContainer/ObjectContainer/CHAP2"
+@onready var CHAP3: TextureRect = $"../HBoxContainer/ScrollContainer/ObjectContainer/CHAP3"
 
 @onready var title: RichTextLabel = get_node("../../../../TITLE")
 @onready var status: RichTextLabel = get_node("../../../../STATUS")
 @onready var desc: RichTextLabel = get_node("../../../../DESCRIPTION")
 
-const CH1SCENE = "res://Scenes/Menus/week_select.tscn"
+const CH1SCENE = "uid://benuikw1v40e"
 
 var tween: Tween
 
@@ -19,18 +21,16 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	if not CHAP1 or not CHAP2 or not CHAP3:
 		return
-	if CHAP1.modulate == Color(1,1,1):
-		get_tree().change_scene_to_file(CH1SCENE)
-	elif CHAP2.modulate == Color(1,1,1):
+	if get_tree().current_scene.selected_indx == 0:
+		SceneLoader.load_scene(CH1SCENE, 1.5, LOADING_SCREEN_FADE)
+	elif get_tree().current_scene.selected_indx == 1:
 		status.text = "LOCKED"
 		await get_tree().create_timer(1.0).timeout
 		status.text = ""
-	elif CHAP3.modulate == Color(1,1,1):
+	elif get_tree().current_scene.selected_indx == 2:
 		desc.text = "LOCKED"
 		await get_tree().create_timer(1.0).timeout
 		desc.text = ""
-	else: 
-		pass
 
 func _on_mouse_entered() -> void:
 	if not CHAP1 or not CHAP2 or not CHAP3:
@@ -41,29 +41,28 @@ func _on_mouse_entered() -> void:
 		
 	tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	
-	if CHAP1.modulate == Color(1,1,1):
+	print(get_tree().current_scene.selected_indx)
+	if get_tree().current_scene.selected_indx == 0:
 		title.text = "CHAPTER ONE"
 		desc.text = "CHAPTER 1 DESCRIPTION"
 		tween.tween_property(CHAP2,"modulate:a",0,0.25)
-		tween.tween_property(title, "position",Vector2(694,234),0.25)
-		tween.tween_property(desc, "position",Vector2(694,303),0.25)
+		tween.tween_property(title, "position",Vector2(650,234),0.25)
+		tween.tween_property(desc, "position",Vector2(650,303),0.25)
 		
-	elif CHAP2.modulate == Color(1,1,1):
+	elif get_tree().current_scene.selected_indx == 1:
 		title.text = "CHAPTER TWO"
 		desc.text = "CHAPTER 2 DESCRIPTION"
 		tween.tween_property(CHAP1, "modulate:a",0,0.25)
 		tween.tween_property(CHAP3, "modulate:a",0,0.25)
-		tween.tween_property(title, "position",Vector2(694,234),0.25)
-		tween.tween_property(desc, "position",Vector2(694,303),0.25)
+		tween.tween_property(title, "position",Vector2(650,234),0.25)
+		tween.tween_property(desc, "position",Vector2(650,303),0.25)
 		
-	elif CHAP3.modulate == Color(1,1,1):
+	elif get_tree().current_scene.selected_indx == 2:
 		title.text = "CHAPTER THREE"
 		desc.text = "CHAPTER 3 DESCRIPTION"
 		tween.tween_property(CHAP2, "modulate:a",0,0.25)
-		tween.tween_property(title, "position",Vector2(196,234),0.25)
-		tween.tween_property(desc, "position",Vector2(196,303),0.25)
-	else: 
-		pass
+		tween.tween_property(title, "position",Vector2(250,234),0.25)
+		tween.tween_property(desc, "position",Vector2(250,303),0.25)
 
 func _on_mouse_exited() -> void:
 	if not CHAP1 or not CHAP2 or not CHAP3:
