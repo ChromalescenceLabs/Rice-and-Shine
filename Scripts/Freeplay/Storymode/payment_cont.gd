@@ -1,6 +1,6 @@
 extends ColorRect
-signal pay_done
-var paying : bool = false
+#signal pay_done
+#var paying : bool = false
 
 @onready var payment_label: RichTextLabel = $PaymentLabel
 @onready var deduct_effect: RichTextLabel = $DeductEffect
@@ -10,13 +10,20 @@ var paying : bool = false
 @onready var add_anim: AnimationPlayer = $AddAnim
 var current_pay : float = 0.0
 
+func _ready() -> void:
+	if not GlobalVars.paid.is_connected(upd_pay):
+		GlobalVars.paid.connect(upd_pay)
+
 func upd_pay(amt : float):
-	pay_particles.emitting = true
-	add_anim.play("AddAnim")
-	payment_label.text = "₱ %.2f" % float(current_pay + amt)
-	current_pay += amt
+	if not amt < 0:
+		pay_particles.emitting = true
+		add_anim.play("AddAnim")
+		payment_label.text = "₱ %.2f" % float(current_pay + amt)
+		current_pay += amt
+	else:
+		deduct_pay(amt)
 	
-	#tried to implement rolling but like it might bug if you get 
+	#tried to implement rolling but like it might bug if it gets called 3 times in a row - jazz
 	#if not paying: 
 		#paying = true
 		#pay_particles.emitting = true
@@ -47,7 +54,9 @@ func upd_pay(amt : float):
 		#pay_done.emit()
 
 func deduct_pay(amt : float):
-	deduct_effect.text = "- $%.2f" % amt
-	payment_label.text = "₱ $%.2f" % float(current_pay - amt)
+	amt = abs(amt)
+	deduct_anim.play("Deduct")
+	deduct_effect.text = "- %.2f" % amt
+	payment_label.text = "₱ %.2f" % float(current_pay - amt)
 	current_pay -= amt
 	
