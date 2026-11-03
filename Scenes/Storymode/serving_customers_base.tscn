@@ -227,7 +227,15 @@ offset_top = -66.355
 offset_bottom = -66.355
 mouse_filter = 1
 
-[node name="FoodContConfirmation" type="Panel" parent="Camera2D/CanvasLayer/UI" unique_id=1070790843]
+[node name="FoodConfBox" type="Panel" parent="Camera2D/CanvasLayer/UI" unique_id=2092333187]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 2
+layout_mode = 0
+offset_right = 1279.0
+offset_bottom = 720.0
+mouse_filter = 1
+
+[node name="FoodContConfirmation" type="Panel" parent="Camera2D/CanvasLayer/UI/FoodConfBox" unique_id=1070790843]
 modulate = Color(1, 1, 1, 0)
 z_index = 11
 layout_mode = 1
@@ -236,17 +244,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 445.0
-offset_top = 247.0
-offset_right = 835.0
-offset_bottom = 472.99976
+offset_left = -194.5
+offset_top = -113.0
+offset_right = 195.5
+offset_bottom = 112.999756
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(0.5, 0.5)
 mouse_filter = 1
 script = ExtResource("2_kfeux")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/UI/FoodContConfirmation" unique_id=1264757498]
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation" unique_id=1264757498]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -254,7 +262,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BoxText" type="RichTextLabel" parent="Camera2D/CanvasLayer/UI/FoodContConfirmation/VBoxContainer" unique_id=1039108838]
+[node name="BoxText" type="RichTextLabel" parent="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation/VBoxContainer" unique_id=1039108838]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("9_gwu6q")
@@ -264,24 +272,24 @@ Food Minigame?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonCont" type="HBoxContainer" parent="Camera2D/CanvasLayer/UI/FoodContConfirmation/VBoxContainer" unique_id=735161070]
+[node name="ButtonCont" type="HBoxContainer" parent="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation/VBoxContainer" unique_id=735161070]
 layout_mode = 2
 
-[node name="Yes" type="Button" parent="Camera2D/CanvasLayer/UI/FoodContConfirmation/VBoxContainer/ButtonCont" unique_id=1479309535]
+[node name="Yes" type="Button" parent="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation/VBoxContainer/ButtonCont" unique_id=1479309535]
 custom_minimum_size = Vector2(0, 40.285)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("9_gwu6q")
 text = "Yes"
 
-[node name="No" type="Button" parent="Camera2D/CanvasLayer/UI/FoodContConfirmation/VBoxContainer/ButtonCont" unique_id=1559985041]
+[node name="No" type="Button" parent="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation/VBoxContainer/ButtonCont" unique_id=1559985041]
 custom_minimum_size = Vector2(0, 40.285)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("9_gwu6q")
 text = "No"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/CanvasLayer/UI/FoodContConfirmation" unique_id=65393583]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation" unique_id=65393583]
 libraries/ = SubResource("AnimationLibrary_7cc47")
 speed_scale = 3.0
 
@@ -327,6 +335,6 @@ layout_mode = 1
 [connection signal="child_exiting_tree" from="Camera2D/CanvasLayer/Control/CustomersCont" to="." method="_on_customers_cont_child_exiting_tree"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
 [connection signal="child_exiting_tree" from="Camera2D/CanvasLayer/Control/FreedBowls" to="." method="_on_freed_bowls_child_exiting_tree"]
-[connection signal="pressed" from="Camera2D/CanvasLayer/UI/FoodContConfirmation/VBoxContainer/ButtonCont/Yes" to="Camera2D/CanvasLayer/UI/FoodContConfirmation" method="_on_yes_pressed"]
-[connection signal="pressed" from="Camera2D/CanvasLayer/UI/FoodContConfirmation/VBoxContainer/ButtonCont/No" to="Camera2D/CanvasLayer/UI/FoodContConfirmation" method="_on_no_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation/VBoxContainer/ButtonCont/Yes" to="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation" method="_on_yes_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation/VBoxContainer/ButtonCont/No" to="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation" method="_on_no_pressed"]
 [connection signal="day_finished" from="Camera2D/CanvasLayer/UI/Clock" to="." method="_on_clock_day_finished"]

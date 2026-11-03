@@ -17,7 +17,7 @@ const FOOD_CONT = preload("uid://csole0o4ydmgm")
 @onready var payment_cont: ColorRect = $Camera2D/CanvasLayer/UI/PaymentCont
 @onready var minigame_setting: Control = $Camera2D/CanvasLayer/UI/MinigameSetting
 @onready var week_day_num_cont_label: RichTextLabel = $Camera2D/CanvasLayer/UI/WeekDayNumCont/WeekDayNumContLabel
-@onready var food_cont_confirmation: Panel = $Camera2D/CanvasLayer/UI/FoodContConfirmation
+@onready var food_cont_confirmation: Panel = $Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation
 
 @onready var add_bowl: Button = $Camera2D/CanvasLayer/Control/BowlConts/AddBowl
 var bowl_no : int = 0
