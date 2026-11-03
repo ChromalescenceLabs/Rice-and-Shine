@@ -377,3 +377,28 @@ Anyway YES I'll be able to work on the tutorial next week; and hopefully get a d
 On 11/01/2026, I did 5 hours of art when drawing new customers, rendered them, and rendered the last batch of customers from before. I then tweaked the chapter select menu for a couple of hours by adding smoother anims to make it look less janky, and added the art i made for it so far.
 
 The next day, I did my remaining hours through coding the fade transition for the panels where the art will be, and implemented and animated the new description and title. Afterwards, I worked on the settings / pause menu for the customer serving screen containing the settings for audio, graphics, and misc (however misc isnt done yet but shhhh it will be in due time dw).
+
+
+
+
+## WEEK 8: NOVEMBER 2 - NOVEMBER 8
+### 1. ALLIUMC
+
+### 2. CLIF
+
+### 3. JAZZ
+ALRIGHTT I'm happy with my progress this week; I think every single base system needed for the story mode has been accounted for! This doesn't include the miscellaneous stuff like upgrades implementation, special events, customer affinity; but every single system that these systems will be built on are FINISHED! With this week, I went around the project looking for bugs (with the exception of the minigames). For the specifics I:
+- Added scene change logic to each of the minigames, specifically where the minigame takes you to the previous scene you were in (if you were in a story mode level), or the minigame select scene if you accessed it from there and not the story mode levels
+- Readded the functionality where the quantity of the food containers are increased after completing its specific minigame
+- Added the payment label in the customer serving base, alongside a system where it can be updated from anywhere.
+- Added a confirmation for if the player actually wants to go to the cooking scene when it is empty, or when the food container is right clicked.
+- Added some smaller additions like a hover texture for customers, as well as a mouse input stopper for background nodes when the settings menu is opened in the customer serving base (which Raph worked on last week!)
+And yup, I fixed a bunch of bugs I found across the game:
+- Fixed the janky animation in the chapter select carousel & description animations
+- Fixed the customer wants initialization bug where the range wasn't dynamic depending on the unlocked foods
+- Fixed the bug where customers triggered the received bowl function if they have the same order
+
+All in all, I am once again happy with what I've done this week! I had to work on my hours early this week because of the amount of schoolwork I'd need to do later on this week, so I'd be handing over some finalization stuff over to my dear teammates :] Will continue to work on this game even after this week, since we really want to have more polish on it!
+
+  
+### 4. JEANKAMAGALING
