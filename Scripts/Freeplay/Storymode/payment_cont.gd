@@ -14,6 +14,9 @@ func _ready() -> void:
 	if not GlobalVars.paid.is_connected(upd_pay):
 		GlobalVars.paid.connect(upd_pay)
 
+func set_pay(amt: float): #Use this function when SETTING the amount
+	payment_label.text = "₱ %.2f" % float(current_pay + amt)
+
 func upd_pay(amt : float):
 	if not amt < 0:
 		pay_particles.emitting = true

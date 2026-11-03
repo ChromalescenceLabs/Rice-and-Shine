@@ -18,6 +18,42 @@ script = ExtResource("4_pbxxb")
 [sub_resource type="Resource" id="Resource_tbsef"]
 script = ExtResource("4_pbxxb")
 
+[sub_resource type="Animation" id="Animation_kfeux"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -66.355)]
+}
+
+[sub_resource type="Animation" id="Animation_v6xow"]
+resource_name = "Ui_Enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -66.355), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kfeux"]
+_data = {
+&"RESET": SubResource("Animation_kfeux"),
+&"Ui_Enter": SubResource("Animation_v6xow")
+}
+
 [node name="ServingCustomersBase" type="Node2D" unique_id=1724706127]
 script = ExtResource("1_5av7u")
 
@@ -115,18 +151,26 @@ position = Vector2(1280, 459)
 [node name="CustomerHappinessLogs" parent="." unique_id=23440669 instance=ExtResource("19_cfcfs")]
 metadata/_edit_lock_ = true
 
-[node name="Clock" parent="." unique_id=1251713995 instance=ExtResource("7_ay3sv")]
+[node name="UI" type="Control" parent="." unique_id=1826625500]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -66.355
+offset_right = 40.0
+offset_bottom = -26.355003
+
+[node name="Clock" parent="UI" unique_id=1251713995 instance=ExtResource("7_ay3sv")]
 position = Vector2(472, -1)
 
-[node name="WeekDayNumCont" type="ColorRect" parent="." unique_id=1520676838]
+[node name="WeekDayNumCont" type="ColorRect" parent="UI" unique_id=1520676838]
 self_modulate = Color(1, 1, 1, 0.57254905)
+layout_mode = 0
 offset_left = 97.0
 offset_right = 349.0
 offset_bottom = 50.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="WeekDayNumContLabel" type="RichTextLabel" parent="WeekDayNumCont" unique_id=332988703]
+[node name="WeekDayNumContLabel" type="RichTextLabel" parent="UI/WeekDayNumCont" unique_id=332988703]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -140,14 +184,20 @@ text = "WEEK 1, DAY 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PaymentCont" parent="." unique_id=476718731 instance=ExtResource("10_v6xow")]
+[node name="PaymentCont" parent="UI" unique_id=476718731 instance=ExtResource("10_v6xow")]
+layout_mode = 0
 offset_left = 1021.0
 offset_right = 1187.0
 
-[node name="MinigameSetting" parent="." unique_id=124713226 instance=ExtResource("10_rsqi0")]
+[node name="MinigameSetting" parent="UI" unique_id=124713226 instance=ExtResource("10_rsqi0")]
+layout_mode = 1
+
+[node name="UIAnim" type="AnimationPlayer" parent="UI" unique_id=1128892244]
+libraries/ = SubResource("AnimationLibrary_kfeux")
+speed_scale = 3.0
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="child_exiting_tree" from="Control/CustomersCont" to="." method="_on_customers_cont_child_exiting_tree"]
 [connection signal="pressed" from="Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
 [connection signal="child_exiting_tree" from="Control/FreedBowls" to="." method="_on_freed_bowls_child_exiting_tree"]
-[connection signal="day_finished" from="Clock" to="." method="_on_clock_day_finished"]
+[connection signal="day_finished" from="UI/Clock" to="." method="_on_clock_day_finished"]

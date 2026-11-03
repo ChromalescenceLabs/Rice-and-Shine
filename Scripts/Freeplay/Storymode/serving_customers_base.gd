@@ -11,15 +11,19 @@ const FOOD_CONT = preload("uid://csole0o4ydmgm")
 @onready var food_conts: HBoxContainer = $Control/ScrollContainer/FoodConts
 @onready var customers_cont: HBoxContainer = $Control/CustomersCont
 @onready var customer_happiness_logs: Node2D = $CustomerHappinessLogs
-@onready var week_day_num_cont_label: RichTextLabel = $WeekDayNumCont/WeekDayNumContLabel
-@onready var payment_cont: ColorRect = $PaymentCont
 
-@onready var clock: Node2D = $Clock
+@onready var ui_anim: AnimationPlayer = $UI/UIAnim
+@onready var clock: Node2D = $UI/Clock
+@onready var payment_cont: ColorRect = $UI/PaymentCont
+@onready var minigame_setting: Control = $UI/MinigameSetting
+@onready var week_day_num_cont_label: RichTextLabel = $UI/WeekDayNumCont/WeekDayNumContLabel
 
 @onready var add_bowl: Button = $Control/BowlConts/AddBowl
 var bowl_no : int = 0
 
 func _ready() -> void:
+	ui_anim.play("Ui_Enter")
+	payment_cont.set_pay(GlobalVars.payment)
 	GlobalVars.is_customer_serving = true
 	GlobalVars.current_scene = GlobalSaveManager.get_scene_path()
 	
