@@ -97,6 +97,13 @@ func update_texture() -> void:
 		"tatay": 
 			self.texture_normal = TATAY
 			self.texture_hover = TATAY_H
+			
+func upd_texture_tohover() -> void:
+	match customer_info["CustomerType"]:
+		"student": self.texture_normal = STUDENT_H
+		"lolo": self.texture_normal = LOLO_H
+		"marites": self.texture_normal = MARITES_H
+		"tatay": self.texture_normal = TATAY_H
 		
 func instantiate_hapbar(texture : String, node : TextureButton):
 	var hapbar = HAPPINESS_BAR.instantiate()
@@ -180,10 +187,12 @@ func _on_customer_area_area_entered(area: Area2D) -> void:
 	if area is BowlArea: 
 		var bowl = area.get_parent() as TextureRect
 		bowl.set("servable", true)
+		upd_texture_tohover()
 func _on_customer_area_area_exited(area: Area2D) -> void:
 	if area is BowlArea: 
 		var bowl = area.get_parent() as TextureRect
 		bowl.set("servable", false)
+		update_texture()
 
 # Triggers when Bowl is Served
 func receive_bowl(bowlContents : Dictionary, bowl : TextureRect):
