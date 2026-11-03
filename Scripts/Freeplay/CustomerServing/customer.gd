@@ -16,6 +16,11 @@ const MARITES = preload("uid://gh1at5fdem7h")
 const STUDENT = preload("uid://cww1ucg2b6yl2")
 const TATAY = preload("uid://crl6y8dtirpjd")
 
+const LOLO_H = preload("uid://dfhfqfqwla0wh")
+const MARITES_H = preload("uid://d3wpc3k8lj0ki")
+const STUDENT_H = preload("uid://dao4w44212erp")
+const TATAY_H = preload("uid://by8bv4xoeyryp")
+
 #Hapbar Icon Textures
 var icon_textures : Dictionary = {
 	"student" : preload("uid://cbnq3e8e222c5"),
@@ -80,10 +85,18 @@ func enter():
 # Function to Update Texture Based on the Customer's Type
 func update_texture() -> void:
 	match customer_info["CustomerType"]:
-		"student": self.texture_normal = STUDENT
-		"lolo": self.texture_normal = LOLO
-		"marites": self.texture_normal = MARITES
-		"tatay": self.texture_normal = TATAY
+		"student": 
+			self.texture_normal = STUDENT
+			self.texture_hover = STUDENT_H
+		"lolo": 
+			self.texture_normal = LOLO
+			self.texture_hover = LOLO_H
+		"marites": 
+			self.texture_normal = MARITES
+			self.texture_hover = MARITES_H
+		"tatay": 
+			self.texture_normal = TATAY
+			self.texture_hover = TATAY_H
 		
 func instantiate_hapbar(texture : String, node : TextureButton):
 	var hapbar = HAPPINESS_BAR.instantiate()
@@ -94,7 +107,8 @@ func instantiate_hapbar(texture : String, node : TextureButton):
 	
 	return hapbar
 
-func upd_colmask(layer : int): customer_area.collision_mask = layer
+func upd_colmask(layer : int): 
+	customer_area.collision_mask = layer
 	
 # Triggers Dialogue
 func _on_pressed() -> void:

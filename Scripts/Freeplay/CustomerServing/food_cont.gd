@@ -23,7 +23,7 @@ var textures : Dictionary = {
 	"LUMPIA": [preload("uid://dafnwn4p4j7hm"), preload("uid://uhja1md1q4k8")]
 }
 
-var qty : int = 0:
+var qty : int = 5:
 	set(value):
 		if not qty == value:
 			qty = value
