@@ -102,7 +102,6 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 libraries/ = SubResource("AnimationLibrary_nptdr")
 speed_scale = 3.0
 
-[connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
