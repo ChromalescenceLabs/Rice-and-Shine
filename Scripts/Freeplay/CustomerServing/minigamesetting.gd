@@ -17,6 +17,7 @@ const WINDOW_MODE_ARRAY : Array[String] = [
 ]
 
 func _ready() -> void:
+	get_parent().disable_mouse()
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_window_mode_items()
 	screen_btn.item_selected.connect(on_window_mode_selected)

@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="9_gwu6q"]
 [ext_resource type="PackedScene" uid="uid://c3unocg7kw2e3" path="res://Scenes/Menus/servingsetting.tscn" id="10_rsqi0"]
 [ext_resource type="PackedScene" uid="uid://b2x6isusl8rfr" path="res://Scenes/Storymode/payment_cont.tscn" id="10_v6xow"]
+[ext_resource type="Script" uid="uid://dik28fnxapswn" path="res://Scripts/Freeplay/Storymode/minigame_box.gd" id="12_ha1s0"]
 [ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="18_xd6nw"]
 [ext_resource type="PackedScene" uid="uid://dpjeqy63lxdvr" path="res://Scenes/Freeplay/CustomerServing/customer_happiness_logs.tscn" id="19_cfcfs"]
 
@@ -328,7 +329,15 @@ offset_right = 1187.0
 libraries/ = SubResource("AnimationLibrary_kfeux")
 speed_scale = 3.0
 
-[node name="MinigameSetting" parent="Camera2D/CanvasLayer/UI" unique_id=124713226 instance=ExtResource("10_rsqi0")]
+[node name="MinigameBox" type="Panel" parent="Camera2D/CanvasLayer/UI" unique_id=37085098]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 2
+layout_mode = 0
+offset_right = 1303.0
+offset_bottom = 860.355
+script = ExtResource("12_ha1s0")
+
+[node name="MinigameSetting" parent="Camera2D/CanvasLayer/UI/MinigameBox" unique_id=124713226 instance=ExtResource("10_rsqi0")]
 layout_mode = 1
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

@@ -32,6 +32,7 @@ bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
 bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
 
 [node name="Control" type="Control" unique_id=124713226]
+process_mode = 3
 z_index = 300
 layout_mode = 3
 anchors_preset = 15
