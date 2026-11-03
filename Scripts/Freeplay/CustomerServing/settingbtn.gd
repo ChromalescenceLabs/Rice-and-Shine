@@ -9,6 +9,7 @@ func _ready() -> void:
 	visibility = false
 
 func _on_pressed() -> void:
+	get_parent().mouse_filter = Control.MOUSE_FILTER_IGNORE
 	if tween and tween.is_valid():
 		tween.kill()
 	

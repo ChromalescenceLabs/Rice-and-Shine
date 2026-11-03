@@ -1,4 +1,7 @@
 extends TextureButton
+signal ask_fillconf(node : TextureButton)
+signal confirmation(confirm : bool)
+
 @onready var counter_anim: AnimationPlayer = $CounterAnim
 @onready var counter: RichTextLabel = $Counter
 
@@ -18,7 +21,7 @@ var textures : Dictionary = {
 	"LUMPIA": [preload("uid://dafnwn4p4j7hm"), preload("uid://uhja1md1q4k8")]
 }
 
-var qty : int = 5:
+var qty : int = 0:
 	set(value):
 		if not qty == value:
 			qty = value
@@ -44,7 +47,9 @@ func _on_button_down() -> void:
 func check_value_forbtn(cont_state, scene: String, foodStr : String):
 	match cont_state:
 		"EMPTY":
-			SceneLoader.load_scene(scene, 1)
+			ask_fillconf.emit(self)
+			var confirm : bool = await confirmation
+			if confirm: SceneLoader.load_scene(scene, 1)
 		"FILLED":
 			var food = FOOD_PICKUP.instantiate()
 			food.global_position = get_global_mouse_position()
@@ -68,3 +73,7 @@ func upd_texture():
 
 func _on_mouse_entered() -> void: counter_anim.play("EnterExit")
 func _on_mouse_exited() -> void: counter_anim.play_backwards("EnterExit")
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed("RightClick"): ask_fillconf.emit(self)

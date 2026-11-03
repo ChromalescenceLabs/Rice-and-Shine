@@ -51,7 +51,7 @@ signal paid(amt: float)
 var character_name : String
 var character_order : String
 # Change this value when adding or deducting pay. PUT THE VALUE OF THE AMOUNT TO BE DEDUCTED/ADDED, not the final amount
-var payment : float = 100.0:
+var payment : float = 0.0:
 	set(value):
 		payment += value
 		paid.emit(value)

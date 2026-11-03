@@ -5,20 +5,21 @@ const CUSTOMER = preload("uid://v1ke2myaadm3")
 const SERVE_BOWL = preload("uid://curuxisd3l6in")
 const FOOD_CONT = preload("uid://csole0o4ydmgm")
 
-@onready var bowl_labels: Node2D = $BowlLabels
-@onready var bowl_conts: HBoxContainer = $Control/BowlConts
-@onready var freed_bowls: Control = $Control/FreedBowls
-@onready var food_conts: HBoxContainer = $Control/ScrollContainer/FoodConts
-@onready var customers_cont: HBoxContainer = $Control/CustomersCont
-@onready var customer_happiness_logs: Node2D = $CustomerHappinessLogs
+@onready var bowl_labels: Node2D = $Camera2D/CanvasLayer/BowlLabels
+@onready var bowl_conts: HBoxContainer = $Camera2D/CanvasLayer/Control/BowlConts
+@onready var freed_bowls: Control = $Camera2D/CanvasLayer/Control/FreedBowls
+@onready var food_conts: HBoxContainer = $Camera2D/CanvasLayer/Control/ScrollContainer/FoodConts
+@onready var customers_cont: HBoxContainer = $Camera2D/CanvasLayer/Control/CustomersCont
+@onready var customer_happiness_logs: Node2D = $Camera2D/CanvasLayer/CustomerHappinessLogs
 
-@onready var ui_anim: AnimationPlayer = $UI/UIAnim
-@onready var clock: Node2D = $UI/Clock
-@onready var payment_cont: ColorRect = $UI/PaymentCont
-@onready var minigame_setting: Control = $UI/MinigameSetting
-@onready var week_day_num_cont_label: RichTextLabel = $UI/WeekDayNumCont/WeekDayNumContLabel
+@onready var ui_anim: AnimationPlayer = $Camera2D/CanvasLayer/UI/UIAnim
+@onready var clock: Node2D = $Camera2D/CanvasLayer/UI/Clock
+@onready var payment_cont: ColorRect = $Camera2D/CanvasLayer/UI/PaymentCont
+@onready var minigame_setting: Control = $Camera2D/CanvasLayer/UI/MinigameSetting
+@onready var week_day_num_cont_label: RichTextLabel = $Camera2D/CanvasLayer/UI/WeekDayNumCont/WeekDayNumContLabel
+@onready var food_cont_confirmation: Panel = $Camera2D/CanvasLayer/UI/FoodContConfirmation
 
-@onready var add_bowl: Button = $Control/BowlConts/AddBowl
+@onready var add_bowl: Button = $Camera2D/CanvasLayer/Control/BowlConts/AddBowl
 var bowl_no : int = 0
 
 func _ready() -> void:
@@ -88,6 +89,8 @@ func instantiate_food_conts() -> void:
 		food_conts.add_child(foodcont)
 		foodcont.food_type = i.to_upper()
 		foodcont.initialize()
+		if not foodcont.ask_fillconf.is_connected(food_cont_confirmation.enter):
+			foodcont.ask_fillconf.connect(food_cont_confirmation.enter)
 
 func _on_add_bowl_pressed() -> void: add_bowl_func(false)
 
