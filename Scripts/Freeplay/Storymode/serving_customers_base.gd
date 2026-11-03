@@ -12,6 +12,7 @@ const FOOD_CONT = preload("uid://csole0o4ydmgm")
 @onready var customers_cont: HBoxContainer = $Control/CustomersCont
 @onready var customer_happiness_logs: Node2D = $CustomerHappinessLogs
 @onready var week_day_num_cont_label: RichTextLabel = $WeekDayNumCont/WeekDayNumContLabel
+@onready var payment_cont: ColorRect = $PaymentCont
 
 @onready var clock: Node2D = $Clock
 
@@ -136,6 +137,9 @@ func remove_customer(node: TextureButton):
 
 func start_day_clock() -> void: clock.start_timer()
 func _on_clock_day_finished() -> void: day_finished.emit()
+
+func upd_pay(amt : float): payment_cont.upd_pay(amt)
+func deduct_pay(amt : float): payment_cont.deduct_pay(amt)
 
 func update_weekdaynum(weeknum : String, daynum : String):
 	week_day_num_cont_label.text = "WEEK " + weeknum + "," + " DAY " + daynum

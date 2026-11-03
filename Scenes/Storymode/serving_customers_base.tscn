@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://btok7aisotru6" path="res://Scenes/Storymode/day_timer.tscn" id="7_ay3sv"]
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="9_gwu6q"]
 [ext_resource type="PackedScene" uid="uid://c3unocg7kw2e3" path="res://Scenes/Menus/minigamesetting.tscn" id="10_rsqi0"]
+[ext_resource type="PackedScene" uid="uid://b2x6isusl8rfr" path="res://Scenes/Storymode/payment_cont.tscn" id="10_v6xow"]
 [ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="18_xd6nw"]
 [ext_resource type="PackedScene" uid="uid://dpjeqy63lxdvr" path="res://Scenes/Freeplay/CustomerServing/customer_happiness_logs.tscn" id="19_cfcfs"]
 
@@ -105,6 +106,8 @@ metadata/_custom_type_script = "uid://bgqglerkcylxx"
 layout_mode = 2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
+[node name="BowlLabels" type="Node2D" parent="." unique_id=80505418]
+
 [node name="TrashbinTab" parent="." unique_id=18345153 instance=ExtResource("18_xd6nw")]
 z_index = 2
 position = Vector2(1280, 459)
@@ -114,8 +117,6 @@ metadata/_edit_lock_ = true
 
 [node name="Clock" parent="." unique_id=1251713995 instance=ExtResource("7_ay3sv")]
 position = Vector2(472, -1)
-
-[node name="BowlLabels" type="Node2D" parent="." unique_id=80505418]
 
 [node name="WeekDayNumCont" type="ColorRect" parent="." unique_id=1520676838]
 self_modulate = Color(1, 1, 1, 0.57254905)
@@ -139,25 +140,9 @@ text = "WEEK 1, DAY 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PaymentCont" type="ColorRect" parent="." unique_id=1722601376]
-self_modulate = Color(1, 1, 1, 0.57254905)
-offset_left = 1035.0
-offset_right = 1201.0
-offset_bottom = 50.0
-color = Color(0, 0, 0, 1)
-
-[node name="PaymentLabel" type="RichTextLabel" parent="PaymentCont" unique_id=1079570038]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("9_gwu6q")
-theme_override_font_sizes/normal_font_size = 35
-text = "₱ 10.00"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="PaymentCont" parent="." unique_id=476718731 instance=ExtResource("10_v6xow")]
+offset_left = 1021.0
+offset_right = 1187.0
 
 [node name="MinigameSetting" parent="." unique_id=124713226 instance=ExtResource("10_rsqi0")]
 
