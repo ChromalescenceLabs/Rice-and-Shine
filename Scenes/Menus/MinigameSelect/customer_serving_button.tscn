@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://bswxrlauo47g5"]
+
+[ext_resource type="Script" uid="uid://ccthg64qnawp6" path="res://Scripts/Freeplay/CustomerServing/customer_serving_button.gd" id="1_s2m02"]
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="2_hytr6"]
+[ext_resource type="Texture2D" uid="uid://cy0g21ihckpr8" path="res://Assets/Sprites/Serving/CustomerButtonArrow.png" id="3_pip02"]
+
+[sub_resource type="Gradient" id="Gradient_nkxdo"]
+colors = PackedColorArray(0.28118682, 0.28118688, 0.28118682, 0, 0.2901961, 0.5764706, 1, 0.85882354)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cuu35"]
+gradient = SubResource("Gradient_nkxdo")
+
+[sub_resource type="Animation" id="Animation_pip02"]
+resource_name = "GradientFade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GradientTexture:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(288.335, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jk05y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GradientTexture:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(288, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hytr6"]
+_data = {
+&"GradientFade": SubResource("Animation_pip02"),
+&"RESET": SubResource("Animation_jk05y")
+}
+
+[sub_resource type="Animation" id="Animation_va15n"]
+resource_name = "ArrowAnim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arrow:offset_transform_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-51.035, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel:offset_transform_position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-68.515, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_13onq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arrow:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel:offset_transform_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_13onq"]
+_data = {
+&"ArrowAnim": SubResource("Animation_va15n"),
+&"RESET": SubResource("Animation_13onq")
+}
+
+[node name="CustomerServingButton" type="Control" unique_id=694102346]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s2m02")
+
+[node name="GradientTexture" type="TextureRect" parent="." unique_id=305674138]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -292.0
+grow_horizontal = 0
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(288, 0)
+texture = SubResource("GradientTexture2D_cuu35")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=154852696]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 943.0
+offset_top = 661.0
+offset_right = 1307.0
+offset_bottom = 722.0
+offset_transform_enabled = true
+theme_override_fonts/normal_font = ExtResource("2_hytr6")
+theme_override_font_sizes/normal_font_size = 39
+text = "PRACTICE SERVING →"
+fit_content = true
+
+[node name="Arrow" type="TextureRect" parent="." unique_id=1568260357]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -50.0
+offset_right = -16.0
+offset_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 2
+offset_transform_enabled = true
+texture = ExtResource("3_pip02")
+
+[node name="GradientAnim" type="AnimationPlayer" parent="." unique_id=1668157212]
+libraries/ = SubResource("AnimationLibrary_hytr6")
+speed_scale = 3.0
+
+[node name="ArrowAnim" type="AnimationPlayer" parent="." unique_id=1452355186]
+libraries/ = SubResource("AnimationLibrary_13onq")
+speed_scale = 3.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=974459726]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[connection signal="mouse_entered" from="ColorRect" to="." method="_on_color_rect_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect" to="." method="_on_color_rect_mouse_exited"]
