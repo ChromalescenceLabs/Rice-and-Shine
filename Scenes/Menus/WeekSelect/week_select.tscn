@@ -7,10 +7,15 @@
 [ext_resource type="Shader" uid="uid://dnoh7wcodxqge" path="res://Shaders/weekoutline.gdshader" id="4_dy6mn"]
 [ext_resource type="Texture2D" uid="uid://b5s3gdbnh5kai" path="res://Assets/Sprites/Menus/ChapterSelect/week one.png" id="5_x3cja"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="6_uty2n"]
+[ext_resource type="Texture2D" uid="uid://bd42trqejp1by" path="res://Assets/Sprites/Menus/ChapterSelect/WEEK FIVE.png" id="7_w0hie"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="7_wxy26"]
-[ext_resource type="Script" uid="uid://dnxascxpbslyk" path="res://Scripts/Menus/WeekSelect/daybuttons.gd" id="8_7slvy"]
+[ext_resource type="Texture2D" uid="uid://bynax6ikcrfhi" path="res://Assets/Sprites/Menus/ChapterSelect/WEEK FOUR.png" id="8_2nnt3"]
+[ext_resource type="Script" uid="uid://b04ssmipr1bcp" path="res://Scripts/Menus/WeekSelect/daybuttons.gd" id="8_7slvy"]
+[ext_resource type="Texture2D" uid="uid://mlyddi7or8f6" path="res://Assets/Sprites/Menus/ChapterSelect/WEEK THREE.png" id="9_cml1r"]
 [ext_resource type="PackedScene" uid="uid://x8t8c1s62my5" path="res://Scenes/Menus/WeekSelect/week_day_button.tscn" id="9_w0hie"]
 [ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Sprites/Menus/ChapterSelect/tempbutton.png" id="10_2nnt3"]
+[ext_resource type="Texture2D" uid="uid://crwdy2fe3tvdl" path="res://Assets/Sprites/Menus/ChapterSelect/WEEK TWO.png" id="10_2uvjk"]
+[ext_resource type="Texture2D" uid="uid://bs8v8y0r01ty6" path="res://Assets/Sprites/Menus/ChapterSelect/week one.png" id="11_agtb7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_154id"]
 resource_local_to_scene = true
@@ -115,43 +120,43 @@ script = ExtResource("3_b1xbh")
 material = SubResource("ShaderMaterial_154id")
 position = Vector2(210, 327)
 scale = Vector2(0.71999997, 0.71999997)
-texture = ExtResource("5_x3cja")
+texture = ExtResource("5_wxy26")
 
 [node name="WeekSix" type="Sprite2D" parent="Weeks" unique_id=1968593448]
 material = SubResource("ShaderMaterial_yvrl2")
 position = Vector2(260, 326)
 scale = Vector2(0.72, 0.72)
-texture = ExtResource("5_x3cja")
+texture = ExtResource("6_7slvy")
 
 [node name="WeekFive" type="Sprite2D" parent="Weeks" unique_id=1212685339]
 material = SubResource("ShaderMaterial_1ovjf")
 position = Vector2(300, 327)
 scale = Vector2(0.72, 0.72)
-texture = ExtResource("5_x3cja")
+texture = ExtResource("7_w0hie")
 
 [node name="WeekFour" type="Sprite2D" parent="Weeks" unique_id=1813907432]
 material = SubResource("ShaderMaterial_fcg0u")
 position = Vector2(350, 325)
 scale = Vector2(0.72, 0.72)
-texture = ExtResource("5_x3cja")
+texture = ExtResource("8_2nnt3")
 
 [node name="WeekThree" type="Sprite2D" parent="Weeks" unique_id=1511646685]
 material = SubResource("ShaderMaterial_5ofv5")
 position = Vector2(400, 326)
 scale = Vector2(0.7199999, 0.7199999)
-texture = ExtResource("5_x3cja")
+texture = ExtResource("9_cml1r")
 
 [node name="WeekTwo" type="Sprite2D" parent="Weeks" unique_id=115854033]
 material = SubResource("ShaderMaterial_v84np")
 position = Vector2(440, 325)
 scale = Vector2(0.7200001, 0.7200001)
-texture = ExtResource("5_x3cja")
+texture = ExtResource("10_2uvjk")
 
 [node name="WeekOne" type="Sprite2D" parent="Weeks" unique_id=120636608]
 material = SubResource("ShaderMaterial_w4b85")
 position = Vector2(504, 326)
 scale = Vector2(0.72, 0.72)
-texture = ExtResource("5_x3cja")
+texture = ExtResource("11_agtb7")
 
 [node name="WeekScroll" type="ScrollContainer" parent="." unique_id=1922362238]
 layout_mode = 0

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/Menus/MinigameSelect/minigame_select.gd" id="1_r8em7"]
 [ext_resource type="Script" uid="uid://v14b0q5pkknt" path="res://Scripts/Menus/MinigameSelect/bg_image.gd" id="2_towaq"]
 [ext_resource type="PackedScene" uid="uid://bkjubyh6wcmam" path="res://Scenes/Menus/MinigameSelect/minigame_select_background.tscn" id="3_0i2wu"]
+[ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/Sprites/Menus/ModeSelect/placeholderbg.png" id="3_7sbiv"]
 [ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Sprites/Menus/MinigameSelect/RICE.png" id="4_b8gtf"]
 [ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/Sprites/Menus/MinigameSelect/pancake.png" id="5_7sbiv"]
 [ext_resource type="Texture2D" uid="uid://makh4q5kl2nj" path="res://Assets/Sprites/Menus/MinigameSelect/hasbrown.png" id="6_4f08l"]
@@ -12,9 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://dcnnxndx0orea" path="res://Assets/Sprites/Menus/MinigameSelect/pancit.png" id="10_towaq"]
 [ext_resource type="Texture2D" uid="uid://b4lajgqgw3lqx" path="res://Assets/Sprites/Menus/MinigameSelect/minigame_bg_placeholder.jpg" id="10_vulic"]
 [ext_resource type="Script" uid="uid://bqo17hfbf73tx" path="res://Scripts/Menus/MinigameSelect/decreasingcontainer.gd" id="11_71n7r"]
+[ext_resource type="PackedScene" uid="uid://bswxrlauo47g5" path="res://Scenes/Menus/MinigameSelect/customer_serving_button.tscn" id="12_b8gtf"]
 [ext_resource type="PackedScene" uid="uid://wy5lkqs1nt26" path="res://Scenes/Menus/MinigameSelect/minigame_button.tscn" id="12_m0yh6"]
-[ext_resource type="Texture2D" uid="uid://biymioqcxvn8k" path="res://Assets/Sprites/Menus/MinigameSelect/PLATE.png" id="13_auk73"]
 [ext_resource type="Script" uid="uid://di8gnpcdeqlvd" path="res://Scripts/Menus/MinigameSelect/minigame_description.gd" id="14_g7xsl"]
+[ext_resource type="Texture2D" uid="uid://31xvlqj43fqg" path="res://Assets/PLATE.png" id="14_towaq"]
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="15_0i2wu"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Sprites/Logo.png" id="15_xtjuv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuu35"]
@@ -126,7 +129,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_towaq")
 
-[node name="rice" parent="Bg Image" unique_id=38212654 instance=ExtResource("3_0i2wu")]
+[node name="rice" parent="Bg Image" unique_id=576893648 instance=ExtResource("3_0i2wu")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -136,7 +139,6 @@ offset_bottom = 720.0
 grow_horizontal = 1
 grow_vertical = 1
 texture = ExtResource("4_b8gtf")
-bg_texture = ExtResource("4_b8gtf")
 
 [node name="pancake" parent="Bg Image" unique_id=1741403080 instance=ExtResource("3_0i2wu")]
 layout_mode = 0
@@ -287,6 +289,17 @@ grow_horizontal = 1
 grow_vertical = 1
 texture = ExtResource("10_vulic")
 
+[node name="bg" parent="Bg Image" unique_id=38212654 instance=ExtResource("3_0i2wu")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1240.0
+offset_bottom = 680.0
+grow_horizontal = 1
+grow_vertical = 1
+texture = ExtResource("3_7sbiv")
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=931682143]
 offset_left = -34.0
 offset_top = -12.0
@@ -300,27 +313,23 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ServeCustomers" type="Button" parent="New Selection" unique_id=1623527969]
-layout_mode = 0
-offset_left = 863.0
-offset_top = 21.0
-offset_right = 1262.0
-offset_bottom = 109.0
-theme_override_font_sizes/font_size = 30
-text = "Serve Customers Sandbox"
+[node name="CustomerServingButton" parent="New Selection" unique_id=694102346 instance=ExtResource("12_b8gtf")]
+layout_mode = 1
+offset_right = 1238.0
+offset_bottom = 684.0
 
 [node name="Container" type="Container" parent="New Selection" unique_id=158561353]
 layout_mode = 0
 offset_left = -803.0
 offset_top = -425.0
-offset_right = -803.0
-offset_bottom = -425.0
+offset_right = 787.45996
+offset_bottom = 1165.46
 size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("11_71n7r")
 rings = 1
 ring_spacing = 10.0
-start_radius = 558.13
+start_radius = 563.23
 items_per_ring = 20
 rotation_offset_degrees = 360.0
 auto_size = true
@@ -449,13 +458,15 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="Plate" type="Sprite2D" parent="New Selection" unique_id=1406370295]
 position = Vector2(-36, 392)
 scale = Vector2(1.5338885, 1.5127248)
-texture = ExtResource("13_auk73")
+texture = ExtResource("14_towaq")
 
 [node name="Minigame Description" type="RichTextLabel" parent="." unique_id=1240179745]
 offset_left = 31.0
 offset_top = 395.0
 offset_right = 362.0375
 offset_bottom = 592.99915
+theme_override_fonts/normal_font = ExtResource("15_0i2wu")
+theme_override_font_sizes/normal_font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_cuu35")
 text = "Minigame Description
 "
@@ -472,7 +483,6 @@ libraries/ = SubResource("AnimationLibrary_btba4")
 speed_scale = 3.0
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="pressed" from="New Selection/ServeCustomers" to="." method="_on_serve_customers_pressed"]
 [connection signal="mouse_entered" from="New Selection/Container" to="New Selection/Container" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="New Selection/Container" to="Minigame Description" method="_on_container_mouse_entered"]
 [connection signal="mouse_exited" from="New Selection/Container" to="New Selection/Container" method="_on_mouse_exited"]

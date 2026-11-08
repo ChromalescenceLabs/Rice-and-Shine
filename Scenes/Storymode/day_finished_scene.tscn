@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://clyovkxg4cj4f" path="res://addons/perspective_quads/scripts/nodes/perspective_viewport_container_2d.gd" id="3_q7gy3"]
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="5_kvwaw"]
 [ext_resource type="Texture2D" uid="uid://dfrm6w264b84k" path="res://Assets/Sprites/StoryMode/PaymentBGAnim.png" id="6_aqdl4"]
-[ext_resource type="StyleBox" uid="uid://dsabeskj33dsp" path="res://Scenes/Menus/MainMenu/MainMenuNormalButtonStyle.tres" id="7_6d1l8"]
-[ext_resource type="StyleBox" uid="uid://ru223rr65m5a" path="res://Scenes/Menus/MainMenu/MainMenuHoverandPressStyle.tres" id="8_i78ar"]
+[ext_resource type="StyleBox" uid="uid://dsabeskj33dsp" path="res://Assets/Styles/MainMenuNormalButtonStyle.tres" id="7_6d1l8"]
+[ext_resource type="StyleBox" uid="uid://ru223rr65m5a" path="res://Assets/Styles/MainMenuHoverandPressStyle.tres" id="8_i78ar"]
 
 [sub_resource type="Animation" id="Animation_rpx48"]
 resource_name = "PaperEntrance"

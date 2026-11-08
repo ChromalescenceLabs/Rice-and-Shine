@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://l0j8k6ylewc7"]
+
+[ext_resource type="Script" uid="uid://pvct6nqug6lt" path="res://Scenes/pointlights.gd" id="1_u175r"]
+[ext_resource type="Texture2D" uid="uid://ckij18mlcxt5f" path="res://Assets/Sprites/StoryMode/BaseLevelBG.png" id="2_tbpxi"]
+[ext_resource type="Script" uid="uid://cajba5kw3on7x" path="res://Scenes/lighting.gd" id="2_u175r"]
+
+[sub_resource type="Gradient" id="Gradient_u175r"]
+offsets = PackedFloat32Array(0.443299, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qj2yo"]
+gradient = SubResource("Gradient_u175r")
+fill = 1
+fill_from = Vector2(0.5, 0.491453)
+fill_to = Vector2(0.03846154, 0.37606838)
+
+[sub_resource type="Gradient" id="Gradient_dxlox"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tbpxi"]
+gradient = SubResource("Gradient_dxlox")
+fill = 2
+
+[sub_resource type="Gradient" id="Gradient_tbpxi"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5u6cm"]
+gradient = SubResource("Gradient_tbpxi")
+fill_from = Vector2(0.47863248, 0.047008548)
+fill_to = Vector2(0.508547, 1)
+
+[sub_resource type="Gradient" id="Gradient_ojur4"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.24054983, 0.44329897, 0.55670106, 0.7010309, 0.8213059)
+colors = PackedColorArray(0.16282937, 0.045126274, 0.4026894, 1, 0.30696008, 0.07813739, 0.41949466, 1, 0.6019745, 0.25777054, 0.6083442, 1, 0.96849793, 0.44466203, 0.56450623, 1, 0.971641, 0.69396204, 0.8193418, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qj2yo"]
+gradient = SubResource("Gradient_ojur4")
+
+[node name="Control" type="Control" unique_id=1759434216]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MOTOR LIGHT1" type="PointLight2D" parent="." unique_id=1579357505]
+position = Vector2(140.49998, 252.5)
+scale = Vector2(2.9531248, 3.140625)
+energy = 0.5
+texture = SubResource("GradientTexture2D_qj2yo")
+script = ExtResource("1_u175r")
+
+[node name="MOTOR LIGHT2" type="PointLight2D" parent="." unique_id=1596122423]
+position = Vector2(430.5, 252.5)
+scale = Vector2(3.703125, 3.140625)
+energy = 0.5
+texture = SubResource("GradientTexture2D_qj2yo")
+script = ExtResource("1_u175r")
+
+[node name="BUILDING LIGHT" type="PointLight2D" parent="." unique_id=1802755808]
+position = Vector2(636, 236.99995)
+scale = Vector2(20.0625, 7.5624986)
+texture = SubResource("GradientTexture2D_tbpxi")
+script = ExtResource("1_u175r")
+
+[node name="GENERAL LIGHT" type="PointLight2D" parent="." unique_id=889654822]
+visible = false
+position = Vector2(640.5, 361.49997)
+scale = Vector2(20.046875, 11.359375)
+texture = SubResource("GradientTexture2D_5u6cm")
+script = ExtResource("1_u175r")
+
+[node name="remove this, 4 testing only" type="TextureRect" parent="." unique_id=869170960]
+visible = false
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_tbpxi")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1824511662]
+script = ExtResource("2_u175r")
+gradient = SubResource("GradientTexture1D_qj2yo")

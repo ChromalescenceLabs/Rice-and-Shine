@@ -11,7 +11,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Logo:scale")
+tracks/0/path = NodePath("CanvasLayer/Node2D/Logo:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +26,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Logo:scale")
+tracks/0/path = NodePath("CanvasLayer/Node2D/Logo:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,7 +38,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/Logo:rotation")
+tracks/1/path = NodePath("CanvasLayer/Node2D/Logo:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -59,7 +59,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Logo:rotation")
+tracks/0/path = NodePath("CanvasLayer/Node2D/Logo:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -76,7 +76,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Logo:rotation")
+tracks/0/path = NodePath("CanvasLayer/Node2D/Logo:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -111,10 +111,13 @@ libraries/ = SubResource("AnimationLibrary_68uam")
 autoplay = &"rotate"
 speed_scale = 3.0
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1007173906]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=106247684]
+layer = 5000
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer" unique_id=1007173906]
 position = Vector2(0, -770.15)
 
-[node name="Logo" type="TextureRect" parent="Node2D" unique_id=545526605]
+[node name="Logo" type="TextureRect" parent="CanvasLayer/Node2D" unique_id=545526605]
 offset_left = -322.0
 offset_top = -223.00006
 offset_right = 1598.0
@@ -124,7 +127,7 @@ scale = Vector2(0.275, 0.275)
 pivot_offset = Vector2(960, 576)
 texture = ExtResource("2_m6rkq")
 
-[node name="BG" type="TextureRect" parent="Node2D" unique_id=1179107135]
+[node name="BG" type="TextureRect" parent="CanvasLayer/Node2D" unique_id=1179107135]
 z_index = -1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_j3pel")

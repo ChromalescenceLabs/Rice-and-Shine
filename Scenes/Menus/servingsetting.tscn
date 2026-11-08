@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://c3unocg7kw2e3"]
 
-[ext_resource type="Script" uid="uid://xm8obiul63lg" path="res://Scripts/Freeplay/CustomerServing/minigamesetting.gd" id="1_l2wb2"]
-[ext_resource type="Texture2D" uid="uid://dukph3yu4xg1" path="res://Assets/Sprites/Menus/setting.png" id="2_bgulr"]
-[ext_resource type="Script" uid="uid://b1wtlrg6rsv7r" path="res://Scripts/Freeplay/CustomerServing/settingbtn.gd" id="3_lb48p"]
-[ext_resource type="Script" uid="uid://cq82el718nd8f" path="res://Scripts/Menus/MainMenu/master_slide.gd" id="4_tr5k1"]
-[ext_resource type="Script" uid="uid://vel24jfsjgg2" path="res://Scripts/Menus/Options/sfx_slide.gd" id="5_4eqot"]
-[ext_resource type="Script" uid="uid://c4ycfn1q82esg" path="res://Scripts/Menus/Options/music_slide.gd" id="6_e4xjs"]
+[ext_resource type="Texture2D" uid="uid://dukph3yu4xg1" path="res://Assets/Sprites/Menus/setting.png" id="1_0wv7b"]
+[ext_resource type="Script" uid="uid://xm8obiul63lg" path="res://Scripts/Freeplay/CustomerServing/minigamesetting.gd" id="1_1tygw"]
+[ext_resource type="Script" uid="uid://b1wtlrg6rsv7r" path="res://Scripts/Freeplay/CustomerServing/settingbtn.gd" id="2_8dvo0"]
+[ext_resource type="Script" uid="uid://cq82el718nd8f" path="res://Scripts/Menus/MainMenu/master_slide.gd" id="3_06lvd"]
+[ext_resource type="Script" uid="uid://vel24jfsjgg2" path="res://Scripts/Menus/Options/sfx_slide.gd" id="4_1tygw"]
+[ext_resource type="Script" uid="uid://c4ycfn1q82esg" path="res://Scripts/Menus/Options/music_slide.gd" id="5_gcvbt"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="7_gcvbt"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="8_y4r18"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32akw"]
 corner_radius_top_left = 5
@@ -31,26 +33,46 @@ bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyvwt"]
 bg_color = Color(0.36862746, 0.7921569, 0.81960785, 1)
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_1tygw"]
+
+[sub_resource type="Resource" id="Resource_56ox0"]
+script = ExtResource("8_y4r18")
+
+[sub_resource type="Resource" id="Resource_i4v6c"]
+script = ExtResource("8_y4r18")
+
 [node name="Control" type="Control" unique_id=124713226]
-process_mode = 3
-z_index = 300
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_l2wb2")
+script = ExtResource("1_1tygw")
+metadata/_edit_vertical_guides_ = [-150.0]
 
 [node name="Settings" type="TextureButton" parent="." unique_id=1679595592]
 layout_mode = 0
-offset_right = 53.224136
-offset_bottom = 49.0
-texture_normal = ExtResource("2_bgulr")
-texture_pressed = ExtResource("2_bgulr")
-texture_hover = ExtResource("2_bgulr")
+offset_right = 63.0
+offset_bottom = 58.0
+texture_normal = ExtResource("1_0wv7b")
+texture_pressed = ExtResource("1_0wv7b")
+texture_hover = ExtResource("1_0wv7b")
 stretch_mode = 0
-script = ExtResource("3_lb48p")
+script = ExtResource("2_8dvo0")
+
+[node name="ACHIEVEMENTS" type="TextureButton" parent="." unique_id=299587955]
+visible = false
+layout_mode = 0
+offset_left = 80.0
+offset_top = 2.0
+offset_right = 143.0
+offset_bottom = 60.0
+texture_normal = ExtResource("1_0wv7b")
+texture_pressed = ExtResource("1_0wv7b")
+texture_hover = ExtResource("1_0wv7b")
+stretch_mode = 0
+script = ExtResource("2_8dvo0")
 
 [node name="Panel" type="Panel" parent="." unique_id=1126503066]
 visible = false
@@ -96,7 +118,6 @@ offset_left = 407.0
 offset_top = 56.0
 offset_right = 869.0
 offset_bottom = 677.0
-mouse_filter = 2
 theme_override_font_sizes/font_size = 30
 current_tab = 2
 
@@ -135,7 +156,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_i4v6c")
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("4_tr5k1")
+script = ExtResource("3_06lvd")
 
 [node name="SFXLABEL" type="RichTextLabel" parent="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer" unique_id=1062155189]
 custom_minimum_size = Vector2(0, 50)
@@ -155,7 +176,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_qunpu")
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("5_4eqot")
+script = ExtResource("4_1tygw")
 
 [node name="MUSICLABEL" type="RichTextLabel" parent="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer" unique_id=548011574]
 custom_minimum_size = Vector2(0, 50)
@@ -174,7 +195,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_gyvwt")
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("6_e4xjs")
+script = ExtResource("5_gcvbt")
 
 [node name="GRAPHICS" type="MarginContainer" parent="PAUSEMENU" unique_id=513740606]
 visible = false
@@ -225,6 +246,10 @@ theme_override_constants/separation = 40
 [node name="AspectBTN" type="OptionButton" parent="PAUSEMENU/GRAPHICS/MarginContainer/VBoxContainer/ASPECT RATIO" unique_id=425654426]
 layout_mode = 2
 
+[node name="Label" type="Label" parent="PAUSEMENU/GRAPHICS" unique_id=542705386]
+layout_mode = 2
+text = "note: doesnt appear to be functioning atm"
+
 [node name="MISC" type="MarginContainer" parent="PAUSEMENU" unique_id=1722086022]
 layout_mode = 2
 metadata/_tab_index = 2
@@ -236,38 +261,132 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="reminder to self ignore" type="RichTextLabel" parent="PAUSEMENU/MISC/MarginContainer" unique_id=897236040]
-visible = false
-layout_mode = 2
-text = "UNDER CONSTRUCTION
-YOU ARE IN MISC
-
-tba :
-statistics
-achievements? maybe?
-language toggle
-credits
-
-"
-horizontal_alignment = 1
-
 [node name="VBoxContainer" type="VBoxContainer" parent="PAUSEMENU/MISC/MarginContainer" unique_id=336761258]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=1525436569]
+[node name="LANGUAGE" type="Label" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=1525436569]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 text = "LANGUAGE TOGGLE (WIP)"
 
 [node name="ENGLISH" type="CheckBox" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=391468303]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
+button_pressed = true
+button_group = SubResource("ButtonGroup_1tygw")
 text = "ENGLISH"
 
 [node name="TAGALOG" type="CheckBox" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=919458252]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
+button_group = SubResource("ButtonGroup_1tygw")
 text = "TAGALOG"
 
+[node name="BOTH" type="CheckBox" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=428978908]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+button_group = SubResource("ButtonGroup_1tygw")
+text = "BOTH"
+
+[node name="MarginContainer" type="MarginContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=846051480]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="PLAYER STATISTICS" type="Label" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=1543890189]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "PLAYER STATISTICS (WIP)"
+
+[node name="TOTAL TIME" type="HBoxContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/PLAYER STATISTICS" unique_id=972830773]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 365.0
+offset_bottom = 84.0
+
+[node name="MarginContainer3" type="MarginContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/PLAYER STATISTICS/TOTAL TIME" unique_id=540038931]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="TITLE" type="Label" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/PLAYER STATISTICS/TOTAL TIME" unique_id=1948309917]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "TOTAL TIME PLAYED:"
+
+[node name="Label" type="Label" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/PLAYER STATISTICS/TOTAL TIME" unique_id=1433395572]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "LOREM IPSUM"
+
+[node name="TOTAL CUST" type="HBoxContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/PLAYER STATISTICS" unique_id=1543330442]
+layout_mode = 0
+offset_top = 83.0
+offset_right = 383.0
+offset_bottom = 125.0
+
+[node name="MarginContainer3" type="MarginContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/PLAYER STATISTICS/TOTAL CUST" unique_id=112275280]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="TITLE" type="Label" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/PLAYER STATISTICS/TOTAL CUST" unique_id=2146325730]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "CUSTOMERS  SERVED:"
+
+[node name="Label" type="Label" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/PLAYER STATISTICS/TOTAL CUST" unique_id=783138877]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "LOREM IPSUM"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=125825358]
+layout_mode = 2
+theme_override_constants/margin_bottom = 90
+
+[node name="ACHIEVEMENTS" type="Label" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=1165072899]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "ACHIEVEMENTS (WIP)"
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/ACHIEVEMENTS" unique_id=1267130945]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 418.0
+offset_bottom = 216.0
+script = ExtResource("7_gcvbt")
+wheel_scroll_damper = SubResource("Resource_56ox0")
+dragging_scroll_damper = SubResource("Resource_i4v6c")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer" unique_id=1132444952]
+layout_mode = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer" unique_id=1444465912]
+layout_mode = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="ACHIEVEMENT 1" type="HBoxContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer" unique_id=1757362024]
+layout_mode = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer/ACHIEVEMENT 1" unique_id=714377243]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="TITLE" type="Label" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer/ACHIEVEMENT 1/MarginContainer3" unique_id=1389362426]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 20
+text = "LOREM IPSUM"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=1949120310]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_bottom = 80
+
 [connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
+[connection signal="pressed" from="ACHIEVEMENTS" to="ACHIEVEMENTS" method="_on_pressed"]
 [connection signal="value_changed" from="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MASTERLABEL/MASTERSLIDE" to="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MASTERLABEL/MASTERSLIDE" method="_on_value_changed"]
 [connection signal="value_changed" from="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/SFXLABEL/SFXSLIDE" to="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/SFXLABEL/SFXSLIDE" method="_on_value_changed"]
 [connection signal="value_changed" from="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MUSICLABEL/MUSICSLIDE" to="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MUSICLABEL/MUSICSLIDE" method="_on_value_changed"]

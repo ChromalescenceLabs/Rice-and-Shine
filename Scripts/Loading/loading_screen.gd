@@ -1,5 +1,5 @@
 extends Node
-@onready var node_2d: Node2D = $Node2D
+@onready var node_2d: Node2D = $CanvasLayer/Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
 
