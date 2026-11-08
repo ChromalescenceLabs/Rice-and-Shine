@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if hovering_on_pan:
-		if pancState == 3:
+		if pancState == 4:
 			if event.is_action_pressed("Click"):
 				if pancCooked < 5:
 					pancState = 0
@@ -69,6 +69,15 @@ var pancState : int = 0:
 				var check : bool = i.owner == pan
 				if not check:
 					if not i.name == "PanBatterStage3":
+						i.visible = false
+					else:
+						i.visible = true
+						cookTimer()
+		elif pancState == 4:
+			for i in pan.get_children():
+				var check : bool = i.owner == pan
+				if not check:
+					if not i.name == "PanBatterStage4":
 						i.visible = false
 					else:
 						i.visible = true
