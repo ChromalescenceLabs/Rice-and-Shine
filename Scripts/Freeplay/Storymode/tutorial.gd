@@ -3,11 +3,15 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $ColorRect/AnimationPlayer
 @onready var bg: Control = $BG
 @onready var add_bowl: Button = $ServingCustomersBase/Camera2D/CanvasLayer/Control/BowlConts/AddBowl
+@onready var food_cont: TextureButton = $FoodCont
 
+var doneBowl = false 
+var doneCustomer = false
 
 func _ready() -> void:
-	#ialogueManager.show_dialogue_balloon(preload("uid://oivqombfgdyo"), "start")
-	playFade(2, 1)
+	DialogueManager.show_dialogue_balloon(preload("uid://oivqombfgdyo"), "start")
+	#playFade(2,1)
+	GlobalVars.connect("customerDone", customerDone)
 
 func playFade(goIn, goOut):
 	animation_player.play("fade")
@@ -22,11 +26,20 @@ func playFade(goIn, goOut):
 	bgOut.visible = false
 	animation_player.play_backwards("fade")
 	if goIn==2:
+		serving_customers_base.find_child("CanvasLayer").visible=true
 		serving_customers_base.start_day_clock()
 		GlobalScenes.story_customers.add_customer_func()
 		await DialogueManager.dialogue_ended
 		DialogueManager.show_dialogue_balloon(preload("uid://oivqombfgdyo"), "firstCustomer")
 
-
 func _on_add_bowl_pressed() -> void:
-	DialogueManager.show_dialogue_balloon(preload("uid://oivqombfgdyo"), "clickAddBowl")
+	if not doneBowl:
+		DialogueManager.show_dialogue_balloon(preload("uid://oivqombfgdyo"), "clickAddBowl")
+		doneBowl = true
+
+func customerDone():
+	if not doneCustomer:
+		DialogueManager.show_dialogue_balloon(preload("uid://oivqombfgdyo"), "correct")
+		GlobalScenes.set_spawn_customers(3, 10)
+		doneCustomer = true
+		#end

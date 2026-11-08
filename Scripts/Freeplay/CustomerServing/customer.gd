@@ -1,5 +1,8 @@
 extends TextureButton
 const CUSTOMERS_BALLOON = preload("uid://cm4n4dbr706j")
+
+signal done
+
 @onready var order_label_animator: AnimationPlayer = $OrderLabel/OrderLabelAnimator
 
 @onready var order_container: HBoxContainer = $OrderLabel/SmoothScrollContainer/OrderContainer
@@ -212,3 +215,4 @@ func receive_bowl(bowlContents : Dictionary, bowl : TextureRect):
 		animation_player.play_backwards("enter_exit")
 		await animation_player.animation_finished
 		self.queue_free()
+		GlobalVars.customerDone.emit()
