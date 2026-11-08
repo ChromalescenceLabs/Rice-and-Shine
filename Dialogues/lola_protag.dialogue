@@ -34,7 +34,12 @@ Grandmother: Goodmorning, apo. Here, you should eat first.
 Mary Suarez: Thank you po.
 do playFade(1,0)
 Narrator: As you are putting away the dishes, a customer walks to the store and orders. It's time to start the day.
-do playFade(2,1)
+do playFade(2,1) 
+Narrator: Oh look, it's your first customer for today! Hurry and go talk to them!
+=> END	
 
 ~ firstCustomer
-Narrator: Oh look, it's your first customer for today! Hurry and go talk to them!
+Narrator: Now, get the click the (+) button to get a bowl
+
+~ clickAddBowl
+Narrator: Great, now put the rice on the container

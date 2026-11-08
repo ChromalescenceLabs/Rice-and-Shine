@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://76ktarh6syn6" path="res://Scripts/Freeplay/Storymode/tutorial.gd" id="1_8r4ik"]
 [ext_resource type="PackedScene" uid="uid://bs83acug1c5xl" path="res://Scenes/Storymode/serving_customers_base.tscn" id="1_gm7gl"]
+[ext_resource type="PackedScene" uid="uid://csole0o4ydmgm" path="res://Scenes/Freeplay/CustomerServing/food_cont.tscn" id="3_j7ggw"]
 [ext_resource type="Texture2D" uid="uid://ckij18mlcxt5f" path="res://Assets/Sprites/StoryMode/BaseLevelBG.png" id="3_kehq1"]
 
 [sub_resource type="Animation" id="Animation_kehq1"]
@@ -64,9 +65,14 @@ color = Color(0.040268797, 0.040268805, 0.040268797, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=937191821]
 libraries/ = SubResource("AnimationLibrary_1lslc")
 
+[node name="FoodCont" parent="." unique_id=218262186 instance=ExtResource("3_j7ggw")]
+visible = false
+
 [node name="ServingCustomersBase" parent="." unique_id=1724706127 instance=ExtResource("1_gm7gl")]
 
-[node name="CanvasLayer" parent="ServingCustomersBase" index="0" unique_id=1000877256]
+[node name="CanvasLayer" parent="ServingCustomersBase/Camera2D" parent_id_path=PackedInt32Array(1724706127, 468022268) index="0" unique_id=1000877256]
 layer = 0
+
+[connection signal="pressed" from="ServingCustomersBase/Camera2D/CanvasLayer/Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
 
 [editable path="ServingCustomersBase"]

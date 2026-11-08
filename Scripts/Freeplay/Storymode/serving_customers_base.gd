@@ -55,7 +55,7 @@ func _ready() -> void:
 		if GlobalScenes.get_node("StoryCustomers").get_child_count() > 0:
 			for i in GlobalScenes.get_node("StoryCustomers").get_children():
 				i.reparent(customers_cont)
-				
+
 func reparent_customer():
 	var hapbarchildren = GlobalScenes.story_customers.get_children(true)
 	hapbarchildren[0].reparent(customers_cont)
