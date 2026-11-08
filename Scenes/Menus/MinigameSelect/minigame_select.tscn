@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
 
-[ext_resource type="Script" uid="uid://dr4faug6om6a4" path="res://Scripts/Menus/MinigameSelect/minigame_select.gd" id="1_r8em7"]
-[ext_resource type="Script" uid="uid://bf3pgbn574oxb" path="res://Scripts/Menus/MinigameSelect/bg_image.gd" id="2_towaq"]
+[ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/Menus/MinigameSelect/minigame_select.gd" id="1_r8em7"]
+[ext_resource type="Script" uid="uid://v14b0q5pkknt" path="res://Scripts/Menus/MinigameSelect/bg_image.gd" id="2_towaq"]
 [ext_resource type="PackedScene" uid="uid://bkjubyh6wcmam" path="res://Scenes/Menus/MinigameSelect/minigame_select_background.tscn" id="3_0i2wu"]
 [ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/Sprites/Menus/ModeSelect/placeholderbg.png" id="3_7sbiv"]
 [ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Sprites/Menus/MinigameSelect/RICE.png" id="4_b8gtf"]
@@ -12,11 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Sprites/Menus/MinigameSelect/torta.png" id="9_cqt1s"]
 [ext_resource type="Texture2D" uid="uid://dcnnxndx0orea" path="res://Assets/Sprites/Menus/MinigameSelect/pancit.png" id="10_towaq"]
 [ext_resource type="Texture2D" uid="uid://b4lajgqgw3lqx" path="res://Assets/Sprites/Menus/MinigameSelect/minigame_bg_placeholder.jpg" id="10_vulic"]
-[ext_resource type="Texture2D" uid="uid://31xvlqj43fqg" path="res://Assets/PLATE.png" id="14_towaq"]
 [ext_resource type="Script" uid="uid://bqo17hfbf73tx" path="res://Scripts/Menus/MinigameSelect/decreasingcontainer.gd" id="11_71n7r"]
 [ext_resource type="PackedScene" uid="uid://bswxrlauo47g5" path="res://Scenes/Menus/MinigameSelect/customer_serving_button.tscn" id="12_b8gtf"]
 [ext_resource type="PackedScene" uid="uid://wy5lkqs1nt26" path="res://Scenes/Menus/MinigameSelect/minigame_button.tscn" id="12_m0yh6"]
 [ext_resource type="Script" uid="uid://di8gnpcdeqlvd" path="res://Scripts/Menus/MinigameSelect/minigame_description.gd" id="14_g7xsl"]
+[ext_resource type="Texture2D" uid="uid://31xvlqj43fqg" path="res://Assets/PLATE.png" id="14_towaq"]
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="15_0i2wu"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Sprites/Logo.png" id="15_xtjuv"]
 
@@ -139,7 +139,6 @@ offset_bottom = 720.0
 grow_horizontal = 1
 grow_vertical = 1
 texture = ExtResource("4_b8gtf")
-bg_texture = ExtResource("4_b8gtf")
 
 [node name="pancake" parent="Bg Image" unique_id=1741403080 instance=ExtResource("3_0i2wu")]
 layout_mode = 0
@@ -323,8 +322,8 @@ offset_bottom = 684.0
 layout_mode = 0
 offset_left = -803.0
 offset_top = -425.0
-offset_right = 777.26
-offset_bottom = 1155.26
+offset_right = 787.45996
+offset_bottom = 1165.46
 size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("11_71n7r")
