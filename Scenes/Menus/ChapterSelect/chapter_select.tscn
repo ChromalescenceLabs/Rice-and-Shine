@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://f5bkmxvr0cpx"]
 
-[ext_resource type="Script" uid="uid://yixhr8lo3pl5" path="res://Scripts/Menus/ChapterSelect/chapter_carousel_menu.gd" id="1_uj1cm"]
-[ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/Sprites/Menus/ModeSelect/placeholderbg.png" id="2_rp5vy"]
+[ext_resource type="Script" uid="uid://c4d2x08s1qpje" path="res://Scripts/Menus/ChapterSelect/chapter_carousel_menu.gd" id="1_uj1cm"]
+[ext_resource type="Texture2D" uid="uid://vjhtk8knuq7l" path="res://Assets/ChapterSelect.png" id="2_vvagt"]
 [ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Sprites/Menus/ChapterSelect/tempbutton.png" id="3_uj1cm"]
 [ext_resource type="Texture2D" uid="uid://rggpnteoka14" path="res://Assets/Sprites/Menus/ChapterSelect/chapterart.png" id="4_uj1cm"]
 [ext_resource type="PackedScene" uid="uid://diiw84fvn3qw" path="res://Scenes/Menus/ChapterSelect/chapter_select_image.tscn" id="4_vvagt"]
 [ext_resource type="Texture2D" uid="uid://b12uk3cy5nv6o" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP2ART.png" id="5_aic0f"]
 [ext_resource type="Script" uid="uid://bxga00f0h33d0" path="res://Scripts/Menus/ChapterSelect/confirmbtn.gd" id="5_uj1cm"]
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="8_l74vx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bgfd"]
 corner_radius_top_left = 10
@@ -57,7 +58,7 @@ script = ExtResource("1_uj1cm")
 
 [node name="placeholderbg" type="Sprite2D" parent="." unique_id=54279452]
 position = Vector2(638, 361)
-texture = ExtResource("2_rp5vy")
+texture = ExtResource("2_vvagt")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1489825513]
 custom_minimum_size = Vector2(500, 280)
@@ -175,11 +176,12 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -287.0
-offset_top = 16.0
+offset_top = 8.0
 offset_right = 287.0
-offset_bottom = 97.0
+offset_bottom = 89.0
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 50
+theme_override_fonts/normal_font = ExtResource("8_l74vx")
+theme_override_font_sizes/normal_font_size = 55
 bbcode_enabled = true
 text = "CHAPTER SELECT"
 horizontal_alignment = 1

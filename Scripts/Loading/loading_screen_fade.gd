@@ -15,6 +15,7 @@ func _on_progress_changed(_new_value: float) -> void:
 	pass
 		
 func _on_load_finished() -> void:
+	print("yo")
 	Sfx.fade_master_volume(GlobalVars.current_db, duration)
 	await get_tree().create_timer(duration).timeout
 	animation_player.play_backwards("fade")
