@@ -11,7 +11,7 @@ Marisol Suarez: I will always come back for you, darling. Promise.
 do playFade(1,0)
 Narrator: Her name was fit for a girl who has been working in a karinderya for her whole life.
 do playFade(0,1)
-#Another flashback lmao. so mary gets out of the car while her mother stays insie
+#Another flashback lmao. so mary gets out of the car while her mother stays inside
 Marisol Suarez: Here is your granny, sweetie.
 Mary Suarez: Hi, granny.
 Grandmother: Hi, sweetheart.
@@ -22,5 +22,16 @@ Grandmother: There's no need to thank me for something so simple. You can rest e
 Marisol Suarez: I will. I will miss you both too.
 Grandmother: Take care, honey. Mary, say goodbye to your mother.
 Mary Suarez: Bye mommy! Come back safe!
-#Bro waves
+#Bro waves then never came back lmao
+do playFade(1,0)
+Narrator: As nature continues to march until the end of time, the sun rises to greet her beloved children down below a good morning. 
+Narrator: One particular child was you. Mary Suarez was a name you've always been remembered by. Sensing your awakening, birds sings a lovely melody as you yawn. A familiar smell fans into your nose.
+Grandmother: Mary, would you be a dear and help me set up the karinderya?
+Narrator: It was yet just another day in your lovely karinderya. I guess you better "Rice and Shine" before your grandmother gets mad. I'm so funny
+Narrator: You softly walk down the creaky, old stairs
+Mary Suarez: Goodmorning po, grandma.
+Grandmother: Goodmorning, apo. Here, you should eat first.
+Mary Suarez: Thank you po.
+do playFade(1,0)
+Narrator: As you are putting away the dishes, a customer walks to the store and orders. It's time to start the day.
 do playFade(2,1)

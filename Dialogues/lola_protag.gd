@@ -1,6 +1,8 @@
 extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 
+@onready var picture: TextureRect = $Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Picture
+
 
 ## The dialogue resource
 @export var dialogue_resource: DialogueResource
@@ -121,7 +123,12 @@ func start(with_dialogue_resource: DialogueResource = null, cue: String = "", ex
 	dialogue_line = await dialogue_resource.get_next_dialogue_line(start_from_cue, temporary_game_states)
 	show()
 
-
+var characterColour = {
+	"Narrator": "#00000086",
+	"Marisol Suarez": "edd572b5",
+	"Mary Suarez": "ff606f",
+	"Grandmother": "dcdcdc9c"
+}
 ## Apply any changes to the balloon given a new [DialogueLine].
 func apply_dialogue_line() -> void:
 	mutation_cooldown.stop()
@@ -133,6 +140,9 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
+	for characterName in characterColour.keys():
+		var colourName = "[color=" + characterColour[characterName] + "]" + characterName + "[/color]"
+		character_label.text = character_label.text.replace(characterName, colourName)
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line

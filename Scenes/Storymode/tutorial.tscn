@@ -38,12 +38,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="bgCutscene" type="ColorRect" parent="BG" unique_id=707169191]
+[node name="Flashback" type="ColorRect" parent="BG" unique_id=707169191]
 layout_mode = 0
 offset_right = 1291.0
 offset_bottom = 729.0
 
-[node name="bgCutscene2" type="ColorRect" parent="BG" unique_id=1570816106]
+[node name="DefaultCutscene" type="ColorRect" parent="BG" unique_id=1570816106]
 layout_mode = 0
 offset_right = 1291.0
 offset_bottom = 729.0

@@ -31,7 +31,7 @@ GlobalSaveManager="*uid://duerh0om2lpm5"
 
 [dialogue_manager]
 
-runtime/balloon_path="res://Scenes/balloon.tscn"
+runtime/balloon_path="res://Dialogues/lola_protag.tscn"
 
 [display]
 
