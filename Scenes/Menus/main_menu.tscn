@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dxbnsfbve4od6"]
 
 [ext_resource type="Script" uid="uid://lnpgiahuyntr" path="res://Scripts/Menus/MainMenu/main_menu_buttons.gd" id="1_2k7c8"]
-[ext_resource type="Texture2D" path="res://Assets/Menus/MainMenu/main menu bg.png" id="2_e5w6c"]
+[ext_resource type="Texture2D" uid="uid://bmdh8xfhqe17j" path="res://Assets/Sprites/Menus/MainMenu/main menu bg.png" id="2_e5w6c"]
 [ext_resource type="StyleBox" uid="uid://dsabeskj33dsp" path="res://Assets/Styles/MainMenuNormalButtonStyle.tres" id="4_4fgt5"]
-[ext_resource type="Texture2D" path="res://Assets/Logo.png" id="4_euxup"]
+[ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Sprites/Logo.png" id="4_euxup"]
 [ext_resource type="StyleBox" uid="uid://ru223rr65m5a" path="res://Assets/Styles/MainMenuHoverandPressStyle.tres" id="4_j4kqa"]
 [ext_resource type="Script" uid="uid://j28786r700op" path="res://Scripts/Menus/MainMenu/quit.gd" id="5_2k7c8"]
 [ext_resource type="Script" uid="uid://clvovqtgykaen" path="res://Scripts/Menus/MainMenu/start.gd" id="6_2k7c8"]
