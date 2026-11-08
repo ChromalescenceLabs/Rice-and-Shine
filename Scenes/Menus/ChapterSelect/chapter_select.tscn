@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://yixhr8lo3pl5" path="res://Scripts/Menus/ChapterSelect/chapter_carousel_menu.gd" id="1_uj1cm"]
 [ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/Sprites/Menus/ModeSelect/placeholderbg.png" id="2_rp5vy"]
 [ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Sprites/Menus/ChapterSelect/tempbutton.png" id="3_uj1cm"]
-[ext_resource type="Texture2D" uid="uid://jx7evum0k0x0" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP1ART.png" id="4_o2cts"]
+[ext_resource type="Texture2D" uid="uid://rggpnteoka14" path="res://Assets/Sprites/Menus/ChapterSelect/chapterart.png" id="4_uj1cm"]
+[ext_resource type="PackedScene" uid="uid://diiw84fvn3qw" path="res://Scenes/Menus/ChapterSelect/chapter_select_image.tscn" id="4_vvagt"]
 [ext_resource type="Texture2D" uid="uid://cm4y5svne4g8e" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP2ART.png" id="5_aic0f"]
 [ext_resource type="Script" uid="uid://bxga00f0h33d0" path="res://Scripts/Menus/ChapterSelect/confirmbtn.gd" id="5_uj1cm"]
-[ext_resource type="Texture2D" uid="uid://ddxb2gcx5ft2t" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP3ART.png" id="6_o2cts"]
+[ext_resource type="Texture2D" uid="uid://ddxb2gcx5ft2t" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP3ART.png" id="6_l74vx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bgfd"]
 corner_radius_top_left = 10
@@ -118,9 +119,7 @@ texture = ExtResource("5_aic0f")
 
 [node name="CHAP3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=34931184 instance=ExtResource("4_vvagt")]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-texture = ExtResource("6_o2cts")
+texture = ExtResource("6_l74vx")
 
 [node name="CHAP4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=1786386209 instance=ExtResource("4_vvagt")]
 visible = false
