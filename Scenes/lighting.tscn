@@ -3,9 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://ckij18mlcxt5f" path="res://Assets/Sprites/StoryMode/BaseLevelBG.png" id="2_tbpxi"]
 [ext_resource type="Script" uid="uid://boexfpncl74l0" path="res://Scenes/lighting.gd" id="2_u175r"]
 
+[sub_resource type="Gradient" id="Gradient_tbpxi"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qj2yo"]
+gradient = SubResource("Gradient_tbpxi")
+fill_from = Vector2(0.4957265, 0.25641027)
+fill_to = Vector2(0.48290598, 1)
+
 [sub_resource type="Gradient" id="Gradient_ojur4"]
-offsets = PackedFloat32Array(0, 0.16494845, 0.44329897, 0.69072163, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.971641, 0.69396204, 0.8193418, 1, 0.96849793, 0.44466203, 0.56450623, 1, 0.6019745, 0.25777054, 0.6083442, 1, 0.26779953, 0.053350024, 0.38719213, 1)
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.24054983, 0.44329897, 0.55670106, 0.7010309, 0.8213059)
+colors = PackedColorArray(0.16282937, 0.045126274, 0.4026894, 1, 0.30696008, 0.07813739, 0.41949466, 1, 0.6019745, 0.25777054, 0.6083442, 1, 0.96849793, 0.44466203, 0.56450623, 1, 0.971641, 0.69396204, 0.8193418, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_qj2yo"]
 gradient = SubResource("Gradient_ojur4")
@@ -23,6 +31,12 @@ layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_tbpxi")
+
+[node name="PointLight2D" type="PointLight2D" parent="TEST" unique_id=1373766465]
+visible = false
+position = Vector2(642.5, 343)
+scale = Vector2(19.984375, 11.71875)
+texture = SubResource("GradientTexture2D_qj2yo")
 
 [node name="first attempt" type="CanvasLayer" parent="." unique_id=305136305]
 visible = false
