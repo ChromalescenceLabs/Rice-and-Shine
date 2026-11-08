@@ -5,15 +5,11 @@
 [ext_resource type="Script" uid="uid://b5hebbm802doi" path="res://Scenes/Menus/settingbtn.gd" id="2_8dvo0"]
 [ext_resource type="Script" uid="uid://cq82el718nd8f" path="res://Scripts/Menus/MainMenu/master_slide.gd" id="3_06lvd"]
 [ext_resource type="Script" uid="uid://vel24jfsjgg2" path="res://Scripts/Menus/Options/sfx_slide.gd" id="4_1tygw"]
+[ext_resource type="Texture2D" uid="uid://crqa7krfl56ur" path="res://Assets/Sprites/StoryMode/ACHIEVEMENTS TEMP.png" id="4_y4r18"]
+[ext_resource type="Script" uid="uid://yodkt6iaovnd" path="res://Scenes/Menus/achievemenu.gd" id="5_56ox0"]
 [ext_resource type="Script" uid="uid://c4ycfn1q82esg" path="res://Scripts/Menus/Options/music_slide.gd" id="5_gcvbt"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="7_gcvbt"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="8_y4r18"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32akw"]
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56ox0"]
 bg_color = Color(0.36970517, 0.7913994, 0.8210312, 1)
@@ -41,6 +37,22 @@ script = ExtResource("8_y4r18")
 [sub_resource type="Resource" id="Resource_i4v6c"]
 script = ExtResource("8_y4r18")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qj2yo"]
+
+[sub_resource type="FoldableGroup" id="FoldableGroup_56ox0"]
+allow_folding_all = true
+
+[sub_resource type="FoldableGroup" id="FoldableGroup_d7ce3"]
+allow_folding_all = true
+
+[sub_resource type="FoldableGroup" id="FoldableGroup_qunpu"]
+allow_folding_all = true
+
+[sub_resource type="FoldableGroup" id="FoldableGroup_fjyf8"]
+
+[sub_resource type="FoldableGroup" id="FoldableGroup_i4v6c"]
+allow_folding_all = true
+
 [node name="Control" type="Control" unique_id=124713226]
 layout_mode = 3
 anchors_preset = 15
@@ -64,54 +76,17 @@ script = ExtResource("2_8dvo0")
 [node name="ACHIEVEMENTS" type="TextureButton" parent="." unique_id=299587955]
 layout_mode = 0
 offset_left = 80.0
-offset_top = 2.0
-offset_right = 143.0
-offset_bottom = 60.0
-texture_normal = ExtResource("1_0wv7b")
-texture_pressed = ExtResource("1_0wv7b")
-texture_hover = ExtResource("1_0wv7b")
-stretch_mode = 0
-script = ExtResource("2_8dvo0")
-
-[node name="Panel" type="Panel" parent="." unique_id=1126503066]
-visible = false
-layout_mode = 0
-offset_left = 418.0
-offset_top = 95.0
-offset_right = 877.0
-offset_bottom = 672.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_32akw")
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="Panel" unique_id=1209178857]
-layout_mode = 0
 offset_top = 1.0
-offset_right = 458.0
-offset_bottom = 70.0
-theme_override_font_sizes/normal_font_size = 50
-text = "PAUSED"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="CheckButton" type="CheckButton" parent="Panel" unique_id=41220307]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 138.0
-offset_right = 411.0
-offset_bottom = 162.0
-
-[node name="Button" type="Button" parent="Panel" unique_id=1136120686]
-layout_mode = 0
-offset_left = 124.0
-offset_top = 499.0
-offset_right = 353.0
-offset_bottom = 562.0
-size_flags_horizontal = 4
-size_flags_vertical = 0
-size_flags_stretch_ratio = 0.0
-theme_override_font_sizes/font_size = 40
-text = "QUIT GAME"
+offset_right = 143.0
+offset_bottom = 59.0
+texture_normal = ExtResource("4_y4r18")
+texture_pressed = ExtResource("4_y4r18")
+texture_hover = ExtResource("4_y4r18")
+stretch_mode = 0
+script = ExtResource("5_56ox0")
 
 [node name="PAUSEMENU" type="TabContainer" parent="." unique_id=1424306649]
+visible = false
 layout_mode = 0
 offset_left = 407.0
 offset_top = 56.0
@@ -384,6 +359,151 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 visible = false
 layout_mode = 2
 theme_override_constants/margin_bottom = 80
+
+[node name="ACHIEVEMENU" type="PanelContainer" parent="." unique_id=416209881]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 73.0
+offset_right = 869.0
+offset_bottom = 612.0
+
+[node name="MarginContainer" type="MarginContainer" parent="ACHIEVEMENU" unique_id=187334728]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ACHIEVEMENU/MarginContainer" unique_id=1870438390]
+layout_mode = 2
+
+[node name="ACHIEVEMENTS" type="Label" parent="ACHIEVEMENU/MarginContainer/VBoxContainer" unique_id=921478129]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "ACHIEVEMENTS (WIP)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS" unique_id=494035243]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 418.0
+offset_bottom = 482.0
+script = ExtResource("7_gcvbt")
+wheel_scroll_damper = SubResource("Resource_56ox0")
+dragging_scroll_damper = SubResource("Resource_i4v6c")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer" unique_id=1475816565]
+layout_mode = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer" unique_id=376989750]
+layout_mode = 2
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer" unique_id=154494737]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CATEGORY ONE" type="Label" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer" unique_id=426012599]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_qj2yo")
+text = "CATEGORY ONE"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="BRANDNEWDAY" type="FoldableContainer" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer" unique_id=440110324]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 20
+title = "Brand New Day!"
+foldable_group = SubResource("FoldableGroup_56ox0")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DESC1" type="Label" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer/BRANDNEWDAY" unique_id=1612038092]
+layout_mode = 2
+mouse_filter = 1
+text = "Serve your first customer."
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="GetStart" type="FoldableContainer" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer" unique_id=1895002826]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 20
+title = "Getting Started"
+foldable_group = SubResource("FoldableGroup_d7ce3")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DESC3" type="Label" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer/GetStart" unique_id=881526927]
+layout_mode = 2
+mouse_filter = 1
+text = "Serve 10 customers."
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="PLACEHOLDER7" type="FoldableContainer" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer" unique_id=966879832]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 20
+title = "Some witty line can't think of one rn"
+foldable_group = SubResource("FoldableGroup_qunpu")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DESC4" type="Label" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer/PLACEHOLDER7" unique_id=639740256]
+layout_mode = 2
+mouse_filter = 1
+text = "Serve 100 customers."
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="WHATADAY" type="FoldableContainer" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer" unique_id=1034387988]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 20
+title = "What A Day!"
+foldable_group = SubResource("FoldableGroup_fjyf8")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DESC3" type="Label" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer/WHATADAY" unique_id=530328779]
+layout_mode = 2
+mouse_filter = 1
+text = "Serve 1000 customers."
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CATCH" type="FoldableContainer" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer" unique_id=1500175414]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 20
+title = "Gotta Catch Them All!"
+foldable_group = SubResource("FoldableGroup_i4v6c")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DESC2" type="Label" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer/CATCH" unique_id=1470091292]
+layout_mode = 2
+mouse_filter = 1
+text = "Unlock all available achievements in game. "
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer" unique_id=54050286]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="CATEGORY TWO" type="Label" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer" unique_id=1467906809]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_qj2yo")
+text = "CATEGORY TWO"
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="PLACEHOLDER3" type="FoldableContainer" parent="ACHIEVEMENU/MarginContainer/VBoxContainer/ACHIEVEMENTS/SmoothScrollContainer/HBoxContainer/VBoxContainer" unique_id=988036196]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 20
+title = "PLACEHOLDER ACHIEVEMENT"
+metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
 [connection signal="pressed" from="ACHIEVEMENTS" to="ACHIEVEMENTS" method="_on_pressed"]
