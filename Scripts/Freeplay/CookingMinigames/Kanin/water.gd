@@ -27,7 +27,7 @@ func _on_close_pressed() -> void:
 	water_detect.monitoring = false
 	
 	if water_progress_bar.value >= 100:
-		potato.set_process(false)
+		potato.process_mode = Node.PROCESS_MODE_DISABLED
 		WaterCompleted.emit()
 
 func _on_open_pressed() -> void:

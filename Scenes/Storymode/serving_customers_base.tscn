@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bs83acug1c5xl"]
 
-[ext_resource type="Script" uid="uid://bv7dyvtgl8ga7" path="res://Scripts/Freeplay/Storymode/serving_customers_base.gd" id="1_5av7u"]
+[ext_resource type="Script" uid="uid://djc21e88015u8" path="res://Scripts/Freeplay/Storymode/serving_customers_base.gd" id="1_5av7u"]
 [ext_resource type="Texture2D" uid="uid://bh8pjmbpu08k7" path="res://Assets/Sprites/Serving/Table.png" id="2_ja7qr"]
-[ext_resource type="Script" uid="uid://by3mhasrl1uji" path="res://Scripts/Freeplay/Storymode/food_cont_confirmation.gd" id="2_kfeux"]
+[ext_resource type="Script" uid="uid://dsibxvtf5ygri" path="res://Scripts/Freeplay/Storymode/food_cont_confirmation.gd" id="2_kfeux"]
 [ext_resource type="PackedScene" uid="uid://cntangxcnp6xg" path="res://Scenes/Freeplay/CustomerServing/add_bowl_btn.tscn" id="2_tbsef"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="3_h5bb6"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="4_pbxxb"]
@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="9_gwu6q"]
 [ext_resource type="PackedScene" uid="uid://c3unocg7kw2e3" path="res://Scenes/Menus/servingsetting.tscn" id="10_rsqi0"]
 [ext_resource type="PackedScene" uid="uid://b2x6isusl8rfr" path="res://Scenes/Storymode/payment_cont.tscn" id="10_v6xow"]
-[ext_resource type="Script" uid="uid://dik28fnxapswn" path="res://Scripts/Freeplay/Storymode/minigame_box.gd" id="12_ha1s0"]
+[ext_resource type="Script" uid="uid://dki6u35g88ysi" path="res://Scripts/Freeplay/Storymode/minigame_box.gd" id="12_ha1s0"]
 [ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="18_xd6nw"]
 [ext_resource type="PackedScene" uid="uid://dpjeqy63lxdvr" path="res://Scenes/Freeplay/CustomerServing/customer_happiness_logs.tscn" id="19_cfcfs"]
 
