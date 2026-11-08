@@ -8,6 +8,7 @@ extends Node2D
 @onready var pan: CookingPan = $PancakeScene/Pan
 
 var hovering_on_pan : bool = false
+var collectable : bool = false
 
 func _ready() -> void:
 	oil.snap_to_og_pos = true
@@ -18,8 +19,12 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if hovering_on_pan:
-		if pancState == 4:
-			if event.is_action_pressed("Click"):
+		if event.is_action_pressed("Click"):
+			if pancState == 4:
+				flip()
+				pancState = 5
+			elif pancState == 5 and collectable == true:
+				collectable = false
 				if pancCooked < 5:
 					pancState = 0
 					pancCooked += 1
@@ -81,6 +86,19 @@ var pancState : int = 0:
 						i.visible = false
 					else:
 						i.visible = true
+
+		elif pancState == 5:
+			for i in pan.get_children():
+				var check : bool = i.owner == pan
+				if not check:
+					if not i.name == "PanBatterStage5":
+						i.visible = false
+					else:
+						i.visible = true
+
+func flip() -> void:
+	await get_tree().create_timer(3.0).timeout
+	collectable = true
 
 var pancCooked : int = 0:
 	set(value):
