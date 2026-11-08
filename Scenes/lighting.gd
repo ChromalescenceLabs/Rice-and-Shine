@@ -16,6 +16,7 @@ var past_min: int = -1.0
 @export var INITIAL_HR = 8
 
 func _ready() -> void:
+	add_to_group("day_night_cycle")
 	var initial_total_mins = INITIAL_HR * MINUTES_PER_HOUR
 	var day_ratio = initial_total_mins / float(MINUTES_PER_DAY)
 	time = day_ratio * REAL_SECONDS_PER_DAY

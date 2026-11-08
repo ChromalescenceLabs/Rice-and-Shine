@@ -61,6 +61,18 @@ texture_hover = ExtResource("1_0wv7b")
 stretch_mode = 0
 script = ExtResource("2_8dvo0")
 
+[node name="ACHIEVEMENTS" type="TextureButton" parent="." unique_id=299587955]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 2.0
+offset_right = 143.0
+offset_bottom = 60.0
+texture_normal = ExtResource("1_0wv7b")
+texture_pressed = ExtResource("1_0wv7b")
+texture_hover = ExtResource("1_0wv7b")
+stretch_mode = 0
+script = ExtResource("2_8dvo0")
+
 [node name="Panel" type="Panel" parent="." unique_id=1126503066]
 visible = false
 layout_mode = 0
@@ -329,6 +341,7 @@ layout_mode = 2
 theme_override_constants/margin_bottom = 90
 
 [node name="ACHIEVEMENTS" type="Label" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=1165072899]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "ACHIEVEMENTS (WIP)"
@@ -368,10 +381,12 @@ text = "LOREM IPSUM"
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="MarginContainer3" type="MarginContainer" parent="PAUSEMENU/MISC/MarginContainer/VBoxContainer" unique_id=1949120310]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_bottom = 80
 
 [connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
+[connection signal="pressed" from="ACHIEVEMENTS" to="ACHIEVEMENTS" method="_on_pressed"]
 [connection signal="value_changed" from="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MASTERLABEL/MASTERSLIDE" to="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MASTERLABEL/MASTERSLIDE" method="_on_value_changed"]
 [connection signal="value_changed" from="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/SFXLABEL/SFXSLIDE" to="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/SFXLABEL/SFXSLIDE" method="_on_value_changed"]
 [connection signal="value_changed" from="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MUSICLABEL/MUSICSLIDE" to="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer/MUSICLABEL/MUSICSLIDE" method="_on_value_changed"]
