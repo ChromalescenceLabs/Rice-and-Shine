@@ -6,14 +6,14 @@
 [node name="CustomerServingSandbox" type="Node2D" unique_id=2075455063]
 script = ExtResource("1_wgjyl")
 
-[node name="ServingCustomersBase" parent="." unique_id=1724706127 instance=ExtResource("2_vacka")]
-
 [node name="Exit" type="Button" parent="." unique_id=911541608]
-z_index = 2
-offset_left = 1117.0
-offset_top = 654.0
-offset_right = 1256.0
-offset_bottom = 703.0
+offset_left = 1105.0
+offset_top = 639.0
+offset_right = 1244.0
+offset_bottom = 688.0
 text = "Exit"
+
+[node name="ServingCustomersBase" parent="." unique_id=1724706127 instance=ExtResource("2_vacka")]
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

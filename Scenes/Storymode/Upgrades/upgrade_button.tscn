@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://colylw6cldk5v"]
+
+[ext_resource type="Texture2D" uid="uid://ct36ntdromxo6" path="res://Assets/Sprites/LoadingBG.png" id="1_34rlu"]
+[ext_resource type="Script" uid="uid://cfyyvvfcinx8t" path="res://Scripts/Freeplay/Storymode/Upgrades/upgrade_button.gd" id="1_pwlf6"]
+[ext_resource type="Script" uid="uid://de32sg45ejs0l" path="res://Scripts/Freeplay/Storymode/Upgrades/upg.gd" id="2_pwlf6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34rlu"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.25275353, 0.2527536, 0.25275344, 1)
+
+[node name="UpgradeButton" type="VBoxContainer" unique_id=1208402819]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pwlf6")
+
+[node name="Button" type="Button" parent="." unique_id=1671566292]
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/icon_max_width = 70
+theme_override_font_sizes/font_size = 50
+text = " upg1"
+icon = ExtResource("1_34rlu")
+alignment = 0
+expand_icon = true
+script = ExtResource("2_pwlf6")
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="DescCont" type="Control" parent="." unique_id=370718320]
+layout_mode = 2
+mouse_filter = 1
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[node name="description" type="RichTextLabel" parent="DescCont" unique_id=204098502]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -440.0
+offset_right = 440.0
+offset_bottom = 178.0
+grow_horizontal = 2
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_34rlu")
+text = "insert desc here
+insert desc here
+insert desc here
+insert desc here"
+fit_content = true
+scroll_active = false
+metadata/_smooth_scroll_default_mouse_filter_set = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

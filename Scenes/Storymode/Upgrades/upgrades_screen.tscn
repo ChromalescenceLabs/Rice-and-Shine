@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ck0rn4gedlbmo" path="res://Scenes/Storymode/Upgrades/upgrade_category_tab.tscn" id="4_ej072"]
 [ext_resource type="PackedScene" uid="uid://c7wwr87x20hvx" path="res://Scenes/Storymode/Upgrades/UpgradeCategoryScroll.tscn" id="4_fneei"]
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="5_dxm2b"]
-[ext_resource type="StyleBox" uid="uid://dsabeskj33dsp" path="res://Scenes/Menus/MainMenu/MainMenuNormalButtonStyle.tres" id="8_dxm2b"]
-[ext_resource type="StyleBox" uid="uid://ru223rr65m5a" path="res://Scenes/Menus/MainMenu/MainMenuHoverandPressStyle.tres" id="9_4urik"]
+[ext_resource type="StyleBox" uid="uid://dsabeskj33dsp" path="res://Assets/Styles/MainMenuNormalButtonStyle.tres" id="8_dxm2b"]
+[ext_resource type="StyleBox" uid="uid://ru223rr65m5a" path="res://Assets/Styles/MainMenuHoverandPressStyle.tres" id="9_4urik"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuu35"]
 bg_color = Color(0, 0, 0, 0.70980394)

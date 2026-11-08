@@ -54,6 +54,8 @@ allow_folding_all = true
 allow_folding_all = true
 
 [node name="Control" type="Control" unique_id=124713226]
+process_mode = 3
+z_index = 300
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,13 +67,13 @@ metadata/_edit_vertical_guides_ = [-150.0]
 
 [node name="Settings" type="TextureButton" parent="." unique_id=1679595592]
 layout_mode = 0
-offset_right = 63.0
-offset_bottom = 58.0
-texture_normal = ExtResource("1_0wv7b")
-texture_pressed = ExtResource("1_0wv7b")
-texture_hover = ExtResource("1_0wv7b")
+offset_right = 53.224136
+offset_bottom = 49.0
+texture_normal = ExtResource("2_bgulr")
+texture_pressed = ExtResource("2_bgulr")
+texture_hover = ExtResource("2_bgulr")
 stretch_mode = 0
-script = ExtResource("2_8dvo0")
+script = ExtResource("3_lb48p")
 
 [node name="ACHIEVEMENTS" type="TextureButton" parent="." unique_id=299587955]
 layout_mode = 0
@@ -92,6 +94,7 @@ offset_left = 407.0
 offset_top = 56.0
 offset_right = 869.0
 offset_bottom = 677.0
+mouse_filter = 2
 theme_override_font_sizes/font_size = 30
 current_tab = 2
 
@@ -130,7 +133,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_i4v6c")
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("3_06lvd")
+script = ExtResource("4_tr5k1")
 
 [node name="SFXLABEL" type="RichTextLabel" parent="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer" unique_id=1062155189]
 custom_minimum_size = Vector2(0, 50)
@@ -150,7 +153,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_qunpu")
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("4_1tygw")
+script = ExtResource("5_4eqot")
 
 [node name="MUSICLABEL" type="RichTextLabel" parent="PAUSEMENU/AUDIO/MarginContainer/VBoxContainer" unique_id=548011574]
 custom_minimum_size = Vector2(0, 50)
@@ -169,7 +172,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_gyvwt")
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("5_gcvbt")
+script = ExtResource("6_e4xjs")
 
 [node name="GRAPHICS" type="MarginContainer" parent="PAUSEMENU" unique_id=513740606]
 visible = false

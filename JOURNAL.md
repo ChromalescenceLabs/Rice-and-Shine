@@ -285,10 +285,32 @@ I worked my entire 10 hours on 10/18/26, first fixing the week selection system 
 
 
 
-## WEEK 5: OCTOBER 12 - OCTOBER 19
+## WEEK 6: OCTOBER 19 - OCTOBER 26
 ### 1. ALLIUMC
+Things I've done:
+1) polished condiments scene
+  - puts the object you picked to the front
+2) fix mixing animation scene
+  - basically made it the same as the grated scene
+3) added function to change bg when changing scenes
+  - basically changed between top and side view
+4) started molding scene
+  - added temporary assets and did some dragging code
+5) drew for around 3 hours for the title screen and 2 hours for the customer scene
+
+My thoughts on the matter:
+Bro I was tired while working on this because the previous day I stayed up because of a school project. My brain was fried the whole time lowkey. But I managed to fix bugs just fine lol. After like 5 hours, I drew instead to stop my head from hurting
+
+Things I had trouble with:
+1) Yeah so like what Ive said earlier I was tired lol, I had a hard time focusing and locking in
+2) On top of that, my school project wasn't even finished yet so my attention was even more split
+3) days before that, I was having a hard time to start anything. So, really, it's lowkey my fault it came to this lol
 
 ### 2. CLIF
+Minigames, minigames, and even more minigames..! Technically worked on some general global stuff for the minigames instead of solely focusing on one minigame soo that's cool I guess,
+- I initially worked on the pancit minigame (we don't talk about the inihaw minigame, that isn't complete yet) and I realized it had a lot of components that were already done in other minigames, so I took the time to make some new scenes for those components so it's easier to implement them in future minigames
+- I then took a break from coding and decided to work on some more assets for the rest of the minigames; like the hotdog minigame and torta minigame.
+- Also finished like, 80% of the components for the pancit minigame, gotta complete the inihaw and that next week, and maybe enhance the recipe book.
 
 ### 3. JAZZ
 OK SO the customers system is *technically* done... But like I still kinda need to add the time tracker within the scene, BUT THAT'S AN EASY ADDITION FOR NEXT WEEK... Customer Serving System is essentially done..! Just need to do some heavy refactoring next week- But anyway! I did the following things this week:
@@ -299,4 +321,84 @@ OK SO the customers system is *technically* done... But like I still kinda need 
 
 I highkey lost my mind over trying to fix the loading issue from the minigame select scene to the customer serving sandbox scene, but ended up just reconstructing the food cont scenes for it. Other than that, after doing the time tracker in the customer serving scene system, I can FINALLY start on the tutorial, and proceeding days after that. I do also want to clean up some of my spaghetti code for the customer serving base, so I'm gonna do that too - and perhaps help with some of the art next week. 
 
+### 4. JEANKAMAGALING
+On 10/25/26, I messed around with the cusotm container (which i was originally gonna do for the chapter select but did it for the minigame select instead). i struggled trying to get it to look right, experimented a bunch and scrapped a lot of code. I then tried to code something where the other buttons would be smallerwhile the first / selected one remained normal unless the player scrolled to something else but i coudlnt get it to work either - eventually I found a good tutorial that helped me get the circular container and just hooked up a script that would change its rotation value after scrolling. I also worked on the background image changing based on the specific minigame you would hover over. I then added a description indicator for each minigame too, and I also decided to polish some of the other UI components, like updating the main menu's background and resolving some errors in the week select.
+
+
+
+
+## WEEK 7: OCTOBER 26 - NOVEMBER 2
+### 1. ALLIUMC
+Things I've did:
+1)fix and polish scenes
+- so when I first do the scenes all together it all broke so I fixed it, it only like an 1 hour no sweat
+- so when I did the whole scene altogether again after finishing the last scene, the last scene was broken, the mixer was somehow was in every scene after it's own, the condiments was still
+- staying when you click it when it's about to transition to the mix scene
+2) finish molding scene
+3) add and finish frying scene
+- bro when I added this onto the main scene it was broken and I was crashing out bc I was so close lol. more info on trouble segment
+4) add highlight on the condiments and remove them when you put them on the bowl
+5) add more checking areas for peeling scene
+
+My thoughts on the matter: bro im finally DONEEEEEEEEEEEEEEE. bro tbh I was crashing out like at the end because I was soooo close and there were still bugs. I don't even remember how I did it, i just know I did LOL. bro I was planning to actually draw when I finish fixing the frying scene but it was only 1 hour left so I just polished instead
+
+The Things I had Trouble with:
+1) so I remember crashing out specifically on the frying scene
+bro I tried like so many solutions but then it was just bc I didn't properly stop the previous scene's hashbrown properly. so i just disabled the process and it's all good
+2) I woke up late so I finished late and so I was tired while working on this but somehow I was in my flow state
+3) I didn't know how to fix the assets going back to the scenes
+yeah like the thing I said in number 1, i just needed to disable the process and it's all good
+
+### 2. CLIF
+What did I work on? You guessed right! It was... The day finished screen and the initial upgrade screen! 
+What, you thought I worked on minigames again? No of course not why would you think that?
+Anyways yeah I worked on the following things this week:
+- updated minor stuff in certain minigames as like fixes. (yes I know I said I didn't work on minigames but these were minor changes okay)
+- I then decided to work on some other components other than minigames and started work on the day finished scene, particularly working on:
+  - the day and payment roll animation which I think looks cool
+  - the other screen for the day finished scene, which I got from Raph's old concept art.
+ - I also worked on the initial scene for the upgrades scene, like the buttons and scroll containers, and I screwed around with mainly the upgrades buttons themselves because I'm indecisive and I don't know which would look nicer.
+ - Oh yeah, and I also used an hour to work on some more official minigame assets.
+I was really tired while making this so there's probably a lot of bugs that I will fix next week lol
+
+### 3. JAZZ
+YUP IT'S DONE the customer serving scene is officially done...! Uh, well, I need to connect some minor stuff like the payment to the indicator, and put in Raph's options menu into it, but other than that YES it's DONE and ready for usage in the main tutorial and main days! Which I am super stoked about!! Anyways, for specifics, I worked on the following:
+- Added the clock into the customer serving scene base
+  - Which includes a nice rotating texture and a label for what "time" it is in-game that changes based on the amount of time elapsed in the scene
+- Reworked the logic of the customer spawner so that customers can spawn even when you're outside the scene with the base, and also make it so that you can manually spawn in a customer with specific parameters like its type and wants (for storymode)
+- Added some logic changes to the weekday unlocks so that we can actually dynamically change how many are unlocked in the week select
+- Added other initial necessary UI for the customer serving scene like the week and day number label and the payment label (which hasn't been hooked up to anything yet and isn't functional BUT THAT'LL BE QUICK I SWEAR)
+- Fixed some bugs when it comes to the serving base rework, just minor one line changes
+- Refactored some of the files in the folders because everything looked so scattered to me
+
+Anyway YES I'll be able to work on the tutorial next week; and hopefully get a day done finally for the story mode. And hopefully I can help with some polishes like in the UI and stuff next week; I'm honestly always scared to work on art because it might not match everyone else's, but I'll see what I can do. LAST WEEK OF THIRDSPACE NEXT WEEKKK
+  
+### 4. JEANKAMAGALING
+On 11/01/2026, I did 5 hours of art when drawing new customers, rendered them, and rendered the last batch of customers from before. I then tweaked the chapter select menu for a couple of hours by adding smoother anims to make it look less janky, and added the art i made for it so far.
+
+The next day, I did my remaining hours through coding the fade transition for the panels where the art will be, and implemented and animated the new description and title. Afterwards, I worked on the settings / pause menu for the customer serving screen containing the settings for audio, graphics, and misc (however misc isnt done yet but shhhh it will be in due time dw).
+
+
+
+
+## WEEK 8: NOVEMBER 2 - NOVEMBER 8
+### 1. ALLIUMC
+
+### 2. CLIF
+
+### 3. JAZZ
+ALRIGHTT I'm happy with my progress this week; I think every single base system needed for the story mode has been accounted for! This doesn't include the miscellaneous stuff like upgrades implementation, special events, customer affinity; but every single system that these systems will be built on are FINISHED! With this week, I went around the project looking for bugs (with the exception of the minigames). For the specifics I:
+- Added scene change logic to each of the minigames, specifically where the minigame takes you to the previous scene you were in (if you were in a story mode level), or the minigame select scene if you accessed it from there and not the story mode levels
+- Readded the functionality where the quantity of the food containers are increased after completing its specific minigame
+- Added the payment label in the customer serving base, alongside a system where it can be updated from anywhere.
+- Added a confirmation for if the player actually wants to go to the cooking scene when it is empty, or when the food container is right clicked.
+- Added some smaller additions like a hover texture for customers, as well as a mouse input stopper for background nodes when the settings menu is opened in the customer serving base (which Raph worked on last week!)
+And yup, I fixed a bunch of bugs I found across the game:
+- Fixed the janky animation in the chapter select carousel & description animations
+- Fixed the customer wants initialization bug where the range wasn't dynamic depending on the unlocked foods
+- Fixed the bug where customers triggered the received bowl function if they have the same order
+
+All in all, I am once again happy with what I've done this week! I had to work on my hours early this week because of the amount of schoolwork I'd need to do later on this week, so I'd be handing over some finalization stuff over to my dear teammates :] Will continue to work on this game even after this week, since we really want to have more polish on it!
+
+  
 ### 4. JEANKAMAGALING

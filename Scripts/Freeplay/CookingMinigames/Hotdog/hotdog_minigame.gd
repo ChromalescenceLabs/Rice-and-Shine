@@ -112,4 +112,7 @@ func _on_chopping_finished() -> void:
 
 
 func _on_stick_finished() -> void:
-	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
+	if GlobalVars.is_customer_serving:
+		GlobalSaveManager.current_save.scenes_persistence[GlobalVars.current_scene]["hotdog"] += 5
+		SceneLoader.load_scene(GlobalVars.current_scene, 1)
+	else: SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)

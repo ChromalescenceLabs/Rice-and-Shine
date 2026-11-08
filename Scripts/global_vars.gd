@@ -3,7 +3,7 @@ extends Node
 # Player Info
 var current_db : float = -25
 var is_customer_serving: bool = false
-var is_in_story: bool = false
+var current_scene
 
 # Systems
 signal successIndEnd
@@ -47,9 +47,15 @@ func shake(item):
 
 	
 # Customer Serving
+signal paid(amt: float)
 var character_name : String
 var character_order : String
-var payment : float = 0.0
+# Change this value when adding or deducting pay. PUT THE VALUE OF THE AMOUNT TO BE DEDUCTED/ADDED, not the final amount
+var payment : float = 0.0:
+	set(value):
+		payment += value
+		paid.emit(value)
+		
 var day : int
 var week : int
 	
@@ -60,7 +66,7 @@ var customer_weights : PackedFloat32Array = []
 
 var tutorial_finished : bool = false
 var w1_days : int = 1
-var w2_days : int = 1
+var w2_days : int = 0
 var w3_days : int = 0
 var w4_days : int = 0
 var w5_days : int = 0

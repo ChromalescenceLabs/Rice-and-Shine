@@ -73,7 +73,14 @@ var pancState : int = 0:
 					else:
 						i.visible = true
 
-var pancCooked : int = 0
+var pancCooked : int = 0:
+	set(value):
+		pancCooked = value
+		if pancCooked > 2:
+			if GlobalVars.is_customer_serving: 
+				GlobalSaveManager.current_save.scenes_persistence[GlobalVars.current_scene]["pancake"] += 5
+				SceneLoader.load_scene(GlobalVars.current_scene, 1)
+			else: SceneLoader.load_scene("uid://b5ufcgv0qaktk", 1)
 
 func _on_pan_mouse_entered() -> void: hovering_on_pan = true
 func _on_pan_mouse_exited() -> void: hovering_on_pan = false

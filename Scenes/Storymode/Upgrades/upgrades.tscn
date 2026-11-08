@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://rsq18gh4a6gf"]
 
-[ext_resource type="Texture2D" uid="uid://rcilmjnmfqyw" path="res://Assets/Sprites/Cooking_Minigames/CookingBG.jpg" id="1_qnnf3"]
 [ext_resource type="Texture2D" uid="uid://b7hc60k2f7qmo" path="res://Assets/check-box-empty.png" id="2_lisd6"]
-[ext_resource type="Texture2D" uid="uid://ct36ntdromxo6" path="res://Assets/Sprites/LoadingBG.png" id="2_mstou"]
 [ext_resource type="Texture2D" uid="uid://bbow08x8m0x45" path="res://Assets/checkbox.png" id="3_ua6wq"]
+[ext_resource type="PackedScene" uid="uid://colylw6cldk5v" path="res://Scenes/Storymode/Upgrades/upgrade_button.tscn" id="4_2n3ja"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_rmsmy"]
-[ext_resource type="Script" uid="uid://dexlqtf7dkj7r" path="res://Scripts/Freeplay/Storymode/upgrades/upgrade.gd" id="4_sy0g7"]
+[ext_resource type="Script" uid="uid://nyedkf3bi17g" path="res://Scripts/Freeplay/Storymode/Upgrades/upgrade.gd" id="4_sy0g7"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_sy0g7"]
-[ext_resource type="Script" uid="uid://4ragy8a1150r" path="res://Scripts/Freeplay/Storymode/upgrades/upg.gd" id="6_copim"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ittll"]
 bg_color = Color(0.17785347, 0.17785347, 0.17785338, 1)
@@ -29,13 +27,6 @@ script = ExtResource("5_sy0g7")
 [sub_resource type="Resource" id="Resource_mi3g6"]
 script = ExtResource("5_sy0g7")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbfdo"]
-content_margin_left = 15.0
-content_margin_top = 15.0
-content_margin_right = 15.0
-content_margin_bottom = 15.0
-bg_color = Color(0.25275353, 0.2527536, 0.25275344, 1)
-
 [node name="Upgrades" type="Control" unique_id=111021976]
 layout_mode = 3
 anchors_preset = 15
@@ -44,12 +35,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="bg" type="TextureRect" parent="." unique_id=1624156774]
-modulate = Color(0.33511627, 0.33511627, 0.33511627, 1)
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-texture = ExtResource("1_qnnf3")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=284481469]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.2)
 
 [node name="Computer" type="Control" parent="." unique_id=1899228328]
 anchors_preset = 0
@@ -117,92 +110,24 @@ theme_override_constants/separation = 30
 script = ExtResource("4_sy0g7")
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="description" type="RichTextLabel" parent="Computer/upgradeScroll/upgrade" unique_id=1989546101]
-visible = false
-custom_maximum_size = Vector2(-1, 0)
+[node name="upg1" parent="Computer/upgradeScroll/upgrade" unique_id=1556010869 instance=ExtResource("4_2n3ja")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/normal_font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxFlat_xbfdo")
-text = "insert desc here
-insert desc here
-insert desc here
-insert desc here
-"
-fit_content = true
-scroll_active = false
+Icon = null
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="upg1" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=1995078601]
+[node name="upg2" parent="Computer/upgradeScroll/upgrade" unique_id=366095495 instance=ExtResource("4_2n3ja")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_constants/icon_max_width = 70
-theme_override_font_sizes/font_size = 50
-text = " upg1"
-icon = ExtResource("2_mstou")
-alignment = 0
-expand_icon = true
-script = ExtResource("6_copim")
+Icon = null
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="upg2" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=81780821]
+[node name="upg3" parent="Computer/upgradeScroll/upgrade" unique_id=182246434 instance=ExtResource("4_2n3ja")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_constants/icon_max_width = 70
-theme_override_font_sizes/font_size = 50
-text = " upg1"
-icon = ExtResource("2_mstou")
-alignment = 0
-expand_icon = true
-script = ExtResource("6_copim")
+Icon = null
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="upg3" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=389496844]
+[node name="upg4" parent="Computer/upgradeScroll/upgrade" unique_id=1584466903 instance=ExtResource("4_2n3ja")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_constants/icon_max_width = 70
-theme_override_font_sizes/font_size = 50
-text = " upg1"
-icon = ExtResource("2_mstou")
-alignment = 0
-expand_icon = true
-script = ExtResource("6_copim")
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="upg4" type="Button" parent="Computer/upgradeScroll/upgrade" unique_id=1986739004]
-layout_mode = 2
-mouse_filter = 1
-theme_override_constants/icon_max_width = 70
-theme_override_font_sizes/font_size = 50
-text = " upg1"
-icon = ExtResource("2_mstou")
-alignment = 0
-expand_icon = true
-script = ExtResource("6_copim")
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="upg100" type="MenuButton" parent="Computer/upgradeScroll/upgrade/upg4" unique_id=867664239]
-layout_mode = 0
-mouse_filter = 1
-theme_override_constants/icon_max_width = 70
-text = "upg100
-"
-icon = ExtResource("2_mstou")
-item_count = 1
-popup/item_0/text = "1ooooooo"
-popup/item_0/id = 0
-metadata/_smooth_scroll_default_mouse_filter_set = true
-
-[node name="upg100" type="MenuButton" parent="Computer/upgradeScroll/upgrade/upg4/upg100" unique_id=1820027419]
-layout_mode = 0
-mouse_filter = 1
-theme_override_constants/icon_max_width = 70
-text = "upg100
-"
-icon = ExtResource("2_mstou")
-item_count = 1
-popup/item_0/text = "1ooooooo"
-popup/item_0/id = 0
+Icon = null
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="Computer/upgradeScroll/upgrade" unique_id=1419416245]
@@ -220,8 +145,3 @@ theme_override_constants/icon_max_width = 60
 theme_override_icons/checked = ExtResource("3_ua6wq")
 theme_override_icons/unchecked = ExtResource("2_lisd6")
 theme_override_icons/checked_disabled = ExtResource("3_ua6wq")
-
-[connection signal="pressed" from="Computer/upgradeScroll/upgrade/upg1" to="Computer/upgradeScroll/upgrade/upg1" method="_on_pressed"]
-[connection signal="pressed" from="Computer/upgradeScroll/upgrade/upg2" to="Computer/upgradeScroll/upgrade/upg2" method="_on_pressed"]
-[connection signal="pressed" from="Computer/upgradeScroll/upgrade/upg3" to="Computer/upgradeScroll/upgrade/upg3" method="_on_pressed"]
-[connection signal="pressed" from="Computer/upgradeScroll/upgrade/upg4" to="Computer/upgradeScroll/upgrade/upg4" method="_on_pressed"]

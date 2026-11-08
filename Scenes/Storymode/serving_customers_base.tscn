@@ -2,11 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bv7dyvtgl8ga7" path="res://Scripts/Freeplay/Storymode/serving_customers_base.gd" id="1_5av7u"]
 [ext_resource type="Texture2D" uid="uid://bh8pjmbpu08k7" path="res://Assets/Sprites/Serving/Table.png" id="2_ja7qr"]
+[ext_resource type="Script" uid="uid://by3mhasrl1uji" path="res://Scripts/Freeplay/Storymode/food_cont_confirmation.gd" id="2_kfeux"]
 [ext_resource type="PackedScene" uid="uid://cntangxcnp6xg" path="res://Scenes/Freeplay/CustomerServing/add_bowl_btn.tscn" id="2_tbsef"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="3_h5bb6"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="4_pbxxb"]
 [ext_resource type="PackedScene" uid="uid://btok7aisotru6" path="res://Scenes/Storymode/day_timer.tscn" id="7_ay3sv"]
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="9_gwu6q"]
+[ext_resource type="PackedScene" uid="uid://c3unocg7kw2e3" path="res://Scenes/Menus/servingsetting.tscn" id="10_rsqi0"]
+[ext_resource type="PackedScene" uid="uid://b2x6isusl8rfr" path="res://Scenes/Storymode/payment_cont.tscn" id="10_v6xow"]
+[ext_resource type="Script" uid="uid://dik28fnxapswn" path="res://Scripts/Freeplay/Storymode/minigame_box.gd" id="12_ha1s0"]
 [ext_resource type="PackedScene" uid="uid://cu1sr6c6dt5hx" path="res://Scenes/Freeplay/CustomerServing/trashbin_tab.tscn" id="18_xd6nw"]
 [ext_resource type="PackedScene" uid="uid://dpjeqy63lxdvr" path="res://Scenes/Freeplay/CustomerServing/customer_happiness_logs.tscn" id="19_cfcfs"]
 
@@ -16,16 +20,120 @@ script = ExtResource("4_pbxxb")
 [sub_resource type="Resource" id="Resource_tbsef"]
 script = ExtResource("4_pbxxb")
 
+[sub_resource type="Animation" id="Animation_ha1s0"]
+resource_name = "Enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(445, 500), Vector2(445, 247)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_covm1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(445, 247)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7cc47"]
+_data = {
+&"Enter": SubResource("Animation_ha1s0"),
+&"RESET": SubResource("Animation_covm1")
+}
+
+[sub_resource type="Animation" id="Animation_kfeux"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -66.355)]
+}
+
+[sub_resource type="Animation" id="Animation_v6xow"]
+resource_name = "Ui_Enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -66.355), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kfeux"]
+_data = {
+&"RESET": SubResource("Animation_kfeux"),
+&"Ui_Enter": SubResource("Animation_v6xow")
+}
+
 [node name="ServingCustomersBase" type="Node2D" unique_id=1724706127]
 script = ExtResource("1_5av7u")
 
-[node name="Control" type="Control" parent="." unique_id=452112419]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=468022268]
+offset = Vector2(640, 360)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=1000877256]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="Camera2D/CanvasLayer" unique_id=452112419]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
+mouse_filter = 1
 
-[node name="FoodContBG" type="TextureRect" parent="Control" unique_id=1283708255]
+[node name="FoodContBG" type="TextureRect" parent="Camera2D/CanvasLayer/Control" unique_id=1283708255]
 z_index = 2
 layout_mode = 1
 anchors_preset = 15
@@ -35,7 +143,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ja7qr")
 
-[node name="CustomersCont" type="HBoxContainer" parent="Control" unique_id=900914495]
+[node name="CustomersCont" type="HBoxContainer" parent="Camera2D/CanvasLayer/Control" unique_id=900914495]
 propagate_maximum_size = false
 layout_mode = 0
 offset_left = 13.0
@@ -44,7 +152,7 @@ offset_right = 1265.0
 offset_bottom = 605.0
 size_flags_horizontal = 3
 
-[node name="BowlConts" type="HBoxContainer" parent="Control" unique_id=2054655964]
+[node name="BowlConts" type="HBoxContainer" parent="Camera2D/CanvasLayer/Control" unique_id=2054655964]
 z_index = 4
 layout_mode = 0
 offset_left = 20.0
@@ -54,7 +162,7 @@ offset_bottom = 508.0
 size_flags_horizontal = 3
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="AddBowl" parent="Control/BowlConts" unique_id=949361015 instance=ExtResource("2_tbsef")]
+[node name="AddBowl" parent="Camera2D/CanvasLayer/Control/BowlConts" unique_id=949361015 instance=ExtResource("2_tbsef")]
 z_index = 50
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
@@ -62,7 +170,7 @@ size_flags_vertical = 4
 mouse_filter = 1
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="FreedBowls" type="Control" parent="Control" unique_id=207527525]
+[node name="FreedBowls" type="Control" parent="Camera2D/CanvasLayer/Control" unique_id=207527525]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,7 +184,7 @@ offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=1401998401]
+[node name="ScrollContainer" type="ScrollContainer" parent="Camera2D/CanvasLayer/Control" unique_id=1401998401]
 z_index = 2
 clip_contents = false
 layout_mode = 1
@@ -100,31 +208,105 @@ drag_with_mouse = false
 allow_vertical_scroll = false
 metadata/_custom_type_script = "uid://bgqglerkcylxx"
 
-[node name="FoodConts" type="HBoxContainer" parent="Control/ScrollContainer" unique_id=817125299]
+[node name="FoodConts" type="HBoxContainer" parent="Camera2D/CanvasLayer/Control/ScrollContainer" unique_id=817125299]
 layout_mode = 2
 metadata/_smooth_scroll_default_mouse_filter_set = true
 
-[node name="TrashbinTab" parent="." unique_id=18345153 instance=ExtResource("18_xd6nw")]
-z_index = 2
-position = Vector2(1280, 459)
+[node name="BowlLabels" type="Node2D" parent="Camera2D/CanvasLayer" unique_id=80505418]
 
-[node name="CustomerHappinessLogs" parent="." unique_id=23440669 instance=ExtResource("19_cfcfs")]
+[node name="TrashbinTab" parent="Camera2D/CanvasLayer" unique_id=18345153 instance=ExtResource("18_xd6nw")]
+z_index = 2
+position = Vector2(1277, 458)
+
+[node name="CustomerHappinessLogs" parent="Camera2D/CanvasLayer" unique_id=23440669 instance=ExtResource("19_cfcfs")]
 metadata/_edit_lock_ = true
 
-[node name="Clock" parent="." unique_id=1251713995 instance=ExtResource("7_ay3sv")]
+[node name="UI" type="Control" parent="Camera2D/CanvasLayer" unique_id=1826625500]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -66.355
+offset_bottom = -66.355
+mouse_filter = 1
+
+[node name="FoodConfBox" type="Panel" parent="Camera2D/CanvasLayer/UI" unique_id=2092333187]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 2
+layout_mode = 0
+offset_right = 1279.0
+offset_bottom = 720.0
+mouse_filter = 1
+
+[node name="FoodContConfirmation" type="Panel" parent="Camera2D/CanvasLayer/UI/FoodConfBox" unique_id=1070790843]
+modulate = Color(1, 1, 1, 0)
+z_index = 11
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.5
+offset_top = -113.0
+offset_right = 195.5
+offset_bottom = 112.999756
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0.5, 0.5)
+mouse_filter = 1
+script = ExtResource("2_kfeux")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation" unique_id=1264757498]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxText" type="RichTextLabel" parent="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation/VBoxContainer" unique_id=1039108838]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("9_gwu6q")
+theme_override_font_sizes/normal_font_size = 36
+text = "Proceed to
+Food Minigame?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonCont" type="HBoxContainer" parent="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation/VBoxContainer" unique_id=735161070]
+layout_mode = 2
+
+[node name="Yes" type="Button" parent="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation/VBoxContainer/ButtonCont" unique_id=1479309535]
+custom_minimum_size = Vector2(0, 40.285)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_gwu6q")
+text = "Yes"
+
+[node name="No" type="Button" parent="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation/VBoxContainer/ButtonCont" unique_id=1559985041]
+custom_minimum_size = Vector2(0, 40.285)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_gwu6q")
+text = "No"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation" unique_id=65393583]
+libraries/ = SubResource("AnimationLibrary_7cc47")
+speed_scale = 3.0
+
+[node name="Clock" parent="Camera2D/CanvasLayer/UI" unique_id=1251713995 instance=ExtResource("7_ay3sv")]
 position = Vector2(472, -1)
 
-[node name="BowlLabels" type="Node2D" parent="." unique_id=80505418]
-
-[node name="WeekDayNumCont" type="ColorRect" parent="." unique_id=1520676838]
+[node name="WeekDayNumCont" type="ColorRect" parent="Camera2D/CanvasLayer/UI" unique_id=1520676838]
 self_modulate = Color(1, 1, 1, 0.57254905)
+layout_mode = 0
 offset_left = 97.0
 offset_right = 349.0
 offset_bottom = 50.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="WeekDayNumContLabel" type="RichTextLabel" parent="WeekDayNumCont" unique_id=332988703]
+[node name="WeekDayNumContLabel" type="RichTextLabel" parent="Camera2D/CanvasLayer/UI/WeekDayNumCont" unique_id=332988703]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,28 +320,30 @@ text = "WEEK 1, DAY 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PaymentCont" type="ColorRect" parent="." unique_id=1722601376]
-self_modulate = Color(1, 1, 1, 0.57254905)
-offset_left = 1035.0
-offset_right = 1201.0
-offset_bottom = 50.0
-color = Color(0, 0, 0, 1)
+[node name="PaymentCont" parent="Camera2D/CanvasLayer/UI" unique_id=476718731 instance=ExtResource("10_v6xow")]
+layout_mode = 0
+offset_left = 1021.0
+offset_right = 1187.0
 
-[node name="PaymentLabel" type="RichTextLabel" parent="PaymentCont" unique_id=1079570038]
+[node name="UIAnim" type="AnimationPlayer" parent="Camera2D/CanvasLayer/UI" unique_id=1128892244]
+libraries/ = SubResource("AnimationLibrary_kfeux")
+speed_scale = 3.0
+
+[node name="MinigameBox" type="Panel" parent="Camera2D/CanvasLayer/UI" unique_id=37085098]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 2
+layout_mode = 0
+offset_right = 1303.0
+offset_bottom = 860.355
+script = ExtResource("12_ha1s0")
+
+[node name="MinigameSetting" parent="Camera2D/CanvasLayer/UI/MinigameBox" unique_id=124713226 instance=ExtResource("10_rsqi0")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("9_gwu6q")
-theme_override_font_sizes/normal_font_size = 35
-text = "₱ 10.00"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="child_exiting_tree" from="Control/CustomersCont" to="." method="_on_customers_cont_child_exiting_tree"]
-[connection signal="pressed" from="Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
-[connection signal="child_exiting_tree" from="Control/FreedBowls" to="." method="_on_freed_bowls_child_exiting_tree"]
-[connection signal="day_finished" from="Clock" to="." method="_on_clock_day_finished"]
+[connection signal="child_exiting_tree" from="Camera2D/CanvasLayer/Control/CustomersCont" to="." method="_on_customers_cont_child_exiting_tree"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
+[connection signal="child_exiting_tree" from="Camera2D/CanvasLayer/Control/FreedBowls" to="." method="_on_freed_bowls_child_exiting_tree"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation/VBoxContainer/ButtonCont/Yes" to="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation" method="_on_yes_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation/VBoxContainer/ButtonCont/No" to="Camera2D/CanvasLayer/UI/FoodConfBox/FoodContConfirmation" method="_on_no_pressed"]
+[connection signal="day_finished" from="Camera2D/CanvasLayer/UI/Clock" to="." method="_on_clock_day_finished"]

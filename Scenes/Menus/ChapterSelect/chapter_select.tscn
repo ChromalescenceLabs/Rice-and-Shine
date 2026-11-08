@@ -8,28 +8,6 @@
 [ext_resource type="Script" uid="uid://bxga00f0h33d0" path="res://Scripts/Menus/ChapterSelect/confirmbtn.gd" id="5_uj1cm"]
 [ext_resource type="Texture2D" uid="uid://ddxb2gcx5ft2t" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP3ART.png" id="6_o2cts"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4821w"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sr1md"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oceu8"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ff80y"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbdsf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lo1p8"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1xdru"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3jlt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dvlp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yc2ky"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6cgi"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bgfd"]
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -68,7 +46,7 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aic0f"]
 
-[node name="Control" type="Control" unique_id=685714052]
+[node name="ChapterSelect" type="Control" unique_id=685714052]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,6 +65,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -2.0
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -99,40 +80,23 @@ theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1741316874]
 layout_mode = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = -31
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1873683867]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_constants/separation = 100
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1950439303]
+[node name="Previous" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2031030745]
 layout_mode = 2
-size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("3_uj1cm")
-
-[node name="Previous" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TextureRect" unique_id=166201720]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_4821w")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_sr1md")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_oceu8")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ff80y")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_jbdsf")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_lo1p8")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1xdru")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_l3jlt")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_0dvlp")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_yc2ky")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_q6cgi")
+texture_normal = ExtResource("3_uj1cm")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=787803709]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(725.96, 0)
+custom_maximum_size = Vector2(713.035, -1)
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_scroll_mode = 3
@@ -145,60 +109,31 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_constants/separation = 20
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=353824419]
+[node name="CHAP1" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=1479120411 instance=ExtResource("4_vvagt")]
 layout_mode = 2
-theme_override_constants/margin_left = 45
-theme_override_constants/margin_right = 0
 
-[node name="CH1IMG" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=100283914]
+[node name="CHAP2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=1224953939 instance=ExtResource("4_vvagt")]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-texture = ExtResource("4_o2cts")
-
-[node name="CH2IMG" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=428170660]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
 texture = ExtResource("5_aic0f")
 
-[node name="CH3IMG" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=171032793]
+[node name="CHAP3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=34931184 instance=ExtResource("4_vvagt")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("6_o2cts")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=434623610]
+[node name="CHAP4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=1786386209 instance=ExtResource("4_vvagt")]
+visible = false
 layout_mode = 2
-theme_override_constants/margin_right = 45
+texture = ExtResource("4_uj1cm")
 
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=754270023]
+[node name="Next" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1372053336]
 layout_mode = 2
-size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("3_uj1cm")
+texture_normal = ExtResource("3_uj1cm")
 flip_h = true
 
-[node name="Next" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TextureRect2" unique_id=615207419]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_4821w")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_sr1md")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_oceu8")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ff80y")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_jbdsf")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_lo1p8")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1xdru")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_l3jlt")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_0dvlp")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_yc2ky")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_q6cgi")
-
-[node name="CONFIRMBTN" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1700294055 node_paths=PackedStringArray("CHAP1", "CHAP2", "CHAP3")]
+[node name="CONFIRMBTN" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1700294055]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -215,24 +150,6 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_yam8d")
 text = "CONFIRM
 "
 script = ExtResource("5_uj1cm")
-CHAP1 = NodePath("../HBoxContainer/ScrollContainer/ObjectContainer/CH1IMG")
-CHAP2 = NodePath("../HBoxContainer/ScrollContainer/ObjectContainer/CH2IMG")
-CHAP3 = NodePath("../HBoxContainer/ScrollContainer/ObjectContainer/CH3IMG")
-
-[node name="SelectionMarker" type="Control" parent="." unique_id=1894274957]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -2.5
-offset_top = -2.5
-offset_right = 2.5
-offset_bottom = 2.5
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="TITLE" type="RichTextLabel" parent="." unique_id=705083939]
 layout_mode = 0
@@ -256,15 +173,13 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_aic0f")
 
 [node name="HEADER" type="RichTextLabel" parent="." unique_id=1746309897]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.504
-anchor_top = 0.051000003
-anchor_right = 0.504
-anchor_bottom = 0.051000003
-offset_left = -287.12
-offset_top = -40.72
-offset_right = 286.88
-offset_bottom = 40.28
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -287.0
+offset_top = 16.0
+offset_right = 287.0
+offset_bottom = 97.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
@@ -286,8 +201,8 @@ grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 25
 horizontal_alignment = 1
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TextureRect/Previous" to="." method="_on_previous_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TextureRect2/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/CONFIRMBTN" to="." method="_on_ch_1btn_mouse_entered"]
 [connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/CONFIRMBTN" to="PanelContainer/MarginContainer/VBoxContainer/CONFIRMBTN" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer/MarginContainer/VBoxContainer/CONFIRMBTN" to="." method="_on_ch_1btn_mouse_exited"]

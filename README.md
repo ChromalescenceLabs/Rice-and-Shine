@@ -32,8 +32,6 @@ You play as Mary Rose Suarez, who manages a carinderia named â€œRice and Shineâ€
 4. Feel free to give us constructive criticism - we're beginners and are always open to respectful advice.
 
 ## Versions
-_Information on previous versions to be written soon_
-
 **v0.4.0 - Released October 12, 2026:** Initial functionality for the UI in the Story Mode section done. Progress done on the minigames, mainly hashbrown minigame polishing, and the addition of the tortang talong minigame. Progress done on the customer serving mechanics, with data persistence and initial randomization of the customers themselves done.
 
 ## Acknowledgements

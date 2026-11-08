@@ -16,6 +16,11 @@ const MARITES = preload("uid://gh1at5fdem7h")
 const STUDENT = preload("uid://cww1ucg2b6yl2")
 const TATAY = preload("uid://crl6y8dtirpjd")
 
+const LOLO_H = preload("uid://dfhfqfqwla0wh")
+const MARITES_H = preload("uid://d3wpc3k8lj0ki")
+const STUDENT_H = preload("uid://dao4w44212erp")
+const TATAY_H = preload("uid://by8bv4xoeyryp")
+
 #Hapbar Icon Textures
 var icon_textures : Dictionary = {
 	"student" : preload("uid://cbnq3e8e222c5"),
@@ -62,7 +67,7 @@ func initialization(type : String = "Random", wants : Dictionary = {}) -> Varian
 	if wants.is_empty():
 		var possible_foods : Array = GlobalVars.unlocked_foods.duplicate()
 		customer_info["CustomerWants"] = {}
-		for i in randi_range(1, 3):
+		for i in randi_range(1, possible_foods.size()):
 			var rand_food = possible_foods.pick_random()
 			customer_info["CustomerWants"][rand_food] = randi_range(1, 2)
 			possible_foods.erase(rand_food)
@@ -80,10 +85,25 @@ func enter():
 # Function to Update Texture Based on the Customer's Type
 func update_texture() -> void:
 	match customer_info["CustomerType"]:
-		"student": self.texture_normal = STUDENT
-		"lolo": self.texture_normal = LOLO
-		"marites": self.texture_normal = MARITES
-		"tatay": self.texture_normal = TATAY
+		"student": 
+			self.texture_normal = STUDENT
+			self.texture_hover = STUDENT_H
+		"lolo": 
+			self.texture_normal = LOLO
+			self.texture_hover = LOLO_H
+		"marites": 
+			self.texture_normal = MARITES
+			self.texture_hover = MARITES_H
+		"tatay": 
+			self.texture_normal = TATAY
+			self.texture_hover = TATAY_H
+			
+func upd_texture_tohover() -> void:
+	match customer_info["CustomerType"]:
+		"student": self.texture_normal = STUDENT_H
+		"lolo": self.texture_normal = LOLO_H
+		"marites": self.texture_normal = MARITES_H
+		"tatay": self.texture_normal = TATAY_H
 		
 func instantiate_hapbar(texture : String, node : TextureButton):
 	var hapbar = HAPPINESS_BAR.instantiate()
@@ -94,7 +114,8 @@ func instantiate_hapbar(texture : String, node : TextureButton):
 	
 	return hapbar
 
-func upd_colmask(layer : int): customer_area.collision_mask = layer
+func upd_colmask(layer : int): 
+	customer_area.collision_mask = layer
 	
 # Triggers Dialogue
 func _on_pressed() -> void:
@@ -166,10 +187,12 @@ func _on_customer_area_area_entered(area: Area2D) -> void:
 	if area is BowlArea: 
 		var bowl = area.get_parent() as TextureRect
 		bowl.set("servable", true)
+		upd_texture_tohover()
 func _on_customer_area_area_exited(area: Area2D) -> void:
 	if area is BowlArea: 
 		var bowl = area.get_parent() as TextureRect
 		bowl.set("servable", false)
+		update_texture()
 
 # Triggers when Bowl is Served
 func receive_bowl(bowlContents : Dictionary, bowl : TextureRect):

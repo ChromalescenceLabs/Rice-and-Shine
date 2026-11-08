@@ -15,9 +15,26 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+[ext_resource type="FontFile" uid="uid://co3he04e7gpv" path="res://Assets/Fonts/LL KARATULA 020721.otf" id="1_loqmd"]
+[ext_resource type="Script" uid="uid://ctmt34bfoiy2d" path="res://Scripts/Menus/MinigameSelect/minigame_button.gd" id="1_rh7m7"]
+[ext_resource type="StyleBox" uid="uid://b0ykg2byr4vl8" path="res://Assets/Styles/MinigameSelectNormalStyle.tres" id="2_023po"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fomy"]
+content_margin_left = 90.0
 bg_color = Color(0.8382433, 0.48504812, 0.13694376, 0.8392157)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.66796696, 0.3591639, 0.051412545, 0.80784315)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_towaq"]
+content_margin_left = 90.0
+bg_color = Color(0.21230483, 0.21230483, 0.21230483, 0.5294118)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
@@ -91,17 +108,19 @@ offset_right = 232.00023
 offset_bottom = 55.0
 offset_transform_enabled = true
 offset_transform_visual_only = false
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_iito2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b5a36")
+theme_override_fonts/font = ExtResource("1_loqmd")
+theme_override_font_sizes/font_size = 58
+theme_override_styles/normal = ExtResource("2_023po")
+theme_override_styles/pressed = ExtResource("2_023po")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8fomy")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_towaq")
 text = "Minigame"
 clip_text = true
 script = ExtResource("1_rh7m7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1317456265]
 libraries/ = SubResource("AnimationLibrary_iu2u1")
-speed_scale = 3.0
+speed_scale = 4.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
