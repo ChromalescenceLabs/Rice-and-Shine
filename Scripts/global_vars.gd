@@ -10,6 +10,7 @@ signal successIndEnd
 signal itemEntered
 signal itemExited
 signal shakeDone
+signal customerDone
 
 const SUCCIND = preload("uid://beppy36ki8xum")
 

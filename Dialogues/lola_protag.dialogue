@@ -1,11 +1,47 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
-=> END
+Narrator: [speed=0.5] [wave amp=25 freq=5]During the dead of the night[/wave], a girl sits next to a windowsill. The moon shines like it has never before, the birds, asleep for it will take flight at the first sunlight. Not a sound around but the worries in her head. Worries of the past and the future that is mixed into a blur. Which, oddly enough, has finally lulled her to sleep.   
+Narrator: Mary Suarez was her name.
+do playFade(0,1)
+#flashback
+Marisol Suarez: Listen Mary, I will be gone for a long time. 
+Mary Suarez: Where will you go?
+Marisol Suarez: Somewhere far
+Mary Suarez: Will you and dad come back?
+Marisol Suarez: I will always come back for you, darling. Promise.
+do playFade(1,0)
+Narrator: Her name was fit for a girl who has been working in a karinderya for her whole life.
+do playFade(0,1)
+#Another flashback lmao. so mary gets out of the car while her mother stays inside
+Marisol Suarez: Here is your granny, sweetie.
+Mary Suarez: Hi, granny.
+Grandmother: Hi, sweetheart.
+Marisol Suarez: She will be with you while I'm gone. Promise to be good.
+Mary Suarez: I promise, mama.
+Marisol Suarez: Thank you mom for taking her in.
+Grandmother: There's no need to thank me for something so simple. You can rest easy since I will be with her. You should worry about yourself. 
+Marisol Suarez: I will. I will miss you both too.
+Grandmother: Take care, honey. Mary, say goodbye to your mother.
+Mary Suarez: Bye mommy! Come back safe!
+#Bro waves then never came back lmao
+do playFade(1,0)
+Narrator: As nature continues to march until the end of time, the sun rises to greet her beloved children down below a good morning. 
+Narrator: One particular child was you. Mary Suarez was a name you've always been remembered by. Sensing your awakening, birds sings a lovely melody as you yawn. A familiar smell fans into your nose.
+Grandmother: Mary, would you be a dear and help me set up the karinderya?
+Narrator: It was yet just another day in your lovely karinderya. I guess you better "Rice and Shine" before your grandmother gets mad. I'm so funny
+Narrator: You softly walk down the creaky, old stairs
+Mary Suarez: Goodmorning po, grandma.
+Grandmother: Goodmorning, apo. Here, you should eat first.
+Mary Suarez: Thank you po.
+do playFade(1,0)
+Narrator: As you are putting away the dishes, a customer walks to the store and orders. It's time to start the day.
+do playFade(2,1) 
+=> END	
+
+~ firstCustomer
+Narrator: Now, get the click the (+) button to get a bowl => END
+
+~ clickAddBowl
+Narrator: Great, now put the rice in the bowl  => END
+
+~ correct
+Narrator: Alroght! that is all. If you ever run out of rice, enter the minigame to refill it.

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://rsq18gh4a6gf"]
 
-[ext_resource type="Texture2D" uid="uid://b7hc60k2f7qmo" path="res://Assets/check-box-empty.png" id="2_lisd6"]
-[ext_resource type="Texture2D" uid="uid://bbow08x8m0x45" path="res://Assets/checkbox.png" id="3_ua6wq"]
+[ext_resource type="Texture2D" uid="uid://b7hc60k2f7qmo" path="res://Assets/Sprites/check-box-empty.png" id="2_lisd6"]
+[ext_resource type="Texture2D" uid="uid://bbow08x8m0x45" path="res://Assets/Sprites/checkbox.png" id="3_ua6wq"]
 [ext_resource type="PackedScene" uid="uid://colylw6cldk5v" path="res://Scenes/Storymode/Upgrades/upgrade_button.tscn" id="4_2n3ja"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="4_rmsmy"]
-[ext_resource type="Script" uid="uid://nyedkf3bi17g" path="res://Scripts/Freeplay/Storymode/Upgrades/upgrade.gd" id="4_sy0g7"]
+[ext_resource type="Script" uid="uid://c1pwf1iyiuo6q" path="res://Scripts/Freeplay/Storymode/upgrades/upgrade.gd" id="4_sy0g7"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="5_sy0g7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ittll"]

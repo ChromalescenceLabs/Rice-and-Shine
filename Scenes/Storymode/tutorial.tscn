@@ -1,15 +1,82 @@
 [gd_scene format=3 uid="uid://dsklae1f304tw"]
 
-[ext_resource type="Script" uid="uid://vlcjcyh7xjha" path="res://Scripts/Freeplay/Storymode/tutorial.gd" id="1_8r4ik"]
+[ext_resource type="Script" uid="uid://76ktarh6syn6" path="res://Scripts/Freeplay/Storymode/tutorial.gd" id="1_8r4ik"]
 [ext_resource type="PackedScene" uid="uid://bs83acug1c5xl" path="res://Scenes/Storymode/serving_customers_base.tscn" id="1_gm7gl"]
+[ext_resource type="PackedScene" uid="uid://csole0o4ydmgm" path="res://Scenes/Freeplay/CustomerServing/food_cont.tscn" id="3_j7ggw"]
 [ext_resource type="Texture2D" uid="uid://ckij18mlcxt5f" path="res://Assets/Sprites/StoryMode/BaseLevelBG.png" id="3_kehq1"]
+
+[sub_resource type="Animation" id="Animation_kehq1"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_j7ggw"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lslc"]
+_data = {
+&"RESET": SubResource("Animation_kehq1"),
+&"fade": SubResource("Animation_j7ggw")
+}
 
 [node name="Tutorial" type="Node2D" unique_id=1108877743]
 script = ExtResource("1_8r4ik")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1795387670]
+[node name="BG" type="Control" parent="." unique_id=1259641382]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Flashback" type="ColorRect" parent="BG" unique_id=707169191]
+layout_mode = 0
+offset_right = 1291.0
+offset_bottom = 729.0
+
+[node name="DefaultCutscene" type="ColorRect" parent="BG" unique_id=1570816106]
+layout_mode = 0
+offset_right = 1291.0
+offset_bottom = 729.0
+color = Color(0.9181856, 0.6048499, 1, 1)
+
+[node name="bgServing" type="TextureRect" parent="BG" unique_id=1795387670]
+visible = false
+layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("3_kehq1")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1671361734]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1291.0
+offset_bottom = 729.0
+color = Color(0.040268797, 0.040268805, 0.040268797, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=937191821]
+libraries/ = SubResource("AnimationLibrary_1lslc")
+
 [node name="ServingCustomersBase" parent="." unique_id=1724706127 instance=ExtResource("1_gm7gl")]
+
+[node name="CanvasLayer" parent="ServingCustomersBase/Camera2D" parent_id_path=PackedInt32Array(1724706127, 468022268) index="0" unique_id=1000877256]
+layer = 0
+visible = false
+
+[node name="FoodCont" parent="." unique_id=218262186 instance=ExtResource("3_j7ggw")]
+visible = false
+
+[connection signal="pressed" from="ServingCustomersBase/Camera2D/CanvasLayer/Control/BowlConts/AddBowl" to="." method="_on_add_bowl_pressed"]
+[connection signal="ask_fillconf" from="FoodCont" to="." method="_on_food_cont_ask_fillconf"]
+[connection signal="pressed" from="FoodCont" to="." method="_on_food_cont_pressed"]
+
+[editable path="ServingCustomersBase"]

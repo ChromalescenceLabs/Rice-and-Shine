@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://f5bkmxvr0cpx"]
 
-[ext_resource type="Script" uid="uid://yixhr8lo3pl5" path="res://Scripts/Menus/ChapterSelect/chapter_carousel_menu.gd" id="1_uj1cm"]
-[ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/Sprites/Menus/ModeSelect/placeholderbg.png" id="2_rp5vy"]
+[ext_resource type="Script" uid="uid://c4d2x08s1qpje" path="res://Scripts/Menus/ChapterSelect/chapter_carousel_menu.gd" id="1_uj1cm"]
+[ext_resource type="Texture2D" uid="uid://vjhtk8knuq7l" path="res://Assets/ChapterSelect.png" id="2_vvagt"]
 [ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Sprites/Menus/ChapterSelect/tempbutton.png" id="3_uj1cm"]
 [ext_resource type="Texture2D" uid="uid://rggpnteoka14" path="res://Assets/Sprites/Menus/ChapterSelect/chapterart.png" id="4_uj1cm"]
 [ext_resource type="PackedScene" uid="uid://diiw84fvn3qw" path="res://Scenes/Menus/ChapterSelect/chapter_select_image.tscn" id="4_vvagt"]
@@ -10,10 +10,16 @@
 [ext_resource type="Texture2D" uid="uid://ddxb2gcx5ft2t" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP3ART.png" id="6_l74vx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bgfd"]
+bg_color = Color(0.31764707, 0.19215687, 0.19215687, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+shadow_size = 11
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aic0f"]
 
@@ -58,7 +64,7 @@ script = ExtResource("1_uj1cm")
 
 [node name="placeholderbg" type="Sprite2D" parent="." unique_id=54279452]
 position = Vector2(638, 361)
-texture = ExtResource("2_rp5vy")
+texture = ExtResource("2_vvagt")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1489825513]
 custom_minimum_size = Vector2(500, 280)
@@ -136,7 +142,9 @@ flip_h = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 30
+theme_override_constants/line_spacing = 2
+theme_override_fonts/font = ExtResource("8_l74vx")
+theme_override_font_sizes/font_size = 41
 theme_override_styles/normal = SubResource("StyleBoxFlat_4bgfd")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_aic0f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4t1on")
@@ -176,11 +184,12 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -287.0
-offset_top = 16.0
+offset_top = 8.0
 offset_right = 287.0
-offset_bottom = 97.0
+offset_bottom = 89.0
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 50
+theme_override_fonts/normal_font = ExtResource("8_l74vx")
+theme_override_font_sizes/normal_font_size = 55
 bbcode_enabled = true
 text = "CHAPTER SELECT"
 horizontal_alignment = 1

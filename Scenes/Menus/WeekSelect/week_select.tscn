@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://benuikw1v40e"]
 
-[ext_resource type="Texture2D" uid="uid://hv75qihdrnvp" path="res://Assets/Sprites/Menus/ModeSelect/placeholderbg.png" id="1_w3k1g"]
-[ext_resource type="Script" uid="uid://dc8jbr1g8qnbs" path="res://Scripts/Menus/WeekSelect/description.gd" id="2_u5e5w"]
-[ext_resource type="Script" uid="uid://46l3hsxggc0w" path="res://Scripts/Menus/WeekSelect/weeks.gd" id="3_b1xbh"]
-[ext_resource type="Shader" uid="uid://ciy10rhpj5hej" path="res://Shaders/weekoutline.gdshader" id="4_dy6mn"]
-[ext_resource type="Texture2D" uid="uid://dllkmskb2c4k5" path="res://Assets/Sprites/Menus/ChapterSelect/WEEK SEVEN.png" id="5_wxy26"]
-[ext_resource type="Texture2D" uid="uid://b3n2qqrl5ibob" path="res://Assets/Sprites/Menus/ChapterSelect/WEEK SIX.png" id="6_7slvy"]
+[ext_resource type="Texture2D" uid="uid://c3mg3cxk5owdp" path="res://Assets/Week Select.png" id="1_w3k1g"]
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="2_b1xbh"]
+[ext_resource type="Script" uid="uid://by0d3iblmgm5y" path="res://Scripts/Menus/WeekSelect/description.gd" id="2_u5e5w"]
+[ext_resource type="Script" uid="uid://xyji33kmtddw" path="res://Scripts/Menus/WeekSelect/weeks.gd" id="3_b1xbh"]
+[ext_resource type="Shader" uid="uid://dnoh7wcodxqge" path="res://Shaders/weekoutline.gdshader" id="4_dy6mn"]
+[ext_resource type="Texture2D" uid="uid://b5s3gdbnh5kai" path="res://Assets/Sprites/Menus/ChapterSelect/week one.png" id="5_x3cja"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="6_uty2n"]
 [ext_resource type="Texture2D" uid="uid://bd42trqejp1by" path="res://Assets/Sprites/Menus/ChapterSelect/WEEK FIVE.png" id="7_w0hie"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="7_wxy26"]
@@ -79,20 +79,36 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="BG" type="Sprite2D" parent="." unique_id=267043113]
-modulate = Color(1, 1, 1, 0.48235294)
 position = Vector2(644, 357)
 texture = ExtResource("1_w3k1g")
 
 [node name="DESCRIPTION" type="Label" parent="." unique_id=1229580947]
+custom_maximum_size = Vector2(570, -1)
 layout_mode = 0
 offset_left = 46.0
-offset_top = 531.0
-offset_right = 680.0
-offset_bottom = 592.11115
+offset_top = 536.0
+offset_right = 616.0
+offset_bottom = 578.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b1xbh")
 theme_override_font_sizes/font_size = 30
 text = "WEEK ONE DESCRIPTION TESTING TEST TEST"
+autowrap_mode = 3
 script = ExtResource("2_u5e5w")
-metadata/_edit_use_anchors_ = true
+
+[node name="Week Select" type="Label" parent="." unique_id=1241053576]
+custom_maximum_size = Vector2(570, -1)
+layout_mode = 0
+offset_left = 251.0
+offset_top = 36.0
+offset_right = 458.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_b1xbh")
+theme_override_font_sizes/font_size = 50
+text = "Week Select"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Weeks" type="Control" parent="." unique_id=904295972]
 anchors_preset = 0
