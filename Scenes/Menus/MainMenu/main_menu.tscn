@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Sprites/Logo.png" id="4_euxup"]
 [ext_resource type="StyleBox" uid="uid://ru223rr65m5a" path="res://Assets/Styles/MainMenuHoverandPressStyle.tres" id="4_j4kqa"]
 [ext_resource type="Script" uid="uid://j28786r700op" path="res://Scripts/Menus/MainMenu/quit.gd" id="5_2k7c8"]
-[ext_resource type="Script" uid="uid://clvovqtgykaen" path="res://Scripts/Menus/MainMenu/start.gd" id="6_2k7c8"]
-[ext_resource type="Script" uid="uid://c1eyxkwtk5vr" path="res://Scripts/Menus/Options/options.gd" id="7_2k7c8"]
+[ext_resource type="Script" uid="uid://df4gfs1bgju3t" path="res://Scripts/Menus/MainMenu/start.gd" id="6_2k7c8"]
+[ext_resource type="Script" uid="uid://2of2dw44ki3y" path="res://Scripts/Menus/Options/options.gd" id="7_2k7c8"]
 [ext_resource type="Script" uid="uid://cbiudsrq3kr8" path="res://Scripts/Menus/MainMenu/mainmenu_cam.gd" id="7_neey8"]
+[ext_resource type="AudioStream" uid="uid://cerw2l1idd38t" path="res://Assets/Audio/SFX/Hover.mp3" id="10_rur1y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf7jh"]
 bg_color = Color(0.19607843, 0.5803922, 0.85882354, 1)
@@ -135,6 +136,10 @@ script = ExtResource("7_2k7c8")
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer" unique_id=1677103678]
 anchor_mode = 0
 script = ExtResource("7_neey8")
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=1614267341]
+stream = ExtResource("10_rur1y")
+volume_db = 3.0
 
 [connection signal="pressed" from="QUIT" to="QUIT" method="_on_pressed"]
 [connection signal="pressed" from="START" to="START" method="_on_pressed"]
