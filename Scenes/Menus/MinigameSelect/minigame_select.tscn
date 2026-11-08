@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5ufcgv0qaktk"]
 
-[ext_resource type="Script" uid="uid://bh26w64s7qdr1" path="res://Scripts/Menus/MinigameSelect/minigame_select.gd" id="1_r8em7"]
-[ext_resource type="Script" uid="uid://v14b0q5pkknt" path="res://Scripts/Menus/MinigameSelect/bg_image.gd" id="2_towaq"]
+[ext_resource type="Script" uid="uid://dr4faug6om6a4" path="res://Scripts/Menus/MinigameSelect/minigame_select.gd" id="1_r8em7"]
+[ext_resource type="Script" uid="uid://bf3pgbn574oxb" path="res://Scripts/Menus/MinigameSelect/bg_image.gd" id="2_towaq"]
 [ext_resource type="PackedScene" uid="uid://bkjubyh6wcmam" path="res://Scenes/Menus/MinigameSelect/minigame_select_background.tscn" id="3_0i2wu"]
 [ext_resource type="Texture2D" uid="uid://b52yutm30jb28" path="res://Assets/Sprites/Menus/MinigameSelect/RICE.png" id="4_b8gtf"]
 [ext_resource type="Texture2D" uid="uid://8vtnlhci4tnv" path="res://Assets/Sprites/Menus/MinigameSelect/pancake.png" id="5_7sbiv"]
@@ -11,10 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://csqnlybb1yshd" path="res://Assets/Sprites/Menus/MinigameSelect/torta.png" id="9_cqt1s"]
 [ext_resource type="Texture2D" uid="uid://dcnnxndx0orea" path="res://Assets/Sprites/Menus/MinigameSelect/pancit.png" id="10_towaq"]
 [ext_resource type="Texture2D" uid="uid://b4lajgqgw3lqx" path="res://Assets/Sprites/Menus/MinigameSelect/minigame_bg_placeholder.jpg" id="10_vulic"]
-[ext_resource type="Script" uid="uid://bqo17hfbf73tx" path="res://Scripts/Menus/MinigameSelect/decreasingcontainer.gd" id="11_71n7r"]
+[ext_resource type="Script" uid="uid://od83itugxuii" path="res://Scripts/Menus/MinigameSelect/decreasingcontainer.gd" id="11_71n7r"]
 [ext_resource type="PackedScene" uid="uid://wy5lkqs1nt26" path="res://Scenes/Menus/MinigameSelect/minigame_button.tscn" id="12_m0yh6"]
-[ext_resource type="Texture2D" uid="uid://biymioqcxvn8k" path="res://Assets/Sprites/Menus/MinigameSelect/PLATE.png" id="13_auk73"]
-[ext_resource type="Script" uid="uid://di8gnpcdeqlvd" path="res://Scripts/Menus/MinigameSelect/minigame_description.gd" id="14_g7xsl"]
+[ext_resource type="Script" uid="uid://ba48ag647045s" path="res://Scripts/Menus/MinigameSelect/minigame_description.gd" id="14_g7xsl"]
+[ext_resource type="Texture2D" uid="uid://31xvlqj43fqg" path="res://Assets/PLATE.png" id="14_towaq"]
 [ext_resource type="Texture2D" uid="uid://yoi88bteq2v3" path="res://Assets/Sprites/Logo.png" id="15_xtjuv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuu35"]
@@ -313,8 +313,8 @@ text = "Serve Customers Sandbox"
 layout_mode = 0
 offset_left = -803.0
 offset_top = -425.0
-offset_right = -803.0
-offset_bottom = -425.0
+offset_right = 777.26
+offset_bottom = 1155.26
 size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("11_71n7r")
@@ -449,7 +449,7 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 [node name="Plate" type="Sprite2D" parent="New Selection" unique_id=1406370295]
 position = Vector2(-36, 392)
 scale = Vector2(1.5338885, 1.5127248)
-texture = ExtResource("13_auk73")
+texture = ExtResource("14_towaq")
 
 [node name="Minigame Description" type="RichTextLabel" parent="." unique_id=1240179745]
 offset_left = 31.0

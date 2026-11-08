@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://wy5lkqs1nt26"]
 
-[ext_resource type="Script" uid="uid://ctmt34bfoiy2d" path="res://Scripts/Menus/MinigameSelect/minigame_button.gd" id="1_rh7m7"]
+[ext_resource type="Script" uid="uid://k625kkgl8mev" path="res://Scripts/Menus/MinigameSelect/minigame_button.gd" id="1_rh7m7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iito2"]
 bg_color = Color(0.78039217, 0.42352942, 0.10980392, 0.80784315)
@@ -87,7 +87,7 @@ _data = {
 custom_minimum_size = Vector2(464, 110)
 offset_left = -231.99977
 offset_top = -55.0
-offset_right = 231.99998
+offset_right = 232.00023
 offset_bottom = 55.0
 offset_transform_enabled = true
 offset_transform_visual_only = false

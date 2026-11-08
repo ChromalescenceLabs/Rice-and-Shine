@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://l0j8k6ylewc7"]
+
+[ext_resource type="Texture2D" uid="uid://ckij18mlcxt5f" path="res://Assets/Sprites/StoryMode/BaseLevelBG.png" id="2_tbpxi"]
+[ext_resource type="Script" uid="uid://boexfpncl74l0" path="res://Scenes/lighting.gd" id="2_u175r"]
+
+[sub_resource type="Gradient" id="Gradient_ojur4"]
+offsets = PackedFloat32Array(0, 0.16494845, 0.44329897, 0.69072163, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.971641, 0.69396204, 0.8193418, 1, 0.96849793, 0.44466203, 0.56450623, 1, 0.6019745, 0.25777054, 0.6083442, 1, 0.26779953, 0.053350024, 0.38719213, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qj2yo"]
+gradient = SubResource("Gradient_ojur4")
+
+[node name="Control" type="Control" unique_id=1759434216]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TEST" type="TextureRect" parent="." unique_id=869170960]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_tbpxi")
+
+[node name="first attempt" type="CanvasLayer" parent="." unique_id=305136305]
+visible = false
+
+[node name="Lighting" type="ColorRect" parent="first attempt" unique_id=985669585]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1824511662]
+script = ExtResource("2_u175r")
+gradient = SubResource("GradientTexture1D_qj2yo")

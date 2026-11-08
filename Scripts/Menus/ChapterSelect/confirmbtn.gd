@@ -8,7 +8,7 @@ extends Button
 @onready var status: RichTextLabel = get_node("../../../../STATUS")
 @onready var desc: RichTextLabel = get_node("../../../../DESCRIPTION")
 
-const CH1SCENE = "res://Scenes/Menus/week_select.tscn"
+const CH1SCENE = "res://Scenes/Menus/WeekSelect/week_select.tscn"
 
 var tween: Tween
 
@@ -26,9 +26,9 @@ func _on_pressed() -> void:
 		await get_tree().create_timer(1.0).timeout
 		status.text = ""
 	elif CHAP3.modulate == Color(1,1,1):
-		desc.text = "LOCKED"
+		status.text = "LOCKED"
 		await get_tree().create_timer(1.0).timeout
-		desc.text = ""
+		status.text = ""
 	else: 
 		pass
 
