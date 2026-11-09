@@ -2,11 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://c3mg3cxk5owdp" path="res://Assets/Week Select.png" id="1_w3k1g"]
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="2_b1xbh"]
-[ext_resource type="Script" uid="uid://by0d3iblmgm5y" path="res://Scripts/Menus/WeekSelect/description.gd" id="2_u5e5w"]
-[ext_resource type="Script" uid="uid://xyji33kmtddw" path="res://Scripts/Menus/WeekSelect/weeks.gd" id="3_b1xbh"]
-[ext_resource type="Shader" uid="uid://dnoh7wcodxqge" path="res://Shaders/weekoutline.gdshader" id="4_dy6mn"]
-[ext_resource type="Texture2D" uid="uid://b5s3gdbnh5kai" path="res://Assets/Sprites/Menus/ChapterSelect/week one.png" id="5_x3cja"]
+[ext_resource type="Script" uid="uid://dc8jbr1g8qnbs" path="res://Scripts/Menus/WeekSelect/description.gd" id="2_u5e5w"]
+[ext_resource type="Script" uid="uid://46l3hsxggc0w" path="res://Scripts/Menus/WeekSelect/weeks.gd" id="3_b1xbh"]
+[ext_resource type="Shader" uid="uid://ciy10rhpj5hej" path="res://Shaders/weekoutline.gdshader" id="4_dy6mn"]
+[ext_resource type="Texture2D" uid="uid://dllkmskb2c4k5" path="res://Assets/Sprites/Menus/ChapterSelect/WEEK SEVEN.png" id="6_7slvy"]
 [ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/smooth_scroll_container.gd" id="6_uty2n"]
+[ext_resource type="Texture2D" uid="uid://b3n2qqrl5ibob" path="res://Assets/Sprites/Menus/ChapterSelect/WEEK SIX.png" id="7_2nnt3"]
 [ext_resource type="Texture2D" uid="uid://bd42trqejp1by" path="res://Assets/Sprites/Menus/ChapterSelect/WEEK FIVE.png" id="7_w0hie"]
 [ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="7_wxy26"]
 [ext_resource type="Texture2D" uid="uid://bynax6ikcrfhi" path="res://Assets/Sprites/Menus/ChapterSelect/WEEK FOUR.png" id="8_2nnt3"]
@@ -120,13 +121,13 @@ script = ExtResource("3_b1xbh")
 material = SubResource("ShaderMaterial_154id")
 position = Vector2(210, 327)
 scale = Vector2(0.71999997, 0.71999997)
-texture = ExtResource("5_wxy26")
+texture = ExtResource("6_7slvy")
 
 [node name="WeekSix" type="Sprite2D" parent="Weeks" unique_id=1968593448]
 material = SubResource("ShaderMaterial_yvrl2")
 position = Vector2(260, 326)
 scale = Vector2(0.72, 0.72)
-texture = ExtResource("6_7slvy")
+texture = ExtResource("7_2nnt3")
 
 [node name="WeekFive" type="Sprite2D" parent="Weeks" unique_id=1212685339]
 material = SubResource("ShaderMaterial_1ovjf")

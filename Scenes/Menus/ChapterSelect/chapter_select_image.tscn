@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://diiw84fvn3qw"]
 
-[ext_resource type="Texture2D" uid="uid://52s7q3ht5fdx" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP1ART.png" id="1_g7imo"]
+[ext_resource type="Texture2D" uid="uid://jx7evum0k0x0" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP1ART.png" id="1_g7imo"]
 [ext_resource type="Script" uid="uid://dptwmluvppx77" path="res://Scripts/Menus/ChapterSelect/chapter_select_image.gd" id="2_jwi5h"]
 
 [sub_resource type="Animation" id="Animation_jwi5h"]
