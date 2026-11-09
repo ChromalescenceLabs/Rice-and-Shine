@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bsqv34s5n6jua" path="res://Assets/Sprites/Serving/Trays/EmptyTray.png" id="1_lsfcn"]
 [ext_resource type="Texture2D" uid="uid://d4ejlsmnfb3fk" path="res://Assets/Sprites/Serving/Trays/EmptyTrayH.png" id="2_8ugwq"]
-[ext_resource type="Script" uid="uid://yibqtl0p1goi" path="res://Scripts/Freeplay/CustomerServing/food_cont.gd" id="3_filax"]
+[ext_resource type="Script" uid="uid://6kw4x0mctf5u" path="res://Scripts/Freeplay/CustomerServing/food_cont.gd" id="3_filax"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybycj"]
 bg_color = Color(0.6, 0.6, 0.6, 0.6784314)

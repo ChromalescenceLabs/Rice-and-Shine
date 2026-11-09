@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bswxrlauo47g5"]
 
-[ext_resource type="Script" uid="uid://dqlxa0nts3tiq" path="res://Scripts/Freeplay/CustomerServing/customer_serving_button.gd" id="1_s2m02"]
+[ext_resource type="Script" uid="uid://ccthg64qnawp6" path="res://Scripts/Freeplay/CustomerServing/customer_serving_button.gd" id="1_s2m02"]
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="2_hytr6"]
 [ext_resource type="Texture2D" uid="uid://cy0g21ihckpr8" path="res://Assets/Sprites/Serving/CustomerButtonArrow.png" id="3_pip02"]
 [ext_resource type="Texture2D" uid="uid://piovqj7orf5c" path="res://Assets/Sprites/Menus/MinigameSelect/Star.png" id="4_jk05y"]
@@ -282,14 +282,14 @@ texture = ExtResource("3_pip02")
 [node name="Star" type="TextureRect" parent="." unique_id=933542141]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.2171874
-anchor_top = 0.19583355
+anchor_left = -0.271875
+anchor_top = 0.098611325
 anchor_right = -0.271875
 anchor_bottom = 0.098611325
-offset_left = 1582.9999
-offset_top = 31.999817
-offset_right = 1858.0001
-offset_bottom = 307.00043
+offset_left = 1653.0
+offset_top = 101.99982
+offset_right = 1928.0002
+offset_bottom = 377.00043
 rotation = 0.62831855
 pivot_offset = Vector2(102.5, 102.5)
 texture = ExtResource("4_jk05y")

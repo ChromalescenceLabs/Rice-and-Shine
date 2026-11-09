@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnkgil0k2g8ap"]
 
-[ext_resource type="Script" uid="uid://billlr2ul73gm" path="res://Scripts/Loading/loading_screen_fade.gd" id="1_26lxr"]
+[ext_resource type="Script" uid="uid://cahfetu6y67kj" path="res://Scripts/Loading/loading_screen_fade.gd" id="1_26lxr"]
 
 [sub_resource type="Animation" id="Animation_c5ec2"]
 length = 0.001
