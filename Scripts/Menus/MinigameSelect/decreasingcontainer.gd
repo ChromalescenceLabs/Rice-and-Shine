@@ -89,7 +89,7 @@ func _arrange_children() -> void:
 		var items_to_place: int = min(items_in_this_ring, remaining_items)
 		
 		# Calculate angle between items
-		var angle_step: float = angle_range / float(items_to_place) if use_half_ring else angle_range / float(items_to_place)
+		var angle_step: float = angle_range / items_to_place
 		
 		#Place items in a circle/arc
 		for i: int in range(items_to_place):
@@ -99,11 +99,7 @@ func _arrange_children() -> void:
 			var child: Control = children_list[child_index]
 			
 			# For half rings, start from the beginning of the arc range
-			var angle: float = 0.0
-			if use_half_ring:
-				angle = (i * angle_step) + deg_to_rad(rotation_offset_degrees)
-			else:
-				angle = (i * angle_step) + deg_to_rad(rotation_offset_degrees)
+			var angle: float = i * angle_step + deg_to_rad(rotation_offset_degrees)
 				
 			# Calculate position
 			var pos: Vector2 = Vector2(
@@ -116,6 +112,8 @@ func _arrange_children() -> void:
 			pos -= child_size / 2.0
 			
 			fit_child_in_rect(child, Rect2(pos, child_size))
+			child.pivot_offset = child_size / 2.0
+			child.rotation = angle
 			child_index += 1
 			
 func _get_minimum_size() -> Vector2:

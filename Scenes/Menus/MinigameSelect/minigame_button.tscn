@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://wy5lkqs1nt26"]
 
 [ext_resource type="FontFile" uid="uid://co3he04e7gpv" path="res://Assets/Fonts/LL KARATULA 020721.otf" id="1_loqmd"]
-[ext_resource type="Script" uid="uid://ctmt34bfoiy2d" path="res://Scripts/Menus/MinigameSelect/minigame_button.gd" id="1_rh7m7"]
+[ext_resource type="Script" uid="uid://k625kkgl8mev" path="res://Scripts/Menus/MinigameSelect/minigame_button.gd" id="1_rh7m7"]
 [ext_resource type="StyleBox" uid="uid://b0ykg2byr4vl8" path="res://Assets/Styles/MinigameSelectNormalStyle.tres" id="2_023po"]
+[ext_resource type="Texture2D" uid="uid://ds8taxlvclapa" path="res://Assets/Sprites/Menus/MinigameSelect/SunRay.png" id="4_u8dop"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fomy"]
 content_margin_left = 90.0
@@ -102,6 +103,11 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_towaq")
 text = "Minigame"
 clip_text = true
 script = ExtResource("1_rh7m7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1577262289]
+z_index = -1
+position = Vector2(265.99976, 57)
+texture = ExtResource("4_u8dop")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1317456265]
 libraries/ = SubResource("AnimationLibrary_iu2u1")
