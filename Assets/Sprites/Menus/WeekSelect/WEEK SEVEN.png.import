@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dllkmskb2c4k5"
-path="res://.godot/imported/WEEK SEVEN.png-43c064e895c8e049adc8d7dac5becfbc.ctex"
+path="res://.godot/imported/WEEK SEVEN.png-24a85e0cadd73cdb3b5435f22330d52d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Menus/ChapterSelect/WEEK SEVEN.png"
-dest_files=["res://.godot/imported/WEEK SEVEN.png-43c064e895c8e049adc8d7dac5becfbc.ctex"]
+source_file="res://Assets/Sprites/Menus/WeekSelect/WEEK SEVEN.png"
+dest_files=["res://.godot/imported/WEEK SEVEN.png-24a85e0cadd73cdb3b5435f22330d52d.ctex"]
 
 [params]
 

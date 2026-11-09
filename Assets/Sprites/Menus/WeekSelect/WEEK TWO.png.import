@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mlyddi7or8f6"
-path="res://.godot/imported/WEEK THREE.png-2b5e97fe7e4519c2994fe80147f0bbaf.ctex"
+uid="uid://crwdy2fe3tvdl"
+path="res://.godot/imported/WEEK TWO.png-cb1a3539e6748f211c01b3e5150ec9ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Menus/ChapterSelect/WEEK THREE.png"
-dest_files=["res://.godot/imported/WEEK THREE.png-2b5e97fe7e4519c2994fe80147f0bbaf.ctex"]
+source_file="res://Assets/Sprites/Menus/WeekSelect/WEEK TWO.png"
+dest_files=["res://.godot/imported/WEEK TWO.png-cb1a3539e6748f211c01b3e5150ec9ee.ctex"]
 
 [params]
 

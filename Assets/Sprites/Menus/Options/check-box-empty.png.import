@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbfp4eyes2qkr"
-path="res://.godot/imported/mixedBowl.png-8e378af880c5c499bbcfc252b23fe871.ctex"
+uid="uid://b7hc60k2f7qmo"
+path="res://.godot/imported/check-box-empty.png-794b462ced54e653632dbfac0e843928.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mixedBowl.png"
-dest_files=["res://.godot/imported/mixedBowl.png-8e378af880c5c499bbcfc252b23fe871.ctex"]
+source_file="res://Assets/Sprites/Menus/Options/check-box-empty.png"
+dest_files=["res://.godot/imported/check-box-empty.png-794b462ced54e653632dbfac0e843928.ctex"]
 
 [params]
 

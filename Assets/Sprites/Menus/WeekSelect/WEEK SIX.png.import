@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy0g21ihckpr8"
-path="res://.godot/imported/CustomerButtonArrow.png-ce9f8c9d7c3b006b64c5c8524ef1be02.ctex"
+uid="uid://b3n2qqrl5ibob"
+path="res://.godot/imported/WEEK SIX.png-38b8435a6d183e19b1af9534dc1872de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Serving/CustomerButtonArrow.png"
-dest_files=["res://.godot/imported/CustomerButtonArrow.png-ce9f8c9d7c3b006b64c5c8524ef1be02.ctex"]
+source_file="res://Assets/Sprites/Menus/WeekSelect/WEEK SIX.png"
+dest_files=["res://.godot/imported/WEEK SIX.png-38b8435a6d183e19b1af9534dc1872de.ctex"]
 
 [params]
 

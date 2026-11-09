@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Rice and Shine!"
-run/main_scene="uid://b5ufcgv0qaktk"
+run/main_scene="uid://g2mj87nvmarh"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://1nyvjuq32uht"
 
@@ -27,7 +27,7 @@ SceneLoader="*uid://jauffil1d42j"
 Sfx="*uid://du6gjwu6i72mh"
 MusicManager="*uid://c71mkx0ylpomy"
 GlobalScenes="*uid://ddyvxe1aoo6kg"
-GlobalSaveManager="*uid://duerh0om2lpm5"
+GlobalSaveManager="*uid://cdayiwwj2beiv"
 
 [dialogue_manager]
 
@@ -50,8 +50,9 @@ enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/
 folder_colors={
 "res://Assets/": "red",
 "res://Dialogues/": "orange",
-"res://Scenes/": "yellow",
-"res://Scripts/": "green"
+"res://Lighting/": "yellow",
+"res://Scenes/": "green",
+"res://Scripts/": "teal"
 }
 
 [global_group]

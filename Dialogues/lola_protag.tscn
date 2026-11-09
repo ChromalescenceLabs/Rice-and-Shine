@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4tmyxgi8ks5v"]
 
-[ext_resource type="Script" uid="uid://c6sl2ehjk5dc5" path="res://Dialogues/lola_protag.gd" id="1_3iqrc"]
+[ext_resource type="Script" uid="uid://mlpc1bpck4nk" path="res://Dialogues/lola_protag.gd" id="1_3iqrc"]
 [ext_resource type="Texture2D" uid="uid://qhn1ppht5ikl" path="res://Assets/Sprites/Serving/Clock.png" id="2_3iqrc"]
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="2_vxs4b"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="3_lxldg"]

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://l0j8k6ylewc7"]
 
-[ext_resource type="Script" uid="uid://pvct6nqug6lt" path="res://Scenes/pointlights.gd" id="1_u175r"]
+[ext_resource type="Script" uid="uid://pvct6nqug6lt" path="res://Lighting/pointlights.gd" id="1_u175r"]
 [ext_resource type="Texture2D" uid="uid://ckij18mlcxt5f" path="res://Assets/Sprites/StoryMode/BaseLevelBG.png" id="2_tbpxi"]
-[ext_resource type="Script" uid="uid://cajba5kw3on7x" path="res://Scenes/lighting.gd" id="2_u175r"]
+[ext_resource type="Script" uid="uid://cajba5kw3on7x" path="res://Lighting/lighting.gd" id="2_u175r"]
 
 [sub_resource type="Gradient" id="Gradient_u175r"]
 offsets = PackedFloat32Array(0.443299, 1)

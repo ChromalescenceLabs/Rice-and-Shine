@@ -3,7 +3,6 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $ColorRect/AnimationPlayer
 @onready var bg: Control = $BG
 @onready var add_bowl: Button = $ServingCustomersBase/Camera2D/CanvasLayer/Control/BowlConts/AddBowl
-@onready var food_cont: TextureButton = $FoodCont
 
 var doneBowl = false 
 var doneCustomer = false

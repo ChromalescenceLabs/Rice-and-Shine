@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbow08x8m0x45"
-path="res://.godot/imported/checkbox.png-106403a467c862dc08b52653672a045b.ctex"
+uid="uid://bs8v8y0r01ty6"
+path="res://.godot/imported/week one.png-6b4c8ca673bfa551b699379a67647ebb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/checkbox.png"
-dest_files=["res://.godot/imported/checkbox.png-106403a467c862dc08b52653672a045b.ctex"]
+source_file="res://Assets/Sprites/Menus/WeekSelect/week one.png"
+dest_files=["res://.godot/imported/week one.png-6b4c8ca673bfa551b699379a67647ebb.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs8v8y0r01ty6"
-path="res://.godot/imported/week one.png-4061bf46668377204d12ac8f31cc31aa.ctex"
+uid="uid://bryfieipfyf2o"
+path="res://.godot/imported/ACHIEVEMENTS TEMP.png-fd2c5c6f38e664598ced62fc1f9aa829.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Menus/ChapterSelect/week one.png"
-dest_files=["res://.godot/imported/week one.png-4061bf46668377204d12ac8f31cc31aa.ctex"]
+source_file="res://Assets/Sprites/Menus/Options/ACHIEVEMENTS TEMP.png"
+dest_files=["res://.godot/imported/ACHIEVEMENTS TEMP.png-fd2c5c6f38e664598ced62fc1f9aa829.ctex"]
 
 [params]
 

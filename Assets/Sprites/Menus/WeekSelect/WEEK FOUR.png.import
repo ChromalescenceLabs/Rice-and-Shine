@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1eym2kw5w5qi"
-path="res://.godot/imported/mixedBowl3.png-98b8a2fcdfe7fb7679b9d39a16c87262.ctex"
+uid="uid://bynax6ikcrfhi"
+path="res://.godot/imported/WEEK FOUR.png-20f92e63905cc44a565fb8c31b7c35d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Freeplay/Cooking_Minigames/Hashbrown/mixedBowl3.png"
-dest_files=["res://.godot/imported/mixedBowl3.png-98b8a2fcdfe7fb7679b9d39a16c87262.ctex"]
+source_file="res://Assets/Sprites/Menus/WeekSelect/WEEK FOUR.png"
+dest_files=["res://.godot/imported/WEEK FOUR.png-20f92e63905cc44a565fb8c31b7c35d1.ctex"]
 
 [params]
 
