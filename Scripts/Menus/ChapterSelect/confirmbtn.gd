@@ -9,7 +9,7 @@ const LOADING_SCREEN_FADE = preload("uid://dnkgil0k2g8ap")
 @onready var title: RichTextLabel = %TITLE
 @onready var desc: RichTextLabel = %DESCRIPTION
 
-@onready var status: RichTextLabel = get_node("../../../../STATUS")
+@onready var status: RichTextLabel = %STATUS
 @onready var hover_3: AnimationPlayer = $Hover3
 
 const CH1SCENE = "res://Scenes/Menus/WeekSelect/week_select.tscn"
@@ -45,15 +45,15 @@ func _on_mouse_entered() -> void:
 	if get_tree().current_scene.selected_indx == 0:
 		title.text = "CHAPTER ONE"
 		desc.text = "CHAPTER 1 DESCRIPTION"
-		CHAP2.color_rect.visible = false
+		CHAP2.texture_rect.visible = false
 		tween.tween_property(CHAP2,"modulate:a",0,0.25)
 		title_desc_container.reparent_to_left()
 		
 	elif get_tree().current_scene.selected_indx == 1:
 		title.text = "CHAPTER TWO"
 		desc.text = "CHAPTER 2 DESCRIPTION"
-		CHAP1.color_rect.visible = false
-		CHAP3.color_rect.visible = false
+		CHAP1.texture_rect.visible = false
+		CHAP3.texture_rect.visible = false
 		tween.tween_property(CHAP1, "modulate:a",0,0.25)
 		tween.tween_property(CHAP3, "modulate:a",0,0.25)
 		title_desc_container.reparent_to_left()
@@ -61,7 +61,7 @@ func _on_mouse_entered() -> void:
 	elif get_tree().current_scene.selected_indx == 2:
 		title.text = "CHAPTER THREE"
 		desc.text = "CHAPTER 3 DESCRIPTION"
-		CHAP2.color_rect.visible = false
+		CHAP2.texture_rect.visible = false
 		tween.tween_property(CHAP2, "modulate:a",0,0.25)
 		title_desc_container.reparent_to_right()
 
@@ -78,9 +78,6 @@ func _on_mouse_exited() -> void:
 	tween.tween_property(CHAP1,"modulate:a",1.0,0.2)
 	tween.tween_property(CHAP2,"modulate:a",1.0, 0.2)
 	tween.tween_property(CHAP3, "modulate:a",1.0,0.2)
-	CHAP1.color_rect.visible = true
-	CHAP2.color_rect.visible = true
-	CHAP3.color_rect.visible = true
 	
 	if get_tree().current_scene.selected_indx == 0:
 		title_desc_container.righttoleft_backwards()
@@ -90,6 +87,11 @@ func _on_mouse_exited() -> void:
 		
 	elif get_tree().current_scene.selected_indx == 2:
 		title_desc_container.lefttoright_backwards()
-
+	
+	await tween.finished
+	
+	CHAP1.texture_rect.visible = true
+	CHAP2.texture_rect.visible = true
+	CHAP3.texture_rect.visible = true
 
 func _on_button_down() -> void: hover_3.play("play")

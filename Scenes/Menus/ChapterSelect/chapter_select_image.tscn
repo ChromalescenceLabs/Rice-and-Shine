@@ -40,10 +40,16 @@ _data = {
 }
 
 [node name="ChapterSelectImage" type="TextureRect" unique_id=1479120411]
+self_modulate = Color(1, 1, 1, 0)
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("1_g7imo")
 script = ExtResource("2_jwi5h")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=174171925]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=412364449]
 layout_mode = 1

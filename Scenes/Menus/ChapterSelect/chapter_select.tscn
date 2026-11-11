@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://rggpnteoka14" path="res://Assets/Sprites/Menus/ChapterSelect/chapterart.png" id="4_uj1cm"]
 [ext_resource type="PackedScene" uid="uid://diiw84fvn3qw" path="res://Scenes/Menus/ChapterSelect/chapter_select_image.tscn" id="4_vvagt"]
 [ext_resource type="Texture2D" uid="uid://cm4y5svne4g8e" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP2ART.png" id="5_aic0f"]
+[ext_resource type="Texture2D" uid="uid://jx7evum0k0x0" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP1ART.png" id="5_dqs3m"]
 [ext_resource type="Script" uid="uid://bxga00f0h33d0" path="res://Scripts/Menus/ChapterSelect/confirmbtn.gd" id="5_uj1cm"]
 [ext_resource type="Texture2D" uid="uid://ddxb2gcx5ft2t" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP3ART.png" id="6_l74vx"]
 [ext_resource type="StyleBox" uid="uid://o68hli16w06h" path="res://Assets/Styles/ChapterSelectContinueButton.tres" id="8_1dgga"]
@@ -171,6 +172,10 @@ content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqs3m"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+
 [node name="ChapterSelect" type="Control" unique_id=685714052]
 layout_mode = 3
 anchors_preset = 15
@@ -241,19 +246,23 @@ theme_override_constants/separation = 20
 
 [node name="CHAP1" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=1479120411 instance=ExtResource("4_vvagt")]
 layout_mode = 2
+ChapSelectImg = ExtResource("5_dqs3m")
 
-[node name="CHAP2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=1224953939 instance=ExtResource("4_vvagt")]
+[node name="CHAP2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=1453878619 instance=ExtResource("4_vvagt")]
 layout_mode = 2
 texture = ExtResource("5_aic0f")
+ChapSelectImg = ExtResource("5_aic0f")
 
-[node name="CHAP3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=34931184 instance=ExtResource("4_vvagt")]
+[node name="CHAP3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=1431715058 instance=ExtResource("4_vvagt")]
 layout_mode = 2
 texture = ExtResource("6_l74vx")
+ChapSelectImg = ExtResource("6_l74vx")
 
-[node name="CHAP4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=1786386209 instance=ExtResource("4_vvagt")]
+[node name="CHAP4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer" unique_id=1492562512 instance=ExtResource("4_vvagt")]
 visible = false
 layout_mode = 2
 texture = ExtResource("4_uj1cm")
+ChapSelectImg = ExtResource("4_uj1cm")
 
 [node name="Next" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1372053336]
 layout_mode = 2
@@ -376,6 +385,14 @@ text = "Lorem Ipsum  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLore
 custom_minimum_size = Vector2(0, 95.955)
 layout_mode = 2
 
+[node name="STATUS" type="RichTextLabel" parent="TitleDescContainer/RightPos/VBoxContainer2" unique_id=981405533]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 43.175)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dqs3m")
+horizontal_alignment = 1
+
 [node name="HEADER" type="RichTextLabel" parent="." unique_id=1746309897]
 layout_mode = 1
 anchors_preset = 5
@@ -389,21 +406,6 @@ grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 55
 bbcode_enabled = true
 text = "CHAPTER SELECT"
-horizontal_alignment = 1
-
-[node name="STATUS" type="RichTextLabel" parent="." unique_id=981405533]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.85800004
-anchor_right = 0.5
-anchor_bottom = 0.85800004
-offset_left = -278.0
-offset_top = -25.76001
-offset_right = 281.0
-offset_bottom = 9.23999
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 25
 horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_mouse_entered"]

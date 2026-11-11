@@ -3,14 +3,17 @@ extends Control
 @onready var v_box_container_2: VBoxContainer = $RightPos/VBoxContainer2
 @onready var title: RichTextLabel = %TITLE
 @onready var description: RichTextLabel = %DESCRIPTION
+@onready var status: RichTextLabel = %STATUS
 
 var tween: Tween
 
 func reparent_to_left() -> void: 
 	description.reparent(v_box_container_2)
 	title.reparent(v_box_container_2)
+	status.reparent(v_box_container_2)
 	v_box_container_2.move_child(description, 1)
 	v_box_container_2.move_child(title, 1)
+	v_box_container_2.move_child(status, 4)
 	
 	# Reset Values
 	description.modulate.a = 0
@@ -30,8 +33,10 @@ func reparent_to_left() -> void:
 func reparent_to_right() -> void: 
 	description.reparent(v_box_container)
 	title.reparent(v_box_container)
+	status.reparent(v_box_container)
 	v_box_container.move_child(description, 1)
 	v_box_container.move_child(title, 1)
+	v_box_container.move_child(status, 4)
 	
 	# Reset Values
 	description.modulate.a = 0
