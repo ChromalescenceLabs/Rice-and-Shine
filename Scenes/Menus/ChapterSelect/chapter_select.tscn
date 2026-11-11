@@ -8,8 +8,84 @@
 [ext_resource type="Texture2D" uid="uid://cm4y5svne4g8e" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP2ART.png" id="5_aic0f"]
 [ext_resource type="Script" uid="uid://bxga00f0h33d0" path="res://Scripts/Menus/ChapterSelect/confirmbtn.gd" id="5_uj1cm"]
 [ext_resource type="Texture2D" uid="uid://ddxb2gcx5ft2t" path="res://Assets/Sprites/Menus/ChapterSelect/CHAP3ART.png" id="6_l74vx"]
+[ext_resource type="StyleBox" uid="uid://o68hli16w06h" path="res://Assets/Styles/ChapterSelectContinueButton.tres" id="8_1dgga"]
+[ext_resource type="Script" uid="uid://eyrhaupwd7te" path="res://Scripts/Menus/ChapterSelect/title_desc_container.gd" id="9_yoiom"]
+[ext_resource type="FontFile" uid="uid://co3he04e7gpv" path="res://Assets/Fonts/LL KARATULA 020721.otf" id="11_dqs3m"]
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="12_lxs73"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bgfd"]
+[sub_resource type="Animation" id="Animation_1dgga"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dqs3m"]
+resource_name = "hover"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.175, 1.175)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lxs73"]
+_data = {
+&"RESET": SubResource("Animation_1dgga"),
+&"hover": SubResource("Animation_dqs3m")
+}
+
+[sub_resource type="Animation" id="Animation_iloty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Next:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0bn6v"]
+resource_name = "hover"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Next:offset_transform_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.175, 1.175)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_enjhg"]
+_data = {
+&"RESET": SubResource("Animation_iloty"),
+&"hover": SubResource("Animation_0bn6v")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iloty"]
 bg_color = Color(0.31764707, 0.19215687, 0.19215687, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -21,37 +97,79 @@ expand_margin_right = 15.0
 expand_margin_bottom = 15.0
 shadow_size = 11
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aic0f"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4t1on"]
-bg_color = Color(0.3650881, 0.36508793, 0.3650879, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2cts"]
-bg_color = Color(0.3647059, 0.3647059, 0.3647059, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bn6v"]
+bg_color = Color(0.44236565, 0.27816552, 0.2779755, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uj1cm"]
-border_width_bottom = 3
-border_color = Color(0.3953672, 0.39536718, 0.39536715, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg62a"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fmhm"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ot2a"]
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+shadow_size = 11
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yam8d"]
+
+[sub_resource type="Animation" id="Animation_1igsd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../CONFIRMBTN:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vyp4g"]
+resource_name = "hover"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../CONFIRMBTN:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.07, 1.07)]
+}
+
+[sub_resource type="Animation" id="Animation_sd1ls"]
+resource_name = "play"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../CONFIRMBTN:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.895, 0.895)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dc27c"]
+_data = {
+&"RESET": SubResource("Animation_1igsd"),
+&"hover": SubResource("Animation_vyp4g"),
+&"play": SubResource("Animation_sd1ls")
+}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2cts"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aic0f"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
 
 [node name="ChapterSelect" type="Control" unique_id=685714052]
 layout_mode = 3
@@ -98,7 +216,12 @@ theme_override_constants/separation = 100
 [node name="Previous" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2031030745]
 layout_mode = 2
 size_flags_vertical = 4
+offset_transform_enabled = true
 texture_normal = ExtResource("3_uj1cm")
+
+[node name="Hover" type="AnimationPlayer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Previous" unique_id=1812901422]
+libraries/ = SubResource("AnimationLibrary_lxs73")
+speed_scale = 5.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=787803709]
 unique_name_in_owner = true
@@ -135,46 +258,123 @@ texture = ExtResource("4_uj1cm")
 [node name="Next" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1372053336]
 layout_mode = 2
 size_flags_vertical = 4
+offset_transform_enabled = true
 texture_normal = ExtResource("3_uj1cm")
 flip_h = true
+
+[node name="Hover2" type="AnimationPlayer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Next" unique_id=1633215718]
+root_node = NodePath("../../Previous")
+libraries/ = SubResource("AnimationLibrary_enjhg")
+speed_scale = 4.5
 
 [node name="CONFIRMBTN" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1700294055]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+offset_transform_enabled = true
 theme_override_constants/line_spacing = 2
 theme_override_font_sizes/font_size = 41
-theme_override_styles/normal = SubResource("StyleBoxFlat_4bgfd")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_aic0f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4t1on")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_o2cts")
-theme_override_styles/hover = SubResource("StyleBoxFlat_uj1cm")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_wg62a")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4fmhm")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_6ot2a")
+theme_override_styles/normal = ExtResource("8_1dgga")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iloty")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bn6v")
+theme_override_styles/hover_pressed = ExtResource("8_1dgga")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_yam8d")
 text = "CONFIRM"
 script = ExtResource("5_uj1cm")
 
-[node name="TITLE" type="RichTextLabel" parent="." unique_id=705083939]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 234.0
-offset_right = 884.0
-offset_bottom = 293.0
+[node name="Hover3" type="AnimationPlayer" parent="PanelContainer/MarginContainer/VBoxContainer/CONFIRMBTN" unique_id=372272191]
+root_node = NodePath("../../HBoxContainer/Previous")
+libraries/ = SubResource("AnimationLibrary_dc27c")
+speed_scale = 5.0
+
+[node name="TitleDescContainer" type="Control" parent="." unique_id=1872782991]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_yoiom")
+
+[node name="LeftPos" type="ColorRect" parent="TitleDescContainer" unique_id=335973170]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 281.0
+offset_top = 85.0
+offset_right = 586.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleDescContainer/LeftPos" unique_id=1894347191]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TitleDescContainer/LeftPos/VBoxContainer" unique_id=1957046358]
+custom_minimum_size = Vector2(0, 136.605)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="TitleDescContainer/LeftPos/VBoxContainer" unique_id=936259534]
+custom_minimum_size = Vector2(0, 95.955)
+layout_mode = 2
+
+[node name="RightPos" type="ColorRect" parent="TitleDescContainer" unique_id=1964187525]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 646.0
+offset_top = 85.0
+offset_right = 951.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TitleDescContainer/RightPos" unique_id=672895418]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TitleDescContainer/RightPos/VBoxContainer2" unique_id=1883227939]
+custom_minimum_size = Vector2(0, 136.605)
+layout_mode = 2
+
+[node name="TITLE" type="RichTextLabel" parent="TitleDescContainer/RightPos/VBoxContainer2" unique_id=705083939]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+custom_maximum_size = Vector2(-1, 63.605)
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+theme_override_fonts/normal_font = ExtResource("11_dqs3m")
 theme_override_font_sizes/normal_font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_o2cts")
+text = "Lorem Ipsum "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DESCRIPTION" type="RichTextLabel" parent="." unique_id=573047361]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 303.0
-offset_right = 883.0
-offset_bottom = 535.0
+[node name="DESCRIPTION" type="RichTextLabel" parent="TitleDescContainer/RightPos/VBoxContainer2" unique_id=573047361]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+theme_override_fonts/normal_font = ExtResource("12_lxs73")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_aic0f")
+text = "Lorem Ipsum  Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum"
+
+[node name="MarginContainer2" type="MarginContainer" parent="TitleDescContainer/RightPos/VBoxContainer2" unique_id=244841140]
+custom_minimum_size = Vector2(0, 95.955)
+layout_mode = 2
 
 [node name="HEADER" type="RichTextLabel" parent="." unique_id=1746309897]
 layout_mode = 1
@@ -206,8 +406,13 @@ grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 25
 horizontal_alignment = 1
 
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_mouse_exited"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Next" to="." method="_on_next_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Next" to="." method="_on_next_mouse_exited"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="button_down" from="PanelContainer/MarginContainer/VBoxContainer/CONFIRMBTN" to="PanelContainer/MarginContainer/VBoxContainer/CONFIRMBTN" method="_on_button_down"]
 [connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/CONFIRMBTN" to="." method="_on_ch_1btn_mouse_entered"]
 [connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/CONFIRMBTN" to="PanelContainer/MarginContainer/VBoxContainer/CONFIRMBTN" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer/MarginContainer/VBoxContainer/CONFIRMBTN" to="." method="_on_ch_1btn_mouse_exited"]

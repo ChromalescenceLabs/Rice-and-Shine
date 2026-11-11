@@ -172,6 +172,7 @@ _data = {
 }
 
 [node name="CustomerOrderBalloon" type="Node2D" unique_id=2062467046]
+z_index = 39
 script = ExtResource("1_u3yri")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1340933418]

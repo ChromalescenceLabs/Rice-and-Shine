@@ -2,6 +2,8 @@ extends Control
 
 @onready var object_container: HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ObjectContainer
 @onready var scroll_container: ScrollContainer = %ScrollContainer
+@onready var hover: AnimationPlayer = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Previous/Hover
+@onready var hover_2: AnimationPlayer = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Next/Hover2
 
 var scroll_tween: Tween
 var targetScroll = 0
@@ -61,3 +63,9 @@ func _select_deselect_highlight(dir_next: bool):
 			else: 
 				if not object == object_container.get_children()[selected_indx - 1] and not object == object_container.get_children()[selected_indx]: object.play_anim()
 						
+
+func _on_previous_mouse_entered() -> void: hover.play("hover")
+func _on_previous_mouse_exited() -> void: hover.play_backwards("hover")
+
+func _on_next_mouse_entered() -> void: hover_2.play("hover")
+func _on_next_mouse_exited() -> void: hover_2.play_backwards("hover")
