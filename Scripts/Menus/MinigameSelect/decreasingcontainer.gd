@@ -144,20 +144,32 @@ func _clear_all_children() -> void:
 
 
 var hovering: bool = false
+var tw : Tween
+var final_angle
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			set_process_input(false)
-			var tw = create_tween().tween_property(self, "rotation_offset_degrees", self.rotation_offset_degrees + 360.0 / self.get_child_count(), 0.5).set_trans(Tween.TRANS_CUBIC)
-			await tw.finished
-			set_process_input(true)
+			if tw and tw.is_valid():
+				tw.kill()
+				tw = get_tree().create_tween()
+				final_angle = final_angle + 360.0 / self.get_child_count()
+				tw.tween_property(self, "rotation_offset_degrees", final_angle, 0.5).set_trans(Tween.TRANS_CUBIC)
+			else:
+				tw = get_tree().create_tween()
+				final_angle = self.rotation_offset_degrees + 360.0 / self.get_child_count()
+				tw.tween_property(self, "rotation_offset_degrees", final_angle, 0.5).set_trans(Tween.TRANS_CUBIC)
 			
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			set_process_input(false)
-			var tw = create_tween().tween_property(self, "rotation_offset_degrees", self.rotation_offset_degrees - 360.0 / self.get_child_count(), 0.5).set_trans(Tween.TRANS_CUBIC)
-			await tw.finished
-			set_process_input(true)
+			if tw and tw.is_valid():
+				tw.kill()
+				tw = get_tree().create_tween()
+				final_angle = final_angle - 360.0 / self.get_child_count()
+				tw.tween_property(self, "rotation_offset_degrees", final_angle, 0.5).set_trans(Tween.TRANS_CUBIC)
+			else:
+				tw = get_tree().create_tween()
+				final_angle = self.rotation_offset_degrees - 360.0 / self.get_child_count()
+				tw.tween_property(self, "rotation_offset_degrees", final_angle, 0.5).set_trans(Tween.TRANS_CUBIC)
 			
 
 func _on_mouse_entered() -> void: hovering = true
