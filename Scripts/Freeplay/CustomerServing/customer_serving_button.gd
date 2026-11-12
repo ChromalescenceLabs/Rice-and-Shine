@@ -2,6 +2,9 @@ extends Control
 @onready var gradient_anim: AnimationPlayer = $GradientAnim
 @onready var arrow_anim: AnimationPlayer = $ArrowAnim
 
+func _ready() -> void:
+	set_process_input(false)
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Click"): SceneLoader.load_scene("uid://cfbo8eegeu5f0", 1.5)
 

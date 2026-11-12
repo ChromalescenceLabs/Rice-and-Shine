@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://eyrhaupwd7te" path="res://Scripts/Menus/ChapterSelect/title_desc_container.gd" id="9_yoiom"]
 [ext_resource type="FontFile" uid="uid://co3he04e7gpv" path="res://Assets/Fonts/LL KARATULA 020721.otf" id="11_dqs3m"]
 [ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="12_lxs73"]
+[ext_resource type="PackedScene" uid="uid://cchljdxmltrvv" path="res://Scenes/back_btn.tscn" id="14_lxs73"]
 
 [sub_resource type="Animation" id="Animation_1dgga"]
 length = 0.001
@@ -411,6 +412,13 @@ theme_override_font_sizes/normal_font_size = 55
 bbcode_enabled = true
 text = "CHAPTER SELECT"
 horizontal_alignment = 1
+
+[node name="Back" parent="." unique_id=1411658314 instance=ExtResource("14_lxs73")]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 638.0
+offset_right = 173.03998
+offset_bottom = 702.0
 
 [connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Previous" to="." method="_on_previous_mouse_exited"]

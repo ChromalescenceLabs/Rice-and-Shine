@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" uid="uid://bcxfv0rc6d7b" path="res://Scripts/Freeplay/CustomerServing/customer_serving_sandbox.gd" id="1_wgjyl"]
 [ext_resource type="PackedScene" uid="uid://bs83acug1c5xl" path="res://Scenes/Storymode/serving_customers_base.tscn" id="2_vacka"]
+[ext_resource type="PackedScene" uid="uid://cchljdxmltrvv" path="res://Scenes/back_btn.tscn" id="3_vacka"]
 
 [node name="CustomerServingSandbox" type="Node2D" unique_id=2075455063]
 script = ExtResource("1_wgjyl")
 
-[node name="Exit" type="Button" parent="." unique_id=911541608]
-offset_left = 1105.0
-offset_top = 639.0
-offset_right = 1244.0
-offset_bottom = 688.0
-text = "Exit"
-
 [node name="ServingCustomersBase" parent="." unique_id=1724706127 instance=ExtResource("2_vacka")]
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1112759161]
+
+[node name="Back" parent="CanvasLayer" unique_id=1411658314 instance=ExtResource("3_vacka")]
+offset_left = 1107.0
+offset_top = 634.0
+offset_right = 1258.04
+offset_bottom = 698.0

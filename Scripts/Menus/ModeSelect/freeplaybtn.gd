@@ -13,6 +13,6 @@ func _on_pressed() -> void:
 	parallax_cam.enabled = false
 	zoom_cam.enabled = true
 	animation_player.play("zoom_free")
+	texture_normal = OPEN_WINDOW_FREE
 	await animation_player.animation_finished
 	SceneLoader.load_scene("uid://b5ufcgv0qaktk", 2)
-	texture_normal = OPEN_WINDOW_FREE

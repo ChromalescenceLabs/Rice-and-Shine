@@ -4,6 +4,7 @@ extends Node
 var current_db : float = -25
 var is_customer_serving: bool = false
 var current_scene
+var previous_scene
 
 # Systems
 signal successIndEnd
@@ -76,6 +77,12 @@ var w7_days : int = 0
 
 func _ready() -> void:
 	append_equal_weights()
+	if not SceneLoader.load_started.is_connected(get_scene_uid):
+		SceneLoader.load_started.connect(get_scene_uid)
+
+func get_scene_uid():
+	var curr_scene = get_tree().current_scene.scene_file_path
+	previous_scene = ResourceUID.path_to_uid(curr_scene)
 
 func append_equal_weights():
 	var customers_num : int = unlocked_customers.size()

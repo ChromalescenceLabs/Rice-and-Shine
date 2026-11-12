@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://f2rltotigf0a" path="res://Assets/Sprites/Menus/ChapterSelect/tempbutton.png" id="10_2nnt3"]
 [ext_resource type="Texture2D" uid="uid://crwdy2fe3tvdl" path="res://Assets/Sprites/Menus/WeekSelect/WEEK TWO.png" id="10_2uvjk"]
 [ext_resource type="Texture2D" uid="uid://bs8v8y0r01ty6" path="res://Assets/Sprites/Menus/WeekSelect/week one.png" id="11_agtb7"]
+[ext_resource type="FontFile" uid="uid://co3he04e7gpv" path="res://Assets/Fonts/LL KARATULA 020721.otf" id="17_w0hie"]
+[ext_resource type="PackedScene" uid="uid://cchljdxmltrvv" path="res://Scenes/back_btn.tscn" id="19_2nnt3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_154id"]
 resource_local_to_scene = true
@@ -100,12 +102,12 @@ script = ExtResource("2_u5e5w")
 [node name="Week Select" type="Label" parent="." unique_id=1241053576]
 custom_maximum_size = Vector2(570, -1)
 layout_mode = 0
-offset_left = 251.0
+offset_left = 228.0
 offset_top = 36.0
-offset_right = 458.0
-offset_bottom = 99.0
+offset_right = 484.0
+offset_bottom = 89.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_b1xbh")
+theme_override_fonts/font = ExtResource("17_w0hie")
 theme_override_font_sizes/font_size = 50
 text = "Week Select"
 horizontal_alignment = 1
@@ -185,33 +187,49 @@ metadata/_smooth_scroll_default_mouse_filter_set = true
 
 [node name="TUTORIAL" parent="WeekScroll/DayButton" unique_id=1995078601 instance=ExtResource("9_w0hie")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("17_w0hie")
+theme_override_font_sizes/font_size = 61
 
 [node name="DAYONE" parent="WeekScroll/DayButton" unique_id=698316641 instance=ExtResource("9_w0hie")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("17_w0hie")
+theme_override_font_sizes/font_size = 61
 text = "DAY 1"
 
 [node name="DAYTWO" parent="WeekScroll/DayButton" unique_id=1073740334 instance=ExtResource("9_w0hie")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("17_w0hie")
+theme_override_font_sizes/font_size = 61
 text = "DAY 2"
 
 [node name="DAYTHREE" parent="WeekScroll/DayButton" unique_id=852569285 instance=ExtResource("9_w0hie")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("17_w0hie")
+theme_override_font_sizes/font_size = 61
 text = "DAY 3"
 
 [node name="DAYFOUR" parent="WeekScroll/DayButton" unique_id=2029672465 instance=ExtResource("9_w0hie")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("17_w0hie")
+theme_override_font_sizes/font_size = 61
 text = "DAY 4"
 
 [node name="DAYFIVE" parent="WeekScroll/DayButton" unique_id=984034348 instance=ExtResource("9_w0hie")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("17_w0hie")
+theme_override_font_sizes/font_size = 61
 text = "DAY 5"
 
 [node name="DAYSIX" parent="WeekScroll/DayButton" unique_id=1179948600 instance=ExtResource("9_w0hie")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("17_w0hie")
+theme_override_font_sizes/font_size = 61
 text = "DAY 6"
 
 [node name="DAYSEVEN" parent="WeekScroll/DayButton" unique_id=516141316 instance=ExtResource("9_w0hie")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("17_w0hie")
+theme_override_font_sizes/font_size = 61
 text = "DAY 7"
 
 [node name="MarginContainer2" type="MarginContainer" parent="WeekScroll/DayButton" unique_id=485881556]
@@ -244,6 +262,13 @@ offset_bottom = 423.00003
 rotation = 3.1415927
 scale = Vector2(0.5287411, 0.5287411)
 texture_normal = ExtResource("10_2nnt3")
+
+[node name="Back" parent="." unique_id=1411658314 instance=ExtResource("19_2nnt3")]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 634.0
+offset_right = 169.03998
+offset_bottom = 698.0
 
 [connection signal="change_week" from="Weeks" to="DESCRIPTION" method="_on_weeks_change_week"]
 [connection signal="change_week" from="Weeks" to="WeekScroll/DayButton" method="_on_weeks_change_week"]

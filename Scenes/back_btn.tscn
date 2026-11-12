@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cchljdxmltrvv"]
+
+[ext_resource type="FontFile" uid="uid://co3he04e7gpv" path="res://Assets/Fonts/LL KARATULA 020721.otf" id="1_8w62e"]
+[ext_resource type="StyleBox" uid="uid://dsabeskj33dsp" path="res://Assets/Styles/MainMenuNormalButtonStyle.tres" id="2_43e16"]
+[ext_resource type="StyleBox" uid="uid://ru223rr65m5a" path="res://Assets/Styles/MainMenuHoverandPressStyle.tres" id="3_cbjpg"]
+[ext_resource type="Script" uid="uid://dtyncs318de1w" path="res://Scripts/back_btn.gd" id="4_43e16"]
+
+[node name="Back" type="Button" unique_id=1411658314]
+offset_left = -75.0
+offset_top = -32.0
+offset_right = 76.03998
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("1_8w62e")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = ExtResource("2_43e16")
+theme_override_styles/pressed = ExtResource("2_43e16")
+theme_override_styles/hover = ExtResource("3_cbjpg")
+theme_override_styles/hover_pressed = ExtResource("2_43e16")
+text = "Back"
+script = ExtResource("4_43e16")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

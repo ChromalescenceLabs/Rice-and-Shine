@@ -1,6 +1,7 @@
 extends Node
 
 signal load_finished
+signal load_started
 
 var loading_screen : PackedScene = preload("uid://chgdopktb0d2w")
 var loading_screen_fade : PackedScene = preload("uid://dnkgil0k2g8ap")
@@ -26,6 +27,7 @@ func load_scene(_scene_path: String, duration: float, loading_screen_scene : Pac
 	new_load_screen.duration = duration
 	
 	start_load()
+	load_started.emit()
 	
 func start_load() -> void:
 	var state = ResourceLoader.load_threaded_request(scene_path, "", use_sub_threads)
