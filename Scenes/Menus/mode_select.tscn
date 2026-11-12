@@ -2,155 +2,105 @@
 
 [ext_resource type="Script" uid="uid://2nwmarwgn0y8" path="res://Scripts/Menus/ModeSelect/MODE_SELECT.gd" id="1_rel82"]
 [ext_resource type="Texture2D" uid="uid://dnulc8osr7rqc" path="res://Assets/Sprites/Menus/ModeSelect/TEMPMENUBG.png" id="2_xxbn6"]
+[ext_resource type="FontFile" uid="uid://co3he04e7gpv" path="res://Assets/Fonts/LL KARATULA 020721.otf" id="3_g5ogx"]
 [ext_resource type="Script" uid="uid://cyiace1yl3rkq" path="res://Scripts/Menus/ModeSelect/storybtn.gd" id="4_6vmvb"]
+[ext_resource type="FontFile" uid="uid://qh7f73okbxun" path="res://Assets/Fonts/Aladin-Regular.ttf" id="4_in2lh"]
 [ext_resource type="Script" uid="uid://dy4d8dexua0ho" path="res://Scripts/Menus/ModeSelect/freeplaybtn.gd" id="4_taxq6"]
 [ext_resource type="Texture2D" uid="uid://coimcmqajakru" path="res://Assets/Sprites/Menus/ModeSelect/TEMPCLOSEDWINDOW.png" id="5_bril0"]
-[ext_resource type="Script" uid="uid://bddhu0viv0yn" path="res://Scripts/Menus/ModeSelect/modebg_anim.gd" id="7_jan6t"]
-[ext_resource type="Animation" uid="uid://c4l8g78egdc2g" path="res://Assets/Animations/BG.res" id="7_w8xo7"]
-[ext_resource type="Texture2D" uid="uid://b57au0x8eieye" path="res://Assets/Sprites/Menus/ModeSelect/TEMPOPENWINDOW.png" id="8_nec4f"]
+[ext_resource type="Texture2D" uid="uid://bvg8xwug7hye5" path="res://Assets/Sprites/Menus/ModeSelect/OpenWindowStory.png" id="6_wjuvv"]
+[ext_resource type="Texture2D" uid="uid://s2wk77q843w3" path="res://Assets/Sprites/Menus/ModeSelect/OpenWindowFree.png" id="8_dunku"]
+[ext_resource type="Script" uid="uid://cbiudsrq3kr8" path="res://Scripts/responsive_cam.gd" id="10_w8xo7"]
 
-[sub_resource type="Animation" id="Animation_bril0"]
-resource_name = "FREEPLAY"
-step = 2.0
+[sub_resource type="Animation" id="Animation_w8xo7"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BACKGROUND:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(642, 358), Vector2(326, 341)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BACKGROUND:scale")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("FREETEXT:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("STORYTEXT:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("MODESELECT:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("FREEPLAY:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("FREEPLAY:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.015000001, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(774, 160), Vector2(641, 112)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("FREEPLAY:texture_normal")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("8_nec4f")]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("STORY:scale")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("STORY:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(73, 178), Vector2(-534, 64)]
-}
-
-[sub_resource type="Animation" id="Animation_jan6t"]
-length = 0.96666664
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BACKGROUND:position")
+tracks/0/path = NodePath(".:offset_transform_scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(642, 358)]
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nec4f"]
+resource_name = "hover"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.06, 1.06)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g5ogx"]
+_data = {
+&"RESET": SubResource("Animation_w8xo7"),
+&"hover": SubResource("Animation_nec4f")
+}
+
+[sub_resource type="Animation" id="Animation_in2lh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FREEPLAY:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wjuvv"]
+resource_name = "hover"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FREEPLAY:offset_transform_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.06, 1.06)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dunku"]
+_data = {
+&"RESET": SubResource("Animation_in2lh"),
+&"hover": SubResource("Animation_wjuvv")
+}
+
+[sub_resource type="Animation" id="Animation_g5ogx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BACKGROUND:scale")
+tracks/1/path = NodePath(".:zoom")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -159,144 +109,66 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("STORYTEXT:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+
+[sub_resource type="Animation" id="Animation_6djrr"]
+resource_name = "zoom_free"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(53, 532)]
+"values": [Vector2(1, 1), Vector2(2.23, 2.23)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("FREETEXT:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("STORYTEXT:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("MODESELECT:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("FREEPLAY:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("FREEPLAY:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(774, 160)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("FREEPLAY:texture_normal")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("5_bril0")]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("FREEPLAY:pivot_offset")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0.02),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(219, 160.5)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("STORY:scale")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("STORY:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(73, 178)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("STORY:offset_transform_position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(718, 179.315)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kj3s7"]
+[sub_resource type="Animation" id="Animation_dunku"]
+resource_name = "zoom_story"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-11.18, 179.315)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2.23, 2.23)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6djrr"]
 _data = {
-&"FREEPLAY": SubResource("Animation_bril0"),
-&"RESET": SubResource("Animation_jan6t"),
-&"STORY": ExtResource("7_w8xo7")
+&"RESET": SubResource("Animation_g5ogx"),
+&"zoom_free": SubResource("Animation_6djrr"),
+&"zoom_story": SubResource("Animation_dunku")
 }
 
 [node name="MODE SELECT" type="Control" unique_id=983373993]
@@ -307,102 +179,133 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rel82")
-tween_intensity = 1.2
-tween_duration = 0.2
 
-[node name="BACKGROUND" type="Sprite2D" parent="." unique_id=676390045]
+[node name="Node2D" type="Node2D" parent="." unique_id=1440656243]
+
+[node name="Parallax2D" type="Parallax2D" parent="Node2D" unique_id=1354618299]
+scroll_scale = Vector2(0.8, 0.8)
+
+[node name="BACKGROUND" type="Sprite2D" parent="Node2D/Parallax2D" unique_id=676390045]
 position = Vector2(642, 358)
+scale = Vector2(1.0305555, 1.0305555)
 texture = ExtResource("2_xxbn6")
 
-[node name="MODESELECT" type="RichTextLabel" parent="." unique_id=1447347630]
-layout_mode = 1
+[node name="Parallax2D2" type="Parallax2D" parent="Node2D" unique_id=1091291351]
+scroll_scale = Vector2(0.9, 0.9)
+
+[node name="MODESELECT" type="RichTextLabel" parent="Node2D/Parallax2D2" unique_id=1447347630]
 anchors_preset = -1
 anchor_left = 0.49800003
 anchor_top = 0.123
 anchor_right = 0.49800003
 anchor_bottom = 0.123
-offset_left = -175.44006
-offset_top = -38.560005
-offset_right = 175.56018
-offset_bottom = 38.44007
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 50
+offset_left = 370.83154
+offset_top = 30.000076
+offset_right = 904.1687
+offset_bottom = 147.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_g5ogx")
+theme_override_font_sizes/normal_font_size = 63
 text = "MODE SELECT"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="STORYTEXT" type="RichTextLabel" parent="." unique_id=650034488]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.22000001
-anchor_top = 0.768
-anchor_right = 0.22000001
-anchor_bottom = 0.768
-offset_left = -228.6
-offset_top = -20.960022
-offset_right = 229.41306
-offset_bottom = 31.039978
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=20.0 freq=5.0 connected=1] Manage your grandma's carinderia! [/wave]"
-horizontal_alignment = 1
-
-[node name="FREETEXT" type="RichTextLabel" parent="." unique_id=351870618]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.78400004
-anchor_top = 0.76500005
-anchor_right = 0.78400004
-anchor_bottom = 0.76500005
-offset_left = -226.52002
-offset_top = -25.800049
-offset_right = 203.47961
-offset_bottom = 52.19995
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[wave amp=20.0 freq=5.0 connected=1] Cook food to your heart's desires!! [/wave]"
-horizontal_alignment = 1
-
-[node name="STORY" type="TextureButton" parent="." unique_id=2124712664]
-layout_mode = 0
-offset_left = 73.0
-offset_top = 178.0
-offset_right = 511.0
-offset_bottom = 499.0
+[node name="STORY" type="TextureButton" parent="Node2D/Parallax2D2" unique_id=2124712664]
+offset_left = 58.0
+offset_top = 177.00002
+offset_right = 496.0
+offset_bottom = 498.0
+scale = Vector2(1.105, 1.105)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 offset_transform_enabled = true
 texture_normal = ExtResource("5_bril0")
-texture_pressed = ExtResource("8_nec4f")
-texture_hover = ExtResource("8_nec4f")
+texture_pressed = ExtResource("6_wjuvv")
+texture_hover = ExtResource("6_wjuvv")
 script = ExtResource("4_6vmvb")
 
-[node name="FREEPLAY" type="TextureButton" parent="." unique_id=1309194630]
-layout_mode = 1
+[node name="StoryButtonAnim" type="AnimationPlayer" parent="Node2D/Parallax2D2/STORY" unique_id=1228512733]
+libraries/ = SubResource("AnimationLibrary_g5ogx")
+speed_scale = 5.0
+
+[node name="FREEPLAY" type="TextureButton" parent="Node2D/Parallax2D2" unique_id=1309194630]
 anchors_preset = -1
 anchor_left = 0.694
 anchor_top = 0.41700003
 anchor_right = 0.694
 anchor_bottom = 0.41700003
-offset_left = -114.32001
-offset_top = -140.24002
-offset_right = 323.6812
-offset_bottom = 180.75998
+offset_left = 788.0
+offset_top = 177.0
+offset_right = 1226.0007
+offset_bottom = 498.0
+scale = Vector2(1.105, 1.105)
 pivot_offset = Vector2(219, 160.5)
+offset_transform_enabled = true
 texture_normal = ExtResource("5_bril0")
-texture_pressed = ExtResource("8_nec4f")
-texture_hover = ExtResource("8_nec4f")
+texture_pressed = ExtResource("8_dunku")
+texture_hover = ExtResource("8_dunku")
 script = ExtResource("4_taxq6")
 
-[node name="MODEANIM" type="AnimationPlayer" parent="." unique_id=623459664]
-libraries/ = SubResource("AnimationLibrary_kj3s7")
-script = ExtResource("7_jan6t")
+[node name="FreeplayButtonAnim" type="AnimationPlayer" parent="Node2D/Parallax2D2/FREEPLAY" unique_id=346005259]
+root_node = NodePath("../../STORY")
+libraries/ = SubResource("AnimationLibrary_dunku")
+speed_scale = 5.0
 
-[connection signal="mouse_entered" from="STORY" to="." method="_on_story_mouse_entered"]
-[connection signal="mouse_exited" from="STORY" to="." method="_on_story_mouse_exited"]
-[connection signal="pressed" from="STORY" to="STORY" method="_on_pressed"]
-[connection signal="pressed" from="STORY" to="MODEANIM" method="_on_story_pressed"]
-[connection signal="mouse_entered" from="FREEPLAY" to="." method="_on_freeplay_mouse_entered"]
-[connection signal="mouse_exited" from="FREEPLAY" to="." method="_on_freeplay_mouse_exited"]
-[connection signal="pressed" from="FREEPLAY" to="FREEPLAY" method="_on_pressed"]
-[connection signal="pressed" from="FREEPLAY" to="MODEANIM" method="_on_freeplay_pressed"]
-[connection signal="current_animation_changed" from="MODEANIM" to="." method="_on_modeanim_current_animation_changed"]
+[node name="Parallax2D3" type="Parallax2D" parent="Node2D" unique_id=410930437]
+
+[node name="STORYTEXT" type="RichTextLabel" parent="Node2D/Parallax2D3" unique_id=650034488]
+anchors_preset = -1
+anchor_left = 0.22000001
+anchor_top = 0.768
+anchor_right = 0.22000001
+anchor_bottom = 0.768
+offset_left = 6.0
+offset_top = 535.0
+offset_right = 464.01306
+offset_bottom = 587.0
+scale = Vector2(1.195, 1.195)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_in2lh")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=20.0 freq=5.0 connected=1] Manage your grandma's carinderia! [/wave]"
+horizontal_alignment = 1
+
+[node name="FREETEXT" type="RichTextLabel" parent="Node2D/Parallax2D3" unique_id=351870618]
+anchors_preset = -1
+anchor_left = 0.78400004
+anchor_top = 0.76500005
+anchor_right = 0.78400004
+anchor_bottom = 0.76500005
+offset_left = 734.0
+offset_top = 535.0
+offset_right = 1163.9998
+offset_bottom = 613.0
+scale = Vector2(1.195, 1.195)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("4_in2lh")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=20.0 freq=5.0 connected=1] Cook food to your heart's desires!! [/wave]"
+horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1747039149]
+
+[node name="ParallaxCam" type="Camera2D" parent="CanvasLayer" unique_id=1222661024]
+anchor_mode = 0
+position_smoothing_enabled = true
+script = ExtResource("10_w8xo7")
+
+[node name="ZoomCam" type="Camera2D" parent="CanvasLayer" unique_id=1085924845]
+anchor_mode = 0
+enabled = false
+position_smoothing_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ZoomCam" unique_id=1888511470]
+libraries/ = SubResource("AnimationLibrary_6djrr")
+
+[connection signal="mouse_entered" from="Node2D/Parallax2D2/STORY" to="." method="_on_story_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/Parallax2D2/STORY" to="." method="_on_story_mouse_exited"]
+[connection signal="pressed" from="Node2D/Parallax2D2/STORY" to="Node2D/Parallax2D2/STORY" method="_on_pressed"]
+[connection signal="mouse_entered" from="Node2D/Parallax2D2/FREEPLAY" to="." method="_on_freeplay_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/Parallax2D2/FREEPLAY" to="." method="_on_freeplay_mouse_exited"]
+[connection signal="pressed" from="Node2D/Parallax2D2/FREEPLAY" to="Node2D/Parallax2D2/FREEPLAY" method="_on_pressed"]

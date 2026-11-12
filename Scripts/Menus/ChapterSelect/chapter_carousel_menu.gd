@@ -4,10 +4,20 @@ extends Control
 @onready var scroll_container: ScrollContainer = %ScrollContainer
 @onready var hover: AnimationPlayer = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Previous/Hover
 @onready var hover_2: AnimationPlayer = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Next/Hover2
+@onready var previous: TextureButton = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Previous
+@onready var next: TextureButton = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Next
 
 var scroll_tween: Tween
 var targetScroll = 0
-var selected_indx : int = 0
+var selected_indx : int = 0:
+	set(value):
+		selected_indx = value
+		previous.modulate.a = 1
+		next.modulate.a = 1
+		if selected_indx == 0: 
+			previous.modulate.a = 0
+		elif selected_indx == 2: 
+			next.modulate.a = 0
 
 func _ready() -> void:
 	_set_selection()
